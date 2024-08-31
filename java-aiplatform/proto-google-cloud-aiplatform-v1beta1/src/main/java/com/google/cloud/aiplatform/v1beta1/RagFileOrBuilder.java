@@ -423,5 +423,46 @@ public interface RagFileOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fileStatus field is set.
+   */
+  boolean hasFileStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fileStatus.
+   */
+  com.google.cloud.aiplatform.v1beta1.FileStatus getFileStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder getFileStatusOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.RagFile.RagFileSourceCase getRagFileSourceCase();
 }

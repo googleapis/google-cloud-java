@@ -61,6 +61,623 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RagQuery.Builder.class);
   }
 
+  public interface RankingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Alpha value controls the weight between dense and sparse vector
+     * search results. The range is [0, 1], while 0 means sparse vector search
+     * only and 1 means dense vector search only. The default value is 0.5 which
+     * balances sparse and dense vector search equally.
+     * </pre>
+     *
+     * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the alpha field is set.
+     */
+    boolean hasAlpha();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Alpha value controls the weight between dense and sparse vector
+     * search results. The range is [0, 1], while 0 means sparse vector search
+     * only and 1 means dense vector search only. The default value is 0.5 which
+     * balances sparse and dense vector search equally.
+     * </pre>
+     *
+     * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The alpha.
+     */
+    float getAlpha();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagQuery.Ranking}
+   */
+  public static final class Ranking extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
+      RankingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Ranking.newBuilder() to construct.
+    private Ranking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Ranking() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Ranking();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.class,
+              com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ALPHA_FIELD_NUMBER = 1;
+    private float alpha_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Alpha value controls the weight between dense and sparse vector
+     * search results. The range is [0, 1], while 0 means sparse vector search
+     * only and 1 means dense vector search only. The default value is 0.5 which
+     * balances sparse and dense vector search equally.
+     * </pre>
+     *
+     * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the alpha field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlpha() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Alpha value controls the weight between dense and sparse vector
+     * search results. The range is [0, 1], while 0 means sparse vector search
+     * only and 1 means dense vector search only. The default value is 0.5 which
+     * balances sparse and dense vector search equally.
+     * </pre>
+     *
+     * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The alpha.
+     */
+    @java.lang.Override
+    public float getAlpha() {
+      return alpha_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeFloat(1, alpha_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, alpha_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking other =
+          (com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking) obj;
+
+      if (hasAlpha() != other.hasAlpha()) return false;
+      if (hasAlpha()) {
+        if (java.lang.Float.floatToIntBits(getAlpha())
+            != java.lang.Float.floatToIntBits(other.getAlpha())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAlpha()) {
+        hash = (37 * hash) + ALPHA_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getAlpha());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagQuery.Ranking}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
+        com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.class,
+                com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        alpha_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking build() {
+        com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking result =
+            new com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.alpha_ = alpha_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance())
+          return this;
+        if (other.hasAlpha()) {
+          setAlpha(other.getAlpha());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  alpha_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float alpha_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Alpha value controls the weight between dense and sparse vector
+       * search results. The range is [0, 1], while 0 means sparse vector search
+       * only and 1 means dense vector search only. The default value is 0.5 which
+       * balances sparse and dense vector search equally.
+       * </pre>
+       *
+       * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the alpha field is set.
+       */
+      @java.lang.Override
+      public boolean hasAlpha() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Alpha value controls the weight between dense and sparse vector
+       * search results. The range is [0, 1], while 0 means sparse vector search
+       * only and 1 means dense vector search only. The default value is 0.5 which
+       * balances sparse and dense vector search equally.
+       * </pre>
+       *
+       * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The alpha.
+       */
+      @java.lang.Override
+      public float getAlpha() {
+        return alpha_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Alpha value controls the weight between dense and sparse vector
+       * search results. The range is [0, 1], while 0 means sparse vector search
+       * only and 1 means dense vector search only. The default value is 0.5 which
+       * balances sparse and dense vector search equally.
+       * </pre>
+       *
+       * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The alpha to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlpha(float value) {
+
+        alpha_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Alpha value controls the weight between dense and sparse vector
+       * search results. The range is [0, 1], while 0 means sparse vector search
+       * only and 1 means dense vector search only. The default value is 0.5 which
+       * balances sparse and dense vector search equally.
+       * </pre>
+       *
+       * <code>optional float alpha = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAlpha() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        alpha_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagQuery.Ranking)
+    private static final com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Ranking> PARSER =
+        new com.google.protobuf.AbstractParser<Ranking>() {
+          @java.lang.Override
+          public Ranking parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Ranking> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ranking> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int queryCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -195,6 +812,62 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     return similarityTopK_;
   }
 
+  public static final int RANKING_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ranking field is set.
+   */
+  @java.lang.Override
+  public boolean hasRanking() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ranking.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking() {
+    return ranking_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
+        : ranking_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder() {
+    return ranking_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
+        : ranking_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -215,6 +888,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     if (similarityTopK_ != 0) {
       output.writeInt32(2, similarityTopK_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getRanking());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -229,6 +905,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (similarityTopK_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, similarityTopK_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRanking());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -247,6 +926,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1beta1.RagQuery) obj;
 
     if (getSimilarityTopK() != other.getSimilarityTopK()) return false;
+    if (hasRanking() != other.hasRanking()) return false;
+    if (hasRanking()) {
+      if (!getRanking().equals(other.getRanking())) return false;
+    }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
       case 1:
@@ -268,6 +951,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SIMILARITY_TOP_K_FIELD_NUMBER;
     hash = (53 * hash) + getSimilarityTopK();
+    if (hasRanking()) {
+      hash = (37 * hash) + RANKING_FIELD_NUMBER;
+      hash = (53 * hash) + getRanking().hashCode();
+    }
     switch (queryCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -405,10 +1092,19 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.RagQuery.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRankingFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -416,6 +1112,11 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       similarityTopK_ = 0;
+      ranking_ = null;
+      if (rankingBuilder_ != null) {
+        rankingBuilder_.dispose();
+        rankingBuilder_ = null;
+      }
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -458,6 +1159,12 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.similarityTopK_ = similarityTopK_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ranking_ = rankingBuilder_ == null ? ranking_ : rankingBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.RagQuery result) {
@@ -513,6 +1220,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       if (other.getSimilarityTopK() != 0) {
         setSimilarityTopK(other.getSimilarityTopK());
       }
+      if (other.hasRanking()) {
+        mergeRanking(other.getRanking());
+      }
       switch (other.getQueryCase()) {
         case TEXT:
           {
@@ -565,6 +1275,12 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 34:
+              {
+                input.readMessage(getRankingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -783,6 +1499,211 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       similarityTopK_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking,
+            com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder>
+        rankingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ranking field is set.
+     */
+    public boolean hasRanking() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ranking.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking() {
+      if (rankingBuilder_ == null) {
+        return ranking_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
+            : ranking_;
+      } else {
+        return rankingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRanking(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking value) {
+      if (rankingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ranking_ = value;
+      } else {
+        rankingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRanking(
+        com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder builderForValue) {
+      if (rankingBuilder_ == null) {
+        ranking_ = builderForValue.build();
+      } else {
+        rankingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRanking(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking value) {
+      if (rankingBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && ranking_ != null
+            && ranking_
+                != com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()) {
+          getRankingBuilder().mergeFrom(value);
+        } else {
+          ranking_ = value;
+        }
+      } else {
+        rankingBuilder_.mergeFrom(value);
+      }
+      if (ranking_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRanking() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ranking_ = null;
+      if (rankingBuilder_ != null) {
+        rankingBuilder_.dispose();
+        rankingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder getRankingBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getRankingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder() {
+      if (rankingBuilder_ != null) {
+        return rankingBuilder_.getMessageOrBuilder();
+      } else {
+        return ranking_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
+            : ranking_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for hybrid search results ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking,
+            com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder>
+        getRankingFieldBuilder() {
+      if (rankingBuilder_ == null) {
+        rankingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking,
+                com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder>(
+                getRanking(), getParentForChildren(), isClean());
+        ranking_ = null;
+      }
+      return rankingBuilder_;
     }
 
     @java.lang.Override

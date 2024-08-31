@@ -22,4 +22,42 @@ package com.google.cloud.aiplatform.v1beta1;
 public interface ApiAuthOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ApiAuth)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   *
+   * @return Whether the apiKeyConfig field is set.
+   */
+  boolean hasApiKeyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   *
+   * @return The apiKeyConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getApiKeyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder getApiKeyConfigOrBuilder();
+
+  com.google.cloud.aiplatform.v1beta1.ApiAuth.AuthConfigCase getAuthConfigCase();
+}

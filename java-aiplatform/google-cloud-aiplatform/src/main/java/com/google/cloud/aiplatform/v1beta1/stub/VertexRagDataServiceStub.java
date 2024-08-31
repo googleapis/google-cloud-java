@@ -40,6 +40,8 @@ import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -77,6 +79,15 @@ public abstract class VertexRagDataServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateRagCorpusRequest, Operation> createRagCorpusCallable() {
     throw new UnsupportedOperationException("Not implemented: createRagCorpusCallable()");
+  }
+
+  public OperationCallable<UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRagCorpusOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRagCorpusRequest, Operation> updateRagCorpusCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRagCorpusCallable()");
   }
 
   public UnaryCallable<GetRagCorpusRequest, RagCorpus> getRagCorpusCallable() {

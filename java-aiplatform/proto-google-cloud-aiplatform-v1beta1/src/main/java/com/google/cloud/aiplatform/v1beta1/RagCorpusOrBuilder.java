@@ -149,6 +149,47 @@ public interface RagCorpusOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the ragVectorDbConfig field is set.
+   */
+  boolean hasRagVectorDbConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ragVectorDbConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder getRagVectorDbConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this RagCorpus was created.
    * </pre>
    *
@@ -220,4 +261,45 @@ public interface RagCorpusOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the corpusStatus field is set.
+   */
+  boolean hasCorpusStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The corpusStatus.
+   */
+  com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
 }

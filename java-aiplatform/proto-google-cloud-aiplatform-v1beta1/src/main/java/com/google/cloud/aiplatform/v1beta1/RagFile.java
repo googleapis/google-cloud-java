@@ -880,6 +880,62 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int FILE_STATUS_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1beta1.FileStatus fileStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fileStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasFileStatus() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fileStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FileStatus getFileStatus() {
+    return fileStatus_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()
+        : fileStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RagFile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder getFileStatusOrBuilder() {
+    return fileStatus_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()
+        : fileStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -933,6 +989,9 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     }
     if (ragFileSourceCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(13, getFileStatus());
     }
     getUnknownFields().writeTo(output);
   }
@@ -991,6 +1050,9 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFileStatus());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1019,6 +1081,10 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasFileStatus() != other.hasFileStatus()) return false;
+    if (hasFileStatus()) {
+      if (!getFileStatus().equals(other.getFileStatus())) return false;
     }
     if (!getRagFileSourceCase().equals(other.getRagFileSourceCase())) return false;
     switch (ragFileSourceCase_) {
@@ -1068,6 +1134,10 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasFileStatus()) {
+      hash = (37 * hash) + FILE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getFileStatus().hashCode();
     }
     switch (ragFileSourceCase_) {
       case 8:
@@ -1235,6 +1305,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getFileStatusFieldBuilder();
       }
     }
 
@@ -1271,6 +1342,11 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      fileStatus_ = null;
+      if (fileStatusBuilder_ != null) {
+        fileStatusBuilder_.dispose();
+        fileStatusBuilder_ = null;
       }
       ragFileSourceCase_ = 0;
       ragFileSource_ = null;
@@ -1334,6 +1410,10 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.fileStatus_ = fileStatusBuilder_ == null ? fileStatus_ : fileStatusBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1429,6 +1509,9 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasFileStatus()) {
+        mergeFileStatus(other.getFileStatus());
       }
       switch (other.getRagFileSourceCase()) {
         case GCS_SOURCE:
@@ -1561,6 +1644,12 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
                 ragFileSourceCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getFileStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3622,6 +3711,210 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FileStatus fileStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FileStatus,
+            com.google.cloud.aiplatform.v1beta1.FileStatus.Builder,
+            com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder>
+        fileStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the fileStatus field is set.
+     */
+    public boolean hasFileStatus() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The fileStatus.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FileStatus getFileStatus() {
+      if (fileStatusBuilder_ == null) {
+        return fileStatus_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()
+            : fileStatus_;
+      } else {
+        return fileStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFileStatus(com.google.cloud.aiplatform.v1beta1.FileStatus value) {
+      if (fileStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fileStatus_ = value;
+      } else {
+        fileStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFileStatus(
+        com.google.cloud.aiplatform.v1beta1.FileStatus.Builder builderForValue) {
+      if (fileStatusBuilder_ == null) {
+        fileStatus_ = builderForValue.build();
+      } else {
+        fileStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeFileStatus(com.google.cloud.aiplatform.v1beta1.FileStatus value) {
+      if (fileStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && fileStatus_ != null
+            && fileStatus_ != com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()) {
+          getFileStatusBuilder().mergeFrom(value);
+        } else {
+          fileStatus_ = value;
+        }
+      } else {
+        fileStatusBuilder_.mergeFrom(value);
+      }
+      if (fileStatus_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFileStatus() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      fileStatus_ = null;
+      if (fileStatusBuilder_ != null) {
+        fileStatusBuilder_.dispose();
+        fileStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FileStatus.Builder getFileStatusBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getFileStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder getFileStatusOrBuilder() {
+      if (fileStatusBuilder_ != null) {
+        return fileStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return fileStatus_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FileStatus.getDefaultInstance()
+            : fileStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RagFile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FileStatus file_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FileStatus,
+            com.google.cloud.aiplatform.v1beta1.FileStatus.Builder,
+            com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder>
+        getFileStatusFieldBuilder() {
+      if (fileStatusBuilder_ == null) {
+        fileStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FileStatus,
+                com.google.cloud.aiplatform.v1beta1.FileStatus.Builder,
+                com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder>(
+                getFileStatus(), getParentForChildren(), isClean());
+        fileStatus_ = null;
+      }
+      return fileStatusBuilder_;
     }
 
     @java.lang.Override

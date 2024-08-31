@@ -102,6 +102,18 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
         .createRagCorpusOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public UnaryCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagCorpusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public OperationCallSettings<UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .updateRagCorpusOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getRagCorpus. */
   public UnaryCallSettings<GetRagCorpusRequest, RagCorpus> getRagCorpusSettings() {
     return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagCorpusSettings();
@@ -299,6 +311,18 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
             CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
         createRagCorpusOperationSettings() {
       return getStubSettingsBuilder().createRagCorpusOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public UnaryCallSettings.Builder<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+      return getStubSettingsBuilder().updateRagCorpusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public OperationCallSettings.Builder<
+            UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+        updateRagCorpusOperationSettings() {
+      return getStubSettingsBuilder().updateRagCorpusOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getRagCorpus. */
