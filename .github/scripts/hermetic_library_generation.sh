@@ -17,14 +17,11 @@ set -e
 # 1. git
 # 2. gh
 # 3. docker
-# 4. mvn
 
 # The parameters of this script is:
 # 1. target_branch, the branch into which the pull request is merged.
 # 2. current_branch, the branch with which the pull request is associated.
-# 3. [optional] image_tag, the tag of gcr.io/cloud-devrel-public-resources/java-library-generation.
-# The value will be parsed from the generation configuration if not specified.
-# 4. [optional] generation_config, the path to the generation configuration,
+# 3. [optional] generation_config, the path to the generation configuration,
 # the default value is generation_config.yaml in the repository root.
 while [[ $# -gt 0 ]]; do
 key="$1"
@@ -35,10 +32,6 @@ case "${key}" in
     ;;
   --current_branch)
     current_branch="$2"
-    shift
-    ;;
-  --image_tag)
-    image_tag="$2"
     shift
     ;;
   --generation_config)
@@ -68,10 +61,6 @@ if [ -z "${generation_config}" ]; then
   echo "Use default generation config: ${generation_config}"
 fi
 
-if [ -z "${image_tag}" ]; then
-  image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
-fi
-
 workspace_name="/workspace"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
@@ -85,9 +74,13 @@ if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
     exit 0
 fi
+
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}" || true)
+
+# parse image tag from the generation configuration.
+image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
 
 # get .m2 folder so it's mapped into the docker container
 m2_folder=$(dirname "$(mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout)")
@@ -101,8 +94,15 @@ docker run \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
   --current-generation-config-path="${workspace_name}/${generation_config}"
+
 # commit the change to the pull request.
-git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
+if [[ $(basename "$(pwd)") == "google-cloud-java" ]]; then
+  git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
+else
+  # The image leaves intermediate folders and files it works with. Here we remove them
+  rm -rdf output googleapis "${baseline_generation_config}"
+  git add --all -- ':!pr_description.txt'
+fi
 changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
     echo "There is no generated code change with the generation config change ${config_diff}."
