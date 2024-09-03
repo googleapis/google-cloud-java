@@ -2,7 +2,7 @@
   "api_shortname": "automl",
   "name_pretty": "Cloud Auto ML",
   "product_documentation": "https://cloud.google.com/automl/docs/",
-  "api_description": "makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites.",
+  "api_description": "makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites .",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/overview",
   "release_level": "stable",
   "transport": "both",
