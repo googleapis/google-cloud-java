@@ -17,10 +17,11 @@ name: Hermetic library generation upon generation config change through pull req
 on:
   pull_request:
 
+env:
+  REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
+  GITHUB_REPOSITORY: ${{ github.repository }}
 jobs:
   library_generation:
-    # skip pull requests come from a forked repository
-    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -31,6 +32,10 @@ jobs:
       shell: bash
       run: |
         set -x
+        if [[ "${GITHUB_REPOSITORY}" != "${REPO_FULL_NAME}" ]]; then
+          echo "This PR comes from a fork. Skip library generation."
+          exit 0
+        fi
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         bash .github/scripts/hermetic_library_generation.sh \
