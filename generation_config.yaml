@@ -268,7 +268,7 @@ libraries:
     have limited knowledge of machine learning. You can use AutoML to build on Google's
     machine learning capabilities to create your own custom machine learning models
     that are tailored to your business needs, and then integrate those models into
-    your applications and web sites .
+    your applications and web sites.
   release_level: stable
   issue_tracker: https://issuetracker.google.com/savedsearches/559744
   rest_documentation: https://cloud.google.com/automl/docs/reference/rest
