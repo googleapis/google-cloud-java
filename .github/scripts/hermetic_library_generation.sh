@@ -47,18 +47,18 @@ shift
 done
 
 if [ -z "${target_branch}" ]; then
-  echo "missing required argument --target_branch"
+  echo "Missing required argument --target_branch"
   exit 1
 fi
 
 if [ -z "${current_branch}" ]; then
-  echo "missing required argument --current_branch"
+  echo "Missing required argument --current_branch"
   exit 1
 fi
 
 if [ -z "${generation_config}" ]; then
   generation_config=generation_config.yaml
-  echo "Use default generation config: ${generation_config}"
+  echo "Using default generation config: ${generation_config}"
 fi
 
 workspace_name="/workspace"
