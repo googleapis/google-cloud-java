@@ -126,7 +126,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The distance between the query vector and the context text vector.
+     * The distance between the query dense embedding vector and the context
+     * text vector.
      * </pre>
      *
      * <code>double distance = 3;</code>
@@ -134,6 +135,20 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The distance.
      */
     double getDistance();
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance between the query sparse embedding vector and the context
+     * text vector.
+     * </pre>
+     *
+     * <code>double sparse_distance = 4;</code>
+     *
+     * @return The sparseDistance.
+     */
+    double getSparseDistance();
   }
   /**
    *
@@ -292,7 +307,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The distance between the query vector and the context text vector.
+     * The distance between the query dense embedding vector and the context
+     * text vector.
      * </pre>
      *
      * <code>double distance = 3;</code>
@@ -302,6 +318,25 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getDistance() {
       return distance_;
+    }
+
+    public static final int SPARSE_DISTANCE_FIELD_NUMBER = 4;
+    private double sparseDistance_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * The distance between the query sparse embedding vector and the context
+     * text vector.
+     * </pre>
+     *
+     * <code>double sparse_distance = 4;</code>
+     *
+     * @return The sparseDistance.
+     */
+    @java.lang.Override
+    public double getSparseDistance() {
+      return sparseDistance_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -327,6 +362,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
         output.writeDouble(3, distance_);
       }
+      if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
+        output.writeDouble(4, sparseDistance_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -344,6 +382,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, distance_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, sparseDistance_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -365,6 +406,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (!getText().equals(other.getText())) return false;
       if (java.lang.Double.doubleToLongBits(getDistance())
           != java.lang.Double.doubleToLongBits(other.getDistance())) return false;
+      if (java.lang.Double.doubleToLongBits(getSparseDistance())
+          != java.lang.Double.doubleToLongBits(other.getSparseDistance())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -385,6 +428,11 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getDistance()));
+      hash = (37 * hash) + SPARSE_DISTANCE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getSparseDistance()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -530,6 +578,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         sourceUri_ = "";
         text_ = "";
         distance_ = 0D;
+        sparseDistance_ = 0D;
         return this;
       }
 
@@ -574,6 +623,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.distance_ = distance_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sparseDistance_ = sparseDistance_;
         }
       }
 
@@ -638,6 +690,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         if (other.getDistance() != 0D) {
           setDistance(other.getDistance());
         }
+        if (other.getSparseDistance() != 0D) {
+          setSparseDistance(other.getSparseDistance());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -682,6 +737,12 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 25
+              case 33:
+                {
+                  sparseDistance_ = input.readDouble();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 33
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -928,7 +989,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The distance between the query vector and the context text vector.
+       * The distance between the query dense embedding vector and the context
+       * text vector.
        * </pre>
        *
        * <code>double distance = 3;</code>
@@ -943,7 +1005,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The distance between the query vector and the context text vector.
+       * The distance between the query dense embedding vector and the context
+       * text vector.
        * </pre>
        *
        * <code>double distance = 3;</code>
@@ -962,7 +1025,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The distance between the query vector and the context text vector.
+       * The distance between the query dense embedding vector and the context
+       * text vector.
        * </pre>
        *
        * <code>double distance = 3;</code>
@@ -972,6 +1036,62 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       public Builder clearDistance() {
         bitField0_ = (bitField0_ & ~0x00000004);
         distance_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double sparseDistance_;
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the query sparse embedding vector and the context
+       * text vector.
+       * </pre>
+       *
+       * <code>double sparse_distance = 4;</code>
+       *
+       * @return The sparseDistance.
+       */
+      @java.lang.Override
+      public double getSparseDistance() {
+        return sparseDistance_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the query sparse embedding vector and the context
+       * text vector.
+       * </pre>
+       *
+       * <code>double sparse_distance = 4;</code>
+       *
+       * @param value The sparseDistance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSparseDistance(double value) {
+
+        sparseDistance_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the query sparse embedding vector and the context
+       * text vector.
+       * </pre>
+       *
+       * <code>double sparse_distance = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSparseDistance() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        sparseDistance_ = 0D;
         onChanged();
         return this;
       }

@@ -45,6 +45,8 @@ import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -82,6 +84,17 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   "google.cloud.aiplatform.v1beta1.VertexRagDataService/CreateRagCorpus")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRagCorpusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateRagCorpusRequest, Operation>
+      updateRagCorpusMethodDescriptor =
+          MethodDescriptor.<UpdateRagCorpusRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/UpdateRagCorpus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -221,6 +234,10 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   private final OperationCallable<
           CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
       createRagCorpusOperationCallable;
+  private final UnaryCallable<UpdateRagCorpusRequest, Operation> updateRagCorpusCallable;
+  private final OperationCallable<
+          UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationCallable;
   private final UnaryCallable<GetRagCorpusRequest, RagCorpus> getRagCorpusCallable;
   private final UnaryCallable<ListRagCorporaRequest, ListRagCorporaResponse> listRagCorporaCallable;
   private final UnaryCallable<ListRagCorporaRequest, ListRagCorporaPagedResponse>
@@ -300,6 +317,16 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusTransportSettings =
+        GrpcCallSettings.<UpdateRagCorpusRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateRagCorpusMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rag_corpus.name", String.valueOf(request.getRagCorpus().getName()));
                   return builder.build();
                 })
             .build();
@@ -445,6 +472,15 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
             settings.createRagCorpusOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateRagCorpusCallable =
+        callableFactory.createUnaryCallable(
+            updateRagCorpusTransportSettings, settings.updateRagCorpusSettings(), clientContext);
+    this.updateRagCorpusOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRagCorpusTransportSettings,
+            settings.updateRagCorpusOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getRagCorpusCallable =
         callableFactory.createUnaryCallable(
             getRagCorpusTransportSettings, settings.getRagCorpusSettings(), clientContext);
@@ -531,6 +567,17 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   public OperationCallable<CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
       createRagCorpusOperationCallable() {
     return createRagCorpusOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRagCorpusRequest, Operation> updateRagCorpusCallable() {
+    return updateRagCorpusCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationCallable() {
+    return updateRagCorpusOperationCallable;
   }
 
   @Override

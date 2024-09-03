@@ -546,7 +546,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Flag for a reCAPTCHA express request for an assessment without a
-   * token. If enabled, `site_key` must reference an Express site key.
+   * token. If enabled, `site_key` must reference an express key.
    * </pre>
    *
    * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -751,8 +751,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Flag for enabling firewall policy config assessment.
-   * If this flag is enabled, the firewall policy will be evaluated and a
-   * suggested firewall action will be returned in the response.
+   * If this flag is enabled, the firewall policy is evaluated and a
+   * suggested firewall action is returned in the response.
    * </pre>
    *
    * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -771,7 +771,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -790,7 +790,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -811,7 +811,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -2297,7 +2297,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference an Express site key.
+     * token. If enabled, `site_key` must reference an express key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2313,7 +2313,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference an Express site key.
+     * token. If enabled, `site_key` must reference an express key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2333,7 +2333,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference an Express site key.
+     * token. If enabled, `site_key` must reference an express key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2798,8 +2798,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for enabling firewall policy config assessment.
-     * If this flag is enabled, the firewall policy will be evaluated and a
-     * suggested firewall action will be returned in the response.
+     * If this flag is enabled, the firewall policy is evaluated and a
+     * suggested firewall action is returned in the response.
      * </pre>
      *
      * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2815,8 +2815,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for enabling firewall policy config assessment.
-     * If this flag is enabled, the firewall policy will be evaluated and a
-     * suggested firewall action will be returned in the response.
+     * If this flag is enabled, the firewall policy is evaluated and a
+     * suggested firewall action is returned in the response.
      * </pre>
      *
      * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2836,8 +2836,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for enabling firewall policy config assessment.
-     * If this flag is enabled, the firewall policy will be evaluated and a
-     * suggested firewall action will be returned in the response.
+     * If this flag is enabled, the firewall policy is evaluated and a
+     * suggested firewall action is returned in the response.
      * </pre>
      *
      * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2862,7 +2862,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -2880,7 +2880,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -2904,7 +2904,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -2930,7 +2930,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -2954,7 +2954,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -2986,7 +2986,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -3009,7 +3009,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -3027,7 +3027,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -3050,7 +3050,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *

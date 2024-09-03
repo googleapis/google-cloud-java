@@ -43,6 +43,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     region_ = "";
     clusterName_ = "";
     tarballGcsDir_ = "";
+    tarballAccess_ = 0;
     jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
     yarnApplicationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
@@ -66,6 +67,169 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1.DiagnoseClusterRequest.class,
             com.google.cloud.dataproc.v1.DiagnoseClusterRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines who has access to the diagnostic tarball
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess}
+   */
+  public enum TarballAccess implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Tarball Access unspecified. Falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>TARBALL_ACCESS_UNSPECIFIED = 0;</code>
+     */
+    TARBALL_ACCESS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Google Cloud Support group has read access to the
+     * diagnostic tarball
+     * </pre>
+     *
+     * <code>GOOGLE_CLOUD_SUPPORT = 1;</code>
+     */
+    GOOGLE_CLOUD_SUPPORT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Google Cloud Dataproc Diagnose service account has read access to the
+     * diagnostic tarball
+     * </pre>
+     *
+     * <code>GOOGLE_DATAPROC_DIAGNOSE = 2;</code>
+     */
+    GOOGLE_DATAPROC_DIAGNOSE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tarball Access unspecified. Falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>TARBALL_ACCESS_UNSPECIFIED = 0;</code>
+     */
+    public static final int TARBALL_ACCESS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Google Cloud Support group has read access to the
+     * diagnostic tarball
+     * </pre>
+     *
+     * <code>GOOGLE_CLOUD_SUPPORT = 1;</code>
+     */
+    public static final int GOOGLE_CLOUD_SUPPORT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Google Cloud Dataproc Diagnose service account has read access to the
+     * diagnostic tarball
+     * </pre>
+     *
+     * <code>GOOGLE_DATAPROC_DIAGNOSE = 2;</code>
+     */
+    public static final int GOOGLE_DATAPROC_DIAGNOSE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TarballAccess valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TarballAccess forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TARBALL_ACCESS_UNSPECIFIED;
+        case 1:
+          return GOOGLE_CLOUD_SUPPORT;
+        case 2:
+          return GOOGLE_DATAPROC_DIAGNOSE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TarballAccess> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TarballAccess> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TarballAccess>() {
+          public TarballAccess findValueByNumber(int number) {
+            return TarballAccess.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.DiagnoseClusterRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TarballAccess[] VALUES = values();
+
+    public static TarballAccess valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TarballAccess(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess)
   }
 
   private int bitField0_;
@@ -277,6 +441,49 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TARBALL_ACCESS_FIELD_NUMBER = 5;
+  private int tarballAccess_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tarballAccess.
+   */
+  @java.lang.Override
+  public int getTarballAccessValue() {
+    return tarballAccess_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tarballAccess.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess getTarballAccess() {
+    com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess result =
+        com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess.forNumber(tarballAccess_);
+    return result == null
+        ? com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess.UNRECOGNIZED
+        : result;
   }
 
   public static final int DIAGNOSIS_INTERVAL_FIELD_NUMBER = 6;
@@ -501,6 +708,12 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tarballGcsDir_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tarballGcsDir_);
     }
+    if (tarballAccess_
+        != com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess
+            .TARBALL_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, tarballAccess_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getDiagnosisInterval());
     }
@@ -530,6 +743,12 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tarballGcsDir_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tarballGcsDir_);
+    }
+    if (tarballAccess_
+        != com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess
+            .TARBALL_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, tarballAccess_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDiagnosisInterval());
@@ -570,6 +789,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getClusterName().equals(other.getClusterName())) return false;
     if (!getTarballGcsDir().equals(other.getTarballGcsDir())) return false;
+    if (tarballAccess_ != other.tarballAccess_) return false;
     if (hasDiagnosisInterval() != other.hasDiagnosisInterval()) return false;
     if (hasDiagnosisInterval()) {
       if (!getDiagnosisInterval().equals(other.getDiagnosisInterval())) return false;
@@ -595,6 +815,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getClusterName().hashCode();
     hash = (37 * hash) + TARBALL_GCS_DIR_FIELD_NUMBER;
     hash = (53 * hash) + getTarballGcsDir().hashCode();
+    hash = (37 * hash) + TARBALL_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + tarballAccess_;
     if (hasDiagnosisInterval()) {
       hash = (37 * hash) + DIAGNOSIS_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosisInterval().hashCode();
@@ -759,6 +981,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       region_ = "";
       clusterName_ = "";
       tarballGcsDir_ = "";
+      tarballAccess_ = 0;
       diagnosisInterval_ = null;
       if (diagnosisIntervalBuilder_ != null) {
         diagnosisIntervalBuilder_.dispose();
@@ -814,19 +1037,22 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tarballGcsDir_ = tarballGcsDir_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tarballAccess_ = tarballAccess_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.diagnosisInterval_ =
             diagnosisIntervalBuilder_ == null
                 ? diagnosisInterval_
                 : diagnosisIntervalBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         jobs_.makeImmutable();
         result.jobs_ = jobs_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         yarnApplicationIds_.makeImmutable();
         result.yarnApplicationIds_ = yarnApplicationIds_;
       }
@@ -899,13 +1125,16 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.tarballAccess_ != 0) {
+        setTarballAccessValue(other.getTarballAccessValue());
+      }
       if (other.hasDiagnosisInterval()) {
         mergeDiagnosisInterval(other.getDiagnosisInterval());
       }
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -915,7 +1144,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       if (!other.yarnApplicationIds_.isEmpty()) {
         if (yarnApplicationIds_.isEmpty()) {
           yarnApplicationIds_ = other.yarnApplicationIds_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
         } else {
           ensureYarnApplicationIdsIsMutable();
           yarnApplicationIds_.addAll(other.yarnApplicationIds_);
@@ -972,11 +1201,17 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                tarballAccess_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             case 50:
               {
                 input.readMessage(
                     getDiagnosisIntervalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 82:
@@ -1451,6 +1686,115 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int tarballAccess_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) The access type to the diagnostic tarball. If not
+     * specified, falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tarballAccess.
+     */
+    @java.lang.Override
+    public int getTarballAccessValue() {
+      return tarballAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) The access type to the diagnostic tarball. If not
+     * specified, falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for tarballAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTarballAccessValue(int value) {
+      tarballAccess_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) The access type to the diagnostic tarball. If not
+     * specified, falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tarballAccess.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess getTarballAccess() {
+      com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess result =
+          com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess.forNumber(
+              tarballAccess_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) The access type to the diagnostic tarball. If not
+     * specified, falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The tarballAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTarballAccess(
+        com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      tarballAccess_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) The access type to the diagnostic tarball. If not
+     * specified, falls back to default access of the bucket
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTarballAccess() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tarballAccess_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.type.Interval diagnosisInterval_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Interval,
@@ -1471,7 +1815,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * @return Whether the diagnosisInterval field is set.
      */
     public boolean hasDiagnosisInterval() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1515,7 +1859,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       } else {
         diagnosisIntervalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1536,7 +1880,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       } else {
         diagnosisIntervalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1553,7 +1897,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeDiagnosisInterval(com.google.type.Interval value) {
       if (diagnosisIntervalBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && diagnosisInterval_ != null
             && diagnosisInterval_ != com.google.type.Interval.getDefaultInstance()) {
           getDiagnosisIntervalBuilder().mergeFrom(value);
@@ -1564,7 +1908,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
         diagnosisIntervalBuilder_.mergeFrom(value);
       }
       if (diagnosisInterval_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1581,7 +1925,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearDiagnosisInterval() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       diagnosisInterval_ = null;
       if (diagnosisIntervalBuilder_ != null) {
         diagnosisIntervalBuilder_.dispose();
@@ -1602,7 +1946,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.type.Interval.Builder getDiagnosisIntervalBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDiagnosisIntervalFieldBuilder().getBuilder();
     }
@@ -1661,7 +2005,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       if (!jobs_.isModifiable()) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1746,7 +2090,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       }
       ensureJobsIsMutable();
       jobs_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1769,7 +2113,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       }
       ensureJobsIsMutable();
       jobs_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1789,7 +2133,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
       ensureJobsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1807,7 +2151,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -1832,7 +2176,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureJobsIsMutable();
       jobs_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1844,7 +2188,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       if (!yarnApplicationIds_.isModifiable()) {
         yarnApplicationIds_ = new com.google.protobuf.LazyStringArrayList(yarnApplicationIds_);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -1934,7 +2278,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       }
       ensureYarnApplicationIdsIsMutable();
       yarnApplicationIds_.set(index, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1958,7 +2302,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       }
       ensureYarnApplicationIdsIsMutable();
       yarnApplicationIds_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1979,7 +2323,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     public Builder addAllYarnApplicationIds(java.lang.Iterable<java.lang.String> values) {
       ensureYarnApplicationIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, yarnApplicationIds_);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1998,7 +2342,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearYarnApplicationIds() {
       yarnApplicationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ;
       onChanged();
       return this;
@@ -2024,7 +2368,7 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureYarnApplicationIdsIsMutable();
       yarnApplicationIds_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

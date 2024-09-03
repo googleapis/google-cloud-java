@@ -134,6 +134,37 @@ public interface DiagnoseClusterRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tarballAccess.
+   */
+  int getTarballAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tarballAccess.
+   */
+  com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess getTarballAccess();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Time interval in which diagnosis should be carried out on the
    * cluster.
    * </pre>

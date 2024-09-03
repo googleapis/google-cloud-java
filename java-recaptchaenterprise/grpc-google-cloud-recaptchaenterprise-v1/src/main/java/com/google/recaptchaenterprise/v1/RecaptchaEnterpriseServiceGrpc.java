@@ -1221,7 +1221,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Adds an IP override to a key. The following restrictions hold:
      * * The maximum number of IP overrides per key is 100.
      * * For any conflict (such as IP already exists or IP part of an existing
-     *   IP range), an error will be returned.
+     *   IP range), an error is returned.
      * </pre>
      */
     default void addIpOverride(
@@ -1575,7 +1575,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Adds an IP override to a key. The following restrictions hold:
      * * The maximum number of IP overrides per key is 100.
      * * For any conflict (such as IP already exists or IP part of an existing
-     *   IP range), an error will be returned.
+     *   IP range), an error is returned.
      * </pre>
      */
     public void addIpOverride(
@@ -1915,7 +1915,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Adds an IP override to a key. The following restrictions hold:
      * * The maximum number of IP overrides per key is 100.
      * * For any conflict (such as IP already exists or IP part of an existing
-     *   IP range), an error will be returned.
+     *   IP range), an error is returned.
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.AddIpOverrideResponse addIpOverride(
@@ -2220,7 +2220,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Adds an IP override to a key. The following restrictions hold:
      * * The maximum number of IP overrides per key is 100.
      * * For any conflict (such as IP already exists or IP part of an existing
-     *   IP range), an error will be returned.
+     *   IP range), an error is returned.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

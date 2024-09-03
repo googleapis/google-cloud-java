@@ -63,6 +63,8 @@ import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -135,6 +137,10 @@ public class VertexRagDataServiceStubSettings
   private final OperationCallSettings<
           CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
       createRagCorpusOperationSettings;
+  private final UnaryCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings;
+  private final OperationCallSettings<
+          UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationSettings;
   private final UnaryCallSettings<GetRagCorpusRequest, RagCorpus> getRagCorpusSettings;
   private final PagedCallSettings<
           ListRagCorporaRequest, ListRagCorporaResponse, ListRagCorporaPagedResponse>
@@ -335,6 +341,17 @@ public class VertexRagDataServiceStubSettings
     return createRagCorpusOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public UnaryCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+    return updateRagCorpusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRagCorpus. */
+  public OperationCallSettings<UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationSettings() {
+    return updateRagCorpusOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getRagCorpus. */
   public UnaryCallSettings<GetRagCorpusRequest, RagCorpus> getRagCorpusSettings() {
     return getRagCorpusSettings;
@@ -507,6 +524,8 @@ public class VertexRagDataServiceStubSettings
 
     createRagCorpusSettings = settingsBuilder.createRagCorpusSettings().build();
     createRagCorpusOperationSettings = settingsBuilder.createRagCorpusOperationSettings().build();
+    updateRagCorpusSettings = settingsBuilder.updateRagCorpusSettings().build();
+    updateRagCorpusOperationSettings = settingsBuilder.updateRagCorpusOperationSettings().build();
     getRagCorpusSettings = settingsBuilder.getRagCorpusSettings().build();
     listRagCorporaSettings = settingsBuilder.listRagCorporaSettings().build();
     deleteRagCorpusSettings = settingsBuilder.deleteRagCorpusSettings().build();
@@ -534,6 +553,11 @@ public class VertexRagDataServiceStubSettings
     private final OperationCallSettings.Builder<
             CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
         createRagCorpusOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateRagCorpusRequest, Operation>
+        updateRagCorpusSettings;
+    private final OperationCallSettings.Builder<
+            UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+        updateRagCorpusOperationSettings;
     private final UnaryCallSettings.Builder<GetRagCorpusRequest, RagCorpus> getRagCorpusSettings;
     private final PagedCallSettings.Builder<
             ListRagCorporaRequest, ListRagCorporaResponse, ListRagCorporaPagedResponse>
@@ -595,6 +619,8 @@ public class VertexRagDataServiceStubSettings
 
       createRagCorpusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRagCorpusOperationSettings = OperationCallSettings.newBuilder();
+      updateRagCorpusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRagCorpusOperationSettings = OperationCallSettings.newBuilder();
       getRagCorpusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRagCorporaSettings = PagedCallSettings.newBuilder(LIST_RAG_CORPORA_PAGE_STR_FACT);
       deleteRagCorpusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -615,6 +641,7 @@ public class VertexRagDataServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createRagCorpusSettings,
+              updateRagCorpusSettings,
               getRagCorpusSettings,
               listRagCorporaSettings,
               deleteRagCorpusSettings,
@@ -636,6 +663,8 @@ public class VertexRagDataServiceStubSettings
 
       createRagCorpusSettings = settings.createRagCorpusSettings.toBuilder();
       createRagCorpusOperationSettings = settings.createRagCorpusOperationSettings.toBuilder();
+      updateRagCorpusSettings = settings.updateRagCorpusSettings.toBuilder();
+      updateRagCorpusOperationSettings = settings.updateRagCorpusOperationSettings.toBuilder();
       getRagCorpusSettings = settings.getRagCorpusSettings.toBuilder();
       listRagCorporaSettings = settings.listRagCorporaSettings.toBuilder();
       deleteRagCorpusSettings = settings.deleteRagCorpusSettings.toBuilder();
@@ -656,6 +685,7 @@ public class VertexRagDataServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createRagCorpusSettings,
+              updateRagCorpusSettings,
               getRagCorpusSettings,
               listRagCorporaSettings,
               deleteRagCorpusSettings,
@@ -686,6 +716,11 @@ public class VertexRagDataServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .createRagCorpusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateRagCorpusSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -767,6 +802,31 @@ public class VertexRagDataServiceStubSettings
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   CreateRagCorpusOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRagCorpusOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRagCorpusRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RagCorpus.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateRagCorpusOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -880,6 +940,18 @@ public class VertexRagDataServiceStubSettings
             CreateRagCorpusRequest, RagCorpus, CreateRagCorpusOperationMetadata>
         createRagCorpusOperationSettings() {
       return createRagCorpusOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public UnaryCallSettings.Builder<UpdateRagCorpusRequest, Operation> updateRagCorpusSettings() {
+      return updateRagCorpusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagCorpus. */
+    public OperationCallSettings.Builder<
+            UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+        updateRagCorpusOperationSettings() {
+      return updateRagCorpusOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getRagCorpus. */

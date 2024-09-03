@@ -83,7 +83,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @return A list containing the ragCorpora.
      */
     @java.lang.Deprecated
@@ -102,7 +102,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @return The count of ragCorpora.
      */
     @java.lang.Deprecated
@@ -121,7 +121,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @param index The index of the element to return.
      * @return The ragCorpora at the given index.
      */
@@ -141,7 +141,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @param index The index of the value to return.
      * @return The bytes of the ragCorpora at the given index.
      */
@@ -1415,7 +1415,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @return A list containing the ragCorpora.
      */
     @java.lang.Deprecated
@@ -1436,7 +1436,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @return The count of ragCorpora.
      */
     @java.lang.Deprecated
@@ -1457,7 +1457,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @param index The index of the element to return.
      * @return The ragCorpora at the given index.
      */
@@ -1479,7 +1479,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
      * @param index The index of the value to return.
      * @return The bytes of the ragCorpora at the given index.
      */
@@ -2146,7 +2146,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @return A list containing the ragCorpora.
        */
       @java.lang.Deprecated
@@ -2168,7 +2168,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @return The count of ragCorpora.
        */
       @java.lang.Deprecated
@@ -2189,7 +2189,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param index The index of the element to return.
        * @return The ragCorpora at the given index.
        */
@@ -2211,7 +2211,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param index The index of the value to return.
        * @return The bytes of the ragCorpora at the given index.
        */
@@ -2233,7 +2233,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param index The index to set the value at.
        * @param value The ragCorpora to set.
        * @return This builder for chaining.
@@ -2263,7 +2263,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param value The ragCorpora to add.
        * @return This builder for chaining.
        */
@@ -2292,7 +2292,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param values The ragCorpora to add.
        * @return This builder for chaining.
        */
@@ -2318,7 +2318,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -2343,7 +2343,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore.rag_corpora is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=85
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=97
        * @param value The bytes of the ragCorpora to add.
        * @return This builder for chaining.
        */

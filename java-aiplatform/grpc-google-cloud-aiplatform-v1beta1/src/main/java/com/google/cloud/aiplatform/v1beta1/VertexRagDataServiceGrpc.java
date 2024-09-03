@@ -84,6 +84,53 @@ public final class VertexRagDataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest,
+          com.google.longrunning.Operation>
+      getUpdateRagCorpusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRagCorpus",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest,
+          com.google.longrunning.Operation>
+      getUpdateRagCorpusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest,
+            com.google.longrunning.Operation>
+        getUpdateRagCorpusMethod;
+    if ((getUpdateRagCorpusMethod = VertexRagDataServiceGrpc.getUpdateRagCorpusMethod) == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getUpdateRagCorpusMethod = VertexRagDataServiceGrpc.getUpdateRagCorpusMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getUpdateRagCorpusMethod =
+              getUpdateRagCorpusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRagCorpus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("UpdateRagCorpus"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRagCorpusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.GetRagCorpusRequest,
           com.google.cloud.aiplatform.v1beta1.RagCorpus>
       getGetRagCorpusMethod;
@@ -523,6 +570,20 @@ public final class VertexRagDataServiceGrpc {
      *
      *
      * <pre>
+     * Updates a RagCorpus.
+     * </pre>
+     */
+    default void updateRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRagCorpusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a RagCorpus.
      * </pre>
      */
@@ -682,6 +743,22 @@ public final class VertexRagDataServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateRagCorpusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagCorpus.
+     * </pre>
+     */
+    public void updateRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRagCorpusMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -854,6 +931,19 @@ public final class VertexRagDataServiceGrpc {
      *
      *
      * <pre>
+     * Updates a RagCorpus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRagCorpusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a RagCorpus.
      * </pre>
      */
@@ -992,6 +1082,19 @@ public final class VertexRagDataServiceGrpc {
      *
      *
      * <pre>
+     * Updates a RagCorpus.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRagCorpus(com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRagCorpusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a RagCorpus.
      * </pre>
      */
@@ -1099,14 +1202,15 @@ public final class VertexRagDataServiceGrpc {
   }
 
   private static final int METHODID_CREATE_RAG_CORPUS = 0;
-  private static final int METHODID_GET_RAG_CORPUS = 1;
-  private static final int METHODID_LIST_RAG_CORPORA = 2;
-  private static final int METHODID_DELETE_RAG_CORPUS = 3;
-  private static final int METHODID_UPLOAD_RAG_FILE = 4;
-  private static final int METHODID_IMPORT_RAG_FILES = 5;
-  private static final int METHODID_GET_RAG_FILE = 6;
-  private static final int METHODID_LIST_RAG_FILES = 7;
-  private static final int METHODID_DELETE_RAG_FILE = 8;
+  private static final int METHODID_UPDATE_RAG_CORPUS = 1;
+  private static final int METHODID_GET_RAG_CORPUS = 2;
+  private static final int METHODID_LIST_RAG_CORPORA = 3;
+  private static final int METHODID_DELETE_RAG_CORPUS = 4;
+  private static final int METHODID_UPLOAD_RAG_FILE = 5;
+  private static final int METHODID_IMPORT_RAG_FILES = 6;
+  private static final int METHODID_GET_RAG_FILE = 7;
+  private static final int METHODID_LIST_RAG_FILES = 8;
+  private static final int METHODID_DELETE_RAG_FILE = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1128,6 +1232,11 @@ public final class VertexRagDataServiceGrpc {
         case METHODID_CREATE_RAG_CORPUS:
           serviceImpl.createRagCorpus(
               (com.google.cloud.aiplatform.v1beta1.CreateRagCorpusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_RAG_CORPUS:
+          serviceImpl.updateRagCorpus(
+              (com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_RAG_CORPUS:
@@ -1202,6 +1311,12 @@ public final class VertexRagDataServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.CreateRagCorpusRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_RAG_CORPUS)))
+        .addMethod(
+            getUpdateRagCorpusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RAG_CORPUS)))
         .addMethod(
             getGetRagCorpusMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1306,6 +1421,7 @@ public final class VertexRagDataServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new VertexRagDataServiceFileDescriptorSupplier())
                       .addMethod(getCreateRagCorpusMethod())
+                      .addMethod(getUpdateRagCorpusMethod())
                       .addMethod(getGetRagCorpusMethod())
                       .addMethod(getListRagCorporaMethod())
                       .addMethod(getDeleteRagCorpusMethod())

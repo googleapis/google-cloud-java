@@ -74,5 +74,46 @@ public interface RagQueryOrBuilder
    */
   int getSimilarityTopK();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ranking field is set.
+   */
+  boolean hasRanking();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ranking.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for hybrid search results ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.RagQuery.QueryCase getQueryCase();
 }
