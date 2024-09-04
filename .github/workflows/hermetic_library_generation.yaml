@@ -20,5 +20,10 @@ on:
 jobs:
   library_generation:
     uses: ./.github/workflows/reusable_library_generation.yaml
+    with:
+      repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
+      repository: ${{ github.repository }}
+      base_ref: ${{ github.base_ref }}
+      head_ref: ${{ github.head_ref }}
     secrets:
       token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
