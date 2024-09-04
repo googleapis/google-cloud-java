@@ -17,9 +17,6 @@ name: Hermetic library generation upon generation config change through pull req
 on:
   pull_request:
   workflow_call:
-    secrets:
-      token:
-        required: true
 
 env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
