@@ -13,7 +13,10 @@
 # limitations under the License.
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
-name: Run hermetic library generation
+
+# This workflow is called by hermetic_library_generation.yaml and workflows
+# in handwritten libraries.
+name: Reusable library generation
 on:
   workflow_call:
     secrets:
@@ -24,7 +27,7 @@ env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
 jobs:
-  library_generation:
+  library_generation_impl:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4

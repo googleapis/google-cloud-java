@@ -19,6 +19,6 @@ on:
 
 jobs:
   library_generation:
-    uses: ./.github/workflows/reusable_hermetic_library_generation.yaml
+    uses: ./.github/workflows/reusable_library_generation.yaml
     secrets:
       token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
