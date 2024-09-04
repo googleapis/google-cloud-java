@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.1](https://github.com/googleapis/java-shared-config/compare/v1.11.0...v1.11.1) (2024-09-03)
+
+
+### Dependencies
+
+* Update dependency com.puppycrawl.tools:checkstyle to v10.18.1 ([#899](https://github.com/googleapis/java-shared-config/issues/899)) ([47317ef](https://github.com/googleapis/java-shared-config/commit/47317efcc5db0beee90ae20adfd85d51f8c838e7))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.0 ([#882](https://github.com/googleapis/java-shared-config/issues/882)) ([893967e](https://github.com/googleapis/java-shared-config/commit/893967e34347c14c1abcf778893e3b2fe790c215))
+
 ## [1.11.0](https://github.com/googleapis/java-shared-config/compare/v1.10.0...v1.11.0) (2024-08-16)
 
 
