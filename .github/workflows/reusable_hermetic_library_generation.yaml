@@ -13,7 +13,7 @@
 # limitations under the License.
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
-name: Hermetic library generation upon generation config change through pull requests
+name: Run hermetic library generation
 on:
   workflow_call:
     secrets:
