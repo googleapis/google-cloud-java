@@ -28,8 +28,8 @@ public interface CloudSqlSourceOrBuilder
    *
    *
    * <pre>
-   * The project ID that the Cloud SQL source is in with a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
+   * The project ID that contains the Cloud SQL source. Has a length limit of
+   * 128 characters. If not specified, inherits the project ID from the parent
    * request.
    * </pre>
    *
@@ -42,8 +42,8 @@ public interface CloudSqlSourceOrBuilder
    *
    *
    * <pre>
-   * The project ID that the Cloud SQL source is in with a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
+   * The project ID that contains the Cloud SQL source. Has a length limit of
+   * 128 characters. If not specified, inherits the project ID from the parent
    * request.
    * </pre>
    *

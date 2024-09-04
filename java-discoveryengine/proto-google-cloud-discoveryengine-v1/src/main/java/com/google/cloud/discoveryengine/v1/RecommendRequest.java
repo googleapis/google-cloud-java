@@ -87,7 +87,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of a [ServingConfig][]:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
@@ -123,7 +124,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of a [ServingConfig][]:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
@@ -1336,7 +1338,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of a [ServingConfig][]:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
@@ -1371,7 +1374,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of a [ServingConfig][]:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
@@ -1406,7 +1410,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of a [ServingConfig][]:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
@@ -1440,7 +1445,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of a [ServingConfig][]:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
@@ -1470,7 +1476,8 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of a [ServingConfig][]:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]:
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *

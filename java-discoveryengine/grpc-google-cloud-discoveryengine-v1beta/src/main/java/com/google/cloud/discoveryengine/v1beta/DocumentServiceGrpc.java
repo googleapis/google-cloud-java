@@ -362,6 +362,59 @@ public final class DocumentServiceGrpc {
     return getPurgeDocumentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest,
+          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+      getBatchGetDocumentsMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetDocumentsMetadata",
+      requestType = com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.class,
+      responseType =
+          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest,
+          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+      getBatchGetDocumentsMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest,
+            com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+        getBatchGetDocumentsMetadataMethod;
+    if ((getBatchGetDocumentsMetadataMethod =
+            DocumentServiceGrpc.getBatchGetDocumentsMetadataMethod)
+        == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getBatchGetDocumentsMetadataMethod =
+                DocumentServiceGrpc.getBatchGetDocumentsMetadataMethod)
+            == null) {
+          DocumentServiceGrpc.getBatchGetDocumentsMetadataMethod =
+              getBatchGetDocumentsMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest,
+                          com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchGetDocumentsMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta
+                                  .BatchGetDocumentsMetadataRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta
+                                  .BatchGetDocumentsMetadataResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("BatchGetDocumentsMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getBatchGetDocumentsMetadataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DocumentServiceStub> factory =
@@ -533,6 +586,24 @@ public final class DocumentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPurgeDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets index freshness metadata for
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s. Supported for
+     * website search only.
+     * </pre>
+     */
+    default void batchGetDocumentsMetadata(
+        com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchGetDocumentsMetadataMethod(), responseObserver);
     }
   }
 
@@ -708,6 +779,26 @@ public final class DocumentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets index freshness metadata for
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s. Supported for
+     * website search only.
+     * </pre>
+     */
+    public void batchGetDocumentsMetadata(
+        com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchGetDocumentsMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -839,6 +930,22 @@ public final class DocumentServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPurgeDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets index freshness metadata for
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s. Supported for
+     * website search only.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse
+        batchGetDocumentsMetadata(
+            com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetDocumentsMetadataMethod(), getCallOptions(), request);
     }
   }
 
@@ -976,6 +1083,23 @@ public final class DocumentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPurgeDocumentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets index freshness metadata for
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s. Supported for
+     * website search only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadata(
+            com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchGetDocumentsMetadataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DOCUMENT = 0;
@@ -985,6 +1109,7 @@ public final class DocumentServiceGrpc {
   private static final int METHODID_DELETE_DOCUMENT = 4;
   private static final int METHODID_IMPORT_DOCUMENTS = 5;
   private static final int METHODID_PURGE_DOCUMENTS = 6;
+  private static final int METHODID_BATCH_GET_DOCUMENTS_METADATA = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1042,6 +1167,13 @@ public final class DocumentServiceGrpc {
           serviceImpl.purgeDocuments(
               (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_GET_DOCUMENTS_METADATA:
+          serviceImpl.batchGetDocumentsMetadata(
+              (com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1107,6 +1239,13 @@ public final class DocumentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
                     com.google.longrunning.Operation>(service, METHODID_PURGE_DOCUMENTS)))
+        .addMethod(
+            getBatchGetDocumentsMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest,
+                    com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse>(
+                    service, METHODID_BATCH_GET_DOCUMENTS_METADATA)))
         .build();
   }
 
@@ -1165,6 +1304,7 @@ public final class DocumentServiceGrpc {
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getImportDocumentsMethod())
                       .addMethod(getPurgeDocumentsMethod())
+                      .addMethod(getBatchGetDocumentsMetadataMethod())
                       .build();
         }
       }

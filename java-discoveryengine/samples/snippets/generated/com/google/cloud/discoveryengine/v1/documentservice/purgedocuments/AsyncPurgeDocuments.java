@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.discoveryengine.v1.BranchName;
 import com.google.cloud.discoveryengine.v1.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeErrorConfig;
 import com.google.longrunning.Operation;
 
 public class AsyncPurgeDocuments {
@@ -43,6 +44,7 @@ public class AsyncPurgeDocuments {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       ApiFuture<Operation> future =

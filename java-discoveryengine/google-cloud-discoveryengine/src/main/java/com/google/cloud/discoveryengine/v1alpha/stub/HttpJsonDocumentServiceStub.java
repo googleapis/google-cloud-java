@@ -35,6 +35,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
@@ -407,6 +409,46 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DocumentService/BatchGetDocumentsMetadata")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchGetDocumentsMetadataRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=projects/*/locations/*/dataStores/*/branches/*}/batchGetDocumentsMetadata",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetDocumentsMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/branches/*}/batchGetDocumentsMetadata")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetDocumentsMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "matcher", request.getMatcher());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchGetDocumentsMetadataResponse>newBuilder()
+                      .setDefaultInstance(BatchGetDocumentsMetadataResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -424,6 +466,8 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
       purgeDocumentsOperationCallable;
   private final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable;
+  private final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -734,6 +778,19 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataTransportSettings =
+            HttpJsonCallSettings
+                .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMetadataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -776,6 +833,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
             getProcessedDocumentTransportSettings,
             settings.getProcessedDocumentSettings(),
             clientContext);
+    this.batchGetDocumentsMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchGetDocumentsMetadataTransportSettings,
+            settings.batchGetDocumentsMetadataSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -792,6 +854,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     methodDescriptors.add(importDocumentsMethodDescriptor);
     methodDescriptors.add(purgeDocumentsMethodDescriptor);
     methodDescriptors.add(getProcessedDocumentMethodDescriptor);
+    methodDescriptors.add(batchGetDocumentsMetadataMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -856,6 +919,12 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable() {
     return getProcessedDocumentCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return batchGetDocumentsMetadataCallable;
   }
 
   @Override

@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
@@ -146,6 +148,20 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessedDocument.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataMethodDescriptor =
+          MethodDescriptor
+              .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DocumentService/BatchGetDocumentsMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -163,6 +179,8 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
       purgeDocumentsOperationCallable;
   private final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable;
+  private final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -289,6 +307,18 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataTransportSettings =
+            GrpcCallSettings
+                .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -330,6 +360,11 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
         callableFactory.createUnaryCallable(
             getProcessedDocumentTransportSettings,
             settings.getProcessedDocumentSettings(),
+            clientContext);
+    this.batchGetDocumentsMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchGetDocumentsMetadataTransportSettings,
+            settings.batchGetDocumentsMetadataSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -397,6 +432,12 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable() {
     return getProcessedDocumentCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return batchGetDocumentsMetadataCallable;
   }
 
   @Override

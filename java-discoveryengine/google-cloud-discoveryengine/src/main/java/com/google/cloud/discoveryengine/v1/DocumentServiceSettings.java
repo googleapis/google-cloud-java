@@ -129,6 +129,12 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
     return ((DocumentServiceStubSettings) getStubSettings()).purgeDocumentsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchGetDocumentsMetadata. */
+  public UnaryCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).batchGetDocumentsMetadataSettings();
+  }
+
   public static final DocumentServiceSettings create(DocumentServiceStubSettings stub)
       throws IOException {
     return new DocumentServiceSettings.Builder(stub.toBuilder()).build();
@@ -290,6 +296,13 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
             PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
         purgeDocumentsOperationSettings() {
       return getStubSettingsBuilder().purgeDocumentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetDocumentsMetadata. */
+    public UnaryCallSettings.Builder<
+            BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataSettings() {
+      return getStubSettingsBuilder().batchGetDocumentsMetadataSettings();
     }
 
     @Override

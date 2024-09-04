@@ -48,6 +48,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
@@ -136,6 +138,9 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       purgeDocumentsOperationSettings;
   private final UnaryCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentSettings;
+  private final UnaryCallSettings<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataSettings;
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
       LIST_DOCUMENTS_PAGE_STR_DESC =
@@ -244,6 +249,12 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
   public UnaryCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentSettings() {
     return getProcessedDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchGetDocumentsMetadata. */
+  public UnaryCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataSettings() {
+    return batchGetDocumentsMetadataSettings;
   }
 
   public DocumentServiceStub createStub() throws IOException {
@@ -367,6 +378,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     purgeDocumentsSettings = settingsBuilder.purgeDocumentsSettings().build();
     purgeDocumentsOperationSettings = settingsBuilder.purgeDocumentsOperationSettings().build();
     getProcessedDocumentSettings = settingsBuilder.getProcessedDocumentSettings().build();
+    batchGetDocumentsMetadataSettings = settingsBuilder.batchGetDocumentsMetadataSettings().build();
   }
 
   /** Builder for DocumentServiceStubSettings. */
@@ -391,6 +403,9 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
         purgeDocumentsOperationSettings;
     private final UnaryCallSettings.Builder<GetProcessedDocumentRequest, ProcessedDocument>
         getProcessedDocumentSettings;
+    private final UnaryCallSettings.Builder<
+            BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -453,6 +468,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       purgeDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       purgeDocumentsOperationSettings = OperationCallSettings.newBuilder();
       getProcessedDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchGetDocumentsMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -463,7 +479,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               deleteDocumentSettings,
               importDocumentsSettings,
               purgeDocumentsSettings,
-              getProcessedDocumentSettings);
+              getProcessedDocumentSettings,
+              batchGetDocumentsMetadataSettings);
       initDefaults(this);
     }
 
@@ -480,6 +497,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       purgeDocumentsSettings = settings.purgeDocumentsSettings.toBuilder();
       purgeDocumentsOperationSettings = settings.purgeDocumentsOperationSettings.toBuilder();
       getProcessedDocumentSettings = settings.getProcessedDocumentSettings.toBuilder();
+      batchGetDocumentsMetadataSettings = settings.batchGetDocumentsMetadataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -490,7 +508,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               deleteDocumentSettings,
               importDocumentsSettings,
               purgeDocumentsSettings,
-              getProcessedDocumentSettings);
+              getProcessedDocumentSettings,
+              batchGetDocumentsMetadataSettings);
     }
 
     private static Builder createDefault() {
@@ -555,6 +574,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
 
       builder
           .getProcessedDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .batchGetDocumentsMetadataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -679,6 +703,13 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     public UnaryCallSettings.Builder<GetProcessedDocumentRequest, ProcessedDocument>
         getProcessedDocumentSettings() {
       return getProcessedDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetDocumentsMetadata. */
+    public UnaryCallSettings.Builder<
+            BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataSettings() {
+      return batchGetDocumentsMetadataSettings;
     }
 
     @Override

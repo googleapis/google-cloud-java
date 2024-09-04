@@ -74,7 +74,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID that the Bigtable source is in with a length limit of 128
+   * The project ID that contains the Bigtable source. Has a length limit of 128
    * characters. If not specified, inherits the project ID from the parent
    * request.
    * </pre>
@@ -99,7 +99,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID that the Bigtable source is in with a length limit of 128
+   * The project ID that contains the Bigtable source. Has a length limit of 128
    * characters. If not specified, inherits the project ID from the parent
    * request.
    * </pre>
@@ -723,7 +723,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID that the Bigtable source is in with a length limit of 128
+     * The project ID that contains the Bigtable source. Has a length limit of 128
      * characters. If not specified, inherits the project ID from the parent
      * request.
      * </pre>
@@ -747,7 +747,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID that the Bigtable source is in with a length limit of 128
+     * The project ID that contains the Bigtable source. Has a length limit of 128
      * characters. If not specified, inherits the project ID from the parent
      * request.
      * </pre>
@@ -771,7 +771,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID that the Bigtable source is in with a length limit of 128
+     * The project ID that contains the Bigtable source. Has a length limit of 128
      * characters. If not specified, inherits the project ID from the parent
      * request.
      * </pre>
@@ -794,7 +794,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID that the Bigtable source is in with a length limit of 128
+     * The project ID that contains the Bigtable source. Has a length limit of 128
      * characters. If not specified, inherits the project ID from the parent
      * request.
      * </pre>
@@ -813,7 +813,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID that the Bigtable source is in with a length limit of 128
+     * The project ID that contains the Bigtable source. Has a length limit of 128
      * characters. If not specified, inherits the project ID from the parent
      * request.
      * </pre>

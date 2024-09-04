@@ -43,6 +43,7 @@ public class AsyncCreateDataStoreLRO {
               .setDataStore(DataStore.newBuilder().build())
               .setDataStoreId("dataStoreId929489618")
               .setCreateAdvancedSiteSearch(true)
+              .setSkipDefaultSchemaCreation(true)
               .build();
       OperationFuture<DataStore, CreateDataStoreMetadata> future =
           dataStoreServiceClient.createDataStoreOperationCallable().futureCall(request);

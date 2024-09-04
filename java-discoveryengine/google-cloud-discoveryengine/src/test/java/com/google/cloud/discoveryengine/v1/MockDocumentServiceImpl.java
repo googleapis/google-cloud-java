@@ -205,4 +205,26 @@ public class MockDocumentServiceImpl extends DocumentServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void batchGetDocumentsMetadata(
+      BatchGetDocumentsMetadataRequest request,
+      StreamObserver<BatchGetDocumentsMetadataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchGetDocumentsMetadataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchGetDocumentsMetadataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchGetDocumentsMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchGetDocumentsMetadataResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

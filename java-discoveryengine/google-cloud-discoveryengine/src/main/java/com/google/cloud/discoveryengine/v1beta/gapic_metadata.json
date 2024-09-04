@@ -130,6 +130,9 @@
         "grpc": {
           "libraryClient": "DocumentServiceClient",
           "rpcs": {
+            "BatchGetDocumentsMetadata": {
+              "methods": ["batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadataCallable"]
+            },
             "CreateDocument": {
               "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
             },

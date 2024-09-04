@@ -55,6 +55,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     userPseudoId_ = "";
     rankingExpression_ = "";
     session_ = "";
+    relevanceThreshold_ = 0;
   }
 
   @java.lang.Override
@@ -90,6 +91,216 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.discoveryengine.v1beta.SearchRequest.class,
             com.google.cloud.discoveryengine.v1beta.SearchRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results. The higher relevance
+   * threshold is, the higher relevant results are shown and the less number of
+   * results are returned.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold}
+   */
+  public enum RelevanceThreshold implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. In this case, server behavior defaults to Google defined
+     * threshold.
+     * </pre>
+     *
+     * <code>RELEVANCE_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    RELEVANCE_THRESHOLD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Lowest relevance threshold.
+     * </pre>
+     *
+     * <code>LOWEST = 1;</code>
+     */
+    LOWEST(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low relevance threshold.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    LOW(2),
+    /**
+     *
+     *
+     * <pre>
+     * Medium relevance threshold.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    MEDIUM(3),
+    /**
+     *
+     *
+     * <pre>
+     * High relevance threshold.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    HIGH(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. In this case, server behavior defaults to Google defined
+     * threshold.
+     * </pre>
+     *
+     * <code>RELEVANCE_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    public static final int RELEVANCE_THRESHOLD_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Lowest relevance threshold.
+     * </pre>
+     *
+     * <code>LOWEST = 1;</code>
+     */
+    public static final int LOWEST_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Low relevance threshold.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    public static final int LOW_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Medium relevance threshold.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    public static final int MEDIUM_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * High relevance threshold.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    public static final int HIGH_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RelevanceThreshold valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RelevanceThreshold forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RELEVANCE_THRESHOLD_UNSPECIFIED;
+        case 1:
+          return LOWEST;
+        case 2:
+          return LOW;
+        case 3:
+          return MEDIUM;
+        case 4:
+          return HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>() {
+              public RelevanceThreshold findValueByNumber(int number) {
+                return RelevanceThreshold.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final RelevanceThreshold[] VALUES = values();
+
+    public static RelevanceThreshold valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RelevanceThreshold(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold)
   }
 
   public interface ImageQueryOrBuilder
@@ -15521,6 +15732,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Specifies whether to filter out queries that have low relevance. The
+       * default value is `false`.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true`, only queries with
+       * high relevance search results will generate answers.
+       * </pre>
+       *
+       * <code>bool ignore_low_relevant_content = 9;</code>
+       *
+       * @return The ignoreLowRelevantContent.
+       */
+      boolean getIgnoreLowRelevantContent();
+
+      /**
+       *
+       *
+       * <pre>
        * If specified, the spec will be used to modify the prompt provided to
        * the LLM.
        * </pre>
@@ -17361,6 +17590,29 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return ignoreNonSummarySeekingQuery_;
       }
 
+      public static final int IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER = 9;
+      private boolean ignoreLowRelevantContent_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance. The
+       * default value is `false`.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true`, only queries with
+       * high relevance search results will generate answers.
+       * </pre>
+       *
+       * <code>bool ignore_low_relevant_content = 9;</code>
+       *
+       * @return The ignoreLowRelevantContent.
+       */
+      @java.lang.Override
+      public boolean getIgnoreLowRelevantContent() {
+        return ignoreLowRelevantContent_;
+      }
+
       public static final int MODEL_PROMPT_SPEC_FIELD_NUMBER = 5;
       private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec
               .ModelPromptSpec
@@ -17611,6 +17863,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (useSemanticChunks_ != false) {
           output.writeBool(8, useSemanticChunks_);
         }
+        if (ignoreLowRelevantContent_ != false) {
+          output.writeBool(9, ignoreLowRelevantContent_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -17646,6 +17901,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (useSemanticChunks_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, useSemanticChunks_);
         }
+        if (ignoreLowRelevantContent_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(9, ignoreLowRelevantContent_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -17670,6 +17929,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
         if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
           return false;
+        if (getIgnoreLowRelevantContent() != other.getIgnoreLowRelevantContent()) return false;
         if (hasModelPromptSpec() != other.hasModelPromptSpec()) return false;
         if (hasModelPromptSpec()) {
           if (!getModelPromptSpec().equals(other.getModelPromptSpec())) return false;
@@ -17701,6 +17961,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash =
             (53 * hash)
                 + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
+        hash = (37 * hash) + IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreLowRelevantContent());
         if (hasModelPromptSpec()) {
           hash = (37 * hash) + MODEL_PROMPT_SPEC_FIELD_NUMBER;
           hash = (53 * hash) + getModelPromptSpec().hashCode();
@@ -17896,6 +18159,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           includeCitations_ = false;
           ignoreAdversarialQuery_ = false;
           ignoreNonSummarySeekingQuery_ = false;
+          ignoreLowRelevantContent_ = false;
           modelPromptSpec_ = null;
           if (modelPromptSpecBuilder_ != null) {
             modelPromptSpecBuilder_.dispose();
@@ -17965,22 +18229,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
           }
-          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.ignoreLowRelevantContent_ = ignoreLowRelevantContent_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.modelPromptSpec_ =
                 modelPromptSpecBuilder_ == null
                     ? modelPromptSpec_
                     : modelPromptSpecBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             result.languageCode_ = languageCode_;
           }
-          if (((from_bitField0_ & 0x00000040) != 0)) {
+          if (((from_bitField0_ & 0x00000080) != 0)) {
             result.modelSpec_ = modelSpecBuilder_ == null ? modelSpec_ : modelSpecBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
-          if (((from_bitField0_ & 0x00000080) != 0)) {
+          if (((from_bitField0_ & 0x00000100) != 0)) {
             result.useSemanticChunks_ = useSemanticChunks_;
           }
           result.bitField0_ |= to_bitField0_;
@@ -18054,12 +18321,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getIgnoreNonSummarySeekingQuery() != false) {
             setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
           }
+          if (other.getIgnoreLowRelevantContent() != false) {
+            setIgnoreLowRelevantContent(other.getIgnoreLowRelevantContent());
+          }
           if (other.hasModelPromptSpec()) {
             mergeModelPromptSpec(other.getModelPromptSpec());
           }
           if (!other.getLanguageCode().isEmpty()) {
             languageCode_ = other.languageCode_;
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000040;
             onChanged();
           }
           if (other.hasModelSpec()) {
@@ -18122,27 +18392,33 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getModelPromptSpecFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 42
                 case 50:
                   {
                     languageCode_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000020;
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 50
                 case 58:
                   {
                     input.readMessage(getModelSpecFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000040;
+                    bitField0_ |= 0x00000080;
                     break;
                   } // case 58
                 case 64:
                   {
                     useSemanticChunks_ = input.readBool();
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 64
+                case 72:
+                  {
+                    ignoreLowRelevantContent_ = input.readBool();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 72
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18503,6 +18779,74 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private boolean ignoreLowRelevantContent_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @return The ignoreLowRelevantContent.
+         */
+        @java.lang.Override
+        public boolean getIgnoreLowRelevantContent() {
+          return ignoreLowRelevantContent_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @param value The ignoreLowRelevantContent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreLowRelevantContent(boolean value) {
+
+          ignoreLowRelevantContent_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreLowRelevantContent() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ignoreLowRelevantContent_ = false;
+          onChanged();
+          return this;
+        }
+
         private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelPromptSpec
             modelPromptSpec_;
@@ -18529,7 +18873,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the modelPromptSpec field is set.
          */
         public boolean hasModelPromptSpec() {
-          return ((bitField0_ & 0x00000010) != 0);
+          return ((bitField0_ & 0x00000020) != 0);
         }
         /**
          *
@@ -18581,7 +18925,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelPromptSpecBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -18606,7 +18950,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelPromptSpecBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -18627,7 +18971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     .ModelPromptSpec
                 value) {
           if (modelPromptSpecBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)
+            if (((bitField0_ & 0x00000020) != 0)
                 && modelPromptSpec_ != null
                 && modelPromptSpec_
                     != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
@@ -18640,7 +18984,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             modelPromptSpecBuilder_.mergeFrom(value);
           }
           if (modelPromptSpec_ != null) {
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             onChanged();
           }
           return this;
@@ -18658,7 +19002,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearModelPromptSpec() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           modelPromptSpec_ = null;
           if (modelPromptSpecBuilder_ != null) {
             modelPromptSpecBuilder_.dispose();
@@ -18682,7 +19026,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelPromptSpec.Builder
             getModelPromptSpecBuilder() {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return getModelPromptSpecFieldBuilder().getBuilder();
         }
@@ -18813,7 +19157,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           languageCode_ = value;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -18832,7 +19176,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearLanguageCode() {
           languageCode_ = getDefaultInstance().getLanguageCode();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
           return this;
         }
@@ -18856,7 +19200,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           languageCode_ = value;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -18887,7 +19231,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the modelSpec field is set.
          */
         public boolean hasModelSpec() {
-          return ((bitField0_ & 0x00000040) != 0);
+          return ((bitField0_ & 0x00000080) != 0);
         }
         /**
          *
@@ -18939,7 +19283,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelSpecBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -18964,7 +19308,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelSpecBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -18985,7 +19329,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     .ModelSpec
                 value) {
           if (modelSpecBuilder_ == null) {
-            if (((bitField0_ & 0x00000040) != 0)
+            if (((bitField0_ & 0x00000080) != 0)
                 && modelSpec_ != null
                 && modelSpec_
                     != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
@@ -18998,7 +19342,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             modelSpecBuilder_.mergeFrom(value);
           }
           if (modelSpec_ != null) {
-            bitField0_ |= 0x00000040;
+            bitField0_ |= 0x00000080;
             onChanged();
           }
           return this;
@@ -19016,7 +19360,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearModelSpec() {
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           modelSpec_ = null;
           if (modelSpecBuilder_ != null) {
             modelSpecBuilder_.dispose();
@@ -19040,7 +19384,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelSpec.Builder
             getModelSpecBuilder() {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return getModelSpecFieldBuilder().getBuilder();
         }
@@ -19144,7 +19488,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder setUseSemanticChunks(boolean value) {
 
           useSemanticChunks_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -19165,7 +19509,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUseSemanticChunks() {
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           useSemanticChunks_ = false;
           onChanged();
           return this;
@@ -29140,9 +29484,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -29171,9 +29518,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -30606,6 +30956,57 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : sessionSpec_;
   }
 
+  public static final int RELEVANCE_THRESHOLD_FIELD_NUMBER = 44;
+  private int relevanceThreshold_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for relevanceThreshold.
+   */
+  @java.lang.Override
+  public int getRelevanceThresholdValue() {
+    return relevanceThreshold_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The relevanceThreshold.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold
+      getRelevanceThreshold() {
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold result =
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold.forNumber(
+            relevanceThreshold_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -30704,6 +31105,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(42, getSessionSpec());
+    }
+    if (relevanceThreshold_
+        != com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold
+            .RELEVANCE_THRESHOLD_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(44, relevanceThreshold_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -30819,6 +31226,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSessionSpec());
     }
+    if (relevanceThreshold_
+        != com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold
+            .RELEVANCE_THRESHOLD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(44, relevanceThreshold_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -30896,6 +31309,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionSpec()) {
       if (!getSessionSpec().equals(other.getSessionSpec())) return false;
     }
+    if (relevanceThreshold_ != other.relevanceThreshold_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -30993,6 +31407,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SESSION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getSessionSpec().hashCode();
     }
+    hash = (37 * hash) + RELEVANCE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + relevanceThreshold_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -31262,6 +31678,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         sessionSpecBuilder_.dispose();
         sessionSpecBuilder_ = null;
       }
+      relevanceThreshold_ = 0;
       return this;
     }
 
@@ -31430,6 +31847,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.sessionSpec_ =
             sessionSpecBuilder_ == null ? sessionSpec_ : sessionSpecBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.relevanceThreshold_ = relevanceThreshold_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -31637,6 +32057,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSessionSpec()) {
         mergeSessionSpec(other.getSessionSpec());
+      }
+      if (other.relevanceThreshold_ != 0) {
+        setRelevanceThresholdValue(other.getRelevanceThresholdValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -31873,6 +32296,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x10000000;
                 break;
               } // case 338
+            case 352:
+              {
+                relevanceThreshold_ = input.readEnum();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 352
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -33565,9 +33994,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -33595,9 +34027,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -33625,9 +34060,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -33654,9 +34092,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -33679,9 +34120,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * object. Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -37753,6 +38197,131 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         sessionSpec_ = null;
       }
       return sessionSpecBuilder_;
+    }
+
+    private int relevanceThreshold_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for relevanceThreshold.
+     */
+    @java.lang.Override
+    public int getRelevanceThresholdValue() {
+      return relevanceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for relevanceThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceThresholdValue(int value) {
+      relevanceThreshold_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+     * </code>
+     *
+     * @return The relevanceThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold
+        getRelevanceThreshold() {
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold result =
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold.forNumber(
+              relevanceThreshold_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+     * </code>
+     *
+     * @param value The relevanceThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceThreshold(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x20000000;
+      relevanceThreshold_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelevanceThreshold() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      relevanceThreshold_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

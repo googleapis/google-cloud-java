@@ -229,8 +229,9 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -244,8 +245,9 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -259,8 +261,9 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -275,8 +278,9 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>

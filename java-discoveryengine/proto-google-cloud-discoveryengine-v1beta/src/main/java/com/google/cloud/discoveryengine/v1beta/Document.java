@@ -1376,6 +1376,1338 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface IndexStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     *
+     * @return Whether the indexTime field is set.
+     */
+    boolean hasIndexTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     *
+     * @return The indexTime.
+     */
+    com.google.protobuf.Timestamp getIndexTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    java.util.List<com.google.rpc.Status> getErrorSamplesList();
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    com.google.rpc.Status getErrorSamples(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    int getErrorSamplesCount();
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Index status of the document.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.IndexStatus}
+   */
+  public static final class IndexStatus extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
+      IndexStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IndexStatus.newBuilder() to construct.
+    private IndexStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IndexStatus() {
+      errorSamples_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IndexStatus();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.class,
+              com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int INDEX_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp indexTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     *
+     * @return Whether the indexTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasIndexTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     *
+     * @return The indexTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getIndexTime() {
+      return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the document was indexed.
+     * If this field is populated, it means the document has been indexed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp index_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
+      return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+    }
+
+    public static final int ERROR_SAMPLES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.rpc.Status> errorSamples_;
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
+      return errorSamples_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
+      return errorSamples_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    @java.lang.Override
+    public int getErrorSamplesCount() {
+      return errorSamples_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getErrorSamples(int index) {
+      return errorSamples_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample of errors encountered while indexing the document.
+     * If this field is populated, the document is not indexed due to errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status error_samples = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index) {
+      return errorSamples_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getIndexTime());
+      }
+      for (int i = 0; i < errorSamples_.size(); i++) {
+        output.writeMessage(2, errorSamples_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIndexTime());
+      }
+      for (int i = 0; i < errorSamples_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, errorSamples_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.Document.IndexStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.Document.IndexStatus other =
+          (com.google.cloud.discoveryengine.v1beta.Document.IndexStatus) obj;
+
+      if (hasIndexTime() != other.hasIndexTime()) return false;
+      if (hasIndexTime()) {
+        if (!getIndexTime().equals(other.getIndexTime())) return false;
+      }
+      if (!getErrorSamplesList().equals(other.getErrorSamplesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasIndexTime()) {
+        hash = (37 * hash) + INDEX_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getIndexTime().hashCode();
+      }
+      if (getErrorSamplesCount() > 0) {
+        hash = (37 * hash) + ERROR_SAMPLES_FIELD_NUMBER;
+        hash = (53 * hash) + getErrorSamplesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Index status of the document.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.IndexStatus}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.class,
+                com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getIndexTimeFieldBuilder();
+          getErrorSamplesFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        indexTime_ = null;
+        if (indexTimeBuilder_ != null) {
+          indexTimeBuilder_.dispose();
+          indexTimeBuilder_ = null;
+        }
+        if (errorSamplesBuilder_ == null) {
+          errorSamples_ = java.util.Collections.emptyList();
+        } else {
+          errorSamples_ = null;
+          errorSamplesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus build() {
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus result =
+            new com.google.cloud.discoveryengine.v1beta.Document.IndexStatus(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.Document.IndexStatus result) {
+        if (errorSamplesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            errorSamples_ = java.util.Collections.unmodifiableList(errorSamples_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.errorSamples_ = errorSamples_;
+        } else {
+          result.errorSamples_ = errorSamplesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.Document.IndexStatus result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.Document.IndexStatus) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1beta.Document.IndexStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1beta.Document.IndexStatus other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance())
+          return this;
+        if (other.hasIndexTime()) {
+          mergeIndexTime(other.getIndexTime());
+        }
+        if (errorSamplesBuilder_ == null) {
+          if (!other.errorSamples_.isEmpty()) {
+            if (errorSamples_.isEmpty()) {
+              errorSamples_ = other.errorSamples_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureErrorSamplesIsMutable();
+              errorSamples_.addAll(other.errorSamples_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.errorSamples_.isEmpty()) {
+            if (errorSamplesBuilder_.isEmpty()) {
+              errorSamplesBuilder_.dispose();
+              errorSamplesBuilder_ = null;
+              errorSamples_ = other.errorSamples_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              errorSamplesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getErrorSamplesFieldBuilder()
+                      : null;
+            } else {
+              errorSamplesBuilder_.addAllMessages(other.errorSamples_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getIndexTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.rpc.Status m =
+                      input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                  if (errorSamplesBuilder_ == null) {
+                    ensureErrorSamplesIsMutable();
+                    errorSamples_.add(m);
+                  } else {
+                    errorSamplesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp indexTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          indexTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       *
+       * @return Whether the indexTime field is set.
+       */
+      public boolean hasIndexTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       *
+       * @return The indexTime.
+       */
+      public com.google.protobuf.Timestamp getIndexTime() {
+        if (indexTimeBuilder_ == null) {
+          return indexTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : indexTime_;
+        } else {
+          return indexTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public Builder setIndexTime(com.google.protobuf.Timestamp value) {
+        if (indexTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          indexTime_ = value;
+        } else {
+          indexTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public Builder setIndexTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (indexTimeBuilder_ == null) {
+          indexTime_ = builderForValue.build();
+        } else {
+          indexTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public Builder mergeIndexTime(com.google.protobuf.Timestamp value) {
+        if (indexTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && indexTime_ != null
+              && indexTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getIndexTimeBuilder().mergeFrom(value);
+          } else {
+            indexTime_ = value;
+          }
+        } else {
+          indexTimeBuilder_.mergeFrom(value);
+        }
+        if (indexTime_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public Builder clearIndexTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        indexTime_ = null;
+        if (indexTimeBuilder_ != null) {
+          indexTimeBuilder_.dispose();
+          indexTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getIndexTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getIndexTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
+        if (indexTimeBuilder_ != null) {
+          return indexTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return indexTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : indexTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time when the document was indexed.
+       * If this field is populated, it means the document has been indexed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp index_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getIndexTimeFieldBuilder() {
+        if (indexTimeBuilder_ == null) {
+          indexTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getIndexTime(), getParentForChildren(), isClean());
+          indexTime_ = null;
+        }
+        return indexTimeBuilder_;
+      }
+
+      private java.util.List<com.google.rpc.Status> errorSamples_ =
+          java.util.Collections.emptyList();
+
+      private void ensureErrorSamplesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          errorSamples_ = new java.util.ArrayList<com.google.rpc.Status>(errorSamples_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          errorSamplesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
+        if (errorSamplesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(errorSamples_);
+        } else {
+          return errorSamplesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public int getErrorSamplesCount() {
+        if (errorSamplesBuilder_ == null) {
+          return errorSamples_.size();
+        } else {
+          return errorSamplesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public com.google.rpc.Status getErrorSamples(int index) {
+        if (errorSamplesBuilder_ == null) {
+          return errorSamples_.get(index);
+        } else {
+          return errorSamplesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder setErrorSamples(int index, com.google.rpc.Status value) {
+        if (errorSamplesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureErrorSamplesIsMutable();
+          errorSamples_.set(index, value);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder setErrorSamples(int index, com.google.rpc.Status.Builder builderForValue) {
+        if (errorSamplesBuilder_ == null) {
+          ensureErrorSamplesIsMutable();
+          errorSamples_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          errorSamplesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder addErrorSamples(com.google.rpc.Status value) {
+        if (errorSamplesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureErrorSamplesIsMutable();
+          errorSamples_.add(value);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder addErrorSamples(int index, com.google.rpc.Status value) {
+        if (errorSamplesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureErrorSamplesIsMutable();
+          errorSamples_.add(index, value);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder addErrorSamples(com.google.rpc.Status.Builder builderForValue) {
+        if (errorSamplesBuilder_ == null) {
+          ensureErrorSamplesIsMutable();
+          errorSamples_.add(builderForValue.build());
+          onChanged();
+        } else {
+          errorSamplesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder addErrorSamples(int index, com.google.rpc.Status.Builder builderForValue) {
+        if (errorSamplesBuilder_ == null) {
+          ensureErrorSamplesIsMutable();
+          errorSamples_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          errorSamplesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder addAllErrorSamples(
+          java.lang.Iterable<? extends com.google.rpc.Status> values) {
+        if (errorSamplesBuilder_ == null) {
+          ensureErrorSamplesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorSamples_);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder clearErrorSamples() {
+        if (errorSamplesBuilder_ == null) {
+          errorSamples_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public Builder removeErrorSamples(int index) {
+        if (errorSamplesBuilder_ == null) {
+          ensureErrorSamplesIsMutable();
+          errorSamples_.remove(index);
+          onChanged();
+        } else {
+          errorSamplesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
+        return getErrorSamplesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index) {
+        if (errorSamplesBuilder_ == null) {
+          return errorSamples_.get(index);
+        } else {
+          return errorSamplesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public java.util.List<? extends com.google.rpc.StatusOrBuilder>
+          getErrorSamplesOrBuilderList() {
+        if (errorSamplesBuilder_ != null) {
+          return errorSamplesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(errorSamples_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
+        return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public com.google.rpc.Status.Builder addErrorSamplesBuilder(int index) {
+        return getErrorSamplesFieldBuilder()
+            .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A sample of errors encountered while indexing the document.
+       * If this field is populated, the document is not indexed due to errors.
+       * </pre>
+       *
+       * <code>repeated .google.rpc.Status error_samples = 2;</code>
+       */
+      public java.util.List<com.google.rpc.Status.Builder> getErrorSamplesBuilderList() {
+        return getErrorSamplesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          getErrorSamplesFieldBuilder() {
+        if (errorSamplesBuilder_ == null) {
+          errorSamplesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(
+                  errorSamples_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          errorSamples_ = null;
+        }
+        return errorSamplesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
+    private static final com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.Document.IndexStatus();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IndexStatus> PARSER =
+        new com.google.protobuf.AbstractParser<IndexStatus>() {
+          @java.lang.Override
+          public IndexStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IndexStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IndexStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int dataCase_ = 0;
 
@@ -1963,6 +3295,78 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
   }
 
+  public static final int INDEX_STATUS_FIELD_NUMBER = 15;
+  private com.google.cloud.discoveryengine.v1beta.Document.IndexStatus indexStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus getIndexStatus() {
+    return indexStatus_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance()
+        : indexStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder
+      getIndexStatusOrBuilder() {
+    return indexStatus_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance()
+        : indexStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2004,6 +3408,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getIndexTime());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(15, getIndexStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2042,6 +3449,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getIndexTime());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getIndexStatus());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2073,6 +3483,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasIndexTime() != other.hasIndexTime()) return false;
     if (hasIndexTime()) {
       if (!getIndexTime().equals(other.getIndexTime())) return false;
+    }
+    if (hasIndexStatus() != other.hasIndexStatus()) return false;
+    if (hasIndexStatus()) {
+      if (!getIndexStatus().equals(other.getIndexStatus())) return false;
     }
     if (!getDataCase().equals(other.getDataCase())) return false;
     switch (dataCase_) {
@@ -2115,6 +3529,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasIndexTime()) {
       hash = (37 * hash) + INDEX_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getIndexTime().hashCode();
+    }
+    if (hasIndexStatus()) {
+      hash = (37 * hash) + INDEX_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexStatus().hashCode();
     }
     switch (dataCase_) {
       case 4:
@@ -2272,6 +3690,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         getContentFieldBuilder();
         getDerivedStructDataFieldBuilder();
         getIndexTimeFieldBuilder();
+        getIndexStatusFieldBuilder();
       }
     }
 
@@ -2300,6 +3719,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (indexTimeBuilder_ != null) {
         indexTimeBuilder_.dispose();
         indexTimeBuilder_ = null;
+      }
+      indexStatus_ = null;
+      if (indexStatusBuilder_ != null) {
+        indexStatusBuilder_.dispose();
+        indexStatusBuilder_ = null;
       }
       dataCase_ = 0;
       data_ = null;
@@ -2367,6 +3791,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.indexStatus_ =
+            indexStatusBuilder_ == null ? indexStatus_ : indexStatusBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2453,6 +3882,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasIndexTime()) {
         mergeIndexTime(other.getIndexTime());
+      }
+      if (other.hasIndexStatus()) {
+        mergeIndexStatus(other.getIndexStatus());
       }
       switch (other.getDataCase()) {
         case STRUCT_DATA:
@@ -2554,6 +3986,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 122:
+              {
+                input.readMessage(getIndexStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4089,6 +5527,261 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         indexTime_ = null;
       }
       return indexTimeBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.Document.IndexStatus indexStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatus,
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder>
+        indexStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the indexStatus field is set.
+     */
+    public boolean hasIndexStatus() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The indexStatus.
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus getIndexStatus() {
+      if (indexStatusBuilder_ == null) {
+        return indexStatus_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance()
+            : indexStatus_;
+      } else {
+        return indexStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexStatus(
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus value) {
+      if (indexStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexStatus_ = value;
+      } else {
+        indexStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexStatus(
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder builderForValue) {
+      if (indexStatusBuilder_ == null) {
+        indexStatus_ = builderForValue.build();
+      } else {
+        indexStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIndexStatus(
+        com.google.cloud.discoveryengine.v1beta.Document.IndexStatus value) {
+      if (indexStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && indexStatus_ != null
+            && indexStatus_
+                != com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
+                    .getDefaultInstance()) {
+          getIndexStatusBuilder().mergeFrom(value);
+        } else {
+          indexStatus_ = value;
+        }
+      } else {
+        indexStatusBuilder_.mergeFrom(value);
+      }
+      if (indexStatus_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIndexStatus() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      indexStatus_ = null;
+      if (indexStatusBuilder_ != null) {
+        indexStatusBuilder_.dispose();
+        indexStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder
+        getIndexStatusBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getIndexStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder
+        getIndexStatusOrBuilder() {
+      if (indexStatusBuilder_ != null) {
+        return indexStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return indexStatus_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.getDefaultInstance()
+            : indexStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The index status of the document.
+     *
+     * * If document is indexed successfully, the index_time field is populated.
+     * * Otherwise, if document is not indexed due to errors, the error_samples
+     *   field is populated.
+     * * Otherwise, index_status is unset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatus,
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder>
+        getIndexStatusFieldBuilder() {
+      if (indexStatusBuilder_ == null) {
+        indexStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.Document.IndexStatus,
+                com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder,
+                com.google.cloud.discoveryengine.v1beta.Document.IndexStatusOrBuilder>(
+                getIndexStatus(), getParentForChildren(), isClean());
+        indexStatus_ = null;
+      }
+      return indexStatusBuilder_;
     }
 
     @java.lang.Override

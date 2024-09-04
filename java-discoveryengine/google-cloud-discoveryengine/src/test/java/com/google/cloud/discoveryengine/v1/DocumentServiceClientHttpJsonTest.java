@@ -98,6 +98,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -155,6 +156,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -316,6 +318,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -377,6 +380,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -436,6 +440,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -451,6 +456,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
+            .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -492,6 +498,7 @@ public class DocumentServiceClientHttpJsonTest {
               .setParentDocumentId("parentDocumentId1990105056")
               .setDerivedStructData(Struct.newBuilder().build())
               .setIndexTime(Timestamp.newBuilder().build())
+              .setIndexStatus(Document.IndexStatus.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDocument(document, updateMask);
@@ -679,6 +686,7 @@ public class DocumentServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setFilter("filter-1274492040")
+            .setErrorConfig(PurgeErrorConfig.newBuilder().build())
             .setForce(true)
             .build();
 
@@ -715,11 +723,108 @@ public class DocumentServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       client.purgeDocumentsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      client.batchGetDocumentsMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataTest2() throws Exception {
+    BatchGetDocumentsMetadataResponse expectedResponse =
+        BatchGetDocumentsMetadataResponse.newBuilder()
+            .addAllDocumentsMetadata(
+                new ArrayList<BatchGetDocumentsMetadataResponse.DocumentMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-3187/locations/location-3187/dataStores/dataStore-3187/branches/branche-3187";
+
+    BatchGetDocumentsMetadataResponse actualResponse = client.batchGetDocumentsMetadata(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchGetDocumentsMetadataExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-3187/locations/location-3187/dataStores/dataStore-3187/branches/branche-3187";
+      client.batchGetDocumentsMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

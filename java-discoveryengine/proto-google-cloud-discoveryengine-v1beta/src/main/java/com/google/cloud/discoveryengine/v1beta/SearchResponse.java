@@ -49,6 +49,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     correctedQuery_ = "";
     appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     geoSearchDebugInfo_ = java.util.Collections.emptyList();
+    oneBoxResults_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -7280,7 +7281,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The adversarial query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
        * is set to `true`.
        * </pre>
@@ -7294,7 +7295,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
        * </pre>
@@ -7354,6 +7355,34 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>NO_RELEVANT_CONTENT = 6;</code>
        */
       NO_RELEVANT_CONTENT(6),
+      /**
+       *
+       *
+       * <pre>
+       * The jail-breaking query ignored case.
+       *
+       * For example, "Reply in the tone of a competing company's CEO".
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_jail_breaking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
+       */
+      JAIL_BREAKING_QUERY_IGNORED(7),
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      CUSTOMER_POLICY_VIOLATION(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -7373,7 +7402,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The adversarial query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
        * is set to `true`.
        * </pre>
@@ -7387,7 +7416,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
        * </pre>
@@ -7447,6 +7476,34 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>NO_RELEVANT_CONTENT = 6;</code>
        */
       public static final int NO_RELEVANT_CONTENT_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * The jail-breaking query ignored case.
+       *
+       * For example, "Reply in the tone of a competing company's CEO".
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_jail_breaking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
+       */
+      public static final int JAIL_BREAKING_QUERY_IGNORED_VALUE = 7;
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 8;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -7486,6 +7543,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return LLM_ADDON_NOT_ENABLED;
           case 6:
             return NO_RELEVANT_CONTENT;
+          case 7:
+            return JAIL_BREAKING_QUERY_IGNORED;
+          case 8:
+            return CUSTOMER_POLICY_VIOLATION;
           default:
             return null;
         }
@@ -19787,6 +19848,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes of the values at the given index.
          */
         com.google.protobuf.ByteString getValuesBytes(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The querySegment.
+         */
+        java.lang.String getQuerySegment();
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        com.google.protobuf.ByteString getQuerySegmentBytes();
       }
       /**
        *
@@ -19811,6 +19897,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         private StringConstraint() {
           fieldName_ = "";
           values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          querySegment_ = "";
         }
 
         @java.lang.Override
@@ -19957,6 +20044,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return values_.getByteString(index);
         }
 
+        public static final int QUERY_SEGMENT_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object querySegment_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The querySegment.
+         */
+        @java.lang.Override
+        public java.lang.String getQuerySegment() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            querySegment_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getQuerySegmentBytes() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            querySegment_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -19978,6 +20116,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < values_.size(); i++) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, values_.getRaw(i));
           }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, querySegment_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -19997,6 +20138,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
             size += dataSize;
             size += 1 * getValuesList().size();
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, querySegment_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -20025,6 +20169,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
           if (!getFieldName().equals(other.getFieldName())) return false;
           if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!getQuerySegment().equals(other.getQuerySegment())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -20042,6 +20187,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + VALUES_FIELD_NUMBER;
             hash = (53 * hash) + getValuesList().hashCode();
           }
+          hash = (37 * hash) + QUERY_SEGMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getQuerySegment().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -20219,6 +20366,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = 0;
             fieldName_ = "";
             values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            querySegment_ = "";
             return this;
           }
 
@@ -20281,6 +20429,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             if (((from_bitField0_ & 0x00000002) != 0)) {
               values_.makeImmutable();
               result.values_ = values_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.querySegment_ = querySegment_;
             }
           }
 
@@ -20361,6 +20512,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               }
               onChanged();
             }
+            if (!other.getQuerySegment().isEmpty()) {
+              querySegment_ = other.querySegment_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -20400,6 +20556,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       values_.add(s);
                       break;
                     } // case 18
+                  case 26:
+                    {
+                      querySegment_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20708,6 +20870,112 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private java.lang.Object querySegment_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return The querySegment.
+           */
+          public java.lang.String getQuerySegment() {
+            java.lang.Object ref = querySegment_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              querySegment_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return The bytes for querySegment.
+           */
+          public com.google.protobuf.ByteString getQuerySegmentBytes() {
+            java.lang.Object ref = querySegment_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              querySegment_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @param value The querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegment(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            querySegment_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearQuerySegment() {
+            querySegment_ = getDefaultInstance().getQuerySegment();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @param value The bytes for querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegmentBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            querySegment_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -20856,6 +21124,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return The value.
          */
         double getValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The querySegment.
+         */
+        java.lang.String getQuerySegment();
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        com.google.protobuf.ByteString getQuerySegmentBytes();
       }
       /**
        *
@@ -20880,6 +21173,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         private NumberConstraint() {
           fieldName_ = "";
           comparison_ = 0;
+          querySegment_ = "";
         }
 
         @java.lang.Override
@@ -21260,6 +21554,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return value_;
         }
 
+        public static final int QUERY_SEGMENT_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object querySegment_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The querySegment.
+         */
+        @java.lang.Override
+        public java.lang.String getQuerySegment() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            querySegment_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getQuerySegmentBytes() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            querySegment_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -21288,6 +21633,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
             output.writeDouble(3, value_);
           }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, querySegment_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -21309,6 +21657,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
           if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
             size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, value_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, querySegment_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -21339,6 +21690,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           if (comparison_ != other.comparison_) return false;
           if (java.lang.Double.doubleToLongBits(getValue())
               != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+          if (!getQuerySegment().equals(other.getQuerySegment())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -21359,6 +21711,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               (53 * hash)
                   + com.google.protobuf.Internal.hashLong(
                       java.lang.Double.doubleToLongBits(getValue()));
+          hash = (37 * hash) + QUERY_SEGMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getQuerySegment().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -21537,6 +21891,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             fieldName_ = "";
             comparison_ = 0;
             value_ = 0D;
+            querySegment_ = "";
             return this;
           }
 
@@ -21601,6 +21956,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.value_ = value_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.querySegment_ = querySegment_;
             }
           }
 
@@ -21677,6 +22035,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             if (other.getValue() != 0D) {
               setValue(other.getValue());
             }
+            if (!other.getQuerySegment().isEmpty()) {
+              querySegment_ = other.querySegment_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -21721,6 +22084,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       bitField0_ |= 0x00000004;
                       break;
                     } // case 25
+                  case 34:
+                    {
+                      querySegment_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -22020,6 +22389,112 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private java.lang.Object querySegment_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return The querySegment.
+           */
+          public java.lang.String getQuerySegment() {
+            java.lang.Object ref = querySegment_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              querySegment_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return The bytes for querySegment.
+           */
+          public com.google.protobuf.ByteString getQuerySegmentBytes() {
+            java.lang.Object ref = querySegment_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              querySegment_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @param value The querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegment(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            querySegment_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearQuerySegment() {
+            querySegment_ = getDefaultInstance().getQuerySegment();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @param value The bytes for querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegmentBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            querySegment_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -22151,6 +22626,32 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes for address.
          */
         com.google.protobuf.ByteString getAddressBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The latitude of the geolocation inferred from the input query.
+         * </pre>
+         *
+         * <code>double latitude = 4;</code>
+         *
+         * @return The latitude.
+         */
+        double getLatitude();
+
+        /**
+         *
+         *
+         * <pre>
+         * The longitude of the geolocation inferred from the input query.
+         * </pre>
+         *
+         * <code>double longitude = 5;</code>
+         *
+         * @return The longitude.
+         */
+        double getLongitude();
 
         /**
          *
@@ -22323,6 +22824,42 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
 
+        public static final int LATITUDE_FIELD_NUMBER = 4;
+        private double latitude_ = 0D;
+        /**
+         *
+         *
+         * <pre>
+         * The latitude of the geolocation inferred from the input query.
+         * </pre>
+         *
+         * <code>double latitude = 4;</code>
+         *
+         * @return The latitude.
+         */
+        @java.lang.Override
+        public double getLatitude() {
+          return latitude_;
+        }
+
+        public static final int LONGITUDE_FIELD_NUMBER = 5;
+        private double longitude_ = 0D;
+        /**
+         *
+         *
+         * <pre>
+         * The longitude of the geolocation inferred from the input query.
+         * </pre>
+         *
+         * <code>double longitude = 5;</code>
+         *
+         * @return The longitude.
+         */
+        @java.lang.Override
+        public double getLongitude() {
+          return longitude_;
+        }
+
         public static final int RADIUS_IN_METERS_FIELD_NUMBER = 3;
         private float radiusInMeters_ = 0F;
         /**
@@ -22366,6 +22903,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           if (java.lang.Float.floatToRawIntBits(radiusInMeters_) != 0) {
             output.writeFloat(3, radiusInMeters_);
           }
+          if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
+            output.writeDouble(4, latitude_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
+            output.writeDouble(5, longitude_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -22383,6 +22926,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
           if (java.lang.Float.floatToRawIntBits(radiusInMeters_) != 0) {
             size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, radiusInMeters_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, latitude_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, longitude_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -22412,6 +22961,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
           if (!getFieldName().equals(other.getFieldName())) return false;
           if (!getAddress().equals(other.getAddress())) return false;
+          if (java.lang.Double.doubleToLongBits(getLatitude())
+              != java.lang.Double.doubleToLongBits(other.getLatitude())) return false;
+          if (java.lang.Double.doubleToLongBits(getLongitude())
+              != java.lang.Double.doubleToLongBits(other.getLongitude())) return false;
           if (java.lang.Float.floatToIntBits(getRadiusInMeters())
               != java.lang.Float.floatToIntBits(other.getRadiusInMeters())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -22429,6 +22982,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           hash = (53 * hash) + getFieldName().hashCode();
           hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
           hash = (53 * hash) + getAddress().hashCode();
+          hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getLatitude()));
+          hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getLongitude()));
           hash = (37 * hash) + RADIUS_IN_METERS_FIELD_NUMBER;
           hash = (53 * hash) + java.lang.Float.floatToIntBits(getRadiusInMeters());
           hash = (29 * hash) + getUnknownFields().hashCode();
@@ -22621,6 +23184,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = 0;
             fieldName_ = "";
             address_ = "";
+            latitude_ = 0D;
+            longitude_ = 0D;
             radiusInMeters_ = 0F;
             return this;
           }
@@ -22688,6 +23253,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               result.address_ = address_;
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.latitude_ = latitude_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.longitude_ = longitude_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
               result.radiusInMeters_ = radiusInMeters_;
             }
           }
@@ -22764,6 +23335,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000002;
               onChanged();
             }
+            if (other.getLatitude() != 0D) {
+              setLatitude(other.getLatitude());
+            }
+            if (other.getLongitude() != 0D) {
+              setLongitude(other.getLongitude());
+            }
             if (other.getRadiusInMeters() != 0F) {
               setRadiusInMeters(other.getRadiusInMeters());
             }
@@ -22808,9 +23385,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   case 29:
                     {
                       radiusInMeters_ = input.readFloat();
-                      bitField0_ |= 0x00000004;
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 29
+                  case 33:
+                    {
+                      latitude_ = input.readDouble();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 33
+                  case 41:
+                    {
+                      longitude_ = input.readDouble();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 41
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -23052,6 +23641,112 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private double latitude_;
+          /**
+           *
+           *
+           * <pre>
+           * The latitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double latitude = 4;</code>
+           *
+           * @return The latitude.
+           */
+          @java.lang.Override
+          public double getLatitude() {
+            return latitude_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The latitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double latitude = 4;</code>
+           *
+           * @param value The latitude to set.
+           * @return This builder for chaining.
+           */
+          public Builder setLatitude(double value) {
+
+            latitude_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The latitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double latitude = 4;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearLatitude() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            latitude_ = 0D;
+            onChanged();
+            return this;
+          }
+
+          private double longitude_;
+          /**
+           *
+           *
+           * <pre>
+           * The longitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double longitude = 5;</code>
+           *
+           * @return The longitude.
+           */
+          @java.lang.Override
+          public double getLongitude() {
+            return longitude_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The longitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double longitude = 5;</code>
+           *
+           * @param value The longitude to set.
+           * @return This builder for chaining.
+           */
+          public Builder setLongitude(double value) {
+
+            longitude_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The longitude of the geolocation inferred from the input query.
+           * </pre>
+           *
+           * <code>double longitude = 5;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearLongitude() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            longitude_ = 0D;
+            onChanged();
+            return this;
+          }
+
           private float radiusInMeters_;
           /**
            *
@@ -23085,7 +23780,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           public Builder setRadiusInMeters(float value) {
 
             radiusInMeters_ = value;
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -23102,7 +23797,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearRadiusInMeters() {
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             radiusInMeters_ = 0F;
             onChanged();
             return this;
@@ -31480,6 +32175,1486 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface OneBoxResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of One Box result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for oneBoxType.
+     */
+    int getOneBoxTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The type of One Box result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+     * </code>
+     *
+     * @return The oneBoxType.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType getOneBoxType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+        getSearchResultsList();
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult getSearchResults(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    int getSearchResultsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
+        getSearchResultsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder
+        getSearchResultsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OneBoxResult is a holder for all results of specific type that we want
+   * to display in UI differently.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult}
+   */
+  public static final class OneBoxResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)
+      OneBoxResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use OneBoxResult.newBuilder() to construct.
+    private OneBoxResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OneBoxResult() {
+      oneBoxType_ = 0;
+      searchResults_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OneBoxResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_OneBoxResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_OneBoxResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.class,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of One Box result.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType}
+     */
+    public enum OneBoxType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Should not be used.
+       * </pre>
+       *
+       * <code>ONE_BOX_TYPE_UNSPECIFIED = 0;</code>
+       */
+      ONE_BOX_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains people results.
+       * </pre>
+       *
+       * <code>PEOPLE = 1;</code>
+       */
+      PEOPLE(1),
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains organization results.
+       * </pre>
+       *
+       * <code>ORGANIZATION = 2;</code>
+       */
+      ORGANIZATION(2),
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains slack results.
+       * </pre>
+       *
+       * <code>SLACK = 3;</code>
+       */
+      SLACK(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Should not be used.
+       * </pre>
+       *
+       * <code>ONE_BOX_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ONE_BOX_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains people results.
+       * </pre>
+       *
+       * <code>PEOPLE = 1;</code>
+       */
+      public static final int PEOPLE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains organization results.
+       * </pre>
+       *
+       * <code>ORGANIZATION = 2;</code>
+       */
+      public static final int ORGANIZATION_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * One Box result contains slack results.
+       * </pre>
+       *
+       * <code>SLACK = 3;</code>
+       */
+      public static final int SLACK_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static OneBoxType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static OneBoxType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ONE_BOX_TYPE_UNSPECIFIED;
+          case 1:
+            return PEOPLE;
+          case 2:
+            return ORGANIZATION;
+          case 3:
+            return SLACK;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<OneBoxType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<OneBoxType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OneBoxType>() {
+            public OneBoxType findValueByNumber(int number) {
+              return OneBoxType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final OneBoxType[] VALUES = values();
+
+      public static OneBoxType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private OneBoxType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType)
+    }
+
+    public static final int ONE_BOX_TYPE_FIELD_NUMBER = 1;
+    private int oneBoxType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of One Box result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for oneBoxType.
+     */
+    @java.lang.Override
+    public int getOneBoxTypeValue() {
+      return oneBoxType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of One Box result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+     * </code>
+     *
+     * @return The oneBoxType.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+        getOneBoxType() {
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType result =
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType.forNumber(
+              oneBoxType_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int SEARCH_RESULTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+        searchResults_;
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+        getSearchResultsList() {
+      return searchResults_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
+        getSearchResultsOrBuilderList() {
+      return searchResults_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getSearchResultsCount() {
+      return searchResults_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult getSearchResults(
+        int index) {
+      return searchResults_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The search results for this One Box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder
+        getSearchResultsOrBuilder(int index) {
+      return searchResults_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (oneBoxType_
+          != com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+              .ONE_BOX_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, oneBoxType_);
+      }
+      for (int i = 0; i < searchResults_.size(); i++) {
+        output.writeMessage(2, searchResults_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (oneBoxType_
+          != com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+              .ONE_BOX_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, oneBoxType_);
+      }
+      for (int i = 0; i < searchResults_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, searchResults_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult other =
+          (com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult) obj;
+
+      if (oneBoxType_ != other.oneBoxType_) return false;
+      if (!getSearchResultsList().equals(other.getSearchResultsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ONE_BOX_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + oneBoxType_;
+      if (getSearchResultsCount() > 0) {
+        hash = (37 * hash) + SEARCH_RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchResultsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OneBoxResult is a holder for all results of specific type that we want
+     * to display in UI differently.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_OneBoxResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_OneBoxResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        oneBoxType_ = 0;
+        if (searchResultsBuilder_ == null) {
+          searchResults_ = java.util.Collections.emptyList();
+        } else {
+          searchResults_ = null;
+          searchResultsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_OneBoxResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult build() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult result =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult result) {
+        if (searchResultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            searchResults_ = java.util.Collections.unmodifiableList(searchResults_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.searchResults_ = searchResults_;
+        } else {
+          result.searchResults_ = searchResultsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.oneBoxType_ = oneBoxType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+                .getDefaultInstance()) return this;
+        if (other.oneBoxType_ != 0) {
+          setOneBoxTypeValue(other.getOneBoxTypeValue());
+        }
+        if (searchResultsBuilder_ == null) {
+          if (!other.searchResults_.isEmpty()) {
+            if (searchResults_.isEmpty()) {
+              searchResults_ = other.searchResults_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSearchResultsIsMutable();
+              searchResults_.addAll(other.searchResults_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.searchResults_.isEmpty()) {
+            if (searchResultsBuilder_.isEmpty()) {
+              searchResultsBuilder_.dispose();
+              searchResultsBuilder_ = null;
+              searchResults_ = other.searchResults_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              searchResultsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getSearchResultsFieldBuilder()
+                      : null;
+            } else {
+              searchResultsBuilder_.addAllMessages(other.searchResults_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  oneBoxType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult m =
+                      input.readMessage(
+                          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                              .parser(),
+                          extensionRegistry);
+                  if (searchResultsBuilder_ == null) {
+                    ensureSearchResultsIsMutable();
+                    searchResults_.add(m);
+                  } else {
+                    searchResultsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int oneBoxType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The type of One Box result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for oneBoxType.
+       */
+      @java.lang.Override
+      public int getOneBoxTypeValue() {
+        return oneBoxType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of One Box result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for oneBoxType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOneBoxTypeValue(int value) {
+        oneBoxType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of One Box result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+       * </code>
+       *
+       * @return The oneBoxType.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+          getOneBoxType() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType result =
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+                .forNumber(oneBoxType_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of One Box result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+       * </code>
+       *
+       * @param value The oneBoxType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOneBoxType(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        oneBoxType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of One Box result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.OneBoxType one_box_type = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOneBoxType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        oneBoxType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+          searchResults_ = java.util.Collections.emptyList();
+
+      private void ensureSearchResultsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          searchResults_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>(
+                  searchResults_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
+          searchResultsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+          getSearchResultsList() {
+        if (searchResultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(searchResults_);
+        } else {
+          return searchResultsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public int getSearchResultsCount() {
+        if (searchResultsBuilder_ == null) {
+          return searchResults_.size();
+        } else {
+          return searchResultsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult getSearchResults(
+          int index) {
+        if (searchResultsBuilder_ == null) {
+          return searchResults_.get(index);
+        } else {
+          return searchResultsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder setSearchResults(
+          int index, com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult value) {
+        if (searchResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchResultsIsMutable();
+          searchResults_.set(index, value);
+          onChanged();
+        } else {
+          searchResultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder setSearchResults(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+              builderForValue) {
+        if (searchResultsBuilder_ == null) {
+          ensureSearchResultsIsMutable();
+          searchResults_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchResultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder addSearchResults(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult value) {
+        if (searchResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchResultsIsMutable();
+          searchResults_.add(value);
+          onChanged();
+        } else {
+          searchResultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder addSearchResults(
+          int index, com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult value) {
+        if (searchResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchResultsIsMutable();
+          searchResults_.add(index, value);
+          onChanged();
+        } else {
+          searchResultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder addSearchResults(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+              builderForValue) {
+        if (searchResultsBuilder_ == null) {
+          ensureSearchResultsIsMutable();
+          searchResults_.add(builderForValue.build());
+          onChanged();
+        } else {
+          searchResultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder addSearchResults(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+              builderForValue) {
+        if (searchResultsBuilder_ == null) {
+          ensureSearchResultsIsMutable();
+          searchResults_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchResultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder addAllSearchResults(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
+              values) {
+        if (searchResultsBuilder_ == null) {
+          ensureSearchResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchResults_);
+          onChanged();
+        } else {
+          searchResultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder clearSearchResults() {
+        if (searchResultsBuilder_ == null) {
+          searchResults_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          searchResultsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public Builder removeSearchResults(int index) {
+        if (searchResultsBuilder_ == null) {
+          ensureSearchResultsIsMutable();
+          searchResults_.remove(index);
+          onChanged();
+        } else {
+          searchResultsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+          getSearchResultsBuilder(int index) {
+        return getSearchResultsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder
+          getSearchResultsOrBuilder(int index) {
+        if (searchResultsBuilder_ == null) {
+          return searchResults_.get(index);
+        } else {
+          return searchResultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
+          getSearchResultsOrBuilderList() {
+        if (searchResultsBuilder_ != null) {
+          return searchResultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(searchResults_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+          addSearchResultsBuilder() {
+        return getSearchResultsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder
+          addSearchResultsBuilder(int index) {
+        return getSearchResultsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The search results for this One Box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult search_results = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder>
+          getSearchResultsBuilderList() {
+        return getSearchResultsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>
+          getSearchResultsFieldBuilder() {
+        if (searchResultsBuilder_ == null) {
+          searchResultsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>(
+                  searchResults_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          searchResults_ = null;
+        }
+        return searchResultsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OneBoxResult> PARSER =
+        new com.google.protobuf.AbstractParser<OneBoxResult>() {
+          @java.lang.Override
+          public OneBoxResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OneBoxResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OneBoxResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int RESULTS_FIELD_NUMBER = 1;
 
@@ -31730,7 +33905,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -31756,7 +33932,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -32318,6 +34495,97 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         : sessionInfo_;
   }
 
+  public static final int ONE_BOX_RESULTS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+      oneBoxResults_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+      getOneBoxResultsList() {
+    return oneBoxResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
+      getOneBoxResultsOrBuilderList() {
+    return oneBoxResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public int getOneBoxResultsCount() {
+    return oneBoxResults_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult getOneBoxResults(
+      int index) {
+    return oneBoxResults_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder
+      getOneBoxResultsOrBuilder(int index) {
+    return oneBoxResults_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -32373,6 +34641,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(19, getSessionInfo());
+    }
+    for (int i = 0; i < oneBoxResults_.size(); i++) {
+      output.writeMessage(20, oneBoxResults_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -32433,6 +34704,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getSessionInfo());
     }
+    for (int i = 0; i < oneBoxResults_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, oneBoxResults_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -32480,6 +34754,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionInfo()) {
       if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
+    if (!getOneBoxResultsList().equals(other.getOneBoxResultsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -32536,6 +34811,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionInfo()) {
       hash = (37 * hash) + SESSION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getSessionInfo().hashCode();
+    }
+    if (getOneBoxResultsCount() > 0) {
+      hash = (37 * hash) + ONE_BOX_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getOneBoxResultsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -32688,6 +34967,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getQueryExpansionInfoFieldBuilder();
         getNaturalLanguageQueryUnderstandingInfoFieldBuilder();
         getSessionInfoFieldBuilder();
+        getOneBoxResultsFieldBuilder();
       }
     }
 
@@ -32747,6 +35027,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         sessionInfoBuilder_.dispose();
         sessionInfoBuilder_ = null;
       }
+      if (oneBoxResultsBuilder_ == null) {
+        oneBoxResults_ = java.util.Collections.emptyList();
+      } else {
+        oneBoxResults_ = null;
+        oneBoxResultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -32810,6 +35097,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.geoSearchDebugInfo_ = geoSearchDebugInfo_;
       } else {
         result.geoSearchDebugInfo_ = geoSearchDebugInfoBuilder_.build();
+      }
+      if (oneBoxResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)) {
+          oneBoxResults_ = java.util.Collections.unmodifiableList(oneBoxResults_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.oneBoxResults_ = oneBoxResults_;
+      } else {
+        result.oneBoxResults_ = oneBoxResultsBuilder_.build();
       }
     }
 
@@ -33044,6 +35340,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSessionInfo()) {
         mergeSessionInfo(other.getSessionInfo());
       }
+      if (oneBoxResultsBuilder_ == null) {
+        if (!other.oneBoxResults_.isEmpty()) {
+          if (oneBoxResults_.isEmpty()) {
+            oneBoxResults_ = other.oneBoxResults_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureOneBoxResultsIsMutable();
+            oneBoxResults_.addAll(other.oneBoxResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.oneBoxResults_.isEmpty()) {
+          if (oneBoxResultsBuilder_.isEmpty()) {
+            oneBoxResultsBuilder_.dispose();
+            oneBoxResultsBuilder_ = null;
+            oneBoxResults_ = other.oneBoxResults_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            oneBoxResultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOneBoxResultsFieldBuilder()
+                    : null;
+          } else {
+            oneBoxResultsBuilder_.addAllMessages(other.oneBoxResults_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -33185,6 +35508,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 154
+            case 162:
+              {
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+                            .parser(),
+                        extensionRegistry);
+                if (oneBoxResultsBuilder_ == null) {
+                  ensureOneBoxResultsIsMutable();
+                  oneBoxResults_.add(m);
+                } else {
+                  oneBoxResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -34253,7 +36591,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -34278,7 +36617,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -34303,7 +36643,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -34327,7 +36668,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -34347,7 +36689,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -36122,6 +38465,439 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         sessionInfo_ = null;
       }
       return sessionInfoBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+        oneBoxResults_ = java.util.Collections.emptyList();
+
+    private void ensureOneBoxResultsIsMutable() {
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        oneBoxResults_ =
+            new java.util.ArrayList<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>(
+                oneBoxResults_);
+        bitField0_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
+        oneBoxResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+        getOneBoxResultsList() {
+      if (oneBoxResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(oneBoxResults_);
+      } else {
+        return oneBoxResultsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public int getOneBoxResultsCount() {
+      if (oneBoxResultsBuilder_ == null) {
+        return oneBoxResults_.size();
+      } else {
+        return oneBoxResultsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult getOneBoxResults(
+        int index) {
+      if (oneBoxResultsBuilder_ == null) {
+        return oneBoxResults_.get(index);
+      } else {
+        return oneBoxResultsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder setOneBoxResults(
+        int index, com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult value) {
+      if (oneBoxResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.set(index, value);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder setOneBoxResults(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+            builderForValue) {
+      if (oneBoxResultsBuilder_ == null) {
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder addOneBoxResults(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult value) {
+      if (oneBoxResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.add(value);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder addOneBoxResults(
+        int index, com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult value) {
+      if (oneBoxResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.add(index, value);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder addOneBoxResults(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+            builderForValue) {
+      if (oneBoxResultsBuilder_ == null) {
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder addOneBoxResults(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+            builderForValue) {
+      if (oneBoxResultsBuilder_ == null) {
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder addAllOneBoxResults(
+        java.lang.Iterable<
+                ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+            values) {
+      if (oneBoxResultsBuilder_ == null) {
+        ensureOneBoxResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oneBoxResults_);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder clearOneBoxResults() {
+      if (oneBoxResultsBuilder_ == null) {
+        oneBoxResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public Builder removeOneBoxResults(int index) {
+      if (oneBoxResultsBuilder_ == null) {
+        ensureOneBoxResultsIsMutable();
+        oneBoxResults_.remove(index);
+        onChanged();
+      } else {
+        oneBoxResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+        getOneBoxResultsBuilder(int index) {
+      return getOneBoxResultsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder
+        getOneBoxResultsOrBuilder(int index) {
+      if (oneBoxResultsBuilder_ == null) {
+        return oneBoxResults_.get(index);
+      } else {
+        return oneBoxResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
+        getOneBoxResultsOrBuilderList() {
+      if (oneBoxResultsBuilder_ != null) {
+        return oneBoxResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(oneBoxResults_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+        addOneBoxResultsBuilder() {
+      return getOneBoxResultsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder
+        addOneBoxResultsBuilder(int index) {
+      return getOneBoxResultsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of One Box results. There can be multiple One Box results of
+     * different types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder>
+        getOneBoxResultsBuilderList() {
+      return getOneBoxResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
+        getOneBoxResultsFieldBuilder() {
+      if (oneBoxResultsBuilder_ == null) {
+        oneBoxResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>(
+                oneBoxResults_,
+                ((bitField0_ & 0x00004000) != 0),
+                getParentForChildren(),
+                isClean());
+        oneBoxResults_ = null;
+      }
+      return oneBoxResultsBuilder_;
     }
 
     @java.lang.Override

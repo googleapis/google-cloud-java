@@ -21,6 +21,7 @@ import com.google.cloud.discoveryengine.v1.BranchName;
 import com.google.cloud.discoveryengine.v1.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest;
 import com.google.cloud.discoveryengine.v1.PurgeDocumentsResponse;
+import com.google.cloud.discoveryengine.v1.PurgeErrorConfig;
 
 public class SyncPurgeDocuments {
 
@@ -42,6 +43,7 @@ public class SyncPurgeDocuments {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       PurgeDocumentsResponse response = documentServiceClient.purgeDocumentsAsync(request).get();

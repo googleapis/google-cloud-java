@@ -4318,7 +4318,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The adversarial query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
        * is set to `true`.
        * </pre>
@@ -4332,7 +4332,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
        * </pre>
@@ -4379,6 +4379,47 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
        */
       LLM_ADDON_NOT_ENABLED(5),
+      /**
+       *
+       *
+       * <pre>
+       * The no relevant content case.
+       *
+       * Google skips the summary if there is no relevant content in the
+       * retrieved search results.
+       * </pre>
+       *
+       * <code>NO_RELEVANT_CONTENT = 6;</code>
+       */
+      NO_RELEVANT_CONTENT(6),
+      /**
+       *
+       *
+       * <pre>
+       * The jail-breaking query ignored case.
+       *
+       * For example, "Reply in the tone of a competing company's CEO".
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_jail_breaking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
+       */
+      JAIL_BREAKING_QUERY_IGNORED(7),
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      CUSTOMER_POLICY_VIOLATION(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -4398,7 +4439,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The adversarial query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
        * is set to `true`.
        * </pre>
@@ -4412,7 +4453,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
-       * Only populated when
+       * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
        * </pre>
@@ -4459,6 +4500,47 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
        */
       public static final int LLM_ADDON_NOT_ENABLED_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The no relevant content case.
+       *
+       * Google skips the summary if there is no relevant content in the
+       * retrieved search results.
+       * </pre>
+       *
+       * <code>NO_RELEVANT_CONTENT = 6;</code>
+       */
+      public static final int NO_RELEVANT_CONTENT_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * The jail-breaking query ignored case.
+       *
+       * For example, "Reply in the tone of a competing company's CEO".
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_jail_breaking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
+       */
+      public static final int JAIL_BREAKING_QUERY_IGNORED_VALUE = 7;
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 8;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -4496,6 +4578,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return POTENTIAL_POLICY_VIOLATION;
           case 5:
             return LLM_ADDON_NOT_ENABLED;
+          case 6:
+            return NO_RELEVANT_CONTENT;
+          case 7:
+            return JAIL_BREAKING_QUERY_IGNORED;
+          case 8:
+            return CUSTOMER_POLICY_VIOLATION;
           default:
             return null;
         }
@@ -16545,7 +16633,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
    * this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -16571,7 +16660,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
    * this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -18462,7 +18552,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
      * this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -18487,7 +18578,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
      * this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -18512,7 +18604,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
      * this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -18536,7 +18629,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
      * this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -18556,7 +18650,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1.UserEvent] logs resulting from
      * this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
