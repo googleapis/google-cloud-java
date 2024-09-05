@@ -24,7 +24,7 @@ package com.google.cloud.bigquery.storage.v1alpha;
  *
  * <pre>
  * The top-level message sent by the client to the
- * [Partitions.StreamMetastorePartitions]() method.
+ * [Partitions.StreamMetastorePartitions][] method.
  * Follows the default gRPC streaming maximum size of 4 MB.
  * </pre>
  *
@@ -431,7 +431,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
    *
    * <pre>
    * The top-level message sent by the client to the
-   * [Partitions.StreamMetastorePartitions]() method.
+   * [Partitions.StreamMetastorePartitions][] method.
    * Follows the default gRPC streaming maximum size of 4 MB.
    * </pre>
    *

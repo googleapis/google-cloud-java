@@ -24,7 +24,7 @@ package com.google.cloud.bigquery.storage.v1alpha;
  *
  * <pre>
  * This is the response message sent by the server
- * to the client for the [Partitions.StreamMetastorePartitions]() method when
+ * to the client for the [Partitions.StreamMetastorePartitions][] method when
  * the commit is successful. Server will close the stream after sending this
  * message.
  * </pre>
@@ -289,7 +289,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
    *
    * <pre>
    * This is the response message sent by the server
-   * to the client for the [Partitions.StreamMetastorePartitions]() method when
+   * to the client for the [Partitions.StreamMetastorePartitions][] method when
    * the commit is successful. Server will close the stream after sending this
    * message.
    * </pre>

@@ -29,8 +29,8 @@ public interface StorageDescriptorOrBuilder
    *
    * <pre>
    * Optional. The physical location of the metastore partition
-   * (e.g. 'gs://spark-dataproc-data/pangea-data/case_sensitive/' or
-   * 'gs://spark-dataproc-data/pangea-data/&#42;').
+   * (e.g. `gs://spark-dataproc-data/pangea-data/case_sensitive/` or
+   * `gs://spark-dataproc-data/pangea-data/&#42;`).
    * </pre>
    *
    * <code>string location_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -43,8 +43,8 @@ public interface StorageDescriptorOrBuilder
    *
    * <pre>
    * Optional. The physical location of the metastore partition
-   * (e.g. 'gs://spark-dataproc-data/pangea-data/case_sensitive/' or
-   * 'gs://spark-dataproc-data/pangea-data/&#42;').
+   * (e.g. `gs://spark-dataproc-data/pangea-data/case_sensitive/` or
+   * `gs://spark-dataproc-data/pangea-data/&#42;`).
    * </pre>
    *
    * <code>string location_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
