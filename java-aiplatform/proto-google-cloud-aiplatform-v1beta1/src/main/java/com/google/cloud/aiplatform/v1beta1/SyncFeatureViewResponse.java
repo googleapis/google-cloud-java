@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Respose message for
+ * Response message for
  * [FeatureOnlineStoreAdminService.SyncFeatureView][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreAdminService.SyncFeatureView].
  * </pre>
  *
@@ -281,7 +281,7 @@ public final class SyncFeatureViewResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Respose message for
+   * Response message for
    * [FeatureOnlineStoreAdminService.SyncFeatureView][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreAdminService.SyncFeatureView].
    * </pre>
    *

@@ -19,28 +19,28 @@ package com.google.cloud.apihub.v1;
 import static com.google.cloud.apihub.v1.LintingServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.apihub.v1.stub.HttpJsonLintingServiceStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -51,43 +51,37 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class LintingServiceClientTest {
-  private static MockLintingService mockLintingService;
-  private static MockLocations mockLocations;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private LintingServiceClient client;
+  private static MockHttpService mockService;
+  private static LintingServiceClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockLintingService = new MockLintingService();
-    mockLocations = new MockLocations();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockLintingService, mockLocations));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonLintingServiceStub.getMethodDescriptors(),
+            LintingServiceSettings.getDefaultEndpoint());
     LintingServiceSettings settings =
         LintingServiceSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+            .setTransportChannelProvider(
+                LintingServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = LintingServiceClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -98,28 +92,34 @@ public class LintingServiceClientTest {
             .setLinter(Linter.forNumber(0))
             .setContents(StyleGuideContents.newBuilder().build())
             .build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     StyleGuideName name = StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
 
     StyleGuide actualResponse = client.getStyleGuide(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetStyleGuideRequest actualRequest = ((GetStyleGuideRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getStyleGuideExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       StyleGuideName name = StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
@@ -138,31 +138,37 @@ public class LintingServiceClientTest {
             .setLinter(Linter.forNumber(0))
             .setContents(StyleGuideContents.newBuilder().build())
             .build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-6948/locations/location-6948/plugins/plugin-6948/styleGuide";
 
     StyleGuide actualResponse = client.getStyleGuide(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetStyleGuideRequest actualRequest = ((GetStyleGuideRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getStyleGuideExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-6948/locations/location-6948/plugins/plugin-6948/styleGuide";
       client.getStyleGuide(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -178,33 +184,48 @@ public class LintingServiceClientTest {
             .setLinter(Linter.forNumber(0))
             .setContents(StyleGuideContents.newBuilder().build())
             .build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    StyleGuide styleGuide = StyleGuide.newBuilder().build();
+    StyleGuide styleGuide =
+        StyleGuide.newBuilder()
+            .setName(StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]").toString())
+            .setLinter(Linter.forNumber(0))
+            .setContents(StyleGuideContents.newBuilder().build())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     StyleGuide actualResponse = client.updateStyleGuide(styleGuide, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateStyleGuideRequest actualRequest = ((UpdateStyleGuideRequest) actualRequests.get(0));
 
-    Assert.assertEquals(styleGuide, actualRequest.getStyleGuide());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateStyleGuideExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      StyleGuide styleGuide = StyleGuide.newBuilder().build();
+      StyleGuide styleGuide =
+          StyleGuide.newBuilder()
+              .setName(StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]").toString())
+              .setLinter(Linter.forNumber(0))
+              .setContents(StyleGuideContents.newBuilder().build())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStyleGuide(styleGuide, updateMask);
       Assert.fail("No exception raised");
@@ -220,29 +241,34 @@ public class LintingServiceClientTest {
             .setContents(ByteString.EMPTY)
             .setMimeType("mimeType-1392120434")
             .build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     StyleGuideName name = StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
 
     StyleGuideContents actualResponse = client.getStyleGuideContents(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetStyleGuideContentsRequest actualRequest =
-        ((GetStyleGuideContentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getStyleGuideContentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       StyleGuideName name = StyleGuideName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
@@ -260,32 +286,37 @@ public class LintingServiceClientTest {
             .setContents(ByteString.EMPTY)
             .setMimeType("mimeType-1392120434")
             .build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-6948/locations/location-6948/plugins/plugin-6948/styleGuide";
 
     StyleGuideContents actualResponse = client.getStyleGuideContents(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetStyleGuideContentsRequest actualRequest =
-        ((GetStyleGuideContentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getStyleGuideContentsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-6948/locations/location-6948/plugins/plugin-6948/styleGuide";
       client.getStyleGuideContents(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -296,7 +327,7 @@ public class LintingServiceClientTest {
   @Test
   public void lintSpecTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockLintingService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     LintSpecRequest request =
         LintSpecRequest.newBuilder()
@@ -306,21 +337,27 @@ public class LintingServiceClientTest {
 
     client.lintSpec(request);
 
-    List<AbstractMessage> actualRequests = mockLintingService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    LintSpecRequest actualRequest = ((LintSpecRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void lintSpecExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLintingService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       LintSpecRequest request =
@@ -343,11 +380,11 @@ public class LintingServiceClientTest {
             .setNextPageToken("")
             .addAllLocations(Arrays.asList(responsesElement))
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListLocationsRequest request =
         ListLocationsRequest.newBuilder()
-            .setName("name3373707")
+            .setName("projects/project-3664")
             .setFilter("filter-1274492040")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -360,29 +397,32 @@ public class LintingServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listLocationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListLocationsRequest request =
           ListLocationsRequest.newBuilder()
-              .setName("name3373707")
+              .setName("projects/project-3664")
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -404,31 +444,43 @@ public class LintingServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setMetadata(Any.newBuilder().build())
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
 
     Location actualResponse = client.getLocation(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getLocationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
       client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

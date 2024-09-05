@@ -20,10 +20,8 @@ import static com.google.cloud.apihub.v1.ApiHubDependenciesClient.ListDependenci
 import static com.google.cloud.apihub.v1.ApiHubDependenciesClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
@@ -145,13 +143,7 @@ public class ApiHubDependenciesSettings extends ClientSettings<ApiHubDependencie
     return ApiHubDependenciesStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default gRPC ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return ApiHubDependenciesStubSettings.defaultGrpcTransportProviderBuilder();
-  }
-
-  /** Returns a builder for the default REST ChannelProvider for this service. */
-  @BetaApi
+  /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return ApiHubDependenciesStubSettings.defaultHttpJsonTransportProviderBuilder();
@@ -165,14 +157,9 @@ public class ApiHubDependenciesSettings extends ClientSettings<ApiHubDependencie
     return ApiHubDependenciesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new gRPC builder for this class. */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
-  }
-
-  /** Returns a new REST builder for this class. */
-  public static Builder newHttpJsonBuilder() {
-    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -210,10 +197,6 @@ public class ApiHubDependenciesSettings extends ClientSettings<ApiHubDependencie
 
     private static Builder createDefault() {
       return new Builder(ApiHubDependenciesStubSettings.newBuilder());
-    }
-
-    private static Builder createHttpJsonDefault() {
-      return new Builder(ApiHubDependenciesStubSettings.newHttpJsonBuilder());
     }
 
     public ApiHubDependenciesStubSettings.Builder getStubSettingsBuilder() {

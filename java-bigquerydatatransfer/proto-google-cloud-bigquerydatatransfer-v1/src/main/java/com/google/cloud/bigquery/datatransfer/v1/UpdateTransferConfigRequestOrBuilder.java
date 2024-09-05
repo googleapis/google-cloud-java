@@ -93,7 +93,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    *
    * @deprecated
    *     google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.authorization_code is
-   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=587
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=597
    * @return The authorizationCode.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    *
    * @deprecated
    *     google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.authorization_code is
-   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=587
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=597
    * @return The bytes for authorizationCode.
    */
   @java.lang.Deprecated

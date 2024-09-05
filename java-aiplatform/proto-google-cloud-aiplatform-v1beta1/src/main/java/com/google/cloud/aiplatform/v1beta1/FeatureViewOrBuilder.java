@@ -118,6 +118,48 @@ public interface FeatureViewOrBuilder
    *
    *
    * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vertexRagSource field is set.
+   */
+  boolean hasVertexRagSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vertexRagSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSource getVertexRagSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSourceOrBuilder
+      getVertexRagSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. Name of the FeatureView. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * </pre>
@@ -407,7 +449,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Deprecated
@@ -426,7 +468,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
    * @return The vectorSearchConfig.
    */
   @java.lang.Deprecated

@@ -19,25 +19,25 @@ package com.google.cloud.apihub.v1;
 import static com.google.cloud.apihub.v1.ApiHubPluginClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.apihub.v1.stub.HttpJsonApiHubPluginStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -48,43 +48,37 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ApiHubPluginClientTest {
-  private static MockApiHubPlugin mockApiHubPlugin;
-  private static MockLocations mockLocations;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private ApiHubPluginClient client;
+  private static MockHttpService mockService;
+  private static ApiHubPluginClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockApiHubPlugin = new MockApiHubPlugin();
-    mockLocations = new MockLocations();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockApiHubPlugin, mockLocations));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonApiHubPluginStub.getMethodDescriptors(),
+            ApiHubPluginSettings.getDefaultEndpoint());
     ApiHubPluginSettings settings =
         ApiHubPluginSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+            .setTransportChannelProvider(
+                ApiHubPluginSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ApiHubPluginClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -96,28 +90,34 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
 
     Plugin actualResponse = client.getPlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPluginRequest actualRequest = ((GetPluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPluginExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
@@ -137,31 +137,37 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
 
     Plugin actualResponse = client.getPlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPluginRequest actualRequest = ((GetPluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPluginExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
       client.getPlugin(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -178,28 +184,34 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
 
     Plugin actualResponse = client.enablePlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    EnablePluginRequest actualRequest = ((EnablePluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void enablePluginExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
@@ -219,31 +231,37 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
 
     Plugin actualResponse = client.enablePlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    EnablePluginRequest actualRequest = ((EnablePluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void enablePluginExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
       client.enablePlugin(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -260,28 +278,34 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
 
     Plugin actualResponse = client.disablePlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DisablePluginRequest actualRequest = ((DisablePluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void disablePluginExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PluginName name = PluginName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]");
@@ -301,31 +325,37 @@ public class ApiHubPluginClientTest {
             .setType(AttributeValues.newBuilder().build())
             .setDescription("description-1724546052")
             .build();
-    mockApiHubPlugin.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
 
     Plugin actualResponse = client.disablePlugin(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubPlugin.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DisablePluginRequest actualRequest = ((DisablePluginRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void disablePluginExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubPlugin.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-1258/locations/location-1258/plugins/plugin-1258";
       client.disablePlugin(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -341,11 +371,11 @@ public class ApiHubPluginClientTest {
             .setNextPageToken("")
             .addAllLocations(Arrays.asList(responsesElement))
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListLocationsRequest request =
         ListLocationsRequest.newBuilder()
-            .setName("name3373707")
+            .setName("projects/project-3664")
             .setFilter("filter-1274492040")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -358,29 +388,32 @@ public class ApiHubPluginClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listLocationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListLocationsRequest request =
           ListLocationsRequest.newBuilder()
-              .setName("name3373707")
+              .setName("projects/project-3664")
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -402,31 +435,43 @@ public class ApiHubPluginClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setMetadata(Any.newBuilder().build())
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
 
     Location actualResponse = client.getLocation(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getLocationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
       client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

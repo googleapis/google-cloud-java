@@ -27,10 +27,8 @@ import static com.google.cloud.apihub.v1.ApiHubClient.ListVersionsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
@@ -310,13 +308,7 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
     return ApiHubStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default gRPC ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return ApiHubStubSettings.defaultGrpcTransportProviderBuilder();
-  }
-
-  /** Returns a builder for the default REST ChannelProvider for this service. */
-  @BetaApi
+  /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return ApiHubStubSettings.defaultHttpJsonTransportProviderBuilder();
@@ -330,14 +322,9 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
     return ApiHubStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new gRPC builder for this class. */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
-  }
-
-  /** Returns a new REST builder for this class. */
-  public static Builder newHttpJsonBuilder() {
-    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -375,10 +362,6 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
 
     private static Builder createDefault() {
       return new Builder(ApiHubStubSettings.newBuilder());
-    }
-
-    private static Builder createHttpJsonDefault() {
-      return new Builder(ApiHubStubSettings.newHttpJsonBuilder());
     }
 
     public ApiHubStubSettings.Builder getStubSettingsBuilder() {

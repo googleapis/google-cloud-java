@@ -28,14 +28,10 @@ import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedRespon
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -916,11 +912,6 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
   public ApiHubStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcApiHubStub.create(this);
-    }
-    if (getTransportChannelProvider()
-        .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonApiHubStub.create(this);
     }
@@ -963,31 +954,17 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default gRPC ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  /** Returns a builder for the default REST ChannelProvider for this service. */
-  @BetaApi
+  /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ApiHubStubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ApiHubStubSettings.class))
         .setTransportToken(
@@ -995,18 +972,9 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
             GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiHubStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
-  }
-
-  /** Returns a new gRPC builder for this class. */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
-  }
-
-  /** Returns a new REST builder for this class. */
-  public static Builder newHttpJsonBuilder() {
-    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -1349,18 +1317,6 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
-      builder.setSwitchToMtlsEndpointAllowed(true);
-
-      return initDefaults(builder);
-    }
-
-    private static Builder createHttpJsonDefault() {
-      Builder builder = new Builder(((ClientContext) null));
-
-      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 

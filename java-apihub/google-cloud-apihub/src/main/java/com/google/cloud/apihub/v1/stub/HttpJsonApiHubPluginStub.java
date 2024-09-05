@@ -251,13 +251,13 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
   public static final HttpJsonApiHubPluginStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonApiHubPluginStub(
-        ApiHubPluginStubSettings.newHttpJsonBuilder().build(), clientContext);
+        ApiHubPluginStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonApiHubPluginStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonApiHubPluginStub(
-        ApiHubPluginStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        ApiHubPluginStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**

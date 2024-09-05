@@ -365,13 +365,13 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
   public static final HttpJsonRuntimeProjectAttachmentServiceStub create(
       ClientContext clientContext) throws IOException {
     return new HttpJsonRuntimeProjectAttachmentServiceStub(
-        RuntimeProjectAttachmentServiceStubSettings.newHttpJsonBuilder().build(), clientContext);
+        RuntimeProjectAttachmentServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonRuntimeProjectAttachmentServiceStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonRuntimeProjectAttachmentServiceStub(
-        RuntimeProjectAttachmentServiceStubSettings.newHttpJsonBuilder().build(),
+        RuntimeProjectAttachmentServiceStubSettings.newBuilder().build(),
         clientContext,
         callableFactory);
   }

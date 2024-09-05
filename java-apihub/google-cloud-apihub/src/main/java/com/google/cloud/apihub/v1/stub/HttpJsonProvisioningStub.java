@@ -272,13 +272,13 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   public static final HttpJsonProvisioningStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonProvisioningStub(
-        ProvisioningStubSettings.newHttpJsonBuilder().build(), clientContext);
+        ProvisioningStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonProvisioningStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonProvisioningStub(
-        ProvisioningStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        ProvisioningStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
