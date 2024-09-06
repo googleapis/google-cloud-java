@@ -53,6 +53,10 @@ jobs:
         GITHUB_REPOSITORY: ${{ inputs.repository }}
     - uses: actions/checkout@v4
       with:
+        ref: ${{ inputs.base_ref }}
+        token: ${{ secrets.token }}
+    - uses: actions/checkout@v4
+      with:
         token: ${{ secrets.token }}
     - name: Generate changed libraries
       uses: ./.github/scripts
