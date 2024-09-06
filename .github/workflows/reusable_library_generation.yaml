@@ -51,6 +51,10 @@ jobs:
       env:
         REPO_FULL_NAME: ${{ inputs.repo_full_name }}
         GITHUB_REPOSITORY: ${{ inputs.repository }}
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.token }}
     - name: Generate changed libraries
       uses: ./.github/scripts
       with:
