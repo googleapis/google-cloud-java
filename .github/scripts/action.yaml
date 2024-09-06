@@ -1,0 +1,52 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# GitHub action job to test core java library features on
+# downstream client libraries before they are released.
+
+# This workflow is called by hermetic_library_generation.yaml and workflows
+# in handwritten libraries.
+name: Reusable library generation
+description: Hermetic library generation action
+inputs:
+  base_ref:
+    required: true
+    description: base_ref
+  head_ref:
+    required: true
+    description: head_ref
+  token:
+    required: true
+    description: PAT
+
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+      token: ${{ secrets.token }}
+  - name: Generate changed libraries
+    shell: bash
+    run: |
+      set -x
+      [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
+      [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
+      cd ${{ github.action_path }}
+      bash scripts/hermetic_library_generation.sh \
+        --target_branch "${BASE_REF}" \
+        --current_branch "${HEAD_REF}"
+    env:
+      BASE_REF: ${{ inputs.base_ref }}
+      HEAD_REF: ${{ inputs.head_ref }}
+      GH_TOKEN: ${{ inputs.token }}
