@@ -17,6 +17,13 @@ branches:
       - >-
         google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
     branch: 3.13.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
+    branch: 3.17.x
 extraFiles:
   - >-
     google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
