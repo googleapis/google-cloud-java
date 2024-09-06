@@ -53,8 +53,12 @@ jobs:
         GITHUB_REPOSITORY: ${{ inputs.repository }}
     - uses: actions/checkout@v4
       with:
-        ref: ${{ inputs.base_ref }}
+        fetch-depth: 0
         token: ${{ secrets.token }}
+    - name: Checkout base branch
+      shell: bash
+      run: |
+        git checkout ${{ inputs.base_ref }}
     - name: Checkout head branch
       shell: bash
       run: |
