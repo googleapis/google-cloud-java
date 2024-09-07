@@ -125,6 +125,16 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_NONE = 4;</code>
      */
     BLOCK_NONE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Turn off the safety filter.
+     * </pre>
+     *
+     * <code>OFF = 5;</code>
+     */
+    OFF(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -178,6 +188,16 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_NONE = 4;</code>
      */
     public static final int BLOCK_NONE_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Turn off the safety filter.
+     * </pre>
+     *
+     * <code>OFF = 5;</code>
+     */
+    public static final int OFF_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -213,6 +233,8 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
           return BLOCK_ONLY_HIGH;
         case 4:
           return BLOCK_NONE;
+        case 5:
+          return OFF;
         default:
           return null;
       }
