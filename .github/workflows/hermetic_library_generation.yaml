@@ -35,22 +35,13 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - uses: actions/checkout@v4
-      with:
-        repository: googleapis/sdk-platform-java
-        path: sdk-platform-java
-        ref: chore/add-reusable-workflow
-        sparse-checkout: |
-          library_generation/scripts/hermetic_library_generation.sh
-        sparse-checkout-cone-mode: false
+    - uses: googleapis/sdk-platform-java/library_generation
     - name: Generate changed libraries
       shell: bash
       run: |
         set -x
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
-        cp sdk-platform-java/library_generation/scripts/hermetic_library_generation.sh .
-        rm -rf sdk-platform-java
         bash hermetic_library_generation.sh \
           --target_branch "${BASE_REF}" \
           --current_branch "${HEAD_REF}"
