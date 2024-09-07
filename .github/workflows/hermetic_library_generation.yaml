@@ -31,11 +31,11 @@ jobs:
           echo "This PR comes from a fork. Skip library generation."
           exit 0
         fi
+    - uses: googleapis/sdk-platform-java/library_generation@chore/add-reusable-workflow
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - uses: googleapis/sdk-platform-java/library_generation@chore/add-reusable-workflow
     - name: Generate changed libraries
       shell: bash
       run: |
