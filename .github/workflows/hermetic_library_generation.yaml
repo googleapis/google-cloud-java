@@ -19,7 +19,6 @@ on:
 
 jobs:
   library_generation:
-    runs-on: ubuntu-latest
     uses: googleapis/sdk-platform-java/.github/workflows/reusable_library_generation.yaml@chore/add-reusable-workflow
     with:
       repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
