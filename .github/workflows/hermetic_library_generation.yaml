@@ -35,7 +35,7 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - uses: googleapis/sdk-platform-java/library_generation@chore/add-reusable-workflow
+    - uses: googleapis/sdk-platform-java/.github/scripts@chore/add-reusable-workflow
     - name: Generate changed libraries
       shell: bash
       run: |
