@@ -53,39 +53,47 @@ public final class LlmUtilityServiceProto {
           + "ervice.proto\022\030google.cloud.vertexai.v1\032\034"
           + "google/api/annotations.proto\032\027google/api"
           + "/client.proto\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\0321googl"
+          + ".proto\032\031google/api/resource.proto\032&googl"
+          + "e/cloud/vertexai/v1/content.proto\0321googl"
           + "e/cloud/vertexai/v1/prediction_service.p"
-          + "roto\032\034google/protobuf/struct.proto\"\204\001\n\024C"
+          + "roto\032\034google/protobuf/struct.proto\"\322\001\n\024C"
           + "omputeTokensRequest\022<\n\010endpoint\030\001 \001(\tB*\340"
           + "A\002\372A$\n\"aiplatform.googleapis.com/Endpoin"
           + "t\022.\n\tinstances\030\002 \003(\0132\026.google.protobuf.V"
-          + "alueB\003\340A\002\"/\n\nTokensInfo\022\016\n\006tokens\030\001 \003(\014\022"
-          + "\021\n\ttoken_ids\030\002 \003(\003\"R\n\025ComputeTokensRespo"
-          + "nse\0229\n\013tokens_info\030\001 \003(\0132$.google.cloud."
-          + "vertexai.v1.TokensInfo2\244\005\n\021LlmUtilitySer"
-          + "vice\022\231\002\n\013CountTokens\022,.google.cloud.vert"
-          + "exai.v1.CountTokensRequest\032-.google.clou"
-          + "d.vertexai.v1.CountTokensResponse\"\254\001\332A\022e"
-          + "ndpoint,instances\202\323\344\223\002\220\001\"=/v1/{endpoint="
-          + "projects/*/locations/*/endpoints/*}:coun"
-          + "tTokens:\001*ZL\"G/v1/{endpoint=projects/*/l"
-          + "ocations/*/publishers/*/models/*}:countT"
-          + "okens:\001*\022\243\002\n\rComputeTokens\022..google.clou"
-          + "d.vertexai.v1.ComputeTokensRequest\032/.goo"
-          + "gle.cloud.vertexai.v1.ComputeTokensRespo"
-          + "nse\"\260\001\332A\022endpoint,instances\202\323\344\223\002\224\001\"?/v1/"
-          + "{endpoint=projects/*/locations/*/endpoin"
-          + "ts/*}:computeTokens:\001*ZN\"I/v1/{endpoint="
-          + "projects/*/locations/*/publishers/*/mode"
-          + "ls/*}:computeTokens:\001*\032M\312A\031aiplatform.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\323\001\n\035com.google.clo"
-          + "ud.vertexai.apiB\026LlmUtilityServiceProtoP"
-          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
-          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "alueB\003\340A\001\022\022\n\005model\030\003 \001(\tB\003\340A\001\0228\n\010content"
+          + "s\030\004 \003(\0132!.google.cloud.vertexai.v1.Conte"
+          + "ntB\003\340A\001\"B\n\nTokensInfo\022\016\n\006tokens\030\001 \003(\014\022\021\n"
+          + "\ttoken_ids\030\002 \003(\003\022\021\n\004role\030\003 \001(\tB\003\340A\001\"R\n\025C"
+          + "omputeTokensResponse\0229\n\013tokens_info\030\001 \003("
+          + "\0132$.google.cloud.vertexai.v1.TokensInfo2"
+          + "\360\006\n\021LlmUtilityService\022\375\002\n\013CountTokens\022,."
+          + "google.cloud.vertexai.v1.CountTokensRequ"
+          + "est\032-.google.cloud.vertexai.v1.CountToke"
+          + "nsResponse\"\220\002\332A\022endpoint,instances\202\323\344\223\002\364"
+          + "\001\"=/v1/{endpoint=projects/*/locations/*/"
+          + "endpoints/*}:countTokens:\001*ZL\"G/v1/{endp"
+          + "oint=projects/*/locations/*/publishers/*"
+          + "/models/*}:countTokens:\001*Z+\"&/v1/{endpoi"
+          + "nt=endpoints/*}:countTokens:\001*Z5\"0/v1/{e"
+          + "ndpoint=publishers/*/models/*}:countToke"
+          + "ns:\001*\022\213\003\n\rComputeTokens\022..google.cloud.v"
+          + "ertexai.v1.ComputeTokensRequest\032/.google"
+          + ".cloud.vertexai.v1.ComputeTokensResponse"
+          + "\"\230\002\332A\022endpoint,instances\202\323\344\223\002\374\001\"?/v1/{en"
+          + "dpoint=projects/*/locations/*/endpoints/"
+          + "*}:computeTokens:\001*ZN\"I/v1/{endpoint=pro"
+          + "jects/*/locations/*/publishers/*/models/"
+          + "*}:computeTokens:\001*Z-\"(/v1/{endpoint=end"
+          + "points/*}:computeTokens:\001*Z7\"2/v1/{endpo"
+          + "int=publishers/*/models/*}:computeTokens"
+          + ":\001*\032M\312A\031aiplatform.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmB\323\001\n\035com.google.cloud.vertexai.apiB\026Ll"
+          + "mUtilityServiceProtoP\001Z>cloud.google.com"
+          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
+          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
+          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
+          + "::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -95,6 +103,7 @@ public final class LlmUtilityServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.vertexai.api.ContentProto.getDescriptor(),
               com.google.cloud.vertexai.api.PredictionServiceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -104,7 +113,7 @@ public final class LlmUtilityServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_ComputeTokensRequest_descriptor,
             new java.lang.String[] {
-              "Endpoint", "Instances",
+              "Endpoint", "Instances", "Model", "Contents",
             });
     internal_static_google_cloud_vertexai_v1_TokensInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -112,7 +121,7 @@ public final class LlmUtilityServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_TokensInfo_descriptor,
             new java.lang.String[] {
-              "Tokens", "TokenIds",
+              "Tokens", "TokenIds", "Role",
             });
     internal_static_google_cloud_vertexai_v1_ComputeTokensResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -136,6 +145,7 @@ public final class LlmUtilityServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.vertexai.api.ContentProto.getDescriptor();
     com.google.cloud.vertexai.api.PredictionServiceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

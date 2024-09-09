@@ -115,4 +115,118 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.SearchEntryPointOrBuilder getSearchEntryPointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vertexai.v1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  java.util.List<com.google.cloud.vertexai.api.GroundingChunk> getGroundingChunksList();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vertexai.v1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  com.google.cloud.vertexai.api.GroundingChunk getGroundingChunks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vertexai.v1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  int getGroundingChunksCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vertexai.v1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.vertexai.api.GroundingChunkOrBuilder>
+      getGroundingChunksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vertexai.v1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  com.google.cloud.vertexai.api.GroundingChunkOrBuilder getGroundingChunksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vertexai.api.GroundingSupport> getGroundingSupportsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.GroundingSupport getGroundingSupports(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGroundingSupportsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vertexai.api.GroundingSupportOrBuilder>
+      getGroundingSupportsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.GroundingSupportOrBuilder getGroundingSupportsOrBuilder(int index);
 }
