@@ -23,6 +23,7 @@ import com.google.cloud.dataproc.v1.ClusterConfig;
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
 import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import com.google.cloud.dataproc.v1.CreateClusterRequest;
+import com.google.cloud.dataproc.v1.GceClusterConfig;
 import com.google.cloud.dataproc.v1.RegionName;
 import com.google.cloud.dataproc.v1.WorkflowTemplate;
 import com.google.cloud.dataproc.v1.WorkflowTemplateName;
@@ -48,7 +49,10 @@ public class ITSystemTest {
   private static final String CLUSTER_REGION = "us-central1";
   private static final ClusterControllerSettings.Builder CLUSTER_CONTROLLER_SETTINGS =
       ClusterControllerSettings.newBuilder().setEndpoint("us-central1-dataproc.googleapis.com:443");
-  private static final ClusterConfig CLUSTER_CONFIG = ClusterConfig.newBuilder().build();
+  private static final ClusterConfig CLUSTER_CONFIG =
+      ClusterConfig.newBuilder()
+          .setGceClusterConfig(GceClusterConfig.newBuilder().setInternalIpOnly(false).build())
+          .build();
   private static final Cluster CLUSTER =
       Cluster.newBuilder()
           .setProjectId(PROJECT_ID)
