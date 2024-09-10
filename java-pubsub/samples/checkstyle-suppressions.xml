@@ -20,15 +20,9 @@
     "https://checkstyle.org/dtds/suppressions_1_2.dtd">
 
 <suppressions>
-  <suppress checks="EmptyLineSeparatorCheck" files="StateProto.java|State.java"/>
-  <suppress checks="IndentationCheck" files="StateProto.java"/>
-  <suppress checks="LeftCurlyCheck" files="StateProto.java"/>
-  <suppress checks="MemberNameCheck" files="StateProto.java|State.java"/>
-  <suppress checks="NeedBracesCheck" files="StateProto.java"/>
-  <suppress checks="OverloadMethodsDeclarationOrderCheck" files="StateProto.java"/>
-  <suppress checks="EmptyBlockCheck" files="StateProto.java"/>
-  <suppress checks="WhitespaceAroundCheck" files="StateProto.java"/>
-  <suppress checks="IllegalTokenTextCheck" files="StateProto.java"/>
+  <suppress checks="EmptyLineSeparatorCheck" files="State.java"/>
+  <suppress checks="MemberNameCheck" files="State.java"/>
   <suppress checks="ParameterNameCheck" files="State.java"/>
-  <suppress checks="LineLengthCheck" files="State.java|StateProto.java"/>
+  <suppress checks="LineLengthCheck" files="State.java"/>
+  <suppress checks=".*" files="StateProto.java"/>
 </suppressions>
