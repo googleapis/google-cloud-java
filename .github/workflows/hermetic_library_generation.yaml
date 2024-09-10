@@ -17,26 +17,18 @@ name: Hermetic library generation upon generation config change through pull req
 on:
   pull_request:
 
-env:
-  REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
-  GITHUB_REPOSITORY: ${{ github.repository }}
 jobs:
   library_generation:
     runs-on: ubuntu-latest
     steps:
-    - name: Prerequisite
-      shell: bash
-      run: |
-        if [[ "${GITHUB_REPOSITORY}" != "${REPO_FULL_NAME}" ]]; then
-          echo "This PR comes from a fork. Skip library generation."
-          exit 0
-        fi
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - uses: googleapis/sdk-platform-java/.github/scripts@chore/add-reusable-workflow
       with:
+        repo_full_name: ${{ github.event.pull_request.head.repo.full_name }}
+        github_repository: ${{ github.repository }}
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
