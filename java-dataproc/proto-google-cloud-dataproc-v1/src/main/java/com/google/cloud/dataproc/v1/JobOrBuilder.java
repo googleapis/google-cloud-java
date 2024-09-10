@@ -485,6 +485,47 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flinkJob field is set.
+   */
+  boolean hasFlinkJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flinkJob.
+   */
+  com.google.cloud.dataproc.v1.FlinkJob getFlinkJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.FlinkJobOrBuilder getFlinkJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.

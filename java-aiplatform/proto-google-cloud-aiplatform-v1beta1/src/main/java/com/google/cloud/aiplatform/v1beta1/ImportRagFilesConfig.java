@@ -75,6 +75,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     GOOGLE_DRIVE_SOURCE(3),
     SLACK_SOURCE(6),
     JIRA_SOURCE(7),
+    SHARE_POINT_SOURCES(13),
     IMPORTSOURCE_NOT_SET(0);
     private final int value;
 
@@ -101,6 +102,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           return SLACK_SOURCE;
         case 7:
           return JIRA_SOURCE;
+        case 13:
+          return SHARE_POINT_SOURCES;
         case 0:
           return IMPORTSOURCE_NOT_SET;
         default:
@@ -115,6 +118,55 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public ImportSourceCase getImportSourceCase() {
     return ImportSourceCase.forNumber(importSourceCase_);
+  }
+
+  private int partialFailureSinkCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object partialFailureSink_;
+
+  public enum PartialFailureSinkCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PARTIAL_FAILURE_GCS_SINK(11),
+    PARTIAL_FAILURE_BIGQUERY_SINK(12),
+    PARTIALFAILURESINK_NOT_SET(0);
+    private final int value;
+
+    private PartialFailureSinkCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PartialFailureSinkCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PartialFailureSinkCase forNumber(int value) {
+      switch (value) {
+        case 11:
+          return PARTIAL_FAILURE_GCS_SINK;
+        case 12:
+          return PARTIAL_FAILURE_BIGQUERY_SINK;
+        case 0:
+          return PARTIALFAILURESINK_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PartialFailureSinkCase getPartialFailureSinkCase() {
+    return PartialFailureSinkCase.forNumber(partialFailureSinkCase_);
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
@@ -334,6 +386,180 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
   }
 
+  public static final int SHARE_POINT_SOURCES_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   *
+   * @return Whether the sharePointSources field is set.
+   */
+  @java.lang.Override
+  public boolean hasSharePointSources() {
+    return importSourceCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   *
+   * @return The sharePointSources.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SharePointSources getSharePointSources() {
+    if (importSourceCase_ == 13) {
+      return (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder
+      getSharePointSourcesOrBuilder() {
+    if (importSourceCase_ == 13) {
+      return (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+  }
+
+  public static final int PARTIAL_FAILURE_GCS_SINK_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   *
+   * @return Whether the partialFailureGcsSink field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartialFailureGcsSink() {
+    return partialFailureSinkCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   *
+   * @return The partialFailureGcsSink.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink() {
+    if (partialFailureSinkCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+      getPartialFailureGcsSinkOrBuilder() {
+    if (partialFailureSinkCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+  }
+
+  public static final int PARTIAL_FAILURE_BIGQUERY_SINK_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   *
+   * @return Whether the partialFailureBigquerySink field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartialFailureBigquerySink() {
+    return partialFailureSinkCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   *
+   * @return The partialFailureBigquerySink.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink() {
+    if (partialFailureSinkCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+      getPartialFailureBigquerySinkOrBuilder() {
+    if (partialFailureSinkCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+  }
+
   public static final int RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
   /**
@@ -497,6 +723,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(8, getRagFileParsingConfig());
     }
+    if (partialFailureSinkCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_);
+    }
+    if (partialFailureSinkCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_);
+    }
+    if (importSourceCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -538,6 +776,21 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRagFileParsingConfig());
     }
+    if (partialFailureSinkCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_);
+    }
+    if (partialFailureSinkCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_);
+    }
+    if (importSourceCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -576,6 +829,21 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         break;
       case 7:
         if (!getJiraSource().equals(other.getJiraSource())) return false;
+        break;
+      case 13:
+        if (!getSharePointSources().equals(other.getSharePointSources())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getPartialFailureSinkCase().equals(other.getPartialFailureSinkCase())) return false;
+    switch (partialFailureSinkCase_) {
+      case 11:
+        if (!getPartialFailureGcsSink().equals(other.getPartialFailureGcsSink())) return false;
+        break;
+      case 12:
+        if (!getPartialFailureBigquerySink().equals(other.getPartialFailureBigquerySink()))
+          return false;
         break;
       case 0:
       default:
@@ -617,6 +885,22 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       case 7:
         hash = (37 * hash) + JIRA_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getJiraSource().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + SHARE_POINT_SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSharePointSources().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (partialFailureSinkCase_) {
+      case 11:
+        hash = (37 * hash) + PARTIAL_FAILURE_GCS_SINK_FIELD_NUMBER;
+        hash = (53 * hash) + getPartialFailureGcsSink().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + PARTIAL_FAILURE_BIGQUERY_SINK_FIELD_NUMBER;
+        hash = (53 * hash) + getPartialFailureBigquerySink().hashCode();
         break;
       case 0:
       default:
@@ -783,6 +1067,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (jiraSourceBuilder_ != null) {
         jiraSourceBuilder_.clear();
       }
+      if (sharePointSourcesBuilder_ != null) {
+        sharePointSourcesBuilder_.clear();
+      }
+      if (partialFailureGcsSinkBuilder_ != null) {
+        partialFailureGcsSinkBuilder_.clear();
+      }
+      if (partialFailureBigquerySinkBuilder_ != null) {
+        partialFailureBigquerySinkBuilder_.clear();
+      }
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -796,6 +1089,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       maxEmbeddingRequestsPerMin_ = 0;
       importSourceCase_ = 0;
       importSource_ = null;
+      partialFailureSinkCase_ = 0;
+      partialFailureSink_ = null;
       return this;
     }
 
@@ -834,21 +1129,21 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.ragFileChunkingConfig_ =
             ragFileChunkingConfigBuilder_ == null
                 ? ragFileChunkingConfig_
                 : ragFileChunkingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ragFileParsingConfig_ =
             ragFileParsingConfigBuilder_ == null
                 ? ragFileParsingConfig_
                 : ragFileParsingConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -869,6 +1164,17 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (importSourceCase_ == 7 && jiraSourceBuilder_ != null) {
         result.importSource_ = jiraSourceBuilder_.build();
+      }
+      if (importSourceCase_ == 13 && sharePointSourcesBuilder_ != null) {
+        result.importSource_ = sharePointSourcesBuilder_.build();
+      }
+      result.partialFailureSinkCase_ = partialFailureSinkCase_;
+      result.partialFailureSink_ = this.partialFailureSink_;
+      if (partialFailureSinkCase_ == 11 && partialFailureGcsSinkBuilder_ != null) {
+        result.partialFailureSink_ = partialFailureGcsSinkBuilder_.build();
+      }
+      if (partialFailureSinkCase_ == 12 && partialFailureBigquerySinkBuilder_ != null) {
+        result.partialFailureSink_ = partialFailureBigquerySinkBuilder_.build();
       }
     }
 
@@ -948,7 +1254,28 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             mergeJiraSource(other.getJiraSource());
             break;
           }
+        case SHARE_POINT_SOURCES:
+          {
+            mergeSharePointSources(other.getSharePointSources());
+            break;
+          }
         case IMPORTSOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getPartialFailureSinkCase()) {
+        case PARTIAL_FAILURE_GCS_SINK:
+          {
+            mergePartialFailureGcsSink(other.getPartialFailureGcsSink());
+            break;
+          }
+        case PARTIAL_FAILURE_BIGQUERY_SINK:
+          {
+            mergePartialFailureBigquerySink(other.getPartialFailureBigquerySink());
+            break;
+          }
+        case PARTIALFAILURESINK_NOT_SET:
           {
             break;
           }
@@ -996,13 +1323,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 40
             case 50:
@@ -1021,9 +1348,30 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
+            case 90:
+              {
+                input.readMessage(
+                    getPartialFailureGcsSinkFieldBuilder().getBuilder(), extensionRegistry);
+                partialFailureSinkCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getPartialFailureBigquerySinkFieldBuilder().getBuilder(), extensionRegistry);
+                partialFailureSinkCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getSharePointSourcesFieldBuilder().getBuilder(), extensionRegistry);
+                importSourceCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1051,6 +1399,20 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder clearImportSource() {
       importSourceCase_ = 0;
       importSource_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int partialFailureSinkCase_ = 0;
+    private java.lang.Object partialFailureSink_;
+
+    public PartialFailureSinkCase getPartialFailureSinkCase() {
+      return PartialFailureSinkCase.forNumber(partialFailureSinkCase_);
+    }
+
+    public Builder clearPartialFailureSink() {
+      partialFailureSinkCase_ = 0;
+      partialFailureSink_ = null;
       onChanged();
       return this;
     }
@@ -1938,6 +2300,714 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return jiraSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SharePointSources,
+            com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder,
+            com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder>
+        sharePointSourcesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     *
+     * @return Whether the sharePointSources field is set.
+     */
+    @java.lang.Override
+    public boolean hasSharePointSources() {
+      return importSourceCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     *
+     * @return The sharePointSources.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SharePointSources getSharePointSources() {
+      if (sharePointSourcesBuilder_ == null) {
+        if (importSourceCase_ == 13) {
+          return (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+      } else {
+        if (importSourceCase_ == 13) {
+          return sharePointSourcesBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    public Builder setSharePointSources(
+        com.google.cloud.aiplatform.v1beta1.SharePointSources value) {
+      if (sharePointSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSource_ = value;
+        onChanged();
+      } else {
+        sharePointSourcesBuilder_.setMessage(value);
+      }
+      importSourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    public Builder setSharePointSources(
+        com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder builderForValue) {
+      if (sharePointSourcesBuilder_ == null) {
+        importSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        sharePointSourcesBuilder_.setMessage(builderForValue.build());
+      }
+      importSourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    public Builder mergeSharePointSources(
+        com.google.cloud.aiplatform.v1beta1.SharePointSources value) {
+      if (sharePointSourcesBuilder_ == null) {
+        if (importSourceCase_ == 13
+            && importSource_
+                != com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance()) {
+          importSource_ =
+              com.google.cloud.aiplatform.v1beta1.SharePointSources.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourceCase_ == 13) {
+          sharePointSourcesBuilder_.mergeFrom(value);
+        } else {
+          sharePointSourcesBuilder_.setMessage(value);
+        }
+      }
+      importSourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    public Builder clearSharePointSources() {
+      if (sharePointSourcesBuilder_ == null) {
+        if (importSourceCase_ == 13) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourceCase_ == 13) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+        }
+        sharePointSourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder
+        getSharePointSourcesBuilder() {
+      return getSharePointSourcesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder
+        getSharePointSourcesOrBuilder() {
+      if ((importSourceCase_ == 13) && (sharePointSourcesBuilder_ != null)) {
+        return sharePointSourcesBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourceCase_ == 13) {
+          return (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SharePoint sources.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SharePointSources,
+            com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder,
+            com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder>
+        getSharePointSourcesFieldBuilder() {
+      if (sharePointSourcesBuilder_ == null) {
+        if (!(importSourceCase_ == 13)) {
+          importSource_ =
+              com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
+        }
+        sharePointSourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.SharePointSources,
+                com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder,
+                com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_,
+                getParentForChildren(),
+                isClean());
+        importSource_ = null;
+      }
+      importSourceCase_ = 13;
+      onChanged();
+      return sharePointSourcesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        partialFailureGcsSinkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     *
+     * @return Whether the partialFailureGcsSink field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartialFailureGcsSink() {
+      return partialFailureSinkCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     *
+     * @return The partialFailureGcsSink.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink() {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      } else {
+        if (partialFailureSinkCase_ == 11) {
+          return partialFailureGcsSinkBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    public Builder setPartialFailureGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partialFailureSink_ = value;
+        onChanged();
+      } else {
+        partialFailureGcsSinkBuilder_.setMessage(value);
+      }
+      partialFailureSinkCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    public Builder setPartialFailureGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        partialFailureSink_ = builderForValue.build();
+        onChanged();
+      } else {
+        partialFailureGcsSinkBuilder_.setMessage(builderForValue.build());
+      }
+      partialFailureSinkCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    public Builder mergePartialFailureGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 11
+            && partialFailureSink_
+                != com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()) {
+          partialFailureSink_ =
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          partialFailureSink_ = value;
+        }
+        onChanged();
+      } else {
+        if (partialFailureSinkCase_ == 11) {
+          partialFailureGcsSinkBuilder_.mergeFrom(value);
+        } else {
+          partialFailureGcsSinkBuilder_.setMessage(value);
+        }
+      }
+      partialFailureSinkCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    public Builder clearPartialFailureGcsSink() {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 11) {
+          partialFailureSinkCase_ = 0;
+          partialFailureSink_ = null;
+          onChanged();
+        }
+      } else {
+        if (partialFailureSinkCase_ == 11) {
+          partialFailureSinkCase_ = 0;
+          partialFailureSink_ = null;
+        }
+        partialFailureGcsSinkBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
+        getPartialFailureGcsSinkBuilder() {
+      return getPartialFailureGcsSinkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+        getPartialFailureGcsSinkOrBuilder() {
+      if ((partialFailureSinkCase_ == 11) && (partialFailureGcsSinkBuilder_ != null)) {
+        return partialFailureGcsSinkBuilder_.getMessageOrBuilder();
+      } else {
+        if (partialFailureSinkCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write partial failures to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        getPartialFailureGcsSinkFieldBuilder() {
+      if (partialFailureGcsSinkBuilder_ == null) {
+        if (!(partialFailureSinkCase_ == 11)) {
+          partialFailureSink_ =
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+        }
+        partialFailureGcsSinkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GcsDestination,
+                com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+                com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_,
+                getParentForChildren(),
+                isClean());
+        partialFailureSink_ = null;
+      }
+      partialFailureSinkCase_ = 11;
+      onChanged();
+      return partialFailureGcsSinkBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
+        partialFailureBigquerySinkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     *
+     * @return Whether the partialFailureBigquerySink field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartialFailureBigquerySink() {
+      return partialFailureSinkCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     *
+     * @return The partialFailureBigquerySink.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink() {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      } else {
+        if (partialFailureSinkCase_ == 12) {
+          return partialFailureBigquerySinkBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    public Builder setPartialFailureBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partialFailureSink_ = value;
+        onChanged();
+      } else {
+        partialFailureBigquerySinkBuilder_.setMessage(value);
+      }
+      partialFailureSinkCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    public Builder setPartialFailureBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder builderForValue) {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        partialFailureSink_ = builderForValue.build();
+        onChanged();
+      } else {
+        partialFailureBigquerySinkBuilder_.setMessage(builderForValue.build());
+      }
+      partialFailureSinkCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    public Builder mergePartialFailureBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 12
+            && partialFailureSink_
+                != com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()) {
+          partialFailureSink_ =
+              com.google.cloud.aiplatform.v1beta1.BigQueryDestination.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          partialFailureSink_ = value;
+        }
+        onChanged();
+      } else {
+        if (partialFailureSinkCase_ == 12) {
+          partialFailureBigquerySinkBuilder_.mergeFrom(value);
+        } else {
+          partialFailureBigquerySinkBuilder_.setMessage(value);
+        }
+      }
+      partialFailureSinkCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    public Builder clearPartialFailureBigquerySink() {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        if (partialFailureSinkCase_ == 12) {
+          partialFailureSinkCase_ = 0;
+          partialFailureSink_ = null;
+          onChanged();
+        }
+      } else {
+        if (partialFailureSinkCase_ == 12) {
+          partialFailureSinkCase_ = 0;
+          partialFailureSink_ = null;
+        }
+        partialFailureBigquerySinkBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder
+        getPartialFailureBigquerySinkBuilder() {
+      return getPartialFailureBigquerySinkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+        getPartialFailureBigquerySinkOrBuilder() {
+      if ((partialFailureSinkCase_ == 12) && (partialFailureBigquerySinkBuilder_ != null)) {
+        return partialFailureBigquerySinkBuilder_.getMessageOrBuilder();
+      } else {
+        if (partialFailureSinkCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write partial failures to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+     * exist, it will be created. If the table does not exist, it will be
+     * created with the expected schema. If the table exists, the schema will be
+     * validated and data will be added to this existing table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
+        getPartialFailureBigquerySinkFieldBuilder() {
+      if (partialFailureBigquerySinkBuilder_ == null) {
+        if (!(partialFailureSinkCase_ == 12)) {
+          partialFailureSink_ =
+              com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+        }
+        partialFailureBigquerySinkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_,
+                getParentForChildren(),
+                isClean());
+        partialFailureSink_ = null;
+      }
+      partialFailureSinkCase_ = 12;
+      onChanged();
+      return partialFailureBigquerySinkBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig,
@@ -1957,7 +3027,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the ragFileChunkingConfig field is set.
      */
     public boolean hasRagFileChunkingConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2000,7 +3070,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2021,7 +3091,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2038,7 +3108,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && ragFileChunkingConfig_ != null
             && ragFileChunkingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()) {
@@ -2050,7 +3120,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileChunkingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileChunkingConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2066,7 +3136,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRagFileChunkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -2087,7 +3157,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder
         getRagFileChunkingConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getRagFileChunkingConfigFieldBuilder().getBuilder();
     }
@@ -2157,7 +3227,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the ragFileParsingConfig field is set.
      */
     public boolean hasRagFileParsingConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2200,7 +3270,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2221,7 +3291,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2238,7 +3308,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileParsingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig value) {
       if (ragFileParsingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && ragFileParsingConfig_ != null
             && ragFileParsingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.getDefaultInstance()) {
@@ -2250,7 +3320,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileParsingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileParsingConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2266,7 +3336,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRagFileParsingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ragFileParsingConfig_ = null;
       if (ragFileParsingConfigBuilder_ != null) {
         ragFileParsingConfigBuilder_.dispose();
@@ -2287,7 +3357,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.Builder
         getRagFileParsingConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getRagFileParsingConfigFieldBuilder().getBuilder();
     }
@@ -2379,7 +3449,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2400,7 +3470,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;
