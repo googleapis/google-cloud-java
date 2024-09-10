@@ -21,16 +21,26 @@ env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
 jobs:
-  library_generation:
+  should_run_library_generation:
     runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.determine_fork.outputs.should_run }}
     steps:
     - name: Determine whether the pull request comes from a fork
+      id: determine_fork
       shell: bash
       run: |
         if [[ "${GITHUB_REPOSITORY}" != "${REPO_FULL_NAME}" ]]; then
           echo "This PR comes from a fork. Skip library generation."
-          exit 0
+          echo "should_run=false" >> $GITHUB_OUTPUT
+        else
+          echo "should_run=true" >> $GITHUB_OUTPUT
         fi
+  library_generation:
+    runs-on: ubuntu-latest
+    needs: should_run_library_generation
+    if: needs.should_run_library_generation.outputs.should_run == 'true'
+    steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
