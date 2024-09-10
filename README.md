@@ -19,10 +19,17 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.44.0</version>
+      <version>26.45.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-bom</artifactId>
+      <version>1.41.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+     </dependency>
   </dependencies>
 </dependencyManagement>
 
@@ -42,7 +49,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>3.8.1</version>
+  <version>3.9.0</version>
 </dependency>
 
 ```
@@ -57,13 +64,13 @@ implementation 'com.google.cloud:google-cloud-bigquerystorage'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerystorage:3.8.1'
+implementation 'com.google.cloud:google-cloud-bigquerystorage:3.9.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "3.8.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "3.9.0"
 ```
 <!-- {x-version-update-end} -->
 
@@ -106,50 +113,19 @@ use this BigQuery Storage Client Library.
 
 Samples are in the [`samples/`](https://github.com/googleapis/java-bigquerystorage/tree/main/samples) directory.
 
-| Sample                          | Source Code                                                                                                                                                              | Try it                                                                                                                                                                                                                                                                    |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Json Writer Stream Cdc          | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/JsonWriterStreamCdc.java)          | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/JsonWriterStreamCdc.java)          |
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Export Open Telemetry | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/ExportOpenTelemetry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/ExportOpenTelemetry.java) |
+| Json Writer Stream Cdc | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/JsonWriterStreamCdc.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/JsonWriterStreamCdc.java) |
 | Parallel Write Committed Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/ParallelWriteCommittedStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/ParallelWriteCommittedStream.java) |
-| Storage Arrow Sample            | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java)           | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java)           |
-| Storage Sample                  | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java)                | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java)                |
-| Write Buffered Stream           | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteBufferedStream.java)          | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteBufferedStream.java)          |
-| Write Committed Stream          | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteCommittedStream.java)         | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteCommittedStream.java)         |
-| Write Pending Stream            | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WritePendingStream.java)           | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WritePendingStream.java)           |
-| Write To Default Stream         | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteToDefaultStream.java)         | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteToDefaultStream.java)         |
-| Export OpenTelemetry Metrics    | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/ExportOpenTelemetry.java)          | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/ExportOpenTelemetry.java)          |
-
-## OpenTelemetry Support
-
-The client supports emitting metrics to OpenTelemetry. This is disabled by default. It can be enabled by calling
-
-```aidl
-JsonStreamWriter.Builder.setEnableOpenTelemetry(true)
-```
-The following attributes are supported.
-
-| Key             | Value                                                     |
-|-----------------|-----------------------------------------------------------|
-| `table_id`      | Holds fully qualified name of destination table |
-| `writer_id`     | Specifies writer instance id associated with queue lengths. |
-| `trace_field_1` | If a colon-separated traceId is provided, this holds the first portion. Must be non-empty. Currently populated only for Dataflow. |
-| `trace_field_2` | If a colon-separated traceId is provided, this holds the second portion. Must be non-empty. Currently populated only for Dataflow. |
-| `trace_field_3` | If a colon-separated traceId is provided, this holds the third portion. Must be non-empty. Currently populated only for Dataflow. |
-| `error_code`    | Specifies error code in the event an append request fails, or a connection ends. |
-| `is_retry`      | Indicates this was a retry operation. This can be set for either ack’ed requests or connection retry attempts. |
+| Storage Arrow Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) |
+| Storage Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) |
+| Write Buffered Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteBufferedStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteBufferedStream.java) |
+| Write Committed Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteCommittedStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteCommittedStream.java) |
+| Write Pending Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WritePendingStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WritePendingStream.java) |
+| Write To Default Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/main/java/com/example/bigquerystorage/WriteToDefaultStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/WriteToDefaultStream.java) |
 
 
-The following metrics are supported.
-
-| Name                         | Kind                | Description                                                                                                      |
-|------------------------------|---------------------|------------------------------------------------------------------------------------------------------------------|
-| `append_requests_acked`      | Synchronous counter | Counts number of requests acked by the server                                                                    |
-| `append_request_bytes_acked` | Synchronous counter | Counts byte size of requests acked by the server                                                                 |
-| `append_rows_acked`          | Synchronous counter | Counts number of rows in requests acked by the server                                                            |
-| `active_connection_count`    | Asynchronous gauge  | Reports number of active connections                                                                             |
-| `inflight_queue_length`      | Asynchronous gauge  | Reports length of inflight queue. This queue contains sent append requests waiting for response from the server. |
-| `network_response_latency`   | Histogram           | Reports time taken in milliseconds for a response to arrive once a message has been sent over the network.       |
-| `connection_start_count`     | Synchronous counter | Counts number of connection attempts made, regardless of whether these are initial or retry.                     |
-| `connection_end_count`       | Synchronous counter | Counts number of connection end events. This is decorated with the error code.                                   |
 
 ## Troubleshooting
 
@@ -251,7 +227,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquerystorage/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquerystorage.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigquerystorage/3.8.1
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigquerystorage/3.9.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
