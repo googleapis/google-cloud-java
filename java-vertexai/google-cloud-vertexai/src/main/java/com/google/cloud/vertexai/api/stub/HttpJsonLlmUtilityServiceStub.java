@@ -80,18 +80,21 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:countTokens")
+                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:countTokens",
+                          "/v1/{endpoint=endpoints/*}:countTokens",
+                          "/v1/{endpoint=publishers/*/models/*}:countTokens")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CountTokensRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CountTokensResponse>newBuilder()
@@ -118,18 +121,21 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:computeTokens")
+                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:computeTokens",
+                          "/v1/{endpoint=endpoints/*}:computeTokens",
+                          "/v1/{endpoint=publishers/*/models/*}:computeTokens")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ComputeTokensRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ComputeTokensResponse>newBuilder()
@@ -161,6 +167,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -195,6 +202,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -227,6 +235,8 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:setIamPolicy",
@@ -239,12 +249,13 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -274,6 +285,8 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:getIamPolicy",
@@ -287,6 +300,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -319,6 +333,8 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/models/*}:testIamPermissions",
@@ -331,6 +347,7 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

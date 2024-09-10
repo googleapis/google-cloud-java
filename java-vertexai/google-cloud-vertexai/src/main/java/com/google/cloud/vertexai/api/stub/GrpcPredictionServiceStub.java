@@ -385,24 +385,12 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
         streamDirectPredictTransportSettings =
             GrpcCallSettings.<StreamDirectPredictRequest, StreamDirectPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectPredictMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("endpoint", String.valueOf(request.getEndpoint()));
-                      return builder.build();
-                    })
                 .build();
     GrpcCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
         streamDirectRawPredictTransportSettings =
             GrpcCallSettings
                 .<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectRawPredictMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("endpoint", String.valueOf(request.getEndpoint()));
-                      return builder.build();
-                    })
                 .build();
     GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
         streamingPredictTransportSettings =

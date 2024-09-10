@@ -65,6 +65,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.MachineSpec.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -254,6 +255,66 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 5;
+  private com.google.cloud.vertexai.api.ReservationAffinity reservationAffinity_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the reservationAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationAffinity() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The reservationAffinity.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.ReservationAffinity getReservationAffinity() {
+    return reservationAffinity_ == null
+        ? com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()
+        : reservationAffinity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.ReservationAffinityOrBuilder
+      getReservationAffinityOrBuilder() {
+    return reservationAffinity_ == null
+        ? com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()
+        : reservationAffinity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -281,6 +342,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tpuTopology_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getReservationAffinity());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -303,6 +367,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tpuTopology_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReservationAffinity());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -323,6 +390,10 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (acceleratorType_ != other.acceleratorType_) return false;
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
     if (!getTpuTopology().equals(other.getTpuTopology())) return false;
+    if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
+    if (hasReservationAffinity()) {
+      if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -342,6 +413,10 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAcceleratorCount();
     hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
     hash = (53 * hash) + getTpuTopology().hashCode();
+    if (hasReservationAffinity()) {
+      hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationAffinity().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -471,10 +546,19 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.vertexai.api.MachineSpec.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getReservationAffinityFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +569,11 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       acceleratorType_ = 0;
       acceleratorCount_ = 0;
       tpuTopology_ = "";
+      reservationAffinity_ = null;
+      if (reservationAffinityBuilder_ != null) {
+        reservationAffinityBuilder_.dispose();
+        reservationAffinityBuilder_ = null;
+      }
       return this;
     }
 
@@ -533,6 +622,15 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tpuTopology_ = tpuTopology_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reservationAffinity_ =
+            reservationAffinityBuilder_ == null
+                ? reservationAffinity_
+                : reservationAffinityBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -596,6 +694,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasReservationAffinity()) {
+        mergeReservationAffinity(other.getReservationAffinity());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -646,6 +747,13 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1103,6 +1211,223 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.vertexai.api.ReservationAffinity reservationAffinity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.ReservationAffinity,
+            com.google.cloud.vertexai.api.ReservationAffinity.Builder,
+            com.google.cloud.vertexai.api.ReservationAffinityOrBuilder>
+        reservationAffinityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the reservationAffinity field is set.
+     */
+    public boolean hasReservationAffinity() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The reservationAffinity.
+     */
+    public com.google.cloud.vertexai.api.ReservationAffinity getReservationAffinity() {
+      if (reservationAffinityBuilder_ == null) {
+        return reservationAffinity_ == null
+            ? com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      } else {
+        return reservationAffinityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReservationAffinity(com.google.cloud.vertexai.api.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservationAffinity_ = value;
+      } else {
+        reservationAffinityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReservationAffinity(
+        com.google.cloud.vertexai.api.ReservationAffinity.Builder builderForValue) {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = builderForValue.build();
+      } else {
+        reservationAffinityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReservationAffinity(
+        com.google.cloud.vertexai.api.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && reservationAffinity_ != null
+            && reservationAffinity_
+                != com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()) {
+          getReservationAffinityBuilder().mergeFrom(value);
+        } else {
+          reservationAffinity_ = value;
+        }
+      } else {
+        reservationAffinityBuilder_.mergeFrom(value);
+      }
+      if (reservationAffinity_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReservationAffinity() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      reservationAffinity_ = null;
+      if (reservationAffinityBuilder_ != null) {
+        reservationAffinityBuilder_.dispose();
+        reservationAffinityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ReservationAffinity.Builder
+        getReservationAffinityBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getReservationAffinityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ReservationAffinityOrBuilder
+        getReservationAffinityOrBuilder() {
+      if (reservationAffinityBuilder_ != null) {
+        return reservationAffinityBuilder_.getMessageOrBuilder();
+      } else {
+        return reservationAffinity_ == null
+            ? com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Configuration controlling how this resource pool
+     * consumes reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.ReservationAffinity,
+            com.google.cloud.vertexai.api.ReservationAffinity.Builder,
+            com.google.cloud.vertexai.api.ReservationAffinityOrBuilder>
+        getReservationAffinityFieldBuilder() {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.ReservationAffinity,
+                com.google.cloud.vertexai.api.ReservationAffinity.Builder,
+                com.google.cloud.vertexai.api.ReservationAffinityOrBuilder>(
+                getReservationAffinity(), getParentForChildren(), isClean());
+        reservationAffinity_ = null;
+      }
+      return reservationAffinityBuilder_;
     }
 
     @java.lang.Override
