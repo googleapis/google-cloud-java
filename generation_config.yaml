@@ -398,7 +398,7 @@ libraries:
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
 
 - api_shortname: bigquerydatatransfer
-  name_pretty: BigQuery Data Transfer Service
+  name_pretty: BigQuery Data Transfer Service test 
   product_documentation: https://cloud.google.com/bigquery/transfer/
   api_description: transfers data from partner SaaS applications to Google BigQuery
     on a scheduled, managed basis.
@@ -618,7 +618,7 @@ libraries:
   - proto_path: google/container/v1beta1
 
 - api_shortname: containeranalysis
-  name_pretty: Cloud Container Analysis
+  name_pretty: Cloud Container Analysis test
   product_documentation: https://cloud.google.com/container-registry/docs/container-analysis
   api_description: is a service that provides vulnerability scanning and metadata
     storage for software artifacts. The service performs vulnerability scans on built
@@ -1374,7 +1374,7 @@ libraries:
   - proto_path: google/cloud/migrationcenter/v1
 
 - api_shortname: monitoring
-  name_pretty: Stackdriver Monitoring
+  name_pretty: Stackdriver Monitoring test
   product_documentation: https://cloud.google.com/monitoring/docs
   api_description: collects metrics, events, and metadata from Google Cloud, Amazon
     Web Services (AWS), hosted uptime probes, and application instrumentation. Using
@@ -2090,7 +2090,7 @@ libraries:
   - proto_path: google/shopping/merchant/reports/v1beta
 
 - api_shortname: speech
-  name_pretty: Cloud Speech
+  name_pretty: Cloud Speech test
   product_documentation: https://cloud.google.com/speech-to-text/docs/
   api_description: enables easy integration of Google speech recognition technologies
     into developer applications. Send audio and receive a text transcription from
