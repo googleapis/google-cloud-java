@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.21.3](https://github.com/googleapis/java-datastore/compare/v2.21.2...v2.21.3) (2024-09-11)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.35.0 ([#1561](https://github.com/googleapis/java-datastore/issues/1561)) ([5a79fd8](https://github.com/googleapis/java-datastore/commit/5a79fd8d1202e65c02423fe40402c41af6050efa))
+* Update dependency com.google.errorprone:error_prone_core to v2.31.0 ([#1523](https://github.com/googleapis/java-datastore/issues/1523)) ([8d3af32](https://github.com/googleapis/java-datastore/commit/8d3af322fb56032cd7a9d29e60fd93d1f3e7e632))
+* Update dependency com.google.guava:guava-testlib to v33.3.0-jre ([#1548](https://github.com/googleapis/java-datastore/issues/1548)) ([18ba37f](https://github.com/googleapis/java-datastore/commit/18ba37f60b5b3e69c95f6e55a28daf8c0de82ba9))
+* Update dependency org.easymock:easymock to v5.4.0 ([#1482](https://github.com/googleapis/java-datastore/issues/1482)) ([ee788a1](https://github.com/googleapis/java-datastore/commit/ee788a162841994e09a61bb81b94cbe93353a78e))
+
 ## [2.21.2](https://github.com/googleapis/java-datastore/compare/v2.21.1...v2.21.2) (2024-08-22)
 
 
