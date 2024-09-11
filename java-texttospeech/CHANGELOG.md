@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.50.0 (2024-09-11)
+
+### Bug Fixes
+
+* update Long Audio capabilities to include SSML ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+
+
+
 ## 2.49.0 (2024-08-21)
 
 ### Features
