@@ -2166,6 +2166,20 @@ libraries:
   - proto_path: google/cloud/telcoautomation/v1
   - proto_path: google/cloud/telcoautomation/v1alpha1
 
+- api_shortname: test
+  name_pretty: test
+  product_documentation: https://test
+  api_description: test
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-test/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-test
+  api_id: test.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: test/v2
+  requires_billing: true
 - api_shortname: texttospeech
   name_pretty: Cloud Text-to-Speech
   product_documentation: https://cloud.google.com/text-to-speech
