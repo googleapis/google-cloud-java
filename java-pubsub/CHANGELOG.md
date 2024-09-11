@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.132.2](https://github.com/googleapis/java-pubsub/compare/v1.132.1...v1.132.2) (2024-09-11)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.42.1 ([#2152](https://github.com/googleapis/java-pubsub/issues/2152)) ([1457489](https://github.com/googleapis/java-pubsub/commit/1457489cb51c12bc7ad8ab8ddcf2252a2f513a79))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.42.2 ([#2157](https://github.com/googleapis/java-pubsub/issues/2157)) ([d671347](https://github.com/googleapis/java-pubsub/commit/d671347004a68c53cdf3fdfb9d1a7ed992ee162f))
+* Update dependency com.google.cloud:google-cloud-core to v2.43.0 ([#2161](https://github.com/googleapis/java-pubsub/issues/2161)) ([05a37b7](https://github.com/googleapis/java-pubsub/commit/05a37b786686c24f87eec5e9919c16b2b67465be))
+* Update dependency com.google.cloud:google-cloud-storage to v2.42.0 ([#2145](https://github.com/googleapis/java-pubsub/issues/2145)) ([77c3e78](https://github.com/googleapis/java-pubsub/commit/77c3e78d34e894c05653371027cd2b1d12cea9d0))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.35.0 ([#2162](https://github.com/googleapis/java-pubsub/issues/2162)) ([27eaffd](https://github.com/googleapis/java-pubsub/commit/27eaffd5fa55789b456eaeba98f6800343f3685e))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.27.4 ([#2153](https://github.com/googleapis/java-pubsub/issues/2153)) ([32c78b3](https://github.com/googleapis/java-pubsub/commit/32c78b31e7a904fb6b6a2b55f81e7e3ab7525add))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.28.0 ([#2155](https://github.com/googleapis/java-pubsub/issues/2155)) ([5f61fe1](https://github.com/googleapis/java-pubsub/commit/5f61fe13f6fea1d30ab0e85be0221e70056369f6))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.28.1 ([#2167](https://github.com/googleapis/java-pubsub/issues/2167)) ([bb8ea71](https://github.com/googleapis/java-pubsub/commit/bb8ea717ed0234fdbb582f2915a016fd37657448))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.7 ([#2165](https://github.com/googleapis/java-pubsub/issues/2165)) ([e7fb60e](https://github.com/googleapis/java-pubsub/commit/e7fb60ecccb8bb9fbc6147210491a52ee0f5a817))
+
 ## [1.132.1](https://github.com/googleapis/java-pubsub/compare/v1.132.0...v1.132.1) (2024-08-20)
 
 
