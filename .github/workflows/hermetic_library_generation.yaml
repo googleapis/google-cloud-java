@@ -21,31 +21,24 @@ env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
 jobs:
-  should_run_library_generation:
+  library_generation:
     runs-on: ubuntu-latest
-    outputs:
-      should_run: ${{ steps.determine_fork.outputs.should_run }}
     steps:
     - name: Determine whether the pull request comes from a fork
-      id: determine_fork
-      shell: bash
       run: |
         if [[ "${GITHUB_REPOSITORY}" != "${REPO_FULL_NAME}" ]]; then
           echo "This PR comes from a fork. Skip library generation."
-          echo "should_run=false" >> $GITHUB_OUTPUT
+          echo "SHOULD_RUN=false" >> $GITHUB_ENV
         else
-          echo "should_run=true" >> $GITHUB_OUTPUT
+          echo "SHOULD_RUN=true" >> $GITHUB_ENV
         fi
-  library_generation:
-    runs-on: ubuntu-latest
-    needs: should_run_library_generation
-    if: needs.should_run_library_generation.outputs.should_run == 'true'
-    steps:
     - uses: actions/checkout@v4
+      if: env.SHOULD_RUN == 'true'
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - uses: googleapis/sdk-platform-java/.github/scripts@chore/add-reusable-workflow
+      if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
