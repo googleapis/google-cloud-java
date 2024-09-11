@@ -102,6 +102,41 @@ public interface RagVectorDbConfigOrBuilder
    *
    *
    * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   *
+   * @return Whether the pinecone field is set.
+   */
+  boolean hasPinecone();
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   *
+   * @return The pinecone.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone getPinecone();
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder getPineconeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The config for the Vertex Feature Store.
    * </pre>
    *
@@ -139,6 +174,48 @@ public interface RagVectorDbConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStoreOrBuilder
       getVertexFeatureStoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   *
+   * @return Whether the vertexVectorSearch field is set.
+   */
+  boolean hasVertexVectorSearch();
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   *
+   * @return The vertexVectorSearch.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch getVertexVectorSearch();
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder
+      getVertexVectorSearchOrBuilder();
 
   /**
    *

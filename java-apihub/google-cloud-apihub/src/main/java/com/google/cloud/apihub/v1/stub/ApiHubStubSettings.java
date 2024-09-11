@@ -130,7 +130,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createApi to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createApi:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -146,10 +148,21 @@ import org.threeten.bp.Duration;
  *             .createApiSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ApiHubStubSettings apiHubSettings = apiHubSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
@@ -241,9 +254,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Api> extractResources(ListApisResponse payload) {
-              return payload.getApisList() == null
-                  ? ImmutableList.<Api>of()
-                  : payload.getApisList();
+              return payload.getApisList();
             }
           };
 
@@ -277,9 +288,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Version> extractResources(ListVersionsResponse payload) {
-              return payload.getVersionsList() == null
-                  ? ImmutableList.<Version>of()
-                  : payload.getVersionsList();
+              return payload.getVersionsList();
             }
           };
 
@@ -313,9 +322,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Spec> extractResources(ListSpecsResponse payload) {
-              return payload.getSpecsList() == null
-                  ? ImmutableList.<Spec>of()
-                  : payload.getSpecsList();
+              return payload.getSpecsList();
             }
           };
 
@@ -353,9 +360,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<ApiOperation> extractResources(ListApiOperationsResponse payload) {
-              return payload.getApiOperationsList() == null
-                  ? ImmutableList.<ApiOperation>of()
-                  : payload.getApiOperationsList();
+              return payload.getApiOperationsList();
             }
           };
 
@@ -392,9 +397,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Deployment> extractResources(ListDeploymentsResponse payload) {
-              return payload.getDeploymentsList() == null
-                  ? ImmutableList.<Deployment>of()
-                  : payload.getDeploymentsList();
+              return payload.getDeploymentsList();
             }
           };
 
@@ -429,9 +432,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Attribute> extractResources(ListAttributesResponse payload) {
-              return payload.getAttributesList() == null
-                  ? ImmutableList.<Attribute>of()
-                  : payload.getAttributesList();
+              return payload.getAttributesList();
             }
           };
 
@@ -468,9 +469,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<SearchResult> extractResources(SearchResourcesResponse payload) {
-              return payload.getSearchResultsList() == null
-                  ? ImmutableList.<SearchResult>of()
-                  : payload.getSearchResultsList();
+              return payload.getSearchResultsList();
             }
           };
 
@@ -508,9 +507,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<ExternalApi> extractResources(ListExternalApisResponse payload) {
-              return payload.getExternalApisList() == null
-                  ? ImmutableList.<ExternalApi>of()
-                  : payload.getExternalApisList();
+              return payload.getExternalApisList();
             }
           };
 
@@ -544,9 +541,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

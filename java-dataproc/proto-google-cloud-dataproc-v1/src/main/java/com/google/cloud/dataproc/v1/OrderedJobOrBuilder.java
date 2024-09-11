@@ -395,6 +395,88 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trinoJob field is set.
+   */
+  boolean hasTrinoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trinoJob.
+   */
+  com.google.cloud.dataproc.v1.TrinoJob getTrinoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flinkJob field is set.
+   */
+  boolean hasFlinkJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flinkJob.
+   */
+  com.google.cloud.dataproc.v1.FlinkJob getFlinkJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.FlinkJobOrBuilder getFlinkJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels to associate with this job.
    *
    * Label keys must be between 1 and 63 characters long, and must conform to

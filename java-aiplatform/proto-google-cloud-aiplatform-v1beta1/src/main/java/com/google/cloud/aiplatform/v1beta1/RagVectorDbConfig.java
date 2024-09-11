@@ -1377,6 +1377,664 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface PineconeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Pinecone index name.
+     * This value cannot be changed after it's set.
+     * </pre>
+     *
+     * <code>string index_name = 1;</code>
+     *
+     * @return The indexName.
+     */
+    java.lang.String getIndexName();
+    /**
+     *
+     *
+     * <pre>
+     * Pinecone index name.
+     * This value cannot be changed after it's set.
+     * </pre>
+     *
+     * <code>string index_name = 1;</code>
+     *
+     * @return The bytes for indexName.
+     */
+    com.google.protobuf.ByteString getIndexNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone}
+   */
+  public static final class Pinecone extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
+      PineconeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Pinecone.newBuilder() to construct.
+    private Pinecone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Pinecone() {
+      indexName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Pinecone();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_Pinecone_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_Pinecone_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.class,
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder.class);
+    }
+
+    public static final int INDEX_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object indexName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Pinecone index name.
+     * This value cannot be changed after it's set.
+     * </pre>
+     *
+     * <code>string index_name = 1;</code>
+     *
+     * @return The indexName.
+     */
+    @java.lang.Override
+    public java.lang.String getIndexName() {
+      java.lang.Object ref = indexName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        indexName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pinecone index name.
+     * This value cannot be changed after it's set.
+     * </pre>
+     *
+     * <code>string index_name = 1;</code>
+     *
+     * @return The bytes for indexName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIndexNameBytes() {
+      java.lang.Object ref = indexName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        indexName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, indexName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, indexName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone other =
+          (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) obj;
+
+      if (!getIndexName().equals(other.getIndexName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INDEX_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_Pinecone_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_Pinecone_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.class,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        indexName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_Pinecone_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone build() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone result =
+            new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.indexName_ = indexName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance())
+          return this;
+        if (!other.getIndexName().isEmpty()) {
+          indexName_ = other.indexName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  indexName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object indexName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Pinecone index name.
+       * This value cannot be changed after it's set.
+       * </pre>
+       *
+       * <code>string index_name = 1;</code>
+       *
+       * @return The indexName.
+       */
+      public java.lang.String getIndexName() {
+        java.lang.Object ref = indexName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          indexName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pinecone index name.
+       * This value cannot be changed after it's set.
+       * </pre>
+       *
+       * <code>string index_name = 1;</code>
+       *
+       * @return The bytes for indexName.
+       */
+      public com.google.protobuf.ByteString getIndexNameBytes() {
+        java.lang.Object ref = indexName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          indexName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pinecone index name.
+       * This value cannot be changed after it's set.
+       * </pre>
+       *
+       * <code>string index_name = 1;</code>
+       *
+       * @param value The indexName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pinecone index name.
+       * This value cannot be changed after it's set.
+       * </pre>
+       *
+       * <code>string index_name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIndexName() {
+        indexName_ = getDefaultInstance().getIndexName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pinecone index name.
+       * This value cannot be changed after it's set.
+       * </pre>
+       *
+       * <code>string index_name = 1;</code>
+       *
+       * @param value The bytes for indexName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        indexName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
+    private static final com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Pinecone> PARSER =
+        new com.google.protobuf.AbstractParser<Pinecone>() {
+          @java.lang.Override
+          public Pinecone parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Pinecone> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Pinecone> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface VertexFeatureStoreOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore)
@@ -2061,6 +2719,914 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface VertexVectorSearchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index Endpoint.
+     * Format:
+     * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+     * </pre>
+     *
+     * <code>string index_endpoint = 1;</code>
+     *
+     * @return The indexEndpoint.
+     */
+    java.lang.String getIndexEndpoint();
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index Endpoint.
+     * Format:
+     * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+     * </pre>
+     *
+     * <code>string index_endpoint = 1;</code>
+     *
+     * @return The bytes for indexEndpoint.
+     */
+    com.google.protobuf.ByteString getIndexEndpointBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index.
+     * Format:
+     * `projects/{project}/locations/{location}/indexes/{index}`
+     * </pre>
+     *
+     * <code>string index = 2;</code>
+     *
+     * @return The index.
+     */
+    java.lang.String getIndex();
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index.
+     * Format:
+     * `projects/{project}/locations/{location}/indexes/{index}`
+     * </pre>
+     *
+     * <code>string index = 2;</code>
+     *
+     * @return The bytes for index.
+     */
+    com.google.protobuf.ByteString getIndexBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch}
+   */
+  public static final class VertexVectorSearch extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+      VertexVectorSearchOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VertexVectorSearch.newBuilder() to construct.
+    private VertexVectorSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VertexVectorSearch() {
+      indexEndpoint_ = "";
+      index_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VertexVectorSearch();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_VertexVectorSearch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_VertexVectorSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.class,
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder
+                  .class);
+    }
+
+    public static final int INDEX_ENDPOINT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object indexEndpoint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index Endpoint.
+     * Format:
+     * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+     * </pre>
+     *
+     * <code>string index_endpoint = 1;</code>
+     *
+     * @return The indexEndpoint.
+     */
+    @java.lang.Override
+    public java.lang.String getIndexEndpoint() {
+      java.lang.Object ref = indexEndpoint_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        indexEndpoint_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index Endpoint.
+     * Format:
+     * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+     * </pre>
+     *
+     * <code>string index_endpoint = 1;</code>
+     *
+     * @return The bytes for indexEndpoint.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIndexEndpointBytes() {
+      java.lang.Object ref = indexEndpoint_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        indexEndpoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object index_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index.
+     * Format:
+     * `projects/{project}/locations/{location}/indexes/{index}`
+     * </pre>
+     *
+     * <code>string index = 2;</code>
+     *
+     * @return The index.
+     */
+    @java.lang.Override
+    public java.lang.String getIndex() {
+      java.lang.Object ref = index_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        index_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Index.
+     * Format:
+     * `projects/{project}/locations/{location}/indexes/{index}`
+     * </pre>
+     *
+     * <code>string index = 2;</code>
+     *
+     * @return The bytes for index.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIndexBytes() {
+      java.lang.Object ref = index_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        index_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexEndpoint_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, indexEndpoint_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, index_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexEndpoint_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, indexEndpoint_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, index_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch other =
+          (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) obj;
+
+      if (!getIndexEndpoint().equals(other.getIndexEndpoint())) return false;
+      if (!getIndex().equals(other.getIndex())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INDEX_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexEndpoint().hashCode();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_VertexVectorSearch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_VertexVectorSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.class,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        indexEndpoint_ = "";
+        index_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_VertexVectorSearch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch build() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch result =
+            new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.indexEndpoint_ = indexEndpoint_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+                .getDefaultInstance()) return this;
+        if (!other.getIndexEndpoint().isEmpty()) {
+          indexEndpoint_ = other.indexEndpoint_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getIndex().isEmpty()) {
+          index_ = other.index_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  indexEndpoint_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  index_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object indexEndpoint_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index Endpoint.
+       * Format:
+       * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+       * </pre>
+       *
+       * <code>string index_endpoint = 1;</code>
+       *
+       * @return The indexEndpoint.
+       */
+      public java.lang.String getIndexEndpoint() {
+        java.lang.Object ref = indexEndpoint_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          indexEndpoint_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index Endpoint.
+       * Format:
+       * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+       * </pre>
+       *
+       * <code>string index_endpoint = 1;</code>
+       *
+       * @return The bytes for indexEndpoint.
+       */
+      public com.google.protobuf.ByteString getIndexEndpointBytes() {
+        java.lang.Object ref = indexEndpoint_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          indexEndpoint_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index Endpoint.
+       * Format:
+       * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+       * </pre>
+       *
+       * <code>string index_endpoint = 1;</code>
+       *
+       * @param value The indexEndpoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexEndpoint(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexEndpoint_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index Endpoint.
+       * Format:
+       * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+       * </pre>
+       *
+       * <code>string index_endpoint = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIndexEndpoint() {
+        indexEndpoint_ = getDefaultInstance().getIndexEndpoint();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index Endpoint.
+       * Format:
+       * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+       * </pre>
+       *
+       * <code>string index_endpoint = 1;</code>
+       *
+       * @param value The bytes for indexEndpoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexEndpointBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        indexEndpoint_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object index_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index.
+       * Format:
+       * `projects/{project}/locations/{location}/indexes/{index}`
+       * </pre>
+       *
+       * <code>string index = 2;</code>
+       *
+       * @return The index.
+       */
+      public java.lang.String getIndex() {
+        java.lang.Object ref = index_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          index_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index.
+       * Format:
+       * `projects/{project}/locations/{location}/indexes/{index}`
+       * </pre>
+       *
+       * <code>string index = 2;</code>
+       *
+       * @return The bytes for index.
+       */
+      public com.google.protobuf.ByteString getIndexBytes() {
+        java.lang.Object ref = index_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          index_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index.
+       * Format:
+       * `projects/{project}/locations/{location}/indexes/{index}`
+       * </pre>
+       *
+       * <code>string index = 2;</code>
+       *
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        index_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index.
+       * Format:
+       * `projects/{project}/locations/{location}/indexes/{index}`
+       * </pre>
+       *
+       * <code>string index = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        index_ = getDefaultInstance().getIndex();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the Index.
+       * Format:
+       * `projects/{project}/locations/{location}/indexes/{index}`
+       * </pre>
+       *
+       * <code>string index = 2;</code>
+       *
+       * @param value The bytes for index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        index_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+    private static final com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VertexVectorSearch> PARSER =
+        new com.google.protobuf.AbstractParser<VertexVectorSearch>() {
+          @java.lang.Override
+          public VertexVectorSearch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VertexVectorSearch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VertexVectorSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int vectorDbCase_ = 0;
 
@@ -2073,7 +3639,9 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RAG_MANAGED_DB(1),
     WEAVIATE(2),
+    PINECONE(3),
     VERTEX_FEATURE_STORE(4),
+    VERTEX_VECTOR_SEARCH(6),
     VECTORDB_NOT_SET(0);
     private final int value;
 
@@ -2096,8 +3664,12 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return RAG_MANAGED_DB;
         case 2:
           return WEAVIATE;
+        case 3:
+          return PINECONE;
         case 4:
           return VERTEX_FEATURE_STORE;
+        case 6:
+          return VERTEX_VECTOR_SEARCH;
         case 0:
           return VECTORDB_NOT_SET;
         default:
@@ -2221,6 +3793,58 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate.getDefaultInstance();
   }
 
+  public static final int PINECONE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   *
+   * @return Whether the pinecone field is set.
+   */
+  @java.lang.Override
+  public boolean hasPinecone() {
+    return vectorDbCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   *
+   * @return The pinecone.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone getPinecone() {
+    if (vectorDbCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Pinecone.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder
+      getPineconeOrBuilder() {
+    if (vectorDbCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+  }
+
   public static final int VERTEX_FEATURE_STORE_FIELD_NUMBER = 4;
   /**
    *
@@ -2279,6 +3903,67 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore) vectorDb_;
     }
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore
+        .getDefaultInstance();
+  }
+
+  public static final int VERTEX_VECTOR_SEARCH_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   *
+   * @return Whether the vertexVectorSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexVectorSearch() {
+    return vectorDbCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   *
+   * @return The vertexVectorSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+      getVertexVectorSearch() {
+    if (vectorDbCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config for the Vertex Vector Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder
+      getVertexVectorSearchOrBuilder() {
+    if (vectorDbCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
         .getDefaultInstance();
   }
 
@@ -2354,12 +4039,20 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           2, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate) vectorDb_);
     }
+    if (vectorDbCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_);
+    }
     if (vectorDbCase_ == 4) {
       output.writeMessage(
           4, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore) vectorDb_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getApiAuth());
+    }
+    if (vectorDbCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2380,6 +4073,11 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate) vectorDb_);
     }
+    if (vectorDbCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_);
+    }
     if (vectorDbCase_ == 4) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2388,6 +4086,12 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getApiAuth());
+    }
+    if (vectorDbCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6,
+              (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2417,8 +4121,14 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       case 2:
         if (!getWeaviate().equals(other.getWeaviate())) return false;
         break;
+      case 3:
+        if (!getPinecone().equals(other.getPinecone())) return false;
+        break;
       case 4:
         if (!getVertexFeatureStore().equals(other.getVertexFeatureStore())) return false;
+        break;
+      case 6:
+        if (!getVertexVectorSearch().equals(other.getVertexVectorSearch())) return false;
         break;
       case 0:
       default:
@@ -2447,9 +4157,17 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + WEAVIATE_FIELD_NUMBER;
         hash = (53 * hash) + getWeaviate().hashCode();
         break;
+      case 3:
+        hash = (37 * hash) + PINECONE_FIELD_NUMBER;
+        hash = (53 * hash) + getPinecone().hashCode();
+        break;
       case 4:
         hash = (37 * hash) + VERTEX_FEATURE_STORE_FIELD_NUMBER;
         hash = (53 * hash) + getVertexFeatureStore().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + VERTEX_VECTOR_SEARCH_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexVectorSearch().hashCode();
         break;
       case 0:
       default:
@@ -2609,8 +4327,14 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       if (weaviateBuilder_ != null) {
         weaviateBuilder_.clear();
       }
+      if (pineconeBuilder_ != null) {
+        pineconeBuilder_.clear();
+      }
       if (vertexFeatureStoreBuilder_ != null) {
         vertexFeatureStoreBuilder_.clear();
+      }
+      if (vertexVectorSearchBuilder_ != null) {
+        vertexVectorSearchBuilder_.clear();
       }
       apiAuth_ = null;
       if (apiAuthBuilder_ != null) {
@@ -2657,7 +4381,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.apiAuth_ = apiAuthBuilder_ == null ? apiAuth_ : apiAuthBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -2673,8 +4397,14 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       if (vectorDbCase_ == 2 && weaviateBuilder_ != null) {
         result.vectorDb_ = weaviateBuilder_.build();
       }
+      if (vectorDbCase_ == 3 && pineconeBuilder_ != null) {
+        result.vectorDb_ = pineconeBuilder_.build();
+      }
       if (vectorDbCase_ == 4 && vertexFeatureStoreBuilder_ != null) {
         result.vectorDb_ = vertexFeatureStoreBuilder_.build();
+      }
+      if (vectorDbCase_ == 6 && vertexVectorSearchBuilder_ != null) {
+        result.vectorDb_ = vertexVectorSearchBuilder_.build();
       }
     }
 
@@ -2738,9 +4468,19 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             mergeWeaviate(other.getWeaviate());
             break;
           }
+        case PINECONE:
+          {
+            mergePinecone(other.getPinecone());
+            break;
+          }
         case VERTEX_FEATURE_STORE:
           {
             mergeVertexFeatureStore(other.getVertexFeatureStore());
+            break;
+          }
+        case VERTEX_VECTOR_SEARCH:
+          {
+            mergeVertexVectorSearch(other.getVertexVectorSearch());
             break;
           }
         case VECTORDB_NOT_SET:
@@ -2786,6 +4526,12 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
                 vectorDbCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getPineconeFieldBuilder().getBuilder(), extensionRegistry);
+                vectorDbCase_ = 3;
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(
@@ -2796,9 +4542,16 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             case 42:
               {
                 input.readMessage(getApiAuthFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getVertexVectorSearchFieldBuilder().getBuilder(), extensionRegistry);
+                vectorDbCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3280,6 +5033,222 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder>
+        pineconeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     *
+     * @return Whether the pinecone field is set.
+     */
+    @java.lang.Override
+    public boolean hasPinecone() {
+      return vectorDbCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     *
+     * @return The pinecone.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone getPinecone() {
+      if (pineconeBuilder_ == null) {
+        if (vectorDbCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+      } else {
+        if (vectorDbCase_ == 3) {
+          return pineconeBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    public Builder setPinecone(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone value) {
+      if (pineconeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vectorDb_ = value;
+        onChanged();
+      } else {
+        pineconeBuilder_.setMessage(value);
+      }
+      vectorDbCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    public Builder setPinecone(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder builderForValue) {
+      if (pineconeBuilder_ == null) {
+        vectorDb_ = builderForValue.build();
+        onChanged();
+      } else {
+        pineconeBuilder_.setMessage(builderForValue.build());
+      }
+      vectorDbCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    public Builder mergePinecone(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone value) {
+      if (pineconeBuilder_ == null) {
+        if (vectorDbCase_ == 3
+            && vectorDb_
+                != com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone
+                    .getDefaultInstance()) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          vectorDb_ = value;
+        }
+        onChanged();
+      } else {
+        if (vectorDbCase_ == 3) {
+          pineconeBuilder_.mergeFrom(value);
+        } else {
+          pineconeBuilder_.setMessage(value);
+        }
+      }
+      vectorDbCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    public Builder clearPinecone() {
+      if (pineconeBuilder_ == null) {
+        if (vectorDbCase_ == 3) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+          onChanged();
+        }
+      } else {
+        if (vectorDbCase_ == 3) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+        }
+        pineconeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder
+        getPineconeBuilder() {
+      return getPineconeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder
+        getPineconeOrBuilder() {
+      if ((vectorDbCase_ == 3) && (pineconeBuilder_ != null)) {
+        return pineconeBuilder_.getMessageOrBuilder();
+      } else {
+        if (vectorDbCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Pinecone.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone pinecone = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder>
+        getPineconeFieldBuilder() {
+      if (pineconeBuilder_ == null) {
+        if (!(vectorDbCase_ == 3)) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
+        }
+        pineconeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone) vectorDb_,
+                getParentForChildren(),
+                isClean());
+        vectorDb_ = null;
+      }
+      vectorDbCase_ = 3;
+      onChanged();
+      return pineconeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStoreOrBuilder>
@@ -3523,6 +5492,250 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       return vertexFeatureStoreBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder>
+        vertexVectorSearchBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     *
+     * @return Whether the vertexVectorSearch field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexVectorSearch() {
+      return vectorDbCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     *
+     * @return The vertexVectorSearch.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+        getVertexVectorSearch() {
+      if (vertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+              vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+            .getDefaultInstance();
+      } else {
+        if (vectorDbCase_ == 6) {
+          return vertexVectorSearchBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    public Builder setVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch value) {
+      if (vertexVectorSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vectorDb_ = value;
+        onChanged();
+      } else {
+        vertexVectorSearchBuilder_.setMessage(value);
+      }
+      vectorDbCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    public Builder setVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder
+            builderForValue) {
+      if (vertexVectorSearchBuilder_ == null) {
+        vectorDb_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexVectorSearchBuilder_.setMessage(builderForValue.build());
+      }
+      vectorDbCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    public Builder mergeVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch value) {
+      if (vertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 6
+            && vectorDb_
+                != com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+                    .getDefaultInstance()) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+                          vectorDb_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          vectorDb_ = value;
+        }
+        onChanged();
+      } else {
+        if (vectorDbCase_ == 6) {
+          vertexVectorSearchBuilder_.mergeFrom(value);
+        } else {
+          vertexVectorSearchBuilder_.setMessage(value);
+        }
+      }
+      vectorDbCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    public Builder clearVertexVectorSearch() {
+      if (vertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 6) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+          onChanged();
+        }
+      } else {
+        if (vectorDbCase_ == 6) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+        }
+        vertexVectorSearchBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder
+        getVertexVectorSearchBuilder() {
+      return getVertexVectorSearchFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder
+        getVertexVectorSearchOrBuilder() {
+      if ((vectorDbCase_ == 6) && (vertexVectorSearchBuilder_ != null)) {
+        return vertexVectorSearchBuilder_.getMessageOrBuilder();
+      } else {
+        if (vectorDbCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+              vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config for the Vertex Vector Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch vertex_vector_search = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder>
+        getVertexVectorSearchFieldBuilder() {
+      if (vertexVectorSearchBuilder_ == null) {
+        if (!(vectorDbCase_ == 6)) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
+                  .getDefaultInstance();
+        }
+        vertexVectorSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
+                    vectorDb_,
+                getParentForChildren(),
+                isClean());
+        vectorDb_ = null;
+      }
+      vectorDbCase_ = 6;
+      onChanged();
+      return vertexVectorSearchBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.ApiAuth apiAuth_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ApiAuth,
@@ -3541,7 +5754,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the apiAuth field is set.
      */
     public boolean hasApiAuth() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3581,7 +5794,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         apiAuthBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3600,7 +5813,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         apiAuthBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3615,7 +5828,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeApiAuth(com.google.cloud.aiplatform.v1beta1.ApiAuth value) {
       if (apiAuthBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && apiAuth_ != null
             && apiAuth_ != com.google.cloud.aiplatform.v1beta1.ApiAuth.getDefaultInstance()) {
           getApiAuthBuilder().mergeFrom(value);
@@ -3626,7 +5839,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         apiAuthBuilder_.mergeFrom(value);
       }
       if (apiAuth_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3641,7 +5854,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.aiplatform.v1beta1.ApiAuth api_auth = 5;</code>
      */
     public Builder clearApiAuth() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       apiAuth_ = null;
       if (apiAuthBuilder_ != null) {
         apiAuthBuilder_.dispose();
@@ -3660,7 +5873,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.aiplatform.v1beta1.ApiAuth api_auth = 5;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ApiAuth.Builder getApiAuthBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getApiAuthFieldBuilder().getBuilder();
     }

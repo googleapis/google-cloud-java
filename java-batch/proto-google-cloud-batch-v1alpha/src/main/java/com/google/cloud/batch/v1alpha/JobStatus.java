@@ -160,6 +160,28 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETION_IN_PROGRESS = 6;</code>
      */
     DELETION_IN_PROGRESS(6),
+    /**
+     *
+     *
+     * <pre>
+     * The Job cancellation is in progress, this is because the resources used
+     * by the Job are still being cleaned up.
+     * </pre>
+     *
+     * <code>CANCELLATION_IN_PROGRESS = 7;</code>
+     */
+    CANCELLATION_IN_PROGRESS(7),
+    /**
+     *
+     *
+     * <pre>
+     * The Job has been cancelled, the task executions were stopped and the
+     * resources were cleaned up.
+     * </pre>
+     *
+     * <code>CANCELLED = 8;</code>
+     */
+    CANCELLED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -237,6 +259,28 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETION_IN_PROGRESS = 6;</code>
      */
     public static final int DELETION_IN_PROGRESS_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The Job cancellation is in progress, this is because the resources used
+     * by the Job are still being cleaned up.
+     * </pre>
+     *
+     * <code>CANCELLATION_IN_PROGRESS = 7;</code>
+     */
+    public static final int CANCELLATION_IN_PROGRESS_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The Job has been cancelled, the task executions were stopped and the
+     * resources were cleaned up.
+     * </pre>
+     *
+     * <code>CANCELLED = 8;</code>
+     */
+    public static final int CANCELLED_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -276,6 +320,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 6:
           return DELETION_IN_PROGRESS;
+        case 7:
+          return CANCELLATION_IN_PROGRESS;
+        case 8:
+          return CANCELLED;
         default:
           return null;
       }

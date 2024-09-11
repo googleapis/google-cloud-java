@@ -148,7 +148,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of batchCreateResourceValueConfigs to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of batchCreateResourceValueConfigs:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -165,9 +167,46 @@ import org.threeten.bp.Duration;
  *             .batchCreateResourceValueConfigsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for bulkMuteFindings:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
+ *     SecurityCenterStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * securityCenterSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -286,9 +325,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<GroupResult> extractResources(GroupFindingsResponse payload) {
-              return payload.getGroupByResultsList() == null
-                  ? ImmutableList.<GroupResult>of()
-                  : payload.getGroupByResultsList();
+              return payload.getGroupByResultsList();
             }
           };
 
@@ -325,9 +362,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<AttackPath> extractResources(ListAttackPathsResponse payload) {
-              return payload.getAttackPathsList() == null
-                  ? ImmutableList.<AttackPath>of()
-                  : payload.getAttackPathsList();
+              return payload.getAttackPathsList();
             }
           };
 
@@ -365,9 +400,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<BigQueryExport> extractResources(ListBigQueryExportsResponse payload) {
-              return payload.getBigQueryExportsList() == null
-                  ? ImmutableList.<BigQueryExport>of()
-                  : payload.getBigQueryExportsList();
+              return payload.getBigQueryExportsList();
             }
           };
 
@@ -406,9 +439,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<ListFindingsResponse.ListFindingsResult> extractResources(
                 ListFindingsResponse payload) {
-              return payload.getListFindingsResultsList() == null
-                  ? ImmutableList.<ListFindingsResponse.ListFindingsResult>of()
-                  : payload.getListFindingsResultsList();
+              return payload.getListFindingsResultsList();
             }
           };
 
@@ -445,9 +476,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<MuteConfig> extractResources(ListMuteConfigsResponse payload) {
-              return payload.getMuteConfigsList() == null
-                  ? ImmutableList.<MuteConfig>of()
-                  : payload.getMuteConfigsList();
+              return payload.getMuteConfigsList();
             }
           };
 
@@ -490,9 +519,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<NotificationConfig> extractResources(
                 ListNotificationConfigsResponse payload) {
-              return payload.getNotificationConfigsList() == null
-                  ? ImmutableList.<NotificationConfig>of()
-                  : payload.getNotificationConfigsList();
+              return payload.getNotificationConfigsList();
             }
           };
 
@@ -537,9 +564,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<ResourceValueConfig> extractResources(
                 ListResourceValueConfigsResponse payload) {
-              return payload.getResourceValueConfigsList() == null
-                  ? ImmutableList.<ResourceValueConfig>of()
-                  : payload.getResourceValueConfigsList();
+              return payload.getResourceValueConfigsList();
             }
           };
 
@@ -573,9 +598,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
-              return payload.getSourcesList() == null
-                  ? ImmutableList.<Source>of()
-                  : payload.getSourcesList();
+              return payload.getSourcesList();
             }
           };
 
@@ -613,9 +636,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<ValuedResource> extractResources(ListValuedResourcesResponse payload) {
-              return payload.getValuedResourcesList() == null
-                  ? ImmutableList.<ValuedResource>of()
-                  : payload.getValuedResourcesList();
+              return payload.getValuedResourcesList();
             }
           };
 

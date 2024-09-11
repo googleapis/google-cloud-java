@@ -528,4 +528,49 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig getEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder();
 }

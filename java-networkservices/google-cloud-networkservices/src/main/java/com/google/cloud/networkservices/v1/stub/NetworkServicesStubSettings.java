@@ -148,7 +148,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEndpointPolicy to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEndpointPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -165,9 +167,46 @@ import org.threeten.bp.Duration;
  *             .getEndpointPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetworkServicesStubSettings networkServicesSettings = networkServicesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEndpointPolicy:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetworkServicesStubSettings.Builder networkServicesSettingsBuilder =
+ *     NetworkServicesStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * networkServicesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -331,9 +370,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<EndpointPolicy> extractResources(ListEndpointPoliciesResponse payload) {
-              return payload.getEndpointPoliciesList() == null
-                  ? ImmutableList.<EndpointPolicy>of()
-                  : payload.getEndpointPoliciesList();
+              return payload.getEndpointPoliciesList();
             }
           };
 
@@ -367,9 +404,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<Gateway> extractResources(ListGatewaysResponse payload) {
-              return payload.getGatewaysList() == null
-                  ? ImmutableList.<Gateway>of()
-                  : payload.getGatewaysList();
+              return payload.getGatewaysList();
             }
           };
 
@@ -404,9 +439,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<GrpcRoute> extractResources(ListGrpcRoutesResponse payload) {
-              return payload.getGrpcRoutesList() == null
-                  ? ImmutableList.<GrpcRoute>of()
-                  : payload.getGrpcRoutesList();
+              return payload.getGrpcRoutesList();
             }
           };
 
@@ -441,9 +474,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<HttpRoute> extractResources(ListHttpRoutesResponse payload) {
-              return payload.getHttpRoutesList() == null
-                  ? ImmutableList.<HttpRoute>of()
-                  : payload.getHttpRoutesList();
+              return payload.getHttpRoutesList();
             }
           };
 
@@ -477,9 +508,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<TcpRoute> extractResources(ListTcpRoutesResponse payload) {
-              return payload.getTcpRoutesList() == null
-                  ? ImmutableList.<TcpRoute>of()
-                  : payload.getTcpRoutesList();
+              return payload.getTcpRoutesList();
             }
           };
 
@@ -513,9 +542,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<TlsRoute> extractResources(ListTlsRoutesResponse payload) {
-              return payload.getTlsRoutesList() == null
-                  ? ImmutableList.<TlsRoute>of()
-                  : payload.getTlsRoutesList();
+              return payload.getTlsRoutesList();
             }
           };
 
@@ -553,9 +580,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<ServiceBinding> extractResources(ListServiceBindingsResponse payload) {
-              return payload.getServiceBindingsList() == null
-                  ? ImmutableList.<ServiceBinding>of()
-                  : payload.getServiceBindingsList();
+              return payload.getServiceBindingsList();
             }
           };
 
@@ -589,9 +614,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<Mesh> extractResources(ListMeshesResponse payload) {
-              return payload.getMeshesList() == null
-                  ? ImmutableList.<Mesh>of()
-                  : payload.getMeshesList();
+              return payload.getMeshesList();
             }
           };
 
@@ -625,9 +648,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

@@ -133,7 +133,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of lookupServiceProjectAttachment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of lookupServiceProjectAttachment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -149,9 +151,45 @@ import org.threeten.bp.Duration;
  *             .lookupServiceProjectAttachmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AppHubStubSettings appHubSettings = appHubSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createServiceProjectAttachment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AppHubStubSettings.Builder appHubSettingsBuilder = AppHubStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * appHubSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -292,9 +330,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
             @Override
             public Iterable<ServiceProjectAttachment> extractResources(
                 ListServiceProjectAttachmentsResponse payload) {
-              return payload.getServiceProjectAttachmentsList() == null
-                  ? ImmutableList.<ServiceProjectAttachment>of()
-                  : payload.getServiceProjectAttachmentsList();
+              return payload.getServiceProjectAttachmentsList();
             }
           };
 
@@ -335,9 +371,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
             @Override
             public Iterable<DiscoveredService> extractResources(
                 ListDiscoveredServicesResponse payload) {
-              return payload.getDiscoveredServicesList() == null
-                  ? ImmutableList.<DiscoveredService>of()
-                  : payload.getDiscoveredServicesList();
+              return payload.getDiscoveredServicesList();
             }
           };
 
@@ -371,9 +405,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
 
             @Override
             public Iterable<Service> extractResources(ListServicesResponse payload) {
-              return payload.getServicesList() == null
-                  ? ImmutableList.<Service>of()
-                  : payload.getServicesList();
+              return payload.getServicesList();
             }
           };
 
@@ -416,9 +448,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
             @Override
             public Iterable<DiscoveredWorkload> extractResources(
                 ListDiscoveredWorkloadsResponse payload) {
-              return payload.getDiscoveredWorkloadsList() == null
-                  ? ImmutableList.<DiscoveredWorkload>of()
-                  : payload.getDiscoveredWorkloadsList();
+              return payload.getDiscoveredWorkloadsList();
             }
           };
 
@@ -452,9 +482,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
 
             @Override
             public Iterable<Workload> extractResources(ListWorkloadsResponse payload) {
-              return payload.getWorkloadsList() == null
-                  ? ImmutableList.<Workload>of()
-                  : payload.getWorkloadsList();
+              return payload.getWorkloadsList();
             }
           };
 
@@ -492,9 +520,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
 
             @Override
             public Iterable<Application> extractResources(ListApplicationsResponse payload) {
-              return payload.getApplicationsList() == null
-                  ? ImmutableList.<Application>of()
-                  : payload.getApplicationsList();
+              return payload.getApplicationsList();
             }
           };
 
@@ -528,9 +554,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

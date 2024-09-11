@@ -78,6 +78,898 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.WorkflowTemplate.Builder.class);
   }
 
+  public interface EncryptionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key name to use for encrypting
+     * workflow template job arguments.
+     *
+     * When this this key is provided, the following workflow template
+     * [job arguments]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+     * if present, are
+     * [CMEK
+     * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+     *
+     * * [FlinkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+     * * [HadoopJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+     * * [SparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+     * * [SparkRJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+     * * [PySparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+     * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+     *   scriptVariables and queryList.queries
+     * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+     *   scriptVariables and queryList.queries
+     * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+     *   scriptVariables and queryList.queries
+     * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+     *   scriptVariables and queryList.queries
+     * </pre>
+     *
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kmsKey.
+     */
+    java.lang.String getKmsKey();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key name to use for encrypting
+     * workflow template job arguments.
+     *
+     * When this this key is provided, the following workflow template
+     * [job arguments]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+     * if present, are
+     * [CMEK
+     * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+     *
+     * * [FlinkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+     * * [HadoopJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+     * * [SparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+     * * [SparkRJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+     * * [PySparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+     * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+     *   scriptVariables and queryList.queries
+     * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+     *   scriptVariables and queryList.queries
+     * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+     *   scriptVariables and queryList.queries
+     * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+     *   scriptVariables and queryList.queries
+     * </pre>
+     *
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    com.google.protobuf.ByteString getKmsKeyBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Encryption settings for encrypting workflow template job arguments.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig}
+   */
+  public static final class EncryptionConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
+      EncryptionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EncryptionConfig.newBuilder() to construct.
+    private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EncryptionConfig() {
+      kmsKey_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EncryptionConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1_WorkflowTemplate_EncryptionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1_WorkflowTemplate_EncryptionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.class,
+              com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder.class);
+    }
+
+    public static final int KMS_KEY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key name to use for encrypting
+     * workflow template job arguments.
+     *
+     * When this this key is provided, the following workflow template
+     * [job arguments]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+     * if present, are
+     * [CMEK
+     * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+     *
+     * * [FlinkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+     * * [HadoopJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+     * * [SparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+     * * [SparkRJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+     * * [PySparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+     * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+     *   scriptVariables and queryList.queries
+     * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+     *   scriptVariables and queryList.queries
+     * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+     *   scriptVariables and queryList.queries
+     * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+     *   scriptVariables and queryList.queries
+     * </pre>
+     *
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kmsKey.
+     */
+    @java.lang.Override
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key name to use for encrypting
+     * workflow template job arguments.
+     *
+     * When this this key is provided, the following workflow template
+     * [job arguments]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+     * if present, are
+     * [CMEK
+     * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+     *
+     * * [FlinkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+     * * [HadoopJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+     * * [SparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+     * * [SparkRJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+     * * [PySparkJob
+     * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+     * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+     *   scriptVariables and queryList.queries
+     * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+     *   scriptVariables and queryList.queries
+     * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+     *   scriptVariables and queryList.queries
+     * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+     *   scriptVariables and queryList.queries
+     * </pre>
+     *
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kmsKey_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kmsKey_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig other =
+          (com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig) obj;
+
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption settings for encrypting workflow template job arguments.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
+            .internal_static_google_cloud_dataproc_v1_WorkflowTemplate_EncryptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
+            .internal_static_google_cloud_dataproc_v1_WorkflowTemplate_EncryptionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.class,
+                com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        kmsKey_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
+            .internal_static_google_cloud_dataproc_v1_WorkflowTemplate_EncryptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig build() {
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig buildPartial() {
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig result =
+            new com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsKey_ = kmsKey_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig) {
+          return mergeFrom((com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig other) {
+        if (other
+            == com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance())
+          return this;
+        if (!other.getKmsKey().isEmpty()) {
+          kmsKey_ = other.kmsKey_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  kmsKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object kmsKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key name to use for encrypting
+       * workflow template job arguments.
+       *
+       * When this this key is provided, the following workflow template
+       * [job arguments]
+       * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+       * if present, are
+       * [CMEK
+       * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+       *
+       * * [FlinkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+       * * [HadoopJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+       * * [SparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+       * * [SparkRJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+       * * [PySparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+       * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+       *   scriptVariables and queryList.queries
+       * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+       *   scriptVariables and queryList.queries
+       * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+       *   scriptVariables and queryList.queries
+       * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+       *   scriptVariables and queryList.queries
+       * </pre>
+       *
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The kmsKey.
+       */
+      public java.lang.String getKmsKey() {
+        java.lang.Object ref = kmsKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kmsKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key name to use for encrypting
+       * workflow template job arguments.
+       *
+       * When this this key is provided, the following workflow template
+       * [job arguments]
+       * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+       * if present, are
+       * [CMEK
+       * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+       *
+       * * [FlinkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+       * * [HadoopJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+       * * [SparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+       * * [SparkRJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+       * * [PySparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+       * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+       *   scriptVariables and queryList.queries
+       * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+       *   scriptVariables and queryList.queries
+       * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+       *   scriptVariables and queryList.queries
+       * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+       *   scriptVariables and queryList.queries
+       * </pre>
+       *
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for kmsKey.
+       */
+      public com.google.protobuf.ByteString getKmsKeyBytes() {
+        java.lang.Object ref = kmsKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kmsKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key name to use for encrypting
+       * workflow template job arguments.
+       *
+       * When this this key is provided, the following workflow template
+       * [job arguments]
+       * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+       * if present, are
+       * [CMEK
+       * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+       *
+       * * [FlinkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+       * * [HadoopJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+       * * [SparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+       * * [SparkRJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+       * * [PySparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+       * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+       *   scriptVariables and queryList.queries
+       * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+       *   scriptVariables and queryList.queries
+       * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+       *   scriptVariables and queryList.queries
+       * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+       *   scriptVariables and queryList.queries
+       * </pre>
+       *
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The kmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kmsKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key name to use for encrypting
+       * workflow template job arguments.
+       *
+       * When this this key is provided, the following workflow template
+       * [job arguments]
+       * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+       * if present, are
+       * [CMEK
+       * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+       *
+       * * [FlinkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+       * * [HadoopJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+       * * [SparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+       * * [SparkRJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+       * * [PySparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+       * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+       *   scriptVariables and queryList.queries
+       * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+       *   scriptVariables and queryList.queries
+       * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+       *   scriptVariables and queryList.queries
+       * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+       *   scriptVariables and queryList.queries
+       * </pre>
+       *
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKmsKey() {
+        kmsKey_ = getDefaultInstance().getKmsKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key name to use for encrypting
+       * workflow template job arguments.
+       *
+       * When this this key is provided, the following workflow template
+       * [job arguments]
+       * (https://cloud.google.com/dataproc/docs/concepts/workflows/use-workflows#adding_jobs_to_a_template),
+       * if present, are
+       * [CMEK
+       * encrypted](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_workflow_template_data):
+       *
+       * * [FlinkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/FlinkJob)
+       * * [HadoopJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/HadoopJob)
+       * * [SparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob)
+       * * [SparkRJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkRJob)
+       * * [PySparkJob
+       * args](https://cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob)
+       * * [SparkSqlJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob)
+       *   scriptVariables and queryList.queries
+       * * [HiveJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/HiveJob)
+       *   scriptVariables and queryList.queries
+       * * [PigJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PigJob)
+       *   scriptVariables and queryList.queries
+       * * [PrestoJob](https://cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob)
+       *   scriptVariables and queryList.queries
+       * </pre>
+       *
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for kmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        kmsKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
+    private static final com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig();
+    }
+
+    public static com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EncryptionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EncryptionConfig>() {
+          @java.lang.Override
+          public EncryptionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EncryptionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EncryptionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 2;
 
@@ -761,6 +1653,66 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
   }
 
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryptionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null
+        ? com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for encrypting workflow template job
+   * arguments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder() {
+    return encryptionConfig_ == null
+        ? com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -803,6 +1755,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getDagTimeout());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getEncryptionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -850,6 +1805,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDagTimeout());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -887,6 +1845,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     if (hasDagTimeout() != other.hasDagTimeout()) return false;
     if (hasDagTimeout()) {
       if (!getDagTimeout().equals(other.getDagTimeout())) return false;
+    }
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+    if (hasEncryptionConfig()) {
+      if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -932,6 +1894,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     if (hasDagTimeout()) {
       hash = (37 * hash) + DAG_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getDagTimeout().hashCode();
+    }
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1101,6 +2067,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         getJobsFieldBuilder();
         getParametersFieldBuilder();
         getDagTimeoutFieldBuilder();
+        getEncryptionConfigFieldBuilder();
       }
     }
 
@@ -1145,6 +2112,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       if (dagTimeoutBuilder_ != null) {
         dagTimeoutBuilder_.dispose();
         dagTimeoutBuilder_ = null;
+      }
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
+        encryptionConfigBuilder_ = null;
       }
       return this;
     }
@@ -1233,6 +2205,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.dagTimeout_ = dagTimeoutBuilder_ == null ? dagTimeout_ : dagTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.encryptionConfig_ =
+            encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1363,6 +2340,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       if (other.hasDagTimeout()) {
         mergeDagTimeout(other.getDagTimeout());
       }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1469,6 +2449,13 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3724,6 +4711,225 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         dagTimeout_ = null;
       }
       return dagTimeoutBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig,
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder,
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder>
+        encryptionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    public boolean hasEncryptionConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionConfig.
+     */
+    public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null
+            ? com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionConfig(
+        com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && encryptionConfig_ != null
+            && encryptionConfig_
+                != com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig
+                    .getDefaultInstance()) {
+          getEncryptionConfigBuilder().mergeFrom(value);
+        } else {
+          encryptionConfig_ = value;
+        }
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+      if (encryptionConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
+        encryptionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder
+        getEncryptionConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null
+            ? com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for encrypting workflow template job
+     * arguments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryption_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig,
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder,
+            com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder>
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig,
+                com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder,
+                com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(), getParentForChildren(), isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
     }
 
     @java.lang.Override

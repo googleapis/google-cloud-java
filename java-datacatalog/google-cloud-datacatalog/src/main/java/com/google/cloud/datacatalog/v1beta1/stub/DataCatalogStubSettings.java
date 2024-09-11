@@ -112,7 +112,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createEntryGroup to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createEntryGroup:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -129,10 +131,21 @@ import org.threeten.bp.Duration;
  *             .createEntryGroupSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -214,9 +227,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
             @Override
             public Iterable<SearchCatalogResult> extractResources(SearchCatalogResponse payload) {
-              return payload.getResultsList() == null
-                  ? ImmutableList.<SearchCatalogResult>of()
-                  : payload.getResultsList();
+              return payload.getResultsList();
             }
           };
 
@@ -253,9 +264,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
             @Override
             public Iterable<EntryGroup> extractResources(ListEntryGroupsResponse payload) {
-              return payload.getEntryGroupsList() == null
-                  ? ImmutableList.<EntryGroup>of()
-                  : payload.getEntryGroupsList();
+              return payload.getEntryGroupsList();
             }
           };
 
@@ -289,9 +298,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
             @Override
             public Iterable<Entry> extractResources(ListEntriesResponse payload) {
-              return payload.getEntriesList() == null
-                  ? ImmutableList.<Entry>of()
-                  : payload.getEntriesList();
+              return payload.getEntriesList();
             }
           };
 
@@ -325,9 +332,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
             @Override
             public Iterable<Tag> extractResources(ListTagsResponse payload) {
-              return payload.getTagsList() == null
-                  ? ImmutableList.<Tag>of()
-                  : payload.getTagsList();
+              return payload.getTagsList();
             }
           };
 

@@ -41,7 +41,14 @@ public class SyncGetAttachedCluster {
                 .getAttachedClusterSettings()
                 .getRetrySettings()
                 .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
+                .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+                .setMaxAttempts(5)
+                .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+                .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+                .setRetryDelayMultiplier(1.3)
+                .setRpcTimeoutMultiplier(1.5)
+                .setTotalTimeoutDuration(Duration.ofSeconds(300))
                 .build());
     AttachedClustersStubSettings attachedClustersSettings = attachedClustersSettingsBuilder.build();
   }

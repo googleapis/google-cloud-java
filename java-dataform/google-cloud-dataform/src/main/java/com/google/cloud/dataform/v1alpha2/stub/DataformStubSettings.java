@@ -143,7 +143,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRepository to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getRepository:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -159,10 +161,21 @@ import javax.annotation.Generated;
  *             .getRepositorySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataformStubSettings dataformSettings = dataformSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -288,9 +301,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Repository> extractResources(ListRepositoriesResponse payload) {
-              return payload.getRepositoriesList() == null
-                  ? ImmutableList.<Repository>of()
-                  : payload.getRepositoriesList();
+              return payload.getRepositoriesList();
             }
           };
 
@@ -325,9 +336,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Workspace> extractResources(ListWorkspacesResponse payload) {
-              return payload.getWorkspacesList() == null
-                  ? ImmutableList.<Workspace>of()
-                  : payload.getWorkspacesList();
+              return payload.getWorkspacesList();
             }
           };
 
@@ -372,9 +381,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<QueryDirectoryContentsResponse.DirectoryEntry> extractResources(
                 QueryDirectoryContentsResponse payload) {
-              return payload.getDirectoryEntriesList() == null
-                  ? ImmutableList.<QueryDirectoryContentsResponse.DirectoryEntry>of()
-                  : payload.getDirectoryEntriesList();
+              return payload.getDirectoryEntriesList();
             }
           };
 
@@ -415,9 +422,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<CompilationResult> extractResources(
                 ListCompilationResultsResponse payload) {
-              return payload.getCompilationResultsList() == null
-                  ? ImmutableList.<CompilationResult>of()
-                  : payload.getCompilationResultsList();
+              return payload.getCompilationResultsList();
             }
           };
 
@@ -464,9 +469,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<CompilationResultAction> extractResources(
                 QueryCompilationResultActionsResponse payload) {
-              return payload.getCompilationResultActionsList() == null
-                  ? ImmutableList.<CompilationResultAction>of()
-                  : payload.getCompilationResultActionsList();
+              return payload.getCompilationResultActionsList();
             }
           };
 
@@ -509,9 +512,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<WorkflowInvocation> extractResources(
                 ListWorkflowInvocationsResponse payload) {
-              return payload.getWorkflowInvocationsList() == null
-                  ? ImmutableList.<WorkflowInvocation>of()
-                  : payload.getWorkflowInvocationsList();
+              return payload.getWorkflowInvocationsList();
             }
           };
 
@@ -558,9 +559,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<WorkflowInvocationAction> extractResources(
                 QueryWorkflowInvocationActionsResponse payload) {
-              return payload.getWorkflowInvocationActionsList() == null
-                  ? ImmutableList.<WorkflowInvocationAction>of()
-                  : payload.getWorkflowInvocationActionsList();
+              return payload.getWorkflowInvocationActionsList();
             }
           };
 
@@ -594,9 +593,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
