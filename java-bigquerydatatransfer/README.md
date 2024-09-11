@@ -1,6 +1,6 @@
-# Google BigQuery Data Transfer Service Client for Java
+# Google BigQuery Data Transfer Service test Client for Java
 
-Java idiomatic client for [BigQuery Data Transfer Service][product-docs].
+Java idiomatic client for [BigQuery Data Transfer Service test][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -65,14 +65,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired BigQuery Data Transfer Service APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the BigQuery Data Transfer Service API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired BigQuery Data Transfer Service test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the BigQuery Data Transfer Service test API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the BigQuery Data Transfer Service [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google BigQuery Data Transfer Service.
+You will need a [Google Cloud Platform Console][developer-console] project with the BigQuery Data Transfer Service test [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google BigQuery Data Transfer Service test.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -82,13 +82,13 @@ You will need to [enable billing][enable-billing] to use Google BigQuery Data Tr
 You'll need to obtain the `google-cloud-bigquerydatatransfer` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-bigquerydatatransfer` as a dependency in your code.
 
-## About BigQuery Data Transfer Service
+## About BigQuery Data Transfer Service test
 
 
-[BigQuery Data Transfer Service][product-docs] transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
+[BigQuery Data Transfer Service test][product-docs] transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
 
-See the [BigQuery Data Transfer Service client library docs][javadocs] to learn how to
-use this BigQuery Data Transfer Service Client Library.
+See the [BigQuery Data Transfer Service test client library docs][javadocs] to learn how to
+use this BigQuery Data Transfer Service test Client Library.
 
 
 
@@ -101,7 +101,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-BigQuery Data Transfer Service uses both gRPC and HTTP/JSON for the transport layer.
+BigQuery Data Transfer Service test uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -195,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquerydatatransfer.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigquerydatatransfer/2.47.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigquerydatatransfer/2.48.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

@@ -1,6 +1,6 @@
-# Google Cloud Container Analysis Client for Java
+# Google Cloud Container Analysis test Client for Java
 
-Java idiomatic client for [Cloud Container Analysis][product-docs].
+Java idiomatic client for [Cloud Container Analysis test][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -65,14 +65,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Container Analysis APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Container Analysis API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Container Analysis test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Container Analysis test API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Container Analysis [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Cloud Container Analysis.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Container Analysis test [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Container Analysis test.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -82,13 +82,13 @@ You will need to [enable billing][enable-billing] to use Google Cloud Container 
 You'll need to obtain the `google-cloud-containeranalysis` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-containeranalysis` as a dependency in your code.
 
-## About Cloud Container Analysis
+## About Cloud Container Analysis test
 
 
-[Cloud Container Analysis][product-docs] is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.
+[Cloud Container Analysis test][product-docs] is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.
 
-See the [Cloud Container Analysis client library docs][javadocs] to learn how to
-use this Cloud Container Analysis Client Library.
+See the [Cloud Container Analysis test client library docs][javadocs] to learn how to
+use this Cloud Container Analysis test Client Library.
 
 
 
@@ -101,7 +101,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Container Analysis uses both gRPC and HTTP/JSON for the transport layer.
+Cloud Container Analysis test uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -195,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-containeranalysis.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-containeranalysis/2.48.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-containeranalysis/2.49.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
