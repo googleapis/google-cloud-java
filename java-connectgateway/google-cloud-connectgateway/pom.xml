@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-connectgateway</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-connectgateway:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-connectgateway:current} -->
   <packaging>jar</packaging>
   <name>Google Connect Gateway API</name>
   <description>Connect Gateway API The Connect Gateway service allows connectivity from external parties to     connected Kubernetes clusters.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-connectgateway-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-connectgateway:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-connectgateway:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-connectgateway</site.installationModule>
