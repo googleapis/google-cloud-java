@@ -24,17 +24,17 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>	com.google.maps</groupId>
+        <groupId>com.google.maps</groupId>
         <artifactId>google-maps-area-insights</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-area-insights:current} -->
       </dependency>
       <dependency>
-        <groupId>	com.google.maps.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-area-insights-v1</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-area-insights-v1:current} -->
       </dependency>
       <dependency>
-        <groupId>	com.google.maps.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>proto-google-maps-area-insights-v1</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-area-insights-v1:current} -->
       </dependency>
