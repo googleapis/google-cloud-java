@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.26.0](https://github.com/googleapis/java-firestore/compare/v3.25.1...v3.26.0) (2024-09-12)
+
+
+### Features
+
+* Add additional Firestore query snippets ([#1790](https://github.com/googleapis/java-firestore/issues/1790)) ([4099e5b](https://github.com/googleapis/java-firestore/commit/4099e5b3a97d9b40277b88a16b8e682e2f2acbf1))
+
+
+### Dependencies
+
+* Update beam.version ([#1794](https://github.com/googleapis/java-firestore/issues/1794)) ([0737ada](https://github.com/googleapis/java-firestore/commit/0737adaf0f990f5ad62a4cac00b490503b804302))
+* Update beam.version to v2.59.0 ([#1813](https://github.com/googleapis/java-firestore/issues/1813)) ([0264e23](https://github.com/googleapis/java-firestore/commit/0264e231909562bd54e8f48e74e9a9e1469ecb5d))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.48.0 ([#1800](https://github.com/googleapis/java-firestore/issues/1800)) ([1c7c12f](https://github.com/googleapis/java-firestore/commit/1c7c12f915e76f25652adbad0864c5c7d810e268))
+* Update dependency com.google.cloud:google-cloud-trace to v2.48.0 ([#1801](https://github.com/googleapis/java-firestore/issues/1801)) ([3d9082c](https://github.com/googleapis/java-firestore/commit/3d9082c2ee04c2e99facac2e5c0f664e33216f08))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.35.0 ([#1810](https://github.com/googleapis/java-firestore/issues/1810)) ([f4010e3](https://github.com/googleapis/java-firestore/commit/f4010e3dafe5696a6a5dbf16b18327ffb672e9ee))
+* Update dependency org.apache.commons:commons-lang3 to v3.17.0 ([#1792](https://github.com/googleapis/java-firestore/issues/1792)) ([61b9810](https://github.com/googleapis/java-firestore/commit/61b981008cd882f8c4dabaa71cef843b607c9e2c))
+* Update opentelemetry.version to v1.42.1 ([#1809](https://github.com/googleapis/java-firestore/issues/1809)) ([cb821d9](https://github.com/googleapis/java-firestore/commit/cb821d981517e318dad4469957d9993c759f56e4))
+
 ## [3.25.1](https://github.com/googleapis/java-firestore/compare/v3.25.0...v3.25.1) (2024-08-20)
 
 
