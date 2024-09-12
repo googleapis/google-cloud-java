@@ -1,3 +1,6 @@
+# Format:
+# module:released-version:current-version
+
 google-cloud-java:1.43.0:1.43.0
 google-cloud-accessapproval:2.50.0:2.50.0
 grpc-google-cloud-accessapproval-v1:2.50.0:2.50.0
