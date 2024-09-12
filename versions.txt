@@ -809,3 +809,6 @@ grpc-google-cloud-apihub-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-connectgateway:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-connectgateway-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-connectgateway-v1:0.0.0:0.0.1-SNAPSHOT
+google-maps-area-insights:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-area-insights-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-area-insights-v1:0.0.0:0.0.1-SNAPSHOT
