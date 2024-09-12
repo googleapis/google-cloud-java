@@ -24,7 +24,6 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * A result of Resource Search, containing information of a cloud resource.
- * Next ID: 34
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
@@ -682,8 +681,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping Google
-   * Cloud
+   * User labels associated with this resource. See [Labelling and grouping
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -716,8 +715,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping Google
-   * Cloud
+   * User labels associated with this resource. See [Labelling and grouping
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -741,8 +740,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping Google
-   * Cloud
+   * User labels associated with this resource. See [Labelling and grouping
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -773,8 +772,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping Google
-   * Cloud
+   * User labels associated with this resource. See [Labelling and grouping
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -936,7 +935,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=471
+   *     google/cloud/asset/v1/assets.proto;l=470
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -978,7 +977,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=471
+   *     google/cloud/asset/v1/assets.proto;l=470
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -1873,7 +1872,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=603
    * @return A list containing the tagKeys.
    */
   @java.lang.Deprecated
@@ -1902,7 +1901,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=603
    * @return The count of tagKeys.
    */
   @java.lang.Deprecated
@@ -1931,7 +1930,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=603
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
@@ -1961,7 +1960,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=603
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
@@ -1999,7 +1998,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=620
    * @return A list containing the tagValues.
    */
   @java.lang.Deprecated
@@ -2030,7 +2029,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=620
    * @return The count of tagValues.
    */
   @java.lang.Deprecated
@@ -2061,7 +2060,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=620
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
@@ -2093,7 +2092,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=620
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
@@ -2127,7 +2126,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=633
    * @return A list containing the tagValueIds.
    */
   @java.lang.Deprecated
@@ -2154,7 +2153,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=633
    * @return The count of tagValueIds.
    */
   @java.lang.Deprecated
@@ -2181,7 +2180,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=633
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
@@ -2209,7 +2208,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=633
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
@@ -3212,7 +3211,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A result of Resource Search, containing information of a cloud resource.
-   * Next ID: 34
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
@@ -5326,8 +5324,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5360,8 +5358,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5385,8 +5383,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5417,8 +5415,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5455,8 +5453,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5489,8 +5487,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5521,8 +5519,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping Google
-     * Cloud
+     * User labels associated with this resource. See [Labelling and grouping
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -5835,7 +5833,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=471
+     *     google/cloud/asset/v1/assets.proto;l=470
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -5876,7 +5874,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=471
+     *     google/cloud/asset/v1/assets.proto;l=470
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -5917,7 +5915,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=471
+     *     google/cloud/asset/v1/assets.proto;l=470
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -5957,7 +5955,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=471
+     *     google/cloud/asset/v1/assets.proto;l=470
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5993,7 +5991,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=471
+     *     google/cloud/asset/v1/assets.proto;l=470
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -8759,7 +8757,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @return A list containing the tagKeys.
      */
     @java.lang.Deprecated
@@ -8789,7 +8787,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @return The count of tagKeys.
      */
     @java.lang.Deprecated
@@ -8818,7 +8816,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param index The index of the element to return.
      * @return The tagKeys at the given index.
      */
@@ -8848,7 +8846,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param index The index of the value to return.
      * @return The bytes of the tagKeys at the given index.
      */
@@ -8878,7 +8876,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param index The index to set the value at.
      * @param value The tagKeys to set.
      * @return This builder for chaining.
@@ -8916,7 +8914,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param value The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8953,7 +8951,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param values The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8987,7 +8985,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9020,7 +9018,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=604
+     *     google/cloud/asset/v1/assets.proto;l=603
      * @param value The bytes of the tagKeys to add.
      * @return This builder for chaining.
      */
@@ -9070,7 +9068,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @return A list containing the tagValues.
      */
     @java.lang.Deprecated
@@ -9102,7 +9100,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @return The count of tagValues.
      */
     @java.lang.Deprecated
@@ -9133,7 +9131,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param index The index of the element to return.
      * @return The tagValues at the given index.
      */
@@ -9165,7 +9163,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param index The index of the value to return.
      * @return The bytes of the tagValues at the given index.
      */
@@ -9197,7 +9195,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param index The index to set the value at.
      * @param value The tagValues to set.
      * @return This builder for chaining.
@@ -9237,7 +9235,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param value The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9276,7 +9274,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param values The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9312,7 +9310,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9347,7 +9345,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=621
+     *     google/cloud/asset/v1/assets.proto;l=620
      * @param value The bytes of the tagValues to add.
      * @return This builder for chaining.
      */
@@ -9393,7 +9391,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @return A list containing the tagValueIds.
      */
     @java.lang.Deprecated
@@ -9421,7 +9419,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @return The count of tagValueIds.
      */
     @java.lang.Deprecated
@@ -9448,7 +9446,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param index The index of the element to return.
      * @return The tagValueIds at the given index.
      */
@@ -9476,7 +9474,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param index The index of the value to return.
      * @return The bytes of the tagValueIds at the given index.
      */
@@ -9504,7 +9502,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param index The index to set the value at.
      * @param value The tagValueIds to set.
      * @return This builder for chaining.
@@ -9540,7 +9538,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param value The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9575,7 +9573,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param values The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9607,7 +9605,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9638,7 +9636,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=634
+     *     google/cloud/asset/v1/assets.proto;l=633
      * @param value The bytes of the tagValueIds to add.
      * @return This builder for chaining.
      */
