@@ -1260,6 +1260,21 @@ libraries:
   GAPICs:
   - proto_path: google/maps/addressvalidation/v1
 
+- api_shortname: maps-area-insights
+  name_pretty: Places Insights API
+  product_documentation: https://developers.google.com/maps/documentation/places-insights
+  api_description: Places Insights API.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
+  release_level: preview
+  distribution_name: "\tcom.google.maps:google-maps-area-insights"
+  api_id: maps-area-insights.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: "\tcom.google.maps"
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/areainsights/v1
+  requires_billing: true
 - api_shortname: maps-mapsplatformdatasets
   name_pretty: Maps Platform Datasets API
   product_documentation: https://developers.google.com/maps/documentation
