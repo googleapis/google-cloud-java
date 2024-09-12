@@ -72,14 +72,17 @@ public class BigtableBackupIT {
   private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
   private static BigtableTableAdminClient tableAdmin;
+  private static BigtableTableAdminClient tableAdminHot;
   private static BigtableInstanceAdminClient instanceAdmin;
   private static BigtableDataClient dataClient;
 
   private static String targetCluster;
+  private static String targetClusterHot;
   private static Table testTable;
+  private static Table testTableHot;
 
   @BeforeClass
-  public static void setUpClass() throws InterruptedException {
+  public static void setUpClass() throws InterruptedException, IOException {
     assume()
         .withMessage("BigtableInstanceAdminClient is not supported on Emulator")
         .that(testEnvRule.env())
@@ -91,6 +94,26 @@ public class BigtableBackupIT {
 
     targetCluster = testEnvRule.env().getPrimaryClusterId();
     testTable = createAndPopulateTestTable(tableAdmin, dataClient);
+
+    String newInstanceId = PrefixGenerator.newPrefix("backupIT");
+    targetClusterHot = newInstanceId + "-c1";
+
+    instanceAdmin.createInstance(
+        CreateInstanceRequest.of(newInstanceId)
+            .addCluster(targetClusterHot, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD));
+
+    tableAdminHot =
+        BigtableTableAdminClient.create(
+            testEnvRule
+                .env()
+                .getTableAdminSettings()
+                .toBuilder()
+                .setInstanceId(newInstanceId)
+                .build());
+
+    testTableHot =
+        tableAdminHot.createTable(
+            CreateTableRequest.of(PrefixGenerator.newPrefix("hot-table")).addFamily("cf"));
   }
 
   @AfterClass
@@ -165,6 +188,66 @@ public class BigtableBackupIT {
   }
 
   @Test
+  public void createAndGetHotBackupTest() {
+    String backupId = prefixGenerator.newPrefix();
+    Instant expireTime = Instant.now().plus(Duration.ofHours(24));
+    Instant hotToStandardTime = Instant.now().plus(Duration.ofHours(24));
+
+    CreateBackupRequest request =
+        CreateBackupRequest.of(targetClusterHot, backupId)
+            .setSourceTableId(testTableHot.getId())
+            .setExpireTime(expireTime)
+            .setBackupType(Backup.BackupType.HOT)
+            .setHotToStandardTime(hotToStandardTime);
+    try {
+      Backup response = tableAdminHot.createBackup(request);
+      assertWithMessage("Got wrong backup Id in CreateBackup")
+          .that(response.getId())
+          .isEqualTo(backupId);
+      assertWithMessage("Got wrong source table name in CreateBackup")
+          .that(response.getSourceTableId())
+          .isEqualTo(testTableHot.getId());
+      assertWithMessage("Got wrong expire time in CreateBackup")
+          .that(response.getExpireTime())
+          .isEqualTo(expireTime);
+      assertWithMessage("Got wrong backup type in CreateBackup")
+          .that(response.getBackupType())
+          .isEqualTo(Backup.BackupType.HOT);
+      assertWithMessage("Got wrong hot to standard time in CreateBackup")
+          .that(response.getHotToStandardTime())
+          .isEqualTo(hotToStandardTime);
+
+      Backup result = tableAdminHot.getBackup(targetClusterHot, backupId);
+      assertWithMessage("Got wrong backup Id in GetBackup API")
+          .that(result.getId())
+          .isEqualTo(backupId);
+      assertWithMessage("Got wrong source table name in GetBackup API")
+          .that(result.getSourceTableId())
+          .isEqualTo(testTableHot.getId());
+      assertWithMessage("Got wrong expire time in GetBackup API")
+          .that(result.getExpireTime())
+          .isEqualTo(expireTime);
+      assertWithMessage("Got wrong hot to standard time in GetBackup API")
+          .that(result.getHotToStandardTime())
+          .isEqualTo(hotToStandardTime);
+      assertWithMessage("Got empty start time in GetBackup API")
+          .that(result.getStartTime())
+          .isNotNull();
+      assertWithMessage("Got wrong size bytes in GetBackup API")
+          .that(result.getSizeBytes())
+          .isEqualTo(0L);
+      assertWithMessage("Got wrong state in GetBackup API")
+          .that(result.getState())
+          .isAnyOf(Backup.State.CREATING, Backup.State.READY);
+      assertWithMessage("Got wrong backup type in GetBackup API")
+          .that(result.getBackupType())
+          .isEqualTo(Backup.BackupType.HOT);
+    } finally {
+      deleteBackupIgnoreErrors(tableAdminHot, targetClusterHot, backupId);
+    }
+  }
+
+  @Test
   public void listBackupTest() {
     String backupId1 = prefixGenerator.newPrefix();
     String backupId2 = prefixGenerator.newPrefix();
@@ -188,16 +271,26 @@ public class BigtableBackupIT {
   @Test
   public void updateBackupTest() {
     String backupId = prefixGenerator.newPrefix();
-    tableAdmin.createBackup(createBackupRequest(backupId));
+    tableAdminHot.createBackup(
+        CreateBackupRequest.of(targetClusterHot, backupId)
+            .setSourceTableId(testTableHot.getId())
+            .setExpireTime(Instant.now().plus(Duration.ofDays(15)))
+            .setBackupType(Backup.BackupType.HOT)
+            .setHotToStandardTime(Instant.now().plus(Duration.ofDays(10))));
 
     Instant expireTime = Instant.now().plus(Duration.ofDays(20));
     UpdateBackupRequest req =
-        UpdateBackupRequest.of(targetCluster, backupId).setExpireTime(expireTime);
+        UpdateBackupRequest.of(targetClusterHot, backupId)
+            .setExpireTime(expireTime)
+            .clearHotToStandardTime();
     try {
-      Backup backup = tableAdmin.updateBackup(req);
+      Backup backup = tableAdminHot.updateBackup(req);
       assertWithMessage("Incorrect expire time").that(backup.getExpireTime()).isEqualTo(expireTime);
+      assertWithMessage("Incorrect hot to standard time")
+          .that(backup.getHotToStandardTime())
+          .isNull();
     } finally {
-      deleteBackupIgnoreErrors(targetCluster, backupId);
+      deleteBackupIgnoreErrors(tableAdminHot, targetClusterHot, backupId);
     }
   }
 

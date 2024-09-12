@@ -49,10 +49,28 @@ public class BackupTest {
   }
 
   @Test
+  public void testBackupTypeEnumUpToDate() {
+    List<com.google.bigtable.admin.v2.Backup.BackupType> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Backup.BackupType.values());
+
+    List<Backup.BackupType> validModelValues = Lists.newArrayList(Backup.BackupType.values());
+
+    List<Backup.BackupType> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.Backup.BackupType protoValue : validProtoValues) {
+      Backup.BackupType modelValue = Backup.BackupType.fromProto(protoValue);
+      actualModelValues.add(modelValue);
+    }
+
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
+  }
+
+  @Test
   public void testFromProto() {
     Timestamp expireTime = Timestamp.newBuilder().setSeconds(1234).build();
     Timestamp startTime = Timestamp.newBuilder().setSeconds(1234).build();
     Timestamp endTime = Timestamp.newBuilder().setSeconds(1234).build();
+    Timestamp hotToStandardTime = Timestamp.newBuilder().setSeconds(1234).build();
     com.google.bigtable.admin.v2.Backup proto =
         com.google.bigtable.admin.v2.Backup.newBuilder()
             .setName("projects/my-project/instances/instance1/clusters/cluster1/backups/backup1")
@@ -62,8 +80,10 @@ public class BackupTest {
             .setExpireTime(expireTime)
             .setStartTime(startTime)
             .setEndTime(endTime)
+            .setHotToStandardTime(hotToStandardTime)
             .setSizeBytes(123456)
             .setState(com.google.bigtable.admin.v2.Backup.State.READY)
+            .setBackupType(com.google.bigtable.admin.v2.Backup.BackupType.HOT)
             .build();
 
     Backup result = Backup.fromProto(proto);
@@ -76,8 +96,11 @@ public class BackupTest {
     assertThat(result.getStartTime())
         .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(startTime)));
     assertThat(result.getEndTime()).isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(endTime)));
+    assertThat(result.getHotToStandardTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(hotToStandardTime)));
     assertThat(result.getSizeBytes()).isEqualTo(123456);
     assertThat(result.getState()).isEqualTo(Backup.State.READY);
+    assertThat(result.getBackupType()).isEqualTo(Backup.BackupType.HOT);
   }
 
   @Test

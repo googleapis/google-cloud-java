@@ -37,11 +37,14 @@ public class UpdateBackupRequestTest {
   private static final String CLUSTER_ID = "my-cluster";
   private static final Instant EXPIRE_TIME = Instant.now().plus(Duration.ofDays(15));
   private static final Instant EXPIRE_TIME_2 = Instant.now().plus(Duration.ofDays(20));
+  private static final Instant HOT_TO_STANDARD_TIME = Instant.now().plus(Duration.ofDays(10));
 
   @Test
   public void testToProto() {
     UpdateBackupRequest request =
-        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME);
+        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+            .setExpireTime(EXPIRE_TIME)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
 
     com.google.bigtable.admin.v2.UpdateBackupRequest requestProto =
         com.google.bigtable.admin.v2.UpdateBackupRequest.newBuilder()
@@ -50,8 +53,14 @@ public class UpdateBackupRequestTest {
                     .setName(
                         NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
                     .setExpireTime(Timestamps.fromMillis(EXPIRE_TIME.toEpochMilli()))
+                    .setHotToStandardTime(
+                        Timestamps.fromMillis(HOT_TO_STANDARD_TIME.toEpochMilli()))
                     .build())
-            .setUpdateMask(FieldMask.newBuilder().addPaths("expire_time").build())
+            .setUpdateMask(
+                FieldMask.newBuilder()
+                    .addPaths("expire_time")
+                    .addPaths("hot_to_standard_time")
+                    .build())
             .build();
     assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
   }
@@ -59,22 +68,49 @@ public class UpdateBackupRequestTest {
   @Test
   public void testEquality() {
     UpdateBackupRequest request =
-        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME);
+        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+            .setExpireTime(EXPIRE_TIME)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
     assertThat(request)
-        .isEqualTo(UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME));
+        .isEqualTo(
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME));
     assertThat(request)
-        .isNotEqualTo(UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME_2));
+        .isNotEqualTo(
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME_2)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME));
+    assertThat(request)
+        .isNotEqualTo(
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .clearHotToStandardTime());
   }
 
   @Test
   public void testHashCode() {
     UpdateBackupRequest request =
-        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME);
+        UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+            .setExpireTime(EXPIRE_TIME)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
     assertThat(request.hashCode())
         .isEqualTo(
-            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME).hashCode());
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME)
+                .hashCode());
     assertThat(request.hashCode())
         .isNotEqualTo(
-            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setExpireTime(EXPIRE_TIME_2).hashCode());
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME_2)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME)
+                .hashCode());
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .clearHotToStandardTime()
+                .hashCode());
   }
 }

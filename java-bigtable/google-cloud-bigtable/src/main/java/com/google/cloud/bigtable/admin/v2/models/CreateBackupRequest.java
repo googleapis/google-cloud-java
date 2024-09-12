@@ -58,6 +58,23 @@ public final class CreateBackupRequest {
     return this;
   }
 
+  public CreateBackupRequest setBackupType(Backup.BackupType backupType) {
+    Preconditions.checkNotNull(backupType);
+    requestBuilder.getBackupBuilder().setBackupType(backupType.toProto());
+    return this;
+  }
+
+  // The time at which this backup will be converted from a hot backup to a standard backup. Only
+  // applicable for hot backups. If not set, the backup will remain as a hot backup until it is
+  // deleted.
+  public CreateBackupRequest setHotToStandardTime(Instant hotToStandardTime) {
+    Preconditions.checkNotNull(hotToStandardTime);
+    requestBuilder
+        .getBackupBuilder()
+        .setHotToStandardTime(Timestamps.fromMillis(hotToStandardTime.toEpochMilli()));
+    return this;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -69,12 +86,23 @@ public final class CreateBackupRequest {
     CreateBackupRequest that = (CreateBackupRequest) o;
     return Objects.equal(requestBuilder.getBackupId(), that.requestBuilder.getBackupId())
         && Objects.equal(clusterId, that.clusterId)
-        && Objects.equal(sourceTableId, that.sourceTableId);
+        && Objects.equal(sourceTableId, that.sourceTableId)
+        && Objects.equal(
+            requestBuilder.getBackup().getBackupType(),
+            that.requestBuilder.getBackup().getBackupType())
+        && Objects.equal(
+            requestBuilder.getBackup().getHotToStandardTime(),
+            that.requestBuilder.getBackup().getHotToStandardTime());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(requestBuilder.getBackupId(), clusterId, sourceTableId);
+    return Objects.hashCode(
+        requestBuilder.getBackupId(),
+        clusterId,
+        sourceTableId,
+        requestBuilder.getBackup().getBackupType(),
+        requestBuilder.getBackup().getHotToStandardTime());
   }
 
   @InternalApi

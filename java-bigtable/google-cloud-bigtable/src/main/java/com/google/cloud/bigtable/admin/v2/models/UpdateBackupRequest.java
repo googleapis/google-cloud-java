@@ -16,10 +16,12 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.Backup;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.util.FieldMaskUtil;
 import com.google.protobuf.util.Timestamps;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Instant;
@@ -43,12 +45,35 @@ public final class UpdateBackupRequest {
     this.clusterId = clusterId;
   }
 
+  private void updateFieldMask(int fieldNumber) {
+    FieldMask newMask = FieldMaskUtil.fromFieldNumbers(Backup.class, fieldNumber);
+    requestBuilder.setUpdateMask(FieldMaskUtil.union(requestBuilder.getUpdateMask(), newMask));
+  }
+
   public UpdateBackupRequest setExpireTime(Instant expireTime) {
     Preconditions.checkNotNull(expireTime);
     requestBuilder
         .getBackupBuilder()
         .setExpireTime(Timestamps.fromMillis(expireTime.toEpochMilli()));
-    requestBuilder.setUpdateMask(FieldMask.newBuilder().addPaths("expire_time"));
+    updateFieldMask(Backup.EXPIRE_TIME_FIELD_NUMBER);
+    return this;
+  }
+
+  // The time at which this backup will be converted from a hot backup to a standard backup. Only
+  // applicable for hot backups. If not set, the backup will remain as a hot backup until it is
+  // deleted.
+  public UpdateBackupRequest setHotToStandardTime(Instant hotToStandardTime) {
+    Preconditions.checkNotNull(hotToStandardTime);
+    requestBuilder
+        .getBackupBuilder()
+        .setHotToStandardTime(Timestamps.fromMillis(hotToStandardTime.toEpochMilli()));
+    updateFieldMask(Backup.HOT_TO_STANDARD_TIME_FIELD_NUMBER);
+    return this;
+  }
+
+  public UpdateBackupRequest clearHotToStandardTime() {
+    requestBuilder.getBackupBuilder().clearHotToStandardTime();
+    updateFieldMask(Backup.HOT_TO_STANDARD_TIME_FIELD_NUMBER);
     return this;
   }
 
@@ -64,6 +89,9 @@ public final class UpdateBackupRequest {
     return Objects.equal(
             requestBuilder.getBackupBuilder().getExpireTime(),
             that.requestBuilder.getBackupBuilder().getExpireTime())
+        && Objects.equal(
+            requestBuilder.getBackupBuilder().getHotToStandardTime(),
+            that.requestBuilder.getBackupBuilder().getHotToStandardTime())
         && Objects.equal(requestBuilder.getUpdateMask(), that.requestBuilder.getUpdateMask())
         && Objects.equal(clusterId, that.clusterId)
         && Objects.equal(backupId, that.backupId);
@@ -73,6 +101,7 @@ public final class UpdateBackupRequest {
   public int hashCode() {
     return Objects.hashCode(
         requestBuilder.getBackupBuilder().getExpireTime(),
+        requestBuilder.getBackupBuilder().getHotToStandardTime(),
         requestBuilder.getUpdateMask(),
         backupId);
   }

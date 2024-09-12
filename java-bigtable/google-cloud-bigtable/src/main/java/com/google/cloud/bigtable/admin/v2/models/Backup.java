@@ -76,6 +76,56 @@ public class Backup {
     }
   }
 
+  public enum BackupType {
+    /** Not specified. */
+    BACKUP_TYPE_UNSPECIFIED(com.google.bigtable.admin.v2.Backup.BackupType.BACKUP_TYPE_UNSPECIFIED),
+
+    /**
+     * The default type for Cloud Bigtable managed backups. Supported for backups created in both
+     * HDD and SSD instances. Requires optimization when restored to a table in an SSD instance.
+     */
+    STANDARD(com.google.bigtable.admin.v2.Backup.BackupType.STANDARD),
+    /**
+     * A backup type with faster restore to SSD performance. Only supported for backups created in
+     * SSD instances. A new SSD table restored from a hot backup reaches production performance more
+     * quickly than a standard backup.
+     */
+    HOT(com.google.bigtable.admin.v2.Backup.BackupType.HOT),
+
+    /** The backup type of the backup is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Backup.BackupType.UNRECOGNIZED);
+
+    private final com.google.bigtable.admin.v2.Backup.BackupType proto;
+
+    BackupType(com.google.bigtable.admin.v2.Backup.BackupType proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static Backup.BackupType fromProto(
+        com.google.bigtable.admin.v2.Backup.BackupType proto) {
+      for (Backup.BackupType backupType : values()) {
+        if (backupType.proto.equals(proto)) {
+          return backupType;
+        }
+      }
+      return BACKUP_TYPE_UNSPECIFIED;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.Backup.BackupType toProto() {
+      return proto;
+    }
+  }
+
   @Nonnull private final com.google.bigtable.admin.v2.Backup proto;
   @Nonnull private final String id;
   @Nonnull private final String instanceId;
@@ -145,6 +195,20 @@ public class Backup {
   /** Get the state of this backup. */
   public State getState() {
     return State.fromProto(proto.getState());
+  }
+
+  /** Get the backup type of this backup. */
+  public BackupType getBackupType() {
+    return BackupType.fromProto(proto.getBackupType());
+  }
+
+  /** Get the time at which this backup will be converted from a hot backup to a standard backup. */
+  @Nullable
+  public Instant getHotToStandardTime() {
+    if (proto.hasHotToStandardTime()) {
+      return Instant.ofEpochMilli(Timestamps.toMillis(proto.getHotToStandardTime()));
+    }
+    return null;
   }
 
   /**

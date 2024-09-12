@@ -459,7 +459,7 @@ public class BigtableTableAdminClientTests {
     Map<String, List<com.google.cloud.bigtable.admin.v2.models.EncryptionInfo>> actualResult =
         adminClient.getEncryptionInfo(TABLE_ID);
 
-    // Verify that the encryption info is transfered from the proto to the model.
+    // Verify that the encryption info is transferred from the proto to the model.
     assertThat(actualResult)
         .containsExactly(
             "cluster1", ImmutableList.of(EncryptionInfo.fromProto(expectedEncryptionInfo)));
@@ -615,7 +615,9 @@ public class BigtableTableAdminClientTests {
     Timestamp expireTime = Timestamp.newBuilder().setSeconds(789).build();
     long sizeBytes = 123456789;
     CreateBackupRequest req =
-        CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID).setSourceTableId(TABLE_ID);
+        CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+            .setSourceTableId(TABLE_ID)
+            .setExpireTime(Instant.ofEpochMilli(Timestamps.toMillis(expireTime)));
     mockOperationResult(
         mockCreateBackupOperationCallable,
         req.toProto(PROJECT_ID, INSTANCE_ID),
@@ -649,6 +651,61 @@ public class BigtableTableAdminClientTests {
   }
 
   @Test
+  public void testCreateHotBackup() {
+    // Setup
+    Mockito.when(mockStub.createBackupOperationCallable())
+        .thenReturn(mockCreateBackupOperationCallable);
+
+    String backupName = NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID);
+    Timestamp startTime = Timestamp.newBuilder().setSeconds(123).build();
+    Timestamp endTime = Timestamp.newBuilder().setSeconds(456).build();
+    Timestamp expireTime = Timestamp.newBuilder().setSeconds(789).build();
+    Timestamp hotToStandardTime = Timestamp.newBuilder().setSeconds(500).build();
+    long sizeBytes = 123456789;
+    CreateBackupRequest req =
+        CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+            .setSourceTableId(TABLE_ID)
+            .setExpireTime(Instant.ofEpochMilli(Timestamps.toMillis(expireTime)))
+            .setBackupType(Backup.BackupType.HOT)
+            .setHotToStandardTime(Instant.ofEpochMilli(Timestamps.toMillis(hotToStandardTime)));
+    mockOperationResult(
+        mockCreateBackupOperationCallable,
+        req.toProto(PROJECT_ID, INSTANCE_ID),
+        com.google.bigtable.admin.v2.Backup.newBuilder()
+            .setName(backupName)
+            .setSourceTable(TABLE_NAME)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setExpireTime(expireTime)
+            .setSizeBytes(sizeBytes)
+            .setBackupType(com.google.bigtable.admin.v2.Backup.BackupType.HOT)
+            .setHotToStandardTime(hotToStandardTime)
+            .build(),
+        CreateBackupMetadata.newBuilder()
+            .setName(backupName)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setSourceTable(TABLE_NAME)
+            .build());
+    // Execute
+    Backup actualResult = adminClient.createBackup(req);
+
+    // Verify
+    assertThat(actualResult.getId()).isEqualTo(BACKUP_ID);
+    assertThat(actualResult.getSourceTableId()).isEqualTo(TABLE_ID);
+    assertThat(actualResult.getStartTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(startTime)));
+    assertThat(actualResult.getEndTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(endTime)));
+    assertThat(actualResult.getExpireTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(expireTime)));
+    assertThat(actualResult.getBackupType()).isEqualTo(Backup.BackupType.HOT);
+    assertThat(actualResult.getHotToStandardTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(hotToStandardTime)));
+    assertThat(actualResult.getSizeBytes()).isEqualTo(sizeBytes);
+  }
+
+  @Test
   public void testGetBackup() {
     // Setup
     Mockito.when(mockStub.getBackupCallable()).thenReturn(mockGetBackupCallable);
@@ -674,6 +731,7 @@ public class BigtableTableAdminClientTests {
                     .setEndTime(endTime)
                     .setSizeBytes(sizeBytes)
                     .setState(state)
+                    .setBackupType(com.google.bigtable.admin.v2.Backup.BackupType.STANDARD)
                     .build()));
 
     // Execute
@@ -690,6 +748,7 @@ public class BigtableTableAdminClientTests {
         .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(endTime)));
     assertThat(actualResult.getSizeBytes()).isEqualTo(sizeBytes);
     assertThat(actualResult.getState()).isEqualTo(Backup.State.fromProto(state));
+    assertThat(actualResult.getBackupType()).isEqualTo(Backup.BackupType.STANDARD);
   }
 
   @Test
@@ -698,6 +757,7 @@ public class BigtableTableAdminClientTests {
     Mockito.when(mockStub.updateBackupCallable()).thenReturn(mockUpdateBackupCallable);
 
     Timestamp expireTime = Timestamp.newBuilder().setSeconds(123456789).build();
+    Timestamp hotToStandardTime = Timestamp.newBuilder().setSeconds(123456789).build();
     long sizeBytes = 12345L;
     UpdateBackupRequest req = UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID);
     Mockito.when(mockUpdateBackupCallable.futureCall(req.toProto(PROJECT_ID, INSTANCE_ID)))
@@ -709,6 +769,7 @@ public class BigtableTableAdminClientTests {
                     .setSourceTable(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                     .setExpireTime(expireTime)
                     .setSizeBytes(sizeBytes)
+                    .setHotToStandardTime(hotToStandardTime)
                     .build()));
 
     // Execute
@@ -719,6 +780,8 @@ public class BigtableTableAdminClientTests {
     assertThat(actualResult.getSourceTableId()).isEqualTo(TABLE_ID);
     assertThat(actualResult.getExpireTime())
         .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(expireTime)));
+    assertThat(actualResult.getHotToStandardTime())
+        .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(hotToStandardTime)));
     assertThat(actualResult.getSizeBytes()).isEqualTo(sizeBytes);
   }
 

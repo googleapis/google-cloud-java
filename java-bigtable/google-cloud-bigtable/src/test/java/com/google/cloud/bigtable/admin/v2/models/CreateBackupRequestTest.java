@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.Backup;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.Backup.BackupType;
 import com.google.protobuf.util.Timestamps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,13 +36,16 @@ public class CreateBackupRequestTest {
   private static final String INSTANCE_ID = "my-instance";
   private static final String CLUSTER_ID = "my-cluster";
   private static final Instant EXPIRE_TIME = Instant.now().plus(Duration.ofDays(15));
+  private static final Instant HOT_TO_STANDARD_TIME = Instant.now().plus(Duration.ofDays(10));
 
   @Test
   public void testToProto() {
     CreateBackupRequest request =
         CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
             .setSourceTableId(TABLE_ID)
-            .setExpireTime(EXPIRE_TIME);
+            .setExpireTime(EXPIRE_TIME)
+            .setBackupType(BackupType.HOT)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
 
     com.google.bigtable.admin.v2.CreateBackupRequest requestProto =
         com.google.bigtable.admin.v2.CreateBackupRequest.newBuilder()
@@ -50,6 +54,9 @@ public class CreateBackupRequestTest {
                 Backup.newBuilder()
                     .setSourceTable(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                     .setExpireTime(Timestamps.fromMillis(EXPIRE_TIME.toEpochMilli()))
+                    .setBackupType(Backup.BackupType.HOT)
+                    .setHotToStandardTime(
+                        Timestamps.fromMillis(HOT_TO_STANDARD_TIME.toEpochMilli()))
                     .build())
             .setParent(NameUtil.formatClusterName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID))
             .build();
@@ -61,19 +68,33 @@ public class CreateBackupRequestTest {
     CreateBackupRequest request =
         CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
             .setSourceTableId(TABLE_ID)
-            .setExpireTime(EXPIRE_TIME);
+            .setExpireTime(EXPIRE_TIME)
+            .setBackupType(BackupType.HOT)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
 
     assertThat(request)
         .isEqualTo(
             CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
                 .setSourceTableId(TABLE_ID)
-                .setExpireTime(EXPIRE_TIME));
+                .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.HOT)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME));
 
     assertThat(request)
         .isNotEqualTo(
             CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
                 .setSourceTableId("another-table")
-                .setExpireTime(EXPIRE_TIME));
+                .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.HOT)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME));
+
+    assertThat(request)
+        .isNotEqualTo(
+            CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setSourceTableId(TABLE_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.STANDARD)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME));
   }
 
   @Test
@@ -81,13 +102,17 @@ public class CreateBackupRequestTest {
     CreateBackupRequest request =
         CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
             .setSourceTableId(TABLE_ID)
-            .setExpireTime(EXPIRE_TIME);
+            .setExpireTime(EXPIRE_TIME)
+            .setBackupType(BackupType.HOT)
+            .setHotToStandardTime(HOT_TO_STANDARD_TIME);
 
     assertThat(request.hashCode())
         .isEqualTo(
             CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
                 .setSourceTableId(TABLE_ID)
                 .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.HOT)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME)
                 .hashCode());
 
     assertThat(request.hashCode())
@@ -95,6 +120,17 @@ public class CreateBackupRequestTest {
             CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
                 .setSourceTableId("another-table")
                 .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.HOT)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME)
+                .hashCode());
+
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            CreateBackupRequest.of(CLUSTER_ID, BACKUP_ID)
+                .setSourceTableId(TABLE_ID)
+                .setExpireTime(EXPIRE_TIME)
+                .setBackupType(BackupType.BACKUP_TYPE_UNSPECIFIED)
+                .setHotToStandardTime(HOT_TO_STANDARD_TIME)
                 .hashCode());
   }
 }
