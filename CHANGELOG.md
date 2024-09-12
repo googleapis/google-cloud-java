@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.42.3](https://github.com/googleapis/java-bigquery/compare/v2.42.2...v2.42.3) (2024-09-12)
+
+
+### Dependencies
+
+* Update actions/upload-artifact action to v4.4.0 ([#3467](https://github.com/googleapis/java-bigquery/issues/3467)) ([08b28c5](https://github.com/googleapis/java-bigquery/commit/08b28c510a2280119a03da3caa385ec31e0c944c))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.35.0 ([#3472](https://github.com/googleapis/java-bigquery/issues/3472)) ([fa9ac5d](https://github.com/googleapis/java-bigquery/commit/fa9ac5d73ec4f21ab7d12949e413b4ee9d11aa6d))
+
 ## [2.42.2](https://github.com/googleapis/java-bigquery/compare/v2.42.1...v2.42.2) (2024-08-29)
 
 
