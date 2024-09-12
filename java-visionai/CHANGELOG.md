@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 (2024-09-11)
+
+### Features
+
+* request client libraries for new languages ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+
+
+
 ## 0.5.0 (2024-08-21)
 
 * No change
