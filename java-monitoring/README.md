@@ -1,6 +1,6 @@
-# Google Stackdriver Monitoring test Client for Java
+# Google Stackdriver Monitoring test test Client for Java
 
-Java idiomatic client for [Stackdriver Monitoring test][product-docs].
+Java idiomatic client for [Stackdriver Monitoring test test][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -65,14 +65,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Stackdriver Monitoring test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Stackdriver Monitoring test API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Stackdriver Monitoring test test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Stackdriver Monitoring test test API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Stackdriver Monitoring test [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Stackdriver Monitoring test.
+You will need a [Google Cloud Platform Console][developer-console] project with the Stackdriver Monitoring test test [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Stackdriver Monitoring test test.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -82,13 +82,13 @@ You will need to [enable billing][enable-billing] to use Google Stackdriver Moni
 You'll need to obtain the `google-cloud-monitoring` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-monitoring` as a dependency in your code.
 
-## About Stackdriver Monitoring test
+## About Stackdriver Monitoring test test
 
 
-[Stackdriver Monitoring test][product-docs] collects metrics, events, and metadata from Google Cloud, Amazon Web Services (AWS), hosted uptime probes, and application instrumentation. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premise systems, and hybrid cloud systems. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts. BindPlane is included with your Google Cloud project at no additional cost.
+[Stackdriver Monitoring test test][product-docs] collects metrics, events, and metadata from Google Cloud, Amazon Web Services (AWS), hosted uptime probes, and application instrumentation. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premise systems, and hybrid cloud systems. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts. BindPlane is included with your Google Cloud project at no additional cost.
 
-See the [Stackdriver Monitoring test client library docs][javadocs] to learn how to
-use this Stackdriver Monitoring test Client Library.
+See the [Stackdriver Monitoring test test client library docs][javadocs] to learn how to
+use this Stackdriver Monitoring test test Client Library.
 
 
 
@@ -101,7 +101,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Stackdriver Monitoring test uses gRPC for the transport layer.
+Stackdriver Monitoring test test uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -195,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-monitoring/3.49.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-monitoring/3.50.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
