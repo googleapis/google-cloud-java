@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.43.0](https://github.com/googleapis/google-cloud-java/compare/v1.42.0...v1.43.0) (2024-09-11)
+
+
+### Features
+
+* [aiplatform] add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* [aiplatform] add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* [alloydb] support for enabling outbound public IP on an instance ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+* [connectgateway] new module for connectgateway ([#11106](https://github.com/googleapis/google-cloud-java/issues/11106)) ([0ad33c1](https://github.com/googleapis/google-cloud-java/commit/0ad33c1c9bbb1d8fe02c9a98e0cbfd1ace4cc743))
+* [container] add ReleaseChannel EXTENDED value ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* [marketingplatformadminapi] new module for marketingplatformadminapi ([#11133](https://github.com/googleapis/google-cloud-java/issues/11133)) ([466ae72](https://github.com/googleapis/google-cloud-java/commit/466ae725047b08ddbe8ff164e05b1bfe32fa2d7e))
+* [recaptchaenterprise] add AssessmentEnvironment for CreateAssessement to explicitly describe the environment of the assessment ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* [vertexai] add util class SchemaMaker to create Schema from JsonString or JsonObject ([#11118](https://github.com/googleapis/google-cloud-java/issues/11118)) ([22f9fe3](https://github.com/googleapis/google-cloud-java/commit/22f9fe3c46b004bf856ba62f5c3d4eafcb41af42))
+* [vertexai] update gapic library to the latest version ([#11129](https://github.com/googleapis/google-cloud-java/issues/11129)) ([711cd72](https://github.com/googleapis/google-cloud-java/commit/711cd7250f5c420a8d721952b43e05076e5ba130))
+* [visionai] request client libraries for new languages ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.132.1 ([#11086](https://github.com/googleapis/google-cloud-java/issues/11086)) ([e31beb7](https://github.com/googleapis/google-cloud-java/commit/e31beb778a5590d784f4cc8b8a17130e1d3c8b5d))
+
+
+### Documentation
+
+* [managedkafka] Update product URL for google-cloud-managed_kafka ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+* [texttospeech] update Long Audio capabilities to include SSML ([8759972](https://github.com/googleapis/google-cloud-java/commit/87599729a7e2d03b934c070110c1d81366bdd8cf))
+* add thread safety information to GenerativeModel and ChatSession classes. ([#10961](https://github.com/googleapis/google-cloud-java/issues/10961)) ([80b26b7](https://github.com/googleapis/google-cloud-java/commit/80b26b745b943b4da6f9ad61b8ac99da233f969a))
+
 ## [1.42.0](https://github.com/googleapis/google-cloud-java/compare/v1.41.0...v1.42.0) (2024-08-21)
 
 
