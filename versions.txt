@@ -481,10 +481,8 @@ grpc-google-cloud-shell-v1:2.47.0:2.48.0-SNAPSHOT
 proto-google-cloud-shell-v1:2.47.0:2.48.0-SNAPSHOT
 google-cloud-speech:4.43.0:4.44.0-SNAPSHOT
 grpc-google-cloud-speech-v1:4.43.0:4.44.0-SNAPSHOT
-grpc-google-cloud-speech-v1beta1:2.43.0:2.44.0-SNAPSHOT
 grpc-google-cloud-speech-v1p1beta1:2.43.0:2.44.0-SNAPSHOT
 proto-google-cloud-speech-v1:4.43.0:4.44.0-SNAPSHOT
-proto-google-cloud-speech-v1beta1:2.43.0:2.44.0-SNAPSHOT
 proto-google-cloud-speech-v1p1beta1:2.43.0:2.44.0-SNAPSHOT
 proto-google-cloud-speech-v2:4.43.0:4.44.0-SNAPSHOT
 grpc-google-cloud-speech-v2:4.43.0:4.44.0-SNAPSHOT

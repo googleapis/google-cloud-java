@@ -25,11 +25,11 @@ deep-preserve-regex:
 - "/java-containeranalysis/google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java"
 
 deep-copy-regex:
-- source: "/google/devtools/containeranalysis/v1/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-containeranalysis/v1/proto-google-cloud-containeranalysis-v1/src"
-- source: "/google/devtools/containeranalysis/v1/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-containeranalysis/v1/grpc-google-cloud-containeranalysis-v1/src"
-- source: "/google/devtools/containeranalysis/v1/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-containeranalysis/v1/google-cloud-containeranalysis/src"
+- source: "/google/devtools/containeranalysis/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-containeranalysis/(v.*)/proto-google-cloud-containeranalysis-v1/src"
+- source: "/google/devtools/containeranalysis/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-containeranalysis/(v.*)/grpc-google-cloud-containeranalysis-v1/src"
+- source: "/google/devtools/containeranalysis/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-containeranalysis/(v.*)/google-cloud-containeranalysis/src"
 
 api-name: containeranalysis
