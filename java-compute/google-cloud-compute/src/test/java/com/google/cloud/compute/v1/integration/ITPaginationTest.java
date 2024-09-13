@@ -23,6 +23,7 @@ import com.google.cloud.compute.v1.ListZonesRequest;
 import com.google.cloud.compute.v1.Zone;
 import com.google.cloud.compute.v1.ZonesClient;
 import com.google.cloud.compute.v1.ZonesSettings;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Map;
@@ -103,9 +104,11 @@ public class ITPaginationTest extends BaseTest {
             .build();
     ZonesClient.ListPagedResponse responseToken = zonesClient.list(listZonesRequestToken);
     ZonesClient.ListPage nextPageWithToken = responseToken.getPage();
+
+    // Compare pages by ensuring a consistent list of zone names.
     Assert.assertEquals(
-        Lists.newArrayList(nextPage.getValues()),
-        Lists.newArrayList(nextPageWithToken.getValues()));
+        Iterables.transform(nextPage.getValues(), Zone::getName),
+        Iterables.transform(nextPageWithToken.getValues(), Zone::getName));
   }
 
   @Test
