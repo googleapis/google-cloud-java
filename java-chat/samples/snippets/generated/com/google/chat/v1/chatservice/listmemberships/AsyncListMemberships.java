@@ -44,6 +44,7 @@ public class AsyncListMemberships {
               .setFilter("filter-1274492040")
               .setShowGroups(true)
               .setShowInvited(true)
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Membership> future =
           chatServiceClient.listMembershipsPagedCallable().futureCall(request);

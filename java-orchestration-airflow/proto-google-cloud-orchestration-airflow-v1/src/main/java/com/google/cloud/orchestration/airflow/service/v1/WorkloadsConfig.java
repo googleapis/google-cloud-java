@@ -3675,6 +3675,9 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Configuration for resources used by Airflow DAG processors.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-3.*.*-airflow-*.*.* and newer.
    * </pre>
    *
    * Protobuf type {@code
@@ -4009,6 +4012,9 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Configuration for resources used by Airflow DAG processors.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-3.*.*-airflow-*.*.* and newer.
      * </pre>
      *
      * Protobuf type {@code

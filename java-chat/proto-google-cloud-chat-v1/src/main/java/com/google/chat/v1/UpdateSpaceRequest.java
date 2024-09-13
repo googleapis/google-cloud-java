@@ -310,6 +310,35 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
+  public static final int USE_ADMIN_ACCESS_FIELD_NUMBER = 3;
+  private boolean useAdminAccess_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * When `true`, the method runs using the user's Google Workspace
+   * administrator privileges.
+   *
+   * The calling user must be a Google Workspace administrator with the
+   * [manage chat and spaces conversations
+   * privilege](https://support.google.com/a/answer/13369245).
+   *
+   * Requires the `chat.admin.spaces` [OAuth 2.0
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+   *
+   * Some `FieldMask` values are not supported using admin access. For details,
+   * see the description of `update_mask`.
+   * </pre>
+   *
+   * <code>bool use_admin_access = 3;</code>
+   *
+   * @return The useAdminAccess.
+   */
+  @java.lang.Override
+  public boolean getUseAdminAccess() {
+    return useAdminAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -330,6 +359,9 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (useAdminAccess_ != false) {
+      output.writeBool(3, useAdminAccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -344,6 +376,9 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (useAdminAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, useAdminAccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -368,6 +403,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
+    if (getUseAdminAccess() != other.getUseAdminAccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -387,6 +423,8 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + USE_ADMIN_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseAdminAccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -545,6 +583,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
         updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
+      useAdminAccess_ = false;
       return this;
     }
 
@@ -589,6 +628,9 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.useAdminAccess_ = useAdminAccess_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -644,6 +686,9 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
+      if (other.getUseAdminAccess() != false) {
+        setUseAdminAccess(other.getUseAdminAccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -682,6 +727,12 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                useAdminAccess_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1532,6 +1583,92 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private boolean useAdminAccess_;
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Some `FieldMask` values are not supported using admin access. For details,
+     * see the description of `update_mask`.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 3;</code>
+     *
+     * @return The useAdminAccess.
+     */
+    @java.lang.Override
+    public boolean getUseAdminAccess() {
+      return useAdminAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Some `FieldMask` values are not supported using admin access. For details,
+     * see the description of `update_mask`.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 3;</code>
+     *
+     * @param value The useAdminAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseAdminAccess(boolean value) {
+
+      useAdminAccess_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Some `FieldMask` values are not supported using admin access. For details,
+     * see the description of `update_mask`.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseAdminAccess() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      useAdminAccess_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

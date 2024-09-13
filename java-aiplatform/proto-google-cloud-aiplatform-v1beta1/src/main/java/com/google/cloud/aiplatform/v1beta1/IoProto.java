@@ -160,23 +160,24 @@ public final class IoProto {
           + "\n\005email\030\005 \001(\tB\003\340A\002\022\027\n\nserver_uri\030\006 \001(\tB\003"
           + "\340A\002\022R\n\016api_key_config\030\007 \001(\01325.google.clo"
           + "ud.aiplatform.v1beta1.ApiAuth.ApiKeyConf"
-          + "igB\003\340A\002\"\251\003\n\021SharePointSources\022`\n\023share_p"
+          + "igB\003\340A\002\"\277\003\n\021SharePointSources\022`\n\023share_p"
           + "oint_sources\030\001 \003(\0132C.google.cloud.aiplat"
           + "form.v1beta1.SharePointSources.SharePoin"
-          + "tSource\032\261\002\n\020SharePointSource\022 \n\026sharepoi"
+          + "tSource\032\307\002\n\020SharePointSource\022 \n\026sharepoi"
           + "nt_folder_path\030\005 \001(\tH\000\022\036\n\024sharepoint_fol"
           + "der_id\030\006 \001(\tH\000\022\024\n\ndrive_name\030\007 \001(\tH\001\022\022\n\010"
           + "drive_id\030\010 \001(\tH\001\022\021\n\tclient_id\030\001 \001(\t\022L\n\rc"
           + "lient_secret\030\002 \001(\01325.google.cloud.aiplat"
           + "form.v1beta1.ApiAuth.ApiKeyConfig\022\021\n\tten"
           + "ant_id\030\003 \001(\t\022\034\n\024sharepoint_site_name\030\004 \001"
-          + "(\tB\017\n\rfolder_sourceB\016\n\014drive_sourceB\336\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\007IoP"
-          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
-          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
-          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
-          + ":AIPlatform::V1beta1b\006proto3"
+          + "(\t\022\024\n\007file_id\030\t \001(\tB\003\340A\003B\017\n\rfolder_sourc"
+          + "eB\016\n\014drive_sourceB\336\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\007IoProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -352,6 +353,7 @@ public final class IoProto {
               "ClientSecret",
               "TenantId",
               "SharepointSiteName",
+              "FileId",
               "FolderSource",
               "DriveSource",
             });

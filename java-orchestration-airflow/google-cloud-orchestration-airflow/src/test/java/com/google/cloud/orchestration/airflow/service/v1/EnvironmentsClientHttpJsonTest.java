@@ -97,6 +97,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -155,6 +156,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -256,6 +258,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -635,6 +638,68 @@ public class EnvironmentsClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkUpgradeTest() throws Exception {
+    CheckUpgradeResponse expectedResponse =
+        CheckUpgradeResponse.newBuilder()
+            .setBuildLogUri("buildLogUri2048482198")
+            .setPypiConflictBuildLogExtract("pypiConflictBuildLogExtract-1257030825")
+            .setImageVersion("imageVersion949870333")
+            .putAllPypiDependencies(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("checkUpgradeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CheckUpgradeRequest request =
+        CheckUpgradeRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setImageVersion("imageVersion949870333")
+            .build();
+
+    CheckUpgradeResponse actualResponse = client.checkUpgradeAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void checkUpgradeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CheckUpgradeRequest request =
+          CheckUpgradeRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setImageVersion("imageVersion949870333")
+              .build();
+      client.checkUpgradeAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

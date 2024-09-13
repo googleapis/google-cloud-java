@@ -87,30 +87,33 @@ public final class MembershipProto {
           + "SPECIFIED\020\000\022\017\n\013ROLE_MEMBER\020\001\022\020\n\014ROLE_MAN"
           + "AGER\020\002:D\352AA\n\036chat.googleapis.com/Members"
           + "hip\022\037spaces/{space}/members/{member}B\014\n\n"
-          + "memberType\"\206\001\n\027CreateMembershipRequest\0226"
+          + "memberType\"\240\001\n\027CreateMembershipRequest\0226"
           + "\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036chat.googleapis."
           + "com/Membership\0223\n\nmembership\030\002 \001(\0132\032.goo"
-          + "gle.chat.v1.MembershipB\003\340A\002\"\204\001\n\027UpdateMe"
-          + "mbershipRequest\0223\n\nmembership\030\001 \001(\0132\032.go"
-          + "ogle.chat.v1.MembershipB\003\340A\002\0224\n\013update_m"
-          + "ask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
-          + "A\002\"\313\001\n\026ListMembershipsRequest\0226\n\006parent\030"
-          + "\001 \001(\tB&\340A\002\372A \022\036chat.googleapis.com/Membe"
-          + "rship\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_to"
-          + "ken\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\005 \001(\tB\003\340A\001\022\030\n\013s"
-          + "how_groups\030\006 \001(\010B\003\340A\001\022\031\n\014show_invited\030\007 "
-          + "\001(\010B\003\340A\001\"h\n\027ListMembershipsResponse\0224\n\013m"
-          + "emberships\030\001 \003(\0132\032.google.chat.v1.Member"
-          + "shipB\003\340A\006\022\027\n\017next_page_token\030\002 \001(\t\"L\n\024Ge"
-          + "tMembershipRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A "
-          + "\n\036chat.googleapis.com/Membership\"O\n\027Dele"
-          + "teMembershipRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A"
-          + " \n\036chat.googleapis.com/MembershipB\250\001\n\022co"
-          + "m.google.chat.v1B\017MembershipProtoP\001Z,clo"
-          + "ud.google.com/go/chat/apiv1/chatpb;chatp"
-          + "b\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023"
-          + "Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat"
-          + "::V1b\006proto3"
+          + "gle.chat.v1.MembershipB\003\340A\002\022\030\n\020use_admin"
+          + "_access\030\005 \001(\010\"\236\001\n\027UpdateMembershipReques"
+          + "t\0223\n\nmembership\030\001 \001(\0132\032.google.chat.v1.M"
+          + "embershipB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\003\340A\002\022\030\n\020use_admi"
+          + "n_access\030\003 \001(\010\"\345\001\n\026ListMembershipsReques"
+          + "t\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036chat.googleap"
+          + "is.com/Membership\022\026\n\tpage_size\030\002 \001(\005B\003\340A"
+          + "\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\005 \001"
+          + "(\tB\003\340A\001\022\030\n\013show_groups\030\006 \001(\010B\003\340A\001\022\031\n\014sho"
+          + "w_invited\030\007 \001(\010B\003\340A\001\022\030\n\020use_admin_access"
+          + "\030\010 \001(\010\"h\n\027ListMembershipsResponse\0224\n\013mem"
+          + "berships\030\001 \003(\0132\032.google.chat.v1.Membersh"
+          + "ipB\003\340A\006\022\027\n\017next_page_token\030\002 \001(\t\"f\n\024GetM"
+          + "embershipRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036"
+          + "chat.googleapis.com/Membership\022\030\n\020use_ad"
+          + "min_access\030\003 \001(\010\"i\n\027DeleteMembershipRequ"
+          + "est\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036chat.googleap"
+          + "is.com/Membership\022\030\n\020use_admin_access\030\002 "
+          + "\001(\010B\250\001\n\022com.google.chat.v1B\017MembershipPr"
+          + "otoP\001Z,cloud.google.com/go/chat/apiv1/ch"
+          + "atpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps."
+          + "Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::"
+          + "Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -143,7 +146,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CreateMembershipRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Membership",
+              "Parent", "Membership", "UseAdminAccess",
             });
     internal_static_google_chat_v1_UpdateMembershipRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -151,7 +154,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_UpdateMembershipRequest_descriptor,
             new java.lang.String[] {
-              "Membership", "UpdateMask",
+              "Membership", "UpdateMask", "UseAdminAccess",
             });
     internal_static_google_chat_v1_ListMembershipsRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -159,7 +162,13 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_ListMembershipsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter", "ShowGroups", "ShowInvited",
+              "Parent",
+              "PageSize",
+              "PageToken",
+              "Filter",
+              "ShowGroups",
+              "ShowInvited",
+              "UseAdminAccess",
             });
     internal_static_google_chat_v1_ListMembershipsResponse_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -175,7 +184,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_GetMembershipRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "UseAdminAccess",
             });
     internal_static_google_chat_v1_DeleteMembershipRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -183,7 +192,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DeleteMembershipRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "UseAdminAccess",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

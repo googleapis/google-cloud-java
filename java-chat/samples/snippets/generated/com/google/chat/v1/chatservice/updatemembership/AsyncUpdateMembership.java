@@ -40,6 +40,7 @@ public class AsyncUpdateMembership {
           UpdateMembershipRequest.newBuilder()
               .setMembership(Membership.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Membership> future =
           chatServiceClient.updateMembershipCallable().futureCall(request);

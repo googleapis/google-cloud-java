@@ -37,6 +37,10 @@ public final class SpaceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_Space_SpaceDetails_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_Space_MembershipCount_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_Space_MembershipCount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_Space_AccessSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_Space_AccessSettings_fieldAccessorTable;
@@ -65,6 +69,14 @@ public final class SpaceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_UpdateSpaceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_SearchSpacesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_SearchSpacesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_SearchSpacesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_SearchSpacesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_DeleteSpaceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_DeleteSpaceRequest_fieldAccessorTable;
@@ -90,7 +102,7 @@ public final class SpaceProto {
           + "oogle/api/resource.proto\032\"google/chat/v1"
           + "/history_state.proto\032 google/protobuf/fi"
           + "eld_mask.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\272\t\n\005Space\022\014\n\004name\030\001 \001(\t\022/\n\004type\030"
+          + "p.proto\"\222\013\n\005Space\022\014\n\004name\030\001 \001(\t\022/\n\004type\030"
           + "\002 \001(\0162\032.google.chat.v1.Space.TypeB\005\030\001\340A\003"
           + "\0223\n\nspace_type\030\n \001(\0162\037.google.chat.v1.Sp"
           + "ace.SpaceType\022\037\n\022single_user_bot_dm\030\004 \001("
@@ -103,46 +115,60 @@ public final class SpaceProto {
           + "tory_state\030\r \001(\0162\034.google.chat.v1.Histor"
           + "yState\022\030\n\013import_mode\030\020 \001(\010B\003\340A\001\0227\n\013crea"
           + "te_time\030\021 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\006\340A\005\340A\001\022\034\n\017admin_installed\030\023 \001(\010B\003\340A\003\022"
-          + "B\n\017access_settings\030\027 \001(\0132$.google.chat.v"
-          + "1.Space.AccessSettingsB\003\340A\001\022\026\n\tspace_uri"
-          + "\030\031 \001(\tB\003\340A\003\0327\n\014SpaceDetails\022\023\n\013descripti"
-          + "on\030\001 \001(\t\022\022\n\nguidelines\030\002 \001(\t\032\300\001\n\016AccessS"
-          + "ettings\022K\n\014access_state\030\001 \001(\01620.google.c"
-          + "hat.v1.Space.AccessSettings.AccessStateB"
-          + "\003\340A\003\022\025\n\010audience\030\003 \001(\tB\003\340A\001\"J\n\013AccessSta"
-          + "te\022\034\n\030ACCESS_STATE_UNSPECIFIED\020\000\022\013\n\007PRIV"
-          + "ATE\020\001\022\020\n\014DISCOVERABLE\020\002\".\n\004Type\022\024\n\020TYPE_"
-          + "UNSPECIFIED\020\000\022\010\n\004ROOM\020\001\022\006\n\002DM\020\002\"V\n\tSpace"
-          + "Type\022\032\n\026SPACE_TYPE_UNSPECIFIED\020\000\022\t\n\005SPAC"
-          + "E\020\001\022\016\n\nGROUP_CHAT\020\002\022\022\n\016DIRECT_MESSAGE\020\003\""
-          + "\202\001\n\023SpaceThreadingState\022%\n!SPACE_THREADI"
-          + "NG_STATE_UNSPECIFIED\020\000\022\025\n\021THREADED_MESSA"
-          + "GES\020\002\022\024\n\020GROUPED_MESSAGES\020\003\022\027\n\023UNTHREADE"
-          + "D_MESSAGES\020\004:.\352A+\n\031chat.googleapis.com/S"
-          + "pace\022\016spaces/{space}\"X\n\022CreateSpaceReque"
-          + "st\022)\n\005space\030\001 \001(\0132\025.google.chat.v1.Space"
-          + "B\003\340A\002\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"Y\n\021ListSp"
-          + "acesRequest\022\026\n\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\np"
-          + "age_token\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340A"
-          + "\001\"T\n\022ListSpacesResponse\022%\n\006spaces\030\001 \003(\0132"
-          + "\025.google.chat.v1.Space\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\t\"B\n\017GetSpaceRequest\022/\n\004name\030\001 \001(\t"
-          + "B!\340A\002\372A\033\n\031chat.googleapis.com/Space\"-\n\030F"
-          + "indDirectMessageRequest\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\002\"p\n\022UpdateSpaceRequest\022)\n\005space\030\001 \001(\0132"
-          + "\025.google.chat.v1.SpaceB\003\340A\002\022/\n\013update_ma"
-          + "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"E\n\022"
-          + "DeleteSpaceRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033"
-          + "\n\031chat.googleapis.com/Space\"M\n\032CompleteI"
-          + "mportSpaceRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n"
-          + "\031chat.googleapis.com/Space\"C\n\033CompleteIm"
-          + "portSpaceResponse\022$\n\005space\030\001 \001(\0132\025.googl"
-          + "e.chat.v1.SpaceB\243\001\n\022com.google.chat.v1B\n"
-          + "SpaceProtoP\001Z,cloud.google.com/go/chat/a"
-          + "piv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Googl"
-          + "e.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026G"
-          + "oogle::Apps::Chat::V1b\006proto3"
+          + "pB\006\340A\005\340A\001\0229\n\020last_active_time\030\022 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\022\034\n\017admin_in"
+          + "stalled\030\023 \001(\010B\003\340A\003\022D\n\020membership_count\030\024"
+          + " \001(\0132%.google.chat.v1.Space.MembershipCo"
+          + "untB\003\340A\003\022B\n\017access_settings\030\027 \001(\0132$.goog"
+          + "le.chat.v1.Space.AccessSettingsB\003\340A\001\022\026\n\t"
+          + "space_uri\030\031 \001(\tB\003\340A\003\0327\n\014SpaceDetails\022\023\n\013"
+          + "description\030\001 \001(\t\022\022\n\nguidelines\030\002 \001(\t\032U\n"
+          + "\017MembershipCount\022&\n\036joined_direct_human_"
+          + "user_count\030\004 \001(\005\022\032\n\022joined_group_count\030\005"
+          + " \001(\005\032\300\001\n\016AccessSettings\022K\n\014access_state\030"
+          + "\001 \001(\01620.google.chat.v1.Space.AccessSetti"
+          + "ngs.AccessStateB\003\340A\003\022\025\n\010audience\030\003 \001(\tB\003"
+          + "\340A\001\"J\n\013AccessState\022\034\n\030ACCESS_STATE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007PRIVATE\020\001\022\020\n\014DISCOVERABLE\020\002\""
+          + ".\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004ROOM\020\001\022"
+          + "\006\n\002DM\020\002\"V\n\tSpaceType\022\032\n\026SPACE_TYPE_UNSPE"
+          + "CIFIED\020\000\022\t\n\005SPACE\020\001\022\016\n\nGROUP_CHAT\020\002\022\022\n\016D"
+          + "IRECT_MESSAGE\020\003\"\202\001\n\023SpaceThreadingState\022"
+          + "%\n!SPACE_THREADING_STATE_UNSPECIFIED\020\000\022\025"
+          + "\n\021THREADED_MESSAGES\020\002\022\024\n\020GROUPED_MESSAGE"
+          + "S\020\003\022\027\n\023UNTHREADED_MESSAGES\020\004:.\352A+\n\031chat."
+          + "googleapis.com/Space\022\016spaces/{space}\"X\n\022"
+          + "CreateSpaceRequest\022)\n\005space\030\001 \001(\0132\025.goog"
+          + "le.chat.v1.SpaceB\003\340A\002\022\027\n\nrequest_id\030\002 \001("
+          + "\tB\003\340A\001\"Y\n\021ListSpacesRequest\022\026\n\tpage_size"
+          + "\030\001 \001(\005B\003\340A\001\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\023\n\006"
+          + "filter\030\003 \001(\tB\003\340A\001\"T\n\022ListSpacesResponse\022"
+          + "%\n\006spaces\030\001 \003(\0132\025.google.chat.v1.Space\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"\\\n\017GetSpaceReque"
+          + "st\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031chat.googleapi"
+          + "s.com/Space\022\030\n\020use_admin_access\030\002 \001(\010\"-\n"
+          + "\030FindDirectMessageRequest\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\002\"\212\001\n\022UpdateSpaceRequest\022)\n\005space\030\001 \001"
+          + "(\0132\025.google.chat.v1.SpaceB\003\340A\002\022/\n\013update"
+          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\022"
+          + "\030\n\020use_admin_access\030\003 \001(\010\"\201\001\n\023SearchSpac"
+          + "esRequest\022\030\n\020use_admin_access\030\001 \001(\010\022\021\n\tp"
+          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\022\n\005qu"
+          + "ery\030\004 \001(\tB\003\340A\002\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"j\n"
+          + "\024SearchSpacesResponse\022%\n\006spaces\030\001 \003(\0132\025."
+          + "google.chat.v1.Space\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"_\n\022DeleteSpace"
+          + "Request\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031chat.goog"
+          + "leapis.com/Space\022\030\n\020use_admin_access\030\002 \001"
+          + "(\010\"M\n\032CompleteImportSpaceRequest\022/\n\004name"
+          + "\030\001 \001(\tB!\340A\002\372A\033\n\031chat.googleapis.com/Spac"
+          + "e\"C\n\033CompleteImportSpaceResponse\022$\n\005spac"
+          + "e\030\001 \001(\0132\025.google.chat.v1.SpaceB\243\001\n\022com.g"
+          + "oogle.chat.v1B\nSpaceProtoP\001Z,cloud.googl"
+          + "e.com/go/chat/apiv1/chatpb;chatpb\242\002\013DYNA"
+          + "PIProto\252\002\023Google.Apps.Chat.V1\312\002\023Google\\A"
+          + "pps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -171,7 +197,9 @@ public final class SpaceProto {
               "SpaceHistoryState",
               "ImportMode",
               "CreateTime",
+              "LastActiveTime",
               "AdminInstalled",
+              "MembershipCount",
               "AccessSettings",
               "SpaceUri",
             });
@@ -183,8 +211,16 @@ public final class SpaceProto {
             new java.lang.String[] {
               "Description", "Guidelines",
             });
-    internal_static_google_chat_v1_Space_AccessSettings_descriptor =
+    internal_static_google_chat_v1_Space_MembershipCount_descriptor =
         internal_static_google_chat_v1_Space_descriptor.getNestedTypes().get(1);
+    internal_static_google_chat_v1_Space_MembershipCount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_Space_MembershipCount_descriptor,
+            new java.lang.String[] {
+              "JoinedDirectHumanUserCount", "JoinedGroupCount",
+            });
+    internal_static_google_chat_v1_Space_AccessSettings_descriptor =
+        internal_static_google_chat_v1_Space_descriptor.getNestedTypes().get(2);
     internal_static_google_chat_v1_Space_AccessSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_Space_AccessSettings_descriptor,
@@ -221,7 +257,7 @@ public final class SpaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_GetSpaceRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "UseAdminAccess",
             });
     internal_static_google_chat_v1_FindDirectMessageRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -237,18 +273,34 @@ public final class SpaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_UpdateSpaceRequest_descriptor,
             new java.lang.String[] {
-              "Space", "UpdateMask",
+              "Space", "UpdateMask", "UseAdminAccess",
+            });
+    internal_static_google_chat_v1_SearchSpacesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_chat_v1_SearchSpacesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_SearchSpacesRequest_descriptor,
+            new java.lang.String[] {
+              "UseAdminAccess", "PageSize", "PageToken", "Query", "OrderBy",
+            });
+    internal_static_google_chat_v1_SearchSpacesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_chat_v1_SearchSpacesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_SearchSpacesResponse_descriptor,
+            new java.lang.String[] {
+              "Spaces", "NextPageToken", "TotalSize",
             });
     internal_static_google_chat_v1_DeleteSpaceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_chat_v1_DeleteSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DeleteSpaceRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "UseAdminAccess",
             });
     internal_static_google_chat_v1_CompleteImportSpaceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_chat_v1_CompleteImportSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CompleteImportSpaceRequest_descriptor,
@@ -256,7 +308,7 @@ public final class SpaceProto {
               "Name",
             });
     internal_static_google_chat_v1_CompleteImportSpaceResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_chat_v1_CompleteImportSpaceResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CompleteImportSpaceResponse_descriptor,

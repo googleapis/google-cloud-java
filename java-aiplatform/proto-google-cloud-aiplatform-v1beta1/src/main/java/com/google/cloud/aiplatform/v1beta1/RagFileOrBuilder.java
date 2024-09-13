@@ -230,6 +230,41 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
+   * The RagFile is imported from a SharePoint source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 14;</code>
+   *
+   * @return Whether the sharePointSources field is set.
+   */
+  boolean hasSharePointSources();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a SharePoint source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 14;</code>
+   *
+   * @return The sharePointSources.
+   */
+  com.google.cloud.aiplatform.v1beta1.SharePointSources getSharePointSources();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a SharePoint source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 14;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder getSharePointSourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the RagFile.
    * </pre>
    *

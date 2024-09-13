@@ -187,6 +187,17 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return ((EnvironmentsStubSettings) getStubSettings()).listWorkloadsSettings();
   }
 
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).checkUpgradeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).checkUpgradeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createUserWorkloadsSecret. */
   public UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretSettings() {
@@ -475,6 +486,18 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings() {
       return getStubSettingsBuilder().listWorkloadsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public UnaryCallSettings.Builder<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+      return getStubSettingsBuilder().checkUpgradeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public OperationCallSettings.Builder<
+            CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+        checkUpgradeOperationSettings() {
+      return getStubSettingsBuilder().checkUpgradeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createUserWorkloadsSecret. */

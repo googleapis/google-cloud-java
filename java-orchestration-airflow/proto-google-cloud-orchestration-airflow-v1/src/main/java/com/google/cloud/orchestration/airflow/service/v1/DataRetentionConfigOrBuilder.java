@@ -28,6 +28,49 @@ public interface DataRetentionConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the airflowMetadataRetentionConfig field is set.
+   */
+  boolean hasAirflowMetadataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The airflowMetadataRetentionConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+      getAirflowMetadataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfigOrBuilder
+      getAirflowMetadataRetentionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The configuration settings for task logs retention
    * </pre>
    *

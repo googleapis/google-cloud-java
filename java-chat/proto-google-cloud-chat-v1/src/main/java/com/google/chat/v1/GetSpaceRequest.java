@@ -121,6 +121,32 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int USE_ADMIN_ACCESS_FIELD_NUMBER = 2;
+  private boolean useAdminAccess_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * When `true`, the method runs using the user's Google Workspace
+   * administrator privileges.
+   *
+   * The calling user must be a Google Workspace administrator with the
+   * [manage chat and spaces conversations
+   * privilege](https://support.google.com/a/answer/13369245).
+   *
+   * Requires the `chat.admin.spaces` or `chat.admin.spaces.readonly` [OAuth 2.0
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+   * </pre>
+   *
+   * <code>bool use_admin_access = 2;</code>
+   *
+   * @return The useAdminAccess.
+   */
+  @java.lang.Override
+  public boolean getUseAdminAccess() {
+    return useAdminAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -138,6 +164,9 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (useAdminAccess_ != false) {
+      output.writeBool(2, useAdminAccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -149,6 +178,9 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (useAdminAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, useAdminAccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +198,7 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
     com.google.chat.v1.GetSpaceRequest other = (com.google.chat.v1.GetSpaceRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getUseAdminAccess() != other.getUseAdminAccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +212,8 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + USE_ADMIN_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseAdminAccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,6 +353,7 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      useAdminAccess_ = false;
       return this;
     }
 
@@ -355,6 +391,9 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useAdminAccess_ = useAdminAccess_;
       }
     }
 
@@ -408,6 +447,9 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getUseAdminAccess() != false) {
+        setUseAdminAccess(other.getUseAdminAccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -440,6 +482,12 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                useAdminAccess_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -581,6 +629,83 @@ public final class GetSpaceRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean useAdminAccess_;
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` or `chat.admin.spaces.readonly` [OAuth 2.0
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     * </pre>
+     *
+     * <code>bool use_admin_access = 2;</code>
+     *
+     * @return The useAdminAccess.
+     */
+    @java.lang.Override
+    public boolean getUseAdminAccess() {
+      return useAdminAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` or `chat.admin.spaces.readonly` [OAuth 2.0
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     * </pre>
+     *
+     * <code>bool use_admin_access = 2;</code>
+     *
+     * @param value The useAdminAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseAdminAccess(boolean value) {
+
+      useAdminAccess_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires the `chat.admin.spaces` or `chat.admin.spaces.readonly` [OAuth 2.0
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     * </pre>
+     *
+     * <code>bool use_admin_access = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseAdminAccess() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      useAdminAccess_ = false;
       onChanged();
       return this;
     }

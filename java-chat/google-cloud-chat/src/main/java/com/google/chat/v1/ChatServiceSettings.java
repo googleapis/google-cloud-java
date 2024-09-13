@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -145,6 +146,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   public PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).listSpacesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchSpacesSettings();
   }
 
   /** Returns the object with the settings used for calls to getSpace. */
@@ -408,6 +415,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public PagedCallSettings.Builder<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings() {
       return getStubSettingsBuilder().listSpacesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return getStubSettingsBuilder().searchSpacesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSpace. */

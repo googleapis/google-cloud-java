@@ -475,6 +475,51 @@ public final class EnvironmentsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest,
+          com.google.longrunning.Operation>
+      getCheckUpgradeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckUpgrade",
+      requestType = com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest,
+          com.google.longrunning.Operation>
+      getCheckUpgradeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest,
+            com.google.longrunning.Operation>
+        getCheckUpgradeMethod;
+    if ((getCheckUpgradeMethod = EnvironmentsGrpc.getCheckUpgradeMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getCheckUpgradeMethod = EnvironmentsGrpc.getCheckUpgradeMethod) == null) {
+          EnvironmentsGrpc.getCheckUpgradeMethod =
+              getCheckUpgradeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckUpgrade"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EnvironmentsMethodDescriptorSupplier("CheckUpgrade"))
+                      .build();
+        }
+      }
+    }
+    return getCheckUpgradeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest,
           com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret>
       getCreateUserWorkloadsSecretMethod;
@@ -1397,6 +1442,21 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    default void checkUpgrade(
+        com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCheckUpgradeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
      * composer-3.*.*-airflow-*.*.* and newer.
@@ -1834,6 +1894,23 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    public void checkUpgrade(
+        com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckUpgradeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
      * composer-3.*.*-airflow-*.*.* and newer.
@@ -2251,6 +2328,20 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation checkUpgrade(
+        com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
      * composer-3.*.*-airflow-*.*.* and newer.
@@ -2634,6 +2725,21 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        checkUpgrade(
+            com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckUpgradeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
      * composer-3.*.*-airflow-*.*.* and newer.
@@ -2881,20 +2987,21 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_STOP_AIRFLOW_COMMAND = 6;
   private static final int METHODID_POLL_AIRFLOW_COMMAND = 7;
   private static final int METHODID_LIST_WORKLOADS = 8;
-  private static final int METHODID_CREATE_USER_WORKLOADS_SECRET = 9;
-  private static final int METHODID_GET_USER_WORKLOADS_SECRET = 10;
-  private static final int METHODID_LIST_USER_WORKLOADS_SECRETS = 11;
-  private static final int METHODID_UPDATE_USER_WORKLOADS_SECRET = 12;
-  private static final int METHODID_DELETE_USER_WORKLOADS_SECRET = 13;
-  private static final int METHODID_CREATE_USER_WORKLOADS_CONFIG_MAP = 14;
-  private static final int METHODID_GET_USER_WORKLOADS_CONFIG_MAP = 15;
-  private static final int METHODID_LIST_USER_WORKLOADS_CONFIG_MAPS = 16;
-  private static final int METHODID_UPDATE_USER_WORKLOADS_CONFIG_MAP = 17;
-  private static final int METHODID_DELETE_USER_WORKLOADS_CONFIG_MAP = 18;
-  private static final int METHODID_SAVE_SNAPSHOT = 19;
-  private static final int METHODID_LOAD_SNAPSHOT = 20;
-  private static final int METHODID_DATABASE_FAILOVER = 21;
-  private static final int METHODID_FETCH_DATABASE_PROPERTIES = 22;
+  private static final int METHODID_CHECK_UPGRADE = 9;
+  private static final int METHODID_CREATE_USER_WORKLOADS_SECRET = 10;
+  private static final int METHODID_GET_USER_WORKLOADS_SECRET = 11;
+  private static final int METHODID_LIST_USER_WORKLOADS_SECRETS = 12;
+  private static final int METHODID_UPDATE_USER_WORKLOADS_SECRET = 13;
+  private static final int METHODID_DELETE_USER_WORKLOADS_SECRET = 14;
+  private static final int METHODID_CREATE_USER_WORKLOADS_CONFIG_MAP = 15;
+  private static final int METHODID_GET_USER_WORKLOADS_CONFIG_MAP = 16;
+  private static final int METHODID_LIST_USER_WORKLOADS_CONFIG_MAPS = 17;
+  private static final int METHODID_UPDATE_USER_WORKLOADS_CONFIG_MAP = 18;
+  private static final int METHODID_DELETE_USER_WORKLOADS_CONFIG_MAP = 19;
+  private static final int METHODID_SAVE_SNAPSHOT = 20;
+  private static final int METHODID_LOAD_SNAPSHOT = 21;
+  private static final int METHODID_DATABASE_FAILOVER = 22;
+  private static final int METHODID_FETCH_DATABASE_PROPERTIES = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2971,6 +3078,11 @@ public final class EnvironmentsGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>)
                   responseObserver);
+          break;
+        case METHODID_CHECK_UPGRADE:
+          serviceImpl.checkUpgrade(
+              (com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_USER_WORKLOADS_SECRET:
           serviceImpl.createUserWorkloadsSecret(
@@ -3156,6 +3268,12 @@ public final class EnvironmentsGrpc {
                     com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse>(
                     service, METHODID_LIST_WORKLOADS)))
         .addMethod(
+            getCheckUpgradeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CHECK_UPGRADE)))
+        .addMethod(
             getCreateUserWorkloadsSecretMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3322,6 +3440,7 @@ public final class EnvironmentsGrpc {
                       .addMethod(getStopAirflowCommandMethod())
                       .addMethod(getPollAirflowCommandMethod())
                       .addMethod(getListWorkloadsMethod())
+                      .addMethod(getCheckUpgradeMethod())
                       .addMethod(getCreateUserWorkloadsSecretMethod())
                       .addMethod(getGetUserWorkloadsSecretMethod())
                       .addMethod(getListUserWorkloadsSecretsMethod())

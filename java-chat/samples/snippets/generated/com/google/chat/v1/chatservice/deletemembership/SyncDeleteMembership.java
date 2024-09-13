@@ -38,6 +38,7 @@ public class SyncDeleteMembership {
       DeleteMembershipRequest request =
           DeleteMembershipRequest.newBuilder()
               .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setUseAdminAccess(true)
               .build();
       Membership response = chatServiceClient.deleteMembership(request);
     }

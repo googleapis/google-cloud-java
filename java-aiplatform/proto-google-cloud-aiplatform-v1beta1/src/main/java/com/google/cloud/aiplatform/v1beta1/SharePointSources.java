@@ -332,6 +332,31 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSharepointSiteNameBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SharePoint file id. Output only.
+     * </pre>
+     *
+     * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The fileId.
+     */
+    java.lang.String getFileId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SharePoint file id. Output only.
+     * </pre>
+     *
+     * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for fileId.
+     */
+    com.google.protobuf.ByteString getFileIdBytes();
+
     com.google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource.FolderSourceCase
         getFolderSourceCase();
 
@@ -361,6 +386,7 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       clientId_ = "";
       tenantId_ = "";
       sharepointSiteName_ = "";
+      fileId_ = "";
     }
 
     @java.lang.Override
@@ -973,6 +999,57 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int FILE_ID_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fileId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SharePoint file id. Output only.
+     * </pre>
+     *
+     * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The fileId.
+     */
+    @java.lang.Override
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SharePoint file id. Output only.
+     * </pre>
+     *
+     * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for fileId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFileIdBytes() {
+      java.lang.Object ref = fileId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fileId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1011,6 +1088,9 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       if (driveSourceCase_ == 8) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, driveSource_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, fileId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1044,6 +1124,9 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       if (driveSourceCase_ == 8) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, driveSource_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, fileId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1068,6 +1151,7 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       if (!getTenantId().equals(other.getTenantId())) return false;
       if (!getSharepointSiteName().equals(other.getSharepointSiteName())) return false;
+      if (!getFileId().equals(other.getFileId())) return false;
       if (!getFolderSourceCase().equals(other.getFolderSourceCase())) return false;
       switch (folderSourceCase_) {
         case 5:
@@ -1111,6 +1195,8 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getTenantId().hashCode();
       hash = (37 * hash) + SHAREPOINT_SITE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getSharepointSiteName().hashCode();
+      hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFileId().hashCode();
       switch (folderSourceCase_) {
         case 5:
           hash = (37 * hash) + SHAREPOINT_FOLDER_PATH_FIELD_NUMBER;
@@ -1297,6 +1383,7 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         tenantId_ = "";
         sharepointSiteName_ = "";
+        fileId_ = "";
         folderSourceCase_ = 0;
         folderSource_ = null;
         driveSourceCase_ = 0;
@@ -1356,6 +1443,9 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.sharepointSiteName_ = sharepointSiteName_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.fileId_ = fileId_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1436,6 +1526,11 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         if (!other.getSharepointSiteName().isEmpty()) {
           sharepointSiteName_ = other.sharepointSiteName_;
           bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (!other.getFileId().isEmpty()) {
+          fileId_ = other.fileId_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         switch (other.getFolderSourceCase()) {
@@ -1556,6 +1651,12 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
                   driveSource_ = s;
                   break;
                 } // case 66
+              case 74:
+                {
+                  fileId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2660,6 +2761,112 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
         sharepointSiteName_ = value;
         bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SharePoint file id. Output only.
+       * </pre>
+       *
+       * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The fileId.
+       */
+      public java.lang.String getFileId() {
+        java.lang.Object ref = fileId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SharePoint file id. Output only.
+       * </pre>
+       *
+       * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for fileId.
+       */
+      public com.google.protobuf.ByteString getFileIdBytes() {
+        java.lang.Object ref = fileId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fileId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SharePoint file id. Output only.
+       * </pre>
+       *
+       * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The fileId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fileId_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SharePoint file id. Output only.
+       * </pre>
+       *
+       * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileId() {
+        fileId_ = getDefaultInstance().getFileId();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SharePoint file id. Output only.
+       * </pre>
+       *
+       * <code>string file_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for fileId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        fileId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }

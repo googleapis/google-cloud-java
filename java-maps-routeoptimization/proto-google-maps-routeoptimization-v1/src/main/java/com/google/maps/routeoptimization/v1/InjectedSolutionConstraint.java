@@ -490,7 +490,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          *
          * <pre>
          * Same as `RELAX_VISIT_TIMES_AFTER_THRESHOLD`, but the visit sequence
-         * is also relaxed: visits remain simply bound to their vehicle.
+         * is also relaxed: visits can only be performed by this vehicle, but
+         * can potentially become unperformed.
          * </pre>
          *
          * <code>RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD = 2;</code>
@@ -542,7 +543,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          *
          * <pre>
          * Same as `RELAX_VISIT_TIMES_AFTER_THRESHOLD`, but the visit sequence
-         * is also relaxed: visits remain simply bound to their vehicle.
+         * is also relaxed: visits can only be performed by this vehicle, but
+         * can potentially become unperformed.
          * </pre>
          *
          * <code>RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD = 2;</code>

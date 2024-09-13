@@ -37,7 +37,10 @@ public class AsyncGetSpace {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
       GetSpaceRequest request =
-          GetSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+          GetSpaceRequest.newBuilder()
+              .setName(SpaceName.of("[SPACE]").toString())
+              .setUseAdminAccess(true)
+              .build();
       ApiFuture<Space> future = chatServiceClient.getSpaceCallable().futureCall(request);
       // Do something.
       Space response = future.get();

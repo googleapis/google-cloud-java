@@ -39,6 +39,7 @@ public class SyncCreateMembership {
           CreateMembershipRequest.newBuilder()
               .setParent(SpaceName.of("[SPACE]").toString())
               .setMembership(Membership.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       Membership response = chatServiceClient.createMembership(request);
     }

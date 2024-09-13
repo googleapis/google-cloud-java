@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -80,6 +81,8 @@ import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -196,6 +199,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       uploadAttachmentSettings;
   private final PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings;
+  private final PagedCallSettings<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings;
   private final UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings;
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;
   private final UnaryCallSettings<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -328,6 +334,40 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             }
           };
 
+  private static final PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>
+      SEARCH_SPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchSpacesRequest injectToken(SearchSpacesRequest payload, String token) {
+              return SearchSpacesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchSpacesRequest injectPageSize(SearchSpacesRequest payload, int pageSize) {
+              return SearchSpacesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchSpacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchSpacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Space> extractResources(SearchSpacesResponse payload) {
+              return payload.getSpacesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListReactionsRequest, ListReactionsResponse, Reaction>
       LIST_REACTIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListReactionsRequest, ListReactionsResponse, Reaction>() {
@@ -451,6 +491,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListResponseFactory<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      SEARCH_SPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchSpacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> callable,
+                SearchSpacesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchSpacesResponse> futureResponse) {
+              PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> pageContext =
+                  PageContext.create(callable, SEARCH_SPACES_PAGE_STR_DESC, request, context);
+              return SearchSpacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       LIST_REACTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -537,6 +594,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   public PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings() {
     return listSpacesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return searchSpacesSettings;
   }
 
   /** Returns the object with the settings used for calls to getSpace. */
@@ -756,6 +819,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
     uploadAttachmentSettings = settingsBuilder.uploadAttachmentSettings().build();
     listSpacesSettings = settingsBuilder.listSpacesSettings().build();
+    searchSpacesSettings = settingsBuilder.searchSpacesSettings().build();
     getSpaceSettings = settingsBuilder.getSpaceSettings().build();
     createSpaceSettings = settingsBuilder.createSpaceSettings().build();
     setUpSpaceSettings = settingsBuilder.setUpSpaceSettings().build();
@@ -796,6 +860,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final PagedCallSettings.Builder<
             ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings;
+    private final PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings;
     private final UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings;
     private final UnaryCallSettings.Builder<CreateSpaceRequest, Space> createSpaceSettings;
     private final UnaryCallSettings.Builder<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -874,6 +941,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpacesSettings = PagedCallSettings.newBuilder(LIST_SPACES_PAGE_STR_FACT);
+      searchSpacesSettings = PagedCallSettings.newBuilder(SEARCH_SPACES_PAGE_STR_FACT);
       getSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setUpSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -905,6 +973,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -939,6 +1008,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
       uploadAttachmentSettings = settings.uploadAttachmentSettings.toBuilder();
       listSpacesSettings = settings.listSpacesSettings.toBuilder();
+      searchSpacesSettings = settings.searchSpacesSettings.toBuilder();
       getSpaceSettings = settings.getSpaceSettings.toBuilder();
       createSpaceSettings = settings.createSpaceSettings.toBuilder();
       setUpSpaceSettings = settings.setUpSpaceSettings.toBuilder();
@@ -970,6 +1040,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -1062,6 +1133,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .listSpacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchSpacesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1227,6 +1303,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public PagedCallSettings.Builder<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings() {
       return listSpacesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return searchSpacesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSpace. */

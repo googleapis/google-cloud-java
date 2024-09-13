@@ -265,6 +265,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SearchSpaces</td>
+ *      <td><p> Returns a list of spaces in a Google Workspace organization based on an administrator's search. Requires [user authentication with administrator privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges). In the request, set `use_admin_access` to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchSpaces(SearchSpacesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchSpaces()
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchSpacesPagedCallable()
+ *           <li><p> searchSpacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetSpace</td>
  *      <td><p> Returns details about a space. For an example, see [Get details about a space](https://developers.google.com/workspace/chat/get-spaces).
  * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
@@ -1227,6 +1246,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setShowGroups(true)
    *           .setShowInvited(true)
+   *           .setUseAdminAccess(true)
    *           .build();
    *   for (Membership element : chatServiceClient.listMemberships(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1276,6 +1296,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setShowGroups(true)
    *           .setShowInvited(true)
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Membership> future =
    *       chatServiceClient.listMembershipsPagedCallable().futureCall(request);
@@ -1326,6 +1347,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setShowGroups(true)
    *           .setShowInvited(true)
+   *           .setUseAdminAccess(true)
    *           .build();
    *   while (true) {
    *     ListMembershipsResponse response =
@@ -1459,6 +1481,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMembershipRequest request =
    *       GetMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   Membership response = chatServiceClient.getMembership(request);
    * }
@@ -1495,6 +1518,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMembershipRequest request =
    *       GetMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Membership> future = chatServiceClient.getMembershipCallable().futureCall(request);
    *   // Do something.
@@ -2345,6 +2369,153 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
+   * Requires [user authentication with administrator
+   * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+   * In the request, set `use_admin_access` to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   for (Space element : chatServiceClient.searchSpaces().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchSpacesPagedResponse searchSpaces() {
+    SearchSpacesRequest request = SearchSpacesRequest.newBuilder().build();
+    return searchSpaces(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
+   * Requires [user authentication with administrator
+   * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+   * In the request, set `use_admin_access` to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchSpacesRequest request =
+   *       SearchSpacesRequest.newBuilder()
+   *           .setUseAdminAccess(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setQuery("query107944136")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Space element : chatServiceClient.searchSpaces(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchSpacesPagedResponse searchSpaces(SearchSpacesRequest request) {
+    return searchSpacesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
+   * Requires [user authentication with administrator
+   * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+   * In the request, set `use_admin_access` to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchSpacesRequest request =
+   *       SearchSpacesRequest.newBuilder()
+   *           .setUseAdminAccess(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setQuery("query107944136")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Space> future = chatServiceClient.searchSpacesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Space element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse>
+      searchSpacesPagedCallable() {
+    return stub.searchSpacesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
+   * Requires [user authentication with administrator
+   * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+   * In the request, set `use_admin_access` to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchSpacesRequest request =
+   *       SearchSpacesRequest.newBuilder()
+   *           .setUseAdminAccess(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setQuery("query107944136")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     SearchSpacesResponse response = chatServiceClient.searchSpacesCallable().call(request);
+   *     for (Space element : response.getSpacesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    return stub.searchSpacesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns details about a space. For an example, see [Get details about a
    * space](https://developers.google.com/workspace/chat/get-spaces).
    *
@@ -2436,7 +2607,10 @@ public class ChatServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
    *   GetSpaceRequest request =
-   *       GetSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+   *       GetSpaceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setUseAdminAccess(true)
+   *           .build();
    *   Space response = chatServiceClient.getSpace(request);
    * }
    * }</pre>
@@ -2470,7 +2644,10 @@ public class ChatServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
    *   GetSpaceRequest request =
-   *       GetSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+   *       GetSpaceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setUseAdminAccess(true)
+   *           .build();
    *   ApiFuture<Space> future = chatServiceClient.getSpaceCallable().futureCall(request);
    *   // Do something.
    *   Space response = future.get();
@@ -2836,6 +3013,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       UpdateSpaceRequest.newBuilder()
    *           .setSpace(Space.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   Space response = chatServiceClient.updateSpace(request);
    * }
@@ -2873,6 +3051,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       UpdateSpaceRequest.newBuilder()
    *           .setSpace(Space.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Space> future = chatServiceClient.updateSpaceCallable().futureCall(request);
    *   // Do something.
@@ -2968,7 +3147,10 @@ public class ChatServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
    *   DeleteSpaceRequest request =
-   *       DeleteSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+   *       DeleteSpaceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setUseAdminAccess(true)
+   *           .build();
    *   chatServiceClient.deleteSpace(request);
    * }
    * }</pre>
@@ -2999,7 +3181,10 @@ public class ChatServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
    *   DeleteSpaceRequest request =
-   *       DeleteSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+   *       DeleteSpaceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setUseAdminAccess(true)
+   *           .build();
    *   ApiFuture<Empty> future = chatServiceClient.deleteSpaceCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -3341,6 +3526,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       CreateMembershipRequest.newBuilder()
    *           .setParent(SpaceName.of("[SPACE]").toString())
    *           .setMembership(Membership.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   Membership response = chatServiceClient.createMembership(request);
    * }
@@ -3397,6 +3583,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       CreateMembershipRequest.newBuilder()
    *           .setParent(SpaceName.of("[SPACE]").toString())
    *           .setMembership(Membership.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Membership> future =
    *       chatServiceClient.createMembershipCallable().futureCall(request);
@@ -3470,6 +3657,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       UpdateMembershipRequest.newBuilder()
    *           .setMembership(Membership.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   Membership response = chatServiceClient.updateMembership(request);
    * }
@@ -3503,6 +3691,7 @@ public class ChatServiceClient implements BackgroundResource {
    *       UpdateMembershipRequest.newBuilder()
    *           .setMembership(Membership.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Membership> future =
    *       chatServiceClient.updateMembershipCallable().futureCall(request);
@@ -3612,6 +3801,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   DeleteMembershipRequest request =
    *       DeleteMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   Membership response = chatServiceClient.deleteMembership(request);
    * }
@@ -3644,6 +3834,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   DeleteMembershipRequest request =
    *       DeleteMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+   *           .setUseAdminAccess(true)
    *           .build();
    *   ApiFuture<Membership> future =
    *       chatServiceClient.deleteMembershipCallable().futureCall(request);
@@ -5202,6 +5393,81 @@ public class ChatServiceClient implements BackgroundResource {
     protected ListSpacesFixedSizeCollection createCollection(
         List<ListSpacesPage> pages, int collectionSize) {
       return new ListSpacesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchSpacesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchSpacesRequest,
+          SearchSpacesResponse,
+          Space,
+          SearchSpacesPage,
+          SearchSpacesFixedSizeCollection> {
+
+    public static ApiFuture<SearchSpacesPagedResponse> createAsync(
+        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        ApiFuture<SearchSpacesResponse> futureResponse) {
+      ApiFuture<SearchSpacesPage> futurePage =
+          SearchSpacesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchSpacesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchSpacesPagedResponse(SearchSpacesPage page) {
+      super(page, SearchSpacesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchSpacesPage
+      extends AbstractPage<SearchSpacesRequest, SearchSpacesResponse, Space, SearchSpacesPage> {
+
+    private SearchSpacesPage(
+        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        SearchSpacesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchSpacesPage createEmptyPage() {
+      return new SearchSpacesPage(null, null);
+    }
+
+    @Override
+    protected SearchSpacesPage createPage(
+        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        SearchSpacesResponse response) {
+      return new SearchSpacesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchSpacesPage> createPageAsync(
+        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        ApiFuture<SearchSpacesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchSpacesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchSpacesRequest,
+          SearchSpacesResponse,
+          Space,
+          SearchSpacesPage,
+          SearchSpacesFixedSizeCollection> {
+
+    private SearchSpacesFixedSizeCollection(List<SearchSpacesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchSpacesFixedSizeCollection createEmptyCollection() {
+      return new SearchSpacesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchSpacesFixedSizeCollection createCollection(
+        List<SearchSpacesPage> pages, int collectionSize) {
+      return new SearchSpacesFixedSizeCollection(pages, collectionSize);
     }
   }
 

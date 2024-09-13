@@ -236,8 +236,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * This should never be used. If we are unable to understand why a
-       * shipment was skipped, we simply return an empty set of reasons.
+       * This should never be used.
        * </pre>
        *
        * <code>CODE_UNSPECIFIED = 0;</code>
@@ -336,8 +335,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * This should never be used. If we are unable to understand why a
-       * shipment was skipped, we simply return an empty set of reasons.
+       * This should never be used.
        * </pre>
        *
        * <code>CODE_UNSPECIFIED = 0;</code>
@@ -1509,7 +1507,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -1524,7 +1523,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -1540,7 +1540,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -1554,7 +1555,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -1568,7 +1570,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2213,7 +2216,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2231,7 +2235,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2248,7 +2253,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2265,7 +2271,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2289,7 +2296,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2311,7 +2319,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2334,7 +2343,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2358,7 +2368,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2379,7 +2390,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2401,7 +2413,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2423,7 +2436,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2443,7 +2457,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2463,7 +2478,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2477,7 +2493,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2495,7 +2512,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2514,7 +2532,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2529,7 +2548,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -2546,7 +2566,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A list of reasons that explain why the shipment was skipped. See comment
-     * above `Reason`.
+     * above `Reason`. If we are unable to understand why a shipment was skipped,
+     * reasons will not be set.
      * </pre>
      *
      * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>

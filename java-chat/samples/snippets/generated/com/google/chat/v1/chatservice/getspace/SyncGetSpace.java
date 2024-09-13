@@ -36,7 +36,10 @@ public class SyncGetSpace {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
       GetSpaceRequest request =
-          GetSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+          GetSpaceRequest.newBuilder()
+              .setName(SpaceName.of("[SPACE]").toString())
+              .setUseAdminAccess(true)
+              .build();
       Space response = chatServiceClient.getSpace(request);
     }
   }

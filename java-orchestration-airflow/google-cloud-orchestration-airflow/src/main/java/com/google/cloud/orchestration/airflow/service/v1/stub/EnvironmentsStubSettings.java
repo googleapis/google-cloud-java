@@ -51,6 +51,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
@@ -204,6 +206,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   private final PagedCallSettings<
           ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       listWorkloadsSettings;
+  private final UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings;
+  private final OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationSettings;
   private final UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretSettings;
   private final UnaryCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -580,6 +585,17 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return listWorkloadsSettings;
   }
 
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+    return checkUpgradeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationSettings() {
+    return checkUpgradeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createUserWorkloadsSecret. */
   public UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretSettings() {
@@ -811,6 +827,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     stopAirflowCommandSettings = settingsBuilder.stopAirflowCommandSettings().build();
     pollAirflowCommandSettings = settingsBuilder.pollAirflowCommandSettings().build();
     listWorkloadsSettings = settingsBuilder.listWorkloadsSettings().build();
+    checkUpgradeSettings = settingsBuilder.checkUpgradeSettings().build();
+    checkUpgradeOperationSettings = settingsBuilder.checkUpgradeOperationSettings().build();
     createUserWorkloadsSecretSettings = settingsBuilder.createUserWorkloadsSecretSettings().build();
     getUserWorkloadsSecretSettings = settingsBuilder.getUserWorkloadsSecretSettings().build();
     listUserWorkloadsSecretsSettings = settingsBuilder.listUserWorkloadsSecretsSettings().build();
@@ -866,6 +884,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private final PagedCallSettings.Builder<
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings;
+    private final UnaryCallSettings.Builder<CheckUpgradeRequest, Operation> checkUpgradeSettings;
+    private final OperationCallSettings.Builder<
+            CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+        checkUpgradeOperationSettings;
     private final UnaryCallSettings.Builder<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         createUserWorkloadsSecretSettings;
     private final UnaryCallSettings.Builder<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -950,6 +972,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       stopAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pollAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listWorkloadsSettings = PagedCallSettings.newBuilder(LIST_WORKLOADS_PAGE_STR_FACT);
+      checkUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      checkUpgradeOperationSettings = OperationCallSettings.newBuilder();
       createUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listUserWorkloadsSecretsSettings =
@@ -981,6 +1005,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               stopAirflowCommandSettings,
               pollAirflowCommandSettings,
               listWorkloadsSettings,
+              checkUpgradeSettings,
               createUserWorkloadsSecretSettings,
               getUserWorkloadsSecretSettings,
               listUserWorkloadsSecretsSettings,
@@ -1013,6 +1038,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       stopAirflowCommandSettings = settings.stopAirflowCommandSettings.toBuilder();
       pollAirflowCommandSettings = settings.pollAirflowCommandSettings.toBuilder();
       listWorkloadsSettings = settings.listWorkloadsSettings.toBuilder();
+      checkUpgradeSettings = settings.checkUpgradeSettings.toBuilder();
+      checkUpgradeOperationSettings = settings.checkUpgradeOperationSettings.toBuilder();
       createUserWorkloadsSecretSettings = settings.createUserWorkloadsSecretSettings.toBuilder();
       getUserWorkloadsSecretSettings = settings.getUserWorkloadsSecretSettings.toBuilder();
       listUserWorkloadsSecretsSettings = settings.listUserWorkloadsSecretsSettings.toBuilder();
@@ -1046,6 +1073,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               stopAirflowCommandSettings,
               pollAirflowCommandSettings,
               listWorkloadsSettings,
+              checkUpgradeSettings,
               createUserWorkloadsSecretSettings,
               getUserWorkloadsSecretSettings,
               listUserWorkloadsSecretsSettings,
@@ -1129,6 +1157,11 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
       builder
           .listWorkloadsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .checkUpgradeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1260,6 +1293,30 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .checkUpgradeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CheckUpgradeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CheckUpgradeResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1435,6 +1492,18 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings() {
       return listWorkloadsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public UnaryCallSettings.Builder<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+      return checkUpgradeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public OperationCallSettings.Builder<
+            CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+        checkUpgradeOperationSettings() {
+      return checkUpgradeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createUserWorkloadsSecret. */
