@@ -2350,7 +2350,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>This value should be 4-63 characters. Valid characters are /[a-z][0-9]-/ with first
    *     character a letter and the last a letter or a number. Must not be UUID-like
    *     /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/.
-   *     <p>"(default)" database id is also valid.
+   *     <p>"(default)" database ID is also valid.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
@@ -2392,7 +2392,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>This value should be 4-63 characters. Valid characters are /[a-z][0-9]-/ with first
    *     character a letter and the last a letter or a number. Must not be UUID-like
    *     /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/.
-   *     <p>"(default)" database id is also valid.
+   *     <p>"(default)" database ID is also valid.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
@@ -3349,6 +3349,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
    *           .build();
    *   Database response = firestoreAdminClient.restoreDatabaseAsync(request).get();
    * }
@@ -3393,6 +3394,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<Database, RestoreDatabaseMetadata> future =
    *       firestoreAdminClient.restoreDatabaseOperationCallable().futureCall(request);
@@ -3437,6 +3439,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       firestoreAdminClient.restoreDatabaseCallable().futureCall(request);

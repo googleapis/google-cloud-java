@@ -954,10 +954,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1014,10 +1018,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1074,10 +1082,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
@@ -1120,10 +1132,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
@@ -1244,10 +1260,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1301,10 +1321,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1355,10 +1379,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1641,10 +1669,14 @@ public class FirestoreAdminClientTest {
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .setLocationId("locationId1541836720")
             .setVersionRetentionPeriod(Duration.newBuilder().build())
             .setEarliestVersionTime(Timestamp.newBuilder().build())
             .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1660,6 +1692,7 @@ public class FirestoreAdminClientTest {
             .setParent(ProjectName.of("[PROJECT]").toString())
             .setDatabaseId("databaseId1688905718")
             .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
+            .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
             .build();
 
     Database actualResponse = client.restoreDatabaseAsync(request).get();
@@ -1672,6 +1705,7 @@ public class FirestoreAdminClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getDatabaseId(), actualRequest.getDatabaseId());
     Assert.assertEquals(request.getBackup(), actualRequest.getBackup());
+    Assert.assertEquals(request.getEncryptionConfig(), actualRequest.getEncryptionConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1689,6 +1723,7 @@ public class FirestoreAdminClientTest {
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setDatabaseId("databaseId1688905718")
               .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
+              .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
               .build();
       client.restoreDatabaseAsync(request).get();
       Assert.fail("No exception raised");
