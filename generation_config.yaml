@@ -1389,7 +1389,7 @@ libraries:
   - proto_path: google/cloud/migrationcenter/v1
 
 - api_shortname: monitoring
-  name_pretty: Stackdriver Monitoring test
+  name_pretty: Stackdriver Monitoring test test
   product_documentation: https://cloud.google.com/monitoring/docs
   api_description: collects metrics, events, and metadata from Google Cloud, Amazon
     Web Services (AWS), hosted uptime probes, and application instrumentation. Using
