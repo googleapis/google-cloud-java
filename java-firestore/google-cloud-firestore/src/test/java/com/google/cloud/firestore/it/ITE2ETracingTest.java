@@ -40,6 +40,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.firestore.BulkWriter;
@@ -263,12 +264,16 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
   // Required to set custom-root span
   private static OpenTelemetrySdk openTelemetrySdk;
 
+  private static boolean isNightlyTesting;
   private static String projectId;
 
   private static Firestore firestore;
 
   @BeforeClass
   public static void setup() throws IOException {
+    String jobType = System.getenv("GITHUB_ENV_VAR_KOKORO_JOB_TYPE");
+    isNightlyTesting = jobType != null && jobType.equalsIgnoreCase("nightly");
+
     projectId = FirestoreOptions.getDefaultProjectId();
     logger.info("projectId:" + projectId);
 
@@ -361,6 +366,9 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
     customSpanContext = getNewSpanContext();
     assertNotNull(customSpanContext);
     assertNull(retrievedTrace);
+
+    // We only perform end-to-end tracing tests on a nightly basis.
+    assumeTrue(isNightlyTesting);
   }
 
   @After
