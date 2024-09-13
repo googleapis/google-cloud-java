@@ -1,6 +1,6 @@
-# Google Cloud Speech test Client for Java
+# Google Cloud Speech test test Client for Java
 
-Java idiomatic client for [Cloud Speech test][product-docs].
+Java idiomatic client for [Cloud Speech test test][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -65,13 +65,13 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Speech test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Speech test API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Speech test test APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Speech test test API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Speech test [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Speech test test [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
@@ -82,13 +82,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-speech` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-speech` as a dependency in your code.
 
-## About Cloud Speech test
+## About Cloud Speech test test
 
 
-[Cloud Speech test][product-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
+[Cloud Speech test test][product-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
 
-See the [Cloud Speech test client library docs][javadocs] to learn how to
-use this Cloud Speech test Client Library.
+See the [Cloud Speech test test client library docs][javadocs] to learn how to
+use this Cloud Speech test test Client Library.
 
 
 ### Recognizing speech
@@ -137,7 +137,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Speech test uses both gRPC and HTTP/JSON for the transport layer.
+Cloud Speech test test uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
