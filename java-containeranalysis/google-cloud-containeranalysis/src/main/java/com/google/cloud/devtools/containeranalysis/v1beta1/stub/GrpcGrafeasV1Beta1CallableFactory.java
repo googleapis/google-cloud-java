@@ -42,7 +42,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-public class GrpcContainerAnalysisV1Beta1CallableFactory implements GrpcStubCallableFactory {
+public class GrpcGrafeasV1Beta1CallableFactory implements GrpcStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,

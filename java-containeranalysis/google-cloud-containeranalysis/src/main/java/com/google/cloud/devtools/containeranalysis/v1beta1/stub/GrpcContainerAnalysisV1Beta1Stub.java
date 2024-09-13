@@ -1,11 +1,11 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
+
+import static com.google.cloud.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1Client.ListScanConfigsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -22,33 +23,36 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.containeranalysis.v1beta1.ExportSBOMRequest;
-import com.google.containeranalysis.v1beta1.ExportSBOMResponse;
-import com.google.containeranalysis.v1beta1.GeneratePackagesSummaryRequest;
-import com.google.containeranalysis.v1beta1.PackagesSummaryResponse;
+import com.google.common.collect.ImmutableMap;
+import com.google.containeranalysis.v1beta1.GetScanConfigRequest;
+import com.google.containeranalysis.v1beta1.ListScanConfigsRequest;
+import com.google.containeranalysis.v1beta1.ListScanConfigsResponse;
+import com.google.containeranalysis.v1beta1.ScanConfig;
+import com.google.containeranalysis.v1beta1.UpdateScanConfigRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for the ContainerAnalysisV1Beta1 service API.
+ * gRPC stub implementation for Container Analysis API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@BetaApi
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1Stub {
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -57,7 +61,6 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
-
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -66,7 +69,6 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
-
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -78,39 +80,51 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private static final MethodDescriptor<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
-      generatePackagesSummaryMethodDescriptor =
-          MethodDescriptor.<GeneratePackagesSummaryRequest, PackagesSummaryResponse>newBuilder()
+  private static final MethodDescriptor<GetScanConfigRequest, ScanConfig>
+      getScanConfigMethodDescriptor =
+          MethodDescriptor.<GetScanConfigRequest, ScanConfig>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/GeneratePackagesSummary")
+                  "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/GetScanConfig")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GeneratePackagesSummaryRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(PackagesSummaryResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(GetScanConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
               .build();
-
-  private static final MethodDescriptor<ExportSBOMRequest, ExportSBOMResponse>
-      exportSBOMMethodDescriptor =
-          MethodDescriptor.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
+  private static final MethodDescriptor<ListScanConfigsRequest, ListScanConfigsResponse>
+      listScanConfigsMethodDescriptor =
+          MethodDescriptor.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/ExportSBOM")
-              .setRequestMarshaller(ProtoUtils.marshaller(ExportSBOMRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ExportSBOMResponse.getDefaultInstance()))
+                  "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/ListScanConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListScanConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListScanConfigsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UpdateScanConfigRequest, ScanConfig>
+      updateScanConfigMethodDescriptor =
+          MethodDescriptor.<UpdateScanConfigRequest, ScanConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/UpdateScanConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateScanConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .build();
+
+  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
-  private final UnaryCallable<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
-      generatePackagesSummaryCallable;
-  private final UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable;
+  private final UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable;
+  private final UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse>
+      listScanConfigsCallable;
+  private final UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
+      listScanConfigsPagedCallable;
+  private final UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable;
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcContainerAnalysisV1Beta1Stub create(
@@ -152,26 +166,31 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
-    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("resource", String.valueOf(request.getResource()));
-                  return builder.build();
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("resource", String.valueOf(request.getResource()));
-                  return builder.build();
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -179,31 +198,53 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("resource", String.valueOf(request.getResource()));
-                      return builder.build();
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
                     })
                 .build();
-    GrpcCallSettings<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
-        generatePackagesSummaryTransportSettings =
-            GrpcCallSettings.<GeneratePackagesSummaryRequest, PackagesSummaryResponse>newBuilder()
-                .setMethodDescriptor(generatePackagesSummaryMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMTransportSettings =
-        GrpcCallSettings.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
-            .setMethodDescriptor(exportSBOMMethodDescriptor)
+    GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
+        GrpcCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
+            .setMethodDescriptor(getScanConfigMethodDescriptor)
             .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
+                new RequestParamsExtractor<GetScanConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetScanConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
+        listScanConfigsTransportSettings =
+            GrpcCallSettings.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
+                .setMethodDescriptor(listScanConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListScanConfigsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListScanConfigsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
+        GrpcCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
+            .setMethodDescriptor(updateScanConfigMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateScanConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateScanConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
                 })
             .build();
 
@@ -218,59 +259,55 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
-    this.generatePackagesSummaryCallable =
+    this.getScanConfigCallable =
         callableFactory.createUnaryCallable(
-            generatePackagesSummaryTransportSettings,
-            settings.generatePackagesSummarySettings(),
-            clientContext);
-    this.exportSBOMCallable =
+            getScanConfigTransportSettings, settings.getScanConfigSettings(), clientContext);
+    this.listScanConfigsCallable =
         callableFactory.createUnaryCallable(
-            exportSBOMTransportSettings, settings.exportSBOMSettings(), clientContext);
+            listScanConfigsTransportSettings, settings.listScanConfigsSettings(), clientContext);
+    this.listScanConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listScanConfigsTransportSettings, settings.listScanConfigsSettings(), clientContext);
+    this.updateScanConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateScanConfigTransportSettings, settings.updateScanConfigSettings(), clientContext);
 
-    this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public GrpcOperationsStub getOperationsStub() {
-    return operationsStub;
-  }
-
-  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
-  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
-  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
-  @Override
-  public UnaryCallable<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
-      generatePackagesSummaryCallable() {
-    return generatePackagesSummaryCallable;
+  public UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
+    return getScanConfigCallable;
   }
 
-  @Override
-  public UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
-    return exportSBOMCallable;
+  public UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
+      listScanConfigsPagedCallable() {
+    return listScanConfigsPagedCallable;
+  }
+
+  public UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> listScanConfigsCallable() {
+    return listScanConfigsCallable;
+  }
+
+  public UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
+    return updateScanConfigCallable;
   }
 
   @Override
   public final void close() {
-    try {
-      backgroundResources.close();
-    } catch (RuntimeException e) {
-      throw e;
-    } catch (Exception e) {
-      throw new IllegalStateException("Failed to close resource", e);
-    }
+    shutdown();
   }
 
   @Override

@@ -29,8 +29,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import java.io.IOException;
 import io.grafeas.v1.GrafeasClient;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -235,7 +235,6 @@ import javax.annotation.Generated;
 public class ContainerAnalysisClient implements BackgroundResource {
   private final ContainerAnalysisSettings settings;
   private final ContainerAnalysisStub stub;
-
   /**
    * Returns a new GrafeasClient with the same configured settings.
    *

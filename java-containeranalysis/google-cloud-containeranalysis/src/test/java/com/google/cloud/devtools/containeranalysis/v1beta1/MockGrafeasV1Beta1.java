@@ -23,11 +23,11 @@ import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
-public class MockContainerAnalysisV1Beta1 implements MockGrpcService {
-  private final MockContainerAnalysisV1Beta1Impl serviceImpl;
+public class MockGrafeasV1Beta1 implements MockGrpcService {
+  private final MockGrafeasV1Beta1Impl serviceImpl;
 
-  public MockContainerAnalysisV1Beta1() {
-    serviceImpl = new MockContainerAnalysisV1Beta1Impl();
+  public MockGrafeasV1Beta1() {
+    serviceImpl = new MockGrafeasV1Beta1Impl();
   }
 
   @Override
