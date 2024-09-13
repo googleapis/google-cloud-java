@@ -2090,7 +2090,7 @@ libraries:
   - proto_path: google/shopping/merchant/reports/v1beta
 
 - api_shortname: speech
-  name_pretty: Cloud Speech test
+  name_pretty: Cloud Speech test test
   product_documentation: https://cloud.google.com/speech-to-text/docs/
   api_description: enables easy integration of Google speech recognition technologies
     into developer applications. Send audio and receive a text transcription from
