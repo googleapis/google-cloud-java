@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-speech/google-.*/src"
 
 deep-preserve-regex:
+- "/java-speech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/resources/hello.flac"
