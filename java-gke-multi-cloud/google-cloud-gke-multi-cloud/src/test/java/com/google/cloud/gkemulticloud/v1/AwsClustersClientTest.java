@@ -729,6 +729,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -798,6 +799,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -867,6 +869,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -932,6 +935,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -997,6 +1001,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1060,6 +1065,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
@@ -1116,6 +1122,7 @@ public class AwsClustersClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);

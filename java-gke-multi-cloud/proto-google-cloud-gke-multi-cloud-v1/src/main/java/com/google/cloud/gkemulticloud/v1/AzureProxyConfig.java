@@ -133,7 +133,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * The secret must be a JSON encoded proxy configuration
    * as described in
-   * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
    *
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -163,7 +163,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * The secret must be a JSON encoded proxy configuration
    * as described in
-   * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
    *
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -682,7 +682,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * The secret must be a JSON encoded proxy configuration
      * as described in
-     * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
      *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -711,7 +711,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * The secret must be a JSON encoded proxy configuration
      * as described in
-     * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
      *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -740,7 +740,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * The secret must be a JSON encoded proxy configuration
      * as described in
-     * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
      *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -768,7 +768,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * The secret must be a JSON encoded proxy configuration
      * as described in
-     * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
      *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
@@ -792,7 +792,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * The secret must be a JSON encoded proxy configuration
      * as described in
-     * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
      *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.

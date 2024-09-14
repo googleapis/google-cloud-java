@@ -422,7 +422,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Job has been received and is awaiting execution (it may be waiting
+     * The Job has been received and is awaiting execution (it might be waiting
      * for a condition to be met). See the "details" field for the reason for
      * the delay.
      *
@@ -436,7 +436,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The agent-reported status is out of date, which may be caused by a
+     * The agent-reported status is out of date, which can be caused by a
      * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      *
@@ -475,7 +475,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Job has been received and is awaiting execution (it may be waiting
+     * The Job has been received and is awaiting execution (it might be waiting
      * for a condition to be met). See the "details" field for the reason for
      * the delay.
      *
@@ -489,7 +489,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The agent-reported status is out of date, which may be caused by a
+     * The agent-reported status is out of date, which can be caused by a
      * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      *
@@ -634,7 +634,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Output only. Job state details, such as an error
-   * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+   * description if the state is `ERROR`.
    * </pre>
    *
    * <code>
@@ -660,7 +660,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Output only. Job state details, such as an error
-   * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+   * description if the state is `ERROR`.
    * </pre>
    *
    * <code>
@@ -1313,7 +1313,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Output only. Job state details, such as an error
-     * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+     * description if the state is `ERROR`.
      * </pre>
      *
      * <code>
@@ -1338,7 +1338,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Output only. Job state details, such as an error
-     * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+     * description if the state is `ERROR`.
      * </pre>
      *
      * <code>
@@ -1363,7 +1363,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Output only. Job state details, such as an error
-     * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+     * description if the state is `ERROR`.
      * </pre>
      *
      * <code>
@@ -1387,7 +1387,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Output only. Job state details, such as an error
-     * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+     * description if the state is `ERROR`.
      * </pre>
      *
      * <code>
@@ -1407,7 +1407,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Output only. Job state details, such as an error
-     * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+     * description if the state is `ERROR`.
      * </pre>
      *
      * <code>

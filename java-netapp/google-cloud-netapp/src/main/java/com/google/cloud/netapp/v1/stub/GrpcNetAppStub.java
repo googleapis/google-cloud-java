@@ -98,6 +98,7 @@ import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -175,6 +176,16 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteStoragePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoragePoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneMethodDescriptor =
+          MethodDescriptor.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SwitchActiveReplicaZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SwitchActiveReplicaZoneRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -664,6 +675,10 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable;
+  private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -891,6 +906,17 @@ public class GrpcNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneTransportSettings =
+            GrpcCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+                .setMethodDescriptor(switchActiveReplicaZoneMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         GrpcCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
             .setMethodDescriptor(listVolumesMethodDescriptor)
@@ -1431,6 +1457,17 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.deleteStoragePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.switchActiveReplicaZoneCallable =
+        callableFactory.createUnaryCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneSettings(),
+            clientContext);
+    this.switchActiveReplicaZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listVolumesCallable =
         callableFactory.createUnaryCallable(
             listVolumesTransportSettings, settings.listVolumesSettings(), clientContext);
@@ -1871,6 +1908,18 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return switchActiveReplicaZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return switchActiveReplicaZoneOperationCallable;
   }
 
   @Override

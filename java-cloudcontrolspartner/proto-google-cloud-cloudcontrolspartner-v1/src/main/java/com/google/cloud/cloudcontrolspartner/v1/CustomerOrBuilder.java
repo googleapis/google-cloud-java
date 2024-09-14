@@ -55,10 +55,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * The customer organization's display name. E.g. "google.com".
+   * Required. Display name for the customer
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -67,10 +67,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * The customer organization's display name. E.g. "google.com".
+   * Required. Display name for the customer
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -80,11 +80,11 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the customerOnboardingState field is set.
@@ -94,11 +94,11 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The customerOnboardingState.
@@ -108,11 +108,11 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStateOrBuilder
@@ -122,10 +122,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Indicates whether a customer is fully onboarded
+   * Output only. Indicates whether a customer is fully onboarded
    * </pre>
    *
-   * <code>bool is_onboarded = 4;</code>
+   * <code>bool is_onboarded = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The isOnboarded.
    */

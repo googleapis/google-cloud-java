@@ -28,12 +28,12 @@ public interface JobSchedulingOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum number of times per hour a driver may be restarted as
+   * Optional. Maximum number of times per hour a driver can be restarted as
    * a result of driver exiting with non-zero code before job is
    * reported failed.
    *
-   * A job may be reported as thrashing if the driver exits with a non-zero code
-   * four times within a 10-minute window.
+   * A job might be reported as thrashing if the driver exits with a non-zero
+   * code four times within a 10-minute window.
    *
    * Maximum value is 10.
    *
@@ -52,7 +52,7 @@ public interface JobSchedulingOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum total number of times a driver may be restarted as a
+   * Optional. Maximum total number of times a driver can be restarted as a
    * result of the driver exiting with a non-zero code. After the maximum number
    * is reached, the job will be reported as failed.
    *

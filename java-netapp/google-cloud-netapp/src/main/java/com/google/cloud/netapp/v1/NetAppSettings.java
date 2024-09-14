@@ -173,6 +173,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).deleteStoragePoolOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings() {
+    return ((NetAppStubSettings) getStubSettings()).switchActiveReplicaZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public OperationCallSettings<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).switchActiveReplicaZoneOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listVolumes. */
   public PagedCallSettings<ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
       listVolumesSettings() {
@@ -766,6 +778,19 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return getStubSettingsBuilder().deleteStoragePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings() {
+      return getStubSettingsBuilder().switchActiveReplicaZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings() {
+      return getStubSettingsBuilder().switchActiveReplicaZoneOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listVolumes. */

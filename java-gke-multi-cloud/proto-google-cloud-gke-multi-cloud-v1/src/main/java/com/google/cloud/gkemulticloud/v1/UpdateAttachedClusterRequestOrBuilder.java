@@ -103,6 +103,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    *  *   `platform_version`.
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
+   *  *   `security_posture_config.vulnerability_mode`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -130,6 +131,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    *  *   `platform_version`.
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
+   *  *   `security_posture_config.vulnerability_mode`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -157,6 +159,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    *  *   `platform_version`.
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
+   *  *   `security_posture_config.vulnerability_mode`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];

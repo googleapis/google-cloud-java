@@ -412,7 +412,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -438,7 +438,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -455,7 +455,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -479,7 +479,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -1858,7 +1858,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1884,7 +1884,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1901,7 +1901,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1925,7 +1925,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1955,7 +1955,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1981,7 +1981,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -2005,7 +2005,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>

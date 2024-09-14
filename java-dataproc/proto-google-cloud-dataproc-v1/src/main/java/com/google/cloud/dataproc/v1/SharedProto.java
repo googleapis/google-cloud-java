@@ -239,7 +239,7 @@ public final class SharedProto {
           + "\t\n\005TRINO\020\021\022\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPP"
           + "ELIN\020\004\022\r\n\tZOOKEEPER\020\010*J\n\rFailureAction\022\036"
           + "\n\032FAILURE_ACTION_UNSPECIFIED\020\000\022\r\n\tNO_ACT"
-          + "ION\020\001\022\n\n\006DELETE\020\002B\254\002\n\034com.google.cloud.d"
+          + "ION\020\001\022\n\n\006DELETE\020\002B\247\003\n\034com.google.cloud.d"
           + "ataproc.v1B\013SharedProtoP\001Z;cloud.google."
           + "com/go/dataproc/v2/apiv1/dataprocpb;data"
           + "procpb\352A^\n container.googleapis.com/Clus"
@@ -247,7 +247,10 @@ public final class SharedProto {
           + "ion}/clusters/{cluster}\352A^\n metastore.go"
           + "ogleapis.com/Service\022:projects/{project}"
           + "/locations/{location}/services/{service}"
-          + "b\006proto3"
+          + "\352Ax\n!cloudkms.googleapis.com/CryptoKey\022S"
+          + "projects/{project}/locations/{location}/"
+          + "keyRings/{key_ring}/cryptoKeys/{crypto_k"
+          + "ey}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

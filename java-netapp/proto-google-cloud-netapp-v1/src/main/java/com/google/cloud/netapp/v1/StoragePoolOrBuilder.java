@@ -463,7 +463,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=231
+   *     google/cloud/netapp/v1/storage_pool.proto;l=243
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Deprecated
@@ -479,11 +479,26 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=231
+   *     google/cloud/netapp/v1/storage_pool.proto;l=243
    * @return The globalAccessAllowed.
    */
   @java.lang.Deprecated
   boolean getGlobalAccessAllowed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if the storage pool supports Auto Tiering enabled volumes.
+   * Default is false. Auto-tiering can be enabled after storage pool creation
+   * but it can't be disabled once enabled.
+   * </pre>
+   *
+   * <code>bool allow_auto_tiering = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allowAutoTiering.
+   */
+  boolean getAllowAutoTiering();
 
   /**
    *

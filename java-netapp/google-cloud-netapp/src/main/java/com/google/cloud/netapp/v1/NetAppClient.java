@@ -171,6 +171,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SwitchActiveReplicaZone</td>
+ *      <td><p> This operation will switch the active/replica zone for a regional storagePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneAsync(SwitchActiveReplicaZoneRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneOperationCallable()
+ *           <li><p> switchActiveReplicaZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListVolumes</td>
  *      <td><p> Lists Volumes in a given project.</td>
  *      <td>
@@ -1910,6 +1925,93 @@ public class NetAppClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable() {
     return stub.deleteStoragePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   StoragePool response = netAppClient.switchActiveReplicaZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StoragePool, OperationMetadata> switchActiveReplicaZoneAsync(
+      SwitchActiveReplicaZoneRequest request) {
+    return switchActiveReplicaZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   OperationFuture<StoragePool, OperationMetadata> future =
+   *       netAppClient.switchActiveReplicaZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StoragePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return stub.switchActiveReplicaZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.switchActiveReplicaZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return stub.switchActiveReplicaZoneCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

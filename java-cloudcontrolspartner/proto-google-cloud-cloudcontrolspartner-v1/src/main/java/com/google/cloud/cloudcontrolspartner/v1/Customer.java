@@ -126,10 +126,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer organization's display name. E.g. "google.com".
+   * Required. Display name for the customer
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -149,10 +149,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer organization's display name. E.g. "google.com".
+   * Required. Display name for the customer
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -175,11 +175,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the customerOnboardingState field is set.
@@ -192,11 +192,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The customerOnboardingState.
@@ -212,11 +212,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container for customer onboarding steps
+   * Output only. Container for customer onboarding steps
    * </pre>
    *
    * <code>
-   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+   * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -233,10 +233,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether a customer is fully onboarded
+   * Output only. Indicates whether a customer is fully onboarded
    * </pre>
    *
-   * <code>bool is_onboarded = 4;</code>
+   * <code>bool is_onboarded = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The isOnboarded.
    */
@@ -797,10 +797,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer organization's display name. E.g. "google.com".
+     * Required. Display name for the customer
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -819,10 +819,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer organization's display name. E.g. "google.com".
+     * Required. Display name for the customer
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -841,10 +841,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer organization's display name. E.g. "google.com".
+     * Required. Display name for the customer
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -862,10 +862,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer organization's display name. E.g. "google.com".
+     * Required. Display name for the customer
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -879,10 +879,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer organization's display name. E.g. "google.com".
+     * Required. Display name for the customer
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -909,11 +909,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the customerOnboardingState field is set.
@@ -925,11 +925,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The customerOnboardingState.
@@ -948,11 +948,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCustomerOnboardingState(
@@ -973,11 +973,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCustomerOnboardingState(
@@ -995,11 +995,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeCustomerOnboardingState(
@@ -1027,11 +1027,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearCustomerOnboardingState() {
@@ -1048,11 +1048,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState.Builder
@@ -1065,11 +1065,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStateOrBuilder
@@ -1086,11 +1086,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container for customer onboarding steps
+     * Output only. Container for customer onboarding steps
      * </pre>
      *
      * <code>
-     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3;
+     * .google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customer_onboarding_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1115,10 +1115,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether a customer is fully onboarded
+     * Output only. Indicates whether a customer is fully onboarded
      * </pre>
      *
-     * <code>bool is_onboarded = 4;</code>
+     * <code>bool is_onboarded = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The isOnboarded.
      */
@@ -1130,10 +1130,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether a customer is fully onboarded
+     * Output only. Indicates whether a customer is fully onboarded
      * </pre>
      *
-     * <code>bool is_onboarded = 4;</code>
+     * <code>bool is_onboarded = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The isOnboarded to set.
      * @return This builder for chaining.
@@ -1149,10 +1149,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether a customer is fully onboarded
+     * Output only. Indicates whether a customer is fully onboarded
      * </pre>
      *
-     * <code>bool is_onboarded = 4;</code>
+     * <code>bool is_onboarded = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

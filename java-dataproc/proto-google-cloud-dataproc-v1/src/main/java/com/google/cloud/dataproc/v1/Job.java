@@ -847,7 +847,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The job status. Additional application-specific
-   * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+   * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
@@ -866,7 +866,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The job status. Additional application-specific
-   * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+   * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
@@ -885,7 +885,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The job status. Additional application-specific
-   * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+   * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
@@ -990,7 +990,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The collection of YARN applications spun up by this job.
    *
    * **Beta** Feature: This report is available for testing purposes only. It
-   * may be changed before final release.
+   * might be changed before final release.
    * </pre>
    *
    * <code>
@@ -1008,7 +1008,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The collection of YARN applications spun up by this job.
    *
    * **Beta** Feature: This report is available for testing purposes only. It
-   * may be changed before final release.
+   * might be changed before final release.
    * </pre>
    *
    * <code>
@@ -1027,7 +1027,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The collection of YARN applications spun up by this job.
    *
    * **Beta** Feature: This report is available for testing purposes only. It
-   * may be changed before final release.
+   * might be changed before final release.
    * </pre>
    *
    * <code>
@@ -1045,7 +1045,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The collection of YARN applications spun up by this job.
    *
    * **Beta** Feature: This report is available for testing purposes only. It
-   * may be changed before final release.
+   * might be changed before final release.
    * </pre>
    *
    * <code>
@@ -1063,7 +1063,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The collection of YARN applications spun up by this job.
    *
    * **Beta** Feature: This report is available for testing purposes only. It
-   * may be changed before final release.
+   * might be changed before final release.
    * </pre>
    *
    * <code>
@@ -1140,8 +1140,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
-   * which may be used as part of job setup and handling. If not present,
-   * control files may be placed in the same location as `driver_output_uri`.
+   * which can be used as part of job setup and handling. If not present,
+   * control files might be placed in the same location as `driver_output_uri`.
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1165,8 +1165,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
-   * which may be used as part of job setup and handling. If not present,
-   * control files may be placed in the same location as `driver_output_uri`.
+   * which can be used as part of job setup and handling. If not present,
+   * control files might be placed in the same location as `driver_output_uri`.
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1219,7 +1219,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * Label **values** can be empty, but, if present, must contain 1 to 63
    * characters, and must conform to [RFC
    * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
    * associated with a job.
@@ -1247,7 +1247,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * Label **values** can be empty, but, if present, must contain 1 to 63
    * characters, and must conform to [RFC
    * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
    * associated with a job.
@@ -1266,7 +1266,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * Label **values** can be empty, but, if present, must contain 1 to 63
    * characters, and must conform to [RFC
    * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
    * associated with a job.
@@ -1292,7 +1292,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * Label **values** can be empty, but, if present, must contain 1 to 63
    * characters, and must conform to [RFC
    * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
    * associated with a job.
@@ -1378,7 +1378,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A UUID that uniquely identifies a job within the project
    * over time. This is in contrast to a user-settable reference.job_id that
-   * may be reused over time.
+   * might be reused over time.
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1403,7 +1403,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A UUID that uniquely identifies a job within the project
    * over time. This is in contrast to a user-settable reference.job_id that
-   * may be reused over time.
+   * might be reused over time.
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5346,7 +5346,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5364,7 +5364,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5388,7 +5388,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5414,7 +5414,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5437,7 +5437,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5468,7 +5468,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5491,7 +5491,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5509,7 +5509,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5531,7 +5531,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The job status. Additional application-specific
-     * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
+     * status information might be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
@@ -5971,7 +5971,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -5992,7 +5992,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6013,7 +6013,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6034,7 +6034,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6062,7 +6062,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6087,7 +6087,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6114,7 +6114,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6142,7 +6142,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6167,7 +6167,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6192,7 +6192,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6217,7 +6217,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6241,7 +6241,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6265,7 +6265,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6283,7 +6283,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6305,7 +6305,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6327,7 +6327,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6345,7 +6345,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6364,7 +6364,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The collection of YARN applications spun up by this job.
      *
      * **Beta** Feature: This report is available for testing purposes only. It
-     * may be changed before final release.
+     * might be changed before final release.
      * </pre>
      *
      * <code>
@@ -6518,8 +6518,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
-     * which may be used as part of job setup and handling. If not present,
-     * control files may be placed in the same location as `driver_output_uri`.
+     * which can be used as part of job setup and handling. If not present,
+     * control files might be placed in the same location as `driver_output_uri`.
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6543,8 +6543,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
-     * which may be used as part of job setup and handling. If not present,
-     * control files may be placed in the same location as `driver_output_uri`.
+     * which can be used as part of job setup and handling. If not present,
+     * control files might be placed in the same location as `driver_output_uri`.
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6568,8 +6568,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
-     * which may be used as part of job setup and handling. If not present,
-     * control files may be placed in the same location as `driver_output_uri`.
+     * which can be used as part of job setup and handling. If not present,
+     * control files might be placed in the same location as `driver_output_uri`.
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6592,8 +6592,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
-     * which may be used as part of job setup and handling. If not present,
-     * control files may be placed in the same location as `driver_output_uri`.
+     * which can be used as part of job setup and handling. If not present,
+     * control files might be placed in the same location as `driver_output_uri`.
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6612,8 +6612,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
-     * which may be used as part of job setup and handling. If not present,
-     * control files may be placed in the same location as `driver_output_uri`.
+     * which can be used as part of job setup and handling. If not present,
+     * control files might be placed in the same location as `driver_output_uri`.
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6665,7 +6665,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6693,7 +6693,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6712,7 +6712,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6738,7 +6738,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6770,7 +6770,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6798,7 +6798,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -6824,7 +6824,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * Label **values** can be empty, but, if present, must contain 1 to 63
      * characters, and must conform to [RFC
      * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
      * associated with a job.
@@ -7049,7 +7049,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
-     * may be reused over time.
+     * might be reused over time.
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7073,7 +7073,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
-     * may be reused over time.
+     * might be reused over time.
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7097,7 +7097,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
-     * may be reused over time.
+     * might be reused over time.
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7120,7 +7120,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
-     * may be reused over time.
+     * might be reused over time.
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7139,7 +7139,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
-     * may be reused over time.
+     * might be reused over time.
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

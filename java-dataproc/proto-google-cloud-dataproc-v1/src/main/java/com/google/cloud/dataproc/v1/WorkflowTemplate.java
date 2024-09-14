@@ -117,7 +117,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *   scriptVariables and queryList.queries
      * </pre>
      *
-     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKey.
      */
@@ -156,7 +158,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *   scriptVariables and queryList.queries
      * </pre>
      *
-     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKey.
      */
@@ -244,7 +248,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *   scriptVariables and queryList.queries
      * </pre>
      *
-     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKey.
      */
@@ -294,7 +300,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *   scriptVariables and queryList.queries
      * </pre>
      *
-     * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKey.
      */
@@ -697,7 +705,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
        *   scriptVariables and queryList.queries
        * </pre>
        *
-       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The kmsKey.
        */
@@ -746,7 +756,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
        *   scriptVariables and queryList.queries
        * </pre>
        *
-       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for kmsKey.
        */
@@ -795,7 +807,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
        *   scriptVariables and queryList.queries
        * </pre>
        *
-       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The kmsKey to set.
        * @return This builder for chaining.
@@ -843,7 +857,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
        *   scriptVariables and queryList.queries
        * </pre>
        *
-       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -887,7 +903,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
        *   scriptVariables and queryList.queries
        * </pre>
        *
-       * <code>string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for kmsKey to set.
        * @return This builder for chaining.

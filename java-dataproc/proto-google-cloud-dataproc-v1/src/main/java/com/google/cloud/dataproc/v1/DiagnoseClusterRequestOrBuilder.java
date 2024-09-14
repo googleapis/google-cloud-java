@@ -105,7 +105,7 @@ public interface DiagnoseClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The output Cloud Storage directory for the diagnostic
+   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
    * tarball. If not specified, a task-specific directory in the cluster's
    * staging bucket will be used.
    * </pre>
@@ -119,7 +119,7 @@ public interface DiagnoseClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The output Cloud Storage directory for the diagnostic
+   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
    * tarball. If not specified, a task-specific directory in the cluster's
    * staging bucket will be used.
    * </pre>

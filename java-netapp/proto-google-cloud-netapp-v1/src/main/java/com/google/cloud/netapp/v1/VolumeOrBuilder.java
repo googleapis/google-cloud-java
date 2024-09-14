@@ -1157,4 +1157,17 @@ public interface VolumeOrBuilder
    * @return The bytes for zone.
    */
   com.google.protobuf.ByteString getZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Size of the volume cold tier data in GiB.
+   * </pre>
+   *
+   * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The coldTierSizeGib.
+   */
+  long getColdTierSizeGib();
 }

@@ -252,7 +252,7 @@ public interface FlinkJobOrBuilder
    * Optional. A mapping of property names to values, used to configure Flink.
    * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
-   *  /etc/flink/conf/flink-defaults.conf and classes in user code.
+   * `/etc/flink/conf/flink-defaults.conf` and classes in user code.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -266,7 +266,7 @@ public interface FlinkJobOrBuilder
    * Optional. A mapping of property names to values, used to configure Flink.
    * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
-   *  /etc/flink/conf/flink-defaults.conf and classes in user code.
+   * `/etc/flink/conf/flink-defaults.conf` and classes in user code.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -283,7 +283,7 @@ public interface FlinkJobOrBuilder
    * Optional. A mapping of property names to values, used to configure Flink.
    * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
-   *  /etc/flink/conf/flink-defaults.conf and classes in user code.
+   * `/etc/flink/conf/flink-defaults.conf` and classes in user code.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -297,7 +297,7 @@ public interface FlinkJobOrBuilder
    * Optional. A mapping of property names to values, used to configure Flink.
    * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
-   *  /etc/flink/conf/flink-defaults.conf and classes in user code.
+   * `/etc/flink/conf/flink-defaults.conf` and classes in user code.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -315,7 +315,7 @@ public interface FlinkJobOrBuilder
    * Optional. A mapping of property names to values, used to configure Flink.
    * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
-   *  /etc/flink/conf/flink-defaults.conf and classes in user code.
+   * `/etc/flink/conf/flink-defaults.conf` and classes in user code.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];

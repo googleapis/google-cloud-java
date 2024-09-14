@@ -66,7 +66,8 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * The name of the driver's main class. The jar file that contains the class
-   * must be in the default CLASSPATH or specified in `jar_file_uris`.
+   * must be in the default CLASSPATH or specified in
+   * SparkJob.jar_file_uris.
    * </pre>
    *
    * <code>string main_class = 2;</code>
@@ -79,7 +80,8 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * The name of the driver's main class. The jar file that contains the class
-   * must be in the default CLASSPATH or specified in `jar_file_uris`.
+   * must be in the default CLASSPATH or specified in
+   * SparkJob.jar_file_uris.
    * </pre>
    *
    * <code>string main_class = 2;</code>
@@ -92,7 +94,8 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * The name of the driver's main class. The jar file that contains the class
-   * must be in the default CLASSPATH or specified in `jar_file_uris`.
+   * must be in the default CLASSPATH or specified in
+   * SparkJob.jar_file_uris.
    * </pre>
    *
    * <code>string main_class = 2;</code>
@@ -334,7 +337,7 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -348,7 +351,7 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -365,7 +368,7 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -379,7 +382,7 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -397,7 +400,7 @@ public interface SparkJobOrBuilder
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>

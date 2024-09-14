@@ -118,6 +118,16 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ASSURED_WORKLOADS_EKM_CONNECTION_STATUS = 4;</code>
      */
     ASSURED_WORKLOADS_EKM_CONNECTION_STATUS(4),
+    /**
+     *
+     *
+     * <pre>
+     * Permission for support case details for Access Transparency log entries
+     * </pre>
+     *
+     * <code>ACCESS_TRANSPARENCY_LOGS_SUPPORT_CASE_VIEWER = 5;</code>
+     */
+    ACCESS_TRANSPARENCY_LOGS_SUPPORT_CASE_VIEWER(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -171,6 +181,16 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
      * <code>ASSURED_WORKLOADS_EKM_CONNECTION_STATUS = 4;</code>
      */
     public static final int ASSURED_WORKLOADS_EKM_CONNECTION_STATUS_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Permission for support case details for Access Transparency log entries
+     * </pre>
+     *
+     * <code>ACCESS_TRANSPARENCY_LOGS_SUPPORT_CASE_VIEWER = 5;</code>
+     */
+    public static final int ACCESS_TRANSPARENCY_LOGS_SUPPORT_CASE_VIEWER_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -206,6 +226,8 @@ public final class PartnerPermissions extends com.google.protobuf.GeneratedMessa
           return ACCESS_APPROVAL_REQUESTS;
         case 4:
           return ASSURED_WORKLOADS_EKM_CONNECTION_STATUS;
+        case 5:
+          return ACCESS_TRANSPARENCY_LOGS_SUPPORT_CASE_VIEWER;
         default:
           return null;
       }

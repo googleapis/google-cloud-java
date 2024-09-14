@@ -1225,6 +1225,62 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         : management_;
   }
 
+  public static final int KUBELET_CONFIG_FIELD_NUMBER = 31;
+  private com.google.cloud.gkemulticloud.v1.NodeKubeletConfig kubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasKubeletConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.NodeKubeletConfig getKubeletConfig() {
+    return kubeletConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.getDefaultInstance()
+        : kubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder() {
+    return kubeletConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.getDefaultInstance()
+        : kubeletConfig_;
+  }
+
   public static final int UPDATE_SETTINGS_FIELD_NUMBER = 32;
   private com.google.cloud.gkemulticloud.v1.UpdateSettings updateSettings_;
   /**
@@ -1242,7 +1298,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpdateSettings() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1341,6 +1397,9 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(30, getManagement());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(31, getKubeletConfig());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(32, getUpdateSettings());
     }
     getUnknownFields().writeTo(output);
@@ -1406,6 +1465,9 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getManagement());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getKubeletConfig());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getUpdateSettings());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1456,6 +1518,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasManagement() != other.hasManagement()) return false;
     if (hasManagement()) {
       if (!getManagement().equals(other.getManagement())) return false;
+    }
+    if (hasKubeletConfig() != other.hasKubeletConfig()) return false;
+    if (hasKubeletConfig()) {
+      if (!getKubeletConfig().equals(other.getKubeletConfig())) return false;
     }
     if (hasUpdateSettings() != other.hasUpdateSettings()) return false;
     if (hasUpdateSettings()) {
@@ -1517,6 +1583,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasManagement()) {
       hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getManagement().hashCode();
+    }
+    if (hasKubeletConfig()) {
+      hash = (37 * hash) + KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getKubeletConfig().hashCode();
     }
     if (hasUpdateSettings()) {
       hash = (37 * hash) + UPDATE_SETTINGS_FIELD_NUMBER;
@@ -1691,6 +1761,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         getMaxPodsConstraintFieldBuilder();
         getErrorsFieldBuilder();
         getManagementFieldBuilder();
+        getKubeletConfigFieldBuilder();
         getUpdateSettingsFieldBuilder();
       }
     }
@@ -1743,6 +1814,11 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       if (managementBuilder_ != null) {
         managementBuilder_.dispose();
         managementBuilder_ = null;
+      }
+      kubeletConfig_ = null;
+      if (kubeletConfigBuilder_ != null) {
+        kubeletConfigBuilder_.dispose();
+        kubeletConfigBuilder_ = null;
       }
       updateSettings_ = null;
       if (updateSettingsBuilder_ != null) {
@@ -1853,9 +1929,14 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.kubeletConfig_ =
+            kubeletConfigBuilder_ == null ? kubeletConfig_ : kubeletConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.updateSettings_ =
             updateSettingsBuilder_ == null ? updateSettings_ : updateSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1982,6 +2063,9 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasManagement()) {
         mergeManagement(other.getManagement());
+      }
+      if (other.hasKubeletConfig()) {
+        mergeKubeletConfig(other.getKubeletConfig());
       }
       if (other.hasUpdateSettings()) {
         mergeUpdateSettings(other.getUpdateSettings());
@@ -2117,10 +2201,16 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 242
+            case 250:
+              {
+                input.readMessage(getKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 250
             case 258:
               {
                 input.readMessage(getUpdateSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 258
             default:
@@ -4763,6 +4853,212 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       return managementBuilder_;
     }
 
+    private com.google.cloud.gkemulticloud.v1.NodeKubeletConfig kubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfig,
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder>
+        kubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the kubeletConfig field is set.
+     */
+    public boolean hasKubeletConfig() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The kubeletConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.NodeKubeletConfig getKubeletConfig() {
+      if (kubeletConfigBuilder_ == null) {
+        return kubeletConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.getDefaultInstance()
+            : kubeletConfig_;
+      } else {
+        return kubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKubeletConfig(com.google.cloud.gkemulticloud.v1.NodeKubeletConfig value) {
+      if (kubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kubeletConfig_ = value;
+      } else {
+        kubeletConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKubeletConfig(
+        com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.Builder builderForValue) {
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfig_ = builderForValue.build();
+      } else {
+        kubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKubeletConfig(com.google.cloud.gkemulticloud.v1.NodeKubeletConfig value) {
+      if (kubeletConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && kubeletConfig_ != null
+            && kubeletConfig_
+                != com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.getDefaultInstance()) {
+          getKubeletConfigBuilder().mergeFrom(value);
+        } else {
+          kubeletConfig_ = value;
+        }
+      } else {
+        kubeletConfigBuilder_.mergeFrom(value);
+      }
+      if (kubeletConfig_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKubeletConfig() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      kubeletConfig_ = null;
+      if (kubeletConfigBuilder_ != null) {
+        kubeletConfigBuilder_.dispose();
+        kubeletConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.Builder getKubeletConfigBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder
+        getKubeletConfigOrBuilder() {
+      if (kubeletConfigBuilder_ != null) {
+        return kubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return kubeletConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.getDefaultInstance()
+            : kubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node kubelet configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfig,
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder>
+        getKubeletConfigFieldBuilder() {
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.NodeKubeletConfig,
+                com.google.cloud.gkemulticloud.v1.NodeKubeletConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder>(
+                getKubeletConfig(), getParentForChildren(), isClean());
+        kubeletConfig_ = null;
+      }
+      return kubeletConfigBuilder_;
+    }
+
     private com.google.cloud.gkemulticloud.v1.UpdateSettings updateSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkemulticloud.v1.UpdateSettings,
@@ -4783,7 +5079,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateSettings field is set.
      */
     public boolean hasUpdateSettings() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4827,7 +5123,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4849,7 +5145,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4866,7 +5162,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateSettings(com.google.cloud.gkemulticloud.v1.UpdateSettings value) {
       if (updateSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && updateSettings_ != null
             && updateSettings_
                 != com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()) {
@@ -4878,7 +5174,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         updateSettingsBuilder_.mergeFrom(value);
       }
       if (updateSettings_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4895,7 +5191,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateSettings() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       updateSettings_ = null;
       if (updateSettingsBuilder_ != null) {
         updateSettingsBuilder_.dispose();
@@ -4916,7 +5212,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder getUpdateSettingsBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getUpdateSettingsFieldBuilder().getBuilder();
     }

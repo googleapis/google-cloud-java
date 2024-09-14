@@ -28,8 +28,11 @@ public interface EncryptionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud KMS key name to use for PD disk encryption for all
-   * instances in the cluster.
+   * Optional. The Cloud KMS key resource name to use for persistent disk
+   * encryption for all instances in the cluster. See [Use CMEK with cluster
+   * data]
+   * (https://cloud.google.com//dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_cluster_data)
+   * for more information.
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,8 +44,11 @@ public interface EncryptionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud KMS key name to use for PD disk encryption for all
-   * instances in the cluster.
+   * Optional. The Cloud KMS key resource name to use for persistent disk
+   * encryption for all instances in the cluster. See [Use CMEK with cluster
+   * data]
+   * (https://cloud.google.com//dataproc/docs/concepts/configuring-clusters/customer-managed-encryption#use_cmek_with_cluster_data)
+   * for more information.
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -83,7 +89,9 @@ public interface EncryptionConfigOrBuilder
    *   scriptVariables and queryList.queries
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -120,7 +128,9 @@ public interface EncryptionConfigOrBuilder
    *   scriptVariables and queryList.queries
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */

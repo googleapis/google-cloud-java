@@ -139,6 +139,9 @@
             "StopReplication": {
               "methods": ["stopReplicationAsync", "stopReplicationOperationCallable", "stopReplicationCallable"]
             },
+            "SwitchActiveReplicaZone": {
+              "methods": ["switchActiveReplicaZoneAsync", "switchActiveReplicaZoneOperationCallable", "switchActiveReplicaZoneCallable"]
+            },
             "UpdateActiveDirectory": {
               "methods": ["updateActiveDirectoryAsync", "updateActiveDirectoryAsync", "updateActiveDirectoryOperationCallable", "updateActiveDirectoryCallable"]
             },
