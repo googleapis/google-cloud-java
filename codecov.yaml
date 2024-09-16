@@ -1,7 +1,0 @@
----
-codecov:
-  ci:
-    - source.cloud.google.com
-coverage:
-  round: down
-  range: "50...100"
