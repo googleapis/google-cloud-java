@@ -15,7 +15,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - javadoc
   - pattern: 1.127.12-sp
     isAdminEnforced: true
@@ -61,7 +60,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.10.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -76,7 +74,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.19.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -91,7 +88,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.35.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -105,7 +101,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - javadoc
   - pattern: 2.40.x
     isAdminEnforced: true
@@ -120,7 +115,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - javadoc
 permissionRules:
   - team: api-bigquery
