@@ -63,6 +63,7 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTable
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
@@ -155,6 +156,8 @@ public class BigtableTableAdminClientTests {
   @Mock private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
   @Mock private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
   @Mock private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
+
+  @Mock private UnaryCallable<ConsistencyRequest, Void> mockAwaitConsistencyCallable;
 
   @Mock
   private OperationCallable<
@@ -561,6 +564,30 @@ public class BigtableTableAdminClientTests {
 
     // Execute
     adminClient.awaitReplication(TABLE_ID);
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testAwaitConsistencyForDataBoost() {
+    // Setup
+    Mockito.when(mockStub.awaitConsistencyCallable()).thenReturn(mockAwaitConsistencyCallable);
+
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forDataBoost(TABLE_ID);
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockAwaitConsistencyCallable.futureCall(consistencyRequest))
+        .thenAnswer(
+            (Answer<ApiFuture<Void>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(null);
+                });
+
+    // Execute
+    adminClient.awaitConsistency(consistencyRequest);
 
     // Verify
     assertThat(wasCalled.get()).isTrue();

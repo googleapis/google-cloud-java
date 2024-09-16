@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
+import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -52,27 +54,42 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   private final BigtableTableAdminStubSettings settings;
   private final ClientContext clientContext;
 
+  private final TableAdminRequestContext requestContext;
+
   private final AwaitReplicationCallable awaitReplicationCallable;
+
+  private final AwaitConsistencyCallable awaitConsistencyCallable;
   private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       optimizeRestoredTableOperationBaseCallable;
 
   public static EnhancedBigtableTableAdminStub createEnhanced(
-      BigtableTableAdminStubSettings settings) throws IOException {
-    return new EnhancedBigtableTableAdminStub(settings, ClientContext.create(settings));
+      BigtableTableAdminStubSettings settings, TableAdminRequestContext requestContext)
+      throws IOException {
+    return new EnhancedBigtableTableAdminStub(
+        settings, ClientContext.create(settings), requestContext);
   }
 
   private EnhancedBigtableTableAdminStub(
-      BigtableTableAdminStubSettings settings, ClientContext clientContext) throws IOException {
+      BigtableTableAdminStubSettings settings,
+      ClientContext clientContext,
+      TableAdminRequestContext requestContext)
+      throws IOException {
     super(settings, clientContext);
 
     this.settings = settings;
     this.clientContext = clientContext;
+    this.requestContext = requestContext;
+    this.awaitConsistencyCallable = createAwaitConsistencyCallable();
     this.awaitReplicationCallable = createAwaitReplicationCallable();
     this.optimizeRestoredTableOperationBaseCallable =
         createOptimizeRestoredTableOperationBaseCallable();
   }
 
   private AwaitReplicationCallable createAwaitReplicationCallable() {
+    return AwaitReplicationCallable.create(awaitConsistencyCallable);
+  }
+
+  private AwaitConsistencyCallable createAwaitConsistencyCallable() {
     // TODO(igorbernstein2): expose polling settings
     RetrySettings pollingSettings =
         RetrySettings.newBuilder()
@@ -92,11 +109,12 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
             .setRpcTimeoutMultiplier(1.0)
             .build();
 
-    return AwaitReplicationCallable.create(
+    return AwaitConsistencyCallable.create(
         generateConsistencyTokenCallable(),
         checkConsistencyCallable(),
         clientContext,
-        pollingSettings);
+        pollingSettings,
+        requestContext);
   }
 
   // Plug into gax operation infrastructure
@@ -192,6 +210,10 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
 
   public UnaryCallable<TableName, Void> awaitReplicationCallable() {
     return awaitReplicationCallable;
+  }
+
+  public UnaryCallable<ConsistencyRequest, Void> awaitConsistencyCallable() {
+    return awaitConsistencyCallable;
   }
 
   public OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>

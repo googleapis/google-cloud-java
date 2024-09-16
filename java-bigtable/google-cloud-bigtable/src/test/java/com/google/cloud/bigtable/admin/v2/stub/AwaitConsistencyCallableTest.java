@@ -31,7 +31,10 @@ import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.StandardReadRemoteWrites;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
+import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
@@ -47,11 +50,16 @@ import org.mockito.quality.Strictness;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
-public class AwaitReplicationCallableTest {
+public class AwaitConsistencyCallableTest {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
-  private static final TableName TABLE_NAME = TableName.of("my-project", "my-instance", "my-table");
+  private static final String PROJECT_ID = "my-project";
+  private static final String INSTANCE_ID = "my-instance";
+  private static final String TABLE_ID = "my-table";
+  private static final TableName TABLE_NAME = TableName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final ApiCallContext CALL_CONTEXT = FakeCallContext.createDefault();
+  private static final TableAdminRequestContext REQUEST_CONTEXT =
+      TableAdminRequestContext.create(PROJECT_ID, INSTANCE_ID);
 
   @Mock
   private UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -61,7 +69,9 @@ public class AwaitReplicationCallableTest {
   private UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       mockCheckConsistencyCallable;
 
-  private AwaitReplicationCallable callable;
+  private AwaitReplicationCallable awaitReplicationCallable;
+
+  private AwaitConsistencyCallable awaitConsistencyCallable;
 
   @Before
   public void setUp() {
@@ -81,12 +91,14 @@ public class AwaitReplicationCallableTest {
             .setRpcTimeoutMultiplier(1.0)
             .build();
 
-    callable =
-        AwaitReplicationCallable.create(
+    awaitConsistencyCallable =
+        AwaitConsistencyCallable.create(
             mockGenerateConsistencyTokenCallable,
             mockCheckConsistencyCallable,
             clientContext,
-            retrySettings);
+            retrySettings,
+            REQUEST_CONTEXT);
+    awaitReplicationCallable = AwaitReplicationCallable.create(awaitConsistencyCallable);
   }
 
   @Test
@@ -98,7 +110,8 @@ public class AwaitReplicationCallableTest {
     Mockito.when(mockGenerateConsistencyTokenCallable.futureCall(expectedRequest, CALL_CONTEXT))
         .thenReturn(ApiFutures.<GenerateConsistencyTokenResponse>immediateFailedFuture(fakeError));
 
-    ApiFuture<Void> future = callable.futureCall(TABLE_NAME, CALL_CONTEXT);
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forReplication(TABLE_ID);
+    ApiFuture<Void> future = awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
 
     Throwable actualError = null;
 
@@ -125,6 +138,7 @@ public class AwaitReplicationCallableTest {
         CheckConsistencyRequest.newBuilder()
             .setName(TABLE_NAME.toString())
             .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
             .build();
 
     FakeApiException expectedError = new FakeApiException("fake", null, Code.INTERNAL, false);
@@ -132,7 +146,8 @@ public class AwaitReplicationCallableTest {
     Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest2, CALL_CONTEXT))
         .thenReturn(ApiFutures.<CheckConsistencyResponse>immediateFailedFuture(expectedError));
 
-    ApiFuture<Void> future = callable.futureCall(TABLE_NAME, CALL_CONTEXT);
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forReplication(TABLE_ID);
+    ApiFuture<Void> future = awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
 
     Throwable actualError = null;
 
@@ -160,6 +175,7 @@ public class AwaitReplicationCallableTest {
         CheckConsistencyRequest.newBuilder()
             .setName(TABLE_NAME.toString())
             .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
             .build();
     CheckConsistencyResponse expectedResponse2 =
         CheckConsistencyResponse.newBuilder().setConsistent(true).build();
@@ -167,7 +183,9 @@ public class AwaitReplicationCallableTest {
     Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest2, CALL_CONTEXT))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse2));
 
-    ApiFuture<Void> consistentFuture = callable.futureCall(TABLE_NAME, CALL_CONTEXT);
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forReplication(TABLE_ID);
+    ApiFuture<Void> consistentFuture =
+        awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
 
     consistentFuture.get(1, TimeUnit.MILLISECONDS);
   }
@@ -187,6 +205,7 @@ public class AwaitReplicationCallableTest {
         CheckConsistencyRequest.newBuilder()
             .setName(TABLE_NAME.toString())
             .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
             .build();
 
     CheckConsistencyResponse expectedResponse2 =
@@ -199,7 +218,9 @@ public class AwaitReplicationCallableTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse2))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse3));
 
-    ApiFuture<Void> consistentFuture = callable.futureCall(TABLE_NAME, CALL_CONTEXT);
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forReplication(TABLE_ID);
+    ApiFuture<Void> consistentFuture =
+        awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
 
     consistentFuture.get(1, TimeUnit.SECONDS);
   }
@@ -219,6 +240,7 @@ public class AwaitReplicationCallableTest {
         CheckConsistencyRequest.newBuilder()
             .setName(TABLE_NAME.toString())
             .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
             .build();
 
     CheckConsistencyResponse expectedResponse2 =
@@ -227,7 +249,9 @@ public class AwaitReplicationCallableTest {
     Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest2, CALL_CONTEXT))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse2));
 
-    ApiFuture<Void> consistentFuture = callable.futureCall(TABLE_NAME, CALL_CONTEXT);
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forReplication(TABLE_ID);
+    ApiFuture<Void> consistentFuture =
+        awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
 
     Throwable actualError = null;
     try {
@@ -237,5 +261,68 @@ public class AwaitReplicationCallableTest {
     }
 
     assertThat(actualError).isInstanceOf(PollException.class);
+  }
+
+  @Test
+  public void testAwaitReplicationCallableImmediatelyConsistent() throws Exception {
+    GenerateConsistencyTokenRequest expectedRequest =
+        GenerateConsistencyTokenRequest.newBuilder().setName(TABLE_NAME.toString()).build();
+
+    GenerateConsistencyTokenResponse expectedResponse =
+        GenerateConsistencyTokenResponse.newBuilder().setConsistencyToken("fake-token").build();
+
+    Mockito.when(mockGenerateConsistencyTokenCallable.futureCall(expectedRequest, CALL_CONTEXT))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    CheckConsistencyRequest expectedRequest2 =
+        CheckConsistencyRequest.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
+            .build();
+    CheckConsistencyResponse expectedResponse2 =
+        CheckConsistencyResponse.newBuilder().setConsistent(true).build();
+
+    Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest2, CALL_CONTEXT))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse2));
+
+    ApiFuture<Void> consistentFuture =
+        awaitReplicationCallable.futureCall(TABLE_NAME, CALL_CONTEXT);
+
+    consistentFuture.get(1, TimeUnit.MILLISECONDS);
+  }
+
+  @Test
+  public void testAwaitReplicationCallablePolling() throws Exception {
+    GenerateConsistencyTokenRequest expectedRequest =
+        GenerateConsistencyTokenRequest.newBuilder().setName(TABLE_NAME.toString()).build();
+
+    GenerateConsistencyTokenResponse expectedResponse =
+        GenerateConsistencyTokenResponse.newBuilder().setConsistencyToken("fake-token").build();
+
+    Mockito.when(mockGenerateConsistencyTokenCallable.futureCall(expectedRequest, CALL_CONTEXT))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    CheckConsistencyRequest expectedRequest2 =
+        CheckConsistencyRequest.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .setConsistencyToken("fake-token")
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
+            .build();
+
+    CheckConsistencyResponse expectedResponse2 =
+        CheckConsistencyResponse.newBuilder().setConsistent(false).build();
+
+    CheckConsistencyResponse expectedResponse3 =
+        CheckConsistencyResponse.newBuilder().setConsistent(true).build();
+
+    Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest2, CALL_CONTEXT))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse2))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse3));
+
+    ApiFuture<Void> consistentFuture =
+        awaitReplicationCallable.futureCall(TABLE_NAME, CALL_CONTEXT);
+
+    consistentFuture.get(1, TimeUnit.SECONDS);
   }
 }

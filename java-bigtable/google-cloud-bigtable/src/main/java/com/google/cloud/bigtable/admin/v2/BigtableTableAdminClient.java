@@ -46,6 +46,7 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTable
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
@@ -61,6 +62,7 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
+import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -154,8 +156,10 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
   public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
       throws IOException {
+    TableAdminRequestContext requestContext =
+        TableAdminRequestContext.create(settings.getProjectId(), settings.getInstanceId());
     EnhancedBigtableTableAdminStub stub =
-        EnhancedBigtableTableAdminStub.createEnhanced(settings.getStubSettings());
+        EnhancedBigtableTableAdminStub.createEnhanced(settings.getStubSettings(), requestContext);
     return create(settings.getProjectId(), settings.getInstanceId(), stub);
   }
 
@@ -915,6 +919,11 @@ public final class BigtableTableAdminClient implements AutoCloseable {
 
     ApiExceptions.callAndTranslateApiException(
         stub.awaitReplicationCallable().futureCall(tableName));
+  }
+
+  public void awaitConsistency(ConsistencyRequest consistencyRequest) {
+    ApiExceptions.callAndTranslateApiException(
+        stub.awaitConsistencyCallable().futureCall(consistencyRequest));
   }
 
   /**

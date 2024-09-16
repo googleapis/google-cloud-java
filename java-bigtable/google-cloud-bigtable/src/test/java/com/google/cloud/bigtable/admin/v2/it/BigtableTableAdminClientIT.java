@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.Policy;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
@@ -46,6 +47,7 @@ import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -225,6 +227,23 @@ public class BigtableTableAdminClientIT {
   public void awaitReplication() {
     tableAdmin.createTable(CreateTableRequest.of(tableId));
     tableAdmin.awaitReplication(tableId);
+  }
+
+  /**
+   * Note: Data Boost consistency is essentially a check that the data you are trying to read was
+   * written at least 35 minutes ago. The test thus takes ~35 minutes, and we should add a separate
+   * profile to run this concurrently with the other tests.
+   */
+  @Test
+  @Ignore
+  public void awaitDataBoostConsistency() {
+    assume()
+        .withMessage("Data Boost consistency not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+    tableAdmin.createTable(CreateTableRequest.of(tableId));
+    ConsistencyRequest consistencyRequest = ConsistencyRequest.forDataBoost(tableId);
+    tableAdmin.awaitConsistency(consistencyRequest);
   }
 
   @Test
