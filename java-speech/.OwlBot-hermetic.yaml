@@ -21,15 +21,10 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-speech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-speech/proto-google-cloud-speech-v1beta1/"
-- "/java-speech/grpc-google-cloud-speech-v1beta1/"
-- "/java-speech/google-cloud-speech/src/main/java/com/google/cloud/speech/v1beta1"
-- "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1beta1"
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/resources/hello.flac"
 - "/java-speech/google-cloud-speech/src/test/resources/META-INF/native-image/"
-
 
 deep-copy-regex:
 - source: "/google/cloud/speech/(v.*)/.*-java/proto-google-.*/src"
