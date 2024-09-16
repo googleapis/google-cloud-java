@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.44.0](https://github.com/googleapis/java-bigtable/compare/v2.43.0...v2.44.0) (2024-09-16)
+
+
+### Features
+
+* Add APIs to enable hot backups ([#2313](https://github.com/googleapis/java-bigtable/issues/2313)) ([6d004cd](https://github.com/googleapis/java-bigtable/commit/6d004cd0809d02eeff05d5e90faf5e145f13d11e))
+* Add support for awaiting Data Boost ([#2329](https://github.com/googleapis/java-bigtable/issues/2329)) ([8556574](https://github.com/googleapis/java-bigtable/commit/85565742645537d1b55a1a52521d2ccf44b4d00c))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2337](https://github.com/googleapis/java-bigtable/issues/2337)) ([dc65bd5](https://github.com/googleapis/java-bigtable/commit/dc65bd5a39cfe0c25a6b955f9f4d9367df334211))
+
 ## [2.43.0](https://github.com/googleapis/java-bigtable/compare/v2.42.0...v2.43.0) (2024-08-22)
 
 
