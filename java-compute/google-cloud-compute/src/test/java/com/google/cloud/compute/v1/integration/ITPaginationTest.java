@@ -107,8 +107,8 @@ public class ITPaginationTest extends BaseTest {
 
     // Compare pages by ensuring a consistent list of zone names.
     Assert.assertEquals(
-        Iterables.transform(nextPage.getValues(), Zone::getName),
-        Iterables.transform(nextPageWithToken.getValues(), Zone::getName));
+        Lists.newArrayList(Iterables.transform(nextPage.getValues(), Zone::getName)),
+        Lists.newArrayList(Iterables.transform(nextPageWithToken.getValues(), Zone::getName)));
   }
 
   @Test
