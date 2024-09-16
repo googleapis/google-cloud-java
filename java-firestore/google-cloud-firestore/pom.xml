@@ -321,5 +321,61 @@
         </dependency>
       </dependencies>
     </profile>
+    <profile>
+      <!-- JDK17 set up for tests in src/test-jdk17 -->
+      <id>java17-test</id>
+      <activation>
+        <jdk>17</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>add-test-source</id>
+                <phase>generate-test-sources</phase>
+                <goals>
+                  <goal>add-test-source</goal>
+                </goals>
+                <configuration>
+                  <sources>
+                    <source>src/test-jdk17/java</source>
+                  </sources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <inherited>true</inherited>
+            <configuration>
+              <!-- Enable Java 17 for all sources so that Intellij picks the right language level -->
+              <source>17</source>
+              <release>17</release>
+              <compilerArgs>
+                <arg>-parameters</arg>
+                <arg>--add-opens=java.base/java.lang=ALL-UNNAMED</arg>
+                <arg>--add-opens=java.base/java.util=ALL-UNNAMED</arg>
+              </compilerArgs>
+            </configuration>
+          </plugin>
+          <plugin>
+            <!-- On CI, javadoc runs on java 17, but it sources java8 to compile and raises version conflict -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <sourceFileIncludes> 
+                <include>src/test-jdk17/**/*.java</include> 
+              </sourceFileIncludes>
+              <source>17</source>
+              <release>17</release> 
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>

@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.encoding.CustomClassMapper;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1.ArrayValue;
 import com.google.firestore.v1.DocumentTransform.FieldTransform;

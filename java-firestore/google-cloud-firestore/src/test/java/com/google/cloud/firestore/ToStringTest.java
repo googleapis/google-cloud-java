@@ -19,6 +19,7 @@ package com.google.cloud.firestore;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.encoding.CustomClassMapper;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.Value;
 import java.util.Collections;
