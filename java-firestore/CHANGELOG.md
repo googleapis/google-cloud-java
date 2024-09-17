@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.26.2](https://github.com/googleapis/java-firestore/compare/v3.26.1...v3.26.2) (2024-09-17)
+
+
+### Features
+
+* Record serialization/deserialization ([#1706](https://github.com/googleapis/java-firestore/issues/1706)) ([f5613b4](https://github.com/googleapis/java-firestore/commit/f5613b4ecb46c61cd7c24ae55606a63f92303360))
+
+
+### Bug Fixes
+
+* Remove race condition in test. ([#1826](https://github.com/googleapis/java-firestore/issues/1826)) ([791281e](https://github.com/googleapis/java-firestore/commit/791281e4693f4e9cf2ff052dadf71a2479c6a979))
+
 ## [3.26.1](https://github.com/googleapis/java-firestore/compare/v3.26.0...v3.26.1) (2024-09-16)
 
 
