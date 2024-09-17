@@ -91,6 +91,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
@@ -1387,11 +1388,10 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void listenToDocumentsWithVectors() throws Throwable {
-    final Semaphore semaphore = new Semaphore(0);
+    CompletableFuture<Void> listen = new CompletableFuture<>();
     ListenerRegistration registration = null;
     DocumentReference ref = randomColl.document();
-    AtomicReference<Throwable> failureMessage = new AtomicReference(null);
-    int totalPermits = 5;
+    AtomicInteger snapshotCount = new AtomicInteger();
 
     try {
       registration =
@@ -1403,7 +1403,7 @@ public class ITSystemTest extends ITBaseTest {
                       DocumentSnapshot docSnap =
                           value.isEmpty() ? null : value.getDocuments().get(0);
 
-                      switch (semaphore.availablePermits()) {
+                      switch (snapshotCount.getAndIncrement()) {
                         case 0:
                           assertNull(docSnap);
                           ref.create(
@@ -1472,41 +1472,35 @@ public class ITSystemTest extends ITBaseTest {
                           break;
                         case 4:
                           assertNull(docSnap);
+                          listen.complete(null);
                           break;
                       }
                     } catch (Throwable t) {
-                      failureMessage.set(t);
-                      semaphore.release(totalPermits);
+                      listen.completeExceptionally(t);
                     }
-
-                    semaphore.release();
                   });
 
-      semaphore.acquire(totalPermits);
+      listen.get();
     } finally {
       if (registration != null) {
         registration.remove();
-      }
-
-      if (failureMessage.get() != null) {
-        throw failureMessage.get();
       }
     }
   }
 
   @Test
   public void documentWatch() throws Exception {
-    final DocumentReference documentReference = randomColl.document();
-
-    final Semaphore semaphore = new Semaphore(0);
+    CompletableFuture<Void> listen = new CompletableFuture<>();
+    DocumentReference documentReference = randomColl.document();
     ListenerRegistration registration = null;
+    AtomicInteger snapshotCount = new AtomicInteger();
 
     try {
       registration =
           documentReference.addSnapshotListener(
               (value, error) -> {
                 try {
-                  switch (semaphore.availablePermits()) {
+                  switch (snapshotCount.getAndIncrement()) {
                     case 0:
                       assertFalse(value.exists());
                       documentReference.set(map("foo", "foo"));
@@ -1525,15 +1519,14 @@ public class ITSystemTest extends ITBaseTest {
                       break;
                     case 3:
                       assertFalse(value.exists());
+                      listen.complete(null);
                       break;
                   }
                 } catch (Exception e) {
-                  fail(e.getMessage());
+                  listen.completeExceptionally(e);
                 }
-                semaphore.release();
               });
-
-      semaphore.acquire(4);
+      listen.get();
     } finally {
       if (registration != null) {
         registration.remove();
