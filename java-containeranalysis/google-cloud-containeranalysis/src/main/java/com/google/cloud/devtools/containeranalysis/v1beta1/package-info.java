@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,14 +15,14 @@
  */
 
 /**
- * A client to Container Analysis API.
+ * A client to Container Analysis API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============================== ContainerAnalysisV1Beta1Client ==============================
+ * <p>======================= ContainerAnalysisV1Beta1Client =======================
  *
  * <p>Service Description: Retrieves analysis results of Cloud components such as Docker container
- * images. The Container Analysis API is an implementation of the [Grafeas](grafeas.io) API.
+ * images. The Container Analysis API is an implementation of the [Grafeas](https://grafeas.io) API.
  *
  * <p>Analysis results are stored as a series of occurrences. An `Occurrence` contains information
  * about a specific analysis instance on a resource. An occurrence refers to a `Note`. A note
@@ -35,17 +35,39 @@
  *
  * <p>Sample for ContainerAnalysisV1Beta1Client:
  *
- * <pre>
- * <code>
- * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
- *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+ *     ContainerAnalysisV1Beta1Client.create()) {
+ *   ResourceName resource =
+ *       new ResourceName() {
+ *         {@literal @}Override
+ *         public Map<String, String> getFieldValuesMap() {
+ *           Map<String, String> fieldValuesMap = new HashMap<>();
+ *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+ *           return fieldValuesMap;
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String getFieldValue(String fieldName) {
+ *           return getFieldValuesMap().get(fieldName);
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String toString() {
+ *           return "projects/project-8432/notes/note-8432";
+ *         }
+ *       };
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * ==================== GrafeasV1Beta1Client ====================
+ * <p>======================= GrafeasV1Beta1Client =======================
  *
  * <p>Service Description: [Grafeas](grafeas.io) API.
  *
@@ -62,16 +84,20 @@
  *
  * <p>Sample for GrafeasV1Beta1Client:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
- *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasV1Beta1Client.getOccurrence(name);
+ *   GetOccurrenceRequest request =
+ *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+ *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
  * }
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
 import javax.annotation.Generated;
