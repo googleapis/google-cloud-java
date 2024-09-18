@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service definition for the Area Insights API.
+ * Service definition for the Places Insights API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -127,7 +127,7 @@ public final class AreaInsightsGrpc {
    *
    *
    * <pre>
-   * Service definition for the Area Insights API.
+   * Service definition for the Places Insights API.
    * </pre>
    */
   public interface AsyncService {
@@ -161,7 +161,7 @@ public final class AreaInsightsGrpc {
    * Base class for the server implementation of the service AreaInsights.
    *
    * <pre>
-   * Service definition for the Area Insights API.
+   * Service definition for the Places Insights API.
    * </pre>
    */
   public abstract static class AreaInsightsImplBase
@@ -177,7 +177,7 @@ public final class AreaInsightsGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service AreaInsights.
    *
    * <pre>
-   * Service definition for the Area Insights API.
+   * Service definition for the Places Insights API.
    * </pre>
    */
   public static final class AreaInsightsStub
@@ -222,7 +222,7 @@ public final class AreaInsightsGrpc {
    * A stub to allow clients to do synchronous rpc calls to service AreaInsights.
    *
    * <pre>
-   * Service definition for the Area Insights API.
+   * Service definition for the Places Insights API.
    * </pre>
    */
   public static final class AreaInsightsBlockingStub
@@ -264,7 +264,7 @@ public final class AreaInsightsGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service AreaInsights.
    *
    * <pre>
-   * Service definition for the Area Insights API.
+   * Service definition for the Places Insights API.
    * </pre>
    */
   public static final class AreaInsightsFutureStub
