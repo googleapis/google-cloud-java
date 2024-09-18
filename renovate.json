@@ -45,7 +45,6 @@
     {
       "fileMatch": [
         "java-dns/README.md",
-        "java-grafeas/README.md",
         "java-notification/README.md",
         "java-vertexai/README.md"
       ],
