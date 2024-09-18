@@ -20,7 +20,6 @@ import static com.google.cloud.firestore.UserDataConverter.NO_DELETES;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.encoding.CustomClassMapper;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1.Document;

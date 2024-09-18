@@ -18,7 +18,6 @@ package com.google.cloud.firestore;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.DocumentChange.Type;
-import com.google.cloud.firestore.encoding.CustomClassMapper;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Collections;
