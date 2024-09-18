@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.3](https://github.com/googleapis/java-firestore/compare/v3.26.2...v3.26.3) (2024-09-18)
+
+
+### Bug Fixes
+
+* Revert "Feat: Record serialization/deserialization" ([61073e3](https://github.com/googleapis/java-firestore/commit/61073e37c5f7a9dff12b450667f8c759edbf713d))
+
 ## [3.26.2](https://github.com/googleapis/java-firestore/compare/v3.26.1...v3.26.2) (2024-09-17)
 
 
