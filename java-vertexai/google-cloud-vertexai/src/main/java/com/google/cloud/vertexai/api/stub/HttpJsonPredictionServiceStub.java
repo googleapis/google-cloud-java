@@ -105,12 +105,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PredictRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PredictResponse>newBuilder()
@@ -142,12 +143,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<RawPredictRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                              .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<HttpBody>newBuilder()
@@ -180,12 +182,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StreamRawPredictRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<HttpBody>newBuilder()
@@ -211,19 +214,18 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "endpoint", request.getEndpoint());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:directPredict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DirectPredictRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DirectPredictResponse>newBuilder()
@@ -249,19 +251,18 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "endpoint", request.getEndpoint());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:directRawPredict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DirectRawPredictRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DirectRawPredictResponse>newBuilder()
@@ -295,12 +296,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StreamingPredictRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StreamingPredictResponse>newBuilder()
@@ -331,12 +333,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExplainRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                                  .toBody("*", request.toBuilder().clearEndpoint().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ExplainResponse>newBuilder()
@@ -363,18 +366,21 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:generateContent")
+                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:generateContent",
+                          "/v1/{model=endpoints/*}:generateContent",
+                          "/v1/{model=publishers/*/models/*}:generateContent")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateContentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearModel().build(), false))
+                                  .toBody("*", request.toBuilder().clearModel().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateContentResponse>newBuilder()
@@ -402,18 +408,21 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:streamGenerateContent")
+                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:streamGenerateContent",
+                          "/v1/{model=endpoints/*}:streamGenerateContent",
+                          "/v1/{model=publishers/*/models/*}:streamGenerateContent")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateContentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearModel().build(), false))
+                                  .toBody("*", request.toBuilder().clearModel().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateContentResponse>newBuilder()
@@ -445,6 +454,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -479,6 +489,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -511,6 +522,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:setIamPolicy",
@@ -523,12 +536,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -558,6 +572,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:getIamPolicy",
@@ -571,6 +587,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -603,6 +620,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/models/*}:testIamPermissions",
@@ -615,6 +634,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

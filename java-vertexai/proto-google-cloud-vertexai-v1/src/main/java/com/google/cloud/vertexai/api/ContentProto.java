@@ -53,6 +53,18 @@ public final class ContentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_GenerationConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_AutoRoutingMode_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_AutoRoutingMode_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_ManualRoutingMode_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_ManualRoutingMode_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_SafetySetting_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_SafetySetting_fieldAccessorTable;
@@ -72,6 +84,26 @@ public final class ContentProto {
       internal_static_google_cloud_vertexai_v1_Candidate_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_Candidate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_Segment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_Segment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_Web_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_Web_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_RetrievedContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GroundingChunk_RetrievedContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GroundingSupport_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GroundingSupport_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_GroundingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -112,83 +144,122 @@ public final class ContentProto {
           + "e_uri\030\002 \001(\tB\003\340A\002\"y\n\rVideoMetadata\0224\n\014sta"
           + "rt_offset\030\001 \001(\0132\031.google.protobuf.Durati"
           + "onB\003\340A\001\0222\n\nend_offset\030\002 \001(\0132\031.google.pro"
-          + "tobuf.DurationB\003\340A\001\"\204\004\n\020GenerationConfig"
+          + "tobuf.DurationB\003\340A\001\"\323\t\n\020GenerationConfig"
           + "\022\035\n\013temperature\030\001 \001(\002B\003\340A\001H\000\210\001\001\022\027\n\005top_p"
           + "\030\002 \001(\002B\003\340A\001H\001\210\001\001\022\027\n\005top_k\030\003 \001(\002B\003\340A\001H\002\210\001"
           + "\001\022!\n\017candidate_count\030\004 \001(\005B\003\340A\001H\003\210\001\001\022#\n\021"
           + "max_output_tokens\030\005 \001(\005B\003\340A\001H\004\210\001\001\022\033\n\016sto"
           + "p_sequences\030\006 \003(\tB\003\340A\001\022\"\n\020presence_penal"
           + "ty\030\010 \001(\002B\003\340A\001H\005\210\001\001\022#\n\021frequency_penalty\030"
-          + "\t \001(\002B\003\340A\001H\006\210\001\001\022\037\n\022response_mime_type\030\r "
-          + "\001(\tB\003\340A\001\022C\n\017response_schema\030\020 \001(\0132 .goog"
-          + "le.cloud.vertexai.v1.SchemaB\003\340A\001H\007\210\001\001B\016\n"
-          + "\014_temperatureB\010\n\006_top_pB\010\n\006_top_kB\022\n\020_ca"
-          + "ndidate_countB\024\n\022_max_output_tokensB\023\n\021_"
-          + "presence_penaltyB\024\n\022_frequency_penaltyB\022"
-          + "\n\020_response_schema\"\334\003\n\rSafetySetting\022=\n\010"
-          + "category\030\001 \001(\0162&.google.cloud.vertexai.v"
-          + "1.HarmCategoryB\003\340A\002\022R\n\tthreshold\030\002 \001(\0162:"
+          + "\t \001(\002B\003\340A\001H\006\210\001\001\022\026\n\004seed\030\014 \001(\005B\003\340A\001H\007\210\001\001\022"
+          + "\037\n\022response_mime_type\030\r \001(\tB\003\340A\001\022C\n\017resp"
+          + "onse_schema\030\020 \001(\0132 .google.cloud.vertexa"
+          + "i.v1.SchemaB\003\340A\001H\010\210\001\001\022Z\n\016routing_config\030"
+          + "\021 \001(\01328.google.cloud.vertexai.v1.Generat"
+          + "ionConfig.RoutingConfigB\003\340A\001H\t\210\001\001\032\274\004\n\rRo"
+          + "utingConfig\022]\n\tauto_mode\030\001 \001(\0132H.google."
+          + "cloud.vertexai.v1.GenerationConfig.Routi"
+          + "ngConfig.AutoRoutingModeH\000\022a\n\013manual_mod"
+          + "e\030\002 \001(\0132J.google.cloud.vertexai.v1.Gener"
+          + "ationConfig.RoutingConfig.ManualRoutingM"
+          + "odeH\000\032\231\002\n\017AutoRoutingMode\022\206\001\n\030model_rout"
+          + "ing_preference\030\001 \001(\0162_.google.cloud.vert"
+          + "exai.v1.GenerationConfig.RoutingConfig.A"
+          + "utoRoutingMode.ModelRoutingPreferenceH\000\210"
+          + "\001\001\"`\n\026ModelRoutingPreference\022\013\n\007UNKNOWN\020"
+          + "\000\022\026\n\022PRIORITIZE_QUALITY\020\001\022\014\n\010BALANCED\020\002\022"
+          + "\023\n\017PRIORITIZE_COST\020\003B\033\n\031_model_routing_p"
+          + "reference\032;\n\021ManualRoutingMode\022\027\n\nmodel_"
+          + "name\030\001 \001(\tH\000\210\001\001B\r\n\013_model_nameB\020\n\016routin"
+          + "g_configB\016\n\014_temperatureB\010\n\006_top_pB\010\n\006_t"
+          + "op_kB\022\n\020_candidate_countB\024\n\022_max_output_"
+          + "tokensB\023\n\021_presence_penaltyB\024\n\022_frequenc"
+          + "y_penaltyB\007\n\005_seedB\022\n\020_response_schemaB\021"
+          + "\n\017_routing_config\"\345\003\n\rSafetySetting\022=\n\010c"
+          + "ategory\030\001 \001(\0162&.google.cloud.vertexai.v1"
+          + ".HarmCategoryB\003\340A\002\022R\n\tthreshold\030\002 \001(\0162:."
+          + "google.cloud.vertexai.v1.SafetySetting.H"
+          + "armBlockThresholdB\003\340A\002\022L\n\006method\030\004 \001(\01627"
           + ".google.cloud.vertexai.v1.SafetySetting."
-          + "HarmBlockThresholdB\003\340A\002\022L\n\006method\030\004 \001(\0162"
-          + "7.google.cloud.vertexai.v1.SafetySetting"
-          + ".HarmBlockMethodB\003\340A\001\"\224\001\n\022HarmBlockThres"
-          + "hold\022$\n HARM_BLOCK_THRESHOLD_UNSPECIFIED"
-          + "\020\000\022\027\n\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n\026BLOCK_MED"
-          + "IUM_AND_ABOVE\020\002\022\023\n\017BLOCK_ONLY_HIGH\020\003\022\016\n\n"
-          + "BLOCK_NONE\020\004\"S\n\017HarmBlockMethod\022!\n\035HARM_"
-          + "BLOCK_METHOD_UNSPECIFIED\020\000\022\014\n\010SEVERITY\020\001"
-          + "\022\017\n\013PROBABILITY\020\002\"\271\004\n\014SafetyRating\022=\n\010ca"
-          + "tegory\030\001 \001(\0162&.google.cloud.vertexai.v1."
-          + "HarmCategoryB\003\340A\003\022P\n\013probability\030\002 \001(\01626"
-          + ".google.cloud.vertexai.v1.SafetyRating.H"
-          + "armProbabilityB\003\340A\003\022\036\n\021probability_score"
-          + "\030\005 \001(\002B\003\340A\003\022J\n\010severity\030\006 \001(\01623.google.c"
-          + "loud.vertexai.v1.SafetyRating.HarmSeveri"
-          + "tyB\003\340A\003\022\033\n\016severity_score\030\007 \001(\002B\003\340A\003\022\024\n\007"
-          + "blocked\030\003 \001(\010B\003\340A\003\"b\n\017HarmProbability\022 \n"
-          + "\034HARM_PROBABILITY_UNSPECIFIED\020\000\022\016\n\nNEGLI"
-          + "GIBLE\020\001\022\007\n\003LOW\020\002\022\n\n\006MEDIUM\020\003\022\010\n\004HIGH\020\004\"\224"
-          + "\001\n\014HarmSeverity\022\035\n\031HARM_SEVERITY_UNSPECI"
-          + "FIED\020\000\022\034\n\030HARM_SEVERITY_NEGLIGIBLE\020\001\022\025\n\021"
-          + "HARM_SEVERITY_LOW\020\002\022\030\n\024HARM_SEVERITY_MED"
-          + "IUM\020\003\022\026\n\022HARM_SEVERITY_HIGH\020\004\"N\n\020Citatio"
-          + "nMetadata\022:\n\tcitations\030\001 \003(\0132\".google.cl"
-          + "oud.vertexai.v1.CitationB\003\340A\003\"\252\001\n\010Citati"
-          + "on\022\030\n\013start_index\030\001 \001(\005B\003\340A\003\022\026\n\tend_inde"
-          + "x\030\002 \001(\005B\003\340A\003\022\020\n\003uri\030\003 \001(\tB\003\340A\003\022\022\n\005title\030"
-          + "\004 \001(\tB\003\340A\003\022\024\n\007license\030\005 \001(\tB\003\340A\003\0220\n\020publ"
-          + "ication_date\030\006 \001(\0132\021.google.type.DateB\003\340"
-          + "A\003\"\334\004\n\tCandidate\022\022\n\005index\030\001 \001(\005B\003\340A\003\0227\n\007"
-          + "content\030\002 \001(\0132!.google.cloud.vertexai.v1"
-          + ".ContentB\003\340A\003\022L\n\rfinish_reason\030\003 \001(\01620.g"
-          + "oogle.cloud.vertexai.v1.Candidate.Finish"
-          + "ReasonB\003\340A\003\022C\n\016safety_ratings\030\004 \003(\0132&.go"
-          + "ogle.cloud.vertexai.v1.SafetyRatingB\003\340A\003"
-          + "\022 \n\016finish_message\030\005 \001(\tB\003\340A\003H\000\210\001\001\022J\n\021ci"
-          + "tation_metadata\030\006 \001(\0132*.google.cloud.ver"
-          + "texai.v1.CitationMetadataB\003\340A\003\022L\n\022ground"
-          + "ing_metadata\030\007 \001(\0132+.google.cloud.vertex"
-          + "ai.v1.GroundingMetadataB\003\340A\003\"\237\001\n\014FinishR"
-          + "eason\022\035\n\031FINISH_REASON_UNSPECIFIED\020\000\022\010\n\004"
-          + "STOP\020\001\022\016\n\nMAX_TOKENS\020\002\022\n\n\006SAFETY\020\003\022\016\n\nRE"
-          + "CITATION\020\004\022\t\n\005OTHER\020\005\022\r\n\tBLOCKLIST\020\006\022\026\n\022"
-          + "PROHIBITED_CONTENT\020\007\022\010\n\004SPII\020\010B\021\n\017_finis"
-          + "h_message\"\235\001\n\021GroundingMetadata\022\037\n\022web_s"
-          + "earch_queries\030\001 \003(\tB\003\340A\001\022P\n\022search_entry"
-          + "_point\030\004 \001(\0132*.google.cloud.vertexai.v1."
-          + "SearchEntryPointB\003\340A\001H\000\210\001\001B\025\n\023_search_en"
-          + "try_point\"H\n\020SearchEntryPoint\022\035\n\020rendere"
-          + "d_content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001(\014B\003"
-          + "\340A\001*\264\001\n\014HarmCategory\022\035\n\031HARM_CATEGORY_UN"
-          + "SPECIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_SPEECH"
-          + "\020\001\022#\n\037HARM_CATEGORY_DANGEROUS_CONTENT\020\002\022"
-          + "\034\n\030HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HARM_CA"
-          + "TEGORY_SEXUALLY_EXPLICIT\020\004B\311\001\n\035com.googl"
-          + "e.cloud.vertexai.apiB\014ContentProtoP\001Z>cl"
-          + "oud.google.com/go/aiplatform/apiv1/aipla"
-          + "tformpb;aiplatformpb\252\002\032Google.Cloud.AIPl"
-          + "atform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002"
-          + "\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "HarmBlockMethodB\003\340A\001\"\235\001\n\022HarmBlockThresh"
+          + "old\022$\n HARM_BLOCK_THRESHOLD_UNSPECIFIED\020"
+          + "\000\022\027\n\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n\026BLOCK_MEDI"
+          + "UM_AND_ABOVE\020\002\022\023\n\017BLOCK_ONLY_HIGH\020\003\022\016\n\nB"
+          + "LOCK_NONE\020\004\022\007\n\003OFF\020\005\"S\n\017HarmBlockMethod\022"
+          + "!\n\035HARM_BLOCK_METHOD_UNSPECIFIED\020\000\022\014\n\010SE"
+          + "VERITY\020\001\022\017\n\013PROBABILITY\020\002\"\271\004\n\014SafetyRati"
+          + "ng\022=\n\010category\030\001 \001(\0162&.google.cloud.vert"
+          + "exai.v1.HarmCategoryB\003\340A\003\022P\n\013probability"
+          + "\030\002 \001(\01626.google.cloud.vertexai.v1.Safety"
+          + "Rating.HarmProbabilityB\003\340A\003\022\036\n\021probabili"
+          + "ty_score\030\005 \001(\002B\003\340A\003\022J\n\010severity\030\006 \001(\01623."
+          + "google.cloud.vertexai.v1.SafetyRating.Ha"
+          + "rmSeverityB\003\340A\003\022\033\n\016severity_score\030\007 \001(\002B"
+          + "\003\340A\003\022\024\n\007blocked\030\003 \001(\010B\003\340A\003\"b\n\017HarmProbab"
+          + "ility\022 \n\034HARM_PROBABILITY_UNSPECIFIED\020\000\022"
+          + "\016\n\nNEGLIGIBLE\020\001\022\007\n\003LOW\020\002\022\n\n\006MEDIUM\020\003\022\010\n\004"
+          + "HIGH\020\004\"\224\001\n\014HarmSeverity\022\035\n\031HARM_SEVERITY"
+          + "_UNSPECIFIED\020\000\022\034\n\030HARM_SEVERITY_NEGLIGIB"
+          + "LE\020\001\022\025\n\021HARM_SEVERITY_LOW\020\002\022\030\n\024HARM_SEVE"
+          + "RITY_MEDIUM\020\003\022\026\n\022HARM_SEVERITY_HIGH\020\004\"N\n"
+          + "\020CitationMetadata\022:\n\tcitations\030\001 \003(\0132\".g"
+          + "oogle.cloud.vertexai.v1.CitationB\003\340A\003\"\252\001"
+          + "\n\010Citation\022\030\n\013start_index\030\001 \001(\005B\003\340A\003\022\026\n\t"
+          + "end_index\030\002 \001(\005B\003\340A\003\022\020\n\003uri\030\003 \001(\tB\003\340A\003\022\022"
+          + "\n\005title\030\004 \001(\tB\003\340A\003\022\024\n\007license\030\005 \001(\tB\003\340A\003"
+          + "\0220\n\020publication_date\030\006 \001(\0132\021.google.type"
+          + ".DateB\003\340A\003\"\250\005\n\tCandidate\022\022\n\005index\030\001 \001(\005B"
+          + "\003\340A\003\0227\n\007content\030\002 \001(\0132!.google.cloud.ver"
+          + "texai.v1.ContentB\003\340A\003\022\022\n\005score\030\010 \001(\001B\003\340A"
+          + "\003\022\031\n\014avg_logprobs\030\t \001(\001B\003\340A\003\022L\n\rfinish_r"
+          + "eason\030\003 \001(\01620.google.cloud.vertexai.v1.C"
+          + "andidate.FinishReasonB\003\340A\003\022C\n\016safety_rat"
+          + "ings\030\004 \003(\0132&.google.cloud.vertexai.v1.Sa"
+          + "fetyRatingB\003\340A\003\022 \n\016finish_message\030\005 \001(\tB"
+          + "\003\340A\003H\000\210\001\001\022J\n\021citation_metadata\030\006 \001(\0132*.g"
+          + "oogle.cloud.vertexai.v1.CitationMetadata"
+          + "B\003\340A\003\022L\n\022grounding_metadata\030\007 \001(\0132+.goog"
+          + "le.cloud.vertexai.v1.GroundingMetadataB\003"
+          + "\340A\003\"\274\001\n\014FinishReason\022\035\n\031FINISH_REASON_UN"
+          + "SPECIFIED\020\000\022\010\n\004STOP\020\001\022\016\n\nMAX_TOKENS\020\002\022\n\n"
+          + "\006SAFETY\020\003\022\016\n\nRECITATION\020\004\022\t\n\005OTHER\020\005\022\r\n\t"
+          + "BLOCKLIST\020\006\022\026\n\022PROHIBITED_CONTENT\020\007\022\010\n\004S"
+          + "PII\020\010\022\033\n\027MALFORMED_FUNCTION_CALL\020\tB\021\n\017_f"
+          + "inish_message\"g\n\007Segment\022\027\n\npart_index\030\001"
+          + " \001(\005B\003\340A\003\022\030\n\013start_index\030\002 \001(\005B\003\340A\003\022\026\n\te"
+          + "nd_index\030\003 \001(\005B\003\340A\003\022\021\n\004text\030\004 \001(\tB\003\340A\003\"\276"
+          + "\002\n\016GroundingChunk\022;\n\003web\030\001 \001(\0132,.google."
+          + "cloud.vertexai.v1.GroundingChunk.WebH\000\022V"
+          + "\n\021retrieved_context\030\002 \001(\01329.google.cloud"
+          + ".vertexai.v1.GroundingChunk.RetrievedCon"
+          + "textH\000\032=\n\003Web\022\020\n\003uri\030\001 \001(\tH\000\210\001\001\022\022\n\005title"
+          + "\030\002 \001(\tH\001\210\001\001B\006\n\004_uriB\010\n\006_title\032J\n\020Retriev"
+          + "edContext\022\020\n\003uri\030\001 \001(\tH\000\210\001\001\022\022\n\005title\030\002 \001"
+          + "(\tH\001\210\001\001B\006\n\004_uriB\010\n\006_titleB\014\n\nchunk_type\""
+          + "\223\001\n\020GroundingSupport\0227\n\007segment\030\001 \001(\0132!."
+          + "google.cloud.vertexai.v1.SegmentH\000\210\001\001\022\037\n"
+          + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n\021confid"
+          + "ence_scores\030\003 \003(\002B\n\n\010_segment\"\256\002\n\021Ground"
+          + "ingMetadata\022\037\n\022web_search_queries\030\001 \003(\tB"
+          + "\003\340A\001\022P\n\022search_entry_point\030\004 \001(\0132*.googl"
+          + "e.cloud.vertexai.v1.SearchEntryPointB\003\340A"
+          + "\001H\000\210\001\001\022B\n\020grounding_chunks\030\005 \003(\0132(.googl"
+          + "e.cloud.vertexai.v1.GroundingChunk\022K\n\022gr"
+          + "ounding_supports\030\006 \003(\0132*.google.cloud.ve"
+          + "rtexai.v1.GroundingSupportB\003\340A\001B\025\n\023_sear"
+          + "ch_entry_point\"H\n\020SearchEntryPoint\022\035\n\020re"
+          + "ndered_content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 "
+          + "\001(\014B\003\340A\001*\264\001\n\014HarmCategory\022\035\n\031HARM_CATEGO"
+          + "RY_UNSPECIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_S"
+          + "PEECH\020\001\022#\n\037HARM_CATEGORY_DANGEROUS_CONTE"
+          + "NT\020\002\022\034\n\030HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HA"
+          + "RM_CATEGORY_SEXUALLY_EXPLICIT\020\004B\311\001\n\035com."
+          + "google.cloud.vertexai.apiB\014ContentProtoP"
+          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
+          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -261,8 +332,40 @@ public final class ContentProto {
               "StopSequences",
               "PresencePenalty",
               "FrequencyPenalty",
+              "Seed",
               "ResponseMimeType",
               "ResponseSchema",
+              "RoutingConfig",
+            });
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_descriptor =
+        internal_static_google_cloud_vertexai_v1_GenerationConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_descriptor,
+            new java.lang.String[] {
+              "AutoMode", "ManualMode", "RoutingConfig",
+            });
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_AutoRoutingMode_descriptor =
+        internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_AutoRoutingMode_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_AutoRoutingMode_descriptor,
+            new java.lang.String[] {
+              "ModelRoutingPreference",
+            });
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_ManualRoutingMode_descriptor =
+        internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_ManualRoutingMode_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GenerationConfig_RoutingConfig_ManualRoutingMode_descriptor,
+            new java.lang.String[] {
+              "ModelName",
             });
     internal_static_google_cloud_vertexai_v1_SafetySetting_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -304,22 +407,64 @@ public final class ContentProto {
             new java.lang.String[] {
               "Index",
               "Content",
+              "Score",
+              "AvgLogprobs",
               "FinishReason",
               "SafetyRatings",
               "FinishMessage",
               "CitationMetadata",
               "GroundingMetadata",
             });
-    internal_static_google_cloud_vertexai_v1_GroundingMetadata_descriptor =
+    internal_static_google_cloud_vertexai_v1_Segment_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_vertexai_v1_Segment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_Segment_descriptor,
+            new java.lang.String[] {
+              "PartIndex", "StartIndex", "EndIndex", "Text",
+            });
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GroundingChunk_descriptor,
+            new java.lang.String[] {
+              "Web", "RetrievedContext", "ChunkType",
+            });
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_Web_descriptor =
+        internal_static_google_cloud_vertexai_v1_GroundingChunk_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_Web_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GroundingChunk_Web_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_RetrievedContext_descriptor =
+        internal_static_google_cloud_vertexai_v1_GroundingChunk_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_vertexai_v1_GroundingChunk_RetrievedContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GroundingChunk_RetrievedContext_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_vertexai_v1_GroundingSupport_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_vertexai_v1_GroundingSupport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GroundingSupport_descriptor,
+            new java.lang.String[] {
+              "Segment", "GroundingChunkIndices", "ConfidenceScores",
+            });
+    internal_static_google_cloud_vertexai_v1_GroundingMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_vertexai_v1_GroundingMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_GroundingMetadata_descriptor,
             new java.lang.String[] {
-              "WebSearchQueries", "SearchEntryPoint",
+              "WebSearchQueries", "SearchEntryPoint", "GroundingChunks", "GroundingSupports",
             });
     internal_static_google_cloud_vertexai_v1_SearchEntryPoint_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_vertexai_v1_SearchEntryPoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_SearchEntryPoint_descriptor,

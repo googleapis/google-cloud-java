@@ -127,10 +127,9 @@ message Retrieval {
     VertexAISearch vertex_ai_search = 2;
   }
 
-  // Optional. Disable using the result from this tool in detecting grounding
-  // attribution. This does not affect how the result is given to the model for
-  // generation.
-  bool disable_attribution = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. Deprecated. This option is no longer supported.
+  bool disable_attribution = 3
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
 }
 
 // Retrieve from Vertex AI Search datastore for grounding.
@@ -160,7 +159,7 @@ message FunctionCallingConfig {
     MODE_UNSPECIFIED = 0;
 
     // Default model behavior, model decides to predict either a function call
-    // or a natural language repspose.
+    // or a natural language response.
     AUTO = 1;
 
     // Model is constrained to always predicting a function call only.

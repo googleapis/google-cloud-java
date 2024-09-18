@@ -120,6 +120,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +192,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -256,6 +264,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -326,6 +338,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -396,6 +412,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -459,6 +479,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -620,6 +644,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -643,6 +671,10 @@ public class EndpointServiceClientHttpJsonTest {
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -693,6 +725,10 @@ public class EndpointServiceClientHttpJsonTest {
               .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
               .setPredictRequestResponseLoggingConfig(
                   PredictRequestResponseLoggingConfig.newBuilder().build())
+              .setDedicatedEndpointEnabled(true)
+              .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEndpoint(endpoint, updateMask);

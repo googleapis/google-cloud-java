@@ -1752,7 +1752,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Number of tokens in the request.
+     * Number of tokens in the request. When `cached_content` is set, this is
+     * still the total effective prompt size meaning this includes the number of
+     * tokens in the cached content.
      * </pre>
      *
      * <code>int32 prompt_token_count = 1;</code>
@@ -1829,7 +1831,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Number of tokens in the request.
+     * Number of tokens in the request. When `cached_content` is set, this is
+     * still the total effective prompt size meaning this includes the number of
+     * tokens in the cached content.
      * </pre>
      *
      * <code>int32 prompt_token_count = 1;</code>
@@ -2273,7 +2277,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Number of tokens in the request.
+       * Number of tokens in the request. When `cached_content` is set, this is
+       * still the total effective prompt size meaning this includes the number of
+       * tokens in the cached content.
        * </pre>
        *
        * <code>int32 prompt_token_count = 1;</code>
@@ -2288,7 +2294,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Number of tokens in the request.
+       * Number of tokens in the request. When `cached_content` is set, this is
+       * still the total effective prompt size meaning this includes the number of
+       * tokens in the cached content.
        * </pre>
        *
        * <code>int32 prompt_token_count = 1;</code>
@@ -2307,7 +2315,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Number of tokens in the request.
+       * Number of tokens in the request. When `cached_content` is set, this is
+       * still the total effective prompt size meaning this includes the number of
+       * tokens in the cached content.
        * </pre>
        *
        * <code>int32 prompt_token_count = 1;</code>

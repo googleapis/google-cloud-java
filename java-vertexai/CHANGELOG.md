@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.9.0 (2024-09-11)
+
+### Features
+
+* add util class SchemaMaker to create Schema from JsonString or JsonObject ([#11118](https://github.com/googleapis/google-cloud-java/issues/11118)) ([22f9fe3](https://github.com/googleapis/google-cloud-java/commit/22f9fe3c46b004bf856ba62f5c3d4eafcb41af42))
+* update gapic library to the latest version ([#11129](https://github.com/googleapis/google-cloud-java/issues/11129)) ([711cd72](https://github.com/googleapis/google-cloud-java/commit/711cd7250f5c420a8d721952b43e05076e5ba130))
+
+
+
 ## 1.8.0 (2024-08-21)
 
 ### Features

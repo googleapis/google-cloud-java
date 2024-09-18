@@ -48,17 +48,21 @@ public final class ServiceNetworkingProto {
       "\n1google/cloud/vertexai/v1/service_netwo"
           + "rking.proto\022\030google.cloud.vertexai.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\"e\n\033PrivateServiceConne"
-          + "ctConfig\022+\n\036enable_private_service_conne"
-          + "ct\030\001 \001(\010B\003\340A\002\022\031\n\021project_allowlist\030\002 \003(\t"
-          + "\"S\n\025PscAutomatedEndpoints\022\022\n\nproject_id\030"
-          + "\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rmatch_address\030"
-          + "\003 \001(\tB\323\001\n\035com.google.cloud.vertexai.apiB"
-          + "\026ServiceNetworkingProtoP\001Z>cloud.google."
-          + "com/go/aiplatform/apiv1/aiplatformpb;aip"
-          + "latformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002"
-          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
-          + "oud::AIPlatform::V1b\006proto3"
+          + "pi/resource.proto\"\206\001\n\033PrivateServiceConn"
+          + "ectConfig\022+\n\036enable_private_service_conn"
+          + "ect\030\001 \001(\010B\003\340A\002\022\031\n\021project_allowlist\030\002 \003("
+          + "\t\022\037\n\022service_attachment\030\005 \001(\tB\003\340A\003\"S\n\025Ps"
+          + "cAutomatedEndpoints\022\022\n\nproject_id\030\001 \001(\t\022"
+          + "\017\n\007network\030\002 \001(\t\022\025\n\rmatch_address\030\003 \001(\tB"
+          + "\314\002\n\035com.google.cloud.vertexai.apiB\026Servi"
+          + "ceNetworkingProtoP\001Z>cloud.google.com/go"
+          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1\352Av\n(compute.googleapis.com"
+          + "/NetworkAttachment\022Jprojects/{project}/r"
+          + "egions/{region}/networkAttachments/{netw"
+          + "orkattachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -73,7 +77,7 @@ public final class ServiceNetworkingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_descriptor,
             new java.lang.String[] {
-              "EnablePrivateServiceConnect", "ProjectAllowlist",
+              "EnablePrivateServiceConnect", "ProjectAllowlist", "ServiceAttachment",
             });
     internal_static_google_cloud_vertexai_v1_PscAutomatedEndpoints_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -86,6 +90,7 @@ public final class ServiceNetworkingProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
