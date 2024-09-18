@@ -337,6 +337,11 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     return ((GDCHardwareManagementStubSettings) getStubSettings()).createCommentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to recordActionOnComment. */
+  public UnaryCallSettings<RecordActionOnCommentRequest, Comment> recordActionOnCommentSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).recordActionOnCommentSettings();
+  }
+
   /** Returns the object with the settings used for calls to listChangeLogEntries. */
   public PagedCallSettings<
           ListChangeLogEntriesRequest,
@@ -747,6 +752,12 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<CreateCommentRequest, Comment, OperationMetadata>
         createCommentOperationSettings() {
       return getStubSettingsBuilder().createCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to recordActionOnComment. */
+    public UnaryCallSettings.Builder<RecordActionOnCommentRequest, Comment>
+        recordActionOnCommentSettings() {
+      return getStubSettingsBuilder().recordActionOnCommentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listChangeLogEntries. */

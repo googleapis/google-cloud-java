@@ -19,6 +19,7 @@ package com.google.maps.places.v1.samples;
 // [START places_v1_generated_Places_SearchNearby_async]
 import com.google.api.core.ApiFuture;
 import com.google.maps.places.v1.PlacesClient;
+import com.google.maps.places.v1.RoutingParameters;
 import com.google.maps.places.v1.SearchNearbyRequest;
 import com.google.maps.places.v1.SearchNearbyResponse;
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class AsyncSearchNearby {
               .addAllExcludedPrimaryTypes(new ArrayList<String>())
               .setMaxResultCount(-1736124056)
               .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
               .build();
       ApiFuture<SearchNearbyResponse> future =
           placesClient.searchNearbyCallable().futureCall(request);

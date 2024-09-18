@@ -342,4 +342,48 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ToolOrBuilder getToolsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  boolean hasGenerationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder getGenerationConfigOrBuilder();
 }

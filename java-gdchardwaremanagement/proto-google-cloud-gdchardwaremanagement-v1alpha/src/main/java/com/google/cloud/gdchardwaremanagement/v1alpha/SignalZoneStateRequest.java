@@ -85,7 +85,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      * <code>STATE_SIGNAL_UNSPECIFIED = 0;</code>
      */
-    STATE_SIGNAL_UNSPECIFIED(0),
+    STATE_SIGNAL_UNSPECIFIED(0, 0),
     /**
      *
      *
@@ -93,9 +93,9 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * The Zone is ready for site turnup.
      * </pre>
      *
-     * <code>READY_FOR_SITE_TURNUP = 1;</code>
+     * <code>FACTORY_TURNUP_CHECKS_PASSED = 1;</code>
      */
-    READY_FOR_SITE_TURNUP(1),
+    FACTORY_TURNUP_CHECKS_PASSED(1, 1),
     /**
      *
      *
@@ -105,10 +105,20 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      * <code>FACTORY_TURNUP_CHECKS_FAILED = 2;</code>
      */
-    FACTORY_TURNUP_CHECKS_FAILED(2),
-    UNRECOGNIZED(-1),
+    FACTORY_TURNUP_CHECKS_FAILED(3, 2),
+    UNRECOGNIZED(-1, -1),
     ;
 
+    /**
+     *
+     *
+     * <pre>
+     * The Zone is ready for site turnup. Deprecated, but not deleted.
+     * </pre>
+     *
+     * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
+     */
+    public static final StateSignal READY_FOR_SITE_TURNUP = FACTORY_TURNUP_CHECKS_PASSED;
     /**
      *
      *
@@ -126,9 +136,19 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * The Zone is ready for site turnup.
      * </pre>
      *
-     * <code>READY_FOR_SITE_TURNUP = 1;</code>
+     * <code>FACTORY_TURNUP_CHECKS_PASSED = 1;</code>
      */
-    public static final int READY_FOR_SITE_TURNUP_VALUE = 1;
+    public static final int FACTORY_TURNUP_CHECKS_PASSED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The Zone is ready for site turnup. Deprecated, but not deleted.
+     * </pre>
+     *
+     * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int READY_FOR_SITE_TURNUP_VALUE = 1;
     /**
      *
      *
@@ -141,7 +161,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public static final int FACTORY_TURNUP_CHECKS_FAILED_VALUE = 2;
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
@@ -167,7 +187,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         case 0:
           return STATE_SIGNAL_UNSPECIFIED;
         case 1:
-          return READY_FOR_SITE_TURNUP;
+          return FACTORY_TURNUP_CHECKS_PASSED;
         case 2:
           return FACTORY_TURNUP_CHECKS_FAILED;
         default:
@@ -187,11 +207,11 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValues().get(index);
     }
 
     public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -204,7 +224,16 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
           .get(0);
     }
 
-    private static final StateSignal[] VALUES = values();
+    private static final StateSignal[] VALUES = getStaticValuesArray();
+
+    private static StateSignal[] getStaticValuesArray() {
+      return new StateSignal[] {
+        STATE_SIGNAL_UNSPECIFIED,
+        FACTORY_TURNUP_CHECKS_PASSED,
+        READY_FOR_SITE_TURNUP,
+        FACTORY_TURNUP_CHECKS_FAILED,
+      };
+    }
 
     public static StateSignal valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -216,9 +245,11 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       return VALUES[desc.getIndex()];
     }
 
+    private final int index;
     private final int value;
 
-    private StateSignal(int value) {
+    private StateSignal(int index, int value) {
+      this.index = index;
       this.value = value;
     }
 

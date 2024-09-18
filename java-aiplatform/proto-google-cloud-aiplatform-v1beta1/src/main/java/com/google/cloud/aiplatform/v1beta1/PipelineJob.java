@@ -47,6 +47,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     templateUri_ = "";
     scheduleName_ = "";
+    pipelineTaskRerunConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -4853,6 +4854,146 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int ORIGINAL_PIPELINE_JOB_ID_FIELD_NUMBER = 29;
+  private long originalPipelineJobId_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The original pipeline job id if this pipeline job is a rerun
+   * of a previous pipeline job.
+   * </pre>
+   *
+   * <code>int64 original_pipeline_job_id = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The originalPipelineJobId.
+   */
+  @java.lang.Override
+  public long getOriginalPipelineJobId() {
+    return originalPipelineJobId_;
+  }
+
+  public static final int PIPELINE_TASK_RERUN_CONFIGS_FIELD_NUMBER = 30;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
+      pipelineTaskRerunConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The rerun configs for each task in the pipeline job.
+   * By default, the rerun will:
+   * 1. Use the same input artifacts as the original run.
+   * 2. Use the same input parameters as the original run.
+   * 3. Skip all the tasks that are already succeeded in the original run.
+   * 4. Rerun all the tasks that are not succeeded in the original run.
+   * By providing this field, users can override the default behavior and
+   * specify the rerun config for each task.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
+      getPipelineTaskRerunConfigsList() {
+    return pipelineTaskRerunConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The rerun configs for each task in the pipeline job.
+   * By default, the rerun will:
+   * 1. Use the same input artifacts as the original run.
+   * 2. Use the same input parameters as the original run.
+   * 3. Skip all the tasks that are already succeeded in the original run.
+   * 4. Rerun all the tasks that are not succeeded in the original run.
+   * By providing this field, users can override the default behavior and
+   * specify the rerun config for each task.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>
+      getPipelineTaskRerunConfigsOrBuilderList() {
+    return pipelineTaskRerunConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The rerun configs for each task in the pipeline job.
+   * By default, the rerun will:
+   * 1. Use the same input artifacts as the original run.
+   * 2. Use the same input parameters as the original run.
+   * 3. Skip all the tasks that are already succeeded in the original run.
+   * 4. Rerun all the tasks that are not succeeded in the original run.
+   * By providing this field, users can override the default behavior and
+   * specify the rerun config for each task.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPipelineTaskRerunConfigsCount() {
+    return pipelineTaskRerunConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The rerun configs for each task in the pipeline job.
+   * By default, the rerun will:
+   * 1. Use the same input artifacts as the original run.
+   * 2. Use the same input parameters as the original run.
+   * 3. Skip all the tasks that are already succeeded in the original run.
+   * 4. Rerun all the tasks that are not succeeded in the original run.
+   * By providing this field, users can override the default behavior and
+   * specify the rerun config for each task.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig getPipelineTaskRerunConfigs(
+      int index) {
+    return pipelineTaskRerunConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The rerun configs for each task in the pipeline job.
+   * By default, the rerun will:
+   * 1. Use the same input artifacts as the original run.
+   * 2. Use the same input parameters as the original run.
+   * 3. Skip all the tasks that are already succeeded in the original run.
+   * 4. Rerun all the tasks that are not succeeded in the original run.
+   * By providing this field, users can override the default behavior and
+   * specify the rerun config for each task.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder
+      getPipelineTaskRerunConfigsOrBuilder(int index) {
+    return pipelineTaskRerunConfigs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4933,6 +5074,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(28, satisfiesPzi_);
+    }
+    if (originalPipelineJobId_ != 0L) {
+      output.writeInt64(29, originalPipelineJobId_);
+    }
+    for (int i = 0; i < pipelineTaskRerunConfigs_.size(); i++) {
+      output.writeMessage(30, pipelineTaskRerunConfigs_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5023,6 +5170,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, satisfiesPzi_);
     }
+    if (originalPipelineJobId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(29, originalPipelineJobId_);
+    }
+    for (int i = 0; i < pipelineTaskRerunConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, pipelineTaskRerunConfigs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5091,6 +5246,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (getPreflightValidations() != other.getPreflightValidations()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (getOriginalPipelineJobId() != other.getOriginalPipelineJobId()) return false;
+    if (!getPipelineTaskRerunConfigsList().equals(other.getPipelineTaskRerunConfigsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5170,6 +5328,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    hash = (37 * hash) + ORIGINAL_PIPELINE_JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOriginalPipelineJobId());
+    if (getPipelineTaskRerunConfigsCount() > 0) {
+      hash = (37 * hash) + PIPELINE_TASK_RERUN_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPipelineTaskRerunConfigsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5342,6 +5506,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         getRuntimeConfigFieldBuilder();
         getEncryptionSpecFieldBuilder();
         getTemplateMetadataFieldBuilder();
+        getPipelineTaskRerunConfigsFieldBuilder();
       }
     }
 
@@ -5411,6 +5576,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       preflightValidations_ = false;
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      originalPipelineJobId_ = 0L;
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        pipelineTaskRerunConfigs_ = java.util.Collections.emptyList();
+      } else {
+        pipelineTaskRerunConfigs_ = null;
+        pipelineTaskRerunConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00800000);
       return this;
     }
 
@@ -5438,11 +5611,26 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.PipelineJob buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PipelineJob result =
           new com.google.cloud.aiplatform.v1beta1.PipelineJob(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.PipelineJob result) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)) {
+          pipelineTaskRerunConfigs_ =
+              java.util.Collections.unmodifiableList(pipelineTaskRerunConfigs_);
+          bitField0_ = (bitField0_ & ~0x00800000);
+        }
+        result.pipelineTaskRerunConfigs_ = pipelineTaskRerunConfigs_;
+      } else {
+        result.pipelineTaskRerunConfigs_ = pipelineTaskRerunConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.PipelineJob result) {
@@ -5529,6 +5717,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.originalPipelineJobId_ = originalPipelineJobId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5662,6 +5853,36 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.getOriginalPipelineJobId() != 0L) {
+        setOriginalPipelineJobId(other.getOriginalPipelineJobId());
+      }
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        if (!other.pipelineTaskRerunConfigs_.isEmpty()) {
+          if (pipelineTaskRerunConfigs_.isEmpty()) {
+            pipelineTaskRerunConfigs_ = other.pipelineTaskRerunConfigs_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+          } else {
+            ensurePipelineTaskRerunConfigsIsMutable();
+            pipelineTaskRerunConfigs_.addAll(other.pipelineTaskRerunConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pipelineTaskRerunConfigs_.isEmpty()) {
+          if (pipelineTaskRerunConfigsBuilder_.isEmpty()) {
+            pipelineTaskRerunConfigsBuilder_.dispose();
+            pipelineTaskRerunConfigsBuilder_ = null;
+            pipelineTaskRerunConfigs_ = other.pipelineTaskRerunConfigs_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+            pipelineTaskRerunConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPipelineTaskRerunConfigsFieldBuilder()
+                    : null;
+          } else {
+            pipelineTaskRerunConfigsBuilder_.addAllMessages(other.pipelineTaskRerunConfigs_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5829,6 +6050,26 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 224
+            case 232:
+              {
+                originalPipelineJobId_ = input.readInt64();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 232
+            case 242:
+              {
+                com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.parser(),
+                        extensionRegistry);
+                if (pipelineTaskRerunConfigsBuilder_ == null) {
+                  ensurePipelineTaskRerunConfigsIsMutable();
+                  pipelineTaskRerunConfigs_.add(m);
+                } else {
+                  pipelineTaskRerunConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9319,6 +9560,598 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private long originalPipelineJobId_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The original pipeline job id if this pipeline job is a rerun
+     * of a previous pipeline job.
+     * </pre>
+     *
+     * <code>int64 original_pipeline_job_id = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The originalPipelineJobId.
+     */
+    @java.lang.Override
+    public long getOriginalPipelineJobId() {
+      return originalPipelineJobId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The original pipeline job id if this pipeline job is a rerun
+     * of a previous pipeline job.
+     * </pre>
+     *
+     * <code>int64 original_pipeline_job_id = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The originalPipelineJobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginalPipelineJobId(long value) {
+
+      originalPipelineJobId_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The original pipeline job id if this pipeline job is a rerun
+     * of a previous pipeline job.
+     * </pre>
+     *
+     * <code>int64 original_pipeline_job_id = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginalPipelineJobId() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      originalPipelineJobId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
+        pipelineTaskRerunConfigs_ = java.util.Collections.emptyList();
+
+    private void ensurePipelineTaskRerunConfigsIsMutable() {
+      if (!((bitField0_ & 0x00800000) != 0)) {
+        pipelineTaskRerunConfigs_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>(
+                pipelineTaskRerunConfigs_);
+        bitField0_ |= 0x00800000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig,
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>
+        pipelineTaskRerunConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
+        getPipelineTaskRerunConfigsList() {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pipelineTaskRerunConfigs_);
+      } else {
+        return pipelineTaskRerunConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPipelineTaskRerunConfigsCount() {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        return pipelineTaskRerunConfigs_.size();
+      } else {
+        return pipelineTaskRerunConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig getPipelineTaskRerunConfigs(
+        int index) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        return pipelineTaskRerunConfigs_.get(index);
+      } else {
+        return pipelineTaskRerunConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineTaskRerunConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig value) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.set(index, value);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineTaskRerunConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder builderForValue) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskRerunConfigs(
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig value) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.add(value);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskRerunConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig value) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.add(index, value);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskRerunConfigs(
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder builderForValue) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPipelineTaskRerunConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder builderForValue) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPipelineTaskRerunConfigs(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
+            values) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        ensurePipelineTaskRerunConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pipelineTaskRerunConfigs_);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPipelineTaskRerunConfigs() {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        pipelineTaskRerunConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePipelineTaskRerunConfigs(int index) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        ensurePipelineTaskRerunConfigsIsMutable();
+        pipelineTaskRerunConfigs_.remove(index);
+        onChanged();
+      } else {
+        pipelineTaskRerunConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder
+        getPipelineTaskRerunConfigsBuilder(int index) {
+      return getPipelineTaskRerunConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder
+        getPipelineTaskRerunConfigsOrBuilder(int index) {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        return pipelineTaskRerunConfigs_.get(index);
+      } else {
+        return pipelineTaskRerunConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>
+        getPipelineTaskRerunConfigsOrBuilderList() {
+      if (pipelineTaskRerunConfigsBuilder_ != null) {
+        return pipelineTaskRerunConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pipelineTaskRerunConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder
+        addPipelineTaskRerunConfigsBuilder() {
+      return getPipelineTaskRerunConfigsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder
+        addPipelineTaskRerunConfigsBuilder(int index) {
+      return getPipelineTaskRerunConfigsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rerun configs for each task in the pipeline job.
+     * By default, the rerun will:
+     * 1. Use the same input artifacts as the original run.
+     * 2. Use the same input parameters as the original run.
+     * 3. Skip all the tasks that are already succeeded in the original run.
+     * 4. Rerun all the tasks that are not succeeded in the original run.
+     * By providing this field, users can override the default behavior and
+     * specify the rerun config for each task.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig pipeline_task_rerun_configs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder>
+        getPipelineTaskRerunConfigsBuilderList() {
+      return getPipelineTaskRerunConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig,
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>
+        getPipelineTaskRerunConfigsFieldBuilder() {
+      if (pipelineTaskRerunConfigsBuilder_ == null) {
+        pipelineTaskRerunConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig,
+                com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>(
+                pipelineTaskRerunConfigs_,
+                ((bitField0_ & 0x00800000) != 0),
+                getParentForChildren(),
+                isClean());
+        pipelineTaskRerunConfigs_ = null;
+      }
+      return pipelineTaskRerunConfigsBuilder_;
     }
 
     @java.lang.Override

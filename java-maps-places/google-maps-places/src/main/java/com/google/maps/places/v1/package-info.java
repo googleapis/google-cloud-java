@@ -45,6 +45,7 @@
  *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
  *           .setMaxResultCount(-1736124056)
  *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+ *           .setRoutingParameters(RoutingParameters.newBuilder().build())
  *           .build();
  *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }

@@ -866,6 +866,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -919,6 +920,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -972,6 +974,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1034,6 +1037,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1096,6 +1100,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1117,6 +1122,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setGoogleMapsPinUri("googleMapsPinUri123053095")
             .addAllAccessTimes(new ArrayList<TimePeriod>())
             .setNotes("notes105008833")
+            .setCustomerSiteId("customerSiteId1913503808")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1158,6 +1164,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setGoogleMapsPinUri("googleMapsPinUri123053095")
               .addAllAccessTimes(new ArrayList<TimePeriod>())
               .setNotes("notes105008833")
+              .setCustomerSiteId("customerSiteId1913503808")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSiteAsync(site, updateMask).get();
@@ -2356,6 +2363,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setAuthor("author-1406328437")
             .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2404,6 +2413,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setAuthor("author-1406328437")
             .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2454,6 +2465,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setAuthor("author-1406328437")
             .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2511,6 +2524,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setAuthor("author-1406328437")
             .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2556,6 +2571,116 @@ public class GDCHardwareManagementClientHttpJsonTest {
       client.createCommentAsync(parent, comment, commentId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void recordActionOnCommentTest() throws Exception {
+    Comment expectedResponse =
+        Comment.newBuilder()
+            .setName(CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthor("author-1406328437")
+            .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CommentName name = CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]");
+    RecordActionOnCommentRequest.ActionType actionType =
+        RecordActionOnCommentRequest.ActionType.forNumber(0);
+
+    Comment actualResponse = client.recordActionOnComment(name, actionType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void recordActionOnCommentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CommentName name = CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]");
+      RecordActionOnCommentRequest.ActionType actionType =
+          RecordActionOnCommentRequest.ActionType.forNumber(0);
+      client.recordActionOnComment(name, actionType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void recordActionOnCommentTest2() throws Exception {
+    Comment expectedResponse =
+        Comment.newBuilder()
+            .setName(CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthor("author-1406328437")
+            .setText("text3556653")
+            .setCustomerViewedTime(Timestamp.newBuilder().build())
+            .setAuthorEntity(Entity.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6823/locations/location-6823/orders/order-6823/comments/comment-6823";
+    RecordActionOnCommentRequest.ActionType actionType =
+        RecordActionOnCommentRequest.ActionType.forNumber(0);
+
+    Comment actualResponse = client.recordActionOnComment(name, actionType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void recordActionOnCommentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6823/locations/location-6823/orders/order-6823/comments/comment-6823";
+      RecordActionOnCommentRequest.ActionType actionType =
+          RecordActionOnCommentRequest.ActionType.forNumber(0);
+      client.recordActionOnComment(name, actionType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -3080,6 +3205,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3132,6 +3258,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3184,6 +3311,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3245,6 +3373,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3306,6 +3435,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3326,6 +3456,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3366,6 +3497,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setCiqUri("ciqUri-1360259935")
               .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
               .setGloballyUniqueId("globallyUniqueId-1207923364")
+              .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateZoneAsync(zone, updateMask).get();
@@ -3477,6 +3609,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3538,6 +3671,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setCiqUri("ciqUri-1360259935")
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
+            .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

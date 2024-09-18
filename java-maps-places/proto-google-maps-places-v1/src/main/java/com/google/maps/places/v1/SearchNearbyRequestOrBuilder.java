@@ -654,4 +654,45 @@ public interface SearchNearbyRequestOrBuilder
    * @return The rankPreference.
    */
   com.google.maps.places.v1.SearchNearbyRequest.RankPreference getRankPreference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routingParameters field is set.
+   */
+  boolean hasRoutingParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingParameters.
+   */
+  com.google.maps.places.v1.RoutingParameters getRoutingParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder();
 }

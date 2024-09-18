@@ -83,6 +83,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -1045,6 +1046,44 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RecordActionOnCommentRequest, Comment>
+      recordActionOnCommentMethodDescriptor =
+          ApiMethodDescriptor.<RecordActionOnCommentRequest, Comment>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/RecordActionOnComment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RecordActionOnCommentRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/orders/*/comments/*}:recordAction",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RecordActionOnCommentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RecordActionOnCommentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Comment>newBuilder()
+                      .setDefaultInstance(Comment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
       listChangeLogEntriesMethodDescriptor =
@@ -1558,6 +1597,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   private final UnaryCallable<CreateCommentRequest, Operation> createCommentCallable;
   private final OperationCallable<CreateCommentRequest, Comment, OperationMetadata>
       createCommentOperationCallable;
+  private final UnaryCallable<RecordActionOnCommentRequest, Comment> recordActionOnCommentCallable;
   private final UnaryCallable<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
       listChangeLogEntriesCallable;
   private final UnaryCallable<ListChangeLogEntriesRequest, ListChangeLogEntriesPagedResponse>
@@ -1917,6 +1957,18 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RecordActionOnCommentRequest, Comment>
+        recordActionOnCommentTransportSettings =
+            HttpJsonCallSettings.<RecordActionOnCommentRequest, Comment>newBuilder()
+                .setMethodDescriptor(recordActionOnCommentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
         listChangeLogEntriesTransportSettings =
             HttpJsonCallSettings
@@ -2226,6 +2278,11 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
             settings.createCommentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.recordActionOnCommentCallable =
+        callableFactory.createUnaryCallable(
+            recordActionOnCommentTransportSettings,
+            settings.recordActionOnCommentSettings(),
+            clientContext);
     this.listChangeLogEntriesCallable =
         callableFactory.createUnaryCallable(
             listChangeLogEntriesTransportSettings,
@@ -2335,6 +2392,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
     methodDescriptors.add(listCommentsMethodDescriptor);
     methodDescriptors.add(getCommentMethodDescriptor);
     methodDescriptors.add(createCommentMethodDescriptor);
+    methodDescriptors.add(recordActionOnCommentMethodDescriptor);
     methodDescriptors.add(listChangeLogEntriesMethodDescriptor);
     methodDescriptors.add(getChangeLogEntryMethodDescriptor);
     methodDescriptors.add(listSkusMethodDescriptor);
@@ -2572,6 +2630,11 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   public OperationCallable<CreateCommentRequest, Comment, OperationMetadata>
       createCommentOperationCallable() {
     return createCommentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RecordActionOnCommentRequest, Comment> recordActionOnCommentCallable() {
+    return recordActionOnCommentCallable;
   }
 
   @Override

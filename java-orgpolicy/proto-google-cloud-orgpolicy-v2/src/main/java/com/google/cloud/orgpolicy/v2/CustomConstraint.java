@@ -131,6 +131,26 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>DELETE = 3;</code>
      */
     DELETE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Constraint applied when removing an IAM grant.
+     * </pre>
+     *
+     * <code>REMOVE_GRANT = 4;</code>
+     */
+    REMOVE_GRANT(4),
+    /**
+     *
+     *
+     * <pre>
+     * Constraint applied when enforcing forced tagging.
+     * </pre>
+     *
+     * <code>GOVERN_TAGS = 5;</code>
+     */
+    GOVERN_TAGS(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -175,6 +195,26 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>DELETE = 3;</code>
      */
     public static final int DELETE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Constraint applied when removing an IAM grant.
+     * </pre>
+     *
+     * <code>REMOVE_GRANT = 4;</code>
+     */
+    public static final int REMOVE_GRANT_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Constraint applied when enforcing forced tagging.
+     * </pre>
+     *
+     * <code>GOVERN_TAGS = 5;</code>
+     */
+    public static final int GOVERN_TAGS_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,6 +248,10 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
           return UPDATE;
         case 3:
           return DELETE;
+        case 4:
+          return REMOVE_GRANT;
+        case 5:
+          return GOVERN_TAGS;
         default:
           return null;
       }

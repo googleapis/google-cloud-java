@@ -92,7 +92,7 @@ public final class IndexEndpointProto {
           + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:u\352Ar\n\'aip"
           + "latform.googleapis.com/IndexEndpoint\022Gpr"
           + "ojects/{project}/locations/{location}/in"
-          + "dexEndpoints/{index_endpoint}\"\253\005\n\rDeploy"
+          + "dexEndpoints/{index_endpoint}\"\206\006\n\rDeploy"
           + "edIndex\022\017\n\002id\030\001 \001(\tB\003\340A\002\0226\n\005index\030\002 \001(\tB"
           + "\'\340A\002\372A!\n\037aiplatform.googleapis.com/Index"
           + "\022\024\n\014display_name\030\003 \001(\t\0224\n\013create_time\030\004 "
@@ -109,23 +109,25 @@ public final class IndexEndpointProto {
           + "oyed_index_auth_config\030\t \001(\01328.google.cl"
           + "oud.aiplatform.v1beta1.DeployedIndexAuth"
           + "ConfigB\003\340A\001\022\037\n\022reserved_ip_ranges\030\n \003(\tB"
-          + "\003\340A\001\022\035\n\020deployment_group\030\013 \001(\tB\003\340A\001\"\263\001\n\027"
-          + "DeployedIndexAuthConfig\022\\\n\rauth_provider"
-          + "\030\001 \001(\0132E.google.cloud.aiplatform.v1beta1"
-          + ".DeployedIndexAuthConfig.AuthProvider\032:\n"
-          + "\014AuthProvider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allo"
-          + "wed_issuers\030\002 \003(\t\"\267\001\n\025IndexPrivateEndpoi"
-          + "nts\022\037\n\022match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022"
-          + "service_attachment\030\002 \001(\tB\003\340A\003\022\\\n\027psc_aut"
-          + "omated_endpoints\030\003 \003(\01326.google.cloud.ai"
-          + "platform.v1beta1.PscAutomatedEndpointsB\003"
-          + "\340A\003B\351\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\022IndexEndpointProtoP\001ZCcloud.google."
-          + "com/go/aiplatform/apiv1beta1/aiplatformp"
-          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "\003\340A\001\022\035\n\020deployment_group\030\013 \001(\tB\003\340A\001\022Y\n\026p"
+          + "sc_automation_configs\030\023 \003(\01324.google.clo"
+          + "ud.aiplatform.v1beta1.PSCAutomationConfi"
+          + "gB\003\340A\001\"\263\001\n\027DeployedIndexAuthConfig\022\\\n\rau"
+          + "th_provider\030\001 \001(\0132E.google.cloud.aiplatf"
+          + "orm.v1beta1.DeployedIndexAuthConfig.Auth"
+          + "Provider\032:\n\014AuthProvider\022\021\n\taudiences\030\001 "
+          + "\003(\t\022\027\n\017allowed_issuers\030\002 \003(\t\"\267\001\n\025IndexPr"
+          + "ivateEndpoints\022\037\n\022match_grpc_address\030\001 \001"
+          + "(\tB\003\340A\003\022\037\n\022service_attachment\030\002 \001(\tB\003\340A\003"
+          + "\022\\\n\027psc_automated_endpoints\030\003 \003(\01326.goog"
+          + "le.cloud.aiplatform.v1beta1.PscAutomated"
+          + "EndpointsB\003\340A\003B\351\001\n#com.google.cloud.aipl"
+          + "atform.v1beta1B\022IndexEndpointProtoP\001ZCcl"
+          + "oud.google.com/go/aiplatform/apiv1beta1/"
+          + "aiplatformpb;aiplatformpb\252\002\037Google.Cloud"
+          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
+          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
+          + "m::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -189,6 +191,7 @@ public final class IndexEndpointProto {
               "DeployedIndexAuthConfig",
               "ReservedIpRanges",
               "DeploymentGroup",
+              "PscAutomationConfigs",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployedIndexAuthConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);

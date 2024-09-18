@@ -443,4 +443,88 @@ public interface SearchTextRequestOrBuilder
    * </code>
    */
   com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder getEvOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routingParameters field is set.
+   */
+  boolean hasRoutingParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingParameters.
+   */
+  com.google.maps.places.v1.RoutingParameters getRoutingParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchAlongRouteParameters field is set.
+   */
+  boolean hasSearchAlongRouteParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchAlongRouteParameters.
+   */
+  com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+      getSearchAlongRouteParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder
+      getSearchAlongRouteParametersOrBuilder();
 }

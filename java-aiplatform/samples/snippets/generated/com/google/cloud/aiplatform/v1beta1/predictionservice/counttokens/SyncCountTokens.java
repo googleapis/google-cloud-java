@@ -21,6 +21,7 @@ import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
+import com.google.cloud.aiplatform.v1beta1.GenerationConfig;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.Tool;
 import com.google.protobuf.Value;
@@ -50,6 +51,7 @@ public class SyncCountTokens {
               .addAllContents(new ArrayList<Content>())
               .setSystemInstruction(Content.newBuilder().build())
               .addAllTools(new ArrayList<Tool>())
+              .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       CountTokensResponse response = predictionServiceClient.countTokens(request);
     }

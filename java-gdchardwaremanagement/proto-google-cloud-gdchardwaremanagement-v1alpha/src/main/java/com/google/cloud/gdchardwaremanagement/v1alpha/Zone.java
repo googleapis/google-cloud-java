@@ -45,6 +45,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     contacts_ = java.util.Collections.emptyList();
     ciqUri_ = "";
     globallyUniqueId_ = "";
+    subscriptionConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -946,6 +947,92 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SUBSCRIPTION_CONFIGS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+      subscriptionConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+      getSubscriptionConfigsList() {
+    return subscriptionConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
+      getSubscriptionConfigsOrBuilderList() {
+    return subscriptionConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSubscriptionConfigsCount() {
+    return subscriptionConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig getSubscriptionConfigs(
+      int index) {
+    return subscriptionConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder
+      getSubscriptionConfigsOrBuilder(int index) {
+    return subscriptionConfigs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -990,6 +1077,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(globallyUniqueId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, globallyUniqueId_);
+    }
+    for (int i = 0; i < subscriptionConfigs_.size(); i++) {
+      output.writeMessage(13, subscriptionConfigs_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1039,6 +1129,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(globallyUniqueId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, globallyUniqueId_);
     }
+    for (int i = 0; i < subscriptionConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, subscriptionConfigs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1074,6 +1168,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
     if (!getGloballyUniqueId().equals(other.getGloballyUniqueId())) return false;
+    if (!getSubscriptionConfigsList().equals(other.getSubscriptionConfigsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1115,6 +1210,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + GLOBALLY_UNIQUE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getGloballyUniqueId().hashCode();
+    if (getSubscriptionConfigsCount() > 0) {
+      hash = (37 * hash) + SUBSCRIPTION_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscriptionConfigsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1281,6 +1380,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getContactsFieldBuilder();
         getNetworkConfigFieldBuilder();
+        getSubscriptionConfigsFieldBuilder();
       }
     }
 
@@ -1316,6 +1416,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_ = null;
       }
       globallyUniqueId_ = "";
+      if (subscriptionConfigsBuilder_ == null) {
+        subscriptionConfigs_ = java.util.Collections.emptyList();
+      } else {
+        subscriptionConfigs_ = null;
+        subscriptionConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1361,6 +1468,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         result.contacts_ = contacts_;
       } else {
         result.contacts_ = contactsBuilder_.build();
+      }
+      if (subscriptionConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          subscriptionConfigs_ = java.util.Collections.unmodifiableList(subscriptionConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.subscriptionConfigs_ = subscriptionConfigs_;
+      } else {
+        result.subscriptionConfigs_ = subscriptionConfigsBuilder_.build();
       }
     }
 
@@ -1509,6 +1625,33 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (subscriptionConfigsBuilder_ == null) {
+        if (!other.subscriptionConfigs_.isEmpty()) {
+          if (subscriptionConfigs_.isEmpty()) {
+            subscriptionConfigs_ = other.subscriptionConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureSubscriptionConfigsIsMutable();
+            subscriptionConfigs_.addAll(other.subscriptionConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.subscriptionConfigs_.isEmpty()) {
+          if (subscriptionConfigsBuilder_.isEmpty()) {
+            subscriptionConfigsBuilder_.dispose();
+            subscriptionConfigsBuilder_ = null;
+            subscriptionConfigs_ = other.subscriptionConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            subscriptionConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSubscriptionConfigsFieldBuilder()
+                    : null;
+          } else {
+            subscriptionConfigsBuilder_.addAllMessages(other.subscriptionConfigs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1609,6 +1752,20 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 98
+            case 106:
+              {
+                com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig m =
+                    input.readMessage(
+                        com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.parser(),
+                        extensionRegistry);
+                if (subscriptionConfigsBuilder_ == null) {
+                  ensureSubscriptionConfigsIsMutable();
+                  subscriptionConfigs_.add(m);
+                } else {
+                  subscriptionConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3351,6 +3508,417 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+        subscriptionConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureSubscriptionConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        subscriptionConfigs_ =
+            new java.util.ArrayList<
+                com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>(
+                subscriptionConfigs_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig,
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
+        subscriptionConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+        getSubscriptionConfigsList() {
+      if (subscriptionConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(subscriptionConfigs_);
+      } else {
+        return subscriptionConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getSubscriptionConfigsCount() {
+      if (subscriptionConfigsBuilder_ == null) {
+        return subscriptionConfigs_.size();
+      } else {
+        return subscriptionConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig getSubscriptionConfigs(
+        int index) {
+      if (subscriptionConfigsBuilder_ == null) {
+        return subscriptionConfigs_.get(index);
+      } else {
+        return subscriptionConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSubscriptionConfigs(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig value) {
+      if (subscriptionConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.set(index, value);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSubscriptionConfigs(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder builderForValue) {
+      if (subscriptionConfigsBuilder_ == null) {
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSubscriptionConfigs(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig value) {
+      if (subscriptionConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.add(value);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSubscriptionConfigs(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig value) {
+      if (subscriptionConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.add(index, value);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSubscriptionConfigs(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder builderForValue) {
+      if (subscriptionConfigsBuilder_ == null) {
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSubscriptionConfigs(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder builderForValue) {
+      if (subscriptionConfigsBuilder_ == null) {
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSubscriptionConfigs(
+        java.lang.Iterable<
+                ? extends com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+            values) {
+      if (subscriptionConfigsBuilder_ == null) {
+        ensureSubscriptionConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subscriptionConfigs_);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSubscriptionConfigs() {
+      if (subscriptionConfigsBuilder_ == null) {
+        subscriptionConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSubscriptionConfigs(int index) {
+      if (subscriptionConfigsBuilder_ == null) {
+        ensureSubscriptionConfigsIsMutable();
+        subscriptionConfigs_.remove(index);
+        onChanged();
+      } else {
+        subscriptionConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder
+        getSubscriptionConfigsBuilder(int index) {
+      return getSubscriptionConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder
+        getSubscriptionConfigsOrBuilder(int index) {
+      if (subscriptionConfigsBuilder_ == null) {
+        return subscriptionConfigs_.get(index);
+      } else {
+        return subscriptionConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
+        getSubscriptionConfigsOrBuilderList() {
+      if (subscriptionConfigsBuilder_ != null) {
+        return subscriptionConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(subscriptionConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder
+        addSubscriptionConfigsBuilder() {
+      return getSubscriptionConfigsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder
+        addSubscriptionConfigsBuilder(int index) {
+      return getSubscriptionConfigsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Subscription configurations for this zone.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder>
+        getSubscriptionConfigsBuilderList() {
+      return getSubscriptionConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig,
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
+        getSubscriptionConfigsFieldBuilder() {
+      if (subscriptionConfigsBuilder_ == null) {
+        subscriptionConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig,
+                com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig.Builder,
+                com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>(
+                subscriptionConfigs_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        subscriptionConfigs_ = null;
+      }
+      return subscriptionConfigsBuilder_;
     }
 
     @java.lang.Override

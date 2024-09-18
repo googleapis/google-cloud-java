@@ -404,4 +404,70 @@ public interface ZoneOrBuilder
    * @return The bytes for globallyUniqueId.
    */
   com.google.protobuf.ByteString getGloballyUniqueIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
+      getSubscriptionConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig getSubscriptionConfigs(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getSubscriptionConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder>
+      getSubscriptionConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Subscription configurations for this zone.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig subscription_configs = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder
+      getSubscriptionConfigsOrBuilder(int index);
 }

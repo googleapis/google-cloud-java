@@ -212,4 +212,77 @@ public interface CommentOrBuilder
    * @return The bytes for text.
    */
   com.google.protobuf.ByteString getTextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customerViewedTime field is set.
+   */
+  boolean hasCustomerViewedTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customerViewedTime.
+   */
+  com.google.protobuf.Timestamp getCustomerViewedTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCustomerViewedTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The entity the author belongs to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for authorEntity.
+   */
+  int getAuthorEntityValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The entity the author belongs to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The authorEntity.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Entity getAuthorEntity();
 }

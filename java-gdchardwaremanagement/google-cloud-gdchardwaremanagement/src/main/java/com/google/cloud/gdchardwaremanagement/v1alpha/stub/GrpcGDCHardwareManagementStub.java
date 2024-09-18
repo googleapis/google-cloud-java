@@ -75,6 +75,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -339,6 +340,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RecordActionOnCommentRequest, Comment>
+      recordActionOnCommentMethodDescriptor =
+          MethodDescriptor.<RecordActionOnCommentRequest, Comment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/RecordActionOnComment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RecordActionOnCommentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
       listChangeLogEntriesMethodDescriptor =
           MethodDescriptor.<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>newBuilder()
@@ -515,6 +527,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   private final UnaryCallable<CreateCommentRequest, Operation> createCommentCallable;
   private final OperationCallable<CreateCommentRequest, Comment, OperationMetadata>
       createCommentOperationCallable;
+  private final UnaryCallable<RecordActionOnCommentRequest, Comment> recordActionOnCommentCallable;
   private final UnaryCallable<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
       listChangeLogEntriesCallable;
   private final UnaryCallable<ListChangeLogEntriesRequest, ListChangeLogEntriesPagedResponse>
@@ -819,6 +832,16 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RecordActionOnCommentRequest, Comment> recordActionOnCommentTransportSettings =
+        GrpcCallSettings.<RecordActionOnCommentRequest, Comment>newBuilder()
+            .setMethodDescriptor(recordActionOnCommentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
         listChangeLogEntriesTransportSettings =
             GrpcCallSettings.<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>newBuilder()
@@ -1113,6 +1136,11 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
             settings.createCommentOperationSettings(),
             clientContext,
             operationsStub);
+    this.recordActionOnCommentCallable =
+        callableFactory.createUnaryCallable(
+            recordActionOnCommentTransportSettings,
+            settings.recordActionOnCommentSettings(),
+            clientContext);
     this.listChangeLogEntriesCallable =
         callableFactory.createUnaryCallable(
             listChangeLogEntriesTransportSettings,
@@ -1418,6 +1446,11 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   public OperationCallable<CreateCommentRequest, Comment, OperationMetadata>
       createCommentOperationCallable() {
     return createCommentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RecordActionOnCommentRequest, Comment> recordActionOnCommentCallable() {
+    return recordActionOnCommentCallable;
   }
 
   @Override

@@ -41,6 +41,7 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
   private SubmitOrderRequest() {
     name_ = "";
     requestId_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,189 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.class,
             com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Valid types of submit order request.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Request type is unspecified. This should not be used.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use this request type to submit your order and initiate conversation with
+     * Google. After this submission, you will not be able to modify the number
+     * or SKU of your ordered hardware. Please note that this order will not be
+     * ready for fulfillment yet until you provide more information, such as
+     * zone network configuration, hardware physical and installation
+     * information, etc.
+     * If you are submitting an order for a SKU type of RACK, please use this
+     * request type, as additional information will be required outside of the
+     * API.
+     * </pre>
+     *
+     * <code>INFO_PENDING = 1;</code>
+     */
+    INFO_PENDING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use this request type if and when you are ready to submit your order for
+     * fulfillment. In addition to the information required for `INFO_PENDING`,
+     * the order must contain all required information, such as zone network
+     * configuration, hardware physical and installation information, etc.
+     * Further changes to any order information will no longer be allowed.
+     * </pre>
+     *
+     * <code>INFO_COMPLETE = 2;</code>
+     */
+    INFO_COMPLETE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Request type is unspecified. This should not be used.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use this request type to submit your order and initiate conversation with
+     * Google. After this submission, you will not be able to modify the number
+     * or SKU of your ordered hardware. Please note that this order will not be
+     * ready for fulfillment yet until you provide more information, such as
+     * zone network configuration, hardware physical and installation
+     * information, etc.
+     * If you are submitting an order for a SKU type of RACK, please use this
+     * request type, as additional information will be required outside of the
+     * API.
+     * </pre>
+     *
+     * <code>INFO_PENDING = 1;</code>
+     */
+    public static final int INFO_PENDING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use this request type if and when you are ready to submit your order for
+     * fulfillment. In addition to the information required for `INFO_PENDING`,
+     * the order must contain all required information, such as zone network
+     * configuration, hardware physical and installation information, etc.
+     * Further changes to any order information will no longer be allowed.
+     * </pre>
+     *
+     * <code>INFO_COMPLETE = 2;</code>
+     */
+    public static final int INFO_COMPLETE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return INFO_PENDING;
+        case 2:
+          return INFO_COMPLETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -174,6 +358,49 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3;
+  private int type_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of this request. If unset, the request type is assumed to be
+   * `INFO_PENDING`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of this request. If unset, the request type is assumed to be
+   * `INFO_PENDING`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type getType() {
+    com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type result =
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.forNumber(type_);
+    return result == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -194,6 +421,11 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
     }
+    if (type_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -208,6 +440,11 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
+    }
+    if (type_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -227,6 +464,7 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (type_ != other.type_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -242,6 +480,8 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,6 +626,7 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       name_ = "";
       requestId_ = "";
+      type_ = 0;
       return this;
     }
 
@@ -429,6 +670,9 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
       }
     }
 
@@ -490,6 +734,9 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -528,6 +775,12 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -775,6 +1028,114 @@ public final class SubmitOrderRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of this request. If unset, the request type is assumed to be
+     * `INFO_PENDING`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of this request. If unset, the request type is assumed to be
+     * `INFO_PENDING`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of this request. If unset, the request type is assumed to be
+     * `INFO_PENDING`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type getType() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type result =
+          com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of this request. If unset, the request type is assumed to be
+     * `INFO_PENDING`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of this request. If unset, the request type is assumed to be
+     * `INFO_PENDING`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      type_ = 0;
       onChanged();
       return this;
     }

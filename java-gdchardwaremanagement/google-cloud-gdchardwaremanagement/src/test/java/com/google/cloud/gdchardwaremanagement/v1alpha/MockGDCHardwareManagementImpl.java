@@ -534,6 +534,27 @@ public class MockGDCHardwareManagementImpl extends GDCHardwareManagementImplBase
   }
 
   @Override
+  public void recordActionOnComment(
+      RecordActionOnCommentRequest request, StreamObserver<Comment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Comment) {
+      requests.add(request);
+      responseObserver.onNext(((Comment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RecordActionOnComment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Comment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listChangeLogEntries(
       ListChangeLogEntriesRequest request,
       StreamObserver<ListChangeLogEntriesResponse> responseObserver) {

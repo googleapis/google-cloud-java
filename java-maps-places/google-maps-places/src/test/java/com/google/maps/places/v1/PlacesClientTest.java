@@ -82,7 +82,10 @@ public class PlacesClientTest {
   @Test
   public void searchNearbyTest() throws Exception {
     SearchNearbyResponse expectedResponse =
-        SearchNearbyResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchNearbyResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
+            .build();
     mockPlaces.addResponse(expectedResponse);
 
     SearchNearbyRequest request =
@@ -95,6 +98,7 @@ public class PlacesClientTest {
             .addAllExcludedPrimaryTypes(new ArrayList<String>())
             .setMaxResultCount(-1736124056)
             .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
             .build();
 
     SearchNearbyResponse actualResponse = client.searchNearby(request);
@@ -115,6 +119,7 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getMaxResultCount(), actualRequest.getMaxResultCount());
     Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
     Assert.assertEquals(request.getRankPreference(), actualRequest.getRankPreference());
+    Assert.assertEquals(request.getRoutingParameters(), actualRequest.getRoutingParameters());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -137,6 +142,7 @@ public class PlacesClientTest {
               .addAllExcludedPrimaryTypes(new ArrayList<String>())
               .setMaxResultCount(-1736124056)
               .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
               .build();
       client.searchNearby(request);
       Assert.fail("No exception raised");
@@ -150,6 +156,7 @@ public class PlacesClientTest {
     SearchTextResponse expectedResponse =
         SearchTextResponse.newBuilder()
             .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
             .addAllContextualContents(new ArrayList<ContextualContent>())
             .build();
     mockPlaces.addResponse(expectedResponse);
@@ -168,6 +175,9 @@ public class PlacesClientTest {
             .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
             .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
             .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
+            .setSearchAlongRouteParameters(
+                SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -190,6 +200,9 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getLocationBias(), actualRequest.getLocationBias());
     Assert.assertEquals(request.getLocationRestriction(), actualRequest.getLocationRestriction());
     Assert.assertEquals(request.getEvOptions(), actualRequest.getEvOptions());
+    Assert.assertEquals(request.getRoutingParameters(), actualRequest.getRoutingParameters());
+    Assert.assertEquals(
+        request.getSearchAlongRouteParameters(), actualRequest.getSearchAlongRouteParameters());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -216,6 +229,9 @@ public class PlacesClientTest {
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
               .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setSearchAlongRouteParameters(
+                  SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
