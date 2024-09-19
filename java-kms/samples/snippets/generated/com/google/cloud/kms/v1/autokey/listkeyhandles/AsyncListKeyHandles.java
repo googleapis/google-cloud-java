@@ -19,8 +19,8 @@ package com.google.cloud.kms.v1.samples;
 // [START cloudkms_v1_generated_Autokey_ListKeyHandles_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.AutokeyClient;
+import com.google.cloud.kms.v1.KeyHandle;
 import com.google.cloud.kms.v1.ListKeyHandlesRequest;
-import com.google.cloud.kms.v1.ListKeyHandlesResponse;
 import com.google.cloud.kms.v1.LocationName;
 
 public class AsyncListKeyHandles {
@@ -39,12 +39,15 @@ public class AsyncListKeyHandles {
       ListKeyHandlesRequest request =
           ListKeyHandlesRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .build();
-      ApiFuture<ListKeyHandlesResponse> future =
-          autokeyClient.listKeyHandlesCallable().futureCall(request);
+      ApiFuture<KeyHandle> future = autokeyClient.listKeyHandlesPagedCallable().futureCall(request);
       // Do something.
-      ListKeyHandlesResponse response = future.get();
+      for (KeyHandle element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -140,7 +141,9 @@ public class AutokeySettings extends ClientSettings<AutokeySettings> {
   }
 
   /** Returns the object with the settings used for calls to listKeyHandles. */
-  public UnaryCallSettings<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesSettings() {
+  public PagedCallSettings<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
+      listKeyHandlesSettings() {
     return ((AutokeyStubSettings) getStubSettings()).listKeyHandlesSettings();
   }
 
@@ -299,7 +302,8 @@ public class AutokeySettings extends ClientSettings<AutokeySettings> {
     }
 
     /** Returns the builder for the settings used for calls to listKeyHandles. */
-    public UnaryCallSettings.Builder<ListKeyHandlesRequest, ListKeyHandlesResponse>
+    public PagedCallSettings.Builder<
+            ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
         listKeyHandlesSettings() {
       return getStubSettingsBuilder().listKeyHandlesSettings();
     }

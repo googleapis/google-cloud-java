@@ -179,5 +179,43 @@ public interface DiscoveryTargetOrBuilder
    */
   com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder getCloudStorageTargetOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   *
+   * @return Whether the otherCloudTarget field is set.
+   */
+  boolean hasOtherCloudTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   *
+   * @return The otherCloudTarget.
+   */
+  com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget getOtherCloudTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   */
+  com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder getOtherCloudTargetOrBuilder();
+
   com.google.privacy.dlp.v2.DiscoveryTarget.TargetCase getTargetCase();
 }

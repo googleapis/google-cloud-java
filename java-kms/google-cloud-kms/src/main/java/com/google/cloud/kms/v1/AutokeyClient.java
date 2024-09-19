@@ -48,7 +48,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides interfaces for using Cloud KMS Autokey to provision new
+ * Service Description: Provides interfaces for using [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption Key (CMEK)
  * use, on-demand. To support certain client tooling, this feature is modeled around a
  * [KeyHandle][google.cloud.kms.v1.KeyHandle] resource: creating a
@@ -142,6 +143,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
+ *           <li><p> listKeyHandlesPagedCallable()
  *           <li><p> listKeyHandlesCallable()
  *      </ul>
  *       </td>
@@ -660,7 +662,9 @@ public class AutokeyClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AutokeyClient autokeyClient = AutokeyClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListKeyHandlesResponse response = autokeyClient.listKeyHandles(parent);
+   *   for (KeyHandle element : autokeyClient.listKeyHandles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * }</pre>
    *
@@ -669,7 +673,7 @@ public class AutokeyClient implements BackgroundResource {
    *     `projects/{PROJECT_ID}/locations/{LOCATION}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyHandlesResponse listKeyHandles(LocationName parent) {
+  public final ListKeyHandlesPagedResponse listKeyHandles(LocationName parent) {
     ListKeyHandlesRequest request =
         ListKeyHandlesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -691,7 +695,9 @@ public class AutokeyClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AutokeyClient autokeyClient = AutokeyClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   ListKeyHandlesResponse response = autokeyClient.listKeyHandles(parent);
+   *   for (KeyHandle element : autokeyClient.listKeyHandles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * }</pre>
    *
@@ -700,7 +706,7 @@ public class AutokeyClient implements BackgroundResource {
    *     `projects/{PROJECT_ID}/locations/{LOCATION}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyHandlesResponse listKeyHandles(String parent) {
+  public final ListKeyHandlesPagedResponse listKeyHandles(String parent) {
     ListKeyHandlesRequest request = ListKeyHandlesRequest.newBuilder().setParent(parent).build();
     return listKeyHandles(request);
   }
@@ -721,17 +727,21 @@ public class AutokeyClient implements BackgroundResource {
    *   ListKeyHandlesRequest request =
    *       ListKeyHandlesRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .build();
-   *   ListKeyHandlesResponse response = autokeyClient.listKeyHandles(request);
+   *   for (KeyHandle element : autokeyClient.listKeyHandles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyHandlesResponse listKeyHandles(ListKeyHandlesRequest request) {
-    return listKeyHandlesCallable().call(request);
+  public final ListKeyHandlesPagedResponse listKeyHandles(ListKeyHandlesRequest request) {
+    return listKeyHandlesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -750,12 +760,55 @@ public class AutokeyClient implements BackgroundResource {
    *   ListKeyHandlesRequest request =
    *       ListKeyHandlesRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .build();
-   *   ApiFuture<ListKeyHandlesResponse> future =
-   *       autokeyClient.listKeyHandlesCallable().futureCall(request);
+   *   ApiFuture<KeyHandle> future = autokeyClient.listKeyHandlesPagedCallable().futureCall(request);
    *   // Do something.
-   *   ListKeyHandlesResponse response = future.get();
+   *   for (KeyHandle element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable() {
+    return stub.listKeyHandlesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [KeyHandles][google.cloud.kms.v1.KeyHandle].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AutokeyClient autokeyClient = AutokeyClient.create()) {
+   *   ListKeyHandlesRequest request =
+   *       ListKeyHandlesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListKeyHandlesResponse response = autokeyClient.listKeyHandlesCallable().call(request);
+   *     for (KeyHandle element : response.getKeyHandlesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * }</pre>
    */
@@ -1149,6 +1202,82 @@ public class AutokeyClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListKeyHandlesPagedResponse
+      extends AbstractPagedListResponse<
+          ListKeyHandlesRequest,
+          ListKeyHandlesResponse,
+          KeyHandle,
+          ListKeyHandlesPage,
+          ListKeyHandlesFixedSizeCollection> {
+
+    public static ApiFuture<ListKeyHandlesPagedResponse> createAsync(
+        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        ApiFuture<ListKeyHandlesResponse> futureResponse) {
+      ApiFuture<ListKeyHandlesPage> futurePage =
+          ListKeyHandlesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListKeyHandlesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListKeyHandlesPagedResponse(ListKeyHandlesPage page) {
+      super(page, ListKeyHandlesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListKeyHandlesPage
+      extends AbstractPage<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle, ListKeyHandlesPage> {
+
+    private ListKeyHandlesPage(
+        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        ListKeyHandlesResponse response) {
+      super(context, response);
+    }
+
+    private static ListKeyHandlesPage createEmptyPage() {
+      return new ListKeyHandlesPage(null, null);
+    }
+
+    @Override
+    protected ListKeyHandlesPage createPage(
+        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        ListKeyHandlesResponse response) {
+      return new ListKeyHandlesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListKeyHandlesPage> createPageAsync(
+        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        ApiFuture<ListKeyHandlesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListKeyHandlesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListKeyHandlesRequest,
+          ListKeyHandlesResponse,
+          KeyHandle,
+          ListKeyHandlesPage,
+          ListKeyHandlesFixedSizeCollection> {
+
+    private ListKeyHandlesFixedSizeCollection(List<ListKeyHandlesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListKeyHandlesFixedSizeCollection createEmptyCollection() {
+      return new ListKeyHandlesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListKeyHandlesFixedSizeCollection createCollection(
+        List<ListKeyHandlesPage> pages, int collectionSize) {
+      return new ListKeyHandlesFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListLocationsPagedResponse

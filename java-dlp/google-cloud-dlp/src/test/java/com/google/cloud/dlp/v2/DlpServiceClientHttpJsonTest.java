@@ -100,6 +100,7 @@ import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.NullPercentageLevel;
 import com.google.privacy.dlp.v2.OrganizationLocationName;
 import com.google.privacy.dlp.v2.OrganizationName;
+import com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation;
 import com.google.privacy.dlp.v2.OtherInfoTypeSummary;
 import com.google.privacy.dlp.v2.ProfileStatus;
 import com.google.privacy.dlp.v2.ProjectDataProfile;
@@ -2888,6 +2889,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -2944,6 +2946,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -3000,6 +3003,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -3061,6 +3065,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -3122,6 +3127,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())
@@ -3178,6 +3184,7 @@ public class DlpServiceClientHttpJsonTest {
                 DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
             .setDisplayName("displayName1714148973")
             .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .setOtherCloudStartingLocation(OtherCloudDiscoveryStartingLocation.newBuilder().build())
             .addAllInspectTemplates(new ArrayList<String>())
             .addAllActions(new ArrayList<DataProfileAction>())
             .addAllTargets(new ArrayList<DiscoveryTarget>())

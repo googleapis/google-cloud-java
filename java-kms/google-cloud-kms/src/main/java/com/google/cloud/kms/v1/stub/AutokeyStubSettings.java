@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1.stub;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -160,7 +161,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   private final OperationCallSettings<CreateKeyHandleRequest, KeyHandle, CreateKeyHandleMetadata>
       createKeyHandleOperationSettings;
   private final UnaryCallSettings<GetKeyHandleRequest, KeyHandle> getKeyHandleSettings;
-  private final UnaryCallSettings<ListKeyHandlesRequest, ListKeyHandlesResponse>
+  private final PagedCallSettings<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
       listKeyHandlesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -170,6 +172,41 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle>
+      LIST_KEY_HANDLES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeyHandlesRequest injectToken(ListKeyHandlesRequest payload, String token) {
+              return ListKeyHandlesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeyHandlesRequest injectPageSize(
+                ListKeyHandlesRequest payload, int pageSize) {
+              return ListKeyHandlesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeyHandlesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeyHandlesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KeyHandle> extractResources(ListKeyHandlesResponse payload) {
+              return payload.getKeyHandlesList();
+            }
+          };
 
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
@@ -202,6 +239,23 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
               return payload.getLocationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
+      LIST_KEY_HANDLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeyHandlesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> callable,
+                ListKeyHandlesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeyHandlesResponse> futureResponse) {
+              PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> pageContext =
+                  PageContext.create(callable, LIST_KEY_HANDLES_PAGE_STR_DESC, request, context);
+              return ListKeyHandlesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -239,7 +293,9 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to listKeyHandles. */
-  public UnaryCallSettings<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesSettings() {
+  public PagedCallSettings<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
+      listKeyHandlesSettings() {
     return listKeyHandlesSettings;
   }
 
@@ -399,7 +455,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
             CreateKeyHandleRequest, KeyHandle, CreateKeyHandleMetadata>
         createKeyHandleOperationSettings;
     private final UnaryCallSettings.Builder<GetKeyHandleRequest, KeyHandle> getKeyHandleSettings;
-    private final UnaryCallSettings.Builder<ListKeyHandlesRequest, ListKeyHandlesResponse>
+    private final PagedCallSettings.Builder<
+            ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
         listKeyHandlesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -465,7 +522,7 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
       createKeyHandleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createKeyHandleOperationSettings = OperationCallSettings.newBuilder();
       getKeyHandleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listKeyHandlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listKeyHandlesSettings = PagedCallSettings.newBuilder(LIST_KEY_HANDLES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -634,7 +691,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listKeyHandles. */
-    public UnaryCallSettings.Builder<ListKeyHandlesRequest, ListKeyHandlesResponse>
+    public PagedCallSettings.Builder<
+            ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
         listKeyHandlesSettings() {
       return listKeyHandlesSettings;
     }

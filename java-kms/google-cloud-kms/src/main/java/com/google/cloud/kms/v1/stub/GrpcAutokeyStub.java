@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1.stub;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -138,6 +139,8 @@ public class GrpcAutokeyStub extends AutokeyStub {
       createKeyHandleOperationCallable;
   private final UnaryCallable<GetKeyHandleRequest, KeyHandle> getKeyHandleCallable;
   private final UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesCallable;
+  private final UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -284,6 +287,9 @@ public class GrpcAutokeyStub extends AutokeyStub {
     this.listKeyHandlesCallable =
         callableFactory.createUnaryCallable(
             listKeyHandlesTransportSettings, settings.listKeyHandlesSettings(), clientContext);
+    this.listKeyHandlesPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeyHandlesTransportSettings, settings.listKeyHandlesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -332,6 +338,12 @@ public class GrpcAutokeyStub extends AutokeyStub {
   @Override
   public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesCallable() {
     return listKeyHandlesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable() {
+    return listKeyHandlesPagedCallable;
   }
 
   @Override

@@ -61,6 +61,53 @@ public interface ListKeyHandlesRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Optional limit on the number of
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] to include in the response. The
+   * service may return fewer than this value. Further
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
+   * including the
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
+   * in a subsequent request.  If unspecified, at most
+   * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+   * </pre>
+   *
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional pagination token, returned earlier via
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+   * </pre>
+   *
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional pagination token, returned earlier via
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+   * </pre>
+   *
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Filter to apply when listing
    * [KeyHandles][google.cloud.kms.v1.KeyHandle], e.g.
    * `resource_type_selector="{SERVICE}.googleapis.com/{TYPE}"`.

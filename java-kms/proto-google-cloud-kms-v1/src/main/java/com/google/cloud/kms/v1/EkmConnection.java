@@ -2206,7 +2206,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -2214,7 +2214,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver>
@@ -2225,7 +2227,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -2233,7 +2235,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder>
@@ -2244,7 +2248,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -2252,7 +2256,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getServiceResolversCount() {
@@ -2262,7 +2268,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -2270,7 +2276,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.EkmConnection.ServiceResolver getServiceResolvers(int index) {
@@ -2280,7 +2288,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -2288,7 +2296,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder
@@ -3339,7 +3349,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3347,7 +3357,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver>
@@ -3362,7 +3373,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3370,7 +3381,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getServiceResolversCount() {
@@ -3384,7 +3396,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3392,7 +3404,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.kms.v1.EkmConnection.ServiceResolver getServiceResolvers(int index) {
@@ -3406,7 +3419,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3414,7 +3427,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceResolvers(
@@ -3435,7 +3449,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3443,7 +3457,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceResolvers(
@@ -3461,7 +3476,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3469,7 +3484,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addServiceResolvers(
@@ -3490,7 +3506,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3498,7 +3514,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addServiceResolvers(
@@ -3519,7 +3536,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3527,7 +3544,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addServiceResolvers(
@@ -3545,7 +3563,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3553,7 +3571,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addServiceResolvers(
@@ -3571,7 +3590,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3579,7 +3598,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllServiceResolvers(
@@ -3598,7 +3618,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3606,7 +3626,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearServiceResolvers() {
@@ -3623,7 +3644,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3631,7 +3652,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeServiceResolvers(int index) {
@@ -3648,7 +3670,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3656,7 +3678,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.kms.v1.EkmConnection.ServiceResolver.Builder getServiceResolversBuilder(
@@ -3667,7 +3690,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3675,7 +3698,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder
@@ -3690,7 +3714,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3698,7 +3722,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder>
@@ -3713,7 +3738,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3721,7 +3746,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.kms.v1.EkmConnection.ServiceResolver.Builder
@@ -3733,7 +3759,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3741,7 +3767,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.kms.v1.EkmConnection.ServiceResolver.Builder addServiceResolversBuilder(
@@ -3754,7 +3781,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of
+     * Optional. A list of
      * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
      * the EKM can be reached. There should be one ServiceResolver per EKM
      * replica. Currently, only a single
@@ -3762,7 +3789,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;
+     * <code>
+     * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver.Builder>

@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Provides interfaces for managing Cloud KMS Autokey folder-level
+ * Provides interfaces for managing [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
  * configurations. A configuration is inherited by all descendent projects. A
  * configuration at one folder overrides any other configurations in its
  * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
@@ -225,7 +226,8 @@ public final class AutokeyAdminGrpc {
    *
    *
    * <pre>
-   * Provides interfaces for managing Cloud KMS Autokey folder-level
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
    * configurations. A configuration is inherited by all descendent projects. A
    * configuration at one folder overrides any other configurations in its
    * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
@@ -291,7 +293,8 @@ public final class AutokeyAdminGrpc {
    * Base class for the server implementation of the service AutokeyAdmin.
    *
    * <pre>
-   * Provides interfaces for managing Cloud KMS Autokey folder-level
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
    * configurations. A configuration is inherited by all descendent projects. A
    * configuration at one folder overrides any other configurations in its
    * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
@@ -313,7 +316,8 @@ public final class AutokeyAdminGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service AutokeyAdmin.
    *
    * <pre>
-   * Provides interfaces for managing Cloud KMS Autokey folder-level
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
    * configurations. A configuration is inherited by all descendent projects. A
    * configuration at one folder overrides any other configurations in its
    * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
@@ -394,7 +398,8 @@ public final class AutokeyAdminGrpc {
    * A stub to allow clients to do synchronous rpc calls to service AutokeyAdmin.
    *
    * <pre>
-   * Provides interfaces for managing Cloud KMS Autokey folder-level
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
    * configurations. A configuration is inherited by all descendent projects. A
    * configuration at one folder overrides any other configurations in its
    * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
@@ -466,7 +471,8 @@ public final class AutokeyAdminGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service AutokeyAdmin.
    *
    * <pre>
-   * Provides interfaces for managing Cloud KMS Autokey folder-level
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
    * configurations. A configuration is inherited by all descendent projects. A
    * configuration at one folder overrides any other configurations in its
    * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS

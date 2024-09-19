@@ -370,6 +370,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   CountTokensResponse response = llmUtilityServiceClient.countTokens(request);
    * }
@@ -406,6 +407,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       llmUtilityServiceClient.countTokensCallable().futureCall(request);

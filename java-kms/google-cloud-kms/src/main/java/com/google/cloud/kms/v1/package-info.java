@@ -21,7 +21,8 @@
  *
  * <p>======================= AutokeyClient =======================
  *
- * <p>Service Description: Provides interfaces for using Cloud KMS Autokey to provision new
+ * <p>Service Description: Provides interfaces for using [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption Key (CMEK)
  * use, on-demand. To support certain client tooling, this feature is modeled around a
  * [KeyHandle][google.cloud.kms.v1.KeyHandle] resource: creating a
@@ -52,12 +53,13 @@
  *
  * <p>======================= AutokeyAdminClient =======================
  *
- * <p>Service Description: Provides interfaces for managing Cloud KMS Autokey folder-level
- * configurations. A configuration is inherited by all descendent projects. A configuration at one
- * folder overrides any other configurations in its ancestry. Setting a configuration on a folder is
- * a prerequisite for Cloud KMS Autokey, so that users working in a descendant project can request
- * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption
- * Key (CMEK) use, on-demand.
+ * <p>Service Description: Provides interfaces for managing [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) folder-level configurations. A configuration
+ * is inherited by all descendent projects. A configuration at one folder overrides any other
+ * configurations in its ancestry. Setting a configuration on a folder is a prerequisite for Cloud
+ * KMS Autokey, so that users working in a descendant project can request provisioned
+ * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption Key (CMEK)
+ * use, on-demand.
  *
  * <p>Sample for AutokeyAdminClient:
  *

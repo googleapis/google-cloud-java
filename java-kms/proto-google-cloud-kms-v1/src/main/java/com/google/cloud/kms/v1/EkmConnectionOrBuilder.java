@@ -98,7 +98,7 @@ public interface EkmConnectionOrBuilder
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -106,14 +106,16 @@ public interface EkmConnectionOrBuilder
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver> getServiceResolversList();
   /**
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -121,14 +123,16 @@ public interface EkmConnectionOrBuilder
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.kms.v1.EkmConnection.ServiceResolver getServiceResolvers(int index);
   /**
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -136,14 +140,16 @@ public interface EkmConnectionOrBuilder
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getServiceResolversCount();
   /**
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -151,7 +157,9 @@ public interface EkmConnectionOrBuilder
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder>
       getServiceResolversOrBuilderList();
@@ -159,7 +167,7 @@ public interface EkmConnectionOrBuilder
    *
    *
    * <pre>
-   * A list of
+   * Optional. A list of
    * [ServiceResolvers][google.cloud.kms.v1.EkmConnection.ServiceResolver] where
    * the EKM can be reached. There should be one ServiceResolver per EKM
    * replica. Currently, only a single
@@ -167,7 +175,9 @@ public interface EkmConnectionOrBuilder
    * supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3;</code>
+   * <code>
+   * repeated .google.cloud.kms.v1.EkmConnection.ServiceResolver service_resolvers = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder getServiceResolversOrBuilder(
       int index);

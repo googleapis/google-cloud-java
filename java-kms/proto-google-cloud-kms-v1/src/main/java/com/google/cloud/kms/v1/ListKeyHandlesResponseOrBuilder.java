@@ -74,4 +74,33 @@ public interface ListKeyHandlesResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.KeyHandle key_handles = 1;</code>
    */
   com.google.cloud.kms.v1.KeyHandleOrBuilder getKeyHandlesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A token to retrieve next page of results. Pass this value in
+   * [ListKeyHandlesRequest.page_token][google.cloud.kms.v1.ListKeyHandlesRequest.page_token]
+   * to retrieve the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * A token to retrieve next page of results. Pass this value in
+   * [ListKeyHandlesRequest.page_token][google.cloud.kms.v1.ListKeyHandlesRequest.page_token]
+   * to retrieve the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

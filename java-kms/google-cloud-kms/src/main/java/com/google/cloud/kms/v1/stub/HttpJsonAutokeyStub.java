@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1.stub;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -173,6 +174,8 @@ public class HttpJsonAutokeyStub extends AutokeyStub {
                             ProtoRestSerializer<ListKeyHandlesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -381,6 +384,8 @@ public class HttpJsonAutokeyStub extends AutokeyStub {
       createKeyHandleOperationCallable;
   private final UnaryCallable<GetKeyHandleRequest, KeyHandle> getKeyHandleCallable;
   private final UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesCallable;
+  private final UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -549,6 +554,9 @@ public class HttpJsonAutokeyStub extends AutokeyStub {
     this.listKeyHandlesCallable =
         callableFactory.createUnaryCallable(
             listKeyHandlesTransportSettings, settings.listKeyHandlesSettings(), clientContext);
+    this.listKeyHandlesPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeyHandlesTransportSettings, settings.listKeyHandlesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -611,6 +619,12 @@ public class HttpJsonAutokeyStub extends AutokeyStub {
   @Override
   public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesCallable() {
     return listKeyHandlesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable() {
+    return listKeyHandlesPagedCallable;
   }
 
   @Override

@@ -79,31 +79,33 @@ public final class AutokeyProto {
           + "dkms.googleapis.com/KeyHandle\022?projects/"
           + "{project}/locations/{location}/keyHandle"
           + "s/{key_handle}*\nkeyHandles2\tkeyHandle\"\031\n"
-          + "\027CreateKeyHandleMetadata\"g\n\025ListKeyHandl"
-          + "esRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locat"
-          + "ions.googleapis.com/Location\022\023\n\006filter\030\004"
-          + " \001(\tB\003\340A\001\"M\n\026ListKeyHandlesResponse\0223\n\013k"
-          + "ey_handles\030\001 \003(\0132\036.google.cloud.kms.v1.K"
-          + "eyHandle2\264\005\n\007Autokey\022\353\001\n\017CreateKeyHandle"
-          + "\022+.google.cloud.kms.v1.CreateKeyHandleRe"
-          + "quest\032\035.google.longrunning.Operation\"\213\001\312"
-          + "A$\n\tKeyHandle\022\027CreateKeyHandleMetadata\332A"
-          + "\037parent,key_handle,key_handle_id\202\323\344\223\002<\"."
-          + "/v1/{parent=projects/*/locations/*}/keyH"
-          + "andles:\nkey_handle\022\227\001\n\014GetKeyHandle\022(.go"
-          + "ogle.cloud.kms.v1.GetKeyHandleRequest\032\036."
-          + "google.cloud.kms.v1.KeyHandle\"=\332A\004name\202\323"
-          + "\344\223\0020\022./v1/{name=projects/*/locations/*/k"
-          + "eyHandles/*}\022\252\001\n\016ListKeyHandles\022*.google"
-          + ".cloud.kms.v1.ListKeyHandlesRequest\032+.go"
-          + "ogle.cloud.kms.v1.ListKeyHandlesResponse"
-          + "\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/"
-          + "*/locations/*}/keyHandles\032t\312A\027cloudkms.g"
-          + "oogleapis.com\322AWhttps://www.googleapis.c"
-          + "om/auth/cloud-platform,https://www.googl"
-          + "eapis.com/auth/cloudkmsBT\n\027com.google.cl"
-          + "oud.kms.v1B\014AutokeyProtoP\001Z)cloud.google"
-          + ".com/go/kms/apiv1/kmspb;kmspbb\006proto3"
+          + "\027CreateKeyHandleMetadata\"\230\001\n\025ListKeyHand"
+          + "lesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loca"
+          + "tions.googleapis.com/Location\022\026\n\tpage_si"
+          + "ze\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023"
+          + "\n\006filter\030\004 \001(\tB\003\340A\001\"f\n\026ListKeyHandlesRes"
+          + "ponse\0223\n\013key_handles\030\001 \003(\0132\036.google.clou"
+          + "d.kms.v1.KeyHandle\022\027\n\017next_page_token\030\002 "
+          + "\001(\t2\264\005\n\007Autokey\022\353\001\n\017CreateKeyHandle\022+.go"
+          + "ogle.cloud.kms.v1.CreateKeyHandleRequest"
+          + "\032\035.google.longrunning.Operation\"\213\001\312A$\n\tK"
+          + "eyHandle\022\027CreateKeyHandleMetadata\332A\037pare"
+          + "nt,key_handle,key_handle_id\202\323\344\223\002<\"./v1/{"
+          + "parent=projects/*/locations/*}/keyHandle"
+          + "s:\nkey_handle\022\227\001\n\014GetKeyHandle\022(.google."
+          + "cloud.kms.v1.GetKeyHandleRequest\032\036.googl"
+          + "e.cloud.kms.v1.KeyHandle\"=\332A\004name\202\323\344\223\0020\022"
+          + "./v1/{name=projects/*/locations/*/keyHan"
+          + "dles/*}\022\252\001\n\016ListKeyHandles\022*.google.clou"
+          + "d.kms.v1.ListKeyHandlesRequest\032+.google."
+          + "cloud.kms.v1.ListKeyHandlesResponse\"?\332A\006"
+          + "parent\202\323\344\223\0020\022./v1/{parent=projects/*/loc"
+          + "ations/*}/keyHandles\032t\312A\027cloudkms.google"
+          + "apis.com\322AWhttps://www.googleapis.com/au"
+          + "th/cloud-platform,https://www.googleapis"
+          + ".com/auth/cloudkmsBT\n\027com.google.cloud.k"
+          + "ms.v1B\014AutokeyProtoP\001Z)cloud.google.com/"
+          + "go/kms/apiv1/kmspb;kmspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,7 +153,7 @@ public final class AutokeyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -159,7 +161,7 @@ public final class AutokeyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_descriptor,
             new java.lang.String[] {
-              "KeyHandles",
+              "KeyHandles", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
