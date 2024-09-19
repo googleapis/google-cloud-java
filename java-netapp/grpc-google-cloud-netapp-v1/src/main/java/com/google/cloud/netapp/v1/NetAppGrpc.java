@@ -251,6 +251,54 @@ public final class NetAppGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+          com.google.longrunning.Operation>
+      getSwitchActiveReplicaZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SwitchActiveReplicaZone",
+      requestType = com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+          com.google.longrunning.Operation>
+      getSwitchActiveReplicaZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+            com.google.longrunning.Operation>
+        getSwitchActiveReplicaZoneMethod;
+    if ((getSwitchActiveReplicaZoneMethod = NetAppGrpc.getSwitchActiveReplicaZoneMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getSwitchActiveReplicaZoneMethod = NetAppGrpc.getSwitchActiveReplicaZoneMethod)
+            == null) {
+          NetAppGrpc.getSwitchActiveReplicaZoneMethod =
+              getSwitchActiveReplicaZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SwitchActiveReplicaZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetAppMethodDescriptorSupplier("SwitchActiveReplicaZone"))
+                      .build();
+        }
+      }
+    }
+    return getSwitchActiveReplicaZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.netapp.v1.ListVolumesRequest,
           com.google.cloud.netapp.v1.ListVolumesResponse>
       getListVolumesMethod;
@@ -2352,6 +2400,21 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    default void switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSwitchActiveReplicaZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Volumes in a given project.
      * </pre>
      */
@@ -3117,6 +3180,23 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStoragePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public void switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSwitchActiveReplicaZoneMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3958,6 +4038,20 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSwitchActiveReplicaZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Volumes in a given project.
      * </pre>
      */
@@ -4650,6 +4744,20 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        switchActiveReplicaZone(com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSwitchActiveReplicaZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Volumes in a given project.
      * </pre>
      */
@@ -5272,52 +5380,53 @@ public final class NetAppGrpc {
   private static final int METHODID_GET_STORAGE_POOL = 2;
   private static final int METHODID_UPDATE_STORAGE_POOL = 3;
   private static final int METHODID_DELETE_STORAGE_POOL = 4;
-  private static final int METHODID_LIST_VOLUMES = 5;
-  private static final int METHODID_GET_VOLUME = 6;
-  private static final int METHODID_CREATE_VOLUME = 7;
-  private static final int METHODID_UPDATE_VOLUME = 8;
-  private static final int METHODID_DELETE_VOLUME = 9;
-  private static final int METHODID_REVERT_VOLUME = 10;
-  private static final int METHODID_LIST_SNAPSHOTS = 11;
-  private static final int METHODID_GET_SNAPSHOT = 12;
-  private static final int METHODID_CREATE_SNAPSHOT = 13;
-  private static final int METHODID_DELETE_SNAPSHOT = 14;
-  private static final int METHODID_UPDATE_SNAPSHOT = 15;
-  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 16;
-  private static final int METHODID_GET_ACTIVE_DIRECTORY = 17;
-  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 18;
-  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 19;
-  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 20;
-  private static final int METHODID_LIST_KMS_CONFIGS = 21;
-  private static final int METHODID_CREATE_KMS_CONFIG = 22;
-  private static final int METHODID_GET_KMS_CONFIG = 23;
-  private static final int METHODID_UPDATE_KMS_CONFIG = 24;
-  private static final int METHODID_ENCRYPT_VOLUMES = 25;
-  private static final int METHODID_VERIFY_KMS_CONFIG = 26;
-  private static final int METHODID_DELETE_KMS_CONFIG = 27;
-  private static final int METHODID_LIST_REPLICATIONS = 28;
-  private static final int METHODID_GET_REPLICATION = 29;
-  private static final int METHODID_CREATE_REPLICATION = 30;
-  private static final int METHODID_DELETE_REPLICATION = 31;
-  private static final int METHODID_UPDATE_REPLICATION = 32;
-  private static final int METHODID_STOP_REPLICATION = 33;
-  private static final int METHODID_RESUME_REPLICATION = 34;
-  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 35;
-  private static final int METHODID_CREATE_BACKUP_VAULT = 36;
-  private static final int METHODID_GET_BACKUP_VAULT = 37;
-  private static final int METHODID_LIST_BACKUP_VAULTS = 38;
-  private static final int METHODID_UPDATE_BACKUP_VAULT = 39;
-  private static final int METHODID_DELETE_BACKUP_VAULT = 40;
-  private static final int METHODID_CREATE_BACKUP = 41;
-  private static final int METHODID_GET_BACKUP = 42;
-  private static final int METHODID_LIST_BACKUPS = 43;
-  private static final int METHODID_DELETE_BACKUP = 44;
-  private static final int METHODID_UPDATE_BACKUP = 45;
-  private static final int METHODID_CREATE_BACKUP_POLICY = 46;
-  private static final int METHODID_GET_BACKUP_POLICY = 47;
-  private static final int METHODID_LIST_BACKUP_POLICIES = 48;
-  private static final int METHODID_UPDATE_BACKUP_POLICY = 49;
-  private static final int METHODID_DELETE_BACKUP_POLICY = 50;
+  private static final int METHODID_SWITCH_ACTIVE_REPLICA_ZONE = 5;
+  private static final int METHODID_LIST_VOLUMES = 6;
+  private static final int METHODID_GET_VOLUME = 7;
+  private static final int METHODID_CREATE_VOLUME = 8;
+  private static final int METHODID_UPDATE_VOLUME = 9;
+  private static final int METHODID_DELETE_VOLUME = 10;
+  private static final int METHODID_REVERT_VOLUME = 11;
+  private static final int METHODID_LIST_SNAPSHOTS = 12;
+  private static final int METHODID_GET_SNAPSHOT = 13;
+  private static final int METHODID_CREATE_SNAPSHOT = 14;
+  private static final int METHODID_DELETE_SNAPSHOT = 15;
+  private static final int METHODID_UPDATE_SNAPSHOT = 16;
+  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 17;
+  private static final int METHODID_GET_ACTIVE_DIRECTORY = 18;
+  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 19;
+  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 20;
+  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 21;
+  private static final int METHODID_LIST_KMS_CONFIGS = 22;
+  private static final int METHODID_CREATE_KMS_CONFIG = 23;
+  private static final int METHODID_GET_KMS_CONFIG = 24;
+  private static final int METHODID_UPDATE_KMS_CONFIG = 25;
+  private static final int METHODID_ENCRYPT_VOLUMES = 26;
+  private static final int METHODID_VERIFY_KMS_CONFIG = 27;
+  private static final int METHODID_DELETE_KMS_CONFIG = 28;
+  private static final int METHODID_LIST_REPLICATIONS = 29;
+  private static final int METHODID_GET_REPLICATION = 30;
+  private static final int METHODID_CREATE_REPLICATION = 31;
+  private static final int METHODID_DELETE_REPLICATION = 32;
+  private static final int METHODID_UPDATE_REPLICATION = 33;
+  private static final int METHODID_STOP_REPLICATION = 34;
+  private static final int METHODID_RESUME_REPLICATION = 35;
+  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 36;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 37;
+  private static final int METHODID_GET_BACKUP_VAULT = 38;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 39;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 40;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 41;
+  private static final int METHODID_CREATE_BACKUP = 42;
+  private static final int METHODID_GET_BACKUP = 43;
+  private static final int METHODID_LIST_BACKUPS = 44;
+  private static final int METHODID_DELETE_BACKUP = 45;
+  private static final int METHODID_UPDATE_BACKUP = 46;
+  private static final int METHODID_CREATE_BACKUP_POLICY = 47;
+  private static final int METHODID_GET_BACKUP_POLICY = 48;
+  private static final int METHODID_LIST_BACKUP_POLICIES = 49;
+  private static final int METHODID_UPDATE_BACKUP_POLICY = 50;
+  private static final int METHODID_DELETE_BACKUP_POLICY = 51;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5361,6 +5470,11 @@ public final class NetAppGrpc {
         case METHODID_DELETE_STORAGE_POOL:
           serviceImpl.deleteStoragePool(
               (com.google.cloud.netapp.v1.DeleteStoragePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SWITCH_ACTIVE_REPLICA_ZONE:
+          serviceImpl.switchActiveReplicaZone(
+              (com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_VOLUMES:
@@ -5656,6 +5770,13 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.DeleteStoragePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_STORAGE_POOL)))
+        .addMethod(
+            getSwitchActiveReplicaZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SWITCH_ACTIVE_REPLICA_ZONE)))
         .addMethod(
             getListVolumesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5997,6 +6118,7 @@ public final class NetAppGrpc {
                       .addMethod(getGetStoragePoolMethod())
                       .addMethod(getUpdateStoragePoolMethod())
                       .addMethod(getDeleteStoragePoolMethod())
+                      .addMethod(getSwitchActiveReplicaZoneMethod())
                       .addMethod(getListVolumesMethod())
                       .addMethod(getGetVolumeMethod())
                       .addMethod(getCreateVolumeMethod())

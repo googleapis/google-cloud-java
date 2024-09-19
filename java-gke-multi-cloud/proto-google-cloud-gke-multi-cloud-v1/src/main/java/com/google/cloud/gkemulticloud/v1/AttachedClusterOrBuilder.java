@@ -873,4 +873,46 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  boolean hasSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The securityPostureConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.SecurityPostureConfig getSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder
+      getSecurityPostureConfigOrBuilder();
 }

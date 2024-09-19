@@ -413,8 +413,9 @@ public interface EnvironmentConfigOrBuilder
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
    *
-   * If this value is omitted, the default value for maintenance window will be
-   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * If this value is omitted, the default value for maintenance window is
+   * applied. By default, maintenance windows are from 00:00:00 to 04:00:00
+   * (GMT) on Friday, Saturday, and Sunday every week.
    * </pre>
    *
    * <code>
@@ -440,8 +441,9 @@ public interface EnvironmentConfigOrBuilder
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
    *
-   * If this value is omitted, the default value for maintenance window will be
-   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * If this value is omitted, the default value for maintenance window is
+   * applied. By default, maintenance windows are from 00:00:00 to 04:00:00
+   * (GMT) on Friday, Saturday, and Sunday every week.
    * </pre>
    *
    * <code>
@@ -467,8 +469,9 @@ public interface EnvironmentConfigOrBuilder
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
    *
-   * If this value is omitted, the default value for maintenance window will be
-   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * If this value is omitted, the default value for maintenance window is
+   * applied. By default, maintenance windows are from 00:00:00 to 04:00:00
+   * (GMT) on Friday, Saturday, and Sunday every week.
    * </pre>
    *
    * <code>

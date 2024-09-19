@@ -72,7 +72,8 @@ public interface SkippedShipmentOrBuilder
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -83,7 +84,8 @@ public interface SkippedShipmentOrBuilder
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -94,7 +96,8 @@ public interface SkippedShipmentOrBuilder
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -105,7 +108,8 @@ public interface SkippedShipmentOrBuilder
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>
@@ -117,7 +121,8 @@ public interface SkippedShipmentOrBuilder
    *
    * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
-   * above `Reason`.
+   * above `Reason`. If we are unable to understand why a shipment was skipped,
+   * reasons will not be set.
    * </pre>
    *
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment.Reason reasons = 3;</code>

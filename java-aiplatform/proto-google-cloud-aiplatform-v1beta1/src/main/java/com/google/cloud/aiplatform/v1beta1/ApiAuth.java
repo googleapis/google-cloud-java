@@ -730,6 +730,104 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  private int authConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object authConfig_;
+
+  public enum AuthConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    API_KEY_CONFIG(1),
+    AUTHCONFIG_NOT_SET(0);
+    private final int value;
+
+    private AuthConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AuthConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AuthConfigCase forNumber(int value) {
+      switch (value) {
+        case 1:
+          return API_KEY_CONFIG;
+        case 0:
+          return AUTHCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AuthConfigCase getAuthConfigCase() {
+    return AuthConfigCase.forNumber(authConfigCase_);
+  }
+
+  public static final int API_KEY_CONFIG_FIELD_NUMBER = 1;
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   *
+   * @return Whether the apiKeyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiKeyConfig() {
+    return authConfigCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   *
+   * @return The apiKeyConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getApiKeyConfig() {
+    if (authConfigCase_ == 1) {
+      return (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The API secret.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder
+      getApiKeyConfigOrBuilder() {
+    if (authConfigCase_ == 1) {
+      return (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -744,6 +842,10 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (authConfigCase_ == 1) {
+      output.writeMessage(
+          1, (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -753,6 +855,11 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (authConfigCase_ == 1) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -769,6 +876,14 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.ApiAuth other =
         (com.google.cloud.aiplatform.v1beta1.ApiAuth) obj;
 
+    if (!getAuthConfigCase().equals(other.getAuthConfigCase())) return false;
+    switch (authConfigCase_) {
+      case 1:
+        if (!getApiKeyConfig().equals(other.getApiKeyConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -780,6 +895,14 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    switch (authConfigCase_) {
+      case 1:
+        hash = (37 * hash) + API_KEY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getApiKeyConfig().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -918,6 +1041,12 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (apiKeyConfigBuilder_ != null) {
+        apiKeyConfigBuilder_.clear();
+      }
+      authConfigCase_ = 0;
+      authConfig_ = null;
       return this;
     }
 
@@ -945,8 +1074,24 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.ApiAuth buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ApiAuth result =
           new com.google.cloud.aiplatform.v1beta1.ApiAuth(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ApiAuth result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.ApiAuth result) {
+      result.authConfigCase_ = authConfigCase_;
+      result.authConfig_ = this.authConfig_;
+      if (authConfigCase_ == 1 && apiKeyConfigBuilder_ != null) {
+        result.authConfig_ = apiKeyConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -994,6 +1139,17 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ApiAuth other) {
       if (other == com.google.cloud.aiplatform.v1beta1.ApiAuth.getDefaultInstance()) return this;
+      switch (other.getAuthConfigCase()) {
+        case API_KEY_CONFIG:
+          {
+            mergeApiKeyConfig(other.getApiKeyConfig());
+            break;
+          }
+        case AUTHCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1020,6 +1176,12 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getApiKeyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                authConfigCase_ = 1;
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1035,6 +1197,236 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       } // finally
       return this;
+    }
+
+    private int authConfigCase_ = 0;
+    private java.lang.Object authConfig_;
+
+    public AuthConfigCase getAuthConfigCase() {
+      return AuthConfigCase.forNumber(authConfigCase_);
+    }
+
+    public Builder clearAuthConfig() {
+      authConfigCase_ = 0;
+      authConfig_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig,
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder>
+        apiKeyConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     *
+     * @return Whether the apiKeyConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiKeyConfig() {
+      return authConfigCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     *
+     * @return The apiKeyConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getApiKeyConfig() {
+      if (apiKeyConfigBuilder_ == null) {
+        if (authConfigCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+      } else {
+        if (authConfigCase_ == 1) {
+          return apiKeyConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    public Builder setApiKeyConfig(com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig value) {
+      if (apiKeyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authConfig_ = value;
+        onChanged();
+      } else {
+        apiKeyConfigBuilder_.setMessage(value);
+      }
+      authConfigCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    public Builder setApiKeyConfig(
+        com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder builderForValue) {
+      if (apiKeyConfigBuilder_ == null) {
+        authConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        apiKeyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      authConfigCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    public Builder mergeApiKeyConfig(
+        com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig value) {
+      if (apiKeyConfigBuilder_ == null) {
+        if (authConfigCase_ == 1
+            && authConfig_
+                != com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance()) {
+          authConfig_ =
+              com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          authConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (authConfigCase_ == 1) {
+          apiKeyConfigBuilder_.mergeFrom(value);
+        } else {
+          apiKeyConfigBuilder_.setMessage(value);
+        }
+      }
+      authConfigCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    public Builder clearApiKeyConfig() {
+      if (apiKeyConfigBuilder_ == null) {
+        if (authConfigCase_ == 1) {
+          authConfigCase_ = 0;
+          authConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (authConfigCase_ == 1) {
+          authConfigCase_ = 0;
+          authConfig_ = null;
+        }
+        apiKeyConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder
+        getApiKeyConfigBuilder() {
+      return getApiKeyConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder
+        getApiKeyConfigOrBuilder() {
+      if ((authConfigCase_ == 1) && (apiKeyConfigBuilder_ != null)) {
+        return apiKeyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (authConfigCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The API secret.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig api_key_config = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig,
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder>
+        getApiKeyConfigFieldBuilder() {
+      if (apiKeyConfigBuilder_ == null) {
+        if (!(authConfigCase_ == 1)) {
+          authConfig_ =
+              com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance();
+        }
+        apiKeyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig,
+                com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig) authConfig_,
+                getParentForChildren(),
+                isClean());
+        authConfig_ = null;
+      }
+      authConfigCase_ = 1;
+      onChanged();
+      return apiKeyConfigBuilder_;
     }
 
     @java.lang.Override

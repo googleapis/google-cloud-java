@@ -162,7 +162,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSource to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getSource:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -179,9 +181,46 @@ import org.threeten.bp.Duration;
  *             .getSourceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * VmMigrationStubSettings vmMigrationSettings = vmMigrationSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createSource:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VmMigrationStubSettings.Builder vmMigrationSettingsBuilder =
+ *     VmMigrationStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vmMigrationSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -370,9 +409,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
-              return payload.getSourcesList() == null
-                  ? ImmutableList.<Source>of()
-                  : payload.getSourcesList();
+              return payload.getSourcesList();
             }
           };
 
@@ -413,9 +450,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<UtilizationReport> extractResources(
                 ListUtilizationReportsResponse payload) {
-              return payload.getUtilizationReportsList() == null
-                  ? ImmutableList.<UtilizationReport>of()
-                  : payload.getUtilizationReportsList();
+              return payload.getUtilizationReportsList();
             }
           };
 
@@ -460,9 +495,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<DatacenterConnector> extractResources(
                 ListDatacenterConnectorsResponse payload) {
-              return payload.getDatacenterConnectorsList() == null
-                  ? ImmutableList.<DatacenterConnector>of()
-                  : payload.getDatacenterConnectorsList();
+              return payload.getDatacenterConnectorsList();
             }
           };
 
@@ -500,9 +533,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<MigratingVm> extractResources(ListMigratingVmsResponse payload) {
-              return payload.getMigratingVmsList() == null
-                  ? ImmutableList.<MigratingVm>of()
-                  : payload.getMigratingVmsList();
+              return payload.getMigratingVmsList();
             }
           };
 
@@ -536,9 +567,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<CloneJob> extractResources(ListCloneJobsResponse payload) {
-              return payload.getCloneJobsList() == null
-                  ? ImmutableList.<CloneJob>of()
-                  : payload.getCloneJobsList();
+              return payload.getCloneJobsList();
             }
           };
 
@@ -575,9 +604,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<CutoverJob> extractResources(ListCutoverJobsResponse payload) {
-              return payload.getCutoverJobsList() == null
-                  ? ImmutableList.<CutoverJob>of()
-                  : payload.getCutoverJobsList();
+              return payload.getCutoverJobsList();
             }
           };
 
@@ -611,9 +638,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Group> extractResources(ListGroupsResponse payload) {
-              return payload.getGroupsList() == null
-                  ? ImmutableList.<Group>of()
-                  : payload.getGroupsList();
+              return payload.getGroupsList();
             }
           };
 
@@ -651,9 +676,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<TargetProject> extractResources(ListTargetProjectsResponse payload) {
-              return payload.getTargetProjectsList() == null
-                  ? ImmutableList.<TargetProject>of()
-                  : payload.getTargetProjectsList();
+              return payload.getTargetProjectsList();
             }
           };
 
@@ -692,9 +715,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<ReplicationCycle> extractResources(
                 ListReplicationCyclesResponse payload) {
-              return payload.getReplicationCyclesList() == null
-                  ? ImmutableList.<ReplicationCycle>of()
-                  : payload.getReplicationCyclesList();
+              return payload.getReplicationCyclesList();
             }
           };
 
@@ -728,9 +749,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

@@ -38,6 +38,7 @@ public class SyncGetMembership {
       GetMembershipRequest request =
           GetMembershipRequest.newBuilder()
               .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setUseAdminAccess(true)
               .build();
       Membership response = chatServiceClient.getMembership(request);
     }

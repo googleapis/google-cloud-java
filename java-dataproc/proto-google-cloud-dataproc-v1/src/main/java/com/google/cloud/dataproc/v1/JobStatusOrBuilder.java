@@ -58,7 +58,7 @@ public interface JobStatusOrBuilder
    *
    * <pre>
    * Optional. Output only. Job state details, such as an error
-   * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+   * description if the state is `ERROR`.
    * </pre>
    *
    * <code>
@@ -73,7 +73,7 @@ public interface JobStatusOrBuilder
    *
    * <pre>
    * Optional. Output only. Job state details, such as an error
-   * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
+   * description if the state is `ERROR`.
    * </pre>
    *
    * <code>

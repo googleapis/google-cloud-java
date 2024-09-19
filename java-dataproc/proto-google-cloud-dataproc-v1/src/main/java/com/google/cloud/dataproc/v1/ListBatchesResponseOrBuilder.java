@@ -101,4 +101,63 @@ public interface ListBatchesResponseOrBuilder
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of Batches that could not be included in the response.
+   * Attempting to get one of these resources may indicate why it was not
+   * included in the list response.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of Batches that could not be included in the response.
+   * Attempting to get one of these resources may indicate why it was not
+   * included in the list response.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of Batches that could not be included in the response.
+   * Attempting to get one of these resources may indicate why it was not
+   * included in the list response.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of Batches that could not be included in the response.
+   * Attempting to get one of these resources may indicate why it was not
+   * included in the list response.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

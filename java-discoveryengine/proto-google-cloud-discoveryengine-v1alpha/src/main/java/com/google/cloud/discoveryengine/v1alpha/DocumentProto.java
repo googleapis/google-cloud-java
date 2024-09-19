@@ -45,6 +45,10 @@ public final class DocumentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_Document_AclInfo_AccessRestriction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_Document_IndexStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_Document_IndexStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_fieldAccessorTable;
@@ -63,43 +67,48 @@ public final class DocumentProto {
           + "roto\032\031google/api/resource.proto\0321google/"
           + "cloud/discoveryengine/v1alpha/common.pro"
           + "to\032\034google/protobuf/struct.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\346\007\n\010Document\022."
-          + "\n\013struct_data\030\004 \001(\0132\027.google.protobuf.St"
-          + "ructH\000\022\023\n\tjson_data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001"
-          + "(\t\022G\n\007content\030\n \001(\01326.google.cloud.disco"
-          + "veryengine.v1alpha.Document.Content\022\032\n\022p"
-          + "arent_document_id\030\007 \001(\t\0229\n\023derived_struc"
-          + "t_data\030\006 \001(\0132\027.google.protobuf.StructB\003\340"
-          + "A\003\022H\n\010acl_info\030\013 \001(\01326.google.cloud.disc"
-          + "overyengine.v1alpha.Document.AclInfo\0223\n\n"
-          + "index_time\030\r \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\032K\n\007Content\022\023\n\traw_bytes\030\002 \001(\014H"
-          + "\000\022\r\n\003uri\030\003 \001(\tH\000\022\021\n\tmime_type\030\001 \001(\tB\t\n\007c"
-          + "ontent\032\320\001\n\007AclInfo\022Y\n\007readers\030\001 \003(\0132H.go"
-          + "ogle.cloud.discoveryengine.v1alpha.Docum"
-          + "ent.AclInfo.AccessRestriction\032j\n\021AccessR"
-          + "estriction\022C\n\nprincipals\030\001 \003(\0132/.google."
-          + "cloud.discoveryengine.v1alpha.Principal\022"
-          + "\020\n\010idp_wide\030\002 \001(\010:\226\002\352A\222\002\n\'discoveryengin"
-          + "e.googleapis.com/Document\022fprojects/{pro"
-          + "ject}/locations/{location}/dataStores/{d"
-          + "ata_store}/branches/{branch}/documents/{"
-          + "document}\022\177projects/{project}/locations/"
-          + "{location}/collections/{collection}/data"
-          + "Stores/{data_store}/branches/{branch}/do"
-          + "cuments/{document}B\006\n\004data\"\204\001\n\021Processed"
-          + "Document\022\023\n\tjson_data\030\002 \001(\tH\000\022A\n\010documen"
-          + "t\030\001 \001(\tB/\340A\002\372A)\n\'discoveryengine.googlea"
-          + "pis.com/DocumentB\027\n\025processed_data_forma"
-          + "tB\231\002\n(com.google.cloud.discoveryengine.v"
-          + "1alphaB\rDocumentProtoP\001ZRcloud.google.co"
-          + "m/go/discoveryengine/apiv1alpha/discover"
-          + "yenginepb;discoveryenginepb\242\002\017DISCOVERYE"
-          + "NGINE\252\002$Google.Cloud.DiscoveryEngine.V1A"
-          + "lpha\312\002$Google\\Cloud\\DiscoveryEngine\\V1al"
-          + "pha\352\002\'Google::Cloud::DiscoveryEngine::V1"
-          + "alphab\006proto3"
+          + "/protobuf/timestamp.proto\032\027google/rpc/st"
+          + "atus.proto\"\247\t\n\010Document\022.\n\013struct_data\030\004"
+          + " \001(\0132\027.google.protobuf.StructH\000\022\023\n\tjson_"
+          + "data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 "
+          + "\001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001(\t\022G\n\007content\030\n"
+          + " \001(\01326.google.cloud.discoveryengine.v1al"
+          + "pha.Document.Content\022\032\n\022parent_document_"
+          + "id\030\007 \001(\t\0229\n\023derived_struct_data\030\006 \001(\0132\027."
+          + "google.protobuf.StructB\003\340A\003\022H\n\010acl_info\030"
+          + "\013 \001(\01326.google.cloud.discoveryengine.v1a"
+          + "lpha.Document.AclInfo\0223\n\nindex_time\030\r \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022U\n\014in"
+          + "dex_status\030\017 \001(\0132:.google.cloud.discover"
+          + "yengine.v1alpha.Document.IndexStatusB\003\340A"
+          + "\003\032K\n\007Content\022\023\n\traw_bytes\030\002 \001(\014H\000\022\r\n\003uri"
+          + "\030\003 \001(\tH\000\022\021\n\tmime_type\030\001 \001(\tB\t\n\007content\032\320"
+          + "\001\n\007AclInfo\022Y\n\007readers\030\001 \003(\0132H.google.clo"
+          + "ud.discoveryengine.v1alpha.Document.AclI"
+          + "nfo.AccessRestriction\032j\n\021AccessRestricti"
+          + "on\022C\n\nprincipals\030\001 \003(\0132/.google.cloud.di"
+          + "scoveryengine.v1alpha.Principal\022\020\n\010idp_w"
+          + "ide\030\002 \001(\010\032h\n\013IndexStatus\022.\n\nindex_time\030\001"
+          + " \001(\0132\032.google.protobuf.Timestamp\022)\n\rerro"
+          + "r_samples\030\002 \003(\0132\022.google.rpc.Status:\226\002\352A"
+          + "\222\002\n\'discoveryengine.googleapis.com/Docum"
+          + "ent\022fprojects/{project}/locations/{locat"
+          + "ion}/dataStores/{data_store}/branches/{b"
+          + "ranch}/documents/{document}\022\177projects/{p"
+          + "roject}/locations/{location}/collections"
+          + "/{collection}/dataStores/{data_store}/br"
+          + "anches/{branch}/documents/{document}B\006\n\004"
+          + "data\"\204\001\n\021ProcessedDocument\022\023\n\tjson_data\030"
+          + "\002 \001(\tH\000\022A\n\010document\030\001 \001(\tB/\340A\002\372A)\n\'disco"
+          + "veryengine.googleapis.com/DocumentB\027\n\025pr"
+          + "ocessed_data_formatB\231\002\n(com.google.cloud"
+          + ".discoveryengine.v1alphaB\rDocumentProtoP"
+          + "\001ZRcloud.google.com/go/discoveryengine/a"
+          + "piv1alpha/discoveryenginepb;discoveryeng"
+          + "inepb\242\002\017DISCOVERYENGINE\252\002$Google.Cloud.D"
+          + "iscoveryEngine.V1Alpha\312\002$Google\\Cloud\\Di"
+          + "scoveryEngine\\V1alpha\352\002\'Google::Cloud::D"
+          + "iscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,6 +119,7 @@ public final class DocumentProto {
               com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Document_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -127,6 +137,7 @@ public final class DocumentProto {
               "DerivedStructData",
               "AclInfo",
               "IndexTime",
+              "IndexStatus",
               "Data",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Document_Content_descriptor =
@@ -159,6 +170,16 @@ public final class DocumentProto {
             new java.lang.String[] {
               "Principals", "IdpWide",
             });
+    internal_static_google_cloud_discoveryengine_v1alpha_Document_IndexStatus_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_Document_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1alpha_Document_IndexStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_Document_IndexStatus_descriptor,
+            new java.lang.String[] {
+              "IndexTime", "ErrorSamples",
+            });
     internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_fieldAccessorTable =
@@ -179,6 +200,7 @@ public final class DocumentProto {
     com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

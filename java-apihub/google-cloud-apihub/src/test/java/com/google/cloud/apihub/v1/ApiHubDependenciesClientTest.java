@@ -20,28 +20,28 @@ import static com.google.cloud.apihub.v1.ApiHubDependenciesClient.ListDependenci
 import static com.google.cloud.apihub.v1.ApiHubDependenciesClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.apihub.v1.stub.HttpJsonApiHubDependenciesStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -52,43 +52,37 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ApiHubDependenciesClientTest {
-  private static MockApiHubDependencies mockApiHubDependencies;
-  private static MockLocations mockLocations;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private ApiHubDependenciesClient client;
+  private static MockHttpService mockService;
+  private static ApiHubDependenciesClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockApiHubDependencies = new MockApiHubDependencies();
-    mockLocations = new MockLocations();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockApiHubDependencies, mockLocations));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonApiHubDependenciesStub.getMethodDescriptors(),
+            ApiHubDependenciesSettings.getDefaultEndpoint());
     ApiHubDependenciesSettings settings =
         ApiHubDependenciesSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+            .setTransportChannelProvider(
+                ApiHubDependenciesSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ApiHubDependenciesClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -104,7 +98,7 @@ public class ApiHubDependenciesClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Dependency dependency = Dependency.newBuilder().build();
@@ -113,23 +107,27 @@ public class ApiHubDependenciesClientTest {
     Dependency actualResponse = client.createDependency(parent, dependency, dependencyId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDependencyRequest actualRequest = ((CreateDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(dependency, actualRequest.getDependency());
-    Assert.assertEquals(dependencyId, actualRequest.getDependencyId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDependencyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -155,35 +153,39 @@ public class ApiHubDependenciesClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-5833/locations/location-5833";
     Dependency dependency = Dependency.newBuilder().build();
     String dependencyId = "dependencyId503788998";
 
     Dependency actualResponse = client.createDependency(parent, dependency, dependencyId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDependencyRequest actualRequest = ((CreateDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(dependency, actualRequest.getDependency());
-    Assert.assertEquals(dependencyId, actualRequest.getDependencyId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDependencyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-5833/locations/location-5833";
       Dependency dependency = Dependency.newBuilder().build();
       String dependencyId = "dependencyId503788998";
       client.createDependency(parent, dependency, dependencyId);
@@ -206,28 +208,34 @@ public class ApiHubDependenciesClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DependencyName name = DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]");
 
     Dependency actualResponse = client.getDependency(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDependencyRequest actualRequest = ((GetDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDependencyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DependencyName name = DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]");
@@ -251,31 +259,37 @@ public class ApiHubDependenciesClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-6073/locations/location-6073/dependencies/dependencie-6073";
 
     Dependency actualResponse = client.getDependency(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDependencyRequest actualRequest = ((GetDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDependencyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-6073/locations/location-6073/dependencies/dependencie-6073";
       client.getDependency(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -296,33 +310,58 @@ public class ApiHubDependenciesClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    Dependency dependency = Dependency.newBuilder().build();
+    Dependency dependency =
+        Dependency.newBuilder()
+            .setName(DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]").toString())
+            .setConsumer(DependencyEntityReference.newBuilder().build())
+            .setSupplier(DependencyEntityReference.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setErrorDetail(DependencyErrorDetail.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, AttributeValues>())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     Dependency actualResponse = client.updateDependency(dependency, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDependencyRequest actualRequest = ((UpdateDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(dependency, actualRequest.getDependency());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateDependencyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      Dependency dependency = Dependency.newBuilder().build();
+      Dependency dependency =
+          Dependency.newBuilder()
+              .setName(DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]").toString())
+              .setConsumer(DependencyEntityReference.newBuilder().build())
+              .setSupplier(DependencyEntityReference.newBuilder().build())
+              .setDescription("description-1724546052")
+              .setErrorDetail(DependencyErrorDetail.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllAttributes(new HashMap<String, AttributeValues>())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDependency(dependency, updateMask);
       Assert.fail("No exception raised");
@@ -334,27 +373,33 @@ public class ApiHubDependenciesClientTest {
   @Test
   public void deleteDependencyTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DependencyName name = DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]");
 
     client.deleteDependency(name);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDependencyRequest actualRequest = ((DeleteDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDependencyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DependencyName name = DependencyName.of("[PROJECT]", "[LOCATION]", "[DEPENDENCY]");
@@ -368,30 +413,36 @@ public class ApiHubDependenciesClientTest {
   @Test
   public void deleteDependencyTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-6073/locations/location-6073/dependencies/dependencie-6073";
 
     client.deleteDependency(name);
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDependencyRequest actualRequest = ((DeleteDependencyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDependencyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-6073/locations/location-6073/dependencies/dependencie-6073";
       client.deleteDependency(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -407,7 +458,7 @@ public class ApiHubDependenciesClientTest {
             .setNextPageToken("")
             .addAllDependencies(Arrays.asList(responsesElement))
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -418,21 +469,27 @@ public class ApiHubDependenciesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDependenciesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDependenciesRequest actualRequest = ((ListDependenciesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDependenciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -451,9 +508,9 @@ public class ApiHubDependenciesClientTest {
             .setNextPageToken("")
             .addAllDependencies(Arrays.asList(responsesElement))
             .build();
-    mockApiHubDependencies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-5833/locations/location-5833";
 
     ListDependenciesPagedResponse pagedListResponse = client.listDependencies(parent);
 
@@ -462,24 +519,30 @@ public class ApiHubDependenciesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDependenciesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockApiHubDependencies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDependenciesRequest actualRequest = ((ListDependenciesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDependenciesExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockApiHubDependencies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-5833/locations/location-5833";
       client.listDependencies(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -495,11 +558,11 @@ public class ApiHubDependenciesClientTest {
             .setNextPageToken("")
             .addAllLocations(Arrays.asList(responsesElement))
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListLocationsRequest request =
         ListLocationsRequest.newBuilder()
-            .setName("name3373707")
+            .setName("projects/project-3664")
             .setFilter("filter-1274492040")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -512,29 +575,32 @@ public class ApiHubDependenciesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listLocationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListLocationsRequest request =
           ListLocationsRequest.newBuilder()
-              .setName("name3373707")
+              .setName("projects/project-3664")
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -556,31 +622,43 @@ public class ApiHubDependenciesClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setMetadata(Any.newBuilder().build())
             .build();
-    mockLocations.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
 
     Location actualResponse = client.getLocation(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getLocationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLocations.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
       client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

@@ -7380,6 +7380,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
        */
       JAIL_BREAKING_QUERY_IGNORED(7),
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      CUSTOMER_POLICY_VIOLATION(8),
+      /**
+       *
+       *
+       * <pre>
+       * The non-answer seeking query ignored case.
+       *
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_answer_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
+       */
+      NON_SUMMARY_SEEKING_QUERY_IGNORED_V2(9),
       UNRECOGNIZED(-1),
       ;
 
@@ -7488,6 +7515,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>JAIL_BREAKING_QUERY_IGNORED = 7;</code>
        */
       public static final int JAIL_BREAKING_QUERY_IGNORED_VALUE = 7;
+      /**
+       *
+       *
+       * <pre>
+       * The customer policy violation case.
+       *
+       * Google skips the summary if there is a customer policy violation
+       * detected. The policy is defined by the customer.
+       * </pre>
+       *
+       * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
+       */
+      public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 8;
+      /**
+       *
+       *
+       * <pre>
+       * The non-answer seeking query ignored case.
+       *
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_answer_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
+       */
+      public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_V2_VALUE = 9;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -7529,6 +7583,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return NO_RELEVANT_CONTENT;
           case 7:
             return JAIL_BREAKING_QUERY_IGNORED;
+          case 8:
+            return CUSTOMER_POLICY_VIOLATION;
+          case 9:
+            return NON_SUMMARY_SEEKING_QUERY_IGNORED_V2;
           default:
             return null;
         }
@@ -19858,6 +19916,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes of the values at the given index.
          */
         com.google.protobuf.ByteString getValuesBytes(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The querySegment.
+         */
+        java.lang.String getQuerySegment();
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        com.google.protobuf.ByteString getQuerySegmentBytes();
       }
       /**
        *
@@ -19882,6 +19965,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         private StringConstraint() {
           fieldName_ = "";
           values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          querySegment_ = "";
         }
 
         @java.lang.Override
@@ -20028,6 +20112,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return values_.getByteString(index);
         }
 
+        public static final int QUERY_SEGMENT_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object querySegment_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The querySegment.
+         */
+        @java.lang.Override
+        public java.lang.String getQuerySegment() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            querySegment_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 3;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getQuerySegmentBytes() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            querySegment_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -20049,6 +20184,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < values_.size(); i++) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, values_.getRaw(i));
           }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, querySegment_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -20068,6 +20206,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
             size += dataSize;
             size += 1 * getValuesList().size();
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, querySegment_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -20096,6 +20237,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
           if (!getFieldName().equals(other.getFieldName())) return false;
           if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!getQuerySegment().equals(other.getQuerySegment())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -20113,6 +20255,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + VALUES_FIELD_NUMBER;
             hash = (53 * hash) + getValuesList().hashCode();
           }
+          hash = (37 * hash) + QUERY_SEGMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getQuerySegment().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -20290,6 +20434,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = 0;
             fieldName_ = "";
             values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            querySegment_ = "";
             return this;
           }
 
@@ -20352,6 +20497,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             if (((from_bitField0_ & 0x00000002) != 0)) {
               values_.makeImmutable();
               result.values_ = values_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.querySegment_ = querySegment_;
             }
           }
 
@@ -20432,6 +20580,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               }
               onChanged();
             }
+            if (!other.getQuerySegment().isEmpty()) {
+              querySegment_ = other.querySegment_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -20471,6 +20624,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       values_.add(s);
                       break;
                     } // case 18
+                  case 26:
+                    {
+                      querySegment_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20779,6 +20938,112 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
+          private java.lang.Object querySegment_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return The querySegment.
+           */
+          public java.lang.String getQuerySegment() {
+            java.lang.Object ref = querySegment_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              querySegment_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return The bytes for querySegment.
+           */
+          public com.google.protobuf.ByteString getQuerySegmentBytes() {
+            java.lang.Object ref = querySegment_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              querySegment_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @param value The querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegment(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            querySegment_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearQuerySegment() {
+            querySegment_ = getDefaultInstance().getQuerySegment();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 3;</code>
+           *
+           * @param value The bytes for querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegmentBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            querySegment_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -20928,6 +21193,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          * @return The value.
          */
         double getValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The querySegment.
+         */
+        java.lang.String getQuerySegment();
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        com.google.protobuf.ByteString getQuerySegmentBytes();
       }
       /**
        *
@@ -20952,6 +21242,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         private NumberConstraint() {
           fieldName_ = "";
           comparison_ = 0;
+          querySegment_ = "";
         }
 
         @java.lang.Override
@@ -21332,6 +21623,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return value_;
         }
 
+        public static final int QUERY_SEGMENT_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object querySegment_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The querySegment.
+         */
+        @java.lang.Override
+        public java.lang.String getQuerySegment() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            querySegment_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the keywords within the search query that match a filter.
+         * </pre>
+         *
+         * <code>string query_segment = 4;</code>
+         *
+         * @return The bytes for querySegment.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getQuerySegmentBytes() {
+          java.lang.Object ref = querySegment_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            querySegment_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -21360,6 +21702,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
             output.writeDouble(3, value_);
           }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, querySegment_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -21381,6 +21726,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
           if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
             size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, value_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(querySegment_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, querySegment_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -21411,6 +21759,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           if (comparison_ != other.comparison_) return false;
           if (java.lang.Double.doubleToLongBits(getValue())
               != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+          if (!getQuerySegment().equals(other.getQuerySegment())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -21431,6 +21780,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               (53 * hash)
                   + com.google.protobuf.Internal.hashLong(
                       java.lang.Double.doubleToLongBits(getValue()));
+          hash = (37 * hash) + QUERY_SEGMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getQuerySegment().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -21609,6 +21960,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             fieldName_ = "";
             comparison_ = 0;
             value_ = 0D;
+            querySegment_ = "";
             return this;
           }
 
@@ -21673,6 +22025,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.value_ = value_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.querySegment_ = querySegment_;
             }
           }
 
@@ -21749,6 +22104,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             if (other.getValue() != 0D) {
               setValue(other.getValue());
             }
+            if (!other.getQuerySegment().isEmpty()) {
+              querySegment_ = other.querySegment_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -21793,6 +22153,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       bitField0_ |= 0x00000004;
                       break;
                     } // case 25
+                  case 34:
+                    {
+                      querySegment_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -22088,6 +22454,112 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           public Builder clearValue() {
             bitField0_ = (bitField0_ & ~0x00000004);
             value_ = 0D;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object querySegment_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return The querySegment.
+           */
+          public java.lang.String getQuerySegment() {
+            java.lang.Object ref = querySegment_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              querySegment_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return The bytes for querySegment.
+           */
+          public com.google.protobuf.ByteString getQuerySegmentBytes() {
+            java.lang.Object ref = querySegment_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              querySegment_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @param value The querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegment(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            querySegment_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearQuerySegment() {
+            querySegment_ = getDefaultInstance().getQuerySegment();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the keywords within the search query that match a filter.
+           * </pre>
+           *
+           * <code>string query_segment = 4;</code>
+           *
+           * @param value The bytes for querySegment to set.
+           * @return This builder for chaining.
+           */
+          public Builder setQuerySegmentBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            querySegment_ = value;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -33514,7 +33986,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -33540,7 +34013,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -36203,7 +36677,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -36228,7 +36703,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -36253,7 +36729,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -36277,7 +36754,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>
@@ -36297,7 +36775,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * A unique search token. This should be included in the
      * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
      * from this search, which enables accurate attribution of search model
-     * performance.
+     * performance. This also helps to identify a request during the customer
+     * support scenarios.
      * </pre>
      *
      * <code>string attribution_token = 4;</code>

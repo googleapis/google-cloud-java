@@ -101,6 +101,7 @@ public class EnvironmentsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -157,6 +158,7 @@ public class EnvironmentsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     mockEnvironments.addResponse(expectedResponse);
@@ -246,6 +248,7 @@ public class EnvironmentsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -347,6 +350,7 @@ public class EnvironmentsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =

@@ -72,9 +72,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the Endpoint requested to serve the prediction.
+   * Required. The name of the endpoint requested to serve the prediction.
    * Format:
-   * `projects/{project}/locations/{location}/endpoints/openapi`
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>
@@ -99,9 +99,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the Endpoint requested to serve the prediction.
+   * Required. The name of the endpoint requested to serve the prediction.
    * Format:
-   * `projects/{project}/locations/{location}/endpoints/openapi`
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>
@@ -563,9 +563,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Endpoint requested to serve the prediction.
+     * Required. The name of the endpoint requested to serve the prediction.
      * Format:
-     * `projects/{project}/locations/{location}/endpoints/openapi`
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>
@@ -589,9 +589,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Endpoint requested to serve the prediction.
+     * Required. The name of the endpoint requested to serve the prediction.
      * Format:
-     * `projects/{project}/locations/{location}/endpoints/openapi`
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>
@@ -615,9 +615,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Endpoint requested to serve the prediction.
+     * Required. The name of the endpoint requested to serve the prediction.
      * Format:
-     * `projects/{project}/locations/{location}/endpoints/openapi`
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>
@@ -640,9 +640,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Endpoint requested to serve the prediction.
+     * Required. The name of the endpoint requested to serve the prediction.
      * Format:
-     * `projects/{project}/locations/{location}/endpoints/openapi`
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>
@@ -661,9 +661,9 @@ public final class ChatCompletionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Endpoint requested to serve the prediction.
+     * Required. The name of the endpoint requested to serve the prediction.
      * Format:
-     * `projects/{project}/locations/{location}/endpoints/openapi`
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>

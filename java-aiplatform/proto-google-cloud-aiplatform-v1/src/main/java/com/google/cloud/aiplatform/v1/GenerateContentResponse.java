@@ -1784,6 +1784,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     int getCandidatesTokenCount();
 
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
@@ -1873,6 +1879,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
     private int totalTokenCount_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
@@ -2394,6 +2406,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
       private int totalTokenCount_;
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return The totalTokenCount.
@@ -2403,6 +2421,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return totalTokenCount_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @param value The totalTokenCount to set.
@@ -2416,6 +2440,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return This builder for chaining.

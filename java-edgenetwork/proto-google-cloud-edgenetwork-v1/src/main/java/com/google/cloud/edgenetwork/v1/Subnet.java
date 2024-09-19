@@ -109,7 +109,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Single homed.
+     * Multi homed.
      * </pre>
      *
      * <code>BONDED = 1;</code>
@@ -119,7 +119,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Multi homed.
+     * Single homed.
      * </pre>
      *
      * <code>NON_BONDED = 2;</code>
@@ -146,7 +146,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Single homed.
+     * Multi homed.
      * </pre>
      *
      * <code>BONDED = 1;</code>
@@ -156,7 +156,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Multi homed.
+     * Single homed.
      * </pre>
      *
      * <code>NON_BONDED = 2;</code>

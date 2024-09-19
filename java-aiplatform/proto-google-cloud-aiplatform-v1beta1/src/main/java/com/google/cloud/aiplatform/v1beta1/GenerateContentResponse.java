@@ -1800,11 +1800,32 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     int getCandidatesTokenCount();
 
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
      */
     int getTotalTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of tokens in the cached part in the input (the cached
+     * content).
+     * </pre>
+     *
+     * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cachedContentTokenCount.
+     */
+    int getCachedContentTokenCount();
   }
   /**
    *
@@ -1890,6 +1911,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
     private int totalTokenCount_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
@@ -1897,6 +1924,26 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public int getTotalTokenCount() {
       return totalTokenCount_;
+    }
+
+    public static final int CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER = 5;
+    private int cachedContentTokenCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of tokens in the cached part in the input (the cached
+     * content).
+     * </pre>
+     *
+     * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cachedContentTokenCount.
+     */
+    @java.lang.Override
+    public int getCachedContentTokenCount() {
+      return cachedContentTokenCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1922,6 +1969,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (totalTokenCount_ != 0) {
         output.writeInt32(3, totalTokenCount_);
       }
+      if (cachedContentTokenCount_ != 0) {
+        output.writeInt32(5, cachedContentTokenCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1939,6 +1989,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       if (totalTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalTokenCount_);
+      }
+      if (cachedContentTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, cachedContentTokenCount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1960,6 +2013,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (getPromptTokenCount() != other.getPromptTokenCount()) return false;
       if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
       if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
+      if (getCachedContentTokenCount() != other.getCachedContentTokenCount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1977,6 +2031,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (53 * hash) + getCandidatesTokenCount();
       hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalTokenCount();
+      hash = (37 * hash) + CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCachedContentTokenCount();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2130,6 +2186,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         promptTokenCount_ = 0;
         candidatesTokenCount_ = 0;
         totalTokenCount_ = 0;
+        cachedContentTokenCount_ = 0;
         return this;
       }
 
@@ -2179,6 +2236,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.totalTokenCount_ = totalTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.cachedContentTokenCount_ = cachedContentTokenCount_;
         }
       }
 
@@ -2243,6 +2303,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         if (other.getTotalTokenCount() != 0) {
           setTotalTokenCount(other.getTotalTokenCount());
         }
+        if (other.getCachedContentTokenCount() != 0) {
+          setCachedContentTokenCount(other.getCachedContentTokenCount());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2287,6 +2350,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 40:
+                {
+                  cachedContentTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2420,6 +2489,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
       private int totalTokenCount_;
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return The totalTokenCount.
@@ -2429,6 +2504,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return totalTokenCount_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @param value The totalTokenCount to set.
@@ -2442,6 +2523,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return This builder for chaining.
@@ -2449,6 +2536,65 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder clearTotalTokenCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
         totalTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cachedContentTokenCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The cachedContentTokenCount.
+       */
+      @java.lang.Override
+      public int getCachedContentTokenCount() {
+        return cachedContentTokenCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The cachedContentTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCachedContentTokenCount(int value) {
+
+        cachedContentTokenCount_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCachedContentTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        cachedContentTokenCount_ = 0;
         onChanged();
         return this;
       }

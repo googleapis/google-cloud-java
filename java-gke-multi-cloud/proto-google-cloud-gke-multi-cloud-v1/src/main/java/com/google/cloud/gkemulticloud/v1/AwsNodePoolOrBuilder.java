@@ -634,6 +634,47 @@ public interface AwsNodePoolOrBuilder
    *
    *
    * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kubeletConfig field is set.
+   */
+  boolean hasKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kubeletConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.NodeKubeletConfig getKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node kubelet configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.NodeKubeletConfig kubelet_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Update settings control the speed and disruption of the update.
    * </pre>
    *

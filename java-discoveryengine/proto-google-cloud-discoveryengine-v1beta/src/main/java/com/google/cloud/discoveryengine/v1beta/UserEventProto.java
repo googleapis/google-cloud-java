@@ -119,26 +119,26 @@ public final class UserEventProto {
           + "ction_id\030\003 \001(\t\022\020\n\003tax\030\004 \001(\002H\001\210\001\001\022\021\n\004cost"
           + "\030\005 \001(\002H\002\210\001\001\022\033\n\016discount_value\030\006 \001(\002H\003\210\001\001"
           + "B\010\n\006_valueB\006\n\004_taxB\007\n\005_costB\021\n\017_discount"
-          + "_value\"\273\001\n\014DocumentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n"
+          + "_value\"\320\001\n\014DocumentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n"
           + "\004name\030\002 \001(\tB,\372A)\n\'discoveryengine.google"
           + "apis.com/DocumentH\000\022\r\n\003uri\030\006 \001(\tH\000\022\025\n\010qu"
           + "antity\030\003 \001(\005H\001\210\001\001\022\025\n\rpromotion_ids\030\004 \003(\t"
-          + "B\025\n\023document_descriptorB\013\n\t_quantity\"\224\001\n"
-          + "\tPanelInfo\022\025\n\010panel_id\030\002 \001(\tB\003\340A\002\022\024\n\014dis"
-          + "play_name\030\003 \001(\t\022\033\n\016panel_position\030\004 \001(\005H"
-          + "\000\210\001\001\022\031\n\014total_panels\030\005 \001(\005H\001\210\001\001B\021\n\017_pane"
-          + "l_positionB\017\n\r_total_panels\"\215\001\n\tMediaInf"
-          + "o\022:\n\027media_progress_duration\030\001 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\022&\n\031media_progress_"
-          + "percentage\030\002 \001(\002H\000\210\001\001B\034\n\032_media_progress"
-          + "_percentageB\225\002\n\'com.google.cloud.discove"
-          + "ryengine.v1betaB\016UserEventProtoP\001ZQcloud"
-          + ".google.com/go/discoveryengine/apiv1beta"
-          + "/discoveryenginepb;discoveryenginepb\242\002\017D"
-          + "ISCOVERYENGINE\252\002#Google.Cloud.DiscoveryE"
-          + "ngine.V1Beta\312\002#Google\\Cloud\\DiscoveryEng"
-          + "ine\\V1beta\352\002&Google::Cloud::DiscoveryEng"
-          + "ine::V1betab\006proto3"
+          + "\022\023\n\006joined\030\005 \001(\010B\003\340A\003B\025\n\023document_descri"
+          + "ptorB\013\n\t_quantity\"\224\001\n\tPanelInfo\022\025\n\010panel"
+          + "_id\030\002 \001(\tB\003\340A\002\022\024\n\014display_name\030\003 \001(\t\022\033\n\016"
+          + "panel_position\030\004 \001(\005H\000\210\001\001\022\031\n\014total_panel"
+          + "s\030\005 \001(\005H\001\210\001\001B\021\n\017_panel_positionB\017\n\r_tota"
+          + "l_panels\"\215\001\n\tMediaInfo\022:\n\027media_progress"
+          + "_duration\030\001 \001(\0132\031.google.protobuf.Durati"
+          + "on\022&\n\031media_progress_percentage\030\002 \001(\002H\000\210"
+          + "\001\001B\034\n\032_media_progress_percentageB\225\002\n\'com"
+          + ".google.cloud.discoveryengine.v1betaB\016Us"
+          + "erEventProtoP\001ZQcloud.google.com/go/disc"
+          + "overyengine/apiv1beta/discoveryenginepb;"
+          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Go"
+          + "ogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goog"
+          + "le\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google"
+          + "::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -225,7 +225,7 @@ public final class UserEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentInfo_descriptor,
             new java.lang.String[] {
-              "Id", "Name", "Uri", "Quantity", "PromotionIds", "DocumentDescriptor",
+              "Id", "Name", "Uri", "Quantity", "PromotionIds", "Joined", "DocumentDescriptor",
             });
     internal_static_google_cloud_discoveryengine_v1beta_PanelInfo_descriptor =
         getDescriptor().getMessageTypes().get(6);

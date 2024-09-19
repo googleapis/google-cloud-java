@@ -50,7 +50,7 @@ public final class FeatureViewSyncProto {
           + "rm.v1beta1\032\037google/api/field_behavior.pr"
           + "oto\032\031google/api/resource.proto\032\037google/p"
           + "rotobuf/timestamp.proto\032\027google/rpc/stat"
-          + "us.proto\032\032google/type/interval.proto\"\317\004\n"
+          + "us.proto\032\032google/type/interval.proto\"\212\005\n"
           + "\017FeatureViewSync\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013c"
           + "reate_time\030\002 \001(\0132\032.google.protobuf.Times"
           + "tampB\003\340A\003\022,\n\010run_time\030\005 \001(\0132\025.google.typ"
@@ -59,19 +59,21 @@ public final class FeatureViewSyncProto {
           + " \001(\0132<.google.cloud.aiplatform.v1beta1.F"
           + "eatureViewSync.SyncSummaryB\003\340A\003\022\032\n\rsatis"
           + "fies_pzs\030\007 \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\010 \001"
-          + "(\010B\003\340A\003\032?\n\013SyncSummary\022\027\n\nrow_synced\030\001 \001"
-          + "(\003B\003\340A\003\022\027\n\ntotal_slot\030\002 \001(\003B\003\340A\003:\303\001\352A\277\001\n"
-          + ")aiplatform.googleapis.com/FeatureViewSy"
-          + "nc\022\221\001projects/{project}/locations/{locat"
-          + "ion}/featureOnlineStores/{feature_online"
-          + "_store}/featureViews/{feature_view}/feat"
-          + "ureViewSyncs/feature_view_syncB\353\001\n#com.g"
-          + "oogle.cloud.aiplatform.v1beta1B\024FeatureV"
-          + "iewSyncProtoP\001ZCcloud.google.com/go/aipl"
-          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
-          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
-          + "::Cloud::Aiplatform::V1beta1b\006proto3"
+          + "(\010B\003\340A\003\032z\n\013SyncSummary\022\027\n\nrow_synced\030\001 \001"
+          + "(\003B\003\340A\003\022\027\n\ntotal_slot\030\002 \001(\003B\003\340A\003\0229\n\025syst"
+          + "em_watermark_time\030\005 \001(\0132\032.google.protobu"
+          + "f.Timestamp:\303\001\352A\277\001\n)aiplatform.googleapi"
+          + "s.com/FeatureViewSync\022\221\001projects/{projec"
+          + "t}/locations/{location}/featureOnlineSto"
+          + "res/{feature_online_store}/featureViews/"
+          + "{feature_view}/featureViewSyncs/feature_"
+          + "view_syncB\353\001\n#com.google.cloud.aiplatfor"
+          + "m.v1beta1B\024FeatureViewSyncProtoP\001ZCcloud"
+          + ".google.com/go/aiplatform/apiv1beta1/aip"
+          + "latformpb;aiplatformpb\252\002\037Google.Cloud.AI"
+          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\352\002\"Google::Cloud::Aiplatform::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,7 +107,7 @@ public final class FeatureViewSyncProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_descriptor,
             new java.lang.String[] {
-              "RowSynced", "TotalSlot",
+              "RowSynced", "TotalSlot", "SystemWatermarkTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

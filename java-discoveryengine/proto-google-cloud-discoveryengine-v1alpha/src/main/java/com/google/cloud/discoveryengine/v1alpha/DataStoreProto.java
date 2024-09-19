@@ -36,6 +36,10 @@ public final class DataStoreProto {
       internal_static_google_cloud_discoveryengine_v1alpha_LanguageInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_LanguageInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_WorkspaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_WorkspaceConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -54,7 +58,7 @@ public final class DataStoreProto {
           + "ha/document_processing_config.proto\0321goo"
           + "gle/cloud/discoveryengine/v1alpha/schema"
           + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\240\010\n\tDataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014disp"
+          + "\207\t\n\tDataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014disp"
           + "lay_name\030\002 \001(\tB\003\340A\002\022V\n\021industry_vertical"
           + "\030\003 \001(\01626.google.cloud.discoveryengine.v1"
           + "alpha.IndustryVerticalB\003\340A\005\022J\n\016solution_"
@@ -68,29 +72,39 @@ public final class DataStoreProto {
           + "discoveryengine.v1alpha.LanguageInfo\022H\n\n"
           + "idp_config\030\025 \001(\0132/.google.cloud.discover"
           + "yengine.v1alpha.IdpConfigB\003\340A\003\022\030\n\013acl_en"
-          + "abled\030\030 \001(\010B\003\340A\005\022b\n\032document_processing_"
-          + "config\030\033 \001(\0132>.google.cloud.discoveryeng"
-          + "ine.v1alpha.DocumentProcessingConfig\022E\n\017"
-          + "starting_schema\030\034 \001(\0132,.google.cloud.dis"
-          + "coveryengine.v1alpha.Schema\"i\n\rContentCo"
-          + "nfig\022\036\n\032CONTENT_CONFIG_UNSPECIFIED\020\000\022\016\n\n"
-          + "NO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n\016PU"
-          + "BLIC_WEBSITE\020\003:\311\001\352A\305\001\n(discoveryengine.g"
-          + "oogleapis.com/DataStore\022?projects/{proje"
-          + "ct}/locations/{location}/dataStores/{dat"
-          + "a_store}\022Xprojects/{project}/locations/{"
-          + "location}/collections/{collection}/dataS"
-          + "tores/{data_store}\"x\n\014LanguageInfo\022\025\n\rla"
-          + "nguage_code\030\001 \001(\t\022%\n\030normalized_language"
-          + "_code\030\002 \001(\tB\003\340A\003\022\025\n\010language\030\003 \001(\tB\003\340A\003\022"
-          + "\023\n\006region\030\004 \001(\tB\003\340A\003B\232\002\n(com.google.clou"
-          + "d.discoveryengine.v1alphaB\016DataStoreProt"
-          + "oP\001ZRcloud.google.com/go/discoveryengine"
-          + "/apiv1alpha/discoveryenginepb;discoverye"
-          + "nginepb\242\002\017DISCOVERYENGINE\252\002$Google.Cloud"
-          + ".DiscoveryEngine.V1Alpha\312\002$Google\\Cloud\\"
-          + "DiscoveryEngine\\V1alpha\352\002\'Google::Cloud:"
-          + ":DiscoveryEngine::V1alphab\006proto3"
+          + "abled\030\030 \001(\010B\003\340A\005\022O\n\020workspace_config\030\031 \001"
+          + "(\01325.google.cloud.discoveryengine.v1alph"
+          + "a.WorkspaceConfig\022b\n\032document_processing"
+          + "_config\030\033 \001(\0132>.google.cloud.discoveryen"
+          + "gine.v1alpha.DocumentProcessingConfig\022E\n"
+          + "\017starting_schema\030\034 \001(\0132,.google.cloud.di"
+          + "scoveryengine.v1alpha.Schema\"\177\n\rContentC"
+          + "onfig\022\036\n\032CONTENT_CONFIG_UNSPECIFIED\020\000\022\016\n"
+          + "\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n\016P"
+          + "UBLIC_WEBSITE\020\003\022\024\n\020GOOGLE_WORKSPACE\020\004:\311\001"
+          + "\352A\305\001\n(discoveryengine.googleapis.com/Dat"
+          + "aStore\022?projects/{project}/locations/{lo"
+          + "cation}/dataStores/{data_store}\022Xproject"
+          + "s/{project}/locations/{location}/collect"
+          + "ions/{collection}/dataStores/{data_store"
+          + "}\"x\n\014LanguageInfo\022\025\n\rlanguage_code\030\001 \001(\t"
+          + "\022%\n\030normalized_language_code\030\002 \001(\tB\003\340A\003\022"
+          + "\025\n\010language\030\003 \001(\tB\003\340A\003\022\023\n\006region\030\004 \001(\tB\003"
+          + "\340A\003\"\225\002\n\017WorkspaceConfig\022H\n\004type\030\001 \001(\0162:."
+          + "google.cloud.discoveryengine.v1alpha.Wor"
+          + "kspaceConfig.Type\022\032\n\022dasher_customer_id\030"
+          + "\002 \001(\t\"\233\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014"
+          + "GOOGLE_DRIVE\020\001\022\017\n\013GOOGLE_MAIL\020\002\022\020\n\014GOOGL"
+          + "E_SITES\020\003\022\023\n\017GOOGLE_CALENDAR\020\004\022\017\n\013GOOGLE"
+          + "_CHAT\020\005\022\021\n\rGOOGLE_GROUPS\020\006\022\017\n\013GOOGLE_KEE"
+          + "P\020\007B\232\002\n(com.google.cloud.discoveryengine"
+          + ".v1alphaB\016DataStoreProtoP\001ZRcloud.google"
+          + ".com/go/discoveryengine/apiv1alpha/disco"
+          + "veryenginepb;discoveryenginepb\242\002\017DISCOVE"
+          + "RYENGINE\252\002$Google.Cloud.DiscoveryEngine."
+          + "V1Alpha\312\002$Google\\Cloud\\DiscoveryEngine\\V"
+          + "1alpha\352\002\'Google::Cloud::DiscoveryEngine:"
+          + ":V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,6 +134,7 @@ public final class DataStoreProto {
               "LanguageInfo",
               "IdpConfig",
               "AclEnabled",
+              "WorkspaceConfig",
               "DocumentProcessingConfig",
               "StartingSchema",
             });
@@ -130,6 +145,14 @@ public final class DataStoreProto {
             internal_static_google_cloud_discoveryengine_v1alpha_LanguageInfo_descriptor,
             new java.lang.String[] {
               "LanguageCode", "NormalizedLanguageCode", "Language", "Region",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_WorkspaceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_discoveryengine_v1alpha_WorkspaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_WorkspaceConfig_descriptor,
+            new java.lang.String[] {
+              "Type", "DasherCustomerId",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

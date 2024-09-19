@@ -87,7 +87,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Solve the model.
+     * Solve the model. Warnings may be issued in
+     * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors].
      * </pre>
      *
      * <code>DEFAULT_SOLVE = 0;</code>
@@ -136,7 +137,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Solve the model.
+     * Solve the model. Warnings may be issued in
+     * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors].
      * </pre>
      *
      * <code>DEFAULT_SOLVE = 0;</code>

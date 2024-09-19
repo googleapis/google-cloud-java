@@ -94,6 +94,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>

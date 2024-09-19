@@ -41,6 +41,7 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
   private FhirStoreSource() {
     fhirStore_ = "";
     gcsStagingDir_ = "";
+    resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -178,6 +179,82 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int RESOURCE_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @return A list containing the resourceTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getResourceTypesList() {
+    return resourceTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @return The count of resourceTypes.
+   */
+  public int getResourceTypesCount() {
+    return resourceTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceTypes at the given index.
+   */
+  public java.lang.String getResourceTypes(int index) {
+    return resourceTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
+    return resourceTypes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -198,6 +275,9 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsStagingDir_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gcsStagingDir_);
     }
+    for (int i = 0; i < resourceTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceTypes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -212,6 +292,14 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsStagingDir_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gcsStagingDir_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < resourceTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(resourceTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getResourceTypesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -231,6 +319,7 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
 
     if (!getFhirStore().equals(other.getFhirStore())) return false;
     if (!getGcsStagingDir().equals(other.getGcsStagingDir())) return false;
+    if (!getResourceTypesList().equals(other.getResourceTypesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,6 +335,10 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getFhirStore().hashCode();
     hash = (37 * hash) + GCS_STAGING_DIR_FIELD_NUMBER;
     hash = (53 * hash) + getGcsStagingDir().hashCode();
+    if (getResourceTypesCount() > 0) {
+      hash = (37 * hash) + RESOURCE_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceTypesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,6 +480,7 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       fhirStore_ = "";
       gcsStagingDir_ = "";
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -428,6 +522,10 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.gcsStagingDir_ = gcsStagingDir_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        resourceTypes_.makeImmutable();
+        result.resourceTypes_ = resourceTypes_;
       }
     }
 
@@ -487,6 +585,16 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.resourceTypes_.isEmpty()) {
+        if (resourceTypes_.isEmpty()) {
+          resourceTypes_ = other.resourceTypes_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureResourceTypesIsMutable();
+          resourceTypes_.addAll(other.resourceTypes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -525,6 +633,13 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourceTypesIsMutable();
+                resourceTypes_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -782,6 +897,207 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       gcsStagingDir_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureResourceTypesIsMutable() {
+      if (!resourceTypes_.isModifiable()) {
+        resourceTypes_ = new com.google.protobuf.LazyStringArrayList(resourceTypes_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @return A list containing the resourceTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceTypesList() {
+      resourceTypes_.makeImmutable();
+      return resourceTypes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @return The count of resourceTypes.
+     */
+    public int getResourceTypesCount() {
+      return resourceTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceTypes at the given index.
+     */
+    public java.lang.String getResourceTypes(int index) {
+      return resourceTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
+      return resourceTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceTypesIsMutable();
+      resourceTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param value The resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceTypesIsMutable();
+      resourceTypes_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param values The resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResourceTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureResourceTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceTypes_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceTypes() {
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The FHIR resource types to import. The resource types should be a subset of
+     * all [supported FHIR resource
+     * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+     * Default to all supported FHIR resource types if empty.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 3;</code>
+     *
+     * @param value The bytes of the resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureResourceTypesIsMutable();
+      resourceTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -130,6 +130,9 @@
         "grpc": {
           "libraryClient": "DocumentServiceClient",
           "rpcs": {
+            "BatchGetDocumentsMetadata": {
+              "methods": ["batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadataCallable"]
+            },
             "CreateDocument": {
               "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
             },
@@ -263,6 +266,21 @@
         }
       }
     },
+    "SearchTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchTuningServiceClient",
+          "rpcs": {
+            "ListCustomModels": {
+              "methods": ["listCustomModels", "listCustomModelsCallable"]
+            },
+            "TrainCustomModel": {
+              "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
     "SiteSearchEngineService": {
       "clients": {
         "grpc": {
@@ -318,6 +336,9 @@
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "PurgeUserEvents": {
+              "methods": ["purgeUserEventsAsync", "purgeUserEventsOperationCallable", "purgeUserEventsCallable"]
             },
             "WriteUserEvent": {
               "methods": ["writeUserEvent", "writeUserEventCallable"]

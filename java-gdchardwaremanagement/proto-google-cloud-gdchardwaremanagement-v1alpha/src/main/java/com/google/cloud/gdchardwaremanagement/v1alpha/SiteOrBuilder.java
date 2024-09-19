@@ -320,6 +320,12 @@ public interface SiteOrBuilder
    * <pre>
    * Optional. The time periods when the site is accessible.
    * If this field is empty, the site is accessible at all times.
+   *
+   * This field is used by Google to schedule the initial installation as well
+   * as any later hardware maintenance. You may update this at any time. For
+   * example, if the initial installation is requested during off-hours but
+   * maintenance should be performed during regular business hours, you should
+   * update the access times after initial installation is complete.
    * </pre>
    *
    * <code>
@@ -333,6 +339,12 @@ public interface SiteOrBuilder
    * <pre>
    * Optional. The time periods when the site is accessible.
    * If this field is empty, the site is accessible at all times.
+   *
+   * This field is used by Google to schedule the initial installation as well
+   * as any later hardware maintenance. You may update this at any time. For
+   * example, if the initial installation is requested during off-hours but
+   * maintenance should be performed during regular business hours, you should
+   * update the access times after initial installation is complete.
    * </pre>
    *
    * <code>
@@ -346,6 +358,12 @@ public interface SiteOrBuilder
    * <pre>
    * Optional. The time periods when the site is accessible.
    * If this field is empty, the site is accessible at all times.
+   *
+   * This field is used by Google to schedule the initial installation as well
+   * as any later hardware maintenance. You may update this at any time. For
+   * example, if the initial installation is requested during off-hours but
+   * maintenance should be performed during regular business hours, you should
+   * update the access times after initial installation is complete.
    * </pre>
    *
    * <code>
@@ -359,6 +377,12 @@ public interface SiteOrBuilder
    * <pre>
    * Optional. The time periods when the site is accessible.
    * If this field is empty, the site is accessible at all times.
+   *
+   * This field is used by Google to schedule the initial installation as well
+   * as any later hardware maintenance. You may update this at any time. For
+   * example, if the initial installation is requested during off-hours but
+   * maintenance should be performed during regular business hours, you should
+   * update the access times after initial installation is complete.
    * </pre>
    *
    * <code>
@@ -373,6 +397,12 @@ public interface SiteOrBuilder
    * <pre>
    * Optional. The time periods when the site is accessible.
    * If this field is empty, the site is accessible at all times.
+   *
+   * This field is used by Google to schedule the initial installation as well
+   * as any later hardware maintenance. You may update this at any time. For
+   * example, if the initial installation is requested during off-hours but
+   * maintenance should be performed during regular business hours, you should
+   * update the access times after initial installation is complete.
    * </pre>
    *
    * <code>
@@ -416,4 +446,31 @@ public interface SiteOrBuilder
    * @return The bytes for notes.
    */
   com.google.protobuf.ByteString getNotesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer defined identifier for this Site. This can be used to
+   * identify the site in the customer's own systems.
+   * </pre>
+   *
+   * <code>string customer_site_id = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customerSiteId.
+   */
+  java.lang.String getCustomerSiteId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer defined identifier for this Site. This can be used to
+   * identify the site in the customer's own systems.
+   * </pre>
+   *
+   * <code>string customer_site_id = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customerSiteId.
+   */
+  com.google.protobuf.ByteString getCustomerSiteIdBytes();
 }

@@ -43,10 +43,11 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Anaconda python distribution. The Anaconda component is not supported
-   * in the Dataproc [2.0 image]
-   * (/https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-release-2.0).
-   * The 2.0 image is pre-installed with Miniconda.
+   * The Anaconda component is no longer supported or applicable to
+   * [supported Dataproc on Compute Engine image versions]
+   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-version-clusters#supported-dataproc-image-versions).
+   * It cannot be activated on clusters created with supported Dataproc on
+   * Compute Engine image versions.
    * </pre>
    *
    * <code>ANACONDA = 5;</code>
@@ -199,10 +200,11 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Anaconda python distribution. The Anaconda component is not supported
-   * in the Dataproc [2.0 image]
-   * (/https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-release-2.0).
-   * The 2.0 image is pre-installed with Miniconda.
+   * The Anaconda component is no longer supported or applicable to
+   * [supported Dataproc on Compute Engine image versions]
+   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-version-clusters#supported-dataproc-image-versions).
+   * It cannot be activated on clusters created with supported Dataproc on
+   * Compute Engine image versions.
    * </pre>
    *
    * <code>ANACONDA = 5;</code>

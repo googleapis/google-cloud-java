@@ -125,7 +125,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeployment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeployment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -141,9 +143,45 @@ import org.threeten.bp.Duration;
  *             .getDeploymentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConfigStubSettings configSettings = configSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeployment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ConfigStubSettings.Builder configSettingsBuilder = ConfigStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * configSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -247,9 +285,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Deployment> extractResources(ListDeploymentsResponse payload) {
-              return payload.getDeploymentsList() == null
-                  ? ImmutableList.<Deployment>of()
-                  : payload.getDeploymentsList();
+              return payload.getDeploymentsList();
             }
           };
 
@@ -283,9 +319,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Revision> extractResources(ListRevisionsResponse payload) {
-              return payload.getRevisionsList() == null
-                  ? ImmutableList.<Revision>of()
-                  : payload.getRevisionsList();
+              return payload.getRevisionsList();
             }
           };
 
@@ -319,9 +353,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Resource> extractResources(ListResourcesResponse payload) {
-              return payload.getResourcesList() == null
-                  ? ImmutableList.<Resource>of()
-                  : payload.getResourcesList();
+              return payload.getResourcesList();
             }
           };
 
@@ -355,9 +387,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Preview> extractResources(ListPreviewsResponse payload) {
-              return payload.getPreviewsList() == null
-                  ? ImmutableList.<Preview>of()
-                  : payload.getPreviewsList();
+              return payload.getPreviewsList();
             }
           };
 
@@ -396,9 +426,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             @Override
             public Iterable<TerraformVersion> extractResources(
                 ListTerraformVersionsResponse payload) {
-              return payload.getTerraformVersionsList() == null
-                  ? ImmutableList.<TerraformVersion>of()
-                  : payload.getTerraformVersionsList();
+              return payload.getTerraformVersionsList();
             }
           };
 
@@ -432,9 +460,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

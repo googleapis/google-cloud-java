@@ -51,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of writeUserEvent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of writeUserEvent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,9 +70,46 @@ import javax.annotation.Generated;
  *             .writeUserEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * UserEventServiceSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for purgeUserEvents:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * UserEventServiceSettings.Builder userEventServiceSettingsBuilder =
+ *     UserEventServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * userEventServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -84,6 +123,18 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
   /** Returns the object with the settings used for calls to collectUserEvent. */
   public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
     return ((UserEventServiceStubSettings) getStubSettings()).collectUserEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).purgeUserEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).purgeUserEventsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to importUserEvents. */
@@ -218,6 +269,18 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
     /** Returns the builder for the settings used for calls to collectUserEvent. */
     public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
       return getStubSettingsBuilder().collectUserEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+      return getStubSettingsBuilder().purgeUserEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings() {
+      return getStubSettingsBuilder().purgeUserEventsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importUserEvents. */

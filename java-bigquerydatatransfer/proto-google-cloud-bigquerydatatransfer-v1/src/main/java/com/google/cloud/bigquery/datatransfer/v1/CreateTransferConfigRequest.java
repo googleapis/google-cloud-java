@@ -29,6 +29,11 @@ package com.google.cloud.bigquery.datatransfer.v1;
  * associated with the user id corresponding to the authorization info.
  * Otherwise, the transfer configuration will be associated with the calling
  * user.
+ *
+ * When using a cross project service account for creating a transfer config,
+ * you must enable cross project service account usage. For more information,
+ * see [Disable attachment of service accounts to resources in other
+ * projects](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-service-accounts#disable_cross_project_service_accounts).
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}
@@ -224,7 +229,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @deprecated
    *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
    * @return The authorizationCode.
    */
   @java.lang.Override
@@ -268,7 +273,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @deprecated
    *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
    * @return The bytes for authorizationCode.
    */
   @java.lang.Override
@@ -643,6 +648,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * associated with the user id corresponding to the authorization info.
    * Otherwise, the transfer configuration will be associated with the calling
    * user.
+   *
+   * When using a cross project service account for creating a transfer config,
+   * you must enable cross project service account usage. For more information,
+   * see [Disable attachment of service accounts to resources in other
+   * projects](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-service-accounts#disable_cross_project_service_accounts).
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}
@@ -1277,7 +1287,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
      * @return The authorizationCode.
      */
     @java.lang.Deprecated
@@ -1320,7 +1330,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
      * @return The bytes for authorizationCode.
      */
     @java.lang.Deprecated
@@ -1363,7 +1373,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
      * @param value The authorizationCode to set.
      * @return This builder for chaining.
      */
@@ -1405,7 +1415,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1443,7 +1453,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is
-     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=532
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
      * @param value The bytes for authorizationCode to set.
      * @return This builder for chaining.
      */

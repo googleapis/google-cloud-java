@@ -526,6 +526,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RecordActionOnComment</td>
+ *      <td><p> Record Action on a Comment. If the Action specified in the request is READ, the viewed time in the comment is set to the time the request was received. If the comment is already marked as read, subsequent calls will be ignored. If the Action is UNREAD, the viewed time is cleared from the comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> recordActionOnComment(RecordActionOnCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> recordActionOnComment(CommentName name, RecordActionOnCommentRequest.ActionType actionType)
+ *           <li><p> recordActionOnComment(String name, RecordActionOnCommentRequest.ActionType actionType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> recordActionOnCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListChangeLogEntries</td>
  *      <td><p> Lists the changes made to an order.</td>
  *      <td>
@@ -4383,6 +4402,146 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateCommentRequest, Operation> createCommentCallable() {
     return stub.createCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Record Action on a Comment. If the Action specified in the request is READ, the viewed time in
+   * the comment is set to the time the request was received. If the comment is already marked as
+   * read, subsequent calls will be ignored. If the Action is UNREAD, the viewed time is cleared
+   * from the comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   CommentName name = CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]");
+   *   RecordActionOnCommentRequest.ActionType actionType =
+   *       RecordActionOnCommentRequest.ActionType.forNumber(0);
+   *   Comment response = gDCHardwareManagementClient.recordActionOnComment(name, actionType);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment. Format:
+   *     `projects/{project}/locations/{location}/orders/{order}/comments/{comment}`
+   * @param actionType Required. The action type of the recorded action.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment recordActionOnComment(
+      CommentName name, RecordActionOnCommentRequest.ActionType actionType) {
+    RecordActionOnCommentRequest request =
+        RecordActionOnCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setActionType(actionType)
+            .build();
+    return recordActionOnComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Record Action on a Comment. If the Action specified in the request is READ, the viewed time in
+   * the comment is set to the time the request was received. If the comment is already marked as
+   * read, subsequent calls will be ignored. If the Action is UNREAD, the viewed time is cleared
+   * from the comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   String name = CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]").toString();
+   *   RecordActionOnCommentRequest.ActionType actionType =
+   *       RecordActionOnCommentRequest.ActionType.forNumber(0);
+   *   Comment response = gDCHardwareManagementClient.recordActionOnComment(name, actionType);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment. Format:
+   *     `projects/{project}/locations/{location}/orders/{order}/comments/{comment}`
+   * @param actionType Required. The action type of the recorded action.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment recordActionOnComment(
+      String name, RecordActionOnCommentRequest.ActionType actionType) {
+    RecordActionOnCommentRequest request =
+        RecordActionOnCommentRequest.newBuilder().setName(name).setActionType(actionType).build();
+    return recordActionOnComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Record Action on a Comment. If the Action specified in the request is READ, the viewed time in
+   * the comment is set to the time the request was received. If the comment is already marked as
+   * read, subsequent calls will be ignored. If the Action is UNREAD, the viewed time is cleared
+   * from the comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   RecordActionOnCommentRequest request =
+   *       RecordActionOnCommentRequest.newBuilder()
+   *           .setName(CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]").toString())
+   *           .build();
+   *   Comment response = gDCHardwareManagementClient.recordActionOnComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment recordActionOnComment(RecordActionOnCommentRequest request) {
+    return recordActionOnCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Record Action on a Comment. If the Action specified in the request is READ, the viewed time in
+   * the comment is set to the time the request was received. If the comment is already marked as
+   * read, subsequent calls will be ignored. If the Action is UNREAD, the viewed time is cleared
+   * from the comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   RecordActionOnCommentRequest request =
+   *       RecordActionOnCommentRequest.newBuilder()
+   *           .setName(CommentName.of("[PROJECT]", "[LOCATION]", "[ORDER]", "[COMMENT]").toString())
+   *           .build();
+   *   ApiFuture<Comment> future =
+   *       gDCHardwareManagementClient.recordActionOnCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Comment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RecordActionOnCommentRequest, Comment>
+      recordActionOnCommentCallable() {
+    return stub.recordActionOnCommentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

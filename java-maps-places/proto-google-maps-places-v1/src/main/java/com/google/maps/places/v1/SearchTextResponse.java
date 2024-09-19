@@ -40,6 +40,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
 
   private SearchTextResponse() {
     places_ = java.util.Collections.emptyList();
+    routingSummaries_ = java.util.Collections.emptyList();
     contextualContents_ = java.util.Collections.emptyList();
   }
 
@@ -135,6 +136,97 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     return places_.get(index);
   }
 
+  public static final int ROUTING_SUMMARIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.places.v1.RoutingSummary> routingSummaries_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList() {
+    return routingSummaries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
+      getRoutingSummariesOrBuilderList() {
+    return routingSummaries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  @java.lang.Override
+  public int getRoutingSummariesCount() {
+    return routingSummaries_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index) {
+    return routingSummaries_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingSummaryOrBuilder getRoutingSummariesOrBuilder(int index) {
+    return routingSummaries_.get(index);
+  }
+
   public static final int CONTEXTUAL_CONTENTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -152,7 +244,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -175,7 +267,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -199,7 +291,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -222,7 +314,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -245,7 +337,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -274,6 +366,9 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < places_.size(); i++) {
       output.writeMessage(1, places_.get(i));
     }
+    for (int i = 0; i < routingSummaries_.size(); i++) {
+      output.writeMessage(2, routingSummaries_.get(i));
+    }
     for (int i = 0; i < contextualContents_.size(); i++) {
       output.writeMessage(3, contextualContents_.get(i));
     }
@@ -288,6 +383,9 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     size = 0;
     for (int i = 0; i < places_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, places_.get(i));
+    }
+    for (int i = 0; i < routingSummaries_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, routingSummaries_.get(i));
     }
     for (int i = 0; i < contextualContents_.size(); i++) {
       size +=
@@ -310,6 +408,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         (com.google.maps.places.v1.SearchTextResponse) obj;
 
     if (!getPlacesList().equals(other.getPlacesList())) return false;
+    if (!getRoutingSummariesList().equals(other.getRoutingSummariesList())) return false;
     if (!getContextualContentsList().equals(other.getContextualContentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -325,6 +424,10 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     if (getPlacesCount() > 0) {
       hash = (37 * hash) + PLACES_FIELD_NUMBER;
       hash = (53 * hash) + getPlacesList().hashCode();
+    }
+    if (getRoutingSummariesCount() > 0) {
+      hash = (37 * hash) + ROUTING_SUMMARIES_FIELD_NUMBER;
+      hash = (53 * hash) + getRoutingSummariesList().hashCode();
     }
     if (getContextualContentsCount() > 0) {
       hash = (37 * hash) + CONTEXTUAL_CONTENTS_FIELD_NUMBER;
@@ -476,13 +579,20 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         placesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (routingSummariesBuilder_ == null) {
+        routingSummaries_ = java.util.Collections.emptyList();
+      } else {
+        routingSummaries_ = null;
+        routingSummariesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (contextualContentsBuilder_ == null) {
         contextualContents_ = java.util.Collections.emptyList();
       } else {
         contextualContents_ = null;
         contextualContentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -528,10 +638,19 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.places_ = placesBuilder_.build();
       }
-      if (contextualContentsBuilder_ == null) {
+      if (routingSummariesBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
-          contextualContents_ = java.util.Collections.unmodifiableList(contextualContents_);
+          routingSummaries_ = java.util.Collections.unmodifiableList(routingSummaries_);
           bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.routingSummaries_ = routingSummaries_;
+      } else {
+        result.routingSummaries_ = routingSummariesBuilder_.build();
+      }
+      if (contextualContentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          contextualContents_ = java.util.Collections.unmodifiableList(contextualContents_);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.contextualContents_ = contextualContents_;
       } else {
@@ -615,11 +734,38 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (routingSummariesBuilder_ == null) {
+        if (!other.routingSummaries_.isEmpty()) {
+          if (routingSummaries_.isEmpty()) {
+            routingSummaries_ = other.routingSummaries_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRoutingSummariesIsMutable();
+            routingSummaries_.addAll(other.routingSummaries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.routingSummaries_.isEmpty()) {
+          if (routingSummariesBuilder_.isEmpty()) {
+            routingSummariesBuilder_.dispose();
+            routingSummariesBuilder_ = null;
+            routingSummaries_ = other.routingSummaries_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            routingSummariesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRoutingSummariesFieldBuilder()
+                    : null;
+          } else {
+            routingSummariesBuilder_.addAllMessages(other.routingSummaries_);
+          }
+        }
+      }
       if (contextualContentsBuilder_ == null) {
         if (!other.contextualContents_.isEmpty()) {
           if (contextualContents_.isEmpty()) {
             contextualContents_ = other.contextualContents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureContextualContentsIsMutable();
             contextualContents_.addAll(other.contextualContents_);
@@ -632,7 +778,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
             contextualContentsBuilder_.dispose();
             contextualContentsBuilder_ = null;
             contextualContents_ = other.contextualContents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             contextualContentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContextualContentsFieldBuilder()
@@ -680,6 +826,19 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.maps.places.v1.RoutingSummary m =
+                    input.readMessage(
+                        com.google.maps.places.v1.RoutingSummary.parser(), extensionRegistry);
+                if (routingSummariesBuilder_ == null) {
+                  ensureRoutingSummariesIsMutable();
+                  routingSummaries_.add(m);
+                } else {
+                  routingSummariesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             case 26:
               {
                 com.google.maps.places.v1.ContextualContent m =
@@ -1058,15 +1217,442 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return placesBuilder_;
     }
 
+    private java.util.List<com.google.maps.places.v1.RoutingSummary> routingSummaries_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRoutingSummariesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        routingSummaries_ =
+            new java.util.ArrayList<com.google.maps.places.v1.RoutingSummary>(routingSummaries_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.RoutingSummary,
+            com.google.maps.places.v1.RoutingSummary.Builder,
+            com.google.maps.places.v1.RoutingSummaryOrBuilder>
+        routingSummariesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList() {
+      if (routingSummariesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(routingSummaries_);
+      } else {
+        return routingSummariesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public int getRoutingSummariesCount() {
+      if (routingSummariesBuilder_ == null) {
+        return routingSummaries_.size();
+      } else {
+        return routingSummariesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index) {
+      if (routingSummariesBuilder_ == null) {
+        return routingSummaries_.get(index);
+      } else {
+        return routingSummariesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder setRoutingSummaries(int index, com.google.maps.places.v1.RoutingSummary value) {
+      if (routingSummariesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.set(index, value);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder setRoutingSummaries(
+        int index, com.google.maps.places.v1.RoutingSummary.Builder builderForValue) {
+      if (routingSummariesBuilder_ == null) {
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        routingSummariesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder addRoutingSummaries(com.google.maps.places.v1.RoutingSummary value) {
+      if (routingSummariesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.add(value);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder addRoutingSummaries(int index, com.google.maps.places.v1.RoutingSummary value) {
+      if (routingSummariesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.add(index, value);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder addRoutingSummaries(
+        com.google.maps.places.v1.RoutingSummary.Builder builderForValue) {
+      if (routingSummariesBuilder_ == null) {
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        routingSummariesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder addRoutingSummaries(
+        int index, com.google.maps.places.v1.RoutingSummary.Builder builderForValue) {
+      if (routingSummariesBuilder_ == null) {
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        routingSummariesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder addAllRoutingSummaries(
+        java.lang.Iterable<? extends com.google.maps.places.v1.RoutingSummary> values) {
+      if (routingSummariesBuilder_ == null) {
+        ensureRoutingSummariesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, routingSummaries_);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder clearRoutingSummaries() {
+      if (routingSummariesBuilder_ == null) {
+        routingSummaries_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public Builder removeRoutingSummaries(int index) {
+      if (routingSummariesBuilder_ == null) {
+        ensureRoutingSummariesIsMutable();
+        routingSummaries_.remove(index);
+        onChanged();
+      } else {
+        routingSummariesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public com.google.maps.places.v1.RoutingSummary.Builder getRoutingSummariesBuilder(int index) {
+      return getRoutingSummariesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public com.google.maps.places.v1.RoutingSummaryOrBuilder getRoutingSummariesOrBuilder(
+        int index) {
+      if (routingSummariesBuilder_ == null) {
+        return routingSummaries_.get(index);
+      } else {
+        return routingSummariesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
+        getRoutingSummariesOrBuilderList() {
+      if (routingSummariesBuilder_ != null) {
+        return routingSummariesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(routingSummaries_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public com.google.maps.places.v1.RoutingSummary.Builder addRoutingSummariesBuilder() {
+      return getRoutingSummariesFieldBuilder()
+          .addBuilder(com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public com.google.maps.places.v1.RoutingSummary.Builder addRoutingSummariesBuilder(int index) {
+      return getRoutingSummariesFieldBuilder()
+          .addBuilder(index, com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of routing summaries where each entry associates to the
+     * corresponding place in the same index in the places field. If the routing
+     * summary is not available for one of the places, it will contain an empty
+     * entry. This list will have as many entries as the list of places if
+     * requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.RoutingSummary.Builder>
+        getRoutingSummariesBuilderList() {
+      return getRoutingSummariesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.RoutingSummary,
+            com.google.maps.places.v1.RoutingSummary.Builder,
+            com.google.maps.places.v1.RoutingSummaryOrBuilder>
+        getRoutingSummariesFieldBuilder() {
+      if (routingSummariesBuilder_ == null) {
+        routingSummariesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.places.v1.RoutingSummary,
+                com.google.maps.places.v1.RoutingSummary.Builder,
+                com.google.maps.places.v1.RoutingSummaryOrBuilder>(
+                routingSummaries_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        routingSummaries_ = null;
+      }
+      return routingSummariesBuilder_;
+    }
+
     private java.util.List<com.google.maps.places.v1.ContextualContent> contextualContents_ =
         java.util.Collections.emptyList();
 
     private void ensureContextualContentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         contextualContents_ =
             new java.util.ArrayList<com.google.maps.places.v1.ContextualContent>(
                 contextualContents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1089,7 +1675,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1115,7 +1701,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1141,7 +1727,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1167,7 +1753,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1200,7 +1786,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1230,7 +1816,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1262,7 +1848,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1295,7 +1881,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1325,7 +1911,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1355,7 +1941,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1385,7 +1971,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1394,7 +1980,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     public Builder clearContextualContents() {
       if (contextualContentsBuilder_ == null) {
         contextualContents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         contextualContentsBuilder_.clear();
@@ -1414,7 +2000,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1443,7 +2029,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1466,7 +2052,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1493,7 +2079,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1520,7 +2106,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1543,7 +2129,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1567,7 +2153,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
      * that are relevant to the `text_query` in the request are preferred. If the
      * contextual content is not available for one of the places, it will return
      * non-contextual content. It will be empty only when the content is
-     * unavailable for this place. This list should have as many entries as the
+     * unavailable for this place. This list will have as many entries as the
      * list of places if requested.
      * </pre>
      *
@@ -1590,7 +2176,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
                 com.google.maps.places.v1.ContextualContent.Builder,
                 com.google.maps.places.v1.ContextualContentOrBuilder>(
                 contextualContents_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         contextualContents_ = null;

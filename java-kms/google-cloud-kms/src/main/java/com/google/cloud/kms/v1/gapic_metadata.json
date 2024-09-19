@@ -23,7 +23,7 @@
               "methods": ["getLocation", "getLocationCallable"]
             },
             "ListKeyHandles": {
-              "methods": ["listKeyHandles", "listKeyHandles", "listKeyHandles", "listKeyHandlesCallable"]
+              "methods": ["listKeyHandles", "listKeyHandles", "listKeyHandles", "listKeyHandlesPagedCallable", "listKeyHandlesCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]

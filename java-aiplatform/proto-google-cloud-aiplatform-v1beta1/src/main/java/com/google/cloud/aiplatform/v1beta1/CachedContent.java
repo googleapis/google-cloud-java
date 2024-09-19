@@ -68,6 +68,979 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.CachedContent.Builder.class);
   }
 
+  public interface UsageMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of tokens that the cached content consumes.
+     * </pre>
+     *
+     * <code>int32 total_token_count = 1;</code>
+     *
+     * @return The totalTokenCount.
+     */
+    int getTotalTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of text characters.
+     * </pre>
+     *
+     * <code>int32 text_count = 2;</code>
+     *
+     * @return The textCount.
+     */
+    int getTextCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of images.
+     * </pre>
+     *
+     * <code>int32 image_count = 3;</code>
+     *
+     * @return The imageCount.
+     */
+    int getImageCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration of video in seconds.
+     * </pre>
+     *
+     * <code>int32 video_duration_seconds = 4;</code>
+     *
+     * @return The videoDurationSeconds.
+     */
+    int getVideoDurationSeconds();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration of audio in seconds.
+     * </pre>
+     *
+     * <code>int32 audio_duration_seconds = 5;</code>
+     *
+     * @return The audioDurationSeconds.
+     */
+    int getAudioDurationSeconds();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata}
+   */
+  public static final class UsageMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)
+      UsageMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UsageMetadata.newBuilder() to construct.
+    private UsageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UsageMetadata() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UsageMetadata();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.CachedContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_CachedContent_UsageMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.CachedContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_CachedContent_UsageMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.class,
+              com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder.class);
+    }
+
+    public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 1;
+    private int totalTokenCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Total number of tokens that the cached content consumes.
+     * </pre>
+     *
+     * <code>int32 total_token_count = 1;</code>
+     *
+     * @return The totalTokenCount.
+     */
+    @java.lang.Override
+    public int getTotalTokenCount() {
+      return totalTokenCount_;
+    }
+
+    public static final int TEXT_COUNT_FIELD_NUMBER = 2;
+    private int textCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Number of text characters.
+     * </pre>
+     *
+     * <code>int32 text_count = 2;</code>
+     *
+     * @return The textCount.
+     */
+    @java.lang.Override
+    public int getTextCount() {
+      return textCount_;
+    }
+
+    public static final int IMAGE_COUNT_FIELD_NUMBER = 3;
+    private int imageCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Number of images.
+     * </pre>
+     *
+     * <code>int32 image_count = 3;</code>
+     *
+     * @return The imageCount.
+     */
+    @java.lang.Override
+    public int getImageCount() {
+      return imageCount_;
+    }
+
+    public static final int VIDEO_DURATION_SECONDS_FIELD_NUMBER = 4;
+    private int videoDurationSeconds_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Duration of video in seconds.
+     * </pre>
+     *
+     * <code>int32 video_duration_seconds = 4;</code>
+     *
+     * @return The videoDurationSeconds.
+     */
+    @java.lang.Override
+    public int getVideoDurationSeconds() {
+      return videoDurationSeconds_;
+    }
+
+    public static final int AUDIO_DURATION_SECONDS_FIELD_NUMBER = 5;
+    private int audioDurationSeconds_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Duration of audio in seconds.
+     * </pre>
+     *
+     * <code>int32 audio_duration_seconds = 5;</code>
+     *
+     * @return The audioDurationSeconds.
+     */
+    @java.lang.Override
+    public int getAudioDurationSeconds() {
+      return audioDurationSeconds_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (totalTokenCount_ != 0) {
+        output.writeInt32(1, totalTokenCount_);
+      }
+      if (textCount_ != 0) {
+        output.writeInt32(2, textCount_);
+      }
+      if (imageCount_ != 0) {
+        output.writeInt32(3, imageCount_);
+      }
+      if (videoDurationSeconds_ != 0) {
+        output.writeInt32(4, videoDurationSeconds_);
+      }
+      if (audioDurationSeconds_ != 0) {
+        output.writeInt32(5, audioDurationSeconds_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (totalTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, totalTokenCount_);
+      }
+      if (textCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, textCount_);
+      }
+      if (imageCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, imageCount_);
+      }
+      if (videoDurationSeconds_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, videoDurationSeconds_);
+      }
+      if (audioDurationSeconds_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, audioDurationSeconds_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata other =
+          (com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata) obj;
+
+      if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
+      if (getTextCount() != other.getTextCount()) return false;
+      if (getImageCount() != other.getImageCount()) return false;
+      if (getVideoDurationSeconds() != other.getVideoDurationSeconds()) return false;
+      if (getAudioDurationSeconds() != other.getAudioDurationSeconds()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalTokenCount();
+      hash = (37 * hash) + TEXT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTextCount();
+      hash = (37 * hash) + IMAGE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getImageCount();
+      hash = (37 * hash) + VIDEO_DURATION_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoDurationSeconds();
+      hash = (37 * hash) + AUDIO_DURATION_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioDurationSeconds();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.CachedContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_CachedContent_UsageMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.CachedContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_CachedContent_UsageMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.class,
+                com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        totalTokenCount_ = 0;
+        textCount_ = 0;
+        imageCount_ = 0;
+        videoDurationSeconds_ = 0;
+        audioDurationSeconds_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.CachedContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_CachedContent_UsageMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata build() {
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata result =
+            new com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.totalTokenCount_ = totalTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.textCount_ = textCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.imageCount_ = imageCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.videoDurationSeconds_ = videoDurationSeconds_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.audioDurationSeconds_ = audioDurationSeconds_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance())
+          return this;
+        if (other.getTotalTokenCount() != 0) {
+          setTotalTokenCount(other.getTotalTokenCount());
+        }
+        if (other.getTextCount() != 0) {
+          setTextCount(other.getTextCount());
+        }
+        if (other.getImageCount() != 0) {
+          setImageCount(other.getImageCount());
+        }
+        if (other.getVideoDurationSeconds() != 0) {
+          setVideoDurationSeconds(other.getVideoDurationSeconds());
+        }
+        if (other.getAudioDurationSeconds() != 0) {
+          setAudioDurationSeconds(other.getAudioDurationSeconds());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  totalTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  textCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  imageCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  videoDurationSeconds_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  audioDurationSeconds_ = input.readInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int totalTokenCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Total number of tokens that the cached content consumes.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 1;</code>
+       *
+       * @return The totalTokenCount.
+       */
+      @java.lang.Override
+      public int getTotalTokenCount() {
+        return totalTokenCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Total number of tokens that the cached content consumes.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 1;</code>
+       *
+       * @param value The totalTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalTokenCount(int value) {
+
+        totalTokenCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Total number of tokens that the cached content consumes.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        totalTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int textCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of text characters.
+       * </pre>
+       *
+       * <code>int32 text_count = 2;</code>
+       *
+       * @return The textCount.
+       */
+      @java.lang.Override
+      public int getTextCount() {
+        return textCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of text characters.
+       * </pre>
+       *
+       * <code>int32 text_count = 2;</code>
+       *
+       * @param value The textCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextCount(int value) {
+
+        textCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of text characters.
+       * </pre>
+       *
+       * <code>int32 text_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTextCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        textCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int imageCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of images.
+       * </pre>
+       *
+       * <code>int32 image_count = 3;</code>
+       *
+       * @return The imageCount.
+       */
+      @java.lang.Override
+      public int getImageCount() {
+        return imageCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of images.
+       * </pre>
+       *
+       * <code>int32 image_count = 3;</code>
+       *
+       * @param value The imageCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageCount(int value) {
+
+        imageCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of images.
+       * </pre>
+       *
+       * <code>int32 image_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearImageCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        imageCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int videoDurationSeconds_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration of video in seconds.
+       * </pre>
+       *
+       * <code>int32 video_duration_seconds = 4;</code>
+       *
+       * @return The videoDurationSeconds.
+       */
+      @java.lang.Override
+      public int getVideoDurationSeconds() {
+        return videoDurationSeconds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration of video in seconds.
+       * </pre>
+       *
+       * <code>int32 video_duration_seconds = 4;</code>
+       *
+       * @param value The videoDurationSeconds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVideoDurationSeconds(int value) {
+
+        videoDurationSeconds_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration of video in seconds.
+       * </pre>
+       *
+       * <code>int32 video_duration_seconds = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVideoDurationSeconds() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        videoDurationSeconds_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int audioDurationSeconds_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration of audio in seconds.
+       * </pre>
+       *
+       * <code>int32 audio_duration_seconds = 5;</code>
+       *
+       * @return The audioDurationSeconds.
+       */
+      @java.lang.Override
+      public int getAudioDurationSeconds() {
+        return audioDurationSeconds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration of audio in seconds.
+       * </pre>
+       *
+       * <code>int32 audio_duration_seconds = 5;</code>
+       *
+       * @param value The audioDurationSeconds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioDurationSeconds(int value) {
+
+        audioDurationSeconds_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration of audio in seconds.
+       * </pre>
+       *
+       * <code>int32 audio_duration_seconds = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioDurationSeconds() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        audioDurationSeconds_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata)
+    private static final com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UsageMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<UsageMetadata>() {
+          @java.lang.Override
+          public UsageMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UsageMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UsageMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int expirationCase_ = 0;
 
@@ -783,6 +1756,63 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int USAGE_METADATA_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usageMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the usageMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasUsageMetadata() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The usageMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata getUsageMetadata() {
+    return usageMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance()
+        : usageMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder
+      getUsageMetadataOrBuilder() {
+    return usageMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance()
+        : usageMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -830,6 +1860,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, displayName_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(12, getUsageMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -876,6 +1909,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, displayName_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUsageMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -912,6 +1948,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasUsageMetadata() != other.hasUsageMetadata()) return false;
+    if (hasUsageMetadata()) {
+      if (!getUsageMetadata().equals(other.getUsageMetadata())) return false;
     }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
@@ -964,6 +2004,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasUsageMetadata()) {
+      hash = (37 * hash) + USAGE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getUsageMetadata().hashCode();
     }
     switch (expirationCase_) {
       case 9:
@@ -1124,6 +2168,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         getToolConfigFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getUsageMetadataFieldBuilder();
       }
     }
 
@@ -1173,6 +2218,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      usageMetadata_ = null;
+      if (usageMetadataBuilder_ != null) {
+        usageMetadataBuilder_.dispose();
+        usageMetadataBuilder_ = null;
       }
       expirationCase_ = 0;
       expiration_ = null;
@@ -1264,6 +2314,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.usageMetadata_ =
+            usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1406,6 +2461,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.hasUsageMetadata()) {
+        mergeUsageMetadata(other.getUsageMetadata());
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -1529,6 +2587,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getUsageMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3981,6 +5045,216 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usageMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata,
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder>
+        usageMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the usageMetadata field is set.
+     */
+    public boolean hasUsageMetadata() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The usageMetadata.
+     */
+    public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata getUsageMetadata() {
+      if (usageMetadataBuilder_ == null) {
+        return usageMetadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance()
+            : usageMetadata_;
+      } else {
+        return usageMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUsageMetadata(
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata value) {
+      if (usageMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        usageMetadata_ = value;
+      } else {
+        usageMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUsageMetadata(
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder builderForValue) {
+      if (usageMetadataBuilder_ == null) {
+        usageMetadata_ = builderForValue.build();
+      } else {
+        usageMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUsageMetadata(
+        com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata value) {
+      if (usageMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && usageMetadata_ != null
+            && usageMetadata_
+                != com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata
+                    .getDefaultInstance()) {
+          getUsageMetadataBuilder().mergeFrom(value);
+        } else {
+          usageMetadata_ = value;
+        }
+      } else {
+        usageMetadataBuilder_.mergeFrom(value);
+      }
+      if (usageMetadata_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUsageMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      usageMetadata_ = null;
+      if (usageMetadataBuilder_ != null) {
+        usageMetadataBuilder_.dispose();
+        usageMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder
+        getUsageMetadataBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getUsageMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder
+        getUsageMetadataOrBuilder() {
+      if (usageMetadataBuilder_ != null) {
+        return usageMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return usageMetadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.getDefaultInstance()
+            : usageMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata on the usage of the cached content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata,
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder>
+        getUsageMetadataFieldBuilder() {
+      if (usageMetadataBuilder_ == null) {
+        usageMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata,
+                com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata.Builder,
+                com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder>(
+                getUsageMetadata(), getParentForChildren(), isClean());
+        usageMetadata_ = null;
+      }
+      return usageMetadataBuilder_;
     }
 
     @java.lang.Override

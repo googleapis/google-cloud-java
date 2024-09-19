@@ -28,7 +28,7 @@ public interface ListKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that contains the keys that will be
+   * Required. The name of the project that contains the keys that are
    * listed, in the format `projects/{project}`.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ListKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that contains the keys that will be
+   * Required. The name of the project that contains the keys that are
    * listed, in the format `projects/{project}`.
    * </pre>
    *

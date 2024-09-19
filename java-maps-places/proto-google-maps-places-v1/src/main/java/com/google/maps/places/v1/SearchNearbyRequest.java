@@ -1849,6 +1849,62 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         : result;
   }
 
+  public static final int ROUTING_PARAMETERS_FIELD_NUMBER = 10;
+  private com.google.maps.places.v1.RoutingParameters routingParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routingParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoutingParameters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingParameters.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingParameters getRoutingParameters() {
+    return routingParameters_ == null
+        ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+        : routingParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters that affect the routing to the search results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder() {
+    return routingParameters_ == null
+        ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+        : routingParameters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1893,6 +1949,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         != com.google.maps.places.v1.SearchNearbyRequest.RankPreference.RANK_PREFERENCE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(9, rankPreference_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getRoutingParameters());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1952,6 +2011,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, rankPreference_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRoutingParameters());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1980,6 +2042,10 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       if (!getLocationRestriction().equals(other.getLocationRestriction())) return false;
     }
     if (rankPreference_ != other.rankPreference_) return false;
+    if (hasRoutingParameters() != other.hasRoutingParameters()) return false;
+    if (hasRoutingParameters()) {
+      if (!getRoutingParameters().equals(other.getRoutingParameters())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2019,6 +2085,10 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + RANK_PREFERENCE_FIELD_NUMBER;
     hash = (53 * hash) + rankPreference_;
+    if (hasRoutingParameters()) {
+      hash = (37 * hash) + ROUTING_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getRoutingParameters().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2160,6 +2230,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLocationRestrictionFieldBuilder();
+        getRoutingParametersFieldBuilder();
       }
     }
 
@@ -2180,6 +2251,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         locationRestrictionBuilder_ = null;
       }
       rankPreference_ = 0;
+      routingParameters_ = null;
+      if (routingParametersBuilder_ != null) {
+        routingParametersBuilder_.dispose();
+        routingParametersBuilder_ = null;
+      }
       return this;
     }
 
@@ -2251,6 +2327,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.rankPreference_ = rankPreference_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.routingParameters_ =
+            routingParametersBuilder_ == null
+                ? routingParameters_
+                : routingParametersBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2359,6 +2442,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       if (other.rankPreference_ != 0) {
         setRankPreferenceValue(other.getRankPreferenceValue());
       }
+      if (other.hasRoutingParameters()) {
+        mergeRoutingParameters(other.getRoutingParameters());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2444,6 +2530,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+            case 82:
+              {
+                input.readMessage(
+                    getRoutingParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4404,6 +4497,211 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       rankPreference_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.maps.places.v1.RoutingParameters routingParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.RoutingParameters,
+            com.google.maps.places.v1.RoutingParameters.Builder,
+            com.google.maps.places.v1.RoutingParametersOrBuilder>
+        routingParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routingParameters field is set.
+     */
+    public boolean hasRoutingParameters() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routingParameters.
+     */
+    public com.google.maps.places.v1.RoutingParameters getRoutingParameters() {
+      if (routingParametersBuilder_ == null) {
+        return routingParameters_ == null
+            ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+            : routingParameters_;
+      } else {
+        return routingParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRoutingParameters(com.google.maps.places.v1.RoutingParameters value) {
+      if (routingParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        routingParameters_ = value;
+      } else {
+        routingParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRoutingParameters(
+        com.google.maps.places.v1.RoutingParameters.Builder builderForValue) {
+      if (routingParametersBuilder_ == null) {
+        routingParameters_ = builderForValue.build();
+      } else {
+        routingParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRoutingParameters(com.google.maps.places.v1.RoutingParameters value) {
+      if (routingParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && routingParameters_ != null
+            && routingParameters_
+                != com.google.maps.places.v1.RoutingParameters.getDefaultInstance()) {
+          getRoutingParametersBuilder().mergeFrom(value);
+        } else {
+          routingParameters_ = value;
+        }
+      } else {
+        routingParametersBuilder_.mergeFrom(value);
+      }
+      if (routingParameters_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRoutingParameters() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      routingParameters_ = null;
+      if (routingParametersBuilder_ != null) {
+        routingParametersBuilder_.dispose();
+        routingParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.RoutingParameters.Builder getRoutingParametersBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getRoutingParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder() {
+      if (routingParametersBuilder_ != null) {
+        return routingParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return routingParameters_ == null
+            ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+            : routingParameters_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters that affect the routing to the search results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.RoutingParameters,
+            com.google.maps.places.v1.RoutingParameters.Builder,
+            com.google.maps.places.v1.RoutingParametersOrBuilder>
+        getRoutingParametersFieldBuilder() {
+      if (routingParametersBuilder_ == null) {
+        routingParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.RoutingParameters,
+                com.google.maps.places.v1.RoutingParameters.Builder,
+                com.google.maps.places.v1.RoutingParametersOrBuilder>(
+                getRoutingParameters(), getParentForChildren(), isClean());
+        routingParameters_ = null;
+      }
+      return routingParametersBuilder_;
     }
 
     @java.lang.Override

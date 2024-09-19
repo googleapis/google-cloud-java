@@ -247,6 +247,15 @@ public final class RouteOptimizationGrpc {
      * contains a `ShipmentModel` and returns an `OptimizeToursResponse`
      * containing `ShipmentRoute`s, which are a set of routes to be performed by
      * vehicles minimizing the overall cost.
+     * The user can poll `operations.get` to check the status of the LRO:
+     * If the LRO's `done` field is false, then at least one request is still
+     * being processed. Other requests may have completed successfully and their
+     * results are available in GCS.
+     * If the LRO's `done` field is true, then all requests have been processed.
+     * Any successfully processed requests will have their results available in
+     * GCS. Any requests that failed will not have their results available in
+     * GCS. If the LRO's `error` field is set, then it contains the error from
+     * one of the failed requests.
      * </pre>
      */
     default void batchOptimizeTours(
@@ -361,6 +370,15 @@ public final class RouteOptimizationGrpc {
      * contains a `ShipmentModel` and returns an `OptimizeToursResponse`
      * containing `ShipmentRoute`s, which are a set of routes to be performed by
      * vehicles minimizing the overall cost.
+     * The user can poll `operations.get` to check the status of the LRO:
+     * If the LRO's `done` field is false, then at least one request is still
+     * being processed. Other requests may have completed successfully and their
+     * results are available in GCS.
+     * If the LRO's `done` field is true, then all requests have been processed.
+     * Any successfully processed requests will have their results available in
+     * GCS. Any requests that failed will not have their results available in
+     * GCS. If the LRO's `error` field is set, then it contains the error from
+     * one of the failed requests.
      * </pre>
      */
     public void batchOptimizeTours(
@@ -444,6 +462,15 @@ public final class RouteOptimizationGrpc {
      * contains a `ShipmentModel` and returns an `OptimizeToursResponse`
      * containing `ShipmentRoute`s, which are a set of routes to be performed by
      * vehicles minimizing the overall cost.
+     * The user can poll `operations.get` to check the status of the LRO:
+     * If the LRO's `done` field is false, then at least one request is still
+     * being processed. Other requests may have completed successfully and their
+     * results are available in GCS.
+     * If the LRO's `done` field is true, then all requests have been processed.
+     * Any successfully processed requests will have their results available in
+     * GCS. Any requests that failed will not have their results available in
+     * GCS. If the LRO's `error` field is set, then it contains the error from
+     * one of the failed requests.
      * </pre>
      */
     public com.google.longrunning.Operation batchOptimizeTours(
@@ -524,6 +551,15 @@ public final class RouteOptimizationGrpc {
      * contains a `ShipmentModel` and returns an `OptimizeToursResponse`
      * containing `ShipmentRoute`s, which are a set of routes to be performed by
      * vehicles minimizing the overall cost.
+     * The user can poll `operations.get` to check the status of the LRO:
+     * If the LRO's `done` field is false, then at least one request is still
+     * being processed. Other requests may have completed successfully and their
+     * results are available in GCS.
+     * If the LRO's `done` field is true, then all requests have been processed.
+     * Any successfully processed requests will have their results available in
+     * GCS. Any requests that failed will not have their results available in
+     * GCS. If the LRO's `error` field is set, then it contains the error from
+     * one of the failed requests.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

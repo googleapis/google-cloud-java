@@ -72,7 +72,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the project in which the key will be created, in the
+   * Required. The name of the project in which the key is created, in the
    * format `projects/{project}`.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the project in which the key will be created, in the
+   * Required. The name of the project in which the key is created, in the
    * format `projects/{project}`.
    * </pre>
    *
@@ -563,7 +563,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the project in which the key will be created, in the
+     * Required. The name of the project in which the key is created, in the
      * format `projects/{project}`.
      * </pre>
      *
@@ -588,7 +588,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the project in which the key will be created, in the
+     * Required. The name of the project in which the key is created, in the
      * format `projects/{project}`.
      * </pre>
      *
@@ -613,7 +613,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the project in which the key will be created, in the
+     * Required. The name of the project in which the key is created, in the
      * format `projects/{project}`.
      * </pre>
      *
@@ -637,7 +637,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the project in which the key will be created, in the
+     * Required. The name of the project in which the key is created, in the
      * format `projects/{project}`.
      * </pre>
      *
@@ -657,7 +657,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the project in which the key will be created, in the
+     * Required. The name of the project in which the key is created, in the
      * format `projects/{project}`.
      * </pre>
      *

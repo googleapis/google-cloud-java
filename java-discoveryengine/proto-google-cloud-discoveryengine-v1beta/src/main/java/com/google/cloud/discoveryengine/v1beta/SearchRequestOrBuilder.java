@@ -426,9 +426,12 @@ public interface SearchRequestOrBuilder
    * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -446,9 +449,12 @@ public interface SearchRequestOrBuilder
    * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -1498,4 +1504,41 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpecOrBuilder
       getSessionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for relevanceThreshold.
+   */
+  int getRelevanceThresholdValue();
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The relevanceThreshold.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold getRelevanceThreshold();
 }

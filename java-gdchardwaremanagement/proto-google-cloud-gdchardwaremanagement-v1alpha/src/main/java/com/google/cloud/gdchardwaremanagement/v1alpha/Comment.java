@@ -42,6 +42,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     author_ = "";
     text_ = "";
+    authorEntity_ = 0;
   }
 
   @java.lang.Override
@@ -398,6 +399,106 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CUSTOMER_VIEWED_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp customerViewedTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customerViewedTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomerViewedTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customerViewedTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCustomerViewedTime() {
+    return customerViewedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : customerViewedTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the first time this comment was viewed by the
+   * customer. If the comment wasn't viewed then this timestamp will be unset.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCustomerViewedTimeOrBuilder() {
+    return customerViewedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : customerViewedTime_;
+  }
+
+  public static final int AUTHOR_ENTITY_FIELD_NUMBER = 7;
+  private int authorEntity_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The entity the author belongs to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for authorEntity.
+   */
+  @java.lang.Override
+  public int getAuthorEntityValue() {
+    return authorEntity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The entity the author belongs to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The authorEntity.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Entity getAuthorEntity() {
+    com.google.cloud.gdchardwaremanagement.v1alpha.Entity result =
+        com.google.cloud.gdchardwaremanagement.v1alpha.Entity.forNumber(authorEntity_);
+    return result == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.Entity.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -425,6 +526,13 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, text_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getCustomerViewedTime());
+    }
+    if (authorEntity_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Entity.ENTITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, authorEntity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -457,6 +565,13 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, text_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCustomerViewedTime());
+    }
+    if (authorEntity_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Entity.ENTITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, authorEntity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -481,6 +596,11 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getAuthor().equals(other.getAuthor())) return false;
     if (!getText().equals(other.getText())) return false;
+    if (hasCustomerViewedTime() != other.hasCustomerViewedTime()) return false;
+    if (hasCustomerViewedTime()) {
+      if (!getCustomerViewedTime().equals(other.getCustomerViewedTime())) return false;
+    }
+    if (authorEntity_ != other.authorEntity_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -506,6 +626,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAuthor().hashCode();
     hash = (37 * hash) + TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getText().hashCode();
+    if (hasCustomerViewedTime()) {
+      hash = (37 * hash) + CUSTOMER_VIEWED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerViewedTime().hashCode();
+    }
+    hash = (37 * hash) + AUTHOR_ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + authorEntity_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -670,6 +796,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getCustomerViewedTimeFieldBuilder();
       }
     }
 
@@ -686,6 +813,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       author_ = "";
       text_ = "";
+      customerViewedTime_ = null;
+      if (customerViewedTimeBuilder_ != null) {
+        customerViewedTimeBuilder_.dispose();
+        customerViewedTimeBuilder_ = null;
+      }
+      authorEntity_ = 0;
       return this;
     }
 
@@ -739,6 +872,16 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.text_ = text_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.customerViewedTime_ =
+            customerViewedTimeBuilder_ == null
+                ? customerViewedTime_
+                : customerViewedTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.authorEntity_ = authorEntity_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -809,6 +952,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasCustomerViewedTime()) {
+        mergeCustomerViewedTime(other.getCustomerViewedTime());
+      }
+      if (other.authorEntity_ != 0) {
+        setAuthorEntityValue(other.getAuthorEntityValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -871,6 +1020,19 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getCustomerViewedTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 56:
+              {
+                authorEntity_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1604,6 +1766,320 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       text_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp customerViewedTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        customerViewedTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the customerViewedTime field is set.
+     */
+    public boolean hasCustomerViewedTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The customerViewedTime.
+     */
+    public com.google.protobuf.Timestamp getCustomerViewedTime() {
+      if (customerViewedTimeBuilder_ == null) {
+        return customerViewedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : customerViewedTime_;
+      } else {
+        return customerViewedTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomerViewedTime(com.google.protobuf.Timestamp value) {
+      if (customerViewedTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customerViewedTime_ = value;
+      } else {
+        customerViewedTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomerViewedTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (customerViewedTimeBuilder_ == null) {
+        customerViewedTime_ = builderForValue.build();
+      } else {
+        customerViewedTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustomerViewedTime(com.google.protobuf.Timestamp value) {
+      if (customerViewedTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && customerViewedTime_ != null
+            && customerViewedTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCustomerViewedTimeBuilder().mergeFrom(value);
+        } else {
+          customerViewedTime_ = value;
+        }
+      } else {
+        customerViewedTimeBuilder_.mergeFrom(value);
+      }
+      if (customerViewedTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomerViewedTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      customerViewedTime_ = null;
+      if (customerViewedTimeBuilder_ != null) {
+        customerViewedTimeBuilder_.dispose();
+        customerViewedTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCustomerViewedTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getCustomerViewedTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCustomerViewedTimeOrBuilder() {
+      if (customerViewedTimeBuilder_ != null) {
+        return customerViewedTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return customerViewedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : customerViewedTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the first time this comment was viewed by the
+     * customer. If the comment wasn't viewed then this timestamp will be unset.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp customer_viewed_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCustomerViewedTimeFieldBuilder() {
+      if (customerViewedTimeBuilder_ == null) {
+        customerViewedTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCustomerViewedTime(), getParentForChildren(), isClean());
+        customerViewedTime_ = null;
+      }
+      return customerViewedTimeBuilder_;
+    }
+
+    private int authorEntity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The entity the author belongs to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for authorEntity.
+     */
+    @java.lang.Override
+    public int getAuthorEntityValue() {
+      return authorEntity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The entity the author belongs to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for authorEntity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorEntityValue(int value) {
+      authorEntity_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The entity the author belongs to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The authorEntity.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Entity getAuthorEntity() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.Entity result =
+          com.google.cloud.gdchardwaremanagement.v1alpha.Entity.forNumber(authorEntity_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.Entity.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The entity the author belongs to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The authorEntity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorEntity(com.google.cloud.gdchardwaremanagement.v1alpha.Entity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      authorEntity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The entity the author belongs to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Entity author_entity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorEntity() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      authorEntity_ = 0;
       onChanged();
       return this;
     }

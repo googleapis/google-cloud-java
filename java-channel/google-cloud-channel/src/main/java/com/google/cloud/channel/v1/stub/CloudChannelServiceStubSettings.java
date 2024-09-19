@@ -175,7 +175,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCustomer to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCustomer:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -192,10 +194,47 @@ import org.threeten.bp.Duration;
  *             .getCustomerSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudChannelServiceStubSettings cloudChannelServiceSettings =
  *     cloudChannelServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for provisionCloudIdentity:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudChannelServiceStubSettings.Builder cloudChannelServiceSettingsBuilder =
+ *     CloudChannelServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudChannelServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -378,9 +417,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Customer> extractResources(ListCustomersResponse payload) {
-              return payload.getCustomersList() == null
-                  ? ImmutableList.<Customer>of()
-                  : payload.getCustomersList();
+              return payload.getCustomersList();
             }
           };
 
@@ -418,9 +455,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Entitlement> extractResources(ListEntitlementsResponse payload) {
-              return payload.getEntitlementsList() == null
-                  ? ImmutableList.<Entitlement>of()
-                  : payload.getEntitlementsList();
+              return payload.getEntitlementsList();
             }
           };
 
@@ -459,9 +494,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<TransferableSku> extractResources(
                 ListTransferableSkusResponse payload) {
-              return payload.getTransferableSkusList() == null
-                  ? ImmutableList.<TransferableSku>of()
-                  : payload.getTransferableSkusList();
+              return payload.getTransferableSkusList();
             }
           };
 
@@ -502,9 +535,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<TransferableOffer> extractResources(
                 ListTransferableOffersResponse payload) {
-              return payload.getTransferableOffersList() == null
-                  ? ImmutableList.<TransferableOffer>of()
-                  : payload.getTransferableOffersList();
+              return payload.getTransferableOffersList();
             }
           };
 
@@ -547,9 +578,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<ChannelPartnerLink> extractResources(
                 ListChannelPartnerLinksResponse payload) {
-              return payload.getChannelPartnerLinksList() == null
-                  ? ImmutableList.<ChannelPartnerLink>of()
-                  : payload.getChannelPartnerLinksList();
+              return payload.getChannelPartnerLinksList();
             }
           };
 
@@ -596,9 +625,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<CustomerRepricingConfig> extractResources(
                 ListCustomerRepricingConfigsResponse payload) {
-              return payload.getCustomerRepricingConfigsList() == null
-                  ? ImmutableList.<CustomerRepricingConfig>of()
-                  : payload.getCustomerRepricingConfigsList();
+              return payload.getCustomerRepricingConfigsList();
             }
           };
 
@@ -645,9 +672,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<ChannelPartnerRepricingConfig> extractResources(
                 ListChannelPartnerRepricingConfigsResponse payload) {
-              return payload.getChannelPartnerRepricingConfigsList() == null
-                  ? ImmutableList.<ChannelPartnerRepricingConfig>of()
-                  : payload.getChannelPartnerRepricingConfigsList();
+              return payload.getChannelPartnerRepricingConfigsList();
             }
           };
 
@@ -681,9 +706,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<SkuGroup> extractResources(ListSkuGroupsResponse payload) {
-              return payload.getSkuGroupsList() == null
-                  ? ImmutableList.<SkuGroup>of()
-                  : payload.getSkuGroupsList();
+              return payload.getSkuGroupsList();
             }
           };
 
@@ -726,9 +749,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<BillableSku> extractResources(
                 ListSkuGroupBillableSkusResponse payload) {
-              return payload.getBillableSkusList() == null
-                  ? ImmutableList.<BillableSku>of()
-                  : payload.getBillableSkusList();
+              return payload.getBillableSkusList();
             }
           };
 
@@ -762,9 +783,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return payload.getProductsList() == null
-                  ? ImmutableList.<Product>of()
-                  : payload.getProductsList();
+              return payload.getProductsList();
             }
           };
 
@@ -798,9 +817,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Sku> extractResources(ListSkusResponse payload) {
-              return payload.getSkusList() == null
-                  ? ImmutableList.<Sku>of()
-                  : payload.getSkusList();
+              return payload.getSkusList();
             }
           };
 
@@ -834,9 +851,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Offer> extractResources(ListOffersResponse payload) {
-              return payload.getOffersList() == null
-                  ? ImmutableList.<Offer>of()
-                  : payload.getOffersList();
+              return payload.getOffersList();
             }
           };
 
@@ -874,9 +889,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<PurchasableSku> extractResources(ListPurchasableSkusResponse payload) {
-              return payload.getPurchasableSkusList() == null
-                  ? ImmutableList.<PurchasableSku>of()
-                  : payload.getPurchasableSkusList();
+              return payload.getPurchasableSkusList();
             }
           };
 
@@ -915,9 +928,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<PurchasableOffer> extractResources(
                 ListPurchasableOffersResponse payload) {
-              return payload.getPurchasableOffersList() == null
-                  ? ImmutableList.<PurchasableOffer>of()
-                  : payload.getPurchasableOffersList();
+              return payload.getPurchasableOffersList();
             }
           };
 
@@ -953,9 +964,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<String> extractResources(ListSubscribersResponse payload) {
-              return payload.getServiceAccountsList() == null
-                  ? ImmutableList.<String>of()
-                  : payload.getServiceAccountsList();
+              return payload.getServiceAccountsList();
             }
           };
 
@@ -996,9 +1005,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<EntitlementChange> extractResources(
                 ListEntitlementChangesResponse payload) {
-              return payload.getEntitlementChangesList() == null
-                  ? ImmutableList.<EntitlementChange>of()
-                  : payload.getEntitlementChangesList();
+              return payload.getEntitlementChangesList();
             }
           };
 

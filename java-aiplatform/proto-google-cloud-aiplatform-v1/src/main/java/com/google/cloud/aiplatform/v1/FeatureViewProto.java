@@ -61,6 +61,10 @@ public final class FeatureViewProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FeatureView_FeatureRegistrySource_FeatureGroup_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_fieldAccessorTable;
@@ -77,61 +81,65 @@ public final class FeatureViewProto {
           + "w.proto\022\032google.cloud.aiplatform.v1\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\234\017\n\013FeatureView\022W\n\020big_query_so"
+          + "mp.proto\"\270\020\n\013FeatureView\022W\n\020big_query_so"
           + "urce\030\006 \001(\01326.google.cloud.aiplatform.v1."
           + "FeatureView.BigQuerySourceB\003\340A\001H\000\022e\n\027fea"
           + "ture_registry_source\030\t \001(\0132=.google.clou"
           + "d.aiplatform.v1.FeatureView.FeatureRegis"
-          + "trySourceB\003\340A\001H\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013c"
-          + "reate_time\030\002 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\022\021\n\004etag\030\004 \001(\tB\003\340"
-          + "A\001\022H\n\006labels\030\005 \003(\01323.google.cloud.aiplat"
-          + "form.v1.FeatureView.LabelsEntryB\003\340A\001\022G\n\013"
-          + "sync_config\030\007 \001(\01322.google.cloud.aiplatf"
-          + "orm.v1.FeatureView.SyncConfig\022N\n\014index_c"
-          + "onfig\030\017 \001(\01323.google.cloud.aiplatform.v1"
-          + ".FeatureView.IndexConfigB\003\340A\001\022\032\n\rsatisfi"
-          + "es_pzs\030\023 \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\024 \001(\010"
-          + "B\003\340A\003\032B\n\016BigQuerySource\022\020\n\003uri\030\001 \001(\tB\003\340A"
-          + "\002\022\036\n\021entity_id_columns\030\002 \003(\tB\003\340A\002\032\032\n\nSyn"
-          + "cConfig\022\014\n\004cron\030\001 \001(\t\032\347\005\n\013IndexConfig\022_\n"
-          + "\016tree_ah_config\030\006 \001(\0132@.google.cloud.aip"
-          + "latform.v1.FeatureView.IndexConfig.TreeA"
-          + "HConfigB\003\340A\001H\000\022g\n\022brute_force_config\030\007 \001"
-          + "(\0132D.google.cloud.aiplatform.v1.FeatureV"
-          + "iew.IndexConfig.BruteForceConfigB\003\340A\001H\000\022"
-          + "\035\n\020embedding_column\030\001 \001(\tB\003\340A\001\022\033\n\016filter"
-          + "_columns\030\002 \003(\tB\003\340A\001\022\034\n\017crowding_column\030\003"
-          + " \001(\tB\003\340A\001\022%\n\023embedding_dimension\030\004 \001(\005B\003"
-          + "\340A\001H\001\210\001\001\022k\n\025distance_measure_type\030\005 \001(\0162"
-          + "G.google.cloud.aiplatform.v1.FeatureView"
-          + ".IndexConfig.DistanceMeasureTypeB\003\340A\001\032\022\n"
-          + "\020BruteForceConfig\032Y\n\014TreeAHConfig\022+\n\031lea"
-          + "f_node_embedding_count\030\001 \001(\003B\003\340A\001H\000\210\001\001B\034"
-          + "\n\032_leaf_node_embedding_count\"\204\001\n\023Distanc"
-          + "eMeasureType\022%\n!DISTANCE_MEASURE_TYPE_UN"
-          + "SPECIFIED\020\000\022\027\n\023SQUARED_L2_DISTANCE\020\001\022\023\n\017"
-          + "COSINE_DISTANCE\020\002\022\030\n\024DOT_PRODUCT_DISTANC"
-          + "E\020\003B\022\n\020algorithm_configB\026\n\024_embedding_di"
-          + "mension\032\376\001\n\025FeatureRegistrySource\022g\n\016fea"
-          + "ture_groups\030\001 \003(\0132J.google.cloud.aiplatf"
-          + "orm.v1.FeatureView.FeatureRegistrySource"
-          + ".FeatureGroupB\003\340A\002\022 \n\016project_number\030\002 \001"
-          + "(\003B\003\340A\001H\000\210\001\001\032G\n\014FeatureGroup\022\035\n\020feature_"
-          + "group_id\030\001 \001(\tB\003\340A\002\022\030\n\013feature_ids\030\002 \003(\t"
-          + "B\003\340A\002B\021\n\017_project_number\032-\n\013LabelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\233\001\352A\227\001\n%"
-          + "aiplatform.googleapis.com/FeatureView\022np"
-          + "rojects/{project}/locations/{location}/f"
-          + "eatureOnlineStores/{feature_online_store"
-          + "}/featureViews/{feature_view}B\010\n\006sourceB"
-          + "\316\001\n\036com.google.cloud.aiplatform.v1B\020Feat"
-          + "ureViewProtoP\001Z>cloud.google.com/go/aipl"
-          + "atform/apiv1/aiplatformpb;aiplatformpb\252\002"
-          + "\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Clo"
-          + "ud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlat"
-          + "form::V1b\006proto3"
+          + "trySourceB\003\340A\001H\000\022Y\n\021vertex_rag_source\030\022 "
+          + "\001(\01327.google.cloud.aiplatform.v1.Feature"
+          + "View.VertexRagSourceB\003\340A\001H\000\022\021\n\004name\030\001 \001("
+          + "\tB\003\340A\010\0224\n\013create_time\030\002 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004et"
+          + "ag\030\004 \001(\tB\003\340A\001\022H\n\006labels\030\005 \003(\01323.google.c"
+          + "loud.aiplatform.v1.FeatureView.LabelsEnt"
+          + "ryB\003\340A\001\022G\n\013sync_config\030\007 \001(\01322.google.cl"
+          + "oud.aiplatform.v1.FeatureView.SyncConfig"
+          + "\022N\n\014index_config\030\017 \001(\01323.google.cloud.ai"
+          + "platform.v1.FeatureView.IndexConfigB\003\340A\001"
+          + "\022\032\n\rsatisfies_pzs\030\023 \001(\010B\003\340A\003\022\032\n\rsatisfie"
+          + "s_pzi\030\024 \001(\010B\003\340A\003\032B\n\016BigQuerySource\022\020\n\003ur"
+          + "i\030\001 \001(\tB\003\340A\002\022\036\n\021entity_id_columns\030\002 \003(\tB"
+          + "\003\340A\002\032\032\n\nSyncConfig\022\014\n\004cron\030\001 \001(\t\032\347\005\n\013Ind"
+          + "exConfig\022_\n\016tree_ah_config\030\006 \001(\0132@.googl"
+          + "e.cloud.aiplatform.v1.FeatureView.IndexC"
+          + "onfig.TreeAHConfigB\003\340A\001H\000\022g\n\022brute_force"
+          + "_config\030\007 \001(\0132D.google.cloud.aiplatform."
+          + "v1.FeatureView.IndexConfig.BruteForceCon"
+          + "figB\003\340A\001H\000\022\035\n\020embedding_column\030\001 \001(\tB\003\340A"
+          + "\001\022\033\n\016filter_columns\030\002 \003(\tB\003\340A\001\022\034\n\017crowdi"
+          + "ng_column\030\003 \001(\tB\003\340A\001\022%\n\023embedding_dimens"
+          + "ion\030\004 \001(\005B\003\340A\001H\001\210\001\001\022k\n\025distance_measure_"
+          + "type\030\005 \001(\0162G.google.cloud.aiplatform.v1."
+          + "FeatureView.IndexConfig.DistanceMeasureT"
+          + "ypeB\003\340A\001\032\022\n\020BruteForceConfig\032Y\n\014TreeAHCo"
+          + "nfig\022+\n\031leaf_node_embedding_count\030\001 \001(\003B"
+          + "\003\340A\001H\000\210\001\001B\034\n\032_leaf_node_embedding_count\""
+          + "\204\001\n\023DistanceMeasureType\022%\n!DISTANCE_MEAS"
+          + "URE_TYPE_UNSPECIFIED\020\000\022\027\n\023SQUARED_L2_DIS"
+          + "TANCE\020\001\022\023\n\017COSINE_DISTANCE\020\002\022\030\n\024DOT_PROD"
+          + "UCT_DISTANCE\020\003B\022\n\020algorithm_configB\026\n\024_e"
+          + "mbedding_dimension\032\376\001\n\025FeatureRegistrySo"
+          + "urce\022g\n\016feature_groups\030\001 \003(\0132J.google.cl"
+          + "oud.aiplatform.v1.FeatureView.FeatureReg"
+          + "istrySource.FeatureGroupB\003\340A\002\022 \n\016project"
+          + "_number\030\002 \001(\003B\003\340A\001H\000\210\001\001\032G\n\014FeatureGroup\022"
+          + "\035\n\020feature_group_id\030\001 \001(\tB\003\340A\002\022\030\n\013featur"
+          + "e_ids\030\002 \003(\tB\003\340A\002B\021\n\017_project_number\032?\n\017V"
+          + "ertexRagSource\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\032\n\rrag_"
+          + "corpus_id\030\002 \001(\003B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\233\001\352A\227\001\n%aipl"
+          + "atform.googleapis.com/FeatureView\022nproje"
+          + "cts/{project}/locations/{location}/featu"
+          + "reOnlineStores/{feature_online_store}/fe"
+          + "atureViews/{feature_view}B\010\n\006sourceB\316\001\n\036"
+          + "com.google.cloud.aiplatform.v1B\020FeatureV"
+          + "iewProtoP\001Z>cloud.google.com/go/aiplatfo"
+          + "rm/apiv1/aiplatformpb;aiplatformpb\252\002\032Goo"
+          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
+          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -149,6 +157,7 @@ public final class FeatureViewProto {
             new java.lang.String[] {
               "BigQuerySource",
               "FeatureRegistrySource",
+              "VertexRagSource",
               "Name",
               "CreateTime",
               "UpdateTime",
@@ -227,8 +236,16 @@ public final class FeatureViewProto {
             new java.lang.String[] {
               "FeatureGroupId", "FeatureIds",
             });
-    internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor =
         internal_static_google_cloud_aiplatform_v1_FeatureView_descriptor.getNestedTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor,
+            new java.lang.String[] {
+              "Uri", "RagCorpusId",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureView_descriptor.getNestedTypes().get(5);
     internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor,

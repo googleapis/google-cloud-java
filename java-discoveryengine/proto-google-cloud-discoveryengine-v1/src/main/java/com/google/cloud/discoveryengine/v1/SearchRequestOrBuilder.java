@@ -424,9 +424,12 @@ public interface SearchRequestOrBuilder
    * Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -444,9 +447,12 @@ public interface SearchRequestOrBuilder
    * Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *

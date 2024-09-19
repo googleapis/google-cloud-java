@@ -230,8 +230,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
-   * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-   * Preview: You can also filter for `member.type` using the `!=` operator.
+   * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+   * filter for `member.type` using the `!=` operator.
    *
    * To filter by both role and type, use the `AND` operator. To filter by
    * either role or type, use the `OR` operator.
@@ -289,8 +289,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
-   * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-   * Preview: You can also filter for `member.type` using the `!=` operator.
+   * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+   * filter for `member.type` using the `!=` operator.
    *
    * To filter by both role and type, use the `AND` operator. To filter by
    * either role or type, use the `OR` operator.
@@ -385,6 +385,35 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     return showInvited_;
   }
 
+  public static final int USE_ADMIN_ACCESS_FIELD_NUMBER = 8;
+  private boolean useAdminAccess_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * When `true`, the method runs using the user's Google Workspace
+   * administrator privileges.
+   *
+   * The calling user must be a Google Workspace administrator with the
+   * [manage chat and spaces conversations
+   * privilege](https://support.google.com/a/answer/13369245).
+   *
+   * Requires either the `chat.admin.memberships.readonly` or
+   * `chat.admin.memberships` [OAuth 2.0
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+   *
+   * Listing app memberships in a space isn't supported when using admin access.
+   * </pre>
+   *
+   * <code>bool use_admin_access = 8;</code>
+   *
+   * @return The useAdminAccess.
+   */
+  @java.lang.Override
+  public boolean getUseAdminAccess() {
+    return useAdminAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -417,6 +446,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     if (showInvited_ != false) {
       output.writeBool(7, showInvited_);
     }
+    if (useAdminAccess_ != false) {
+      output.writeBool(8, useAdminAccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -444,6 +476,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     if (showInvited_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, showInvited_);
     }
+    if (useAdminAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, useAdminAccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -466,6 +501,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     if (!getFilter().equals(other.getFilter())) return false;
     if (getShowGroups() != other.getShowGroups()) return false;
     if (getShowInvited() != other.getShowInvited()) return false;
+    if (getUseAdminAccess() != other.getUseAdminAccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -489,6 +525,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowGroups());
     hash = (37 * hash) + SHOW_INVITED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowInvited());
+    hash = (37 * hash) + USE_ADMIN_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseAdminAccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -634,6 +672,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
       filter_ = "";
       showGroups_ = false;
       showInvited_ = false;
+      useAdminAccess_ = false;
       return this;
     }
 
@@ -687,6 +726,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.showInvited_ = showInvited_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.useAdminAccess_ = useAdminAccess_;
       }
     }
 
@@ -759,6 +801,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
       if (other.getShowInvited() != false) {
         setShowInvited(other.getShowInvited());
       }
+      if (other.getUseAdminAccess() != false) {
+        setUseAdminAccess(other.getUseAdminAccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -821,6 +866,12 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
+            case 64:
+              {
+                useAdminAccess_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1193,8 +1244,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
-     * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-     * Preview: You can also filter for `member.type` using the `!=` operator.
+     * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+     * filter for `member.type` using the `!=` operator.
      *
      * To filter by both role and type, use the `AND` operator. To filter by
      * either role or type, use the `OR` operator.
@@ -1251,8 +1302,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
-     * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-     * Preview: You can also filter for `member.type` using the `!=` operator.
+     * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+     * filter for `member.type` using the `!=` operator.
      *
      * To filter by both role and type, use the `AND` operator. To filter by
      * either role or type, use the `OR` operator.
@@ -1309,8 +1360,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
-     * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-     * Preview: You can also filter for `member.type` using the `!=` operator.
+     * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+     * filter for `member.type` using the `!=` operator.
      *
      * To filter by both role and type, use the `AND` operator. To filter by
      * either role or type, use the `OR` operator.
@@ -1366,8 +1417,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
-     * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-     * Preview: You can also filter for `member.type` using the `!=` operator.
+     * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+     * filter for `member.type` using the `!=` operator.
      *
      * To filter by both role and type, use the `AND` operator. To filter by
      * either role or type, use the `OR` operator.
@@ -1419,8 +1470,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
-     * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-     * Preview: You can also filter for `member.type` using the `!=` operator.
+     * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+     * filter for `member.type` using the `!=` operator.
      *
      * To filter by both role and type, use the `AND` operator. To filter by
      * either role or type, use the `OR` operator.
@@ -1606,6 +1657,92 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     public Builder clearShowInvited() {
       bitField0_ = (bitField0_ & ~0x00000020);
       showInvited_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean useAdminAccess_;
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires either the `chat.admin.memberships.readonly` or
+     * `chat.admin.memberships` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Listing app memberships in a space isn't supported when using admin access.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 8;</code>
+     *
+     * @return The useAdminAccess.
+     */
+    @java.lang.Override
+    public boolean getUseAdminAccess() {
+      return useAdminAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires either the `chat.admin.memberships.readonly` or
+     * `chat.admin.memberships` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Listing app memberships in a space isn't supported when using admin access.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 8;</code>
+     *
+     * @param value The useAdminAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseAdminAccess(boolean value) {
+
+      useAdminAccess_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When `true`, the method runs using the user's Google Workspace
+     * administrator privileges.
+     *
+     * The calling user must be a Google Workspace administrator with the
+     * [manage chat and spaces conversations
+     * privilege](https://support.google.com/a/answer/13369245).
+     *
+     * Requires either the `chat.admin.memberships.readonly` or
+     * `chat.admin.memberships` [OAuth 2.0
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+     *
+     * Listing app memberships in a space isn't supported when using admin access.
+     * </pre>
+     *
+     * <code>bool use_admin_access = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseAdminAccess() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      useAdminAccess_ = false;
       onChanged();
       return this;
     }

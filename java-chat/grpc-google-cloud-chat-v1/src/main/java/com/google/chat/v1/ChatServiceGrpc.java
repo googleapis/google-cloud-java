@@ -436,6 +436,47 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.SearchSpacesRequest, com.google.chat.v1.SearchSpacesResponse>
+      getSearchSpacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchSpaces",
+      requestType = com.google.chat.v1.SearchSpacesRequest.class,
+      responseType = com.google.chat.v1.SearchSpacesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.SearchSpacesRequest, com.google.chat.v1.SearchSpacesResponse>
+      getSearchSpacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.SearchSpacesRequest, com.google.chat.v1.SearchSpacesResponse>
+        getSearchSpacesMethod;
+    if ((getSearchSpacesMethod = ChatServiceGrpc.getSearchSpacesMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getSearchSpacesMethod = ChatServiceGrpc.getSearchSpacesMethod) == null) {
+          ChatServiceGrpc.getSearchSpacesMethod =
+              getSearchSpacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.SearchSpacesRequest,
+                          com.google.chat.v1.SearchSpacesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchSpaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SearchSpacesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SearchSpacesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("SearchSpaces"))
+                      .build();
+        }
+      }
+    }
+    return getSearchSpacesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.GetSpaceRequest, com.google.chat.v1.Space>
       getGetSpaceMethod;
 
@@ -1460,6 +1501,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of spaces in a Google Workspace organization based on an
+     * administrator's search. Requires [user
+     * authentication with administrator
+     * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+     * In the request, set `use_admin_access` to `true`.
+     * </pre>
+     */
+    default void searchSpaces(
+        com.google.chat.v1.SearchSpacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SearchSpacesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchSpacesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
@@ -2186,6 +2245,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of spaces in a Google Workspace organization based on an
+     * administrator's search. Requires [user
+     * authentication with administrator
+     * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+     * In the request, set `use_admin_access` to `true`.
+     * </pre>
+     */
+    public void searchSpaces(
+        com.google.chat.v1.SearchSpacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SearchSpacesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchSpacesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
@@ -2903,6 +2982,23 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of spaces in a Google Workspace organization based on an
+     * administrator's search. Requires [user
+     * authentication with administrator
+     * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+     * In the request, set `use_admin_access` to `true`.
+     * </pre>
+     */
+    public com.google.chat.v1.SearchSpacesResponse searchSpaces(
+        com.google.chat.v1.SearchSpacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchSpacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
@@ -3568,6 +3664,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of spaces in a Google Workspace organization based on an
+     * administrator's search. Requires [user
+     * authentication with administrator
+     * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
+     * In the request, set `use_admin_access` to `true`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.SearchSpacesResponse>
+        searchSpaces(com.google.chat.v1.SearchSpacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchSpacesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
@@ -3991,24 +4105,25 @@ public final class ChatServiceGrpc {
   private static final int METHODID_GET_ATTACHMENT = 7;
   private static final int METHODID_UPLOAD_ATTACHMENT = 8;
   private static final int METHODID_LIST_SPACES = 9;
-  private static final int METHODID_GET_SPACE = 10;
-  private static final int METHODID_CREATE_SPACE = 11;
-  private static final int METHODID_SET_UP_SPACE = 12;
-  private static final int METHODID_UPDATE_SPACE = 13;
-  private static final int METHODID_DELETE_SPACE = 14;
-  private static final int METHODID_COMPLETE_IMPORT_SPACE = 15;
-  private static final int METHODID_FIND_DIRECT_MESSAGE = 16;
-  private static final int METHODID_CREATE_MEMBERSHIP = 17;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 18;
-  private static final int METHODID_DELETE_MEMBERSHIP = 19;
-  private static final int METHODID_CREATE_REACTION = 20;
-  private static final int METHODID_LIST_REACTIONS = 21;
-  private static final int METHODID_DELETE_REACTION = 22;
-  private static final int METHODID_GET_SPACE_READ_STATE = 23;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 24;
-  private static final int METHODID_GET_THREAD_READ_STATE = 25;
-  private static final int METHODID_GET_SPACE_EVENT = 26;
-  private static final int METHODID_LIST_SPACE_EVENTS = 27;
+  private static final int METHODID_SEARCH_SPACES = 10;
+  private static final int METHODID_GET_SPACE = 11;
+  private static final int METHODID_CREATE_SPACE = 12;
+  private static final int METHODID_SET_UP_SPACE = 13;
+  private static final int METHODID_UPDATE_SPACE = 14;
+  private static final int METHODID_DELETE_SPACE = 15;
+  private static final int METHODID_COMPLETE_IMPORT_SPACE = 16;
+  private static final int METHODID_FIND_DIRECT_MESSAGE = 17;
+  private static final int METHODID_CREATE_MEMBERSHIP = 18;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 19;
+  private static final int METHODID_DELETE_MEMBERSHIP = 20;
+  private static final int METHODID_CREATE_REACTION = 21;
+  private static final int METHODID_LIST_REACTIONS = 22;
+  private static final int METHODID_DELETE_REACTION = 23;
+  private static final int METHODID_GET_SPACE_READ_STATE = 24;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 25;
+  private static final int METHODID_GET_THREAD_READ_STATE = 26;
+  private static final int METHODID_GET_SPACE_EVENT = 27;
+  private static final int METHODID_LIST_SPACE_EVENTS = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4079,6 +4194,12 @@ public final class ChatServiceGrpc {
           serviceImpl.listSpaces(
               (com.google.chat.v1.ListSpacesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpacesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_SPACES:
+          serviceImpl.searchSpaces(
+              (com.google.chat.v1.SearchSpacesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.SearchSpacesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_SPACE:
@@ -4255,6 +4376,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.ListSpacesRequest, com.google.chat.v1.ListSpacesResponse>(
                     service, METHODID_LIST_SPACES)))
         .addMethod(
+            getSearchSpacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.SearchSpacesRequest,
+                    com.google.chat.v1.SearchSpacesResponse>(service, METHODID_SEARCH_SPACES)))
+        .addMethod(
             getGetSpaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<com.google.chat.v1.GetSpaceRequest, com.google.chat.v1.Space>(
@@ -4421,6 +4548,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getGetAttachmentMethod())
                       .addMethod(getUploadAttachmentMethod())
                       .addMethod(getListSpacesMethod())
+                      .addMethod(getSearchSpacesMethod())
                       .addMethod(getGetSpaceMethod())
                       .addMethod(getCreateSpaceMethod())
                       .addMethod(getSetUpSpaceMethod())

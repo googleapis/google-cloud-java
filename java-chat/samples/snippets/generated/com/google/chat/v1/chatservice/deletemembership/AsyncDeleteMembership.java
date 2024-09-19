@@ -39,6 +39,7 @@ public class AsyncDeleteMembership {
       DeleteMembershipRequest request =
           DeleteMembershipRequest.newBuilder()
               .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Membership> future =
           chatServiceClient.deleteMembershipCallable().futureCall(request);

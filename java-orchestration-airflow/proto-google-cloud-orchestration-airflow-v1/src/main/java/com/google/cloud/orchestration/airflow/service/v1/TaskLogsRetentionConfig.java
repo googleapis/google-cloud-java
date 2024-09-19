@@ -236,8 +236,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. The mode of storage for Airflow workers task logs. For details,
-   * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+   * Optional. The mode of storage for Airflow workers task logs.
    * </pre>
    *
    * <code>
@@ -254,8 +253,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. The mode of storage for Airflow workers task logs. For details,
-   * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+   * Optional. The mode of storage for Airflow workers task logs.
    * </pre>
    *
    * <code>
@@ -643,8 +641,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The mode of storage for Airflow workers task logs. For details,
-     * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+     * Optional. The mode of storage for Airflow workers task logs.
      * </pre>
      *
      * <code>
@@ -661,8 +658,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The mode of storage for Airflow workers task logs. For details,
-     * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+     * Optional. The mode of storage for Airflow workers task logs.
      * </pre>
      *
      * <code>
@@ -682,8 +678,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The mode of storage for Airflow workers task logs. For details,
-     * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+     * Optional. The mode of storage for Airflow workers task logs.
      * </pre>
      *
      * <code>
@@ -709,8 +704,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The mode of storage for Airflow workers task logs. For details,
-     * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+     * Optional. The mode of storage for Airflow workers task logs.
      * </pre>
      *
      * <code>
@@ -736,8 +730,7 @@ public final class TaskLogsRetentionConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The mode of storage for Airflow workers task logs. For details,
-     * see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+     * Optional. The mode of storage for Airflow workers task logs.
      * </pre>
      *
      * <code>

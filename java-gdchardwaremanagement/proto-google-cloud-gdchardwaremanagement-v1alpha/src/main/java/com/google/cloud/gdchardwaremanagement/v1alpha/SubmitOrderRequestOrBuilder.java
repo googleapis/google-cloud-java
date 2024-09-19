@@ -81,4 +81,35 @@ public interface SubmitOrderRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of this request. If unset, the request type is assumed to be
+   * `INFO_PENDING`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of this request. If unset, the request type is assumed to be
+   * `INFO_PENDING`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.Type getType();
 }

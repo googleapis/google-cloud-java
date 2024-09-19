@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -66,6 +67,8 @@ import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -207,6 +210,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             serializer.putQueryParam(fields, "showGroups", request.getShowGroups());
                             serializer.putQueryParam(
                                 fields, "showInvited", request.getShowInvited());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -241,6 +246,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -470,6 +477,45 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SearchSpacesRequest, SearchSpacesResponse>
+      searchSpacesMethodDescriptor =
+          ApiMethodDescriptor.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/SearchSpaces")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchSpacesRequest>newBuilder()
+                      .setPath(
+                          "/v1/spaces:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchSpacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchSpacesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchSpacesResponse>newBuilder()
+                      .setDefaultInstance(SearchSpacesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
       ApiMethodDescriptor.<GetSpaceRequest, Space>newBuilder()
           .setFullMethodName("google.chat.v1.ChatService/GetSpace")
@@ -491,6 +537,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSpaceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -595,6 +643,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         ProtoRestSerializer<UpdateSpaceRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -630,6 +680,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteSpaceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "useAdminAccess", request.getUseAdminAccess());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -735,6 +787,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -774,6 +828,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             ProtoRestSerializer<UpdateMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -811,6 +867,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "useAdminAccess", request.getUseAdminAccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1128,6 +1186,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       uploadAttachmentCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesResponse> listSpacesCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse>
+      searchSpacesPagedCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<SetUpSpaceRequest, Space> setUpSpaceCallable;
@@ -1301,6 +1362,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     HttpJsonCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         HttpJsonCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
             .setMethodDescriptor(listSpacesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SearchSpacesRequest, SearchSpacesResponse> searchSpacesTransportSettings =
+        HttpJsonCallSettings.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+            .setMethodDescriptor(searchSpacesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSpaceRequest, Space> getSpaceTransportSettings =
@@ -1532,6 +1598,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.listSpacesPagedCallable =
         callableFactory.createPagedCallable(
             listSpacesTransportSettings, settings.listSpacesSettings(), clientContext);
+    this.searchSpacesCallable =
+        callableFactory.createUnaryCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
+    this.searchSpacesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
     this.getSpaceCallable =
         callableFactory.createUnaryCallable(
             getSpaceTransportSettings, settings.getSpaceSettings(), clientContext);
@@ -1620,6 +1692,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getAttachmentMethodDescriptor);
     methodDescriptors.add(uploadAttachmentMethodDescriptor);
     methodDescriptors.add(listSpacesMethodDescriptor);
+    methodDescriptors.add(searchSpacesMethodDescriptor);
     methodDescriptors.add(getSpaceMethodDescriptor);
     methodDescriptors.add(createSpaceMethodDescriptor);
     methodDescriptors.add(setUpSpaceMethodDescriptor);
@@ -1706,6 +1779,16 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable() {
     return listSpacesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    return searchSpacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    return searchSpacesPagedCallable;
   }
 
   @Override

@@ -20,14 +20,10 @@ import static com.google.cloud.apihub.v1.LintingServiceClient.ListLocationsPaged
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -79,7 +75,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getStyleGuide to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getStyleGuide:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,10 +94,21 @@ import org.threeten.bp.Duration;
  *             .getStyleGuideSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * LintingServiceStubSettings lintingServiceSettings = lintingServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class LintingServiceStubSettings extends StubSettings<LintingServiceStubSettings> {
@@ -147,9 +156,7 @@ public class LintingServiceStubSettings extends StubSettings<LintingServiceStubS
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -205,11 +212,6 @@ public class LintingServiceStubSettings extends StubSettings<LintingServiceStubS
   public LintingServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcLintingServiceStub.create(this);
-    }
-    if (getTransportChannelProvider()
-        .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonLintingServiceStub.create(this);
     }
@@ -252,32 +254,17 @@ public class LintingServiceStubSettings extends StubSettings<LintingServiceStubS
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default gRPC ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  /** Returns a builder for the default REST ChannelProvider for this service. */
-  @BetaApi
+  /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(LintingServiceStubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(LintingServiceStubSettings.class))
@@ -286,18 +273,9 @@ public class LintingServiceStubSettings extends StubSettings<LintingServiceStubS
             GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return LintingServiceStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
-  }
-
-  /** Returns a new gRPC builder for this class. */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
-  }
-
-  /** Returns a new REST builder for this class. */
-  public static Builder newHttpJsonBuilder() {
-    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -429,18 +407,6 @@ public class LintingServiceStubSettings extends StubSettings<LintingServiceStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
-      builder.setSwitchToMtlsEndpointAllowed(true);
-
-      return initDefaults(builder);
-    }
-
-    private static Builder createHttpJsonDefault() {
-      Builder builder = new Builder(((ClientContext) null));
-
-      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 

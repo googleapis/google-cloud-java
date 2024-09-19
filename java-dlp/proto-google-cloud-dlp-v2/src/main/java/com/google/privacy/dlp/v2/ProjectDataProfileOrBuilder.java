@@ -53,7 +53,7 @@ public interface ProjectDataProfileOrBuilder
    *
    *
    * <pre>
-   * Project ID that was profiled.
+   * Project ID or account that was profiled.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -65,7 +65,7 @@ public interface ProjectDataProfileOrBuilder
    *
    *
    * <pre>
-   * Project ID that was profiled.
+   * Project ID or account that was profiled.
    * </pre>
    *
    * <code>string project_id = 2;</code>

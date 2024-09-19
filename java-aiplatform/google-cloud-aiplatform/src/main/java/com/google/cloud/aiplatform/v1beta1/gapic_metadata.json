@@ -1759,6 +1759,9 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UpdateRagCorpus": {
+              "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
+            },
             "UploadRagFile": {
               "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]
             }

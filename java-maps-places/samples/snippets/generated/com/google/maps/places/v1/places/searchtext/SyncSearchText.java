@@ -19,6 +19,7 @@ package com.google.maps.places.v1.samples;
 // [START places_v1_generated_Places_SearchText_sync]
 import com.google.maps.places.v1.PlacesClient;
 import com.google.maps.places.v1.PriceLevel;
+import com.google.maps.places.v1.RoutingParameters;
 import com.google.maps.places.v1.SearchTextRequest;
 import com.google.maps.places.v1.SearchTextResponse;
 import java.util.ArrayList;
@@ -50,6 +51,9 @@ public class SyncSearchText {
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
               .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setSearchAlongRouteParameters(
+                  SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
               .build();
       SearchTextResponse response = placesClient.searchText(request);
     }

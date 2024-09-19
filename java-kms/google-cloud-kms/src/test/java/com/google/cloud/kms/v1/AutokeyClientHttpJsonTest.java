@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -305,14 +306,22 @@ public class AutokeyClientHttpJsonTest {
 
   @Test
   public void listKeyHandlesTest() throws Exception {
+    KeyHandle responsesElement = KeyHandle.newBuilder().build();
     ListKeyHandlesResponse expectedResponse =
-        ListKeyHandlesResponse.newBuilder().addAllKeyHandles(new ArrayList<KeyHandle>()).build();
+        ListKeyHandlesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyHandles(Arrays.asList(responsesElement))
+            .build();
     mockService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListKeyHandlesResponse actualResponse = client.listKeyHandles(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListKeyHandlesPagedResponse pagedListResponse = client.listKeyHandles(parent);
+
+    List<KeyHandle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyHandlesList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -347,14 +356,22 @@ public class AutokeyClientHttpJsonTest {
 
   @Test
   public void listKeyHandlesTest2() throws Exception {
+    KeyHandle responsesElement = KeyHandle.newBuilder().build();
     ListKeyHandlesResponse expectedResponse =
-        ListKeyHandlesResponse.newBuilder().addAllKeyHandles(new ArrayList<KeyHandle>()).build();
+        ListKeyHandlesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyHandles(Arrays.asList(responsesElement))
+            .build();
     mockService.addResponse(expectedResponse);
 
     String parent = "projects/project-5833/locations/location-5833";
 
-    ListKeyHandlesResponse actualResponse = client.listKeyHandles(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListKeyHandlesPagedResponse pagedListResponse = client.listKeyHandles(parent);
+
+    List<KeyHandle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyHandlesList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());

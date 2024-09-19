@@ -18518,6 +18518,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
          */
         NON_ANSWER_SEEKING_QUERY(2),
+        /**
+         *
+         *
+         * <pre>
+         * Jail-breaking query classification type.
+         * </pre>
+         *
+         * <code>JAIL_BREAKING_QUERY = 3;</code>
+         */
+        JAIL_BREAKING_QUERY(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -18551,6 +18561,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
          */
         public static final int NON_ANSWER_SEEKING_QUERY_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Jail-breaking query classification type.
+         * </pre>
+         *
+         * <code>JAIL_BREAKING_QUERY = 3;</code>
+         */
+        public static final int JAIL_BREAKING_QUERY_VALUE = 3;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -18582,6 +18602,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return ADVERSARIAL_QUERY;
             case 2:
               return NON_ANSWER_SEEKING_QUERY;
+            case 3:
+              return JAIL_BREAKING_QUERY;
             default:
               return null;
           }

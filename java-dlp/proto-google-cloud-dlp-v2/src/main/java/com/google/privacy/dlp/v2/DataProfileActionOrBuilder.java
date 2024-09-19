@@ -102,6 +102,96 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   *
+   * @return Whether the publishToChronicle field is set.
+   */
+  boolean hasPublishToChronicle();
+  /**
+   *
+   *
+   * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   *
+   * @return The publishToChronicle.
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle getPublishToChronicle();
+  /**
+   *
+   *
+   * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder
+      getPublishToChronicleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   *
+   * @return Whether the publishToScc field is set.
+   */
+  boolean hasPublishToScc();
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   *
+   * @return The publishToScc.
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter getPublishToScc();
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder
+      getPublishToSccOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tags the profiled resources with the specified tag values.
    * </pre>
    *

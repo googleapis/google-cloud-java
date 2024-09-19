@@ -298,7 +298,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
    * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-   * job properties, since a collision may occur that causes an incorrect job
+   * job properties, since a collision might occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -315,7 +315,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
    * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-   * job properties, since a collision may occur that causes an incorrect job
+   * job properties, since a collision might occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -332,7 +332,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
    * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-   * job properties, since a collision may occur that causes an incorrect job
+   * job properties, since a collision might occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -350,7 +350,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
    * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-   * job properties, since a collision may occur that causes an incorrect job
+   * job properties, since a collision might occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -606,7 +606,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
@@ -632,7 +632,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
@@ -649,7 +649,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
@@ -673,7 +673,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
@@ -1727,7 +1727,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1745,7 +1745,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1762,7 +1762,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1780,7 +1780,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1798,7 +1798,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1824,7 +1824,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1849,7 +1849,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1871,7 +1871,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1892,7 +1892,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
      * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
-     * job properties, since a collision may occur that causes an incorrect job
+     * job properties, since a collision might occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -2513,7 +2513,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2539,7 +2539,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2556,7 +2556,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2580,7 +2580,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2610,7 +2610,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2636,7 +2636,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>
@@ -2660,7 +2660,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
      * classes in user code.
      * </pre>

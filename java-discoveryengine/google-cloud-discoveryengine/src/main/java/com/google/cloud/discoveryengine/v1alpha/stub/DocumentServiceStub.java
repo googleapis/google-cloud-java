@@ -22,6 +22,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
@@ -106,6 +108,11 @@ public abstract class DocumentServiceStub implements BackgroundResource {
   public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
       getProcessedDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: getProcessedDocumentCallable()");
+  }
+
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchGetDocumentsMetadataCallable()");
   }
 
   @Override

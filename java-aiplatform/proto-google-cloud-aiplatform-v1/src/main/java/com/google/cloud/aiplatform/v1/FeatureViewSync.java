@@ -94,6 +94,44 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      * @return The totalSlot.
      */
     long getTotalSlot();
+
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     *
+     * @return Whether the systemWatermarkTime field is set.
+     */
+    boolean hasSystemWatermarkTime();
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     *
+     * @return The systemWatermarkTime.
+     */
+    com.google.protobuf.Timestamp getSystemWatermarkTime();
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSystemWatermarkTimeOrBuilder();
   }
   /**
    *
@@ -138,6 +176,7 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.aiplatform.v1.FeatureViewSync.SyncSummary.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ROW_SYNCED_FIELD_NUMBER = 1;
     private long rowSynced_ = 0L;
     /**
@@ -174,6 +213,59 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       return totalSlot_;
     }
 
+    public static final int SYSTEM_WATERMARK_TIME_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp systemWatermarkTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     *
+     * @return Whether the systemWatermarkTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasSystemWatermarkTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     *
+     * @return The systemWatermarkTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getSystemWatermarkTime() {
+      return systemWatermarkTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : systemWatermarkTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lower bound of the system time watermark for the sync job. This is only
+     * set for continuously syncing feature views.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getSystemWatermarkTimeOrBuilder() {
+      return systemWatermarkTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : systemWatermarkTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -194,6 +286,9 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       if (totalSlot_ != 0L) {
         output.writeInt64(2, totalSlot_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getSystemWatermarkTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -208,6 +303,10 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
       if (totalSlot_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, totalSlot_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSystemWatermarkTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -227,6 +326,10 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
       if (getRowSynced() != other.getRowSynced()) return false;
       if (getTotalSlot() != other.getTotalSlot()) return false;
+      if (hasSystemWatermarkTime() != other.hasSystemWatermarkTime()) return false;
+      if (hasSystemWatermarkTime()) {
+        if (!getSystemWatermarkTime().equals(other.getSystemWatermarkTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -242,6 +345,10 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowSynced());
       hash = (37 * hash) + TOTAL_SLOT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalSlot());
+      if (hasSystemWatermarkTime()) {
+        hash = (37 * hash) + SYSTEM_WATERMARK_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSystemWatermarkTime().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -375,10 +482,19 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.cloud.aiplatform.v1.FeatureViewSync.SyncSummary.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getSystemWatermarkTimeFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -387,6 +503,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         bitField0_ = 0;
         rowSynced_ = 0L;
         totalSlot_ = 0L;
+        systemWatermarkTime_ = null;
+        if (systemWatermarkTimeBuilder_ != null) {
+          systemWatermarkTimeBuilder_.dispose();
+          systemWatermarkTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -431,6 +552,15 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.totalSlot_ = totalSlot_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.systemWatermarkTime_ =
+              systemWatermarkTimeBuilder_ == null
+                  ? systemWatermarkTime_
+                  : systemWatermarkTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -488,6 +618,9 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         if (other.getTotalSlot() != 0L) {
           setTotalSlot(other.getTotalSlot());
         }
+        if (other.hasSystemWatermarkTime()) {
+          mergeSystemWatermarkTime(other.getSystemWatermarkTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -526,6 +659,13 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 42:
+                {
+                  input.readMessage(
+                      getSystemWatermarkTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -649,6 +789,200 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         totalSlot_ = 0L;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp systemWatermarkTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          systemWatermarkTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       *
+       * @return Whether the systemWatermarkTime field is set.
+       */
+      public boolean hasSystemWatermarkTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       *
+       * @return The systemWatermarkTime.
+       */
+      public com.google.protobuf.Timestamp getSystemWatermarkTime() {
+        if (systemWatermarkTimeBuilder_ == null) {
+          return systemWatermarkTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : systemWatermarkTime_;
+        } else {
+          return systemWatermarkTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public Builder setSystemWatermarkTime(com.google.protobuf.Timestamp value) {
+        if (systemWatermarkTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          systemWatermarkTime_ = value;
+        } else {
+          systemWatermarkTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public Builder setSystemWatermarkTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (systemWatermarkTimeBuilder_ == null) {
+          systemWatermarkTime_ = builderForValue.build();
+        } else {
+          systemWatermarkTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public Builder mergeSystemWatermarkTime(com.google.protobuf.Timestamp value) {
+        if (systemWatermarkTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && systemWatermarkTime_ != null
+              && systemWatermarkTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSystemWatermarkTimeBuilder().mergeFrom(value);
+          } else {
+            systemWatermarkTime_ = value;
+          }
+        } else {
+          systemWatermarkTimeBuilder_.mergeFrom(value);
+        }
+        if (systemWatermarkTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public Builder clearSystemWatermarkTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        systemWatermarkTime_ = null;
+        if (systemWatermarkTimeBuilder_ != null) {
+          systemWatermarkTimeBuilder_.dispose();
+          systemWatermarkTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSystemWatermarkTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSystemWatermarkTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSystemWatermarkTimeOrBuilder() {
+        if (systemWatermarkTimeBuilder_ != null) {
+          return systemWatermarkTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return systemWatermarkTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : systemWatermarkTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Lower bound of the system time watermark for the sync job. This is only
+       * set for continuously syncing feature views.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp system_watermark_time = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getSystemWatermarkTimeFieldBuilder() {
+        if (systemWatermarkTimeBuilder_ == null) {
+          systemWatermarkTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSystemWatermarkTime(), getParentForChildren(), isClean());
+          systemWatermarkTime_ = null;
+        }
+        return systemWatermarkTimeBuilder_;
       }
 
       @java.lang.Override

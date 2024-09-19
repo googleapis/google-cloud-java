@@ -75,6 +75,7 @@
     <dependency>
      <groupId>com.google.api.grpc</groupId>
      <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
 
 

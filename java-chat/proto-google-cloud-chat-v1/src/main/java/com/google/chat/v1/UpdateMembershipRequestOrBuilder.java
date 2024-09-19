@@ -117,4 +117,25 @@ public interface UpdateMembershipRequestOrBuilder
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * When `true`, the method runs using the user's Google Workspace
+   * administrator privileges.
+   *
+   * The calling user must be a Google Workspace administrator with the
+   * [manage chat and spaces conversations
+   * privilege](https://support.google.com/a/answer/13369245).
+   *
+   * Requires the `chat.admin.memberships` [OAuth 2.0
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+   * </pre>
+   *
+   * <code>bool use_admin_access = 3;</code>
+   *
+   * @return The useAdminAccess.
+   */
+  boolean getUseAdminAccess();
 }

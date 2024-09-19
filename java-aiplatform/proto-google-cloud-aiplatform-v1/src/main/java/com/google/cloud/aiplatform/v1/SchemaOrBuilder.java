@@ -385,6 +385,65 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the propertyOrdering.
+   */
+  java.util.List<java.lang.String> getPropertyOrderingList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of propertyOrdering.
+   */
+  int getPropertyOrderingCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The propertyOrdering at the given index.
+   */
+  java.lang.String getPropertyOrdering(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the propertyOrdering at the given index.
+   */
+  com.google.protobuf.ByteString getPropertyOrderingBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Required properties of Type.OBJECT.
    * </pre>
    *

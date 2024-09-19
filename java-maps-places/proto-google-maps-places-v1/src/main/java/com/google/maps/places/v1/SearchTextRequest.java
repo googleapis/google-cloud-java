@@ -3472,6 +3472,821 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface SearchAlongRouteParametersOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the polyline field is set.
+     */
+    boolean hasPolyline();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The polyline.
+     */
+    com.google.maps.places.v1.Polyline getPolyline();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.maps.places.v1.PolylineOrBuilder getPolylineOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a precalculated polyline from the [Routes
+   * API](https://developers.google.com/maps/documentation/routes) defining the
+   * route to search. Searching along a route is similar to using the
+   * `locationBias` or `locationRestriction` request option to bias the search
+   * results. However, while the `locationBias` and `locationRestriction`
+   * options let you specify a region to bias the search results, this option
+   * lets you bias the results along a trip route.
+   *
+   * Results are not guaranteed to be along the route provided, but rather are
+   * ranked within the search area defined by the polyline and, optionally, by
+   * the `locationBias` or `locationRestriction` based on minimal detour times
+   * from origin to destination. The results might be along an alternate route,
+   * especially if the provided polyline does not define an optimal route from
+   * origin to destination.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters}
+   */
+  public static final class SearchAlongRouteParameters
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
+      SearchAlongRouteParametersOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SearchAlongRouteParameters.newBuilder() to construct.
+    private SearchAlongRouteParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SearchAlongRouteParameters() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SearchAlongRouteParameters();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlacesServiceProto
+          .internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlacesServiceProto
+          .internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.class,
+              com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int POLYLINE_FIELD_NUMBER = 1;
+    private com.google.maps.places.v1.Polyline polyline_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the polyline field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolyline() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The polyline.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.Polyline getPolyline() {
+      return polyline_ == null
+          ? com.google.maps.places.v1.Polyline.getDefaultInstance()
+          : polyline_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The route polyline.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.PolylineOrBuilder getPolylineOrBuilder() {
+      return polyline_ == null
+          ? com.google.maps.places.v1.Polyline.getDefaultInstance()
+          : polyline_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getPolyline());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPolyline());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters other =
+          (com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters) obj;
+
+      if (hasPolyline() != other.hasPolyline()) return false;
+      if (hasPolyline()) {
+        if (!getPolyline().equals(other.getPolyline())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPolyline()) {
+        hash = (37 * hash) + POLYLINE_FIELD_NUMBER;
+        hash = (53 * hash) + getPolyline().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a precalculated polyline from the [Routes
+     * API](https://developers.google.com/maps/documentation/routes) defining the
+     * route to search. Searching along a route is similar to using the
+     * `locationBias` or `locationRestriction` request option to bias the search
+     * results. However, while the `locationBias` and `locationRestriction`
+     * options let you specify a region to bias the search results, this option
+     * lets you bias the results along a trip route.
+     *
+     * Results are not guaranteed to be along the route provided, but rather are
+     * ranked within the search area defined by the polyline and, optionally, by
+     * the `locationBias` or `locationRestriction` based on minimal detour times
+     * from origin to destination. The results might be along an alternate route,
+     * especially if the provided polyline does not define an optimal route from
+     * origin to destination.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.class,
+                com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPolylineFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        polyline_ = null;
+        if (polylineBuilder_ != null) {
+          polylineBuilder_.dispose();
+          polylineBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlacesServiceProto
+            .internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+          getDefaultInstanceForType() {
+        return com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters build() {
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters buildPartial() {
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters result =
+            new com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.polyline_ = polylineBuilder_ == null ? polyline_ : polylineBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters) {
+          return mergeFrom(
+              (com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters other) {
+        if (other
+            == com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+                .getDefaultInstance()) return this;
+        if (other.hasPolyline()) {
+          mergePolyline(other.getPolyline());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getPolylineFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.maps.places.v1.Polyline polyline_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.Polyline,
+              com.google.maps.places.v1.Polyline.Builder,
+              com.google.maps.places.v1.PolylineOrBuilder>
+          polylineBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the polyline field is set.
+       */
+      public boolean hasPolyline() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The polyline.
+       */
+      public com.google.maps.places.v1.Polyline getPolyline() {
+        if (polylineBuilder_ == null) {
+          return polyline_ == null
+              ? com.google.maps.places.v1.Polyline.getDefaultInstance()
+              : polyline_;
+        } else {
+          return polylineBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setPolyline(com.google.maps.places.v1.Polyline value) {
+        if (polylineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          polyline_ = value;
+        } else {
+          polylineBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setPolyline(com.google.maps.places.v1.Polyline.Builder builderForValue) {
+        if (polylineBuilder_ == null) {
+          polyline_ = builderForValue.build();
+        } else {
+          polylineBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergePolyline(com.google.maps.places.v1.Polyline value) {
+        if (polylineBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && polyline_ != null
+              && polyline_ != com.google.maps.places.v1.Polyline.getDefaultInstance()) {
+            getPolylineBuilder().mergeFrom(value);
+          } else {
+            polyline_ = value;
+          }
+        } else {
+          polylineBuilder_.mergeFrom(value);
+        }
+        if (polyline_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearPolyline() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        polyline_ = null;
+        if (polylineBuilder_ != null) {
+          polylineBuilder_.dispose();
+          polylineBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.maps.places.v1.Polyline.Builder getPolylineBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getPolylineFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.maps.places.v1.PolylineOrBuilder getPolylineOrBuilder() {
+        if (polylineBuilder_ != null) {
+          return polylineBuilder_.getMessageOrBuilder();
+        } else {
+          return polyline_ == null
+              ? com.google.maps.places.v1.Polyline.getDefaultInstance()
+              : polyline_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The route polyline.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.places.v1.Polyline polyline = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.Polyline,
+              com.google.maps.places.v1.Polyline.Builder,
+              com.google.maps.places.v1.PolylineOrBuilder>
+          getPolylineFieldBuilder() {
+        if (polylineBuilder_ == null) {
+          polylineBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.Polyline,
+                  com.google.maps.places.v1.Polyline.Builder,
+                  com.google.maps.places.v1.PolylineOrBuilder>(
+                  getPolyline(), getParentForChildren(), isClean());
+          polyline_ = null;
+        }
+        return polylineBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
+    private static final com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters();
+    }
+
+    public static com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchAlongRouteParameters> PARSER =
+        new com.google.protobuf.AbstractParser<SearchAlongRouteParameters>() {
+          @java.lang.Override
+          public SearchAlongRouteParameters parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SearchAlongRouteParameters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchAlongRouteParameters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int TEXT_QUERY_FIELD_NUMBER = 1;
 
@@ -4110,6 +4925,123 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         : evOptions_;
   }
 
+  public static final int ROUTING_PARAMETERS_FIELD_NUMBER = 16;
+  private com.google.maps.places.v1.RoutingParameters routingParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routingParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoutingParameters() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingParameters.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingParameters getRoutingParameters() {
+    return routingParameters_ == null
+        ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+        : routingParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters for routing to results.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder() {
+    return routingParameters_ == null
+        ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+        : routingParameters_;
+  }
+
+  public static final int SEARCH_ALONG_ROUTE_PARAMETERS_FIELD_NUMBER = 17;
+  private com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+      searchAlongRouteParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchAlongRouteParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchAlongRouteParameters() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchAlongRouteParameters.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+      getSearchAlongRouteParameters() {
+    return searchAlongRouteParameters_ == null
+        ? com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+            .getDefaultInstance()
+        : searchAlongRouteParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional parameters proto for searching along a route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder
+      getSearchAlongRouteParametersOrBuilder() {
+    return searchAlongRouteParameters_ == null
+        ? com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+            .getDefaultInstance()
+        : searchAlongRouteParameters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4169,6 +5101,12 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getEvOptions());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(16, getRoutingParameters());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getSearchAlongRouteParameters());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4230,6 +5168,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getEvOptions());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getRoutingParameters());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getSearchAlongRouteParameters());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4268,6 +5214,15 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (hasEvOptions() != other.hasEvOptions()) return false;
     if (hasEvOptions()) {
       if (!getEvOptions().equals(other.getEvOptions())) return false;
+    }
+    if (hasRoutingParameters() != other.hasRoutingParameters()) return false;
+    if (hasRoutingParameters()) {
+      if (!getRoutingParameters().equals(other.getRoutingParameters())) return false;
+    }
+    if (hasSearchAlongRouteParameters() != other.hasSearchAlongRouteParameters()) return false;
+    if (hasSearchAlongRouteParameters()) {
+      if (!getSearchAlongRouteParameters().equals(other.getSearchAlongRouteParameters()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4316,6 +5271,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (hasEvOptions()) {
       hash = (37 * hash) + EV_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getEvOptions().hashCode();
+    }
+    if (hasRoutingParameters()) {
+      hash = (37 * hash) + ROUTING_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getRoutingParameters().hashCode();
+    }
+    if (hasSearchAlongRouteParameters()) {
+      hash = (37 * hash) + SEARCH_ALONG_ROUTE_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchAlongRouteParameters().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4460,6 +5423,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         getLocationBiasFieldBuilder();
         getLocationRestrictionFieldBuilder();
         getEvOptionsFieldBuilder();
+        getRoutingParametersFieldBuilder();
+        getSearchAlongRouteParametersFieldBuilder();
       }
     }
 
@@ -4492,6 +5457,16 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (evOptionsBuilder_ != null) {
         evOptionsBuilder_.dispose();
         evOptionsBuilder_ = null;
+      }
+      routingParameters_ = null;
+      if (routingParametersBuilder_ != null) {
+        routingParametersBuilder_.dispose();
+        routingParametersBuilder_ = null;
+      }
+      searchAlongRouteParameters_ = null;
+      if (searchAlongRouteParametersBuilder_ != null) {
+        searchAlongRouteParametersBuilder_.dispose();
+        searchAlongRouteParametersBuilder_ = null;
       }
       return this;
     }
@@ -4581,6 +5556,20 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.evOptions_ = evOptionsBuilder_ == null ? evOptions_ : evOptionsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.routingParameters_ =
+            routingParametersBuilder_ == null
+                ? routingParameters_
+                : routingParametersBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.searchAlongRouteParameters_ =
+            searchAlongRouteParametersBuilder_ == null
+                ? searchAlongRouteParameters_
+                : searchAlongRouteParametersBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4683,6 +5672,12 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasEvOptions()) {
         mergeEvOptions(other.getEvOptions());
+      }
+      if (other.hasRoutingParameters()) {
+        mergeRoutingParameters(other.getRoutingParameters());
+      }
+      if (other.hasSearchAlongRouteParameters()) {
+        mergeSearchAlongRouteParameters(other.getSearchAlongRouteParameters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4802,6 +5797,20 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00001000;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getRoutingParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    getSearchAlongRouteParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6538,6 +7547,426 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         evOptions_ = null;
       }
       return evOptionsBuilder_;
+    }
+
+    private com.google.maps.places.v1.RoutingParameters routingParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.RoutingParameters,
+            com.google.maps.places.v1.RoutingParameters.Builder,
+            com.google.maps.places.v1.RoutingParametersOrBuilder>
+        routingParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routingParameters field is set.
+     */
+    public boolean hasRoutingParameters() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routingParameters.
+     */
+    public com.google.maps.places.v1.RoutingParameters getRoutingParameters() {
+      if (routingParametersBuilder_ == null) {
+        return routingParameters_ == null
+            ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+            : routingParameters_;
+      } else {
+        return routingParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRoutingParameters(com.google.maps.places.v1.RoutingParameters value) {
+      if (routingParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        routingParameters_ = value;
+      } else {
+        routingParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRoutingParameters(
+        com.google.maps.places.v1.RoutingParameters.Builder builderForValue) {
+      if (routingParametersBuilder_ == null) {
+        routingParameters_ = builderForValue.build();
+      } else {
+        routingParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRoutingParameters(com.google.maps.places.v1.RoutingParameters value) {
+      if (routingParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && routingParameters_ != null
+            && routingParameters_
+                != com.google.maps.places.v1.RoutingParameters.getDefaultInstance()) {
+          getRoutingParametersBuilder().mergeFrom(value);
+        } else {
+          routingParameters_ = value;
+        }
+      } else {
+        routingParametersBuilder_.mergeFrom(value);
+      }
+      if (routingParameters_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRoutingParameters() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      routingParameters_ = null;
+      if (routingParametersBuilder_ != null) {
+        routingParametersBuilder_.dispose();
+        routingParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.RoutingParameters.Builder getRoutingParametersBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getRoutingParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder() {
+      if (routingParametersBuilder_ != null) {
+        return routingParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return routingParameters_ == null
+            ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
+            : routingParameters_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters for routing to results.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.RoutingParameters routing_parameters = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.RoutingParameters,
+            com.google.maps.places.v1.RoutingParameters.Builder,
+            com.google.maps.places.v1.RoutingParametersOrBuilder>
+        getRoutingParametersFieldBuilder() {
+      if (routingParametersBuilder_ == null) {
+        routingParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.RoutingParameters,
+                com.google.maps.places.v1.RoutingParameters.Builder,
+                com.google.maps.places.v1.RoutingParametersOrBuilder>(
+                getRoutingParameters(), getParentForChildren(), isClean());
+        routingParameters_ = null;
+      }
+      return routingParametersBuilder_;
+    }
+
+    private com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        searchAlongRouteParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters,
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder,
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder>
+        searchAlongRouteParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchAlongRouteParameters field is set.
+     */
+    public boolean hasSearchAlongRouteParameters() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchAlongRouteParameters.
+     */
+    public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+        getSearchAlongRouteParameters() {
+      if (searchAlongRouteParametersBuilder_ == null) {
+        return searchAlongRouteParameters_ == null
+            ? com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+                .getDefaultInstance()
+            : searchAlongRouteParameters_;
+      } else {
+        return searchAlongRouteParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchAlongRouteParameters(
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters value) {
+      if (searchAlongRouteParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchAlongRouteParameters_ = value;
+      } else {
+        searchAlongRouteParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchAlongRouteParameters(
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder
+            builderForValue) {
+      if (searchAlongRouteParametersBuilder_ == null) {
+        searchAlongRouteParameters_ = builderForValue.build();
+      } else {
+        searchAlongRouteParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchAlongRouteParameters(
+        com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters value) {
+      if (searchAlongRouteParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && searchAlongRouteParameters_ != null
+            && searchAlongRouteParameters_
+                != com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+                    .getDefaultInstance()) {
+          getSearchAlongRouteParametersBuilder().mergeFrom(value);
+        } else {
+          searchAlongRouteParameters_ = value;
+        }
+      } else {
+        searchAlongRouteParametersBuilder_.mergeFrom(value);
+      }
+      if (searchAlongRouteParameters_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchAlongRouteParameters() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      searchAlongRouteParameters_ = null;
+      if (searchAlongRouteParametersBuilder_ != null) {
+        searchAlongRouteParametersBuilder_.dispose();
+        searchAlongRouteParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder
+        getSearchAlongRouteParametersBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getSearchAlongRouteParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder
+        getSearchAlongRouteParametersOrBuilder() {
+      if (searchAlongRouteParametersBuilder_ != null) {
+        return searchAlongRouteParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return searchAlongRouteParameters_ == null
+            ? com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
+                .getDefaultInstance()
+            : searchAlongRouteParameters_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional parameters proto for searching along a route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters search_along_route_parameters = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters,
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder,
+            com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder>
+        getSearchAlongRouteParametersFieldBuilder() {
+      if (searchAlongRouteParametersBuilder_ == null) {
+        searchAlongRouteParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters,
+                com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder,
+                com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder>(
+                getSearchAlongRouteParameters(), getParentForChildren(), isClean());
+        searchAlongRouteParameters_ = null;
+      }
+      return searchAlongRouteParametersBuilder_;
     }
 
     @java.lang.Override

@@ -63,7 +63,7 @@ public interface BigQuerySourceOrBuilder
    *
    *
    * <pre>
-   * The project ID (can be project # or ID) that the BigQuery source is in with
+   * The project ID or the project number that contains the BigQuery source. Has
    * a length limit of 128 characters. If not specified, inherits the project
    * ID from the parent request.
    * </pre>
@@ -77,7 +77,7 @@ public interface BigQuerySourceOrBuilder
    *
    *
    * <pre>
-   * The project ID (can be project # or ID) that the BigQuery source is in with
+   * The project ID or the project number that contains the BigQuery source. Has
    * a length limit of 128 characters. If not specified, inherits the project
    * ID from the parent request.
    * </pre>

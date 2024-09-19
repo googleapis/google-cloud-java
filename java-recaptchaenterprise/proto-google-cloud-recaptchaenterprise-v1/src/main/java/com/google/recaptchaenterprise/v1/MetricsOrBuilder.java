@@ -94,7 +94,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -105,7 +105,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -116,7 +116,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -127,7 +127,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -139,7 +139,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -164,7 +164,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -177,7 +177,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -190,7 +190,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -204,7 +204,7 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>

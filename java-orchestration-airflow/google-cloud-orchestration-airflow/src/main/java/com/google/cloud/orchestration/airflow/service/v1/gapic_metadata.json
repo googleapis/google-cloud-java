@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "EnvironmentsClient",
           "rpcs": {
+            "CheckUpgrade": {
+              "methods": ["checkUpgradeAsync", "checkUpgradeOperationCallable", "checkUpgradeCallable"]
+            },
             "CreateEnvironment": {
               "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
             },

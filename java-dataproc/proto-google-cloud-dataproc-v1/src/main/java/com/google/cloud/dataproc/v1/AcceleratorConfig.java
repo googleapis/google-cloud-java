@@ -80,15 +80,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * Examples:
    *
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-   * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-   * * `nvidia-tesla-k80`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+   * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+   * * `nvidia-tesla-t4`
    *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
-   * resource, for example, `nvidia-tesla-k80`.
+   * resource, for example, `nvidia-tesla-t4`.
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
@@ -118,15 +118,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * Examples:
    *
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-   * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-   * * `nvidia-tesla-k80`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+   * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+   * * `nvidia-tesla-t4`
    *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
-   * resource, for example, `nvidia-tesla-k80`.
+   * resource, for example, `nvidia-tesla-t4`.
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
@@ -541,15 +541,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * Examples:
      *
-     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `nvidia-tesla-k80`
+     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `nvidia-tesla-t4`
      *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
-     * resource, for example, `nvidia-tesla-k80`.
+     * resource, for example, `nvidia-tesla-t4`.
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
@@ -578,15 +578,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * Examples:
      *
-     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `nvidia-tesla-k80`
+     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `nvidia-tesla-t4`
      *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
-     * resource, for example, `nvidia-tesla-k80`.
+     * resource, for example, `nvidia-tesla-t4`.
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
@@ -615,15 +615,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * Examples:
      *
-     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `nvidia-tesla-k80`
+     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `nvidia-tesla-t4`
      *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
-     * resource, for example, `nvidia-tesla-k80`.
+     * resource, for example, `nvidia-tesla-t4`.
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
@@ -651,15 +651,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * Examples:
      *
-     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `nvidia-tesla-k80`
+     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `nvidia-tesla-t4`
      *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
-     * resource, for example, `nvidia-tesla-k80`.
+     * resource, for example, `nvidia-tesla-t4`.
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
@@ -683,15 +683,15 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * Examples:
      *
-     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
-     * * `nvidia-tesla-k80`
+     * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4`
+     * * `nvidia-tesla-t4`
      *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
-     * resource, for example, `nvidia-tesla-k80`.
+     * resource, for example, `nvidia-tesla-t4`.
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>

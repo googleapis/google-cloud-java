@@ -120,6 +120,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_WEBSITE = 3;</code>
      */
     PUBLIC_WEBSITE(3),
+    /**
+     *
+     *
+     * <pre>
+     * The data store is used for workspace search. Details of workspace
+     * data store are specified in the
+     * [WorkspaceConfig][google.cloud.discoveryengine.v1alpha.WorkspaceConfig].
+     * </pre>
+     *
+     * <code>GOOGLE_WORKSPACE = 4;</code>
+     */
+    GOOGLE_WORKSPACE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -165,6 +177,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_WEBSITE = 3;</code>
      */
     public static final int PUBLIC_WEBSITE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The data store is used for workspace search. Details of workspace
+     * data store are specified in the
+     * [WorkspaceConfig][google.cloud.discoveryengine.v1alpha.WorkspaceConfig].
+     * </pre>
+     *
+     * <code>GOOGLE_WORKSPACE = 4;</code>
+     */
+    public static final int GOOGLE_WORKSPACE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -198,6 +222,8 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           return CONTENT_REQUIRED;
         case 3:
           return PUBLIC_WEBSITE;
+        case 4:
+          return GOOGLE_WORKSPACE;
         default:
           return null;
       }
@@ -832,6 +858,69 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return aclEnabled_;
   }
 
+  public static final int WORKSPACE_CONFIG_FIELD_NUMBER = 25;
+  private com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspaceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return Whether the workspaceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkspaceConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return The workspaceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig getWorkspaceConfig() {
+    return workspaceConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.getDefaultInstance()
+        : workspaceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.WorkspaceConfigOrBuilder
+      getWorkspaceConfigOrBuilder() {
+    return workspaceConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.getDefaultInstance()
+        : workspaceConfig_;
+  }
+
   public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
       documentProcessingConfig_;
@@ -850,7 +939,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -920,7 +1009,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1038,9 +1127,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(24, aclEnabled_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
+      output.writeMessage(25, getWorkspaceConfig());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
@@ -1098,11 +1190,14 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, aclEnabled_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1140,6 +1235,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (!getIdpConfig().equals(other.getIdpConfig())) return false;
     }
     if (getAclEnabled() != other.getAclEnabled()) return false;
+    if (hasWorkspaceConfig() != other.hasWorkspaceConfig()) return false;
+    if (hasWorkspaceConfig()) {
+      if (!getWorkspaceConfig().equals(other.getWorkspaceConfig())) return false;
+    }
     if (hasDocumentProcessingConfig() != other.hasDocumentProcessingConfig()) return false;
     if (hasDocumentProcessingConfig()) {
       if (!getDocumentProcessingConfig().equals(other.getDocumentProcessingConfig())) return false;
@@ -1187,6 +1286,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ACL_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAclEnabled());
+    if (hasWorkspaceConfig()) {
+      hash = (37 * hash) + WORKSPACE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkspaceConfig().hashCode();
+    }
     if (hasDocumentProcessingConfig()) {
       hash = (37 * hash) + DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDocumentProcessingConfig().hashCode();
@@ -1338,6 +1441,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getLanguageInfoFieldBuilder();
         getIdpConfigFieldBuilder();
+        getWorkspaceConfigFieldBuilder();
         getDocumentProcessingConfigFieldBuilder();
         getStartingSchemaFieldBuilder();
       }
@@ -1370,6 +1474,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         idpConfigBuilder_ = null;
       }
       aclEnabled_ = false;
+      workspaceConfig_ = null;
+      if (workspaceConfigBuilder_ != null) {
+        workspaceConfigBuilder_.dispose();
+        workspaceConfigBuilder_ = null;
+      }
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -1459,16 +1568,21 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         result.aclEnabled_ = aclEnabled_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.workspaceConfig_ =
+            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1561,6 +1675,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getAclEnabled() != false) {
         setAclEnabled(other.getAclEnabled());
+      }
+      if (other.hasWorkspaceConfig()) {
+        mergeWorkspaceConfig(other.getWorkspaceConfig());
       }
       if (other.hasDocumentProcessingConfig()) {
         mergeDocumentProcessingConfig(other.getDocumentProcessingConfig());
@@ -1667,17 +1784,23 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 192
+            case 202:
+              {
+                input.readMessage(getWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 202
             case 218:
               {
                 input.readMessage(
                     getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 226
             default:
@@ -3274,6 +3397,233 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspaceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig,
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfigOrBuilder>
+        workspaceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     *
+     * @return Whether the workspaceConfig field is set.
+     */
+    public boolean hasWorkspaceConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     *
+     * @return The workspaceConfig.
+     */
+    public com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig getWorkspaceConfig() {
+      if (workspaceConfigBuilder_ == null) {
+        return workspaceConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.getDefaultInstance()
+            : workspaceConfig_;
+      } else {
+        return workspaceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder setWorkspaceConfig(
+        com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig value) {
+      if (workspaceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workspaceConfig_ = value;
+      } else {
+        workspaceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder setWorkspaceConfig(
+        com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.Builder builderForValue) {
+      if (workspaceConfigBuilder_ == null) {
+        workspaceConfig_ = builderForValue.build();
+      } else {
+        workspaceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder mergeWorkspaceConfig(
+        com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig value) {
+      if (workspaceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && workspaceConfig_ != null
+            && workspaceConfig_
+                != com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.getDefaultInstance()) {
+          getWorkspaceConfigBuilder().mergeFrom(value);
+        } else {
+          workspaceConfig_ = value;
+        }
+      } else {
+        workspaceConfigBuilder_.mergeFrom(value);
+      }
+      if (workspaceConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder clearWorkspaceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      workspaceConfig_ = null;
+      if (workspaceConfigBuilder_ != null) {
+        workspaceConfigBuilder_.dispose();
+        workspaceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.Builder
+        getWorkspaceConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getWorkspaceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.WorkspaceConfigOrBuilder
+        getWorkspaceConfigOrBuilder() {
+      if (workspaceConfigBuilder_ != null) {
+        return workspaceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workspaceConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.getDefaultInstance()
+            : workspaceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1alpha.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1alpha.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.WorkspaceConfig workspace_config = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig,
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.WorkspaceConfigOrBuilder>
+        getWorkspaceConfigFieldBuilder() {
+      if (workspaceConfigBuilder_ == null) {
+        workspaceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig,
+                com.google.cloud.discoveryengine.v1alpha.WorkspaceConfig.Builder,
+                com.google.cloud.discoveryengine.v1alpha.WorkspaceConfigOrBuilder>(
+                getWorkspaceConfig(), getParentForChildren(), isClean());
+        workspaceConfig_ = null;
+      }
+      return workspaceConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
         documentProcessingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3295,7 +3645,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3341,7 +3691,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3363,7 +3713,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3381,7 +3731,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
@@ -3394,7 +3744,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3411,7 +3761,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -3433,7 +3783,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -3518,7 +3868,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3586,7 +3936,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3620,7 +3970,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3649,7 +3999,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1alpha.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && startingSchema_ != null
             && startingSchema_
                 != com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()) {
@@ -3661,7 +4011,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3690,7 +4040,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -3723,7 +4073,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1alpha.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }

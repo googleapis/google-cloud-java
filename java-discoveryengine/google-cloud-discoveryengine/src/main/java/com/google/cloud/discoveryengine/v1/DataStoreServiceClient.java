@@ -419,6 +419,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    *           .setDataStore(DataStore.newBuilder().build())
    *           .setDataStoreId("dataStoreId929489618")
    *           .setCreateAdvancedSiteSearch(true)
+   *           .setSkipDefaultSchemaCreation(true)
    *           .build();
    *   DataStore response = dataStoreServiceClient.createDataStoreAsync(request).get();
    * }
@@ -455,6 +456,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    *           .setDataStore(DataStore.newBuilder().build())
    *           .setDataStoreId("dataStoreId929489618")
    *           .setCreateAdvancedSiteSearch(true)
+   *           .setSkipDefaultSchemaCreation(true)
    *           .build();
    *   OperationFuture<DataStore, CreateDataStoreMetadata> future =
    *       dataStoreServiceClient.createDataStoreOperationCallable().futureCall(request);
@@ -491,6 +493,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    *           .setDataStore(DataStore.newBuilder().build())
    *           .setDataStoreId("dataStoreId929489618")
    *           .setCreateAdvancedSiteSearch(true)
+   *           .setSkipDefaultSchemaCreation(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataStoreServiceClient.createDataStoreCallable().futureCall(request);

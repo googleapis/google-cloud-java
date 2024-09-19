@@ -117,6 +117,47 @@ public interface FeatureViewOrBuilder
    *
    *
    * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vertexRagSource field is set.
+   */
+  boolean hasVertexRagSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vertexRagSource.
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getVertexRagSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder getVertexRagSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. Name of the FeatureView. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * </pre>

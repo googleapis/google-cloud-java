@@ -18,8 +18,8 @@ package com.google.cloud.kms.v1.samples;
 
 // [START cloudkms_v1_generated_Autokey_ListKeyHandles_sync]
 import com.google.cloud.kms.v1.AutokeyClient;
+import com.google.cloud.kms.v1.KeyHandle;
 import com.google.cloud.kms.v1.ListKeyHandlesRequest;
-import com.google.cloud.kms.v1.ListKeyHandlesResponse;
 import com.google.cloud.kms.v1.LocationName;
 
 public class SyncListKeyHandles {
@@ -38,9 +38,13 @@ public class SyncListKeyHandles {
       ListKeyHandlesRequest request =
           ListKeyHandlesRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .build();
-      ListKeyHandlesResponse response = autokeyClient.listKeyHandles(request);
+      for (KeyHandle element : autokeyClient.listKeyHandles(request).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

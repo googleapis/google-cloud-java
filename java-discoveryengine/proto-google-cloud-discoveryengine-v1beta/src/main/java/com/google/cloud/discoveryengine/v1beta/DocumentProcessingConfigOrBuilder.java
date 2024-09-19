@@ -163,6 +163,8 @@ public interface DocumentProcessingConfigOrBuilder
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
    * layout parsing are supported.
+   * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -184,6 +186,8 @@ public interface DocumentProcessingConfigOrBuilder
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
+   * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
    * </pre>
    *
@@ -213,6 +217,8 @@ public interface DocumentProcessingConfigOrBuilder
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
    * layout parsing are supported.
+   * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -237,6 +243,8 @@ public interface DocumentProcessingConfigOrBuilder
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
+   * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
    * </pre>
    *
@@ -265,6 +273,8 @@ public interface DocumentProcessingConfigOrBuilder
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
+   * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
    * </pre>
    *

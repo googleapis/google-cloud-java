@@ -377,7 +377,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure SparkR.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -403,7 +403,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure SparkR.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -420,7 +420,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure SparkR.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -444,7 +444,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure SparkR.
-   * Properties that conflict with values set by the Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API might be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -1789,7 +1789,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1815,7 +1815,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1832,7 +1832,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1856,7 +1856,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1886,7 +1886,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1912,7 +1912,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -1936,7 +1936,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure SparkR.
-     * Properties that conflict with values set by the Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API might be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>

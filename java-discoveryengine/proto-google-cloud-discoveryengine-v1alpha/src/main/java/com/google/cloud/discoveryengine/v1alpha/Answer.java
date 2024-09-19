@@ -341,6 +341,19 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>JAIL_BREAKING_QUERY_IGNORED = 6;</code>
      */
     JAIL_BREAKING_QUERY_IGNORED(6),
+    /**
+     *
+     *
+     * <pre>
+     * The customer policy violation case.
+     *
+     * Google skips the summary if there is a customer policy violation
+     * detected. The policy is defined by the customer.
+     * </pre>
+     *
+     * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
+     */
+    CUSTOMER_POLICY_VIOLATION(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -426,6 +439,19 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>JAIL_BREAKING_QUERY_IGNORED = 6;</code>
      */
     public static final int JAIL_BREAKING_QUERY_IGNORED_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The customer policy violation case.
+     *
+     * Google skips the summary if there is a customer policy violation
+     * detected. The policy is defined by the customer.
+     * </pre>
+     *
+     * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
+     */
+    public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -465,6 +491,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return NO_RELEVANT_CONTENT;
         case 6:
           return JAIL_BREAKING_QUERY_IGNORED;
+        case 7:
+          return CUSTOMER_POLICY_VIOLATION;
         default:
           return null;
       }

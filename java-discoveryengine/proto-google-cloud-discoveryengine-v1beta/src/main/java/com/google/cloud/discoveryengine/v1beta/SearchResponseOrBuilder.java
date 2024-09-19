@@ -204,7 +204,8 @@ public interface SearchResponseOrBuilder
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -219,7 +220,8 @@ public interface SearchResponseOrBuilder
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -588,4 +590,74 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder
       getSessionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>
+      getOneBoxResultsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult getOneBoxResults(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  int getOneBoxResultsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>
+      getOneBoxResultsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder
+      getOneBoxResultsOrBuilder(int index);
 }

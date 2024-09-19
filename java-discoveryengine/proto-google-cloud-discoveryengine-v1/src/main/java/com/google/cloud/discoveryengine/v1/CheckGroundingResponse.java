@@ -211,8 +211,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
      * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
      * and
-     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+     * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
      * should not be returned.
      * </pre>
      *
@@ -230,8 +231,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
      * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
      * and
-     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+     * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
      * should not be returned.
      * </pre>
      *
@@ -484,8 +486,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
      * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
      * and
-     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+     * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
      * should not be returned.
      * </pre>
      *
@@ -506,8 +509,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
      * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
      * and
-     * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+     * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
      * should not be returned.
      * </pre>
      *
@@ -1445,8 +1449,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
        * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
        * and
-       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+       * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
        * should not be returned.
        * </pre>
        *
@@ -1467,8 +1472,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
        * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
        * and
-       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+       * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
        * should not be returned.
        * </pre>
        *
@@ -1489,8 +1495,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
        * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
        * and
-       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+       * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
        * should not be returned.
        * </pre>
        *
@@ -1515,8 +1522,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
        * [citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.citation_indices],
+       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices],
        * and
-       * [anti_citation_indices][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.anti_citation_indices]
+       * [score][google.cloud.discoveryengine.v1.CheckGroundingResponse.Claim.score]
        * should not be returned.
        * </pre>
        *

@@ -26,6 +26,7 @@ import com.google.cloud.aiplatform.v1.SafetySetting;
 import com.google.cloud.aiplatform.v1.Tool;
 import com.google.cloud.aiplatform.v1.ToolConfig;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncGenerateContent {
 
@@ -47,6 +48,7 @@ public class SyncGenerateContent {
               .setSystemInstruction(Content.newBuilder().build())
               .addAllTools(new ArrayList<Tool>())
               .setToolConfig(ToolConfig.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
               .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();

@@ -39,6 +39,7 @@ public class SyncUpdateMembership {
           UpdateMembershipRequest.newBuilder()
               .setMembership(Membership.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       Membership response = chatServiceClient.updateMembership(request);
     }

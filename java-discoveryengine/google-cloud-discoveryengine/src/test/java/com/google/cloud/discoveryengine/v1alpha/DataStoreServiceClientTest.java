@@ -106,6 +106,7 @@ public class DataStoreServiceClientTest {
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -171,6 +172,7 @@ public class DataStoreServiceClientTest {
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -236,6 +238,7 @@ public class DataStoreServiceClientTest {
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -289,6 +292,7 @@ public class DataStoreServiceClientTest {
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -514,6 +518,7 @@ public class DataStoreServiceClientTest {
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setIdpConfig(IdpConfig.newBuilder().build())
             .setAclEnabled(true)
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();

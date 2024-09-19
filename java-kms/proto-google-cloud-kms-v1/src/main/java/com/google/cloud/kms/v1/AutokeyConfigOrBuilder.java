@@ -95,4 +95,33 @@ public interface AutokeyConfigOrBuilder
    * @return The bytes for keyProject.
    */
   com.google.protobuf.ByteString getKeyProjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state for the AutokeyConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state for the AutokeyConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.kms.v1.AutokeyConfig.State getState();
 }

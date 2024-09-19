@@ -337,15 +337,13 @@ public class HttpJsonApiHubDependenciesStub extends ApiHubDependenciesStub {
   public static final HttpJsonApiHubDependenciesStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonApiHubDependenciesStub(
-        ApiHubDependenciesStubSettings.newHttpJsonBuilder().build(), clientContext);
+        ApiHubDependenciesStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonApiHubDependenciesStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonApiHubDependenciesStub(
-        ApiHubDependenciesStubSettings.newHttpJsonBuilder().build(),
-        clientContext,
-        callableFactory);
+        ApiHubDependenciesStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**

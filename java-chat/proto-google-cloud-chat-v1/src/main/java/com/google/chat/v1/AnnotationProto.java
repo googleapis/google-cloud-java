@@ -48,6 +48,10 @@ public final class AnnotationProto {
       internal_static_google_chat_v1_DriveLinkData_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_DriveLinkData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_ChatSpaceLinkData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_ChatSpaceLinkData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -78,22 +82,28 @@ public final class AnnotationProto {
           + "CommandMetadata.Type\022\024\n\014command_name\030\003 \001"
           + "(\t\022\022\n\ncommand_id\030\004 \001(\003\022\027\n\017triggers_dialo"
           + "g\030\005 \001(\010\"1\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\007\n"
-          + "\003ADD\020\001\022\n\n\006INVOKE\020\002\"\350\001\n\020RichLinkMetadata\022"
+          + "\003ADD\020\001\022\n\n\006INVOKE\020\002\"\273\002\n\020RichLinkMetadata\022"
           + "\013\n\003uri\030\001 \001(\t\022E\n\016rich_link_type\030\002 \001(\0162-.g"
           + "oogle.chat.v1.RichLinkMetadata.RichLinkT"
           + "ype\0228\n\017drive_link_data\030\003 \001(\0132\035.google.ch"
-          + "at.v1.DriveLinkDataH\000\">\n\014RichLinkType\022\036\n"
-          + "\032RICH_LINK_TYPE_UNSPECIFIED\020\000\022\016\n\nDRIVE_F"
-          + "ILE\020\001B\006\n\004data\"X\n\rDriveLinkData\0224\n\016drive_"
-          + "data_ref\030\001 \001(\0132\034.google.chat.v1.DriveDat"
-          + "aRef\022\021\n\tmime_type\030\002 \001(\t*e\n\016AnnotationTyp"
-          + "e\022\037\n\033ANNOTATION_TYPE_UNSPECIFIED\020\000\022\020\n\014US"
-          + "ER_MENTION\020\001\022\021\n\rSLASH_COMMAND\020\002\022\r\n\tRICH_"
-          + "LINK\020\003B\250\001\n\022com.google.chat.v1B\017Annotatio"
-          + "nProtoP\001Z,cloud.google.com/go/chat/apiv1"
-          + "/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Ap"
-          + "ps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Googl"
-          + "e::Apps::Chat::V1b\006proto3"
+          + "at.v1.DriveLinkDataH\000\022A\n\024chat_space_link"
+          + "_data\030\004 \001(\0132!.google.chat.v1.ChatSpaceLi"
+          + "nkDataH\000\"N\n\014RichLinkType\022\036\n\032RICH_LINK_TY"
+          + "PE_UNSPECIFIED\020\000\022\016\n\nDRIVE_FILE\020\001\022\016\n\nCHAT"
+          + "_SPACE\020\002B\006\n\004data\"X\n\rDriveLinkData\0224\n\016dri"
+          + "ve_data_ref\030\001 \001(\0132\034.google.chat.v1.Drive"
+          + "DataRef\022\021\n\tmime_type\030\002 \001(\t\"\246\001\n\021ChatSpace"
+          + "LinkData\022-\n\005space\030\001 \001(\tB\036\372A\033\n\031chat.googl"
+          + "eapis.com/Space\022/\n\006thread\030\002 \001(\tB\037\372A\034\n\032ch"
+          + "at.googleapis.com/Thread\0221\n\007message\030\003 \001("
+          + "\tB \372A\035\n\033chat.googleapis.com/Message*e\n\016A"
+          + "nnotationType\022\037\n\033ANNOTATION_TYPE_UNSPECI"
+          + "FIED\020\000\022\020\n\014USER_MENTION\020\001\022\021\n\rSLASH_COMMAN"
+          + "D\020\002\022\r\n\tRICH_LINK\020\003B\250\001\n\022com.google.chat.v"
+          + "1B\017AnnotationProtoP\001Z,cloud.google.com/g"
+          + "o/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto"
+          + "\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Cha"
+          + "t\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -138,7 +148,7 @@ public final class AnnotationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_RichLinkMetadata_descriptor,
             new java.lang.String[] {
-              "Uri", "RichLinkType", "DriveLinkData", "Data",
+              "Uri", "RichLinkType", "DriveLinkData", "ChatSpaceLinkData", "Data",
             });
     internal_static_google_chat_v1_DriveLinkData_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -148,6 +158,19 @@ public final class AnnotationProto {
             new java.lang.String[] {
               "DriveDataRef", "MimeType",
             });
+    internal_static_google_chat_v1_ChatSpaceLinkData_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_chat_v1_ChatSpaceLinkData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_ChatSpaceLinkData_descriptor,
+            new java.lang.String[] {
+              "Space", "Thread", "Message",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.chat.v1.AttachmentProto.getDescriptor();
     com.google.chat.v1.UserProto.getDescriptor();

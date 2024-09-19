@@ -28,6 +28,83 @@ public interface ImportRagFilesResponseOrBuilder
    *
    *
    * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return Whether the partialFailuresGcsPath field is set.
+   */
+  boolean hasPartialFailuresGcsPath();
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return The partialFailuresGcsPath.
+   */
+  java.lang.String getPartialFailuresGcsPath();
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return The bytes for partialFailuresGcsPath.
+   */
+  com.google.protobuf.ByteString getPartialFailuresGcsPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return Whether the partialFailuresBigqueryTable field is set.
+   */
+  boolean hasPartialFailuresBigqueryTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return The partialFailuresBigqueryTable.
+   */
+  java.lang.String getPartialFailuresBigqueryTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return The bytes for partialFailuresBigqueryTable.
+   */
+  com.google.protobuf.ByteString getPartialFailuresBigqueryTableBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of RagFiles that had been imported into the RagCorpus.
    * </pre>
    *
@@ -62,4 +139,7 @@ public interface ImportRagFilesResponseOrBuilder
    * @return The skippedRagFilesCount.
    */
   long getSkippedRagFilesCount();
+
+  com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse.PartialFailureSinkCase
+      getPartialFailureSinkCase();
 }

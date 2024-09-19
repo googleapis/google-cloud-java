@@ -20,6 +20,7 @@ package com.google.maps.places.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.maps.places.v1.PlacesClient;
 import com.google.maps.places.v1.PriceLevel;
+import com.google.maps.places.v1.RoutingParameters;
 import com.google.maps.places.v1.SearchTextRequest;
 import com.google.maps.places.v1.SearchTextResponse;
 import java.util.ArrayList;
@@ -51,6 +52,9 @@ public class AsyncSearchText {
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
               .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setSearchAlongRouteParameters(
+                  SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
               .build();
       ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
       // Do something.

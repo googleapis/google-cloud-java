@@ -216,6 +216,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -288,6 +289,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -360,6 +362,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -422,6 +425,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -484,6 +488,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -514,6 +519,7 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .build();
@@ -565,6 +571,7 @@ public class NetAppClientHttpJsonTest {
               .setPsaRange("psaRange-534274785")
               .setEncryptionType(EncryptionType.forNumber(0))
               .setGlobalAccessAllowed(true)
+              .setAllowAutoTiering(true)
               .setReplicaZone("replicaZone-1063236476")
               .setZone("zone3744684")
               .build();
@@ -660,6 +667,80 @@ public class NetAppClientHttpJsonTest {
     try {
       String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
       client.deleteStoragePoolAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchActiveReplicaZoneTest() throws Exception {
+    StoragePool expectedResponse =
+        StoragePool.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setVolumeCapacityGib(643777472)
+            .setVolumeCount(-1362665558)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setLdapEnabled(true)
+            .setPsaRange("psaRange-534274785")
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setGlobalAccessAllowed(true)
+            .setAllowAutoTiering(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchActiveReplicaZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SwitchActiveReplicaZoneRequest request =
+        SwitchActiveReplicaZoneRequest.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .build();
+
+    StoragePool actualResponse = client.switchActiveReplicaZoneAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchActiveReplicaZoneExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SwitchActiveReplicaZoneRequest request =
+          SwitchActiveReplicaZoneRequest.newBuilder()
+              .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+              .build();
+      client.switchActiveReplicaZoneAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -806,6 +887,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -886,6 +968,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -966,6 +1049,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1055,6 +1139,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1144,6 +1229,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1192,6 +1278,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1261,6 +1348,7 @@ public class NetAppClientHttpJsonTest {
               .setTieringPolicy(TieringPolicy.newBuilder().build())
               .setReplicaZone("replicaZone-1063236476")
               .setZone("zone3744684")
+              .setColdTierSizeGib(212809252)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1400,6 +1488,7 @@ public class NetAppClientHttpJsonTest {
             .setTieringPolicy(TieringPolicy.newBuilder().build())
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -1503,13 +1503,13 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   }
 
   public static final HttpJsonApiHubStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonApiHubStub(ApiHubStubSettings.newHttpJsonBuilder().build(), clientContext);
+    return new HttpJsonApiHubStub(ApiHubStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonApiHubStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonApiHubStub(
-        ApiHubStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        ApiHubStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**

@@ -157,6 +157,16 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>NO_IMPROVEMENT = 6;</code>
      */
     NO_IMPROVEMENT(6),
+    /**
+     *
+     *
+     * <pre>
+     * Input data validation failed. Model training didn't start.
+     * </pre>
+     *
+     * <code>INPUT_VALIDATION_FAILED = 7;</code>
+     */
+    INPUT_VALIDATION_FAILED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -230,6 +240,16 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>NO_IMPROVEMENT = 6;</code>
      */
     public static final int NO_IMPROVEMENT_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Input data validation failed. Model training didn't start.
+     * </pre>
+     *
+     * <code>INPUT_VALIDATION_FAILED = 7;</code>
+     */
+    public static final int INPUT_VALIDATION_FAILED_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -269,6 +289,8 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
           return TRAINING_FAILED;
         case 6:
           return NO_IMPROVEMENT;
+        case 7:
+          return INPUT_VALIDATION_FAILED;
         default:
           return null;
       }
@@ -509,7 +531,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -527,7 +549,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
    * @return The createTime.
    */
   @java.lang.Override
@@ -1664,7 +1686,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-     *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+     *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
      * @return Whether the createTime field is set.
      */
     @java.lang.Deprecated
@@ -1681,7 +1703,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-     *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+     *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
      * @return The createTime.
      */
     @java.lang.Deprecated

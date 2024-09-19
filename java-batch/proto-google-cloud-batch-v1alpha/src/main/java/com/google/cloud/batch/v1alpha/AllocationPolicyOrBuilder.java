@@ -71,7 +71,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=611
+   *     google/cloud/batch/v1alpha/job.proto;l=619
    * @return Whether the instance field is set.
    */
   @java.lang.Deprecated
@@ -88,7 +88,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=611
+   *     google/cloud/batch/v1alpha/job.proto;l=619
    * @return The instance.
    */
   @java.lang.Deprecated
@@ -188,7 +188,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=618
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -203,7 +203,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=618
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -218,7 +218,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=618
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -234,7 +234,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=618
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -253,7 +253,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=621
+   *     google/cloud/batch/v1alpha/job.proto;l=629
    * @return A list containing the provisioningModels.
    */
   @java.lang.Deprecated
@@ -271,7 +271,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=621
+   *     google/cloud/batch/v1alpha/job.proto;l=629
    * @return The count of provisioningModels.
    */
   @java.lang.Deprecated
@@ -288,7 +288,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=621
+   *     google/cloud/batch/v1alpha/job.proto;l=629
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -307,7 +307,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=621
+   *     google/cloud/batch/v1alpha/job.proto;l=629
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Deprecated
@@ -324,7 +324,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=621
+   *     google/cloud/batch/v1alpha/job.proto;l=629
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -341,7 +341,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=624
+   *     See google/cloud/batch/v1alpha/job.proto;l=632
    * @return The serviceAccountEmail.
    */
   @java.lang.Deprecated
@@ -356,7 +356,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=624
+   *     See google/cloud/batch/v1alpha/job.proto;l=632
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Deprecated

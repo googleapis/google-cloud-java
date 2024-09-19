@@ -118,6 +118,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -172,6 +173,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -226,6 +228,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -280,6 +283,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -334,6 +338,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -708,6 +713,7 @@ public class WorkflowTemplateServiceClientTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 

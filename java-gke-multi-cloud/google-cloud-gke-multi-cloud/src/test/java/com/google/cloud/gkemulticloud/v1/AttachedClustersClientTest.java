@@ -113,6 +113,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +189,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -263,6 +265,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -335,6 +338,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -407,6 +411,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -479,6 +484,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 
@@ -540,6 +546,7 @@ public class AttachedClustersClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 

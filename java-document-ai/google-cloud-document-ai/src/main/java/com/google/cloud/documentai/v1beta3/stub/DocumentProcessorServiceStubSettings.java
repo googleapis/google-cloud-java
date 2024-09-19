@@ -137,7 +137,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of processDocument to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of processDocument:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -154,10 +156,47 @@ import org.threeten.bp.Duration;
  *             .processDocumentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DocumentProcessorServiceStubSettings documentProcessorServiceSettings =
  *     documentProcessorServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for batchProcessDocuments:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DocumentProcessorServiceStubSettings.Builder documentProcessorServiceSettingsBuilder =
+ *     DocumentProcessorServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * documentProcessorServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -296,9 +335,7 @@ public class DocumentProcessorServiceStubSettings
 
             @Override
             public Iterable<ProcessorType> extractResources(ListProcessorTypesResponse payload) {
-              return payload.getProcessorTypesList() == null
-                  ? ImmutableList.<ProcessorType>of()
-                  : payload.getProcessorTypesList();
+              return payload.getProcessorTypesList();
             }
           };
 
@@ -333,9 +370,7 @@ public class DocumentProcessorServiceStubSettings
 
             @Override
             public Iterable<Processor> extractResources(ListProcessorsResponse payload) {
-              return payload.getProcessorsList() == null
-                  ? ImmutableList.<Processor>of()
-                  : payload.getProcessorsList();
+              return payload.getProcessorsList();
             }
           };
 
@@ -374,9 +409,7 @@ public class DocumentProcessorServiceStubSettings
             @Override
             public Iterable<ProcessorVersion> extractResources(
                 ListProcessorVersionsResponse payload) {
-              return payload.getProcessorVersionsList() == null
-                  ? ImmutableList.<ProcessorVersion>of()
-                  : payload.getProcessorVersionsList();
+              return payload.getProcessorVersionsList();
             }
           };
 
@@ -413,9 +446,7 @@ public class DocumentProcessorServiceStubSettings
 
             @Override
             public Iterable<Evaluation> extractResources(ListEvaluationsResponse payload) {
-              return payload.getEvaluationsList() == null
-                  ? ImmutableList.<Evaluation>of()
-                  : payload.getEvaluationsList();
+              return payload.getEvaluationsList();
             }
           };
 
@@ -449,9 +480,7 @@ public class DocumentProcessorServiceStubSettings
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

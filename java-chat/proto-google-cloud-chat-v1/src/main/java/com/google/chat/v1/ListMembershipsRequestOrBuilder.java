@@ -128,8 +128,8 @@ public interface ListMembershipsRequestOrBuilder
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
-   * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-   * Preview: You can also filter for `member.type` using the `!=` operator.
+   * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+   * filter for `member.type` using the `!=` operator.
    *
    * To filter by both role and type, use the `AND` operator. To filter by
    * either role or type, use the `OR` operator.
@@ -176,8 +176,8 @@ public interface ListMembershipsRequestOrBuilder
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
-   * To filter by type, set `member.type` to `HUMAN` or `BOT`. Developer
-   * Preview: You can also filter for `member.type` using the `!=` operator.
+   * To filter by type, set `member.type` to `HUMAN` or `BOT`. You can also
+   * filter for `member.type` using the `!=` operator.
    *
    * To filter by both role and type, use the `AND` operator. To filter by
    * either role or type, use the `OR` operator.
@@ -250,4 +250,28 @@ public interface ListMembershipsRequestOrBuilder
    * @return The showInvited.
    */
   boolean getShowInvited();
+
+  /**
+   *
+   *
+   * <pre>
+   * When `true`, the method runs using the user's Google Workspace
+   * administrator privileges.
+   *
+   * The calling user must be a Google Workspace administrator with the
+   * [manage chat and spaces conversations
+   * privilege](https://support.google.com/a/answer/13369245).
+   *
+   * Requires either the `chat.admin.memberships.readonly` or
+   * `chat.admin.memberships` [OAuth 2.0
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
+   *
+   * Listing app memberships in a space isn't supported when using admin access.
+   * </pre>
+   *
+   * <code>bool use_admin_access = 8;</code>
+   *
+   * @return The useAdminAccess.
+   */
+  boolean getUseAdminAccess();
 }

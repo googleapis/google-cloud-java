@@ -106,6 +106,7 @@ import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -343,6 +344,46 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteStoragePoolRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneMethodDescriptor =
+          ApiMethodDescriptor.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SwitchActiveReplicaZone")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SwitchActiveReplicaZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:switch",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchActiveReplicaZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchActiveReplicaZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SwitchActiveReplicaZoneRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -2209,6 +2250,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable;
+  private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -2469,6 +2514,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneTransportSettings =
+            HttpJsonCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+                .setMethodDescriptor(switchActiveReplicaZoneMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         HttpJsonCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
             .setMethodDescriptor(listVolumesMethodDescriptor)
@@ -3059,6 +3116,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.deleteStoragePoolOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.switchActiveReplicaZoneCallable =
+        callableFactory.createUnaryCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneSettings(),
+            clientContext);
+    this.switchActiveReplicaZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listVolumesCallable =
         callableFactory.createUnaryCallable(
             listVolumesTransportSettings, settings.listVolumesSettings(), clientContext);
@@ -3455,6 +3523,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(getStoragePoolMethodDescriptor);
     methodDescriptors.add(updateStoragePoolMethodDescriptor);
     methodDescriptors.add(deleteStoragePoolMethodDescriptor);
+    methodDescriptors.add(switchActiveReplicaZoneMethodDescriptor);
     methodDescriptors.add(listVolumesMethodDescriptor);
     methodDescriptors.add(getVolumeMethodDescriptor);
     methodDescriptors.add(createVolumeMethodDescriptor);
@@ -3558,6 +3627,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return switchActiveReplicaZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return switchActiveReplicaZoneOperationCallable;
   }
 
   @Override

@@ -164,7 +164,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of inspectContent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of inspectContent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -180,10 +182,21 @@ import org.threeten.bp.Duration;
  *             .inspectContentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DlpServiceStubSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings> {
@@ -346,9 +359,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<InspectTemplate> extractResources(
                 ListInspectTemplatesResponse payload) {
-              return payload.getInspectTemplatesList() == null
-                  ? ImmutableList.<InspectTemplate>of()
-                  : payload.getInspectTemplatesList();
+              return payload.getInspectTemplatesList();
             }
           };
 
@@ -391,9 +402,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<DeidentifyTemplate> extractResources(
                 ListDeidentifyTemplatesResponse payload) {
-              return payload.getDeidentifyTemplatesList() == null
-                  ? ImmutableList.<DeidentifyTemplate>of()
-                  : payload.getDeidentifyTemplatesList();
+              return payload.getDeidentifyTemplatesList();
             }
           };
 
@@ -430,9 +439,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<JobTrigger> extractResources(ListJobTriggersResponse payload) {
-              return payload.getJobTriggersList() == null
-                  ? ImmutableList.<JobTrigger>of()
-                  : payload.getJobTriggersList();
+              return payload.getJobTriggersList();
             }
           };
 
@@ -471,9 +478,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<DiscoveryConfig> extractResources(
                 ListDiscoveryConfigsResponse payload) {
-              return payload.getDiscoveryConfigsList() == null
-                  ? ImmutableList.<DiscoveryConfig>of()
-                  : payload.getDiscoveryConfigsList();
+              return payload.getDiscoveryConfigsList();
             }
           };
 
@@ -507,9 +512,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
-              return payload.getJobsList() == null
-                  ? ImmutableList.<DlpJob>of()
-                  : payload.getJobsList();
+              return payload.getJobsList();
             }
           };
 
@@ -547,9 +550,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
-              return payload.getStoredInfoTypesList() == null
-                  ? ImmutableList.<StoredInfoType>of()
-                  : payload.getStoredInfoTypesList();
+              return payload.getStoredInfoTypesList();
             }
           };
 
@@ -592,9 +593,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<ProjectDataProfile> extractResources(
                 ListProjectDataProfilesResponse payload) {
-              return payload.getProjectDataProfilesList() == null
-                  ? ImmutableList.<ProjectDataProfile>of()
-                  : payload.getProjectDataProfilesList();
+              return payload.getProjectDataProfilesList();
             }
           };
 
@@ -633,9 +632,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<TableDataProfile> extractResources(
                 ListTableDataProfilesResponse payload) {
-              return payload.getTableDataProfilesList() == null
-                  ? ImmutableList.<TableDataProfile>of()
-                  : payload.getTableDataProfilesList();
+              return payload.getTableDataProfilesList();
             }
           };
 
@@ -676,9 +673,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<ColumnDataProfile> extractResources(
                 ListColumnDataProfilesResponse payload) {
-              return payload.getColumnDataProfilesList() == null
-                  ? ImmutableList.<ColumnDataProfile>of()
-                  : payload.getColumnDataProfilesList();
+              return payload.getColumnDataProfilesList();
             }
           };
 
@@ -723,9 +718,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<FileStoreDataProfile> extractResources(
                 ListFileStoreDataProfilesResponse payload) {
-              return payload.getFileStoreDataProfilesList() == null
-                  ? ImmutableList.<FileStoreDataProfile>of()
-                  : payload.getFileStoreDataProfilesList();
+              return payload.getFileStoreDataProfilesList();
             }
           };
 
@@ -762,9 +755,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<Connection> extractResources(ListConnectionsResponse payload) {
-              return payload.getConnectionsList() == null
-                  ? ImmutableList.<Connection>of()
-                  : payload.getConnectionsList();
+              return payload.getConnectionsList();
             }
           };
 
@@ -802,9 +793,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<Connection> extractResources(SearchConnectionsResponse payload) {
-              return payload.getConnectionsList() == null
-                  ? ImmutableList.<Connection>of()
-                  : payload.getConnectionsList();
+              return payload.getConnectionsList();
             }
           };
 

@@ -75,7 +75,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of executePatchJob to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of executePatchJob:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -92,10 +94,21 @@ import org.threeten.bp.Duration;
  *             .executePatchJobSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * OsConfigServiceStubSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -198,9 +211,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
             @Override
             public Iterable<PatchJobs.PatchJob> extractResources(
                 PatchJobs.ListPatchJobsResponse payload) {
-              return payload.getPatchJobsList() == null
-                  ? ImmutableList.<PatchJobs.PatchJob>of()
-                  : payload.getPatchJobsList();
+              return payload.getPatchJobsList();
             }
           };
 
@@ -247,9 +258,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
             @Override
             public Iterable<PatchJobs.PatchJobInstanceDetails> extractResources(
                 PatchJobs.ListPatchJobInstanceDetailsResponse payload) {
-              return payload.getPatchJobInstanceDetailsList() == null
-                  ? ImmutableList.<PatchJobs.PatchJobInstanceDetails>of()
-                  : payload.getPatchJobInstanceDetailsList();
+              return payload.getPatchJobInstanceDetailsList();
             }
           };
 
@@ -296,9 +305,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
             @Override
             public Iterable<PatchDeployments.PatchDeployment> extractResources(
                 PatchDeployments.ListPatchDeploymentsResponse payload) {
-              return payload.getPatchDeploymentsList() == null
-                  ? ImmutableList.<PatchDeployments.PatchDeployment>of()
-                  : payload.getPatchDeploymentsList();
+              return payload.getPatchDeploymentsList();
             }
           };
 
@@ -345,9 +352,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
             @Override
             public Iterable<GuestPolicies.GuestPolicy> extractResources(
                 GuestPolicies.ListGuestPoliciesResponse payload) {
-              return payload.getGuestPoliciesList() == null
-                  ? ImmutableList.<GuestPolicies.GuestPolicy>of()
-                  : payload.getGuestPoliciesList();
+              return payload.getGuestPoliciesList();
             }
           };
 

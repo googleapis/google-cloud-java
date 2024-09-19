@@ -29,6 +29,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
@@ -186,6 +188,16 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CheckUpgradeRequest, Operation>
+      checkUpgradeMethodDescriptor =
+          MethodDescriptor.<CheckUpgradeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CheckUpgrade")
+              .setRequestMarshaller(ProtoUtils.marshaller(CheckUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -378,6 +390,9 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable;
+  private final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable;
+  private final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable;
   private final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
       createUserWorkloadsSecretCallable;
   private final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
@@ -552,6 +567,16 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
+        GrpcCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
+            .setMethodDescriptor(checkUpgradeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
                   return builder.build();
                 })
             .build();
@@ -780,6 +805,15 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     this.listWorkloadsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.checkUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            checkUpgradeTransportSettings, settings.checkUpgradeSettings(), clientContext);
+    this.checkUpgradeOperationCallable =
+        callableFactory.createOperationCallable(
+            checkUpgradeTransportSettings,
+            settings.checkUpgradeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createUserWorkloadsSecretCallable =
         callableFactory.createUnaryCallable(
             createUserWorkloadsSecretTransportSettings,
@@ -958,6 +992,17 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    return checkUpgradeCallable;
+  }
+
+  @Override
+  public OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    return checkUpgradeOperationCallable;
   }
 
   @Override

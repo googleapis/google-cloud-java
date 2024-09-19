@@ -32,6 +32,7 @@ public interface RagEmbeddingModelConfigOrBuilder
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -49,6 +50,7 @@ public interface RagEmbeddingModelConfigOrBuilder
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -67,6 +69,7 @@ public interface RagEmbeddingModelConfigOrBuilder
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -75,6 +78,49 @@ public interface RagEmbeddingModelConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpointOrBuilder
       getVertexPredictionEndpointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   *
+   * @return Whether the hybridSearchConfig field is set.
+   */
+  boolean hasHybridSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   *
+   * @return The hybridSearchConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+      getHybridSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder
+      getHybridSearchConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.ModelConfigCase getModelConfigCase();
 }

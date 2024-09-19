@@ -393,7 +393,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Dataproc API may be overwritten.
+   * Dataproc API might be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -418,7 +418,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Dataproc API may be overwritten.
+   * Dataproc API might be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -434,7 +434,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Dataproc API may be overwritten.
+   * Dataproc API might be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -457,7 +457,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Dataproc API may be overwritten.
+   * Dataproc API might be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1752,7 +1752,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1777,7 +1777,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1793,7 +1793,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1816,7 +1816,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1845,7 +1845,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1870,7 +1870,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1893,7 +1893,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Dataproc API may be overwritten.
+     * Dataproc API might be overwritten.
      * </pre>
      *
      * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];

@@ -61,6 +61,10 @@ public final class AnswerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_ChunkInfo_DocumentMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_StructuredDocumentInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_StructuredDocumentInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_Answer_Step_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Answer_Step_fieldAccessorTable;
@@ -110,7 +114,7 @@ public final class AnswerProto {
           + ".v1beta\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\032\034google/prot"
           + "obuf/struct.proto\032\037google/protobuf/times"
-          + "tamp.proto\"\303\037\n\006Answer\022\021\n\004name\030\001 \001(\tB\003\340A\005"
+          + "tamp.proto\"\311\"\n\006Answer\022\021\n\004name\030\001 \001(\tB\003\340A\005"
           + "\022@\n\005state\030\002 \001(\01621.google.cloud.discovery"
           + "engine.v1beta.Answer.State\022\023\n\013answer_tex"
           + "t\030\003 \001(\t\022G\n\tcitations\030\004 \003(\01324.google.clou"
@@ -131,94 +135,104 @@ public final class AnswerProto {
           + "ex\030\002 \001(\003\022K\n\007sources\030\003 \003(\0132:.google.cloud"
           + ".discoveryengine.v1beta.Answer.CitationS"
           + "ource\032&\n\016CitationSource\022\024\n\014reference_id\030"
-          + "\001 \001(\t\032\351\007\n\tReference\022t\n\032unstructured_docu"
+          + "\001 \001(\t\032\226\n\n\tReference\022t\n\032unstructured_docu"
           + "ment_info\030\001 \001(\0132N.google.cloud.discovery"
           + "engine.v1beta.Answer.Reference.Unstructu"
           + "redDocumentInfoH\000\022U\n\nchunk_info\030\002 \001(\0132?."
           + "google.cloud.discoveryengine.v1beta.Answ"
-          + "er.Reference.ChunkInfoH\000\032\323\002\n\030Unstructure"
-          + "dDocumentInfo\022>\n\010document\030\001 \001(\tB,\372A)\n\'di"
-          + "scoveryengine.googleapis.com/Document\022\013\n"
-          + "\003uri\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022s\n\016chunk_conte"
-          + "nts\030\004 \003(\0132[.google.cloud.discoveryengine"
-          + ".v1beta.Answer.Reference.UnstructuredDoc"
-          + "umentInfo.ChunkContent\022,\n\013struct_data\030\005 "
-          + "\001(\0132\027.google.protobuf.Struct\0328\n\014ChunkCon"
-          + "tent\022\017\n\007content\030\001 \001(\t\022\027\n\017page_identifier"
-          + "\030\002 \001(\t\032\255\003\n\tChunkInfo\0228\n\005chunk\030\001 \001(\tB)\372A&"
-          + "\n$discoveryengine.googleapis.com/Chunk\022\017"
-          + "\n\007content\030\002 \001(\t\022\034\n\017relevance_score\030\003 \001(\002"
-          + "H\000\210\001\001\022k\n\021document_metadata\030\004 \001(\0132P.googl"
-          + "e.cloud.discoveryengine.v1beta.Answer.Re"
-          + "ference.ChunkInfo.DocumentMetadata\032\265\001\n\020D"
-          + "ocumentMetadata\022>\n\010document\030\001 \001(\tB,\372A)\n\'"
-          + "discoveryengine.googleapis.com/Document\022"
-          + "\013\n\003uri\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\027\n\017page_iden"
-          + "tifier\030\004 \001(\t\022,\n\013struct_data\030\005 \001(\0132\027.goog"
-          + "le.protobuf.StructB\022\n\020_relevance_scoreB\t"
-          + "\n\007content\032\330\010\n\004Step\022E\n\005state\030\001 \001(\01626.goog"
-          + "le.cloud.discoveryengine.v1beta.Answer.S"
-          + "tep.State\022\023\n\013description\030\002 \001(\t\022\017\n\007though"
-          + "t\030\003 \001(\t\022H\n\007actions\030\004 \003(\01327.google.cloud."
-          + "discoveryengine.v1beta.Answer.Step.Actio"
-          + "n\032\314\006\n\006Action\022]\n\rsearch_action\030\002 \001(\0132D.go"
-          + "ogle.cloud.discoveryengine.v1beta.Answer"
-          + ".Step.Action.SearchActionH\000\022X\n\013observati"
-          + "on\030\003 \001(\0132C.google.cloud.discoveryengine."
-          + "v1beta.Answer.Step.Action.Observation\032\035\n"
-          + "\014SearchAction\022\r\n\005query\030\001 \001(\t\032\337\004\n\013Observa"
-          + "tion\022h\n\016search_results\030\002 \003(\0132P.google.cl"
-          + "oud.discoveryengine.v1beta.Answer.Step.A"
-          + "ction.Observation.SearchResult\032\345\003\n\014Searc"
-          + "hResult\022\020\n\010document\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\r"
-          + "\n\005title\030\003 \001(\t\022r\n\014snippet_info\030\004 \003(\0132\\.go"
-          + "ogle.cloud.discoveryengine.v1beta.Answer"
-          + ".Step.Action.Observation.SearchResult.Sn"
-          + "ippetInfo\022n\n\nchunk_info\030\005 \003(\0132Z.google.c"
+          + "er.Reference.ChunkInfoH\000\022p\n\030structured_d"
+          + "ocument_info\030\003 \001(\0132L.google.cloud.discov"
+          + "eryengine.v1beta.Answer.Reference.Struct"
+          + "uredDocumentInfoH\000\032\205\003\n\030UnstructuredDocum"
+          + "entInfo\022>\n\010document\030\001 \001(\tB,\372A)\n\'discover"
+          + "yengine.googleapis.com/Document\022\013\n\003uri\030\002"
+          + " \001(\t\022\r\n\005title\030\003 \001(\t\022s\n\016chunk_contents\030\004 "
+          + "\003(\0132[.google.cloud.discoveryengine.v1bet"
+          + "a.Answer.Reference.UnstructuredDocumentI"
+          + "nfo.ChunkContent\022,\n\013struct_data\030\005 \001(\0132\027."
+          + "google.protobuf.Struct\032j\n\014ChunkContent\022\017"
+          + "\n\007content\030\001 \001(\t\022\027\n\017page_identifier\030\002 \001(\t"
+          + "\022\034\n\017relevance_score\030\003 \001(\002H\000\210\001\001B\022\n\020_relev"
+          + "ance_score\032\255\003\n\tChunkInfo\0228\n\005chunk\030\001 \001(\tB"
+          + ")\372A&\n$discoveryengine.googleapis.com/Chu"
+          + "nk\022\017\n\007content\030\002 \001(\t\022\034\n\017relevance_score\030\003"
+          + " \001(\002H\000\210\001\001\022k\n\021document_metadata\030\004 \001(\0132P.g"
+          + "oogle.cloud.discoveryengine.v1beta.Answe"
+          + "r.Reference.ChunkInfo.DocumentMetadata\032\265"
+          + "\001\n\020DocumentMetadata\022>\n\010document\030\001 \001(\tB,\372"
+          + "A)\n\'discoveryengine.googleapis.com/Docum"
+          + "ent\022\013\n\003uri\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\027\n\017page_"
+          + "identifier\030\004 \001(\t\022,\n\013struct_data\030\005 \001(\0132\027."
+          + "google.protobuf.StructB\022\n\020_relevance_sco"
+          + "re\032\206\001\n\026StructuredDocumentInfo\022>\n\010documen"
+          + "t\030\001 \001(\tB,\372A)\n\'discoveryengine.googleapis"
+          + ".com/Document\022,\n\013struct_data\030\002 \001(\0132\027.goo"
+          + "gle.protobuf.StructB\t\n\007content\032\330\010\n\004Step\022"
+          + "E\n\005state\030\001 \001(\01626.google.cloud.discoverye"
+          + "ngine.v1beta.Answer.Step.State\022\023\n\013descri"
+          + "ption\030\002 \001(\t\022\017\n\007thought\030\003 \001(\t\022H\n\007actions\030"
+          + "\004 \003(\01327.google.cloud.discoveryengine.v1b"
+          + "eta.Answer.Step.Action\032\314\006\n\006Action\022]\n\rsea"
+          + "rch_action\030\002 \001(\0132D.google.cloud.discover"
+          + "yengine.v1beta.Answer.Step.Action.Search"
+          + "ActionH\000\022X\n\013observation\030\003 \001(\0132C.google.c"
           + "loud.discoveryengine.v1beta.Answer.Step."
-          + "Action.Observation.SearchResult.ChunkInf"
-          + "o\022,\n\013struct_data\030\006 \001(\0132\027.google.protobuf"
-          + ".Struct\0326\n\013SnippetInfo\022\017\n\007snippet\030\001 \001(\t\022"
-          + "\026\n\016snippet_status\030\002 \001(\t\032]\n\tChunkInfo\022\r\n\005"
-          + "chunk\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\034\n\017relevanc"
-          + "e_score\030\003 \001(\002H\000\210\001\001B\022\n\020_relevance_scoreB\010"
-          + "\n\006action\"J\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
-          + "\022\017\n\013IN_PROGRESS\020\001\022\n\n\006FAILED\020\002\022\r\n\tSUCCEED"
-          + "ED\020\003\032\207\003\n\026QueryUnderstandingInfo\022}\n\031query"
-          + "_classification_info\030\001 \003(\0132Z.google.clou"
-          + "d.discoveryengine.v1beta.Answer.QueryUnd"
-          + "erstandingInfo.QueryClassificationInfo\032\355"
-          + "\001\n\027QueryClassificationInfo\022m\n\004type\030\001 \001(\016"
-          + "2_.google.cloud.discoveryengine.v1beta.A"
-          + "nswer.QueryUnderstandingInfo.QueryClassi"
-          + "ficationInfo.Type\022\020\n\010positive\030\002 \001(\010\"Q\n\004T"
-          + "ype\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021ADVERSARIAL"
-          + "_QUERY\020\001\022\034\n\030NON_ANSWER_SEEKING_QUERY\020\002\"J"
-          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n\013IN_PRO"
-          + "GRESS\020\001\022\n\n\006FAILED\020\002\022\r\n\tSUCCEEDED\020\003\"\333\001\n\023A"
-          + "nswerSkippedReason\022%\n!ANSWER_SKIPPED_REA"
-          + "SON_UNSPECIFIED\020\000\022\035\n\031ADVERSARIAL_QUERY_I"
-          + "GNORED\020\001\022$\n NON_ANSWER_SEEKING_QUERY_IGN"
-          + "ORED\020\002\022\037\n\033OUT_OF_DOMAIN_QUERY_IGNORED\020\003\022"
-          + "\036\n\032POTENTIAL_POLICY_VIOLATION\020\004\022\027\n\023NO_RE"
-          + "LEVANT_CONTENT\020\005:\205\003\352A\201\003\n%discoveryengine"
-          + ".googleapis.com/Answer\022cprojects/{projec"
-          + "t}/locations/{location}/dataStores/{data"
-          + "_store}/sessions/{session}/answers/{answ"
-          + "er}\022|projects/{project}/locations/{locat"
-          + "ion}/collections/{collection}/dataStores"
-          + "/{data_store}/sessions/{session}/answers"
-          + "/{answer}\022uprojects/{project}/locations/"
-          + "{location}/collections/{collection}/engi"
-          + "nes/{engine}/sessions/{session}/answers/"
-          + "{answer}B\222\002\n\'com.google.cloud.discoverye"
-          + "ngine.v1betaB\013AnswerProtoP\001ZQcloud.googl"
-          + "e.com/go/discoveryengine/apiv1beta/disco"
-          + "veryenginepb;discoveryenginepb\242\002\017DISCOVE"
-          + "RYENGINE\252\002#Google.Cloud.DiscoveryEngine."
-          + "V1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1"
-          + "beta\352\002&Google::Cloud::DiscoveryEngine::V"
-          + "1betab\006proto3"
+          + "Action.Observation\032\035\n\014SearchAction\022\r\n\005qu"
+          + "ery\030\001 \001(\t\032\337\004\n\013Observation\022h\n\016search_resu"
+          + "lts\030\002 \003(\0132P.google.cloud.discoveryengine"
+          + ".v1beta.Answer.Step.Action.Observation.S"
+          + "earchResult\032\345\003\n\014SearchResult\022\020\n\010document"
+          + "\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022r\n\014sn"
+          + "ippet_info\030\004 \003(\0132\\.google.cloud.discover"
+          + "yengine.v1beta.Answer.Step.Action.Observ"
+          + "ation.SearchResult.SnippetInfo\022n\n\nchunk_"
+          + "info\030\005 \003(\0132Z.google.cloud.discoveryengin"
+          + "e.v1beta.Answer.Step.Action.Observation."
+          + "SearchResult.ChunkInfo\022,\n\013struct_data\030\006 "
+          + "\001(\0132\027.google.protobuf.Struct\0326\n\013SnippetI"
+          + "nfo\022\017\n\007snippet\030\001 \001(\t\022\026\n\016snippet_status\030\002"
+          + " \001(\t\032]\n\tChunkInfo\022\r\n\005chunk\030\001 \001(\t\022\017\n\007cont"
+          + "ent\030\002 \001(\t\022\034\n\017relevance_score\030\003 \001(\002H\000\210\001\001B"
+          + "\022\n\020_relevance_scoreB\010\n\006action\"J\n\005State\022\025"
+          + "\n\021STATE_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\n"
+          + "\n\006FAILED\020\002\022\r\n\tSUCCEEDED\020\003\032\240\003\n\026QueryUnder"
+          + "standingInfo\022}\n\031query_classification_inf"
+          + "o\030\001 \003(\0132Z.google.cloud.discoveryengine.v"
+          + "1beta.Answer.QueryUnderstandingInfo.Quer"
+          + "yClassificationInfo\032\206\002\n\027QueryClassificat"
+          + "ionInfo\022m\n\004type\030\001 \001(\0162_.google.cloud.dis"
+          + "coveryengine.v1beta.Answer.QueryUndersta"
+          + "ndingInfo.QueryClassificationInfo.Type\022\020"
+          + "\n\010positive\030\002 \001(\010\"j\n\004Type\022\024\n\020TYPE_UNSPECI"
+          + "FIED\020\000\022\025\n\021ADVERSARIAL_QUERY\020\001\022\034\n\030NON_ANS"
+          + "WER_SEEKING_QUERY\020\002\022\027\n\023JAIL_BREAKING_QUE"
+          + "RY\020\003\"J\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n\013"
+          + "IN_PROGRESS\020\001\022\n\n\006FAILED\020\002\022\r\n\tSUCCEEDED\020\003"
+          + "\"\233\002\n\023AnswerSkippedReason\022%\n!ANSWER_SKIPP"
+          + "ED_REASON_UNSPECIFIED\020\000\022\035\n\031ADVERSARIAL_Q"
+          + "UERY_IGNORED\020\001\022$\n NON_ANSWER_SEEKING_QUE"
+          + "RY_IGNORED\020\002\022\037\n\033OUT_OF_DOMAIN_QUERY_IGNO"
+          + "RED\020\003\022\036\n\032POTENTIAL_POLICY_VIOLATION\020\004\022\027\n"
+          + "\023NO_RELEVANT_CONTENT\020\005\022\037\n\033JAIL_BREAKING_"
+          + "QUERY_IGNORED\020\006\022\035\n\031CUSTOMER_POLICY_VIOLA"
+          + "TION\020\007:\205\003\352A\201\003\n%discoveryengine.googleapi"
+          + "s.com/Answer\022cprojects/{project}/locatio"
+          + "ns/{location}/dataStores/{data_store}/se"
+          + "ssions/{session}/answers/{answer}\022|proje"
+          + "cts/{project}/locations/{location}/colle"
+          + "ctions/{collection}/dataStores/{data_sto"
+          + "re}/sessions/{session}/answers/{answer}\022"
+          + "uprojects/{project}/locations/{location}"
+          + "/collections/{collection}/engines/{engin"
+          + "e}/sessions/{session}/answers/{answer}B\222"
+          + "\002\n\'com.google.cloud.discoveryengine.v1be"
+          + "taB\013AnswerProtoP\001ZQcloud.google.com/go/d"
+          + "iscoveryengine/apiv1beta/discoveryengine"
+          + "pb;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002"
+          + "#Google.Cloud.DiscoveryEngine.V1Beta\312\002#G"
+          + "oogle\\Cloud\\DiscoveryEngine\\V1beta\352\002&Goo"
+          + "gle::Cloud::DiscoveryEngine::V1betab\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -275,7 +289,7 @@ public final class AnswerProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_descriptor,
             new java.lang.String[] {
-              "UnstructuredDocumentInfo", "ChunkInfo", "Content",
+              "UnstructuredDocumentInfo", "ChunkInfo", "StructuredDocumentInfo", "Content",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_UnstructuredDocumentInfo_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_descriptor
@@ -295,7 +309,7 @@ public final class AnswerProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_UnstructuredDocumentInfo_ChunkContent_descriptor,
             new java.lang.String[] {
-              "Content", "PageIdentifier",
+              "Content", "PageIdentifier", "RelevanceScore",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_ChunkInfo_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_descriptor
@@ -316,6 +330,16 @@ public final class AnswerProto {
             internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_ChunkInfo_DocumentMetadata_descriptor,
             new java.lang.String[] {
               "Document", "Uri", "Title", "PageIdentifier", "StructData",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_StructuredDocumentInfo_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_StructuredDocumentInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Answer_Reference_StructuredDocumentInfo_descriptor,
+            new java.lang.String[] {
+              "Document", "StructData",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Answer_Step_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Answer_descriptor

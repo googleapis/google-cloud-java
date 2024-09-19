@@ -99,6 +99,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateRagCorpus</td>
+ *      <td><p> Updates a RagCorpus.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRagCorpusAsync(UpdateRagCorpusRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRagCorpusAsync(RagCorpus ragCorpus)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRagCorpusOperationCallable()
+ *           <li><p> updateRagCorpusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetRagCorpus</td>
  *      <td><p> Gets a RagCorpus.</td>
  *      <td>
@@ -591,6 +610,119 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateRagCorpusRequest, Operation> createRagCorpusCallable() {
     return stub.createRagCorpusCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagCorpus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagCorpus ragCorpus = RagCorpus.newBuilder().build();
+   *   RagCorpus response = vertexRagDataServiceClient.updateRagCorpusAsync(ragCorpus).get();
+   * }
+   * }</pre>
+   *
+   * @param ragCorpus Required. The RagCorpus which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RagCorpus, UpdateRagCorpusOperationMetadata> updateRagCorpusAsync(
+      RagCorpus ragCorpus) {
+    UpdateRagCorpusRequest request =
+        UpdateRagCorpusRequest.newBuilder().setRagCorpus(ragCorpus).build();
+    return updateRagCorpusAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagCorpus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagCorpusRequest request =
+   *       UpdateRagCorpusRequest.newBuilder().setRagCorpus(RagCorpus.newBuilder().build()).build();
+   *   RagCorpus response = vertexRagDataServiceClient.updateRagCorpusAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RagCorpus, UpdateRagCorpusOperationMetadata> updateRagCorpusAsync(
+      UpdateRagCorpusRequest request) {
+    return updateRagCorpusOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagCorpus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagCorpusRequest request =
+   *       UpdateRagCorpusRequest.newBuilder().setRagCorpus(RagCorpus.newBuilder().build()).build();
+   *   OperationFuture<RagCorpus, UpdateRagCorpusOperationMetadata> future =
+   *       vertexRagDataServiceClient.updateRagCorpusOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RagCorpus response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateRagCorpusRequest, RagCorpus, UpdateRagCorpusOperationMetadata>
+      updateRagCorpusOperationCallable() {
+    return stub.updateRagCorpusOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagCorpus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagCorpusRequest request =
+   *       UpdateRagCorpusRequest.newBuilder().setRagCorpus(RagCorpus.newBuilder().build()).build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.updateRagCorpusCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRagCorpusRequest, Operation> updateRagCorpusCallable() {
+    return stub.updateRagCorpusCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

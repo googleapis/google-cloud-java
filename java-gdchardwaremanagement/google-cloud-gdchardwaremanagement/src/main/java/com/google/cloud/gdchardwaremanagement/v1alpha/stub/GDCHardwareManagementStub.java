@@ -70,6 +70,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -287,6 +288,10 @@ public abstract class GDCHardwareManagementStub implements BackgroundResource {
 
   public UnaryCallable<CreateCommentRequest, Operation> createCommentCallable() {
     throw new UnsupportedOperationException("Not implemented: createCommentCallable()");
+  }
+
+  public UnaryCallable<RecordActionOnCommentRequest, Comment> recordActionOnCommentCallable() {
+    throw new UnsupportedOperationException("Not implemented: recordActionOnCommentCallable()");
   }
 
   public UnaryCallable<ListChangeLogEntriesRequest, ListChangeLogEntriesPagedResponse>

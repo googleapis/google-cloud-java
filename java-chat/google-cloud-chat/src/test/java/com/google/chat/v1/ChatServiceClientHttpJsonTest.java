@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -1068,6 +1069,61 @@ public class ChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void searchSpacesTest() throws Exception {
+    Space responsesElement = Space.newBuilder().build();
+    SearchSpacesResponse expectedResponse =
+        SearchSpacesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaces(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchSpacesPagedResponse pagedListResponse = client.searchSpaces();
+
+    List<Space> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpacesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchSpacesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchSpacesRequest request =
+          SearchSpacesRequest.newBuilder()
+              .setUseAdminAccess(true)
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setQuery("query107944136")
+              .setOrderBy("orderBy-1207110587")
+              .build();
+      client.searchSpaces(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getSpaceTest() throws Exception {
     Space expectedResponse =
         Space.newBuilder()
@@ -1080,7 +1136,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1135,7 +1193,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1190,7 +1250,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1245,7 +1307,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1310,7 +1374,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1327,7 +1393,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();
@@ -1370,7 +1438,9 @@ public class ChatServiceClientHttpJsonTest {
               .setSpaceHistoryState(HistoryState.forNumber(0))
               .setImportMode(true)
               .setCreateTime(Timestamp.newBuilder().build())
+              .setLastActiveTime(Timestamp.newBuilder().build())
               .setAdminInstalled(true)
+              .setMembershipCount(Space.MembershipCount.newBuilder().build())
               .setAccessSettings(Space.AccessSettings.newBuilder().build())
               .setSpaceUri("spaceUri2047440518")
               .build();
@@ -1521,7 +1591,9 @@ public class ChatServiceClientHttpJsonTest {
             .setSpaceHistoryState(HistoryState.forNumber(0))
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLastActiveTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
             .build();

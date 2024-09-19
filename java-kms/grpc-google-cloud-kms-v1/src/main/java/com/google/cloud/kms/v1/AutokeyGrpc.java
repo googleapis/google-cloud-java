@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Provides interfaces for using Cloud KMS Autokey to provision new
+ * Provides interfaces for using [Cloud KMS
+ * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
  * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
  * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
@@ -220,7 +221,8 @@ public final class AutokeyGrpc {
    *
    *
    * <pre>
-   * Provides interfaces for using Cloud KMS Autokey to provision new
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
    * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
    * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
@@ -294,7 +296,8 @@ public final class AutokeyGrpc {
    * Base class for the server implementation of the service Autokey.
    *
    * <pre>
-   * Provides interfaces for using Cloud KMS Autokey to provision new
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
    * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
    * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
@@ -324,7 +327,8 @@ public final class AutokeyGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service Autokey.
    *
    * <pre>
-   * Provides interfaces for using Cloud KMS Autokey to provision new
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
    * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
    * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
@@ -412,7 +416,8 @@ public final class AutokeyGrpc {
    * A stub to allow clients to do synchronous rpc calls to service Autokey.
    *
    * <pre>
-   * Provides interfaces for using Cloud KMS Autokey to provision new
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
    * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
    * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
@@ -491,7 +496,8 @@ public final class AutokeyGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service Autokey.
    *
    * <pre>
-   * Provides interfaces for using Cloud KMS Autokey to provision new
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
    * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
    * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]

@@ -40,6 +40,7 @@ public class AsyncCreateMembership {
           CreateMembershipRequest.newBuilder()
               .setParent(SpaceName.of("[SPACE]").toString())
               .setMembership(Membership.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Membership> future =
           chatServiceClient.createMembershipCallable().futureCall(request);

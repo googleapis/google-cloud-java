@@ -7873,6 +7873,841 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface VertexRagSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.FeatureView.VertexRagSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The BigQuery view/table URI that will be materialized on each
+     * manual sync trigger. The table/view is expected to have the following
+     * columns and types at least:
+     *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+     *  - `file_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+     *  - `embeddings` (FLOAT, REPEATED)
+     *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The BigQuery view/table URI that will be materialized on each
+     * manual sync trigger. The table/view is expected to have the following
+     * columns and types at least:
+     *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+     *  - `file_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+     *  - `embeddings` (FLOAT, REPEATED)
+     *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The RAG corpus id corresponding to this FeatureView.
+     * </pre>
+     *
+     * <code>int64 rag_corpus_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ragCorpusId.
+     */
+    long getRagCorpusId();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A Vertex Rag source for features that need to be synced to Online
+   * Store.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.FeatureView.VertexRagSource}
+   */
+  public static final class VertexRagSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureView.VertexRagSource)
+      VertexRagSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VertexRagSource.newBuilder() to construct.
+    private VertexRagSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VertexRagSource() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VertexRagSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.class,
+              com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The BigQuery view/table URI that will be materialized on each
+     * manual sync trigger. The table/view is expected to have the following
+     * columns and types at least:
+     *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+     *  - `file_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+     *  - `embeddings` (FLOAT, REPEATED)
+     *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The BigQuery view/table URI that will be materialized on each
+     * manual sync trigger. The table/view is expected to have the following
+     * columns and types at least:
+     *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+     *  - `file_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+     *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+     *  - `embeddings` (FLOAT, REPEATED)
+     *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RAG_CORPUS_ID_FIELD_NUMBER = 2;
+    private long ragCorpusId_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The RAG corpus id corresponding to this FeatureView.
+     * </pre>
+     *
+     * <code>int64 rag_corpus_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ragCorpusId.
+     */
+    @java.lang.Override
+    public long getRagCorpusId() {
+      return ragCorpusId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      if (ragCorpusId_ != 0L) {
+        output.writeInt64(2, ragCorpusId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      if (ragCorpusId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, ragCorpusId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource other =
+          (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (getRagCorpusId() != other.getRagCorpusId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + RAG_CORPUS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRagCorpusId());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Rag source for features that need to be synced to Online
+     * Store.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.FeatureView.VertexRagSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.FeatureView.VertexRagSource)
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.class,
+                com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        ragCorpusId_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource build() {
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource buildPartial() {
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource result =
+            new com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ragCorpusId_ = ragCorpusId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance())
+          return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getRagCorpusId() != 0L) {
+          setRagCorpusId(other.getRagCorpusId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  ragCorpusId_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The BigQuery view/table URI that will be materialized on each
+       * manual sync trigger. The table/view is expected to have the following
+       * columns and types at least:
+       *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+       *  - `file_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+       *  - `embeddings` (FLOAT, REPEATED)
+       *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The BigQuery view/table URI that will be materialized on each
+       * manual sync trigger. The table/view is expected to have the following
+       * columns and types at least:
+       *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+       *  - `file_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+       *  - `embeddings` (FLOAT, REPEATED)
+       *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The BigQuery view/table URI that will be materialized on each
+       * manual sync trigger. The table/view is expected to have the following
+       * columns and types at least:
+       *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+       *  - `file_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+       *  - `embeddings` (FLOAT, REPEATED)
+       *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The BigQuery view/table URI that will be materialized on each
+       * manual sync trigger. The table/view is expected to have the following
+       * columns and types at least:
+       *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+       *  - `file_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+       *  - `embeddings` (FLOAT, REPEATED)
+       *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The BigQuery view/table URI that will be materialized on each
+       * manual sync trigger. The table/view is expected to have the following
+       * columns and types at least:
+       *  - `corpus_id` (STRING, NULLABLE/REQUIRED)
+       *  - `file_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_id` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data_type` (STRING, NULLABLE/REQUIRED)
+       *  - `chunk_data` (STRING, NULLABLE/REQUIRED)
+       *  - `embeddings` (FLOAT, REPEATED)
+       *  - `file_original_uri` (STRING, NULLABLE/REQUIRED)
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long ragCorpusId_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The RAG corpus id corresponding to this FeatureView.
+       * </pre>
+       *
+       * <code>int64 rag_corpus_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The ragCorpusId.
+       */
+      @java.lang.Override
+      public long getRagCorpusId() {
+        return ragCorpusId_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The RAG corpus id corresponding to this FeatureView.
+       * </pre>
+       *
+       * <code>int64 rag_corpus_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The ragCorpusId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRagCorpusId(long value) {
+
+        ragCorpusId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The RAG corpus id corresponding to this FeatureView.
+       * </pre>
+       *
+       * <code>int64 rag_corpus_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRagCorpusId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ragCorpusId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.FeatureView.VertexRagSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.FeatureView.VertexRagSource)
+    private static final com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource();
+    }
+
+    public static com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VertexRagSource> PARSER =
+        new com.google.protobuf.AbstractParser<VertexRagSource>() {
+          @java.lang.Override
+          public VertexRagSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VertexRagSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VertexRagSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -7885,6 +8720,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIG_QUERY_SOURCE(6),
     FEATURE_REGISTRY_SOURCE(9),
+    VERTEX_RAG_SOURCE(18),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -7907,6 +8743,8 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           return BIG_QUERY_SOURCE;
         case 9:
           return FEATURE_REGISTRY_SOURCE;
+        case 18:
+          return VERTEX_RAG_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -8044,6 +8882,64 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.aiplatform.v1.FeatureView.FeatureRegistrySource) source_;
     }
     return com.google.cloud.aiplatform.v1.FeatureView.FeatureRegistrySource.getDefaultInstance();
+  }
+
+  public static final int VERTEX_RAG_SOURCE_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vertexRagSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexRagSource() {
+    return sourceCase_ == 18;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vertexRagSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getVertexRagSource() {
+    if (sourceCase_ == 18) {
+      return (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_;
+    }
+    return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Vertex RAG Source that the FeatureView is linked to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder
+      getVertexRagSourceOrBuilder() {
+    if (sourceCase_ == 18) {
+      return (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_;
+    }
+    return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -8590,6 +9486,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(15, getIndexConfig());
     }
+    if (sourceCase_ == 18) {
+      output.writeMessage(18, (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_);
+    }
     if (satisfiesPzs_ != false) {
       output.writeBool(19, satisfiesPzs_);
     }
@@ -8643,6 +9542,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getIndexConfig());
     }
+    if (sourceCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_);
+    }
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzs_);
     }
@@ -8694,6 +9598,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       case 9:
         if (!getFeatureRegistrySource().equals(other.getFeatureRegistrySource())) return false;
         break;
+      case 18:
+        if (!getVertexRagSource().equals(other.getVertexRagSource())) return false;
+        break;
       case 0:
       default:
     }
@@ -8744,6 +9651,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       case 9:
         hash = (37 * hash) + FEATURE_REGISTRY_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getFeatureRegistrySource().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + VERTEX_RAG_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexRagSource().hashCode();
         break;
       case 0:
       default:
@@ -8928,6 +9839,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (featureRegistrySourceBuilder_ != null) {
         featureRegistrySourceBuilder_.clear();
       }
+      if (vertexRagSourceBuilder_ != null) {
+        vertexRagSourceBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -8992,38 +9906,38 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.FeatureView result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.syncConfig_ = syncConfigBuilder_ == null ? syncConfig_ : syncConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.indexConfig_ =
             indexConfigBuilder_ == null ? indexConfig_ : indexConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -9037,6 +9951,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 9 && featureRegistrySourceBuilder_ != null) {
         result.source_ = featureRegistrySourceBuilder_.build();
+      }
+      if (sourceCase_ == 18 && vertexRagSourceBuilder_ != null) {
+        result.source_ = vertexRagSourceBuilder_.build();
       }
     }
 
@@ -9087,7 +10004,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.FeatureView.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -9098,11 +10015,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.hasSyncConfig()) {
         mergeSyncConfig(other.getSyncConfig());
       }
@@ -9124,6 +10041,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         case FEATURE_REGISTRY_SOURCE:
           {
             mergeFeatureRegistrySource(other.getFeatureRegistrySource());
+            break;
+          }
+        case VERTEX_RAG_SOURCE:
+          {
+            mergeVertexRagSource(other.getVertexRagSource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -9160,25 +10082,25 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
@@ -9190,7 +10112,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
@@ -9202,7 +10124,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getSyncConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 74:
@@ -9215,19 +10137,25 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 input.readMessage(getIndexConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 122
+            case 146:
+              {
+                input.readMessage(getVertexRagSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 18;
+                break;
+              } // case 146
             case 152:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 152
             case 160:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 160
             default:
@@ -9751,6 +10679,239 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       return featureRegistrySourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource,
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder,
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder>
+        vertexRagSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vertexRagSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexRagSource() {
+      return sourceCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vertexRagSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getVertexRagSource() {
+      if (vertexRagSourceBuilder_ == null) {
+        if (sourceCase_ == 18) {
+          return (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_;
+        }
+        return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 18) {
+          return vertexRagSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVertexRagSource(
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource value) {
+      if (vertexRagSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        vertexRagSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVertexRagSource(
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder builderForValue) {
+      if (vertexRagSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexRagSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVertexRagSource(
+        com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource value) {
+      if (vertexRagSourceBuilder_ == null) {
+        if (sourceCase_ == 18
+            && source_
+                != com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 18) {
+          vertexRagSourceBuilder_.mergeFrom(value);
+        } else {
+          vertexRagSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVertexRagSource() {
+      if (vertexRagSourceBuilder_ == null) {
+        if (sourceCase_ == 18) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 18) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        vertexRagSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder
+        getVertexRagSourceBuilder() {
+      return getVertexRagSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder
+        getVertexRagSourceOrBuilder() {
+      if ((sourceCase_ == 18) && (vertexRagSourceBuilder_ != null)) {
+        return vertexRagSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 18) {
+          return (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_;
+        }
+        return com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Vertex RAG Source that the FeatureView is linked to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureView.VertexRagSource vertex_rag_source = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource,
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder,
+            com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder>
+        getVertexRagSourceFieldBuilder() {
+      if (vertexRagSourceBuilder_ == null) {
+        if (!(sourceCase_ == 18)) {
+          source_ = com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.getDefaultInstance();
+        }
+        vertexRagSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource,
+                com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource.Builder,
+                com.google.cloud.aiplatform.v1.FeatureView.VertexRagSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 18;
+      onChanged();
+      return vertexRagSourceBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -9816,7 +10977,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9834,7 +10995,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -9857,7 +11018,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9882,7 +11043,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -9926,7 +11087,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9947,7 +11108,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9964,7 +11125,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -9975,7 +11136,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -9992,7 +11153,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -10013,7 +11174,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -10085,7 +11246,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -10129,7 +11290,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10150,7 +11311,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10167,7 +11328,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -10178,7 +11339,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -10195,7 +11356,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -10216,7 +11377,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -10333,7 +11494,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10351,7 +11512,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -10374,7 +11535,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10396,7 +11557,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -10521,7 +11682,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -10554,7 +11715,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -10584,7 +11745,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -10608,7 +11769,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -10632,7 +11793,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the syncConfig field is set.
      */
     public boolean hasSyncConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -10676,7 +11837,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         syncConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10698,7 +11859,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         syncConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10715,7 +11876,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSyncConfig(com.google.cloud.aiplatform.v1.FeatureView.SyncConfig value) {
       if (syncConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && syncConfig_ != null
             && syncConfig_
                 != com.google.cloud.aiplatform.v1.FeatureView.SyncConfig.getDefaultInstance()) {
@@ -10727,7 +11888,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         syncConfigBuilder_.mergeFrom(value);
       }
       if (syncConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -10744,7 +11905,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.FeatureView.SyncConfig sync_config = 7;</code>
      */
     public Builder clearSyncConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       syncConfig_ = null;
       if (syncConfigBuilder_ != null) {
         syncConfigBuilder_.dispose();
@@ -10765,7 +11926,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.FeatureView.SyncConfig sync_config = 7;</code>
      */
     public com.google.cloud.aiplatform.v1.FeatureView.SyncConfig.Builder getSyncConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSyncConfigFieldBuilder().getBuilder();
     }
@@ -10840,7 +12001,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the indexConfig field is set.
      */
     public boolean hasIndexConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -10890,7 +12051,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         indexConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10915,7 +12076,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       } else {
         indexConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10935,7 +12096,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIndexConfig(com.google.cloud.aiplatform.v1.FeatureView.IndexConfig value) {
       if (indexConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && indexConfig_ != null
             && indexConfig_
                 != com.google.cloud.aiplatform.v1.FeatureView.IndexConfig.getDefaultInstance()) {
@@ -10947,7 +12108,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         indexConfigBuilder_.mergeFrom(value);
       }
       if (indexConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -10967,7 +12128,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearIndexConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       indexConfig_ = null;
       if (indexConfigBuilder_ != null) {
         indexConfigBuilder_.dispose();
@@ -10991,7 +12152,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.FeatureView.IndexConfig.Builder getIndexConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getIndexConfigFieldBuilder().getBuilder();
     }
@@ -11081,7 +12242,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11097,7 +12258,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -11134,7 +12295,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11150,7 +12311,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       satisfiesPzi_ = false;
       onChanged();
       return this;

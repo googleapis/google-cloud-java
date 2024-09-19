@@ -512,6 +512,66 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     return tools_.get(index);
   }
 
+  public static final int GENERATION_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenerationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig() {
+    return generationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : generationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+      getGenerationConfigOrBuilder() {
+    return generationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : generationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -544,6 +604,9 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < tools_.size(); i++) {
       output.writeMessage(6, tools_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getGenerationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -571,6 +634,9 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < tools_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, tools_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGenerationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -596,6 +662,10 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       if (!getSystemInstruction().equals(other.getSystemInstruction())) return false;
     }
     if (!getToolsList().equals(other.getToolsList())) return false;
+    if (hasGenerationConfig() != other.hasGenerationConfig()) return false;
+    if (hasGenerationConfig()) {
+      if (!getGenerationConfig().equals(other.getGenerationConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -626,6 +696,10 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     if (getToolsCount() > 0) {
       hash = (37 * hash) + TOOLS_FIELD_NUMBER;
       hash = (53 * hash) + getToolsList().hashCode();
+    }
+    if (hasGenerationConfig()) {
+      hash = (37 * hash) + GENERATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGenerationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -773,6 +847,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         getContentsFieldBuilder();
         getSystemInstructionFieldBuilder();
         getToolsFieldBuilder();
+        getGenerationConfigFieldBuilder();
       }
     }
 
@@ -808,6 +883,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         toolsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      generationConfig_ = null;
+      if (generationConfigBuilder_ != null) {
+        generationConfigBuilder_.dispose();
+        generationConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -889,6 +969,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
                 ? systemInstruction_
                 : systemInstructionBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.generationConfig_ =
+            generationConfigBuilder_ == null ? generationConfig_ : generationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1033,6 +1118,9 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasGenerationConfig()) {
+        mergeGenerationConfig(other.getGenerationConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1116,6 +1204,13 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2856,6 +2951,223 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         tools_ = null;
       }
       return toolsBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        generationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the generationConfig field is set.
+     */
+    public boolean hasGenerationConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The generationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig() {
+      if (generationConfigBuilder_ == null) {
+        return generationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : generationConfig_;
+      } else {
+        return generationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenerationConfig(com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (generationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generationConfig_ = value;
+      } else {
+        generationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder builderForValue) {
+      if (generationConfigBuilder_ == null) {
+        generationConfig_ = builderForValue.build();
+      } else {
+        generationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (generationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && generationConfig_ != null
+            && generationConfig_
+                != com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()) {
+          getGenerationConfigBuilder().mergeFrom(value);
+        } else {
+          generationConfig_ = value;
+        }
+      } else {
+        generationConfigBuilder_.mergeFrom(value);
+      }
+      if (generationConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGenerationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      generationConfig_ = null;
+      if (generationConfigBuilder_ != null) {
+        generationConfigBuilder_.dispose();
+        generationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder
+        getGenerationConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getGenerationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+        getGenerationConfigOrBuilder() {
+      if (generationConfigBuilder_ != null) {
+        return generationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return generationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : generationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Generation config that the model will use to generate the
+     * response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        getGenerationConfigFieldBuilder() {
+      if (generationConfigBuilder_ == null) {
+        generationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>(
+                getGenerationConfig(), getParentForChildren(), isClean());
+        generationConfig_ = null;
+      }
+      return generationConfigBuilder_;
     }
 
     @java.lang.Override

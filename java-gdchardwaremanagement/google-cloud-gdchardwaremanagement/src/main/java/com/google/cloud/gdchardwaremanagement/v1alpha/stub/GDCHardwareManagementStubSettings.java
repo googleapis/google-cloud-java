@@ -96,6 +96,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -137,7 +138,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getOrder to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getOrder:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -154,10 +157,47 @@ import org.threeten.bp.Duration;
  *             .getOrderSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * GDCHardwareManagementStubSettings gDCHardwareManagementSettings =
  *     gDCHardwareManagementSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createOrder:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * GDCHardwareManagementStubSettings.Builder gDCHardwareManagementSettingsBuilder =
+ *     GDCHardwareManagementStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * gDCHardwareManagementSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -228,6 +268,8 @@ public class GDCHardwareManagementStubSettings
   private final UnaryCallSettings<CreateCommentRequest, Operation> createCommentSettings;
   private final OperationCallSettings<CreateCommentRequest, Comment, OperationMetadata>
       createCommentOperationSettings;
+  private final UnaryCallSettings<RecordActionOnCommentRequest, Comment>
+      recordActionOnCommentSettings;
   private final PagedCallSettings<
           ListChangeLogEntriesRequest,
           ListChangeLogEntriesResponse,
@@ -288,9 +330,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Order> extractResources(ListOrdersResponse payload) {
-              return payload.getOrdersList() == null
-                  ? ImmutableList.<Order>of()
-                  : payload.getOrdersList();
+              return payload.getOrdersList();
             }
           };
 
@@ -324,9 +364,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Site> extractResources(ListSitesResponse payload) {
-              return payload.getSitesList() == null
-                  ? ImmutableList.<Site>of()
-                  : payload.getSitesList();
+              return payload.getSitesList();
             }
           };
 
@@ -364,9 +402,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<HardwareGroup> extractResources(ListHardwareGroupsResponse payload) {
-              return payload.getHardwareGroupsList() == null
-                  ? ImmutableList.<HardwareGroup>of()
-                  : payload.getHardwareGroupsList();
+              return payload.getHardwareGroupsList();
             }
           };
 
@@ -400,9 +436,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Hardware> extractResources(ListHardwareResponse payload) {
-              return payload.getHardwareList() == null
-                  ? ImmutableList.<Hardware>of()
-                  : payload.getHardwareList();
+              return payload.getHardwareList();
             }
           };
 
@@ -436,9 +470,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Comment> extractResources(ListCommentsResponse payload) {
-              return payload.getCommentsList() == null
-                  ? ImmutableList.<Comment>of()
-                  : payload.getCommentsList();
+              return payload.getCommentsList();
             }
           };
 
@@ -476,9 +508,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<ChangeLogEntry> extractResources(ListChangeLogEntriesResponse payload) {
-              return payload.getChangeLogEntriesList() == null
-                  ? ImmutableList.<ChangeLogEntry>of()
-                  : payload.getChangeLogEntriesList();
+              return payload.getChangeLogEntriesList();
             }
           };
 
@@ -512,9 +542,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Sku> extractResources(ListSkusResponse payload) {
-              return payload.getSkusList() == null
-                  ? ImmutableList.<Sku>of()
-                  : payload.getSkusList();
+              return payload.getSkusList();
             }
           };
 
@@ -548,9 +576,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Zone> extractResources(ListZonesResponse payload) {
-              return payload.getZonesList() == null
-                  ? ImmutableList.<Zone>of()
-                  : payload.getZonesList();
+              return payload.getZonesList();
             }
           };
 
@@ -584,9 +610,7 @@ public class GDCHardwareManagementStubSettings
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -951,6 +975,11 @@ public class GDCHardwareManagementStubSettings
     return createCommentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to recordActionOnComment. */
+  public UnaryCallSettings<RecordActionOnCommentRequest, Comment> recordActionOnCommentSettings() {
+    return recordActionOnCommentSettings;
+  }
+
   /** Returns the object with the settings used for calls to listChangeLogEntries. */
   public PagedCallSettings<
           ListChangeLogEntriesRequest,
@@ -1192,6 +1221,7 @@ public class GDCHardwareManagementStubSettings
     getCommentSettings = settingsBuilder.getCommentSettings().build();
     createCommentSettings = settingsBuilder.createCommentSettings().build();
     createCommentOperationSettings = settingsBuilder.createCommentOperationSettings().build();
+    recordActionOnCommentSettings = settingsBuilder.recordActionOnCommentSettings().build();
     listChangeLogEntriesSettings = settingsBuilder.listChangeLogEntriesSettings().build();
     getChangeLogEntrySettings = settingsBuilder.getChangeLogEntrySettings().build();
     listSkusSettings = settingsBuilder.listSkusSettings().build();
@@ -1283,6 +1313,8 @@ public class GDCHardwareManagementStubSettings
     private final UnaryCallSettings.Builder<CreateCommentRequest, Operation> createCommentSettings;
     private final OperationCallSettings.Builder<CreateCommentRequest, Comment, OperationMetadata>
         createCommentOperationSettings;
+    private final UnaryCallSettings.Builder<RecordActionOnCommentRequest, Comment>
+        recordActionOnCommentSettings;
     private final PagedCallSettings.Builder<
             ListChangeLogEntriesRequest,
             ListChangeLogEntriesResponse,
@@ -1402,6 +1434,7 @@ public class GDCHardwareManagementStubSettings
       getCommentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCommentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCommentOperationSettings = OperationCallSettings.newBuilder();
+      recordActionOnCommentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listChangeLogEntriesSettings =
           PagedCallSettings.newBuilder(LIST_CHANGE_LOG_ENTRIES_PAGE_STR_FACT);
       getChangeLogEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1445,6 +1478,7 @@ public class GDCHardwareManagementStubSettings
               listCommentsSettings,
               getCommentSettings,
               createCommentSettings,
+              recordActionOnCommentSettings,
               listChangeLogEntriesSettings,
               getChangeLogEntrySettings,
               listSkusSettings,
@@ -1502,6 +1536,7 @@ public class GDCHardwareManagementStubSettings
       getCommentSettings = settings.getCommentSettings.toBuilder();
       createCommentSettings = settings.createCommentSettings.toBuilder();
       createCommentOperationSettings = settings.createCommentOperationSettings.toBuilder();
+      recordActionOnCommentSettings = settings.recordActionOnCommentSettings.toBuilder();
       listChangeLogEntriesSettings = settings.listChangeLogEntriesSettings.toBuilder();
       getChangeLogEntrySettings = settings.getChangeLogEntrySettings.toBuilder();
       listSkusSettings = settings.listSkusSettings.toBuilder();
@@ -1544,6 +1579,7 @@ public class GDCHardwareManagementStubSettings
               listCommentsSettings,
               getCommentSettings,
               createCommentSettings,
+              recordActionOnCommentSettings,
               listChangeLogEntriesSettings,
               getChangeLogEntrySettings,
               listSkusSettings,
@@ -1697,6 +1733,11 @@ public class GDCHardwareManagementStubSettings
           .createCommentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .recordActionOnCommentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listChangeLogEntriesSettings()
@@ -2375,6 +2416,12 @@ public class GDCHardwareManagementStubSettings
     public OperationCallSettings.Builder<CreateCommentRequest, Comment, OperationMetadata>
         createCommentOperationSettings() {
       return createCommentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to recordActionOnComment. */
+    public UnaryCallSettings.Builder<RecordActionOnCommentRequest, Comment>
+        recordActionOnCommentSettings() {
+      return recordActionOnCommentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listChangeLogEntries. */

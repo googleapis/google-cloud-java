@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1.stub;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -68,6 +69,11 @@ public abstract class AutokeyStub implements BackgroundResource {
 
   public UnaryCallable<GetKeyHandleRequest, KeyHandle> getKeyHandleCallable() {
     throw new UnsupportedOperationException("Not implemented: getKeyHandleCallable()");
+  }
+
+  public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesPagedResponse>
+      listKeyHandlesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listKeyHandlesPagedCallable()");
   }
 
   public UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesCallable() {

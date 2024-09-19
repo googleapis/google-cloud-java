@@ -68,8 +68,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. If the processing of a policy config fails, an error will be
-   * populated and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error is
+   * populated and the firewall_policy is left empty.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -84,8 +84,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. If the processing of a policy config fails, an error will be
-   * populated and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error is
+   * populated and the firewall_policy is left empty.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -100,8 +100,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. If the processing of a policy config fails, an error will be
-   * populated and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error is
+   * populated and the firewall_policy is left empty.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -119,7 +119,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    * <pre>
    * Output only. The policy that matched the request. If more than one policy
    * may match, this is the first match. If no policy matches the incoming
-   * request, the policy field will be left empty.
+   * request, the policy field is left empty.
    * </pre>
    *
    * <code>
@@ -138,7 +138,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    * <pre>
    * Output only. The policy that matched the request. If more than one policy
    * may match, this is the first match. If no policy matches the incoming
-   * request, the policy field will be left empty.
+   * request, the policy field is left empty.
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    * <pre>
    * Output only. The policy that matched the request. If more than one policy
    * may match, this is the first match. If no policy matches the incoming
-   * request, the policy field will be left empty.
+   * request, the policy field is left empty.
    * </pre>
    *
    * <code>
@@ -577,8 +577,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -592,8 +592,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -611,8 +611,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -634,8 +634,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -654,8 +654,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -682,8 +682,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -702,8 +702,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -717,8 +717,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -734,8 +734,8 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If the processing of a policy config fails, an error will be
-     * populated and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error is
+     * populated and the firewall_policy is left empty.
      * </pre>
      *
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -766,7 +766,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -784,7 +784,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -808,7 +808,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -834,7 +834,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -858,7 +858,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -890,7 +890,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -913,7 +913,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -931,7 +931,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>
@@ -953,7 +953,7 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      * <pre>
      * Output only. The policy that matched the request. If more than one policy
      * may match, this is the first match. If no policy matches the incoming
-     * request, the policy field will be left empty.
+     * request, the policy field is left empty.
      * </pre>
      *
      * <code>

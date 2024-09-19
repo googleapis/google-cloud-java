@@ -2733,6 +2733,882 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface PublishToChronicleOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Message expressing intention to publish to Google Security Operations.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToChronicle}
+   */
+  public static final class PublishToChronicle extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
+      PublishToChronicleOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PublishToChronicle.newBuilder() to construct.
+    private PublishToChronicle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PublishToChronicle() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishToChronicle();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToChronicle_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToChronicle_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.class,
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle other =
+          (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message expressing intention to publish to Google Security Operations.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToChronicle}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToChronicle_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToChronicle_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.class,
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToChronicle_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle build() {
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle buildPartial() {
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle result =
+            new com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) {
+          return mergeFrom((com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle other) {
+        if (other
+            == com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
+    private static final com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle();
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PublishToChronicle> PARSER =
+        new com.google.protobuf.AbstractParser<PublishToChronicle>() {
+          @java.lang.Override
+          public PublishToChronicle parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PublishToChronicle> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PublishToChronicle> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PublishToSecurityCommandCenterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * If set, a summary finding will be created/updated in SCC for each profile.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter}
+   */
+  public static final class PublishToSecurityCommandCenter
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+      PublishToSecurityCommandCenterOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PublishToSecurityCommandCenter.newBuilder() to construct.
+    private PublishToSecurityCommandCenter(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PublishToSecurityCommandCenter() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishToSecurityCommandCenter();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToSecurityCommandCenter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToSecurityCommandCenter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.class,
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder
+                  .class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter other =
+          (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, a summary finding will be created/updated in SCC for each profile.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToSecurityCommandCenter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToSecurityCommandCenter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.class,
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_PublishToSecurityCommandCenter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter build() {
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+          buildPartial() {
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter result =
+            new com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter other) {
+        if (other
+            == com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+    private static final com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter();
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PublishToSecurityCommandCenter> PARSER =
+        new com.google.protobuf.AbstractParser<PublishToSecurityCommandCenter>() {
+          @java.lang.Override
+          public PublishToSecurityCommandCenter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PublishToSecurityCommandCenter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PublishToSecurityCommandCenter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface TagResourcesOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.TagResources)
@@ -6595,6 +7471,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     EXPORT_DATA(1),
     PUB_SUB_NOTIFICATION(2),
+    PUBLISH_TO_CHRONICLE(3),
+    PUBLISH_TO_SCC(4),
     TAG_RESOURCES(8),
     ACTION_NOT_SET(0);
     private final int value;
@@ -6618,6 +7496,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return EXPORT_DATA;
         case 2:
           return PUB_SUB_NOTIFICATION;
+        case 3:
+          return PUBLISH_TO_CHRONICLE;
+        case 4:
+          return PUBLISH_TO_SCC;
         case 8:
           return TAG_RESOURCES;
         case 0:
@@ -6742,6 +7624,131 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     return com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.getDefaultInstance();
   }
 
+  public static final int PUBLISH_TO_CHRONICLE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   *
+   * @return Whether the publishToChronicle field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublishToChronicle() {
+    return actionCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   *
+   * @return The publishToChronicle.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle getPublishToChronicle() {
+    if (actionCase_ == 3) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publishes generated data profiles to Google Security Operations.
+   * For more information, see [Use Sensitive Data Protection data in
+   * context-aware
+   * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder
+      getPublishToChronicleOrBuilder() {
+    if (actionCase_ == 3) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+  }
+
+  public static final int PUBLISH_TO_SCC_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   *
+   * @return Whether the publishToScc field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublishToScc() {
+    return actionCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   *
+   * @return The publishToScc.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+      getPublishToScc() {
+    if (actionCase_ == 4) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publishes findings to SCC for each data profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder
+      getPublishToSccOrBuilder() {
+    if (actionCase_ == 4) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        .getDefaultInstance();
+  }
+
   public static final int TAG_RESOURCES_FIELD_NUMBER = 8;
   /**
    *
@@ -6815,6 +7822,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           2, (com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification) action_);
     }
+    if (actionCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_);
+    }
+    if (actionCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) action_);
+    }
     if (actionCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_);
     }
@@ -6836,6 +7851,17 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification) action_);
+    }
+    if (actionCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_);
+    }
+    if (actionCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter) action_);
     }
     if (actionCase_ == 8) {
       size +=
@@ -6866,6 +7892,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       case 2:
         if (!getPubSubNotification().equals(other.getPubSubNotification())) return false;
         break;
+      case 3:
+        if (!getPublishToChronicle().equals(other.getPublishToChronicle())) return false;
+        break;
+      case 4:
+        if (!getPublishToScc().equals(other.getPublishToScc())) return false;
+        break;
       case 8:
         if (!getTagResources().equals(other.getTagResources())) return false;
         break;
@@ -6891,6 +7923,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       case 2:
         hash = (37 * hash) + PUB_SUB_NOTIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getPubSubNotification().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + PUBLISH_TO_CHRONICLE_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishToChronicle().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + PUBLISH_TO_SCC_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishToScc().hashCode();
         break;
       case 8:
         hash = (37 * hash) + TAG_RESOURCES_FIELD_NUMBER;
@@ -7044,6 +8084,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       if (pubSubNotificationBuilder_ != null) {
         pubSubNotificationBuilder_.clear();
       }
+      if (publishToChronicleBuilder_ != null) {
+        publishToChronicleBuilder_.clear();
+      }
+      if (publishToSccBuilder_ != null) {
+        publishToSccBuilder_.clear();
+      }
       if (tagResourcesBuilder_ != null) {
         tagResourcesBuilder_.clear();
       }
@@ -7096,6 +8142,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       if (actionCase_ == 2 && pubSubNotificationBuilder_ != null) {
         result.action_ = pubSubNotificationBuilder_.build();
+      }
+      if (actionCase_ == 3 && publishToChronicleBuilder_ != null) {
+        result.action_ = publishToChronicleBuilder_.build();
+      }
+      if (actionCase_ == 4 && publishToSccBuilder_ != null) {
+        result.action_ = publishToSccBuilder_.build();
       }
       if (actionCase_ == 8 && tagResourcesBuilder_ != null) {
         result.action_ = tagResourcesBuilder_.build();
@@ -7158,6 +8210,16 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             mergePubSubNotification(other.getPubSubNotification());
             break;
           }
+        case PUBLISH_TO_CHRONICLE:
+          {
+            mergePublishToChronicle(other.getPublishToChronicle());
+            break;
+          }
+        case PUBLISH_TO_SCC:
+          {
+            mergePublishToScc(other.getPublishToScc());
+            break;
+          }
         case TAG_RESOURCES:
           {
             mergeTagResources(other.getTagResources());
@@ -7207,6 +8269,19 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 actionCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getPublishToChronicleFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getPublishToSccFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 4;
+                break;
+              } // case 34
             case 66:
               {
                 input.readMessage(getTagResourcesFieldBuilder().getBuilder(), extensionRegistry);
@@ -7678,6 +8753,503 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 2;
       onChanged();
       return pubSubNotificationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder>
+        publishToChronicleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     *
+     * @return Whether the publishToChronicle field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishToChronicle() {
+      return actionCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     *
+     * @return The publishToChronicle.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle getPublishToChronicle() {
+      if (publishToChronicleBuilder_ == null) {
+        if (actionCase_ == 3) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+      } else {
+        if (actionCase_ == 3) {
+          return publishToChronicleBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    public Builder setPublishToChronicle(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle value) {
+      if (publishToChronicleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        publishToChronicleBuilder_.setMessage(value);
+      }
+      actionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    public Builder setPublishToChronicle(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder builderForValue) {
+      if (publishToChronicleBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishToChronicleBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    public Builder mergePublishToChronicle(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle value) {
+      if (publishToChronicleBuilder_ == null) {
+        if (actionCase_ == 3
+            && action_
+                != com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.newBuilder(
+                      (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 3) {
+          publishToChronicleBuilder_.mergeFrom(value);
+        } else {
+          publishToChronicleBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    public Builder clearPublishToChronicle() {
+      if (publishToChronicleBuilder_ == null) {
+        if (actionCase_ == 3) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 3) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        publishToChronicleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder
+        getPublishToChronicleBuilder() {
+      return getPublishToChronicleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder
+        getPublishToChronicleOrBuilder() {
+      if ((actionCase_ == 3) && (publishToChronicleBuilder_ != null)) {
+        return publishToChronicleBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 3) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes generated data profiles to Google Security Operations.
+     * For more information, see [Use Sensitive Data Protection data in
+     * context-aware
+     * analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle publish_to_chronicle = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder>
+        getPublishToChronicleFieldBuilder() {
+      if (publishToChronicleBuilder_ == null) {
+        if (!(actionCase_ == 3)) {
+          action_ =
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
+        }
+        publishToChronicleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle,
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder,
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder>(
+                (com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 3;
+      onChanged();
+      return publishToChronicleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder>
+        publishToSccBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     *
+     * @return Whether the publishToScc field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishToScc() {
+      return actionCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     *
+     * @return The publishToScc.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+        getPublishToScc() {
+      if (publishToSccBuilder_ == null) {
+        if (actionCase_ == 4) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+              action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 4) {
+          return publishToSccBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    public Builder setPublishToScc(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter value) {
+      if (publishToSccBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        publishToSccBuilder_.setMessage(value);
+      }
+      actionCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    public Builder setPublishToScc(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder
+            builderForValue) {
+      if (publishToSccBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishToSccBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    public Builder mergePublishToScc(
+        com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter value) {
+      if (publishToSccBuilder_ == null) {
+        if (actionCase_ == 4
+            && action_
+                != com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.newBuilder(
+                      (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+                          action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 4) {
+          publishToSccBuilder_.mergeFrom(value);
+        } else {
+          publishToSccBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    public Builder clearPublishToScc() {
+      if (publishToSccBuilder_ == null) {
+        if (actionCase_ == 4) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 4) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        publishToSccBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder
+        getPublishToSccBuilder() {
+      return getPublishToSccFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder
+        getPublishToSccOrBuilder() {
+      if ((actionCase_ == 4) && (publishToSccBuilder_ != null)) {
+        return publishToSccBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 4) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+              action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publishes findings to SCC for each data profile.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter publish_to_scc = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder>
+        getPublishToSccFieldBuilder() {
+      if (publishToSccBuilder_ == null) {
+        if (!(actionCase_ == 4)) {
+          action_ =
+              com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
+                  .getDefaultInstance();
+        }
+        publishToSccBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter,
+                com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder,
+                com.google.privacy.dlp.v2.DataProfileAction
+                    .PublishToSecurityCommandCenterOrBuilder>(
+                (com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
+                    action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 4;
+      onChanged();
+      return publishToSccBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

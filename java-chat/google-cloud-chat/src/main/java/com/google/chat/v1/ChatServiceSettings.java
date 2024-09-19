@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -55,7 +56,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createMessage to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createMessage:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -71,10 +74,21 @@ import javax.annotation.Generated;
  *             .createMessageSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ChatServiceSettings chatServiceSettings = chatServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
@@ -132,6 +146,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   public PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).listSpacesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchSpacesSettings();
   }
 
   /** Returns the object with the settings used for calls to getSpace. */
@@ -395,6 +415,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public PagedCallSettings.Builder<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings() {
       return getStubSettingsBuilder().listSpacesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return getStubSettingsBuilder().searchSpacesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSpace. */
