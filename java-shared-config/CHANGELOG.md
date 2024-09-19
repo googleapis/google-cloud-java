@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.11.2](https://github.com/googleapis/java-shared-config/compare/v1.11.1...v1.11.2) (2024-09-19)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.3 ([#903](https://github.com/googleapis/java-shared-config/issues/903)) ([86debb4](https://github.com/googleapis/java-shared-config/commit/86debb4ec4d5aebb746c06b793e91884ce8b0287))
+* Update dependency org.graalvm.sdk:graal-sdk to v24.1.0 ([#905](https://github.com/googleapis/java-shared-config/issues/905)) ([8be882d](https://github.com/googleapis/java-shared-config/commit/8be882de14af7a3bdb8d7f51c18fd66795035f80))
+* Update dependency org.graalvm.sdk:nativeimage to v24.1.0 ([#906](https://github.com/googleapis/java-shared-config/issues/906)) ([9a48630](https://github.com/googleapis/java-shared-config/commit/9a486305ecb77d83ecb1d089e8272108af32d77e))
+
 ## [1.11.1](https://github.com/googleapis/java-shared-config/compare/v1.11.0...v1.11.1) (2024-09-03)
 
 
