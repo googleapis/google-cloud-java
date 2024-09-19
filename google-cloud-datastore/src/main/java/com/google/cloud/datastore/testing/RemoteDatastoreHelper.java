@@ -19,13 +19,16 @@ package com.google.cloud.datastore.testing;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.http.HttpTransportOptions;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.UUID;
+import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /**
@@ -38,13 +41,13 @@ import org.threeten.bp.Duration;
  * RetrySettings#getTotalTimeout()} is {@code 120000} and {@link
  * RetrySettings#getInitialRetryDelay()} is {@code 250}. {@link
  * HttpTransportOptions#getConnectTimeout()} and {@link HttpTransportOptions#getReadTimeout()} are
- * both both set to {@code 60000}.
+ * both both set to {@code 60000}. If an OpenTelemetrySdk object is passed in, OpenTelemetry Trace
+ * collection will be enabled for the Client application.
  *
  * <p>Internal testing use only
  */
 @InternalApi
 public class RemoteDatastoreHelper {
-
   private final DatastoreOptions options;
   private final Datastore datastore;
   private final String namespace;
@@ -78,18 +81,30 @@ public class RemoteDatastoreHelper {
   }
 
   /** Creates a {@code RemoteStorageHelper} object. */
-  public static RemoteDatastoreHelper create(String databaseId) {
+  public static RemoteDatastoreHelper create(
+      String databaseId, @Nullable OpenTelemetrySdk openTelemetrySdk) {
     HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
     transportOptions =
         transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
-    DatastoreOptions datastoreOption =
+    DatastoreOptions.Builder datastoreOptionBuilder =
         DatastoreOptions.newBuilder()
             .setDatabaseId(databaseId)
             .setNamespace(UUID.randomUUID().toString())
             .setRetrySettings(retrySettings())
-            .setTransportOptions(transportOptions)
-            .build();
-    return new RemoteDatastoreHelper(datastoreOption);
+            .setTransportOptions(transportOptions);
+
+    if (openTelemetrySdk != null) {
+      datastoreOptionBuilder.setOpenTelemetryOptions(
+          DatastoreOpenTelemetryOptions.newBuilder()
+              .setOpenTelemetry(openTelemetrySdk)
+              .setTracingEnabled(true)
+              .build());
+    }
+    return new RemoteDatastoreHelper(datastoreOptionBuilder.build());
+  }
+
+  public static RemoteDatastoreHelper create(String databaseId) {
+    return create(databaseId, /*openTelemetrySdk=*/ null);
   }
 
   private static RetrySettings retrySettings() {

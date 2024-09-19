@@ -16,7 +16,20 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-datastore</site.installationModule>
+    <opentelemetry.version>1.42.0</opentelemetry.version>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- Artifacts from google-cloud-java monorepo -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>gapic-libraries-bom</artifactId>
+        <version>1.37.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -37,6 +50,10 @@
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-credentials</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -111,6 +128,19 @@
       <artifactId>jsr305</artifactId>
     </dependency>
 
+    <!-- OpenTelemetry -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+      <version>${opentelemetry.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+      <version>${opentelemetry.version}</version>
+    </dependency>
+    <!-- END OpenTelemetry -->
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -118,7 +148,6 @@
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava-testlib</artifactId>
@@ -160,6 +189,61 @@
       <version>1.4.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.testparameterinjector</groupId>
+      <artifactId>test-parameter-injector</artifactId>
+      <version>1.16</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- OpenTelemetry -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+      <version>${opentelemetry.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-common</artifactId>
+      <version>${opentelemetry.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <version>${opentelemetry.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-trace</artifactId>
+      <version>${opentelemetry.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-semconv</artifactId>
+      <version>1.1.0-alpha</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- END OpenTelemetry -->
+    <!-- Cloud Ops -->
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-trace</artifactId>
+      <version>0.15.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-trace</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-trace-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- END Cloud Ops -->
   </dependencies>
 
   <build>

@@ -21,7 +21,6 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.TraceUtil;
 import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -40,6 +39,7 @@ import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
+import io.opencensus.trace.Tracing;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
@@ -80,8 +80,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   private HttpRequestInitializer getHttpRequestInitializer(
       final DatastoreOptions options, HttpTransportOptions httpTransportOptions) {
     // Open Census initialization
-    CensusHttpModule censusHttpModule =
-        new CensusHttpModule(TraceUtil.getInstance().getTracer(), true);
+    CensusHttpModule censusHttpModule = new CensusHttpModule(Tracing.getTracer(), true);
     final HttpRequestInitializer censusHttpModuleHttpRequestInitializer =
         censusHttpModule.getHttpRequestInitializer(
             httpTransportOptions.getHttpRequestInitializer(options));

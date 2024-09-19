@@ -16,13 +16,13 @@
 package com.google.cloud.datastore;
 
 import static com.google.cloud.BaseService.EXCEPTION_HANDLER;
-import static com.google.cloud.datastore.TraceUtil.SPAN_NAME_RUN_AGGREGATION_QUERY;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
@@ -31,6 +31,7 @@ import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
@@ -39,9 +40,6 @@ import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
-import io.opencensus.common.Scope;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Status;
 import java.util.concurrent.Callable;
 
 /**
@@ -52,19 +50,19 @@ import java.util.concurrent.Callable;
 public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
 
   private final DatastoreRpc datastoreRpc;
-  private final TraceUtil traceUtil;
+  private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil;
   private final RetrySettings retrySettings;
   private final DatastoreOptions datastoreOptions;
 
   public RetryAndTraceDatastoreRpcDecorator(
       DatastoreRpc datastoreRpc,
-      TraceUtil traceUtil,
+      TraceUtil otelTraceUtil,
       RetrySettings retrySettings,
       DatastoreOptions datastoreOptions) {
     this.datastoreRpc = datastoreRpc;
-    this.traceUtil = traceUtil;
     this.retrySettings = retrySettings;
     this.datastoreOptions = datastoreOptions;
+    this.otelTraceUtil = otelTraceUtil;
   }
 
   @Override
@@ -105,20 +103,26 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
 
   @Override
   public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request) {
-    return invokeRpc(
-        () -> datastoreRpc.runAggregationQuery(request), SPAN_NAME_RUN_AGGREGATION_QUERY);
+    ReadOptions readOptions = request.getReadOptions();
+    boolean isTransactional = readOptions.hasTransaction() || readOptions.hasNewTransaction();
+    String spanName =
+        (isTransactional
+            ? com.google.cloud.datastore.telemetry.TraceUtil
+                .SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY
+            : com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_RUN_AGGREGATION_QUERY);
+    return invokeRpc(() -> datastoreRpc.runAggregationQuery(request), spanName);
   }
 
   public <O> O invokeRpc(Callable<O> block, String startSpan) {
-    Span span = traceUtil.startSpan(startSpan);
-    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
+    com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(startSpan);
+    try (com.google.cloud.datastore.telemetry.TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           block, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
     } catch (RetryHelperException e) {
-      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
+      span.end(e);
       throw DatastoreException.translateAndThrow(e);
     } finally {
-      span.end(TraceUtil.END_SPAN_OPTIONS);
+      span.end();
     }
   }
 }

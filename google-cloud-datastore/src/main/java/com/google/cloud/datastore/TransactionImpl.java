@@ -20,6 +20,7 @@ import static com.google.cloud.datastore.ReadOption.transactionId;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.models.ExplainOptions;
+import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.TransactionOptions;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import javax.annotation.Nonnull;
 
 final class TransactionImpl extends BaseDatastoreBatchWriter implements Transaction {
 
@@ -36,6 +38,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   private boolean rolledback;
 
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
+
+  @Nonnull private final TraceUtil traceUtil;
 
   static class ResponseImpl implements Transaction.Response {
 
@@ -78,6 +82,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
     transactionId = datastore.requestTransactionId(requestPb);
     this.readOptionProtoPreparer = new ReadOptionProtoPreparer();
+    this.traceUtil = datastore.getOptions().getTraceUtil();
   }
 
   @Override

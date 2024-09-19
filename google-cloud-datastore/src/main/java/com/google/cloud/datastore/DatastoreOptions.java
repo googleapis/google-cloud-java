@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
@@ -31,6 +32,8 @@ import com.google.common.collect.ImmutableSet;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions> {
 
@@ -42,6 +45,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private final String namespace;
   private final String databaseId;
+
+  private final transient @Nonnull DatastoreOpenTelemetryOptions openTelemetryOptions;
+  private final transient @Nonnull com.google.cloud.datastore.telemetry.TraceUtil traceUtil;
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
@@ -63,10 +69,23 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     }
   }
 
+  @Nonnull
+  com.google.cloud.datastore.telemetry.TraceUtil getTraceUtil() {
+    return traceUtil;
+  }
+
+  @BetaApi
+  @Nonnull
+  public DatastoreOpenTelemetryOptions getOpenTelemetryOptions() {
+    return openTelemetryOptions;
+  }
+
   public static class Builder extends ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
     private String databaseId;
+
+    @Nullable private DatastoreOpenTelemetryOptions openTelemetryOptions = null;
 
     private Builder() {}
 
@@ -74,6 +93,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       super(options);
       namespace = options.namespace;
       databaseId = options.databaseId;
+      this.openTelemetryOptions = options.openTelemetryOptions;
     }
 
     @Override
@@ -100,10 +120,30 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.databaseId = databaseId;
       return this;
     }
+
+    /**
+     * Sets the {@link DatastoreOpenTelemetryOptions} to be used for this Firestore instance.
+     *
+     * @param openTelemetryOptions The `DatastoreOpenTelemetryOptions` to use.
+     */
+    @BetaApi
+    @Nonnull
+    public Builder setOpenTelemetryOptions(
+        @Nonnull DatastoreOpenTelemetryOptions openTelemetryOptions) {
+      this.openTelemetryOptions = openTelemetryOptions;
+      return this;
+    }
   }
 
   private DatastoreOptions(Builder builder) {
     super(DatastoreFactory.class, DatastoreRpcFactory.class, builder, new DatastoreDefaults());
+
+    this.openTelemetryOptions =
+        builder.openTelemetryOptions != null
+            ? builder.openTelemetryOptions
+            : DatastoreOpenTelemetryOptions.newBuilder().build();
+    this.traceUtil = com.google.cloud.datastore.telemetry.TraceUtil.getInstance(this);
+
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);
   }

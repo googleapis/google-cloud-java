@@ -55,4 +55,16 @@
         <method>java.lang.Object execute(com.google.cloud.datastore.Query, com.google.cloud.datastore.ReadOption[])</method>
         <differenceType>7004</differenceType>
     </difference>
+    <difference>
+        <className>com/google/cloud/datastore/RetryAndTraceDatastoreRpcDecorator</className>
+        <method>RetryAndTraceDatastoreRpcDecorator(com.google.cloud.datastore.spi.v1.DatastoreRpc, com.google.cloud.datastore.TraceUtil, com.google.api.gax.retrying.RetrySettings, com.google.cloud.datastore.DatastoreOptions)</method>
+        <to>RetryAndTraceDatastoreRpcDecorator(com.google.cloud.datastore.spi.v1.DatastoreRpc, com.google.cloud.datastore.telemetry.TraceUtil, com.google.api.gax.retrying.RetrySettings, com.google.cloud.datastore.DatastoreOptions)</to>
+        <differenceType>7005</differenceType>
+    </difference>
+
+    <!-- Class removed -->
+    <difference>
+        <className>com/google/cloud/datastore/TraceUtil</className>
+        <differenceType>8001</differenceType>
+    </difference>
 </differences>
