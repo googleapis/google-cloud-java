@@ -17,7 +17,6 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public interface AutoMlForecastingMetadataOrBuilder
