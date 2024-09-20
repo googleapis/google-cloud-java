@@ -40,6 +40,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
   private GenerateContentResponse() {
     candidates_ = java.util.Collections.emptyList();
+    modelVersion_ = "";
   }
 
   @java.lang.Override
@@ -2749,6 +2750,57 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     return candidates_.get(index);
   }
 
+  public static final int MODEL_VERSION_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersion() {
+    java.lang.Object ref = modelVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelVersionBytes() {
+    java.lang.Object ref = modelVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROMPT_FEEDBACK_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
       promptFeedback_;
@@ -2899,6 +2951,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getUsageMetadata());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, modelVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2917,6 +2972,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUsageMetadata());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, modelVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2934,6 +2992,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         (com.google.cloud.aiplatform.v1beta1.GenerateContentResponse) obj;
 
     if (!getCandidatesList().equals(other.getCandidatesList())) return false;
+    if (!getModelVersion().equals(other.getModelVersion())) return false;
     if (hasPromptFeedback() != other.hasPromptFeedback()) return false;
     if (hasPromptFeedback()) {
       if (!getPromptFeedback().equals(other.getPromptFeedback())) return false;
@@ -2957,6 +3016,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + CANDIDATES_FIELD_NUMBER;
       hash = (53 * hash) + getCandidatesList().hashCode();
     }
+    hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersion().hashCode();
     if (hasPromptFeedback()) {
       hash = (37 * hash) + PROMPT_FEEDBACK_FIELD_NUMBER;
       hash = (53 * hash) + getPromptFeedback().hashCode();
@@ -3123,6 +3184,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         candidatesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      modelVersion_ = "";
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -3183,13 +3245,16 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.GenerateContentResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modelVersion_ = modelVersion_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.promptFeedback_ =
             promptFeedbackBuilder_ == null ? promptFeedback_ : promptFeedbackBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.usageMetadata_ =
             usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -3270,6 +3335,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           }
         }
       }
+      if (!other.getModelVersion().isEmpty()) {
+        modelVersion_ = other.modelVersion_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasPromptFeedback()) {
         mergePromptFeedback(other.getPromptFeedback());
       }
@@ -3318,15 +3388,21 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             case 26:
               {
                 input.readMessage(getPromptFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUsageMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 90:
+              {
+                modelVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3734,6 +3810,112 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return candidatesBuilder_;
     }
 
+    private java.lang.Object modelVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelVersion.
+     */
+    public java.lang.String getModelVersion() {
+      java.lang.Object ref = modelVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelVersion.
+     */
+    public com.google.protobuf.ByteString getModelVersionBytes() {
+      java.lang.Object ref = modelVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      modelVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersion() {
+      modelVersion_ = getDefaultInstance().getModelVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      modelVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
         promptFeedback_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3757,7 +3939,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the promptFeedback field is set.
      */
     public boolean hasPromptFeedback() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3808,7 +3990,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3833,7 +4015,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3853,7 +4035,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergePromptFeedback(
         com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback value) {
       if (promptFeedbackBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && promptFeedback_ != null
             && promptFeedback_
                 != com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
@@ -3866,7 +4048,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         promptFeedbackBuilder_.mergeFrom(value);
       }
       if (promptFeedback_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -3885,7 +4067,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearPromptFeedback() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -3909,7 +4091,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback.Builder
         getPromptFeedbackBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPromptFeedbackFieldBuilder().getBuilder();
     }
@@ -3989,7 +4171,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the usageMetadata field is set.
      */
     public boolean hasUsageMetadata() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4036,7 +4218,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4059,7 +4241,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4077,7 +4259,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergeUsageMetadata(
         com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata value) {
       if (usageMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && usageMetadata_ != null
             && usageMetadata_
                 != com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata
@@ -4090,7 +4272,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         usageMetadataBuilder_.mergeFrom(value);
       }
       if (usageMetadata_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -4107,7 +4289,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUsageMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       usageMetadata_ = null;
       if (usageMetadataBuilder_ != null) {
         usageMetadataBuilder_.dispose();
@@ -4129,7 +4311,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata.Builder
         getUsageMetadataBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUsageMetadataFieldBuilder().getBuilder();
     }

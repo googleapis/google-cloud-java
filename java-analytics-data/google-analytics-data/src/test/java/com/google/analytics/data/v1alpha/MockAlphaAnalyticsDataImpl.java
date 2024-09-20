@@ -255,6 +255,28 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   }
 
   @Override
+  public void getPropertyQuotasSnapshot(
+      GetPropertyQuotasSnapshotRequest request,
+      StreamObserver<PropertyQuotasSnapshot> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PropertyQuotasSnapshot) {
+      requests.add(request);
+      responseObserver.onNext(((PropertyQuotasSnapshot) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPropertyQuotasSnapshot, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PropertyQuotasSnapshot.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createReportTask(
       CreateReportTaskRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

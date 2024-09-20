@@ -638,4 +638,71 @@ public interface SchemaOrBuilder
    * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ValueOrBuilder getExampleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Schema> getAnyOfList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Schema getAnyOf(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnyOfCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder>
+      getAnyOfOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getAnyOfOrBuilder(int index);
 }

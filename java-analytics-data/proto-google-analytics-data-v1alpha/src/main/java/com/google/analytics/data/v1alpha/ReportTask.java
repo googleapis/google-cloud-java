@@ -639,7 +639,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * not separately removed by a filter.
      *
      * Regardless of this `keep_empty_rows` setting, only data recorded by the
-     * Google Analytics (GA4) property can be displayed in a report.
+     * Google Analytics property can be displayed in a report.
      *
      * For example if a property never logs a `purchase` event, then a query for
      * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -1472,7 +1472,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * not separately removed by a filter.
      *
      * Regardless of this `keep_empty_rows` setting, only data recorded by the
-     * Google Analytics (GA4) property can be displayed in a report.
+     * Google Analytics property can be displayed in a report.
      *
      * For example if a property never logs a `purchase` event, then a query for
      * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -5201,7 +5201,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * not separately removed by a filter.
        *
        * Regardless of this `keep_empty_rows` setting, only data recorded by the
-       * Google Analytics (GA4) property can be displayed in a report.
+       * Google Analytics property can be displayed in a report.
        *
        * For example if a property never logs a `purchase` event, then a query for
        * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -5225,7 +5225,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * not separately removed by a filter.
        *
        * Regardless of this `keep_empty_rows` setting, only data recorded by the
-       * Google Analytics (GA4) property can be displayed in a report.
+       * Google Analytics property can be displayed in a report.
        *
        * For example if a property never logs a `purchase` event, then a query for
        * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -5253,7 +5253,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
        * not separately removed by a filter.
        *
        * Regardless of this `keep_empty_rows` setting, only data recorded by the
-       * Google Analytics (GA4) property can be displayed in a report.
+       * Google Analytics property can be displayed in a report.
        *
        * For example if a property never logs a `purchase` event, then a query for
        * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -7442,7 +7442,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Identifier. The report task resource name assigned during
-   * creation. Format: `properties/{property}/reportTasks/{report_task}`
+   * creation. Format: "properties/{property}/reportTasks/{report_task}"
    * </pre>
    *
    * <code>
@@ -7468,7 +7468,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Identifier. The report task resource name assigned during
-   * creation. Format: `properties/{property}/reportTasks/{report_task}`
+   * creation. Format: "properties/{property}/reportTasks/{report_task}"
    * </pre>
    *
    * <code>
@@ -8048,7 +8048,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Identifier. The report task resource name assigned during
-     * creation. Format: `properties/{property}/reportTasks/{report_task}`
+     * creation. Format: "properties/{property}/reportTasks/{report_task}"
      * </pre>
      *
      * <code>
@@ -8073,7 +8073,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Identifier. The report task resource name assigned during
-     * creation. Format: `properties/{property}/reportTasks/{report_task}`
+     * creation. Format: "properties/{property}/reportTasks/{report_task}"
      * </pre>
      *
      * <code>
@@ -8098,7 +8098,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Identifier. The report task resource name assigned during
-     * creation. Format: `properties/{property}/reportTasks/{report_task}`
+     * creation. Format: "properties/{property}/reportTasks/{report_task}"
      * </pre>
      *
      * <code>
@@ -8122,7 +8122,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Identifier. The report task resource name assigned during
-     * creation. Format: `properties/{property}/reportTasks/{report_task}`
+     * creation. Format: "properties/{property}/reportTasks/{report_task}"
      * </pre>
      *
      * <code>
@@ -8142,7 +8142,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Identifier. The report task resource name assigned during
-     * creation. Format: `properties/{property}/reportTasks/{report_task}`
+     * creation. Format: "properties/{property}/reportTasks/{report_task}"
      * </pre>
      *
      * <code>

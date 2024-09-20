@@ -50,6 +50,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     propertyOrdering_ = com.google.protobuf.LazyStringArrayList.emptyList();
     required_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pattern_ = "";
+    anyOf_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -977,6 +978,92 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return example_ == null ? com.google.protobuf.Value.getDefaultInstance() : example_;
   }
 
+  public static final int ANY_OF_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1.Schema> anyOf_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.Schema> getAnyOfList() {
+    return anyOf_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+      getAnyOfOrBuilderList() {
+    return anyOf_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAnyOfCount() {
+    return anyOf_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Schema getAnyOf(int index) {
+    return anyOf_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SchemaOrBuilder getAnyOfOrBuilder(int index) {
+    return anyOf_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1016,6 +1103,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < enum_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, enum_.getRaw(i));
+    }
+    for (int i = 0; i < anyOf_.size(); i++) {
+      output.writeMessage(11, anyOf_.get(i));
     }
     if (minProperties_ != 0L) {
       output.writeInt64(14, minProperties_);
@@ -1107,6 +1197,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getEnumList().size();
     }
+    for (int i = 0; i < anyOf_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, anyOf_.get(i));
+    }
     if (minProperties_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, minProperties_);
     }
@@ -1195,6 +1288,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (hasExample()) {
       if (!getExample().equals(other.getExample())) return false;
     }
+    if (!getAnyOfList().equals(other.getAnyOfList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1267,6 +1361,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (hasExample()) {
       hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
       hash = (53 * hash) + getExample().hashCode();
+    }
+    if (getAnyOfCount() > 0) {
+      hash = (37 * hash) + ANY_OF_FIELD_NUMBER;
+      hash = (53 * hash) + getAnyOfList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1435,6 +1533,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         getDefaultFieldBuilder();
         getItemsFieldBuilder();
         getExampleFieldBuilder();
+        getAnyOfFieldBuilder();
       }
     }
 
@@ -1475,6 +1574,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         exampleBuilder_.dispose();
         exampleBuilder_ = null;
       }
+      if (anyOfBuilder_ == null) {
+        anyOf_ = java.util.Collections.emptyList();
+      } else {
+        anyOf_ = null;
+        anyOfBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00200000);
       return this;
     }
 
@@ -1502,11 +1608,24 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Schema buildPartial() {
       com.google.cloud.aiplatform.v1.Schema result =
           new com.google.cloud.aiplatform.v1.Schema(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.Schema result) {
+      if (anyOfBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)) {
+          anyOf_ = java.util.Collections.unmodifiableList(anyOf_);
+          bitField0_ = (bitField0_ & ~0x00200000);
+        }
+        result.anyOf_ = anyOf_;
+      } else {
+        result.anyOf_ = anyOfBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.Schema result) {
@@ -1721,6 +1840,33 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExample()) {
         mergeExample(other.getExample());
       }
+      if (anyOfBuilder_ == null) {
+        if (!other.anyOf_.isEmpty()) {
+          if (anyOf_.isEmpty()) {
+            anyOf_ = other.anyOf_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+          } else {
+            ensureAnyOfIsMutable();
+            anyOf_.addAll(other.anyOf_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.anyOf_.isEmpty()) {
+          if (anyOfBuilder_.isEmpty()) {
+            anyOfBuilder_.dispose();
+            anyOfBuilder_ = null;
+            anyOf_ = other.anyOf_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+            anyOfBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAnyOfFieldBuilder()
+                    : null;
+          } else {
+            anyOfBuilder_.addAllMessages(other.anyOf_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1811,6 +1957,19 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 enum_.add(s);
                 break;
               } // case 74
+            case 90:
+              {
+                com.google.cloud.aiplatform.v1.Schema m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.Schema.parser(), extensionRegistry);
+                if (anyOfBuilder_ == null) {
+                  ensureAnyOfIsMutable();
+                  anyOf_.add(m);
+                } else {
+                  anyOfBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             case 112:
               {
                 minProperties_ = input.readInt64();
@@ -4322,6 +4481,408 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         example_ = null;
       }
       return exampleBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.Schema> anyOf_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAnyOfIsMutable() {
+      if (!((bitField0_ & 0x00200000) != 0)) {
+        anyOf_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.Schema>(anyOf_);
+        bitField0_ |= 0x00200000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Schema,
+            com.google.cloud.aiplatform.v1.Schema.Builder,
+            com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+        anyOfBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Schema> getAnyOfList() {
+      if (anyOfBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(anyOf_);
+      } else {
+        return anyOfBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAnyOfCount() {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.size();
+      } else {
+        return anyOfBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Schema getAnyOf(int index) {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.get(index);
+      } else {
+        return anyOfBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnyOf(int index, com.google.cloud.aiplatform.v1.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.set(index, value);
+        onChanged();
+      } else {
+        anyOfBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnyOf(
+        int index, com.google.cloud.aiplatform.v1.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(com.google.cloud.aiplatform.v1.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.add(value);
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(int index, com.google.cloud.aiplatform.v1.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.add(index, value);
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(com.google.cloud.aiplatform.v1.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.add(builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(
+        int index, com.google.cloud.aiplatform.v1.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAnyOf(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Schema> values) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, anyOf_);
+        onChanged();
+      } else {
+        anyOfBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAnyOf() {
+      if (anyOfBuilder_ == null) {
+        anyOf_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00200000);
+        onChanged();
+      } else {
+        anyOfBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAnyOf(int index) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.remove(index);
+        onChanged();
+      } else {
+        anyOfBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Schema.Builder getAnyOfBuilder(int index) {
+      return getAnyOfFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SchemaOrBuilder getAnyOfOrBuilder(int index) {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.get(index);
+      } else {
+        return anyOfBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+        getAnyOfOrBuilderList() {
+      if (anyOfBuilder_ != null) {
+        return anyOfBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(anyOf_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Schema.Builder addAnyOfBuilder() {
+      return getAnyOfFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.Schema.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Schema.Builder addAnyOfBuilder(int index) {
+      return getAnyOfFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1.Schema.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Schema.Builder> getAnyOfBuilderList() {
+      return getAnyOfFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Schema,
+            com.google.cloud.aiplatform.v1.Schema.Builder,
+            com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+        getAnyOfFieldBuilder() {
+      if (anyOfBuilder_ == null) {
+        anyOfBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Schema,
+                com.google.cloud.aiplatform.v1.Schema.Builder,
+                com.google.cloud.aiplatform.v1.SchemaOrBuilder>(
+                anyOf_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
+        anyOf_ = null;
+      }
+      return anyOfBuilder_;
     }
 
     @java.lang.Override

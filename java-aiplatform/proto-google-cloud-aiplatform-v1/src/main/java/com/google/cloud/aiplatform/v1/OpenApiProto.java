@@ -48,7 +48,7 @@ public final class OpenApiProto {
       "\n(google/cloud/aiplatform/v1/openapi.pro"
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
           + "pi/field_behavior.proto\032\034google/protobuf"
-          + "/struct.proto\"\367\005\n\006Schema\0223\n\004type\030\001 \001(\0162 "
+          + "/struct.proto\"\260\006\n\006Schema\0223\n\004type\030\001 \001(\0162 "
           + ".google.cloud.aiplatform.v1.TypeB\003\340A\001\022\023\n"
           + "\006format\030\007 \001(\tB\003\340A\001\022\022\n\005title\030\030 \001(\tB\003\340A\001\022\030"
           + "\n\013description\030\010 \001(\tB\003\340A\001\022\025\n\010nullable\030\006 \001"
@@ -65,17 +65,18 @@ public final class OpenApiProto {
           + "\021 \001(\001B\003\340A\001\022\027\n\nmin_length\030\022 \001(\003B\003\340A\001\022\027\n\nm"
           + "ax_length\030\023 \001(\003B\003\340A\001\022\024\n\007pattern\030\024 \001(\tB\003\340"
           + "A\001\022,\n\007example\030\004 \001(\0132\026.google.protobuf.Va"
-          + "lueB\003\340A\001\032U\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t"
-          + "\0221\n\005value\030\002 \001(\0132\".google.cloud.aiplatfor"
-          + "m.v1.Schema:\0028\001*e\n\004Type\022\024\n\020TYPE_UNSPECIF"
-          + "IED\020\000\022\n\n\006STRING\020\001\022\n\n\006NUMBER\020\002\022\013\n\007INTEGER"
-          + "\020\003\022\013\n\007BOOLEAN\020\004\022\t\n\005ARRAY\020\005\022\n\n\006OBJECT\020\006B\312"
-          + "\001\n\036com.google.cloud.aiplatform.v1B\014OpenA"
-          + "piProtoP\001Z>cloud.google.com/go/aiplatfor"
-          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
-          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
-          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
-          + ":V1b\006proto3"
+          + "lueB\003\340A\001\0227\n\006any_of\030\013 \003(\0132\".google.cloud."
+          + "aiplatform.v1.SchemaB\003\340A\001\032U\n\017PropertiesE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".googl"
+          + "e.cloud.aiplatform.v1.Schema:\0028\001*e\n\004Type"
+          + "\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006STRING\020\001\022\n\n\006NU"
+          + "MBER\020\002\022\013\n\007INTEGER\020\003\022\013\n\007BOOLEAN\020\004\022\t\n\005ARRA"
+          + "Y\020\005\022\n\n\006OBJECT\020\006B\312\001\n\036com.google.cloud.aip"
+          + "latform.v1B\014OpenApiProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,6 +112,7 @@ public final class OpenApiProto {
               "MaxLength",
               "Pattern",
               "Example",
+              "AnyOf",
             });
     internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Schema_descriptor.getNestedTypes().get(0);

@@ -26,6 +26,7 @@ import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetReportTaskRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
@@ -34,6 +35,7 @@ import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListReportTasksRequest;
 import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
 import com.google.analytics.data.v1alpha.QueryReportTaskRequest;
@@ -432,6 +434,41 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/GetPropertyQuotasSnapshot")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetPropertyQuotasSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/propertyQuotasSnapshot}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPropertyQuotasSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPropertyQuotasSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PropertyQuotasSnapshot>newBuilder()
+                      .setDefaultInstance(PropertyQuotasSnapshot.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateReportTaskRequest, Operation>
       createReportTaskMethodDescriptor =
           ApiMethodDescriptor.<CreateReportTaskRequest, Operation>newBuilder()
@@ -603,6 +640,8 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private final UnaryCallable<
           ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable;
+  private final UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable;
   private final UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable;
   private final OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
       createReportTaskOperationCallable;
@@ -771,6 +810,19 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshotTransportSettings =
+            HttpJsonCallSettings
+                .<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>newBuilder()
+                .setMethodDescriptor(getPropertyQuotasSnapshotMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
         HttpJsonCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
             .setMethodDescriptor(createReportTaskMethodDescriptor)
@@ -875,6 +927,11 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             listRecurringAudienceListsTransportSettings,
             settings.listRecurringAudienceListsSettings(),
             clientContext);
+    this.getPropertyQuotasSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getPropertyQuotasSnapshotTransportSettings,
+            settings.getPropertyQuotasSnapshotSettings(),
+            clientContext);
     this.createReportTaskCallable =
         callableFactory.createUnaryCallable(
             createReportTaskTransportSettings, settings.createReportTaskSettings(), clientContext);
@@ -913,6 +970,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(createRecurringAudienceListMethodDescriptor);
     methodDescriptors.add(getRecurringAudienceListMethodDescriptor);
     methodDescriptors.add(listRecurringAudienceListsMethodDescriptor);
+    methodDescriptors.add(getPropertyQuotasSnapshotMethodDescriptor);
     methodDescriptors.add(createReportTaskMethodDescriptor);
     methodDescriptors.add(queryReportTaskMethodDescriptor);
     methodDescriptors.add(getReportTaskMethodDescriptor);
@@ -991,6 +1049,12 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable() {
     return listRecurringAudienceListsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable() {
+    return getPropertyQuotasSnapshotCallable;
   }
 
   @Override
