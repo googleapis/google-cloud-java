@@ -17,7 +17,6 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
@@ -658,41 +657,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -1353,41 +1317,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other
               instanceof
@@ -2038,41 +1967,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -2883,41 +2777,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.timeFormat_ = timeFormat_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -3766,41 +3625,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -4766,41 +4590,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (transformationDetailCase_ == 5 && textBuilder_ != null) {
           result.transformationDetail_ = textBuilder_.build();
         }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -6615,41 +6404,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other
             instanceof
@@ -7042,7 +6796,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
   }
 
-  private int bitField0_;
   public static final int TARGET_COLUMN_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -7731,7 +7484,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasDataGranularity() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return dataGranularity_ != null;
   }
   /**
    *
@@ -7836,7 +7589,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasExportEvaluatedDataItemsConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return exportEvaluatedDataItemsConfig_ != null;
   }
   /**
    *
@@ -7886,7 +7639,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static final int QUANTILES_FIELD_NUMBER = 16;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.DoubleList quantiles_ = emptyDoubleList();
+  private com.google.protobuf.Internal.DoubleList quantiles_;
   /**
    *
    *
@@ -8106,7 +7859,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, weightColumn_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (exportEvaluatedDataItemsConfig_ != null) {
       output.writeMessage(15, getExportEvaluatedDataItemsConfig());
     }
     if (getQuantilesList().size() > 0) {
@@ -8131,7 +7884,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 21, availableAtForecastColumns_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (dataGranularity_ != null) {
       output.writeMessage(22, getDataGranularity());
     }
     if (forecastHorizon_ != 0L) {
@@ -8175,7 +7928,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, weightColumn_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (exportEvaluatedDataItemsConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getExportEvaluatedDataItemsConfig());
@@ -8217,7 +7970,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       size += dataSize;
       size += 2 * getAvailableAtForecastColumnsList().size();
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (dataGranularity_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getDataGranularity());
     }
     if (forecastHorizon_ != 0L) {
@@ -8496,21 +8249,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
     // Construct using
     // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTransformationsFieldBuilder();
-        getDataGranularityFieldBuilder();
-        getExportEvaluatedDataItemsConfigFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -8603,6 +8345,11 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       } else {
         result.transformations_ = transformationsBuilder_.build();
       }
+      if (((bitField0_ & 0x00004000) != 0)) {
+        quantiles_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      }
+      result.quantiles_ = quantiles_;
     }
 
     private void buildPartial0(
@@ -8639,11 +8386,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         availableAtForecastColumns_.makeImmutable();
         result.availableAtForecastColumns_ = availableAtForecastColumns_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.dataGranularity_ =
             dataGranularityBuilder_ == null ? dataGranularity_ : dataGranularityBuilder_.build();
-        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.forecastHorizon_ = forecastHorizon_;
@@ -8656,11 +8401,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             exportEvaluatedDataItemsConfigBuilder_ == null
                 ? exportEvaluatedDataItemsConfig_
                 : exportEvaluatedDataItemsConfigBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        quantiles_.makeImmutable();
-        result.quantiles_ = quantiles_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.validationOptions_ = validationOptions_;
@@ -8669,40 +8409,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         additionalExperiments_.makeImmutable();
         result.additionalExperiments_ = additionalExperiments_;
       }
-      result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -8827,8 +8533,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (!other.quantiles_.isEmpty()) {
         if (quantiles_.isEmpty()) {
           quantiles_ = other.quantiles_;
-          quantiles_.makeImmutable();
-          bitField0_ |= 0x00004000;
+          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
           ensureQuantilesIsMutable();
           quantiles_.addAll(other.quantiles_);
@@ -8948,8 +8653,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                int alloc = length > 4096 ? 4096 : length;
-                ensureQuantilesIsMutable(alloc / 8);
+                ensureQuantilesIsMutable();
                 while (input.getBytesUntilLimit() > 0) {
                   quantiles_.addDouble(input.readDouble());
                 }
@@ -11004,10 +10708,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       } else {
         dataGranularityBuilder_.mergeFrom(value);
       }
-      if (dataGranularity_ != null) {
-        bitField0_ |= 0x00000400;
-        onChanged();
-      }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -11360,10 +11062,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       } else {
         exportEvaluatedDataItemsConfigBuilder_.mergeFrom(value);
       }
-      if (exportEvaluatedDataItemsConfig_ != null) {
-        bitField0_ |= 0x00002000;
-        onChanged();
-      }
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -11469,17 +11169,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     private com.google.protobuf.Internal.DoubleList quantiles_ = emptyDoubleList();
 
     private void ensureQuantilesIsMutable() {
-      if (!quantiles_.isModifiable()) {
-        quantiles_ = makeMutableCopy(quantiles_);
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        quantiles_ = mutableCopy(quantiles_);
+        bitField0_ |= 0x00004000;
       }
-      bitField0_ |= 0x00004000;
-    }
-
-    private void ensureQuantilesIsMutable(int capacity) {
-      if (!quantiles_.isModifiable()) {
-        quantiles_ = makeMutableCopy(quantiles_, capacity);
-      }
-      bitField0_ |= 0x00004000;
     }
     /**
      *
@@ -11496,8 +11189,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return A list containing the quantiles.
      */
     public java.util.List<java.lang.Double> getQuantilesList() {
-      quantiles_.makeImmutable();
-      return quantiles_;
+      return ((bitField0_ & 0x00004000) != 0)
+          ? java.util.Collections.unmodifiableList(quantiles_)
+          : quantiles_;
     }
     /**
      *
@@ -11554,7 +11248,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       ensureQuantilesIsMutable();
       quantiles_.setDouble(index, value);
-      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11577,7 +11270,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       ensureQuantilesIsMutable();
       quantiles_.addDouble(value);
-      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11599,7 +11291,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public Builder addAllQuantiles(java.lang.Iterable<? extends java.lang.Double> values) {
       ensureQuantilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quantiles_);
-      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

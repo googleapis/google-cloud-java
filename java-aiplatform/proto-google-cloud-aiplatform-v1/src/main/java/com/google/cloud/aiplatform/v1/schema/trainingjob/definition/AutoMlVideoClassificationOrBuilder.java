@@ -17,7 +17,6 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_classification.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 public interface AutoMlVideoClassificationOrBuilder
