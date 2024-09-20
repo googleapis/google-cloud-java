@@ -23,7 +23,6 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-containeranalysis/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-containeranalysis/proto-google-cloud-containeranalysis-v.*/src/main/java/com/google/containeranalysis/v.*/.*Name.*.java"
 - "/java-containeranalysis/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/GrafeasUtils.java"
 - "/java-containeranalysis/google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java"
 
