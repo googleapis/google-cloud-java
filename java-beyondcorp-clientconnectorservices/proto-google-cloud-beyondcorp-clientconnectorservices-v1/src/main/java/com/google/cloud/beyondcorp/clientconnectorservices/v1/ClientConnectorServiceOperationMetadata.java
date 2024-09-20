@@ -17,7 +17,6 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -74,7 +73,6 @@ public final class ClientConnectorServiceOperationMetadata
                 .ClientConnectorServiceOperationMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -91,7 +89,7 @@ public final class ClientConnectorServiceOperationMetadata
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return createTime_ != null;
   }
   /**
    *
@@ -140,7 +138,7 @@ public final class ClientConnectorServiceOperationMetadata
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return endTime_ != null;
   }
   /**
    *
@@ -413,10 +411,10 @@ public final class ClientConnectorServiceOperationMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (createTime_ != null) {
       output.writeMessage(1, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
@@ -443,10 +441,10 @@ public final class ClientConnectorServiceOperationMetadata
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
@@ -684,20 +682,10 @@ public final class ClientConnectorServiceOperationMetadata
 
     // Construct using
     // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOperationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCreateTimeFieldBuilder();
-        getEndTimeFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -769,14 +757,11 @@ public final class ClientConnectorServiceOperationMetadata
                 .ClientConnectorServiceOperationMetadata
             result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.target_ = target_;
@@ -793,40 +778,6 @@ public final class ClientConnectorServiceOperationMetadata
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
-      result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1080,10 +1031,8 @@ public final class ClientConnectorServiceOperationMetadata
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      if (createTime_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1276,10 +1225,8 @@ public final class ClientConnectorServiceOperationMetadata
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-      if (endTime_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**

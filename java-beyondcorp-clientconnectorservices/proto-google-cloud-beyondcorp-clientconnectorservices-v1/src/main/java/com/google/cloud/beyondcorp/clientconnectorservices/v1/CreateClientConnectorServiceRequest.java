@@ -17,7 +17,6 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -73,7 +72,6 @@ public final class CreateClientConnectorServiceRequest
                 .CreateClientConnectorServiceRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -210,7 +208,7 @@ public final class CreateClientConnectorServiceRequest
    */
   @java.lang.Override
   public boolean hasClientConnectorService() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return clientConnectorService_ != null;
   }
   /**
    *
@@ -367,7 +365,7 @@ public final class CreateClientConnectorServiceRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientConnectorServiceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientConnectorServiceId_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (clientConnectorService_ != null) {
       output.writeMessage(3, getClientConnectorService());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
@@ -392,7 +390,7 @@ public final class CreateClientConnectorServiceRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientConnectorServiceId_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (clientConnectorService_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getClientConnectorService());
     }
@@ -611,19 +609,10 @@ public final class CreateClientConnectorServiceRequest
 
     // Construct using
     // com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getClientConnectorServiceFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -694,13 +683,11 @@ public final class CreateClientConnectorServiceRequest
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.clientConnectorServiceId_ = clientConnectorServiceId_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.clientConnectorService_ =
             clientConnectorServiceBuilder_ == null
                 ? clientConnectorService_
                 : clientConnectorServiceBuilder_.build();
-        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
@@ -708,40 +695,6 @@ public final class CreateClientConnectorServiceRequest
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.validateOnly_ = validateOnly_;
       }
-      result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1241,10 +1194,8 @@ public final class CreateClientConnectorServiceRequest
       } else {
         clientConnectorServiceBuilder_.mergeFrom(value);
       }
-      if (clientConnectorService_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**

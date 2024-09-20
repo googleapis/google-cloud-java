@@ -17,7 +17,6 @@
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.securitycenter.v1;
 
 public final class EventThreatDetectionCustomModuleValidationErrorsProto {
@@ -88,7 +87,7 @@ public final class EventThreatDetectionCustomModuleValidationErrorsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CustomModuleValidationError_descriptor,
             new java.lang.String[] {
-              "Description", "FieldPath", "Start", "End",
+              "Description", "FieldPath", "Start", "End", "Start", "End",
             });
     internal_static_google_cloud_securitycenter_v1_Position_descriptor =
         getDescriptor().getMessageTypes().get(2);

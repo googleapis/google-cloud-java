@@ -17,7 +17,6 @@
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
 
-// Protobuf Java Version: 3.25.4
 package com.google.cloud.securitycenter.v1;
 
 /**
@@ -598,39 +597,6 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1.CustomModuleValidationError) {
         return mergeFrom((com.google.cloud.securitycenter.v1.CustomModuleValidationError) other);
@@ -1058,10 +1024,8 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       } else {
         startBuilder_.mergeFrom(value);
       }
-      if (start_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1261,10 +1225,8 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       } else {
         endBuilder_.mergeFrom(value);
       }
-      if (end_ != null) {
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
