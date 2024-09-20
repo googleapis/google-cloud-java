@@ -877,6 +877,7 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -920,6 +921,7 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();

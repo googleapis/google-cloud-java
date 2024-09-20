@@ -204,6 +204,56 @@ public interface GenerationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. If true, export the logprobs results in response.
+   * </pre>
+   *
+   * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the responseLogprobs field is set.
+   */
+  boolean hasResponseLogprobs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, export the logprobs results in response.
+   * </pre>
+   *
+   * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The responseLogprobs.
+   */
+  boolean getResponseLogprobs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Logit probabilities.
+   * </pre>
+   *
+   * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the logprobs field is set.
+   */
+  boolean hasLogprobs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Logit probabilities.
+   * </pre>
+   *
+   * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The logprobs.
+   */
+  int getLogprobs();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Positive penalties.
    * </pre>
    *

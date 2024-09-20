@@ -90,6 +90,31 @@ public interface GenerateContentResponseOrBuilder
    *
    *
    * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersion.
+   */
+  java.lang.String getModelVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersion.
+   */
+  com.google.protobuf.ByteString getModelVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Content filter results for a prompt sent in the request.
    * Note: Sent only in the first stream chunk.
    * Only happens when no candidates were generated due to content violations.

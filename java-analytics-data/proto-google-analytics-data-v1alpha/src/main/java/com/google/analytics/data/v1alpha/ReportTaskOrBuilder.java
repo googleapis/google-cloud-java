@@ -29,7 +29,7 @@ public interface ReportTaskOrBuilder
    *
    * <pre>
    * Output only. Identifier. The report task resource name assigned during
-   * creation. Format: `properties/{property}/reportTasks/{report_task}`
+   * creation. Format: "properties/{property}/reportTasks/{report_task}"
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ReportTaskOrBuilder
    *
    * <pre>
    * Output only. Identifier. The report task resource name assigned during
-   * creation. Format: `properties/{property}/reportTasks/{report_task}`
+   * creation. Format: "properties/{property}/reportTasks/{report_task}"
    * </pre>
    *
    * <code>

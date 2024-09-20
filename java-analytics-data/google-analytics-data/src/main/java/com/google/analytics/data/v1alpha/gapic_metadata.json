@@ -22,6 +22,9 @@
             "GetAudienceList": {
               "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
             },
+            "GetPropertyQuotasSnapshot": {
+              "methods": ["getPropertyQuotasSnapshot", "getPropertyQuotasSnapshot", "getPropertyQuotasSnapshot", "getPropertyQuotasSnapshotCallable"]
+            },
             "GetRecurringAudienceList": {
               "methods": ["getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceListCallable"]
             },

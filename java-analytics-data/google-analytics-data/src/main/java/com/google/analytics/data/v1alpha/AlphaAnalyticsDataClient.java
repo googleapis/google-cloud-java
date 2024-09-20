@@ -267,8 +267,29 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetPropertyQuotasSnapshot</td>
+ *      <td><p> Get all property quotas organized by quota category for a given property. This will charge 1 property quota from the category with the most quota.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshot(GetPropertyQuotasSnapshotRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshot(PropertyQuotasSnapshotName name)
+ *           <li><p> getPropertyQuotasSnapshot(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPropertyQuotasSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateReportTask</td>
- *      <td><p> Initiates the creation of a report task. This method quickly returns a report task and initiates a long running asynchronous request to form a customized report of your Google Analytics event data.</td>
+ *      <td><p> Initiates the creation of a report task. This method quickly returns a report task and initiates a long running asynchronous request to form a customized report of your Google Analytics event data.
+ * <p>  A report task will be retained and available for querying for 72 hours after it has been created.
+ * <p>  A report task created by one user can be listed and queried by all users who have access to the property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2080,9 +2101,135 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyQuotasSnapshotName name = PropertyQuotasSnapshotName.of("[PROPERTY]");
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Quotas from this property will be listed in the response. Format:
+   *     `properties/{property}/propertyQuotasSnapshot`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(PropertyQuotasSnapshotName name) {
+    GetPropertyQuotasSnapshotRequest request =
+        GetPropertyQuotasSnapshotRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getPropertyQuotasSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = PropertyQuotasSnapshotName.of("[PROPERTY]").toString();
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Quotas from this property will be listed in the response. Format:
+   *     `properties/{property}/propertyQuotasSnapshot`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(String name) {
+    GetPropertyQuotasSnapshotRequest request =
+        GetPropertyQuotasSnapshotRequest.newBuilder().setName(name).build();
+    return getPropertyQuotasSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetPropertyQuotasSnapshotRequest request =
+   *       GetPropertyQuotasSnapshotRequest.newBuilder()
+   *           .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+   *           .build();
+   *   PropertyQuotasSnapshot response = alphaAnalyticsDataClient.getPropertyQuotasSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+      GetPropertyQuotasSnapshotRequest request) {
+    return getPropertyQuotasSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get all property quotas organized by quota category for a given property. This will charge 1
+   * property quota from the category with the most quota.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetPropertyQuotasSnapshotRequest request =
+   *       GetPropertyQuotasSnapshotRequest.newBuilder()
+   *           .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<PropertyQuotasSnapshot> future =
+   *       alphaAnalyticsDataClient.getPropertyQuotasSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   PropertyQuotasSnapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotCallable() {
+    return stub.getPropertyQuotasSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Initiates the creation of a report task. This method quickly returns a report task and
    * initiates a long running asynchronous request to form a customized report of your Google
    * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
    *
    * <p>Sample code:
    *
@@ -2121,6 +2268,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * initiates a long running asynchronous request to form a customized report of your Google
    * Analytics event data.
    *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2155,6 +2308,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * initiates a long running asynchronous request to form a customized report of your Google
    * Analytics event data.
    *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2187,6 +2346,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * initiates a long running asynchronous request to form a customized report of your Google
    * Analytics event data.
    *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2218,6 +2383,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Initiates the creation of a report task. This method quickly returns a report task and
    * initiates a long running asynchronous request to form a customized report of your Google
    * Analytics event data.
+   *
+   * <p>A report task will be retained and available for querying for 72 hours after it has been
+   * created.
+   *
+   * <p>A report task created by one user can be listed and queried by all users who have access to
+   * the property.
    *
    * <p>Sample code:
    *

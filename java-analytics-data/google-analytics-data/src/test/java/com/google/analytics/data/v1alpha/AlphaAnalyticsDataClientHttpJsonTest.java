@@ -936,6 +936,100 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   }
 
   @Test
+  public void getPropertyQuotasSnapshotTest() throws Exception {
+    PropertyQuotasSnapshot expectedResponse =
+        PropertyQuotasSnapshot.newBuilder()
+            .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+            .setCorePropertyQuota(PropertyQuota.newBuilder().build())
+            .setRealtimePropertyQuota(PropertyQuota.newBuilder().build())
+            .setFunnelPropertyQuota(PropertyQuota.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyQuotasSnapshotName name = PropertyQuotasSnapshotName.of("[PROPERTY]");
+
+    PropertyQuotasSnapshot actualResponse = client.getPropertyQuotasSnapshot(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPropertyQuotasSnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyQuotasSnapshotName name = PropertyQuotasSnapshotName.of("[PROPERTY]");
+      client.getPropertyQuotasSnapshot(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPropertyQuotasSnapshotTest2() throws Exception {
+    PropertyQuotasSnapshot expectedResponse =
+        PropertyQuotasSnapshot.newBuilder()
+            .setName(PropertyQuotasSnapshotName.of("[PROPERTY]").toString())
+            .setCorePropertyQuota(PropertyQuota.newBuilder().build())
+            .setRealtimePropertyQuota(PropertyQuota.newBuilder().build())
+            .setFunnelPropertyQuota(PropertyQuota.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-1354/propertyQuotasSnapshot";
+
+    PropertyQuotasSnapshot actualResponse = client.getPropertyQuotasSnapshot(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPropertyQuotasSnapshotExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-1354/propertyQuotasSnapshot";
+      client.getPropertyQuotasSnapshot(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createReportTaskTest() throws Exception {
     ReportTask expectedResponse =
         ReportTask.newBuilder()

@@ -185,6 +185,12 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
         .listRecurringAudienceListsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getPropertyQuotasSnapshot. */
+  public UnaryCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+      getPropertyQuotasSnapshotSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getPropertyQuotasSnapshotSettings();
+  }
+
   /** Returns the object with the settings used for calls to createReportTask. */
   public UnaryCallSettings<CreateReportTaskRequest, Operation> createReportTaskSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).createReportTaskSettings();
@@ -390,6 +396,12 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
             ListRecurringAudienceListsPagedResponse>
         listRecurringAudienceListsSettings() {
       return getStubSettingsBuilder().listRecurringAudienceListsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPropertyQuotasSnapshot. */
+    public UnaryCallSettings.Builder<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshotSettings() {
+      return getStubSettingsBuilder().getPropertyQuotasSnapshotSettings();
     }
 
     /** Returns the builder for the settings used for calls to createReportTask. */
