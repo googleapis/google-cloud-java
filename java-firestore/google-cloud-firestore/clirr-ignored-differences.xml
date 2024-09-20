@@ -299,4 +299,11 @@
     <className>com/google/cloud/firestore/collection/StandardComparator</className>
     <to>*</to>
   </difference>
+
+  <!-- Reverted a change to make CustomClassMapper public -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/encoding/CustomClassMapper</className>
+    <to>*</to>
+  </difference>
 </differences>
