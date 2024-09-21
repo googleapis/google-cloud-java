@@ -19,9 +19,11 @@ package com.google.cloud.aiplatform.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.stub.GenAiTuningServiceStub;
@@ -36,6 +38,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -147,6 +151,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> cancelTuningJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RebaseTunedModel</td>
+ *      <td><p> Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model Reference and creates a TuningJob based on newly available model.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rebaseTunedModelAsync(RebaseTunedModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rebaseTunedModelAsync(LocationName parent, TunedModelRef tunedModelRef)
+ *           <li><p> rebaseTunedModelAsync(String parent, TunedModelRef tunedModelRef)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rebaseTunedModelOperationCallable()
+ *           <li><p> rebaseTunedModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -270,6 +294,7 @@ import javax.annotation.Generated;
 public class GenAiTuningServiceClient implements BackgroundResource {
   private final GenAiTuningServiceSettings settings;
   private final GenAiTuningServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of GenAiTuningServiceClient with default settings. */
   public static final GenAiTuningServiceClient create() throws IOException {
@@ -301,11 +326,13 @@ public class GenAiTuningServiceClient implements BackgroundResource {
   protected GenAiTuningServiceClient(GenAiTuningServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((GenAiTuningServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected GenAiTuningServiceClient(GenAiTuningServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final GenAiTuningServiceSettings getSettings() {
@@ -314,6 +341,14 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   public GenAiTuningServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -854,6 +889,180 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelTuningJobRequest, Empty> cancelTuningJobCallable() {
     return stub.cancelTuningJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+   * Reference and creates a TuningJob based on newly available model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+   *   TuningJob response =
+   *       genAiTuningServiceClient.rebaseTunedModelAsync(parent, tunedModelRef).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to rebase the Model.
+   *     Format: `projects/{project}/locations/{location}`
+   * @param tunedModelRef Required. TunedModel reference to retrieve the legacy model information.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuningJob, RebaseTunedModelOperationMetadata> rebaseTunedModelAsync(
+      LocationName parent, TunedModelRef tunedModelRef) {
+    RebaseTunedModelRequest request =
+        RebaseTunedModelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTunedModelRef(tunedModelRef)
+            .build();
+    return rebaseTunedModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+   * Reference and creates a TuningJob based on newly available model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+   *   TuningJob response =
+   *       genAiTuningServiceClient.rebaseTunedModelAsync(parent, tunedModelRef).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to rebase the Model.
+   *     Format: `projects/{project}/locations/{location}`
+   * @param tunedModelRef Required. TunedModel reference to retrieve the legacy model information.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuningJob, RebaseTunedModelOperationMetadata> rebaseTunedModelAsync(
+      String parent, TunedModelRef tunedModelRef) {
+    RebaseTunedModelRequest request =
+        RebaseTunedModelRequest.newBuilder()
+            .setParent(parent)
+            .setTunedModelRef(tunedModelRef)
+            .build();
+    return rebaseTunedModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+   * Reference and creates a TuningJob based on newly available model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+   *   RebaseTunedModelRequest request =
+   *       RebaseTunedModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTunedModelRef(TunedModelRef.newBuilder().build())
+   *           .setTuningJob(TuningJob.newBuilder().build())
+   *           .setArtifactDestination(GcsDestination.newBuilder().build())
+   *           .setDeployToSameEndpoint(true)
+   *           .build();
+   *   TuningJob response = genAiTuningServiceClient.rebaseTunedModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuningJob, RebaseTunedModelOperationMetadata> rebaseTunedModelAsync(
+      RebaseTunedModelRequest request) {
+    return rebaseTunedModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+   * Reference and creates a TuningJob based on newly available model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+   *   RebaseTunedModelRequest request =
+   *       RebaseTunedModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTunedModelRef(TunedModelRef.newBuilder().build())
+   *           .setTuningJob(TuningJob.newBuilder().build())
+   *           .setArtifactDestination(GcsDestination.newBuilder().build())
+   *           .setDeployToSameEndpoint(true)
+   *           .build();
+   *   OperationFuture<TuningJob, RebaseTunedModelOperationMetadata> future =
+   *       genAiTuningServiceClient.rebaseTunedModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TuningJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+      rebaseTunedModelOperationCallable() {
+    return stub.rebaseTunedModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+   * Reference and creates a TuningJob based on newly available model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+   *   RebaseTunedModelRequest request =
+   *       RebaseTunedModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTunedModelRef(TunedModelRef.newBuilder().build())
+   *           .setTuningJob(TuningJob.newBuilder().build())
+   *           .setArtifactDestination(GcsDestination.newBuilder().build())
+   *           .setDeployToSameEndpoint(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       genAiTuningServiceClient.rebaseTunedModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RebaseTunedModelRequest, Operation> rebaseTunedModelCallable() {
+    return stub.rebaseTunedModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -100,6 +100,8 @@ public class ConversationModelsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -159,6 +161,8 @@ public class ConversationModelsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 

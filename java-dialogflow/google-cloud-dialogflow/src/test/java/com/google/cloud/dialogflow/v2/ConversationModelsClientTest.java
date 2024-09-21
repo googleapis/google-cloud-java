@@ -107,6 +107,8 @@ public class ConversationModelsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -165,6 +167,8 @@ public class ConversationModelsClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockConversationModels.addResponse(expectedResponse);
 
