@@ -88,6 +88,10 @@ public final class TuningJobProto {
       internal_static_google_cloud_aiplatform_v1beta1_DistillationHyperParameters_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DistillationHyperParameters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -229,13 +233,19 @@ public final class TuningJobProto {
           + "\001\001\022a\n\014adapter_size\030\003 \001(\0162F.google.cloud."
           + "aiplatform.v1beta1.SupervisedHyperParame"
           + "ters.AdapterSizeB\003\340A\001B\016\n\014_epoch_countB\033\n"
-          + "\031_learning_rate_multiplierB\345\001\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\016TuningJobPro"
-          + "toP\001ZCcloud.google.com/go/aiplatform/api"
-          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
-          + "IPlatform::V1beta1b\006proto3"
+          + "\031_learning_rate_multiplier\"\343\001\n\rTunedMode"
+          + "lRef\022;\n\013tuned_model\030\001 \001(\tB$\372A!\n\037aiplatfo"
+          + "rm.googleapis.com/ModelH\000\022>\n\ntuning_job\030"
+          + "\002 \001(\tB(\372A%\n#aiplatform.googleapis.com/Tu"
+          + "ningJobH\000\022B\n\014pipeline_job\030\003 \001(\tB*\372A\'\n%ai"
+          + "platform.googleapis.com/PipelineJobH\000B\021\n"
+          + "\017tuned_model_refB\345\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\016TuningJobProtoP\001ZCclou"
+          + "d.google.com/go/aiplatform/apiv1beta1/ai"
+          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -417,6 +427,14 @@ public final class TuningJobProto {
             internal_static_google_cloud_aiplatform_v1beta1_DistillationHyperParameters_descriptor,
             new java.lang.String[] {
               "EpochCount", "LearningRateMultiplier", "AdapterSize",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_descriptor,
+            new java.lang.String[] {
+              "TunedModel", "TuningJob", "PipelineJob", "TunedModelRef",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -218,6 +218,53 @@ public final class GenAiTuningServiceGrpc {
     return getCancelTuningJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest,
+          com.google.longrunning.Operation>
+      getRebaseTunedModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RebaseTunedModel",
+      requestType = com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest,
+          com.google.longrunning.Operation>
+      getRebaseTunedModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest,
+            com.google.longrunning.Operation>
+        getRebaseTunedModelMethod;
+    if ((getRebaseTunedModelMethod = GenAiTuningServiceGrpc.getRebaseTunedModelMethod) == null) {
+      synchronized (GenAiTuningServiceGrpc.class) {
+        if ((getRebaseTunedModelMethod = GenAiTuningServiceGrpc.getRebaseTunedModelMethod)
+            == null) {
+          GenAiTuningServiceGrpc.getRebaseTunedModelMethod =
+              getRebaseTunedModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RebaseTunedModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GenAiTuningServiceMethodDescriptorSupplier("RebaseTunedModel"))
+                      .build();
+        }
+      }
+    }
+    return getRebaseTunedModelMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static GenAiTuningServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<GenAiTuningServiceStub> factory =
@@ -338,6 +385,22 @@ public final class GenAiTuningServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCancelTuningJobMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebase a TunedModel.
+     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+     * Reference and creates a TuningJob based on newly available model.
+     * </pre>
+     */
+    default void rebaseTunedModel(
+        com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRebaseTunedModelMethod(), responseObserver);
+    }
   }
 
   /**
@@ -453,6 +516,24 @@ public final class GenAiTuningServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebase a TunedModel.
+     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+     * Reference and creates a TuningJob based on newly available model.
+     * </pre>
+     */
+    public void rebaseTunedModel(
+        com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRebaseTunedModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -537,6 +618,21 @@ public final class GenAiTuningServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.CancelTuningJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelTuningJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebase a TunedModel.
+     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+     * Reference and creates a TuningJob based on newly available model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rebaseTunedModel(
+        com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRebaseTunedModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -625,12 +721,28 @@ public final class GenAiTuningServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelTuningJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebase a TunedModel.
+     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
+     * Reference and creates a TuningJob based on newly available model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rebaseTunedModel(com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRebaseTunedModelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TUNING_JOB = 0;
   private static final int METHODID_GET_TUNING_JOB = 1;
   private static final int METHODID_LIST_TUNING_JOBS = 2;
   private static final int METHODID_CANCEL_TUNING_JOB = 3;
+  private static final int METHODID_REBASE_TUNED_MODEL = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -672,6 +784,11 @@ public final class GenAiTuningServiceGrpc {
           serviceImpl.cancelTuningJob(
               (com.google.cloud.aiplatform.v1beta1.CancelTuningJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_REBASE_TUNED_MODEL:
+          serviceImpl.rebaseTunedModel(
+              (com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -718,6 +835,12 @@ public final class GenAiTuningServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.CancelTuningJobRequest,
                     com.google.protobuf.Empty>(service, METHODID_CANCEL_TUNING_JOB)))
+        .addMethod(
+            getRebaseTunedModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REBASE_TUNED_MODEL)))
         .build();
   }
 
@@ -773,6 +896,7 @@ public final class GenAiTuningServiceGrpc {
                       .addMethod(getGetTuningJobMethod())
                       .addMethod(getListTuningJobsMethod())
                       .addMethod(getCancelTuningJobMethod())
+                      .addMethod(getRebaseTunedModelMethod())
                       .build();
         }
       }

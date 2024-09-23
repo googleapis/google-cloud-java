@@ -48,6 +48,14 @@ public final class GenAiTuningServiceProto {
       internal_static_google_cloud_aiplatform_v1_CancelTuningJobRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_CancelTuningJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RebaseTunedModelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RebaseTunedModelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RebaseTunedModelOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RebaseTunedModelOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -61,50 +69,71 @@ public final class GenAiTuningServiceProto {
           + "g_service.proto\022\032google.cloud.aiplatform"
           + ".v1\032\034google/api/annotations.proto\032\027googl"
           + "e/api/client.proto\032\037google/api/field_beh"
-          + "avior.proto\032\031google/api/resource.proto\032+"
-          + "google/cloud/aiplatform/v1/tuning_job.pr"
-          + "oto\032\033google/protobuf/empty.proto\"\223\001\n\026Cre"
-          + "ateTuningJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002"
-          + "\372A#\n!locations.googleapis.com/Location\022>"
-          + "\n\ntuning_job\030\002 \001(\0132%.google.cloud.aiplat"
-          + "form.v1.TuningJobB\003\340A\002\"P\n\023GetTuningJobRe"
-          + "quest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#aiplatform."
-          + "googleapis.com/TuningJob\"\230\001\n\025ListTuningJ"
-          + "obsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loca"
-          + "tions.googleapis.com/Location\022\023\n\006filter\030"
-          + "\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npa"
-          + "ge_token\030\004 \001(\tB\003\340A\001\"m\n\026ListTuningJobsRes"
-          + "ponse\022:\n\013tuning_jobs\030\001 \003(\0132%.google.clou"
-          + "d.aiplatform.v1.TuningJob\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\"S\n\026CancelTuningJobRequest\0229\n\004"
-          + "name\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.googleapi"
-          + "s.com/TuningJob2\266\006\n\022GenAiTuningService\022\304"
-          + "\001\n\017CreateTuningJob\0222.google.cloud.aiplat"
-          + "form.v1.CreateTuningJobRequest\032%.google."
-          + "cloud.aiplatform.v1.TuningJob\"V\332A\021parent"
-          + ",tuning_job\202\323\344\223\002<\"./v1/{parent=projects/"
-          + "*/locations/*}/tuningJobs:\ntuning_job\022\245\001"
-          + "\n\014GetTuningJob\022/.google.cloud.aiplatform"
-          + ".v1.GetTuningJobRequest\032%.google.cloud.a"
-          + "iplatform.v1.TuningJob\"=\332A\004name\202\323\344\223\0020\022./"
-          + "v1/{name=projects/*/locations/*/tuningJo"
-          + "bs/*}\022\270\001\n\016ListTuningJobs\0221.google.cloud."
-          + "aiplatform.v1.ListTuningJobsRequest\0322.go"
-          + "ogle.cloud.aiplatform.v1.ListTuningJobsR"
-          + "esponse\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=pr"
-          + "ojects/*/locations/*}/tuningJobs\022\246\001\n\017Can"
-          + "celTuningJob\0222.google.cloud.aiplatform.v"
-          + "1.CancelTuningJobRequest\032\026.google.protob"
-          + "uf.Empty\"G\332A\004name\202\323\344\223\002:\"5/v1/{name=proje"
-          + "cts/*/locations/*/tuningJobs/*}:cancel:\001"
-          + "*\032M\312A\031aiplatform.googleapis.com\322A.https:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + "B\325\001\n\036com.google.cloud.aiplatform.v1B\027Gen"
-          + "AiTuningServiceProtoP\001Z>cloud.google.com"
-          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
-          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
-          + "::AIPlatform::V1b\006proto3"
+          + "avior.proto\032\031google/api/resource.proto\032#"
+          + "google/cloud/aiplatform/v1/io.proto\032*goo"
+          + "gle/cloud/aiplatform/v1/operation.proto\032"
+          + "+google/cloud/aiplatform/v1/tuning_job.p"
+          + "roto\032#google/longrunning/operations.prot"
+          + "o\032\033google/protobuf/empty.proto\"\223\001\n\026Creat"
+          + "eTuningJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A"
+          + "#\n!locations.googleapis.com/Location\022>\n\n"
+          + "tuning_job\030\002 \001(\0132%.google.cloud.aiplatfo"
+          + "rm.v1.TuningJobB\003\340A\002\"P\n\023GetTuningJobRequ"
+          + "est\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.go"
+          + "ogleapis.com/TuningJob\"\230\001\n\025ListTuningJob"
+          + "sRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locati"
+          + "ons.googleapis.com/Location\022\023\n\006filter\030\002 "
+          + "\001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npage"
+          + "_token\030\004 \001(\tB\003\340A\001\"m\n\026ListTuningJobsRespo"
+          + "nse\022:\n\013tuning_jobs\030\001 \003(\0132%.google.cloud."
+          + "aiplatform.v1.TuningJob\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"S\n\026CancelTuningJobRequest\0229\n\004na"
+          + "me\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.googleapis."
+          + "com/TuningJob\"\322\002\n\027RebaseTunedModelReques"
+          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goo"
+          + "gleapis.com/Location\022G\n\017tuned_model_ref\030"
+          + "\002 \001(\0132).google.cloud.aiplatform.v1.Tuned"
+          + "ModelRefB\003\340A\002\022>\n\ntuning_job\030\003 \001(\0132%.goog"
+          + "le.cloud.aiplatform.v1.TuningJobB\003\340A\001\022M\n"
+          + "\024artifact_destination\030\004 \001(\0132*.google.clo"
+          + "ud.aiplatform.v1.GcsDestinationB\003\340A\001\022$\n\027"
+          + "deploy_to_same_endpoint\030\005 \001(\010B\003\340A\001\"s\n!Re"
+          + "baseTunedModelOperationMetadata\022N\n\020gener"
+          + "ic_metadata\030\001 \001(\01324.google.cloud.aiplatf"
+          + "orm.v1.GenericOperationMetadata2\266\010\n\022GenA"
+          + "iTuningService\022\304\001\n\017CreateTuningJob\0222.goo"
+          + "gle.cloud.aiplatform.v1.CreateTuningJobR"
+          + "equest\032%.google.cloud.aiplatform.v1.Tuni"
+          + "ngJob\"V\332A\021parent,tuning_job\202\323\344\223\002<\"./v1/{"
+          + "parent=projects/*/locations/*}/tuningJob"
+          + "s:\ntuning_job\022\245\001\n\014GetTuningJob\022/.google."
+          + "cloud.aiplatform.v1.GetTuningJobRequest\032"
+          + "%.google.cloud.aiplatform.v1.TuningJob\"="
+          + "\332A\004name\202\323\344\223\0020\022./v1/{name=projects/*/loca"
+          + "tions/*/tuningJobs/*}\022\270\001\n\016ListTuningJobs"
+          + "\0221.google.cloud.aiplatform.v1.ListTuning"
+          + "JobsRequest\0322.google.cloud.aiplatform.v1"
+          + ".ListTuningJobsResponse\"?\332A\006parent\202\323\344\223\0020"
+          + "\022./v1/{parent=projects/*/locations/*}/tu"
+          + "ningJobs\022\246\001\n\017CancelTuningJob\0222.google.cl"
+          + "oud.aiplatform.v1.CancelTuningJobRequest"
+          + "\032\026.google.protobuf.Empty\"G\332A\004name\202\323\344\223\002:\""
+          + "5/v1/{name=projects/*/locations/*/tuning"
+          + "Jobs/*}:cancel:\001*\022\375\001\n\020RebaseTunedModel\0223"
+          + ".google.cloud.aiplatform.v1.RebaseTunedM"
+          + "odelRequest\032\035.google.longrunning.Operati"
+          + "on\"\224\001\312A.\n\tTuningJob\022!RebaseTunedModelOpe"
+          + "rationMetadata\332A\026parent,tuned_model_ref\202"
+          + "\323\344\223\002D\"?/v1/{parent=projects/*/locations/"
+          + "*}/tuningJobs:rebaseTunedModel:\001*\032M\312A\031ai"
+          + "platform.googleapis.com\322A.https://www.go"
+          + "ogleapis.com/auth/cloud-platformB\325\001\n\036com"
+          + ".google.cloud.aiplatform.v1B\027GenAiTuning"
+          + "ServiceProtoP\001Z>cloud.google.com/go/aipl"
+          + "atform/apiv1/aiplatformpb;aiplatformpb\252\002"
+          + "\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Clo"
+          + "ud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlat"
+          + "form::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -114,7 +143,10 @@ public final class GenAiTuningServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.IoProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.OperationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.TuningJobProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_CreateTuningJobRequest_descriptor =
@@ -157,6 +189,22 @@ public final class GenAiTuningServiceProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_aiplatform_v1_RebaseTunedModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1_RebaseTunedModelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RebaseTunedModelRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "TunedModelRef", "TuningJob", "ArtifactDestination", "DeployToSameEndpoint",
+            });
+    internal_static_google_cloud_aiplatform_v1_RebaseTunedModelOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_RebaseTunedModelOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RebaseTunedModelOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -165,13 +213,17 @@ public final class GenAiTuningServiceProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.IoProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.OperationProto.getDescriptor();
     com.google.cloud.aiplatform.v1.TuningJobProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 
