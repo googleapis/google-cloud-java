@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Tuning Spec for Supervised Tuning.
+ * Tuning Spec for Supervised Tuning for first party models.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SupervisedTuningSpec}
@@ -414,7 +414,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Tuning Spec for Supervised Tuning.
+   * Tuning Spec for Supervised Tuning for first party models.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SupervisedTuningSpec}

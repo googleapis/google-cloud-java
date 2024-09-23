@@ -321,5 +321,59 @@ public interface ConversationModelOrBuilder
   com.google.cloud.dialogflow.v2.SmartReplyModelMetadataOrBuilder
       getSmartReplyModelMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Separation
+   * status of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Separation
+   * status of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Isolation status
+   * of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Isolation status
+   * of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
   com.google.cloud.dialogflow.v2.ConversationModel.ModelMetadataCase getModelMetadataCase();
 }
