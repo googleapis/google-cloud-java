@@ -17,8 +17,7 @@ deep-remove-regex:
 - "/java-containeranalysis/grpc-google-cloud-containeranalysis-v1/src"
 - "/java-containeranalysis/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1"
 - "/java-containeranalysis/samples/snippets/generated"
-- "/java-containeranalysis/proto-google-cloud-containeranalysis-v1/src"
-- "/java-containeranalysis/proto-google-cloud-containeranalysis-v1beta1/src"
+- "/java-containeranalysis/proto-google-*/src"
 # TODO: remove resource name classes in next major update
 
 deep-preserve-regex:
