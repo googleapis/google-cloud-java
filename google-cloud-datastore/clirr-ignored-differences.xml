@@ -67,4 +67,9 @@
         <className>com/google/cloud/datastore/TraceUtil</className>
         <differenceType>8001</differenceType>
     </difference>
+    <difference>
+        <className>com/google/cloud/datastore/testing/RemoteDatastoreHelper</className>
+        <differenceType>8001</differenceType>
+    </difference>
+
 </differences>
