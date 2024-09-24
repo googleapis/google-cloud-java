@@ -49,42 +49,46 @@ public final class ScheduleProto {
           + "oto\022\032google.cloud.aiplatform.v1\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
           + "ource.proto\0321google/cloud/aiplatform/v1/"
-          + "pipeline_service.proto\032\037google/protobuf/"
-          + "timestamp.proto\"\205\t\n\010Schedule\022\016\n\004cron\030\n \001"
-          + "(\tH\000\022[\n\033create_pipeline_job_request\030\016 \001("
-          + "\01324.google.cloud.aiplatform.v1.CreatePip"
-          + "elineJobRequestH\001\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014"
-          + "display_name\030\002 \001(\tB\003\340A\002\0223\n\nstart_time\030\003 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n\010"
-          + "end_time\030\004 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\001\022\032\n\rmax_run_count\030\020 \001(\003B\003\340A\001\022\036\n\021s"
-          + "tarted_run_count\030\021 \001(\003B\003\340A\003\022>\n\005state\030\005 \001"
-          + "(\0162*.google.cloud.aiplatform.v1.Schedule"
-          + ".StateB\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
-          + "\030\023 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "6\n\rnext_run_time\030\007 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\0228\n\017last_pause_time\030\010 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0229\n\020las"
-          + "t_resume_time\030\t \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022%\n\030max_concurrent_run_count"
-          + "\030\013 \001(\003B\003\340A\002\022\033\n\016allow_queueing\030\014 \001(\010B\003\340A\001"
-          + "\022\025\n\010catch_up\030\r \001(\010B\003\340A\003\022Z\n\033last_schedule"
-          + "d_run_response\030\022 \001(\01320.google.cloud.aipl"
-          + "atform.v1.Schedule.RunResponseB\003\340A\003\032[\n\013R"
-          + "unResponse\0226\n\022scheduled_run_time\030\001 \001(\0132\032"
-          + ".google.protobuf.Timestamp\022\024\n\014run_respon"
-          + "se\030\002 \001(\t\"E\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
-          + "\022\n\n\006ACTIVE\020\001\022\n\n\006PAUSED\020\002\022\r\n\tCOMPLETED\020\003:"
-          + "e\352Ab\n\"aiplatform.googleapis.com/Schedule"
-          + "\022<projects/{project}/locations/{location"
-          + "}/schedules/{schedule}B\024\n\022time_specifica"
-          + "tionB\t\n\007requestB\313\001\n\036com.google.cloud.aip"
-          + "latform.v1B\rScheduleProtoP\001Z>cloud.googl"
-          + "e.com/go/aiplatform/apiv1/aiplatformpb;a"
-          + "iplatformpb\252\002\032Google.Cloud.AIPlatform.V1"
-          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
-          + "Cloud::AIPlatform::V1b\006proto3"
+          + "notebook_service.proto\0321google/cloud/aip"
+          + "latform/v1/pipeline_service.proto\032\037googl"
+          + "e/protobuf/timestamp.proto\"\365\t\n\010Schedule\022"
+          + "\016\n\004cron\030\n \001(\tH\000\022[\n\033create_pipeline_job_r"
+          + "equest\030\016 \001(\01324.google.cloud.aiplatform.v"
+          + "1.CreatePipelineJobRequestH\001\022n\n%create_n"
+          + "otebook_execution_job_request\030\024 \001(\0132=.go"
+          + "ogle.cloud.aiplatform.v1.CreateNotebookE"
+          + "xecutionJobRequestH\001\022\021\n\004name\030\001 \001(\tB\003\340A\005\022"
+          + "\031\n\014display_name\030\002 \001(\tB\003\340A\002\0223\n\nstart_time"
+          + "\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022"
+          + "1\n\010end_time\030\004 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\001\022\032\n\rmax_run_count\030\020 \001(\003B\003\340A\001\022\036"
+          + "\n\021started_run_count\030\021 \001(\003B\003\340A\003\022>\n\005state\030"
+          + "\005 \001(\0162*.google.cloud.aiplatform.v1.Sched"
+          + "ule.StateB\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\023 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\0226\n\rnext_run_time\030\007 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0228\n\017last_pause_time\030\010 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0229\n\020"
+          + "last_resume_time\030\t \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022%\n\030max_concurrent_run_co"
+          + "unt\030\013 \001(\003B\003\340A\002\022\033\n\016allow_queueing\030\014 \001(\010B\003"
+          + "\340A\001\022\025\n\010catch_up\030\r \001(\010B\003\340A\003\022Z\n\033last_sched"
+          + "uled_run_response\030\022 \001(\01320.google.cloud.a"
+          + "iplatform.v1.Schedule.RunResponseB\003\340A\003\032["
+          + "\n\013RunResponse\0226\n\022scheduled_run_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022\024\n\014run_res"
+          + "ponse\030\002 \001(\t\"E\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\n\n\006ACTIVE\020\001\022\n\n\006PAUSED\020\002\022\r\n\tCOMPLETED"
+          + "\020\003:e\352Ab\n\"aiplatform.googleapis.com/Sched"
+          + "ule\022<projects/{project}/locations/{locat"
+          + "ion}/schedules/{schedule}B\024\n\022time_specif"
+          + "icationB\t\n\007requestB\313\001\n\036com.google.cloud."
+          + "aiplatform.v1B\rScheduleProtoP\001Z>cloud.go"
+          + "ogle.com/go/aiplatform/apiv1/aiplatformp"
+          + "b;aiplatformpb\252\002\032Google.Cloud.AIPlatform"
+          + ".V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Googl"
+          + "e::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,6 +96,7 @@ public final class ScheduleProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.NotebookServiceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.PipelineServiceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -103,6 +108,7 @@ public final class ScheduleProto {
             new java.lang.String[] {
               "Cron",
               "CreatePipelineJobRequest",
+              "CreateNotebookExecutionJobRequest",
               "Name",
               "DisplayName",
               "StartTime",
@@ -138,6 +144,7 @@ public final class ScheduleProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.NotebookServiceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.PipelineServiceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

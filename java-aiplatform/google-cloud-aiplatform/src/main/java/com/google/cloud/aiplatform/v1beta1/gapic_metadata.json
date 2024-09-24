@@ -607,6 +607,9 @@
             "ListTuningJobs": {
               "methods": ["listTuningJobs", "listTuningJobs", "listTuningJobs", "listTuningJobsPagedCallable", "listTuningJobsCallable"]
             },
+            "RebaseTunedModel": {
+              "methods": ["rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelOperationCallable", "rebaseTunedModelCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -1758,6 +1761,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateRagCorpus": {
+              "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
             },
             "UploadRagFile": {
               "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-edgenetwork</artifactId>
-  <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
+  <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
   <packaging>jar</packaging>
   <name>Google Distributed Cloud Edge Network API</name>
   <description>Distributed Cloud Edge Network API Network management API for Distributed Cloud Edge.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-edgenetwork-parent</artifactId>
-    <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
+    <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-edgenetwork</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

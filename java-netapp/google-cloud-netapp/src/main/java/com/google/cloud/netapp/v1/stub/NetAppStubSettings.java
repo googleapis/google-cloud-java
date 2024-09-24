@@ -120,6 +120,7 @@ import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -158,7 +159,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getStoragePool to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getStoragePool:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -174,9 +177,45 @@ import org.threeten.bp.Duration;
  *             .getStoragePoolSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetAppStubSettings netAppSettings = netAppSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createStoragePool:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetAppStubSettings.Builder netAppSettingsBuilder = NetAppStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * netAppSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -198,6 +237,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteStoragePoolRequest, Operation> deleteStoragePoolSettings;
   private final OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings;
+  private final UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings;
+  private final OperationCallSettings<
+          SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings;
   private final PagedCallSettings<ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
       listVolumesSettings;
   private final UnaryCallSettings<GetVolumeRequest, Volume> getVolumeSettings;
@@ -366,9 +410,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<StoragePool> extractResources(ListStoragePoolsResponse payload) {
-              return payload.getStoragePoolsList() == null
-                  ? ImmutableList.<StoragePool>of()
-                  : payload.getStoragePoolsList();
+              return payload.getStoragePoolsList();
             }
           };
 
@@ -402,9 +444,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Volume> extractResources(ListVolumesResponse payload) {
-              return payload.getVolumesList() == null
-                  ? ImmutableList.<Volume>of()
-                  : payload.getVolumesList();
+              return payload.getVolumesList();
             }
           };
 
@@ -438,9 +478,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList() == null
-                  ? ImmutableList.<Snapshot>of()
-                  : payload.getSnapshotsList();
+              return payload.getSnapshotsList();
             }
           };
 
@@ -479,9 +517,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             @Override
             public Iterable<ActiveDirectory> extractResources(
                 ListActiveDirectoriesResponse payload) {
-              return payload.getActiveDirectoriesList() == null
-                  ? ImmutableList.<ActiveDirectory>of()
-                  : payload.getActiveDirectoriesList();
+              return payload.getActiveDirectoriesList();
             }
           };
 
@@ -516,9 +552,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<KmsConfig> extractResources(ListKmsConfigsResponse payload) {
-              return payload.getKmsConfigsList() == null
-                  ? ImmutableList.<KmsConfig>of()
-                  : payload.getKmsConfigsList();
+              return payload.getKmsConfigsList();
             }
           };
 
@@ -556,9 +590,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Replication> extractResources(ListReplicationsResponse payload) {
-              return payload.getReplicationsList() == null
-                  ? ImmutableList.<Replication>of()
-                  : payload.getReplicationsList();
+              return payload.getReplicationsList();
             }
           };
 
@@ -596,9 +628,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<BackupVault> extractResources(ListBackupVaultsResponse payload) {
-              return payload.getBackupVaultsList() == null
-                  ? ImmutableList.<BackupVault>of()
-                  : payload.getBackupVaultsList();
+              return payload.getBackupVaultsList();
             }
           };
 
@@ -632,9 +662,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Backup> extractResources(ListBackupsResponse payload) {
-              return payload.getBackupsList() == null
-                  ? ImmutableList.<Backup>of()
-                  : payload.getBackupsList();
+              return payload.getBackupsList();
             }
           };
 
@@ -672,9 +700,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<BackupPolicy> extractResources(ListBackupPoliciesResponse payload) {
-              return payload.getBackupPoliciesList() == null
-                  ? ImmutableList.<BackupPolicy>of()
-                  : payload.getBackupPoliciesList();
+              return payload.getBackupPoliciesList();
             }
           };
 
@@ -708,9 +734,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -944,6 +968,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   public OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings() {
     return deleteStoragePoolOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings() {
+    return switchActiveReplicaZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public OperationCallSettings<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings() {
+    return switchActiveReplicaZoneOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listVolumes. */
@@ -1502,6 +1538,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteStoragePoolSettings = settingsBuilder.deleteStoragePoolSettings().build();
     deleteStoragePoolOperationSettings =
         settingsBuilder.deleteStoragePoolOperationSettings().build();
+    switchActiveReplicaZoneSettings = settingsBuilder.switchActiveReplicaZoneSettings().build();
+    switchActiveReplicaZoneOperationSettings =
+        settingsBuilder.switchActiveReplicaZoneOperationSettings().build();
     listVolumesSettings = settingsBuilder.listVolumesSettings().build();
     getVolumeSettings = settingsBuilder.getVolumeSettings().build();
     createVolumeSettings = settingsBuilder.createVolumeSettings().build();
@@ -1618,6 +1657,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         deleteStoragePoolSettings;
     private final OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings;
+    private final UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings;
+    private final OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings;
     private final PagedCallSettings.Builder<
             ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
         listVolumesSettings;
@@ -1844,6 +1888,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = OperationCallSettings.newBuilder();
       deleteStoragePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteStoragePoolOperationSettings = OperationCallSettings.newBuilder();
+      switchActiveReplicaZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      switchActiveReplicaZoneOperationSettings = OperationCallSettings.newBuilder();
       listVolumesSettings = PagedCallSettings.newBuilder(LIST_VOLUMES_PAGE_STR_FACT);
       getVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1930,6 +1976,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
               createVolumeSettings,
@@ -1992,6 +2039,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = settings.updateStoragePoolOperationSettings.toBuilder();
       deleteStoragePoolSettings = settings.deleteStoragePoolSettings.toBuilder();
       deleteStoragePoolOperationSettings = settings.deleteStoragePoolOperationSettings.toBuilder();
+      switchActiveReplicaZoneSettings = settings.switchActiveReplicaZoneSettings.toBuilder();
+      switchActiveReplicaZoneOperationSettings =
+          settings.switchActiveReplicaZoneOperationSettings.toBuilder();
       listVolumesSettings = settings.listVolumesSettings.toBuilder();
       getVolumeSettings = settings.getVolumeSettings.toBuilder();
       createVolumeSettings = settings.createVolumeSettings.toBuilder();
@@ -2085,6 +2135,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
               createVolumeSettings,
@@ -2184,6 +2235,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .deleteStoragePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .switchActiveReplicaZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listVolumesSettings()
@@ -2483,6 +2539,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .switchActiveReplicaZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SwitchActiveReplicaZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(StoragePool.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -3258,6 +3338,19 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return deleteStoragePoolOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings() {
+      return switchActiveReplicaZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings() {
+      return switchActiveReplicaZoneOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listVolumes. */

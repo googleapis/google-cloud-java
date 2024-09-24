@@ -53,7 +53,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
@@ -74,7 +73,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -91,10 +92,21 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * StoragePoolTypesStubSettings storagePoolTypesSettings = storagePoolTypesSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class StoragePoolTypesStubSettings extends StubSettings<StoragePoolTypesStubSettings> {
@@ -159,9 +171,7 @@ public class StoragePoolTypesStubSettings extends StubSettings<StoragePoolTypesS
             @Override
             public Iterable<Map.Entry<String, StoragePoolTypesScopedList>> extractResources(
                 StoragePoolTypeAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, StoragePoolTypesScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -201,9 +211,7 @@ public class StoragePoolTypesStubSettings extends StubSettings<StoragePoolTypesS
 
             @Override
             public Iterable<StoragePoolType> extractResources(StoragePoolTypeList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<StoragePoolType>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 

@@ -1118,6 +1118,59 @@ public final class GDCHardwareManagementGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+      getRecordActionOnCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RecordActionOnComment",
+      requestType =
+          com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest.class,
+      responseType = com.google.cloud.gdchardwaremanagement.v1alpha.Comment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+      getRecordActionOnCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+        getRecordActionOnCommentMethod;
+    if ((getRecordActionOnCommentMethod = GDCHardwareManagementGrpc.getRecordActionOnCommentMethod)
+        == null) {
+      synchronized (GDCHardwareManagementGrpc.class) {
+        if ((getRecordActionOnCommentMethod =
+                GDCHardwareManagementGrpc.getRecordActionOnCommentMethod)
+            == null) {
+          GDCHardwareManagementGrpc.getRecordActionOnCommentMethod =
+              getRecordActionOnCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest,
+                          com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RecordActionOnComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gdchardwaremanagement.v1alpha
+                                  .RecordActionOnCommentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gdchardwaremanagement.v1alpha.Comment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GDCHardwareManagementMethodDescriptorSupplier(
+                              "RecordActionOnComment"))
+                      .build();
+        }
+      }
+    }
+    return getRecordActionOnCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesRequest,
           com.google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesResponse>
       getListChangeLogEntriesMethod;
@@ -1977,6 +2030,24 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Record Action on a Comment. If the Action specified in the request is READ,
+     * the viewed time in the comment is set to the time the request was received.
+     * If the comment is already marked as read, subsequent calls will be ignored.
+     * If the Action is UNREAD, the viewed time is cleared from the comment.
+     * </pre>
+     */
+    default void recordActionOnComment(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRecordActionOnCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changes made to an order.
      * </pre>
      */
@@ -2523,6 +2594,26 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Record Action on a Comment. If the Action specified in the request is READ,
+     * the viewed time in the comment is set to the time the request was received.
+     * If the comment is already marked as read, subsequent calls will be ignored.
+     * If the Action is UNREAD, the viewed time is cleared from the comment.
+     * </pre>
+     */
+    public void recordActionOnComment(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRecordActionOnCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changes made to an order.
      * </pre>
      */
@@ -2992,6 +3083,22 @@ public final class GDCHardwareManagementGrpc {
         com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Record Action on a Comment. If the Action specified in the request is READ,
+     * the viewed time in the comment is set to the time the request was received.
+     * If the comment is already marked as read, subsequent calls will be ignored.
+     * If the Action is UNREAD, the viewed time is cleared from the comment.
+     * </pre>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Comment recordActionOnComment(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecordActionOnCommentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3468,6 +3575,24 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Record Action on a Comment. If the Action specified in the request is READ,
+     * the viewed time in the comment is set to the time the request was received.
+     * If the comment is already marked as read, subsequent calls will be ignored.
+     * If the Action is UNREAD, the viewed time is cleared from the comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Comment>
+        recordActionOnComment(
+            com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRecordActionOnCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changes made to an order.
      * </pre>
      */
@@ -3627,16 +3752,17 @@ public final class GDCHardwareManagementGrpc {
   private static final int METHODID_LIST_COMMENTS = 20;
   private static final int METHODID_GET_COMMENT = 21;
   private static final int METHODID_CREATE_COMMENT = 22;
-  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 23;
-  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 24;
-  private static final int METHODID_LIST_SKUS = 25;
-  private static final int METHODID_GET_SKU = 26;
-  private static final int METHODID_LIST_ZONES = 27;
-  private static final int METHODID_GET_ZONE = 28;
-  private static final int METHODID_CREATE_ZONE = 29;
-  private static final int METHODID_UPDATE_ZONE = 30;
-  private static final int METHODID_DELETE_ZONE = 31;
-  private static final int METHODID_SIGNAL_ZONE_STATE = 32;
+  private static final int METHODID_RECORD_ACTION_ON_COMMENT = 23;
+  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 24;
+  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 25;
+  private static final int METHODID_LIST_SKUS = 26;
+  private static final int METHODID_GET_SKU = 27;
+  private static final int METHODID_LIST_ZONES = 28;
+  private static final int METHODID_GET_ZONE = 29;
+  private static final int METHODID_CREATE_ZONE = 30;
+  private static final int METHODID_UPDATE_ZONE = 31;
+  private static final int METHODID_DELETE_ZONE = 32;
+  private static final int METHODID_SIGNAL_ZONE_STATE = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3785,6 +3911,12 @@ public final class GDCHardwareManagementGrpc {
           serviceImpl.createComment(
               (com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RECORD_ACTION_ON_COMMENT:
+          serviceImpl.recordActionOnComment(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gdchardwaremanagement.v1alpha.Comment>)
+                  responseObserver);
           break;
         case METHODID_LIST_CHANGE_LOG_ENTRIES:
           serviceImpl.listChangeLogEntries(
@@ -4013,6 +4145,13 @@ public final class GDCHardwareManagementGrpc {
                     com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_COMMENT)))
         .addMethod(
+            getRecordActionOnCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest,
+                    com.google.cloud.gdchardwaremanagement.v1alpha.Comment>(
+                    service, METHODID_RECORD_ACTION_ON_COMMENT)))
+        .addMethod(
             getListChangeLogEntriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4151,6 +4290,7 @@ public final class GDCHardwareManagementGrpc {
                       .addMethod(getListCommentsMethod())
                       .addMethod(getGetCommentMethod())
                       .addMethod(getCreateCommentMethod())
+                      .addMethod(getRecordActionOnCommentMethod())
                       .addMethod(getListChangeLogEntriesMethod())
                       .addMethod(getGetChangeLogEntryMethod())
                       .addMethod(getListSkusMethod())

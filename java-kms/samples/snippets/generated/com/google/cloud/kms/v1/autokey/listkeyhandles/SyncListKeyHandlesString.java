@@ -18,7 +18,7 @@ package com.google.cloud.kms.v1.samples;
 
 // [START cloudkms_v1_generated_Autokey_ListKeyHandles_String_sync]
 import com.google.cloud.kms.v1.AutokeyClient;
-import com.google.cloud.kms.v1.ListKeyHandlesResponse;
+import com.google.cloud.kms.v1.KeyHandle;
 import com.google.cloud.kms.v1.LocationName;
 
 public class SyncListKeyHandlesString {
@@ -35,7 +35,9 @@ public class SyncListKeyHandlesString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AutokeyClient autokeyClient = AutokeyClient.create()) {
       String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-      ListKeyHandlesResponse response = autokeyClient.listKeyHandles(parent);
+      for (KeyHandle element : autokeyClient.listKeyHandles(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

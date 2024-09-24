@@ -2148,6 +2148,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int COLD_TIER_SIZE_GIB_FIELD_NUMBER = 39;
+  private long coldTierSizeGib_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Size of the volume cold tier data in GiB.
+   * </pre>
+   *
+   * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The coldTierSizeGib.
+   */
+  @java.lang.Override
+  public long getColdTierSizeGib() {
+    return coldTierSizeGib_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2284,6 +2302,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37, zone_);
+    }
+    if (coldTierSizeGib_ != 0L) {
+      output.writeInt64(39, coldTierSizeGib_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2440,6 +2461,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, zone_);
     }
+    if (coldTierSizeGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(39, coldTierSizeGib_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2510,6 +2534,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getReplicaZone().equals(other.getReplicaZone())) return false;
     if (!getZone().equals(other.getZone())) return false;
+    if (getColdTierSizeGib() != other.getColdTierSizeGib()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2618,6 +2643,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReplicaZone().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
+    hash = (37 * hash) + COLD_TIER_SIZE_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColdTierSizeGib());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2863,6 +2890,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       replicaZone_ = "";
       zone_ = "";
+      coldTierSizeGib_ = 0L;
       return this;
     }
 
@@ -3045,6 +3073,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
         result.zone_ = zone_;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.coldTierSizeGib_ = coldTierSizeGib_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3269,6 +3300,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         zone_ = other.zone_;
         bitField1_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getColdTierSizeGib() != 0L) {
+        setColdTierSizeGib(other.getColdTierSizeGib());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3565,6 +3599,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000008;
                 break;
               } // case 298
+            case 312:
+              {
+                coldTierSizeGib_ = input.readInt64();
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 312
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8286,6 +8326,59 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       zone_ = value;
       bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private long coldTierSizeGib_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Size of the volume cold tier data in GiB.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The coldTierSizeGib.
+     */
+    @java.lang.Override
+    public long getColdTierSizeGib() {
+      return coldTierSizeGib_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Size of the volume cold tier data in GiB.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The coldTierSizeGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setColdTierSizeGib(long value) {
+
+      coldTierSizeGib_ = value;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Size of the volume cold tier data in GiB.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearColdTierSizeGib() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      coldTierSizeGib_ = 0L;
       onChanged();
       return this;
     }

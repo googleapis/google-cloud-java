@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apphub</artifactId>
-  <version>0.13.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
+  <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
   <packaging>jar</packaging>
   <name>Google App Hub API</name>
   <description>App Hub API App Hub simplifies the process of building, running, and managing applications on Google Cloud.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apphub-parent</artifactId>
-    <version>0.13.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
+    <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apphub</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

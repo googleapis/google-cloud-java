@@ -94,6 +94,9 @@
             "ListZones": {
               "methods": ["listZones", "listZones", "listZones", "listZonesPagedCallable", "listZonesCallable"]
             },
+            "RecordActionOnComment": {
+              "methods": ["recordActionOnComment", "recordActionOnComment", "recordActionOnComment", "recordActionOnCommentCallable"]
+            },
             "SignalZoneState": {
               "methods": ["signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateOperationCallable", "signalZoneStateCallable"]
             },

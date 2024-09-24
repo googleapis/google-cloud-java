@@ -205,7 +205,8 @@ public interface SearchResponseOrBuilder
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>
@@ -220,7 +221,8 @@ public interface SearchResponseOrBuilder
    * A unique search token. This should be included in the
    * [UserEvent][google.cloud.discoveryengine.v1alpha.UserEvent] logs resulting
    * from this search, which enables accurate attribution of search model
-   * performance.
+   * performance. This also helps to identify a request during the customer
+   * support scenarios.
    * </pre>
    *
    * <code>string attribution_token = 4;</code>

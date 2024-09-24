@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -61,6 +62,8 @@ import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -183,6 +186,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setFullMethodName("google.chat.v1.ChatService/ListSpaces")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSpacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSpacesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SearchSpacesRequest, SearchSpacesResponse>
+      searchSpacesMethodDescriptor =
+          MethodDescriptor.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/SearchSpaces")
+              .setRequestMarshaller(ProtoUtils.marshaller(SearchSpacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchSpacesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
@@ -375,6 +388,9 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       uploadAttachmentCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesResponse> listSpacesCallable;
   private final UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable;
+  private final UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse>
+      searchSpacesPagedCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<SetUpSpaceRequest, Space> setUpSpaceCallable;
@@ -539,6 +555,10 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     GrpcCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         GrpcCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
             .setMethodDescriptor(listSpacesMethodDescriptor)
+            .build();
+    GrpcCallSettings<SearchSpacesRequest, SearchSpacesResponse> searchSpacesTransportSettings =
+        GrpcCallSettings.<SearchSpacesRequest, SearchSpacesResponse>newBuilder()
+            .setMethodDescriptor(searchSpacesMethodDescriptor)
             .build();
     GrpcCallSettings<GetSpaceRequest, Space> getSpaceTransportSettings =
         GrpcCallSettings.<GetSpaceRequest, Space>newBuilder()
@@ -748,6 +768,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.listSpacesPagedCallable =
         callableFactory.createPagedCallable(
             listSpacesTransportSettings, settings.listSpacesSettings(), clientContext);
+    this.searchSpacesCallable =
+        callableFactory.createUnaryCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
+    this.searchSpacesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchSpacesTransportSettings, settings.searchSpacesSettings(), clientContext);
     this.getSpaceCallable =
         callableFactory.createUnaryCallable(
             getSpaceTransportSettings, settings.getSpaceSettings(), clientContext);
@@ -892,6 +918,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<ListSpacesRequest, ListSpacesPagedResponse> listSpacesPagedCallable() {
     return listSpacesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    return searchSpacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    return searchSpacesPagedCallable;
   }
 
   @Override

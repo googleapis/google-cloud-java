@@ -28,6 +28,89 @@ public interface PurgeDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 5;</code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  boolean hasGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 5;</code>
+   *
+   * @return The gcsSource.
+   */
+  com.google.cloud.discoveryengine.v1.GcsSource getGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 5;</code>
+   */
+  com.google.cloud.discoveryengine.v1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return Whether the inlineSource field is set.
+   */
+  boolean hasInlineSource();
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return The inlineSource.
+   */
+  com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSource getInlineSource();
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSourceOrBuilder
+      getInlineSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent resource name, such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * </pre>
@@ -88,6 +171,41 @@ public interface PurgeDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return Whether the errorConfig field is set.
+   */
+  boolean hasErrorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return The errorConfig.
+   */
+  com.google.cloud.discoveryengine.v1.PurgeErrorConfig getErrorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.PurgeErrorConfig error_config = 7;</code>
+   */
+  com.google.cloud.discoveryengine.v1.PurgeErrorConfigOrBuilder getErrorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Actually performs the purge. If `force` is set to false, return the
    * expected purge count without deleting any documents.
    * </pre>
@@ -97,4 +215,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The force.
    */
   boolean getForce();
+
+  com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.SourceCase getSourceCase();
 }

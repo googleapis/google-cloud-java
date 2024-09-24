@@ -170,7 +170,8 @@ public interface OptimizeToursResponseOrBuilder
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
    * [OptimizeToursValidationError][google.maps.routeoptimization.v1.OptimizeToursValidationError]
-   * message.
+   * message. Instead of errors, this will include warnings in the case
+   * `solving_mode` is `DEFAULT_SOLVE`.
    * </pre>
    *
    * <code>
@@ -186,7 +187,8 @@ public interface OptimizeToursResponseOrBuilder
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
    * [OptimizeToursValidationError][google.maps.routeoptimization.v1.OptimizeToursValidationError]
-   * message.
+   * message. Instead of errors, this will include warnings in the case
+   * `solving_mode` is `DEFAULT_SOLVE`.
    * </pre>
    *
    * <code>
@@ -201,7 +203,8 @@ public interface OptimizeToursResponseOrBuilder
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
    * [OptimizeToursValidationError][google.maps.routeoptimization.v1.OptimizeToursValidationError]
-   * message.
+   * message. Instead of errors, this will include warnings in the case
+   * `solving_mode` is `DEFAULT_SOLVE`.
    * </pre>
    *
    * <code>
@@ -216,7 +219,8 @@ public interface OptimizeToursResponseOrBuilder
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
    * [OptimizeToursValidationError][google.maps.routeoptimization.v1.OptimizeToursValidationError]
-   * message.
+   * message. Instead of errors, this will include warnings in the case
+   * `solving_mode` is `DEFAULT_SOLVE`.
    * </pre>
    *
    * <code>
@@ -233,7 +237,8 @@ public interface OptimizeToursResponseOrBuilder
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
    * [OptimizeToursValidationError][google.maps.routeoptimization.v1.OptimizeToursValidationError]
-   * message.
+   * message. Instead of errors, this will include warnings in the case
+   * `solving_mode` is `DEFAULT_SOLVE`.
    * </pre>
    *
    * <code>

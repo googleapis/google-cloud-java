@@ -40,6 +40,7 @@ public class AsyncUpdateSpace {
           UpdateSpaceRequest.newBuilder()
               .setSpace(Space.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Space> future = chatServiceClient.updateSpaceCallable().futureCall(request);
       // Do something.

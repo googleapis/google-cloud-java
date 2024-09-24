@@ -336,6 +336,30 @@
  * }
  * }</pre>
  *
+ * <p>======================= SearchTuningServiceClient =======================
+ *
+ * <p>Service Description: Service for search tuning.
+ *
+ * <p>Sample for SearchTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+ *   ListCustomModelsRequest request =
+ *       ListCustomModelsRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .build();
+ *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= SiteSearchEngineServiceClient =======================
  *
  * <p>Service Description: Service for managing site search related resources.

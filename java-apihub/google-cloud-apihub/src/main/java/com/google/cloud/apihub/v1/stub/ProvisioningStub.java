@@ -19,6 +19,7 @@ package com.google.cloud.apihub.v1.stub;
 import static com.google.cloud.apihub.v1.ProvisioningClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.ApiHubInstance;
@@ -32,7 +33,6 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
-import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -44,12 +44,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class ProvisioningStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
-    return null;
-  }
-
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
-    return null;
+  public OperationsStub getHttpJsonOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
   }
 
   public OperationCallable<CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>

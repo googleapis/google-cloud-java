@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis-cluster</artifactId>
-  <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
+  <version>0.22.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud Memorystore for Redis API</name>
   <description>Google Cloud Memorystore for Redis API Creates and manages Redis instances on the Google Cloud Platform.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-redis-cluster-parent</artifactId>
-    <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
+    <version>0.22.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-redis-cluster</site.installationModule>
@@ -68,6 +68,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -76,6 +77,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

@@ -123,7 +123,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCdnKey to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCdnKey:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -140,10 +142,47 @@ import org.threeten.bp.Duration;
  *             .getCdnKeySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * VideoStitcherServiceStubSettings videoStitcherServiceSettings =
  *     videoStitcherServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createCdnKey:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VideoStitcherServiceStubSettings.Builder videoStitcherServiceSettingsBuilder =
+ *     VideoStitcherServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * videoStitcherServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -257,9 +296,7 @@ public class VideoStitcherServiceStubSettings
 
             @Override
             public Iterable<CdnKey> extractResources(ListCdnKeysResponse payload) {
-              return payload.getCdnKeysList() == null
-                  ? ImmutableList.<CdnKey>of()
-                  : payload.getCdnKeysList();
+              return payload.getCdnKeysList();
             }
           };
 
@@ -298,9 +335,7 @@ public class VideoStitcherServiceStubSettings
             @Override
             public Iterable<VodStitchDetail> extractResources(
                 ListVodStitchDetailsResponse payload) {
-              return payload.getVodStitchDetailsList() == null
-                  ? ImmutableList.<VodStitchDetail>of()
-                  : payload.getVodStitchDetailsList();
+              return payload.getVodStitchDetailsList();
             }
           };
 
@@ -338,9 +373,7 @@ public class VideoStitcherServiceStubSettings
 
             @Override
             public Iterable<VodAdTagDetail> extractResources(ListVodAdTagDetailsResponse payload) {
-              return payload.getVodAdTagDetailsList() == null
-                  ? ImmutableList.<VodAdTagDetail>of()
-                  : payload.getVodAdTagDetailsList();
+              return payload.getVodAdTagDetailsList();
             }
           };
 
@@ -379,9 +412,7 @@ public class VideoStitcherServiceStubSettings
             @Override
             public Iterable<LiveAdTagDetail> extractResources(
                 ListLiveAdTagDetailsResponse payload) {
-              return payload.getLiveAdTagDetailsList() == null
-                  ? ImmutableList.<LiveAdTagDetail>of()
-                  : payload.getLiveAdTagDetailsList();
+              return payload.getLiveAdTagDetailsList();
             }
           };
 
@@ -415,9 +446,7 @@ public class VideoStitcherServiceStubSettings
 
             @Override
             public Iterable<Slate> extractResources(ListSlatesResponse payload) {
-              return payload.getSlatesList() == null
-                  ? ImmutableList.<Slate>of()
-                  : payload.getSlatesList();
+              return payload.getSlatesList();
             }
           };
 
@@ -454,9 +483,7 @@ public class VideoStitcherServiceStubSettings
 
             @Override
             public Iterable<LiveConfig> extractResources(ListLiveConfigsResponse payload) {
-              return payload.getLiveConfigsList() == null
-                  ? ImmutableList.<LiveConfig>of()
-                  : payload.getLiveConfigsList();
+              return payload.getLiveConfigsList();
             }
           };
 
@@ -491,9 +518,7 @@ public class VideoStitcherServiceStubSettings
 
             @Override
             public Iterable<VodConfig> extractResources(ListVodConfigsResponse payload) {
-              return payload.getVodConfigsList() == null
-                  ? ImmutableList.<VodConfig>of()
-                  : payload.getVodConfigsList();
+              return payload.getVodConfigsList();
             }
           };
 

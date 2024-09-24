@@ -39,6 +39,7 @@ public class SyncUpdateSpace {
           UpdateSpaceRequest.newBuilder()
               .setSpace(Space.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setUseAdminAccess(true)
               .build();
       Space response = chatServiceClient.updateSpace(request);
     }

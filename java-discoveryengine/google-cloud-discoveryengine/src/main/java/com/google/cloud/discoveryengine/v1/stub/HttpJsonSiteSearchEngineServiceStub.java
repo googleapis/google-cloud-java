@@ -796,6 +796,11 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -865,6 +870,11 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

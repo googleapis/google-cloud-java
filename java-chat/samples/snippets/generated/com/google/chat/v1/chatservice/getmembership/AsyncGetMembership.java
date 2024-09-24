@@ -39,6 +39,7 @@ public class AsyncGetMembership {
       GetMembershipRequest request =
           GetMembershipRequest.newBuilder()
               .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setUseAdminAccess(true)
               .build();
       ApiFuture<Membership> future = chatServiceClient.getMembershipCallable().futureCall(request);
       // Do something.

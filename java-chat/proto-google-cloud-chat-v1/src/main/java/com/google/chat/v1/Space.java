@@ -1491,6 +1491,656 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface MembershipCountOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.chat.v1.Space.MembershipCount)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of human users that have directly joined the space, not counting
+     * users joined by having membership in a joined group.
+     * </pre>
+     *
+     * <code>int32 joined_direct_human_user_count = 4;</code>
+     *
+     * @return The joinedDirectHumanUserCount.
+     */
+    int getJoinedDirectHumanUserCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of all groups that have directly joined the space.
+     * </pre>
+     *
+     * <code>int32 joined_group_count = 5;</code>
+     *
+     * @return The joinedGroupCount.
+     */
+    int getJoinedGroupCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the count of memberships of a space, grouped into categories.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.Space.MembershipCount}
+   */
+  public static final class MembershipCount extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.chat.v1.Space.MembershipCount)
+      MembershipCountOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MembershipCount.newBuilder() to construct.
+    private MembershipCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MembershipCount() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MembershipCount();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_MembershipCount_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_MembershipCount_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.chat.v1.Space.MembershipCount.class,
+              com.google.chat.v1.Space.MembershipCount.Builder.class);
+    }
+
+    public static final int JOINED_DIRECT_HUMAN_USER_COUNT_FIELD_NUMBER = 4;
+    private int joinedDirectHumanUserCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Count of human users that have directly joined the space, not counting
+     * users joined by having membership in a joined group.
+     * </pre>
+     *
+     * <code>int32 joined_direct_human_user_count = 4;</code>
+     *
+     * @return The joinedDirectHumanUserCount.
+     */
+    @java.lang.Override
+    public int getJoinedDirectHumanUserCount() {
+      return joinedDirectHumanUserCount_;
+    }
+
+    public static final int JOINED_GROUP_COUNT_FIELD_NUMBER = 5;
+    private int joinedGroupCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Count of all groups that have directly joined the space.
+     * </pre>
+     *
+     * <code>int32 joined_group_count = 5;</code>
+     *
+     * @return The joinedGroupCount.
+     */
+    @java.lang.Override
+    public int getJoinedGroupCount() {
+      return joinedGroupCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (joinedDirectHumanUserCount_ != 0) {
+        output.writeInt32(4, joinedDirectHumanUserCount_);
+      }
+      if (joinedGroupCount_ != 0) {
+        output.writeInt32(5, joinedGroupCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (joinedDirectHumanUserCount_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(4, joinedDirectHumanUserCount_);
+      }
+      if (joinedGroupCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, joinedGroupCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.chat.v1.Space.MembershipCount)) {
+        return super.equals(obj);
+      }
+      com.google.chat.v1.Space.MembershipCount other =
+          (com.google.chat.v1.Space.MembershipCount) obj;
+
+      if (getJoinedDirectHumanUserCount() != other.getJoinedDirectHumanUserCount()) return false;
+      if (getJoinedGroupCount() != other.getJoinedGroupCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + JOINED_DIRECT_HUMAN_USER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getJoinedDirectHumanUserCount();
+      hash = (37 * hash) + JOINED_GROUP_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getJoinedGroupCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.chat.v1.Space.MembershipCount prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the count of memberships of a space, grouped into categories.
+     * </pre>
+     *
+     * Protobuf type {@code google.chat.v1.Space.MembershipCount}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.chat.v1.Space.MembershipCount)
+        com.google.chat.v1.Space.MembershipCountOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_MembershipCount_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_MembershipCount_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.chat.v1.Space.MembershipCount.class,
+                com.google.chat.v1.Space.MembershipCount.Builder.class);
+      }
+
+      // Construct using com.google.chat.v1.Space.MembershipCount.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        joinedDirectHumanUserCount_ = 0;
+        joinedGroupCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_MembershipCount_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.MembershipCount getDefaultInstanceForType() {
+        return com.google.chat.v1.Space.MembershipCount.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.MembershipCount build() {
+        com.google.chat.v1.Space.MembershipCount result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.MembershipCount buildPartial() {
+        com.google.chat.v1.Space.MembershipCount result =
+            new com.google.chat.v1.Space.MembershipCount(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.chat.v1.Space.MembershipCount result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.joinedDirectHumanUserCount_ = joinedDirectHumanUserCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.joinedGroupCount_ = joinedGroupCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.chat.v1.Space.MembershipCount) {
+          return mergeFrom((com.google.chat.v1.Space.MembershipCount) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.chat.v1.Space.MembershipCount other) {
+        if (other == com.google.chat.v1.Space.MembershipCount.getDefaultInstance()) return this;
+        if (other.getJoinedDirectHumanUserCount() != 0) {
+          setJoinedDirectHumanUserCount(other.getJoinedDirectHumanUserCount());
+        }
+        if (other.getJoinedGroupCount() != 0) {
+          setJoinedGroupCount(other.getJoinedGroupCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32:
+                {
+                  joinedDirectHumanUserCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  joinedGroupCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int joinedDirectHumanUserCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of human users that have directly joined the space, not counting
+       * users joined by having membership in a joined group.
+       * </pre>
+       *
+       * <code>int32 joined_direct_human_user_count = 4;</code>
+       *
+       * @return The joinedDirectHumanUserCount.
+       */
+      @java.lang.Override
+      public int getJoinedDirectHumanUserCount() {
+        return joinedDirectHumanUserCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of human users that have directly joined the space, not counting
+       * users joined by having membership in a joined group.
+       * </pre>
+       *
+       * <code>int32 joined_direct_human_user_count = 4;</code>
+       *
+       * @param value The joinedDirectHumanUserCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJoinedDirectHumanUserCount(int value) {
+
+        joinedDirectHumanUserCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of human users that have directly joined the space, not counting
+       * users joined by having membership in a joined group.
+       * </pre>
+       *
+       * <code>int32 joined_direct_human_user_count = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJoinedDirectHumanUserCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        joinedDirectHumanUserCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int joinedGroupCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of all groups that have directly joined the space.
+       * </pre>
+       *
+       * <code>int32 joined_group_count = 5;</code>
+       *
+       * @return The joinedGroupCount.
+       */
+      @java.lang.Override
+      public int getJoinedGroupCount() {
+        return joinedGroupCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of all groups that have directly joined the space.
+       * </pre>
+       *
+       * <code>int32 joined_group_count = 5;</code>
+       *
+       * @param value The joinedGroupCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJoinedGroupCount(int value) {
+
+        joinedGroupCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of all groups that have directly joined the space.
+       * </pre>
+       *
+       * <code>int32 joined_group_count = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJoinedGroupCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        joinedGroupCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.MembershipCount)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.chat.v1.Space.MembershipCount)
+    private static final com.google.chat.v1.Space.MembershipCount DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.chat.v1.Space.MembershipCount();
+    }
+
+    public static com.google.chat.v1.Space.MembershipCount getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MembershipCount> PARSER =
+        new com.google.protobuf.AbstractParser<MembershipCount>() {
+          @java.lang.Override
+          public MembershipCount parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MembershipCount> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MembershipCount> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.chat.v1.Space.MembershipCount getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AccessSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.chat.v1.Space.AccessSettings)
@@ -2643,7 +3293,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -2663,7 +3313,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
    * @return The type.
    */
   @java.lang.Override
@@ -2741,7 +3391,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=167
    * @return The threaded.
    */
   @java.lang.Override
@@ -3071,6 +3721,62 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int LAST_ACTIVE_TIME_FIELD_NUMBER = 18;
+  private com.google.protobuf.Timestamp lastActiveTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastActiveTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastActiveTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastActiveTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastActiveTime() {
+    return lastActiveTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastActiveTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastActiveTimeOrBuilder() {
+    return lastActiveTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastActiveTime_;
+  }
+
   public static final int ADMIN_INSTALLED_FIELD_NUMBER = 19;
   private boolean adminInstalled_ = false;
   /**
@@ -3094,6 +3800,68 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     return adminInstalled_;
   }
 
+  public static final int MEMBERSHIP_COUNT_FIELD_NUMBER = 20;
+  private com.google.chat.v1.Space.MembershipCount membershipCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the membershipCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasMembershipCount() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The membershipCount.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.Space.MembershipCount getMembershipCount() {
+    return membershipCount_ == null
+        ? com.google.chat.v1.Space.MembershipCount.getDefaultInstance()
+        : membershipCount_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.Space.MembershipCountOrBuilder getMembershipCountOrBuilder() {
+    return membershipCount_ == null
+        ? com.google.chat.v1.Space.MembershipCount.getDefaultInstance()
+        : membershipCount_;
+  }
+
   public static final int ACCESS_SETTINGS_FIELD_NUMBER = 23;
   private com.google.chat.v1.Space.AccessSettings accessSettings_;
   /**
@@ -3113,7 +3881,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAccessSettings() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -3260,10 +4028,16 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(17, getCreateTime());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(18, getLastActiveTime());
+    }
     if (adminInstalled_ != false) {
       output.writeBool(19, adminInstalled_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(20, getMembershipCount());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(23, getAccessSettings());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceUri_)) {
@@ -3317,10 +4091,16 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getCreateTime());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLastActiveTime());
+    }
     if (adminInstalled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, adminInstalled_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getMembershipCount());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getAccessSettings());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceUri_)) {
@@ -3359,7 +4139,15 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasLastActiveTime() != other.hasLastActiveTime()) return false;
+    if (hasLastActiveTime()) {
+      if (!getLastActiveTime().equals(other.getLastActiveTime())) return false;
+    }
     if (getAdminInstalled() != other.getAdminInstalled()) return false;
+    if (hasMembershipCount() != other.hasMembershipCount()) return false;
+    if (hasMembershipCount()) {
+      if (!getMembershipCount().equals(other.getMembershipCount())) return false;
+    }
     if (hasAccessSettings() != other.hasAccessSettings()) return false;
     if (hasAccessSettings()) {
       if (!getAccessSettings().equals(other.getAccessSettings())) return false;
@@ -3404,8 +4192,16 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    if (hasLastActiveTime()) {
+      hash = (37 * hash) + LAST_ACTIVE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastActiveTime().hashCode();
+    }
     hash = (37 * hash) + ADMIN_INSTALLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminInstalled());
+    if (hasMembershipCount()) {
+      hash = (37 * hash) + MEMBERSHIP_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getMembershipCount().hashCode();
+    }
     if (hasAccessSettings()) {
       hash = (37 * hash) + ACCESS_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessSettings().hashCode();
@@ -3551,6 +4347,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSpaceDetailsFieldBuilder();
         getCreateTimeFieldBuilder();
+        getLastActiveTimeFieldBuilder();
+        getMembershipCountFieldBuilder();
         getAccessSettingsFieldBuilder();
       }
     }
@@ -3579,7 +4377,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      lastActiveTime_ = null;
+      if (lastActiveTimeBuilder_ != null) {
+        lastActiveTimeBuilder_.dispose();
+        lastActiveTimeBuilder_ = null;
+      }
       adminInstalled_ = false;
+      membershipCount_ = null;
+      if (membershipCountBuilder_ != null) {
+        membershipCountBuilder_.dispose();
+        membershipCountBuilder_ = null;
+      }
       accessSettings_ = null;
       if (accessSettingsBuilder_ != null) {
         accessSettingsBuilder_.dispose();
@@ -3661,14 +4469,24 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.adminInstalled_ = adminInstalled_;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.accessSettings_ =
-            accessSettingsBuilder_ == null ? accessSettings_ : accessSettingsBuilder_.build();
+        result.lastActiveTime_ =
+            lastActiveTimeBuilder_ == null ? lastActiveTime_ : lastActiveTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.adminInstalled_ = adminInstalled_;
+      }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.membershipCount_ =
+            membershipCountBuilder_ == null ? membershipCount_ : membershipCountBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.accessSettings_ =
+            accessSettingsBuilder_ == null ? accessSettings_ : accessSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.spaceUri_ = spaceUri_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3759,15 +4577,21 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasLastActiveTime()) {
+        mergeLastActiveTime(other.getLastActiveTime());
+      }
       if (other.getAdminInstalled() != false) {
         setAdminInstalled(other.getAdminInstalled());
+      }
+      if (other.hasMembershipCount()) {
+        mergeMembershipCount(other.getMembershipCount());
       }
       if (other.hasAccessSettings()) {
         mergeAccessSettings(other.getAccessSettings());
       }
       if (!other.getSpaceUri().isEmpty()) {
         spaceUri_ = other.spaceUri_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3868,22 +4692,34 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(getLastActiveTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 146
             case 152:
               {
                 adminInstalled_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 152
+            case 162:
+              {
+                input.readMessage(getMembershipCountFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 162
             case 186:
               {
                 input.readMessage(getAccessSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 186
             case 202:
               {
                 spaceUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 202
             default:
@@ -4034,7 +4870,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -4054,7 +4890,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -4077,7 +4913,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
      * @return The type.
      */
     @java.lang.Override
@@ -4098,7 +4934,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -4124,7 +4960,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4298,7 +5134,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=167
      * @return The threaded.
      */
     @java.lang.Override
@@ -4317,7 +5153,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=167
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -4340,7 +5176,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=167
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5306,6 +6142,209 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp lastActiveTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastActiveTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastActiveTime field is set.
+     */
+    public boolean hasLastActiveTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastActiveTime.
+     */
+    public com.google.protobuf.Timestamp getLastActiveTime() {
+      if (lastActiveTimeBuilder_ == null) {
+        return lastActiveTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastActiveTime_;
+      } else {
+        return lastActiveTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastActiveTime(com.google.protobuf.Timestamp value) {
+      if (lastActiveTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastActiveTime_ = value;
+      } else {
+        lastActiveTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastActiveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastActiveTimeBuilder_ == null) {
+        lastActiveTime_ = builderForValue.build();
+      } else {
+        lastActiveTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastActiveTime(com.google.protobuf.Timestamp value) {
+      if (lastActiveTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && lastActiveTime_ != null
+            && lastActiveTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastActiveTimeBuilder().mergeFrom(value);
+        } else {
+          lastActiveTime_ = value;
+        }
+      } else {
+        lastActiveTimeBuilder_.mergeFrom(value);
+      }
+      if (lastActiveTime_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastActiveTime() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      lastActiveTime_ = null;
+      if (lastActiveTimeBuilder_ != null) {
+        lastActiveTimeBuilder_.dispose();
+        lastActiveTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastActiveTimeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getLastActiveTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastActiveTimeOrBuilder() {
+      if (lastActiveTimeBuilder_ != null) {
+        return lastActiveTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastActiveTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastActiveTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last message in the space.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getLastActiveTimeFieldBuilder() {
+      if (lastActiveTimeBuilder_ == null) {
+        lastActiveTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastActiveTime(), getParentForChildren(), isClean());
+        lastActiveTime_ = null;
+      }
+      return lastActiveTimeBuilder_;
+    }
+
     private boolean adminInstalled_;
     /**
      *
@@ -5347,7 +6386,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public Builder setAdminInstalled(boolean value) {
 
       adminInstalled_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5368,10 +6407,232 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdminInstalled() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       adminInstalled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.chat.v1.Space.MembershipCount membershipCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.Space.MembershipCount,
+            com.google.chat.v1.Space.MembershipCount.Builder,
+            com.google.chat.v1.Space.MembershipCountOrBuilder>
+        membershipCountBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the membershipCount field is set.
+     */
+    public boolean hasMembershipCount() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The membershipCount.
+     */
+    public com.google.chat.v1.Space.MembershipCount getMembershipCount() {
+      if (membershipCountBuilder_ == null) {
+        return membershipCount_ == null
+            ? com.google.chat.v1.Space.MembershipCount.getDefaultInstance()
+            : membershipCount_;
+      } else {
+        return membershipCountBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMembershipCount(com.google.chat.v1.Space.MembershipCount value) {
+      if (membershipCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        membershipCount_ = value;
+      } else {
+        membershipCountBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMembershipCount(
+        com.google.chat.v1.Space.MembershipCount.Builder builderForValue) {
+      if (membershipCountBuilder_ == null) {
+        membershipCount_ = builderForValue.build();
+      } else {
+        membershipCountBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMembershipCount(com.google.chat.v1.Space.MembershipCount value) {
+      if (membershipCountBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && membershipCount_ != null
+            && membershipCount_ != com.google.chat.v1.Space.MembershipCount.getDefaultInstance()) {
+          getMembershipCountBuilder().mergeFrom(value);
+        } else {
+          membershipCount_ = value;
+        }
+      } else {
+        membershipCountBuilder_.mergeFrom(value);
+      }
+      if (membershipCount_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMembershipCount() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      membershipCount_ = null;
+      if (membershipCountBuilder_ != null) {
+        membershipCountBuilder_.dispose();
+        membershipCountBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.Space.MembershipCount.Builder getMembershipCountBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getMembershipCountFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.Space.MembershipCountOrBuilder getMembershipCountOrBuilder() {
+      if (membershipCountBuilder_ != null) {
+        return membershipCountBuilder_.getMessageOrBuilder();
+      } else {
+        return membershipCount_ == null
+            ? com.google.chat.v1.Space.MembershipCount.getDefaultInstance()
+            : membershipCount_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of joined memberships grouped by member type.
+     * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+     * `GROUP_CHAT`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.Space.MembershipCount,
+            com.google.chat.v1.Space.MembershipCount.Builder,
+            com.google.chat.v1.Space.MembershipCountOrBuilder>
+        getMembershipCountFieldBuilder() {
+      if (membershipCountBuilder_ == null) {
+        membershipCountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.Space.MembershipCount,
+                com.google.chat.v1.Space.MembershipCount.Builder,
+                com.google.chat.v1.Space.MembershipCountOrBuilder>(
+                getMembershipCount(), getParentForChildren(), isClean());
+        membershipCount_ = null;
+      }
+      return membershipCountBuilder_;
     }
 
     private com.google.chat.v1.Space.AccessSettings accessSettings_;
@@ -5396,7 +6657,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accessSettings field is set.
      */
     public boolean hasAccessSettings() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5444,7 +6705,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       } else {
         accessSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5468,7 +6729,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       } else {
         accessSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5487,7 +6748,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAccessSettings(com.google.chat.v1.Space.AccessSettings value) {
       if (accessSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && accessSettings_ != null
             && accessSettings_ != com.google.chat.v1.Space.AccessSettings.getDefaultInstance()) {
           getAccessSettingsBuilder().mergeFrom(value);
@@ -5498,7 +6759,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         accessSettingsBuilder_.mergeFrom(value);
       }
       if (accessSettings_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5517,7 +6778,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAccessSettings() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       accessSettings_ = null;
       if (accessSettingsBuilder_ != null) {
         accessSettingsBuilder_.dispose();
@@ -5540,7 +6801,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.chat.v1.Space.AccessSettings.Builder getAccessSettingsBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getAccessSettingsFieldBuilder().getBuilder();
     }
@@ -5658,7 +6919,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       spaceUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5675,7 +6936,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSpaceUri() {
       spaceUri_ = getDefaultInstance().getSpaceUri();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5697,7 +6958,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       spaceUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

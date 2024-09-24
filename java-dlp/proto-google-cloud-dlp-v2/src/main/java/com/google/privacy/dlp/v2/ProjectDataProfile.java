@@ -125,7 +125,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Project ID that was profiled.
+   * Project ID or account that was profiled.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -148,7 +148,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Project ID that was profiled.
+   * Project ID or account that was profiled.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -1077,7 +1077,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Project ID that was profiled.
+     * Project ID or account that was profiled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1099,7 +1099,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Project ID that was profiled.
+     * Project ID or account that was profiled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1121,7 +1121,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Project ID that was profiled.
+     * Project ID or account that was profiled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1142,7 +1142,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Project ID that was profiled.
+     * Project ID or account that was profiled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1159,7 +1159,7 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Project ID that was profiled.
+     * Project ID or account that was profiled.
      * </pre>
      *
      * <code>string project_id = 2;</code>

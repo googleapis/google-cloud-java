@@ -22,6 +22,7 @@ import com.google.cloud.aiplatform.v1.Content;
 import com.google.cloud.aiplatform.v1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.GenerationConfig;
 import com.google.cloud.aiplatform.v1.LlmUtilityServiceClient;
 import com.google.cloud.aiplatform.v1.Tool;
 import com.google.protobuf.Value;
@@ -51,6 +52,7 @@ public class AsyncCountTokens {
               .addAllContents(new ArrayList<Content>())
               .setSystemInstruction(Content.newBuilder().build())
               .addAllTools(new ArrayList<Tool>())
+              .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       ApiFuture<CountTokensResponse> future =
           llmUtilityServiceClient.countTokensCallable().futureCall(request);

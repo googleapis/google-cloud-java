@@ -26,6 +26,7 @@ package com.google.privacy.dlp.v2;
  * The profile for a file store.
  *
  * * Cloud Storage: maps 1:1 with a bucket.
+ * * Amazon S3: maps 1:1 with a bucket.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.FileStoreDataProfile}
@@ -415,6 +416,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The Google Cloud project ID that owns the resource.
+   * For Amazon S3 buckets, this is the AWS Account Id.
    * </pre>
    *
    * <code>string project_id = 4;</code>
@@ -438,6 +440,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The Google Cloud project ID that owns the resource.
+   * For Amazon S3 buckets, this is the AWS Account Id.
    * </pre>
    *
    * <code>string project_id = 4;</code>
@@ -469,6 +472,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * * Cloud Storage:
    * https://cloud.google.com/storage/docs/locations#available-locations
+   * * Amazon S3:
+   * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
    * </pre>
    *
    * <code>string file_store_location = 5;</code>
@@ -495,6 +500,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * * Cloud Storage:
    * https://cloud.google.com/storage/docs/locations#available-locations
+   * * Amazon S3:
+   * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
    * </pre>
    *
    * <code>string file_store_location = 5;</code>
@@ -662,6 +669,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    * The file store path.
    *
    * * Cloud Storage: `gs://{bucket}`
+   * * Amazon S3: `s3://{bucket}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -687,6 +695,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    * The file store path.
    *
    * * Cloud Storage: `gs://{bucket}`
+   * * Amazon S3: `s3://{bucket}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -716,6 +725,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    * <pre>
    * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   *
+   * Example format of an S3 bucket full resource name:
+   * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
    * </pre>
    *
    * <code>string full_resource = 24;</code>
@@ -740,6 +752,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    * <pre>
    * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   *
+   * Example format of an S3 bucket full resource name:
+   * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
    * </pre>
    *
    * <code>string full_resource = 24;</code>
@@ -2039,6 +2054,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    * The profile for a file store.
    *
    * * Cloud Storage: maps 1:1 with a bucket.
+   * * Amazon S3: maps 1:1 with a bucket.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.FileStoreDataProfile}
@@ -3131,6 +3147,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Google Cloud project ID that owns the resource.
+     * For Amazon S3 buckets, this is the AWS Account Id.
      * </pre>
      *
      * <code>string project_id = 4;</code>
@@ -3153,6 +3170,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Google Cloud project ID that owns the resource.
+     * For Amazon S3 buckets, this is the AWS Account Id.
      * </pre>
      *
      * <code>string project_id = 4;</code>
@@ -3175,6 +3193,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Google Cloud project ID that owns the resource.
+     * For Amazon S3 buckets, this is the AWS Account Id.
      * </pre>
      *
      * <code>string project_id = 4;</code>
@@ -3196,6 +3215,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Google Cloud project ID that owns the resource.
+     * For Amazon S3 buckets, this is the AWS Account Id.
      * </pre>
      *
      * <code>string project_id = 4;</code>
@@ -3213,6 +3233,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Google Cloud project ID that owns the resource.
+     * For Amazon S3 buckets, this is the AWS Account Id.
      * </pre>
      *
      * <code>string project_id = 4;</code>
@@ -3240,6 +3261,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage:
      * https://cloud.google.com/storage/docs/locations#available-locations
+     * * Amazon S3:
+     * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
      * </pre>
      *
      * <code>string file_store_location = 5;</code>
@@ -3265,6 +3288,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage:
      * https://cloud.google.com/storage/docs/locations#available-locations
+     * * Amazon S3:
+     * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
      * </pre>
      *
      * <code>string file_store_location = 5;</code>
@@ -3290,6 +3315,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage:
      * https://cloud.google.com/storage/docs/locations#available-locations
+     * * Amazon S3:
+     * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
      * </pre>
      *
      * <code>string file_store_location = 5;</code>
@@ -3314,6 +3341,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage:
      * https://cloud.google.com/storage/docs/locations#available-locations
+     * * Amazon S3:
+     * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
      * </pre>
      *
      * <code>string file_store_location = 5;</code>
@@ -3334,6 +3363,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage:
      * https://cloud.google.com/storage/docs/locations#available-locations
+     * * Amazon S3:
+     * https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
      * </pre>
      *
      * <code>string file_store_location = 5;</code>
@@ -3690,6 +3721,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * The file store path.
      *
      * * Cloud Storage: `gs://{bucket}`
+     * * Amazon S3: `s3://{bucket}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3714,6 +3746,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * The file store path.
      *
      * * Cloud Storage: `gs://{bucket}`
+     * * Amazon S3: `s3://{bucket}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3738,6 +3771,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * The file store path.
      *
      * * Cloud Storage: `gs://{bucket}`
+     * * Amazon S3: `s3://{bucket}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3761,6 +3795,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * The file store path.
      *
      * * Cloud Storage: `gs://{bucket}`
+     * * Amazon S3: `s3://{bucket}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3780,6 +3815,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * The file store path.
      *
      * * Cloud Storage: `gs://{bucket}`
+     * * Amazon S3: `s3://{bucket}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3805,6 +3841,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * <pre>
      * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *
+     * Example format of an S3 bucket full resource name:
+     * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
      * </pre>
      *
      * <code>string full_resource = 24;</code>
@@ -3828,6 +3867,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * <pre>
      * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *
+     * Example format of an S3 bucket full resource name:
+     * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
      * </pre>
      *
      * <code>string full_resource = 24;</code>
@@ -3851,6 +3893,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * <pre>
      * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *
+     * Example format of an S3 bucket full resource name:
+     * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
      * </pre>
      *
      * <code>string full_resource = 24;</code>
@@ -3873,6 +3918,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * <pre>
      * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *
+     * Example format of an S3 bucket full resource name:
+     * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
      * </pre>
      *
      * <code>string full_resource = 24;</code>
@@ -3891,6 +3939,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      * <pre>
      * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *
+     * Example format of an S3 bucket full resource name:
+     * `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
      * </pre>
      *
      * <code>string full_resource = 24;</code>

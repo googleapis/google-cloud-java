@@ -115,7 +115,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataExchange to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataExchange:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -132,10 +134,47 @@ import org.threeten.bp.Duration;
  *             .getDataExchangeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsHubServiceStubSettings analyticsHubServiceSettings =
  *     analyticsHubServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for subscribeDataExchange:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AnalyticsHubServiceStubSettings.Builder analyticsHubServiceSettingsBuilder =
+ *     AnalyticsHubServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * analyticsHubServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -233,9 +272,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<DataExchange> extractResources(ListDataExchangesResponse payload) {
-              return payload.getDataExchangesList() == null
-                  ? ImmutableList.<DataExchange>of()
-                  : payload.getDataExchangesList();
+              return payload.getDataExchangesList();
             }
           };
 
@@ -273,9 +310,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<DataExchange> extractResources(ListOrgDataExchangesResponse payload) {
-              return payload.getDataExchangesList() == null
-                  ? ImmutableList.<DataExchange>of()
-                  : payload.getDataExchangesList();
+              return payload.getDataExchangesList();
             }
           };
 
@@ -309,9 +344,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<Listing> extractResources(ListListingsResponse payload) {
-              return payload.getListingsList() == null
-                  ? ImmutableList.<Listing>of()
-                  : payload.getListingsList();
+              return payload.getListingsList();
             }
           };
 
@@ -349,9 +382,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
 
             @Override
             public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList() == null
-                  ? ImmutableList.<Subscription>of()
-                  : payload.getSubscriptionsList();
+              return payload.getSubscriptionsList();
             }
           };
 
@@ -398,9 +429,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
             @Override
             public Iterable<Subscription> extractResources(
                 ListSharedResourceSubscriptionsResponse payload) {
-              return payload.getSharedResourceSubscriptionsList() == null
-                  ? ImmutableList.<Subscription>of()
-                  : payload.getSharedResourceSubscriptionsList();
+              return payload.getSharedResourceSubscriptionsList();
             }
           };
 

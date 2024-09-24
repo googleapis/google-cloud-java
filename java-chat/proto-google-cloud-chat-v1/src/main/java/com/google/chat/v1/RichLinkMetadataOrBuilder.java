@@ -109,5 +109,40 @@ public interface RichLinkMetadataOrBuilder
    */
   com.google.chat.v1.DriveLinkDataOrBuilder getDriveLinkDataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   *
+   * @return Whether the chatSpaceLinkData field is set.
+   */
+  boolean hasChatSpaceLinkData();
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   *
+   * @return The chatSpaceLinkData.
+   */
+  com.google.chat.v1.ChatSpaceLinkData getChatSpaceLinkData();
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   */
+  com.google.chat.v1.ChatSpaceLinkDataOrBuilder getChatSpaceLinkDataOrBuilder();
+
   com.google.chat.v1.RichLinkMetadata.DataCase getDataCase();
 }

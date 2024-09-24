@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-netapp</artifactId>
-  <version>0.28.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
+  <version>0.29.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
   <packaging>jar</packaging>
   <name>Google NetApp API</name>
   <description>NetApp API Google Cloud NetApp Volumes is a fully-managed, cloud-based data storage service that provides advanced data management capabilities and highly scalable performance with global availability.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-netapp-parent</artifactId>
-    <version>0.28.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
+    <version>0.29.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-netapp</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -77,6 +78,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

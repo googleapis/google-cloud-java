@@ -315,7 +315,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -351,7 +351,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -383,6 +383,8 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
    *           .build();
    *   CountTokensResponse response = llmUtilityServiceClient.countTokens(request);
    * }
@@ -417,6 +419,8 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       llmUtilityServiceClient.countTokensCallable().futureCall(request);
@@ -451,7 +455,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to get lists of tokens and token
    *     ids.
-   * @param instances Required. The instances that are the input to token computing API call. Schema
+   * @param instances Optional. The instances that are the input to token computing API call. Schema
    *     is identical to the prediction schema of the text model, even for the non-text models, like
    *     chat models, or Codey models.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,7 +492,7 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to get lists of tokens and token
    *     ids.
-   * @param instances Required. The instances that are the input to token computing API call. Schema
+   * @param instances Optional. The instances that are the input to token computing API call. Schema
    *     is identical to the prediction schema of the text model, even for the non-text models, like
    *     chat models, or Codey models.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -519,6 +523,8 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(request);
    * }
@@ -551,6 +557,8 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   ApiFuture<ComputeTokensResponse> future =
    *       llmUtilityServiceClient.computeTokensCallable().futureCall(request);

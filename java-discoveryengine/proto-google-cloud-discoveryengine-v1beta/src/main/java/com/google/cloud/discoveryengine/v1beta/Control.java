@@ -3971,7 +3971,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of all
-   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
    * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
@@ -3989,7 +3989,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of all
-   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
    * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
@@ -4007,7 +4007,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of all
-   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
    * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
@@ -4026,7 +4026,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of all
-   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
    * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
@@ -6177,7 +6177,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6196,7 +6196,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6214,7 +6214,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6233,7 +6233,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6252,7 +6252,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6279,7 +6279,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6305,7 +6305,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6328,7 +6328,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
@@ -6350,7 +6350,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of all
-     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] ids this
+     * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig] IDs this
      * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *

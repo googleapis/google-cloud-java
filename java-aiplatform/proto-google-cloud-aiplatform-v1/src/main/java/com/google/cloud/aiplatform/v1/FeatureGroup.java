@@ -185,6 +185,19 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Set if the data source is not a time-series.
+     * </pre>
+     *
+     * <code>bool static_data_source = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The staticDataSource.
+     */
+    boolean getStaticDataSource();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. If the source is a time-series source, this can be set to
      * control how downstream sources (ex:
      * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
@@ -234,6 +247,29 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder
         getTimeSeriesOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, all feature values will be fetched
+     * from a single row per unique entityId including nulls.
+     * If not set, will collapse all rows for each unique entityId into a singe
+     * row with any non-null values if present, if no non-null values are
+     * present will sync null.
+     * ex: If source has schema
+     * `(entity_id, feature_timestamp, f0, f1)` and the following rows:
+     * `(e1, 2020-01-01T10:00:00.123Z, 10, 15)`
+     * `(e1, 2020-02-01T10:00:00.123Z, 20, null)`
+     * If dense is set, `(e1, 20, null)` is synced to online stores. If dense is
+     * not set, `(e1, 20, 15)` is synced to online stores.
+     * </pre>
+     *
+     * <code>bool dense = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dense.
+     */
+    boolean getDense();
   }
   /**
    *
@@ -1072,6 +1108,24 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       return entityIdColumns_.getByteString(index);
     }
 
+    public static final int STATIC_DATA_SOURCE_FIELD_NUMBER = 3;
+    private boolean staticDataSource_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set if the data source is not a time-series.
+     * </pre>
+     *
+     * <code>bool static_data_source = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The staticDataSource.
+     */
+    @java.lang.Override
+    public boolean getStaticDataSource() {
+      return staticDataSource_;
+    }
+
     public static final int TIME_SERIES_FIELD_NUMBER = 4;
     private com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries timeSeries_;
     /**
@@ -1141,6 +1195,34 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           : timeSeries_;
     }
 
+    public static final int DENSE_FIELD_NUMBER = 5;
+    private boolean dense_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, all feature values will be fetched
+     * from a single row per unique entityId including nulls.
+     * If not set, will collapse all rows for each unique entityId into a singe
+     * row with any non-null values if present, if no non-null values are
+     * present will sync null.
+     * ex: If source has schema
+     * `(entity_id, feature_timestamp, f0, f1)` and the following rows:
+     * `(e1, 2020-01-01T10:00:00.123Z, 10, 15)`
+     * `(e1, 2020-02-01T10:00:00.123Z, 20, null)`
+     * If dense is set, `(e1, 20, null)` is synced to online stores. If dense is
+     * not set, `(e1, 20, 15)` is synced to online stores.
+     * </pre>
+     *
+     * <code>bool dense = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dense.
+     */
+    @java.lang.Override
+    public boolean getDense() {
+      return dense_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1161,8 +1243,14 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < entityIdColumns_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, entityIdColumns_.getRaw(i));
       }
+      if (staticDataSource_ != false) {
+        output.writeBool(3, staticDataSource_);
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getTimeSeries());
+      }
+      if (dense_ != false) {
+        output.writeBool(5, dense_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1184,8 +1272,14 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getEntityIdColumnsList().size();
       }
+      if (staticDataSource_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, staticDataSource_);
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeSeries());
+      }
+      if (dense_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, dense_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1208,10 +1302,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         if (!getBigQuerySource().equals(other.getBigQuerySource())) return false;
       }
       if (!getEntityIdColumnsList().equals(other.getEntityIdColumnsList())) return false;
+      if (getStaticDataSource() != other.getStaticDataSource()) return false;
       if (hasTimeSeries() != other.hasTimeSeries()) return false;
       if (hasTimeSeries()) {
         if (!getTimeSeries().equals(other.getTimeSeries())) return false;
       }
+      if (getDense() != other.getDense()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1231,10 +1327,14 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ENTITY_ID_COLUMNS_FIELD_NUMBER;
         hash = (53 * hash) + getEntityIdColumnsList().hashCode();
       }
+      hash = (37 * hash) + STATIC_DATA_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStaticDataSource());
       if (hasTimeSeries()) {
         hash = (37 * hash) + TIME_SERIES_FIELD_NUMBER;
         hash = (53 * hash) + getTimeSeries().hashCode();
       }
+      hash = (37 * hash) + DENSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDense());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1393,11 +1493,13 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           bigQuerySourceBuilder_ = null;
         }
         entityIdColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        staticDataSource_ = false;
         timeSeries_ = null;
         if (timeSeriesBuilder_ != null) {
           timeSeriesBuilder_.dispose();
           timeSeriesBuilder_ = null;
         }
+        dense_ = false;
         return this;
       }
 
@@ -1445,9 +1547,15 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           result.entityIdColumns_ = entityIdColumns_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.staticDataSource_ = staticDataSource_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.timeSeries_ =
               timeSeriesBuilder_ == null ? timeSeries_ : timeSeriesBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.dense_ = dense_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1513,8 +1621,14 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (other.getStaticDataSource() != false) {
+          setStaticDataSource(other.getStaticDataSource());
+        }
         if (other.hasTimeSeries()) {
           mergeTimeSeries(other.getTimeSeries());
+        }
+        if (other.getDense() != false) {
+          setDense(other.getDense());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1556,12 +1670,24 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
                   entityIdColumns_.add(s);
                   break;
                 } // case 18
+              case 24:
+                {
+                  staticDataSource_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               case 34:
                 {
                   input.readMessage(getTimeSeriesFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 40:
+                {
+                  dense_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1987,6 +2113,59 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private boolean staticDataSource_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set if the data source is not a time-series.
+       * </pre>
+       *
+       * <code>bool static_data_source = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The staticDataSource.
+       */
+      @java.lang.Override
+      public boolean getStaticDataSource() {
+        return staticDataSource_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set if the data source is not a time-series.
+       * </pre>
+       *
+       * <code>bool static_data_source = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The staticDataSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStaticDataSource(boolean value) {
+
+        staticDataSource_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set if the data source is not a time-series.
+       * </pre>
+       *
+       * <code>bool static_data_source = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStaticDataSource() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        staticDataSource_ = false;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries timeSeries_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries,
@@ -2011,7 +2190,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the timeSeries field is set.
        */
       public boolean hasTimeSeries() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -2064,7 +2243,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         } else {
           timeSeriesBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2090,7 +2269,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         } else {
           timeSeriesBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2112,7 +2291,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeTimeSeries(
           com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries value) {
         if (timeSeriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && timeSeries_ != null
               && timeSeries_
                   != com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
@@ -2125,7 +2304,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           timeSeriesBuilder_.mergeFrom(value);
         }
         if (timeSeries_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -2146,7 +2325,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearTimeSeries() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         timeSeries_ = null;
         if (timeSeriesBuilder_ != null) {
           timeSeriesBuilder_.dispose();
@@ -2172,7 +2351,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder
           getTimeSeriesBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getTimeSeriesFieldBuilder().getBuilder();
       }
@@ -2231,6 +2410,89 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           timeSeries_ = null;
         }
         return timeSeriesBuilder_;
+      }
+
+      private boolean dense_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, all feature values will be fetched
+       * from a single row per unique entityId including nulls.
+       * If not set, will collapse all rows for each unique entityId into a singe
+       * row with any non-null values if present, if no non-null values are
+       * present will sync null.
+       * ex: If source has schema
+       * `(entity_id, feature_timestamp, f0, f1)` and the following rows:
+       * `(e1, 2020-01-01T10:00:00.123Z, 10, 15)`
+       * `(e1, 2020-02-01T10:00:00.123Z, 20, null)`
+       * If dense is set, `(e1, 20, null)` is synced to online stores. If dense is
+       * not set, `(e1, 20, 15)` is synced to online stores.
+       * </pre>
+       *
+       * <code>bool dense = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dense.
+       */
+      @java.lang.Override
+      public boolean getDense() {
+        return dense_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, all feature values will be fetched
+       * from a single row per unique entityId including nulls.
+       * If not set, will collapse all rows for each unique entityId into a singe
+       * row with any non-null values if present, if no non-null values are
+       * present will sync null.
+       * ex: If source has schema
+       * `(entity_id, feature_timestamp, f0, f1)` and the following rows:
+       * `(e1, 2020-01-01T10:00:00.123Z, 10, 15)`
+       * `(e1, 2020-02-01T10:00:00.123Z, 20, null)`
+       * If dense is set, `(e1, 20, null)` is synced to online stores. If dense is
+       * not set, `(e1, 20, 15)` is synced to online stores.
+       * </pre>
+       *
+       * <code>bool dense = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The dense to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDense(boolean value) {
+
+        dense_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, all feature values will be fetched
+       * from a single row per unique entityId including nulls.
+       * If not set, will collapse all rows for each unique entityId into a singe
+       * row with any non-null values if present, if no non-null values are
+       * present will sync null.
+       * ex: If source has schema
+       * `(entity_id, feature_timestamp, f0, f1)` and the following rows:
+       * `(e1, 2020-01-01T10:00:00.123Z, 10, 15)`
+       * `(e1, 2020-02-01T10:00:00.123Z, 20, null)`
+       * If dense is set, `(e1, 20, null)` is synced to online stores. If dense is
+       * not set, `(e1, 20, 15)` is synced to online stores.
+       * </pre>
+       *
+       * <code>bool dense = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDense() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        dense_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

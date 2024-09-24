@@ -28,9 +28,9 @@ public interface RunFunnelReportRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A Google Analytics GA4 property identifier whose events are
-   * tracked. Specified in the URL path and not the body. To learn more, see
-   * [where to find your Property
+   * Optional. A Google Analytics property identifier whose events are tracked.
+   * Specified in the URL path and not the body. To learn more, see [where to
+   * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
@@ -47,9 +47,9 @@ public interface RunFunnelReportRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A Google Analytics GA4 property identifier whose events are
-   * tracked. Specified in the URL path and not the body. To learn more, see
-   * [where to find your Property
+   * Optional. A Google Analytics property identifier whose events are tracked.
+   * Specified in the URL path and not the body. To learn more, see [where to
+   * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.

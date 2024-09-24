@@ -268,6 +268,27 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void searchSpaces(
+      SearchSpacesRequest request, StreamObserver<SearchSpacesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchSpacesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchSpacesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchSpaces, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchSpacesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getSpace(GetSpaceRequest request, StreamObserver<Space> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Space) {

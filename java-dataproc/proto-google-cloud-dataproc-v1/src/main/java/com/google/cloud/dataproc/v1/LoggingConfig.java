@@ -411,7 +411,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -440,7 +440,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -460,7 +460,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -489,7 +489,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -522,7 +522,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -541,7 +541,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -564,7 +564,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The per-package log levels for the driver. This may include
+   * The per-package log levels for the driver. This can include
    * "root" package name to configure rootLogger.
    * Examples:
    * - 'com.google = FATAL'
@@ -996,7 +996,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1025,7 +1025,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1045,7 +1045,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1075,7 +1075,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1109,7 +1109,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1128,7 +1128,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1152,7 +1152,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1185,7 +1185,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1215,7 +1215,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1242,7 +1242,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1270,7 +1270,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'
@@ -1294,7 +1294,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The per-package log levels for the driver. This may include
+     * The per-package log levels for the driver. This can include
      * "root" package name to configure rootLogger.
      * Examples:
      * - 'com.google = FATAL'

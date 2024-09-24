@@ -127,7 +127,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCertificate to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCertificate:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -144,10 +146,47 @@ import org.threeten.bp.Duration;
  *             .getCertificateSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CertificateManagerStubSettings certificateManagerSettings =
  *     certificateManagerSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createCertificate:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CertificateManagerStubSettings.Builder certificateManagerSettingsBuilder =
+ *     CertificateManagerStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * certificateManagerSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -299,9 +338,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<Certificate> extractResources(ListCertificatesResponse payload) {
-              return payload.getCertificatesList() == null
-                  ? ImmutableList.<Certificate>of()
-                  : payload.getCertificatesList();
+              return payload.getCertificatesList();
             }
           };
 
@@ -339,9 +376,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<CertificateMap> extractResources(ListCertificateMapsResponse payload) {
-              return payload.getCertificateMapsList() == null
-                  ? ImmutableList.<CertificateMap>of()
-                  : payload.getCertificateMapsList();
+              return payload.getCertificateMapsList();
             }
           };
 
@@ -386,9 +421,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<CertificateMapEntry> extractResources(
                 ListCertificateMapEntriesResponse payload) {
-              return payload.getCertificateMapEntriesList() == null
-                  ? ImmutableList.<CertificateMapEntry>of()
-                  : payload.getCertificateMapEntriesList();
+              return payload.getCertificateMapEntriesList();
             }
           };
 
@@ -427,9 +460,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<DnsAuthorization> extractResources(
                 ListDnsAuthorizationsResponse payload) {
-              return payload.getDnsAuthorizationsList() == null
-                  ? ImmutableList.<DnsAuthorization>of()
-                  : payload.getDnsAuthorizationsList();
+              return payload.getDnsAuthorizationsList();
             }
           };
 
@@ -476,9 +507,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<CertificateIssuanceConfig> extractResources(
                 ListCertificateIssuanceConfigsResponse payload) {
-              return payload.getCertificateIssuanceConfigsList() == null
-                  ? ImmutableList.<CertificateIssuanceConfig>of()
-                  : payload.getCertificateIssuanceConfigsList();
+              return payload.getCertificateIssuanceConfigsList();
             }
           };
 
@@ -516,9 +545,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<TrustConfig> extractResources(ListTrustConfigsResponse payload) {
-              return payload.getTrustConfigsList() == null
-                  ? ImmutableList.<TrustConfig>of()
-                  : payload.getTrustConfigsList();
+              return payload.getTrustConfigsList();
             }
           };
 
@@ -552,9 +579,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

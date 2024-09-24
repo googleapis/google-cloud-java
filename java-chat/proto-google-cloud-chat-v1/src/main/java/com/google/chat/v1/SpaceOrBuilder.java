@@ -65,7 +65,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=155
    * @return The type.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=167
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -388,6 +388,47 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastActiveTime field is set.
+   */
+  boolean hasLastActiveTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastActiveTime.
+   */
+  com.google.protobuf.Timestamp getLastActiveTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last message in the space.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_active_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastActiveTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. For direct message (DM) spaces with a Chat app, whether the
    * space was created by a Google Workspace administrator. Administrators can
    * install and set up a direct message with a Chat app on behalf of users in
@@ -401,6 +442,53 @@ public interface SpaceOrBuilder
    * @return The adminInstalled.
    */
   boolean getAdminInstalled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the membershipCount field is set.
+   */
+  boolean hasMembershipCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The membershipCount.
+   */
+  com.google.chat.v1.Space.MembershipCount getMembershipCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of joined memberships grouped by member type.
+   * Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or
+   * `GROUP_CHAT`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.MembershipCount membership_count = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.chat.v1.Space.MembershipCountOrBuilder getMembershipCountOrBuilder();
 
   /**
    *

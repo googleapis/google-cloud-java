@@ -79,6 +79,78 @@ public interface SearchTextResponseOrBuilder
    *
    *
    * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  int getRoutingSummariesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
+      getRoutingSummariesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list will have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  com.google.maps.places.v1.RoutingSummaryOrBuilder getRoutingSummariesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Experimental: See
    * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
    * for more details.
@@ -88,7 +160,7 @@ public interface SearchTextResponseOrBuilder
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -108,7 +180,7 @@ public interface SearchTextResponseOrBuilder
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -128,7 +200,7 @@ public interface SearchTextResponseOrBuilder
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -148,7 +220,7 @@ public interface SearchTextResponseOrBuilder
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *
@@ -169,7 +241,7 @@ public interface SearchTextResponseOrBuilder
    * that are relevant to the `text_query` in the request are preferred. If the
    * contextual content is not available for one of the places, it will return
    * non-contextual content. It will be empty only when the content is
-   * unavailable for this place. This list should have as many entries as the
+   * unavailable for this place. This list will have as many entries as the
    * list of places if requested.
    * </pre>
    *

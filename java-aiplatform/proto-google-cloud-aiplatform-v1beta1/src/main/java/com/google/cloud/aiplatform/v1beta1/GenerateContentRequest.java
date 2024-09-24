@@ -57,6 +57,18 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         .internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 10:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -76,9 +88,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
-   * prediction. Format:
+   * Required. The fully qualified name of the publisher model or tuned model
+   * endpoint to use.
+   *
+   * Publisher model format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   *
+   * Tuned model endpoint format:
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,9 +118,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
-   * prediction. Format:
+   * Required. The fully qualified name of the publisher model or tuned model
+   * endpoint to use.
+   *
+   * Publisher model format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   *
+   * Tuned model endpoint format:
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -514,6 +536,132 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         : toolConfig_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 10;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+                .internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request. It is used
+   * for billing and reporting only.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request. It is used
+   * for billing and reporting only.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request. It is used
+   * for billing and reporting only.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request. It is used
+   * for billing and reporting only.
+   *
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints) and can only contain lowercase letters, numeric
+   * characters, underscores, and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int SAFETY_SETTINGS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -696,6 +844,8 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cachedContent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cachedContent_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
     getUnknownFields().writeTo(output);
   }
 
@@ -729,6 +879,16 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cachedContent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cachedContent_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -757,6 +917,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     if (hasToolConfig()) {
       if (!getToolConfig().equals(other.getToolConfig())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getSafetySettingsList().equals(other.getSafetySettingsList())) return false;
     if (hasGenerationConfig() != other.hasGenerationConfig()) return false;
     if (hasGenerationConfig()) {
@@ -792,6 +953,10 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     if (hasToolConfig()) {
       hash = (37 * hash) + TOOL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getToolConfig().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     if (getSafetySettingsCount() > 0) {
       hash = (37 * hash) + SAFETY_SETTINGS_FIELD_NUMBER;
@@ -920,6 +1085,28 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
           .internal_static_google_cloud_aiplatform_v1beta1_GenerateContentRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -981,13 +1168,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         toolConfigBuilder_.dispose();
         toolConfigBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       if (safetySettingsBuilder_ == null) {
         safetySettings_ = java.util.Collections.emptyList();
       } else {
         safetySettings_ = null;
         safetySettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       generationConfig_ = null;
       if (generationConfigBuilder_ != null) {
         generationConfigBuilder_.dispose();
@@ -1049,9 +1237,9 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         result.tools_ = toolsBuilder_.build();
       }
       if (safetySettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           safetySettings_ = java.util.Collections.unmodifiableList(safetySettings_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.safetySettings_ = safetySettings_;
       } else {
@@ -1079,7 +1267,11 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         result.toolConfig_ = toolConfigBuilder_ == null ? toolConfig_ : toolConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.generationConfig_ =
             generationConfigBuilder_ == null ? generationConfig_ : generationConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -1203,11 +1395,13 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
       if (other.hasToolConfig()) {
         mergeToolConfig(other.getToolConfig());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000040;
       if (safetySettingsBuilder_ == null) {
         if (!other.safetySettings_.isEmpty()) {
           if (safetySettings_.isEmpty()) {
             safetySettings_ = other.safetySettings_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureSafetySettingsIsMutable();
             safetySettings_.addAll(other.safetySettings_);
@@ -1220,7 +1414,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
             safetySettingsBuilder_.dispose();
             safetySettingsBuilder_ = null;
             safetySettings_ = other.safetySettings_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             safetySettingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSafetySettingsFieldBuilder()
@@ -1290,7 +1484,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
               {
                 input.readMessage(
                     getGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
@@ -1331,6 +1525,18 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1355,9 +1561,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
-     * prediction. Format:
+     * Required. The fully qualified name of the publisher model or tuned model
+     * endpoint to use.
+     *
+     * Publisher model format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+     *
+     * Tuned model endpoint format:
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1379,9 +1590,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
-     * prediction. Format:
+     * Required. The fully qualified name of the publisher model or tuned model
+     * endpoint to use.
+     *
+     * Publisher model format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+     *
+     * Tuned model endpoint format:
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1403,9 +1619,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
-     * prediction. Format:
+     * Required. The fully qualified name of the publisher model or tuned model
+     * endpoint to use.
+     *
+     * Publisher model format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+     *
+     * Tuned model endpoint format:
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1426,9 +1647,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
-     * prediction. Format:
+     * Required. The fully qualified name of the publisher model or tuned model
+     * endpoint to use.
+     *
+     * Publisher model format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+     *
+     * Tuned model endpoint format:
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1445,9 +1671,14 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
-     * prediction. Format:
+     * Required. The fully qualified name of the publisher model or tuned model
+     * endpoint to use.
+     *
+     * Publisher model format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+     *
+     * Tuned model endpoint format:
+     * `projects/{project}/locations/{location}/endpoints/{endpoint}`
      * </pre>
      *
      * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2970,15 +3201,220 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
       return toolConfigBuilder_;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request. It is used
+     * for billing and reporting only.
+     *
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints) and can only contain lowercase letters, numeric
+     * characters, underscores, and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.SafetySetting> safetySettings_ =
         java.util.Collections.emptyList();
 
     private void ensureSafetySettingsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         safetySettings_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.SafetySetting>(
                 safetySettings_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3230,7 +3666,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     public Builder clearSafetySettings() {
       if (safetySettingsBuilder_ == null) {
         safetySettings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         safetySettingsBuilder_.clear();
@@ -3378,7 +3814,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.aiplatform.v1beta1.SafetySetting.Builder,
                 com.google.cloud.aiplatform.v1beta1.SafetySettingOrBuilder>(
                 safetySettings_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         safetySettings_ = null;
@@ -3406,7 +3842,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      * @return Whether the generationConfig field is set.
      */
     public boolean hasGenerationConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3450,7 +3886,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
       } else {
         generationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3472,7 +3908,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
       } else {
         generationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3490,7 +3926,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
     public Builder mergeGenerationConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
       if (generationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && generationConfig_ != null
             && generationConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()) {
@@ -3502,7 +3938,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
         generationConfigBuilder_.mergeFrom(value);
       }
       if (generationConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3519,7 +3955,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       generationConfig_ = null;
       if (generationConfigBuilder_ != null) {
         generationConfigBuilder_.dispose();
@@ -3541,7 +3977,7 @@ public final class GenerateContentRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder
         getGenerationConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getGenerationConfigFieldBuilder().getBuilder();
     }

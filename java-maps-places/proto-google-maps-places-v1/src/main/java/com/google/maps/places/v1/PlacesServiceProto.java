@@ -29,6 +29,10 @@ public final class PlacesServiceProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_places_v1_RoutingParameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_places_v1_RoutingParameters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_places_v1_SearchNearbyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_places_v1_SearchNearbyRequest_fieldAccessorTable;
@@ -56,6 +60,10 @@ public final class PlacesServiceProto {
       internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_places_v1_SearchTextRequest_EVOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_places_v1_SearchTextResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -130,138 +138,162 @@ public final class PlacesServiceProto {
           + "ntextual_content.proto\032\'google/maps/plac"
           + "es/v1/ev_charging.proto\032$google/maps/pla"
           + "ces/v1/geometry.proto\032!google/maps/place"
-          + "s/v1/place.proto\032\030google/type/latlng.pro"
-          + "to\"\243\004\n\023SearchNearbyRequest\022\025\n\rlanguage_c"
-          + "ode\030\001 \001(\t\022\023\n\013region_code\030\002 \001(\t\022\026\n\016includ"
-          + "ed_types\030\003 \003(\t\022\026\n\016excluded_types\030\004 \003(\t\022\036"
-          + "\n\026included_primary_types\030\005 \003(\t\022\036\n\026exclud"
-          + "ed_primary_types\030\006 \003(\t\022\030\n\020max_result_cou"
-          + "nt\030\007 \001(\005\022a\n\024location_restriction\030\010 \001(\0132>"
-          + ".google.maps.places.v1.SearchNearbyReque"
-          + "st.LocationRestrictionB\003\340A\002\022R\n\017rank_pref"
-          + "erence\030\t \001(\01629.google.maps.places.v1.Sea"
-          + "rchNearbyRequest.RankPreference\032N\n\023Locat"
-          + "ionRestriction\022/\n\006circle\030\002 \001(\0132\035.google."
-          + "maps.places.v1.CircleH\000B\006\n\004type\"O\n\016RankP"
-          + "reference\022\037\n\033RANK_PREFERENCE_UNSPECIFIED"
-          + "\020\000\022\014\n\010DISTANCE\020\001\022\016\n\nPOPULARITY\020\002\"D\n\024Sear"
-          + "chNearbyResponse\022,\n\006places\030\001 \003(\0132\034.googl"
-          + "e.maps.places.v1.Place\"\342\007\n\021SearchTextReq"
-          + "uest\022\027\n\ntext_query\030\001 \001(\tB\003\340A\002\022\025\n\rlanguag"
-          + "e_code\030\002 \001(\t\022\023\n\013region_code\030\003 \001(\t\022P\n\017ran"
-          + "k_preference\030\004 \001(\01627.google.maps.places."
-          + "v1.SearchTextRequest.RankPreference\022\025\n\ri"
-          + "ncluded_type\030\006 \001(\t\022\020\n\010open_now\030\007 \001(\010\022\022\n\n"
-          + "min_rating\030\t \001(\001\022\030\n\020max_result_count\030\n \001"
-          + "(\005\0227\n\014price_levels\030\013 \003(\0162!.google.maps.p"
-          + "laces.v1.PriceLevel\022\035\n\025strict_type_filte"
-          + "ring\030\014 \001(\010\022L\n\rlocation_bias\030\r \001(\01325.goog"
-          + "le.maps.places.v1.SearchTextRequest.Loca"
-          + "tionBias\022Z\n\024location_restriction\030\016 \001(\0132<"
-          + ".google.maps.places.v1.SearchTextRequest"
-          + ".LocationRestriction\022K\n\nev_options\030\017 \001(\013"
-          + "22.google.maps.places.v1.SearchTextReque"
-          + "st.EVOptionsB\003\340A\001\032w\n\014LocationBias\022.\n\trec"
-          + "tangle\030\001 \001(\0132\031.google.geo.type.ViewportH"
-          + "\000\022/\n\006circle\030\002 \001(\0132\035.google.maps.places.v"
-          + "1.CircleH\000B\006\n\004type\032M\n\023LocationRestrictio"
-          + "n\022.\n\trectangle\030\001 \001(\0132\031.google.geo.type.V"
-          + "iewportH\000B\006\n\004type\032x\n\tEVOptions\022%\n\030minimu"
-          + "m_charging_rate_kw\030\001 \001(\001B\003\340A\001\022D\n\017connect"
-          + "or_types\030\002 \003(\0162&.google.maps.places.v1.E"
-          + "VConnectorTypeB\003\340A\001\"N\n\016RankPreference\022\037\n"
-          + "\033RANK_PREFERENCE_UNSPECIFIED\020\000\022\014\n\010DISTAN"
-          + "CE\020\001\022\r\n\tRELEVANCE\020\002\"\211\001\n\022SearchTextRespon"
-          + "se\022,\n\006places\030\001 \003(\0132\034.google.maps.places."
-          + "v1.Place\022E\n\023contextual_contents\030\003 \003(\0132(."
-          + "google.maps.places.v1.ContextualContent\""
-          + "\246\001\n\024GetPhotoMediaRequest\0226\n\004name\030\001 \001(\tB("
-          + "\340A\002\372A\"\n places.googleapis.com/PhotoMedia"
-          + "\022\031\n\014max_width_px\030\002 \001(\005B\003\340A\001\022\032\n\rmax_heigh"
-          + "t_px\030\003 \001(\005B\003\340A\001\022\037\n\022skip_http_redirect\030\004 "
-          + "\001(\010B\003\340A\001\"\237\001\n\nPhotoMedia\022\014\n\004name\030\001 \001(\t\022\021\n"
-          + "\tphoto_uri\030\002 \001(\t:p\352Am\n places.googleapis"
-          + ".com/PhotoMedia\0220places/{place_id}/photo"
-          + "s/{photo_reference}/media*\013photoMedias2\n"
-          + "photoMedia\"\226\001\n\017GetPlaceRequest\0221\n\004name\030\001"
-          + " \001(\tB#\340A\002\372A\035\n\033places.googleapis.com/Plac"
-          + "e\022\032\n\rlanguage_code\030\002 \001(\tB\003\340A\001\022\030\n\013region_"
-          + "code\030\003 \001(\tB\003\340A\001\022\032\n\rsession_token\030\004 \001(\tB\003"
-          + "\340A\001\"\364\005\n\031AutocompletePlacesRequest\022\022\n\005inp"
-          + "ut\030\001 \001(\tB\003\340A\002\022Y\n\rlocation_bias\030\002 \001(\0132=.g"
-          + "oogle.maps.places.v1.AutocompletePlacesR"
-          + "equest.LocationBiasB\003\340A\001\022g\n\024location_res"
-          + "triction\030\003 \001(\0132D.google.maps.places.v1.A"
-          + "utocompletePlacesRequest.LocationRestric"
-          + "tionB\003\340A\001\022#\n\026included_primary_types\030\004 \003("
-          + "\tB\003\340A\001\022\"\n\025included_region_codes\030\005 \003(\tB\003\340"
-          + "A\001\022\032\n\rlanguage_code\030\006 \001(\tB\003\340A\001\022\030\n\013region"
-          + "_code\030\007 \001(\tB\003\340A\001\022(\n\006origin\030\010 \001(\0132\023.googl"
-          + "e.type.LatLngB\003\340A\001\022\031\n\014input_offset\030\t \001(\005"
-          + "B\003\340A\001\022&\n\031include_query_predictions\030\n \001(\010"
-          + "B\003\340A\001\022\032\n\rsession_token\030\013 \001(\tB\003\340A\001\032w\n\014Loc"
+          + "s/v1/place.proto\032$google/maps/places/v1/"
+          + "polyline.proto\032+google/maps/places/v1/ro"
+          + "ute_modifiers.proto\032.google/maps/places/"
+          + "v1/routing_preference.proto\032+google/maps"
+          + "/places/v1/routing_summary.proto\032\'google"
+          + "/maps/places/v1/travel_mode.proto\032\030googl"
+          + "e/type/latlng.proto\"\212\002\n\021RoutingParameter"
+          + "s\022(\n\006origin\030\001 \001(\0132\023.google.type.LatLngB\003"
+          + "\340A\001\022;\n\013travel_mode\030\002 \001(\0162!.google.maps.p"
+          + "laces.v1.TravelModeB\003\340A\001\022C\n\017route_modifi"
+          + "ers\030\003 \001(\0132%.google.maps.places.v1.RouteM"
+          + "odifiersB\003\340A\001\022I\n\022routing_preference\030\004 \001("
+          + "\0162(.google.maps.places.v1.RoutingPrefere"
+          + "nceB\003\340A\001\"\356\004\n\023SearchNearbyRequest\022\025\n\rlang"
+          + "uage_code\030\001 \001(\t\022\023\n\013region_code\030\002 \001(\t\022\026\n\016"
+          + "included_types\030\003 \003(\t\022\026\n\016excluded_types\030\004"
+          + " \003(\t\022\036\n\026included_primary_types\030\005 \003(\t\022\036\n\026"
+          + "excluded_primary_types\030\006 \003(\t\022\030\n\020max_resu"
+          + "lt_count\030\007 \001(\005\022a\n\024location_restriction\030\010"
+          + " \001(\0132>.google.maps.places.v1.SearchNearb"
+          + "yRequest.LocationRestrictionB\003\340A\002\022R\n\017ran"
+          + "k_preference\030\t \001(\01629.google.maps.places."
+          + "v1.SearchNearbyRequest.RankPreference\022I\n"
+          + "\022routing_parameters\030\n \001(\0132(.google.maps."
+          + "places.v1.RoutingParametersB\003\340A\001\032N\n\023Loca"
+          + "tionRestriction\022/\n\006circle\030\002 \001(\0132\035.google"
+          + ".maps.places.v1.CircleH\000B\006\n\004type\"O\n\016Rank"
+          + "Preference\022\037\n\033RANK_PREFERENCE_UNSPECIFIE"
+          + "D\020\000\022\014\n\010DISTANCE\020\001\022\016\n\nPOPULARITY\020\002\"\206\001\n\024Se"
+          + "archNearbyResponse\022,\n\006places\030\001 \003(\0132\034.goo"
+          + "gle.maps.places.v1.Place\022@\n\021routing_summ"
+          + "aries\030\002 \003(\0132%.google.maps.places.v1.Rout"
+          + "ingSummary\"\364\t\n\021SearchTextRequest\022\027\n\ntext"
+          + "_query\030\001 \001(\tB\003\340A\002\022\025\n\rlanguage_code\030\002 \001(\t"
+          + "\022\023\n\013region_code\030\003 \001(\t\022P\n\017rank_preference"
+          + "\030\004 \001(\01627.google.maps.places.v1.SearchTex"
+          + "tRequest.RankPreference\022\025\n\rincluded_type"
+          + "\030\006 \001(\t\022\020\n\010open_now\030\007 \001(\010\022\022\n\nmin_rating\030\t"
+          + " \001(\001\022\030\n\020max_result_count\030\n \001(\005\0227\n\014price_"
+          + "levels\030\013 \003(\0162!.google.maps.places.v1.Pri"
+          + "ceLevel\022\035\n\025strict_type_filtering\030\014 \001(\010\022L"
+          + "\n\rlocation_bias\030\r \001(\01325.google.maps.plac"
+          + "es.v1.SearchTextRequest.LocationBias\022Z\n\024"
+          + "location_restriction\030\016 \001(\0132<.google.maps"
+          + ".places.v1.SearchTextRequest.LocationRes"
+          + "triction\022K\n\nev_options\030\017 \001(\01322.google.ma"
+          + "ps.places.v1.SearchTextRequest.EVOptions"
+          + "B\003\340A\001\022I\n\022routing_parameters\030\020 \001(\0132(.goog"
+          + "le.maps.places.v1.RoutingParametersB\003\340A\001"
+          + "\022o\n\035search_along_route_parameters\030\021 \001(\0132"
+          + "C.google.maps.places.v1.SearchTextReques"
+          + "t.SearchAlongRouteParametersB\003\340A\001\032w\n\014Loc"
           + "ationBias\022.\n\trectangle\030\001 \001(\0132\031.google.ge"
           + "o.type.ViewportH\000\022/\n\006circle\030\002 \001(\0132\035.goog"
-          + "le.maps.places.v1.CircleH\000B\006\n\004type\032~\n\023Lo"
+          + "le.maps.places.v1.CircleH\000B\006\n\004type\032M\n\023Lo"
           + "cationRestriction\022.\n\trectangle\030\001 \001(\0132\031.g"
+          + "oogle.geo.type.ViewportH\000B\006\n\004type\032x\n\tEVO"
+          + "ptions\022%\n\030minimum_charging_rate_kw\030\001 \001(\001"
+          + "B\003\340A\001\022D\n\017connector_types\030\002 \003(\0162&.google."
+          + "maps.places.v1.EVConnectorTypeB\003\340A\001\032T\n\032S"
+          + "earchAlongRouteParameters\0226\n\010polyline\030\001 "
+          + "\001(\0132\037.google.maps.places.v1.PolylineB\003\340A"
+          + "\002\"N\n\016RankPreference\022\037\n\033RANK_PREFERENCE_U"
+          + "NSPECIFIED\020\000\022\014\n\010DISTANCE\020\001\022\r\n\tRELEVANCE\020"
+          + "\002\"\313\001\n\022SearchTextResponse\022,\n\006places\030\001 \003(\013"
+          + "2\034.google.maps.places.v1.Place\022@\n\021routin"
+          + "g_summaries\030\002 \003(\0132%.google.maps.places.v"
+          + "1.RoutingSummary\022E\n\023contextual_contents\030"
+          + "\003 \003(\0132(.google.maps.places.v1.Contextual"
+          + "Content\"\246\001\n\024GetPhotoMediaRequest\0226\n\004name"
+          + "\030\001 \001(\tB(\340A\002\372A\"\n places.googleapis.com/Ph"
+          + "otoMedia\022\031\n\014max_width_px\030\002 \001(\005B\003\340A\001\022\032\n\rm"
+          + "ax_height_px\030\003 \001(\005B\003\340A\001\022\037\n\022skip_http_red"
+          + "irect\030\004 \001(\010B\003\340A\001\"\237\001\n\nPhotoMedia\022\014\n\004name\030"
+          + "\001 \001(\t\022\021\n\tphoto_uri\030\002 \001(\t:p\352Am\n places.go"
+          + "ogleapis.com/PhotoMedia\0220places/{place_i"
+          + "d}/photos/{photo_reference}/media*\013photo"
+          + "Medias2\nphotoMedia\"\226\001\n\017GetPlaceRequest\0221"
+          + "\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033places.googleapis."
+          + "com/Place\022\032\n\rlanguage_code\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\013region_code\030\003 \001(\tB\003\340A\001\022\032\n\rsession_token"
+          + "\030\004 \001(\tB\003\340A\001\"\364\005\n\031AutocompletePlacesReques"
+          + "t\022\022\n\005input\030\001 \001(\tB\003\340A\002\022Y\n\rlocation_bias\030\002"
+          + " \001(\0132=.google.maps.places.v1.Autocomplet"
+          + "ePlacesRequest.LocationBiasB\003\340A\001\022g\n\024loca"
+          + "tion_restriction\030\003 \001(\0132D.google.maps.pla"
+          + "ces.v1.AutocompletePlacesRequest.Locatio"
+          + "nRestrictionB\003\340A\001\022#\n\026included_primary_ty"
+          + "pes\030\004 \003(\tB\003\340A\001\022\"\n\025included_region_codes\030"
+          + "\005 \003(\tB\003\340A\001\022\032\n\rlanguage_code\030\006 \001(\tB\003\340A\001\022\030"
+          + "\n\013region_code\030\007 \001(\tB\003\340A\001\022(\n\006origin\030\010 \001(\013"
+          + "2\023.google.type.LatLngB\003\340A\001\022\031\n\014input_offs"
+          + "et\030\t \001(\005B\003\340A\001\022&\n\031include_query_predictio"
+          + "ns\030\n \001(\010B\003\340A\001\022\032\n\rsession_token\030\013 \001(\tB\003\340A"
+          + "\001\032w\n\014LocationBias\022.\n\trectangle\030\001 \001(\0132\031.g"
           + "oogle.geo.type.ViewportH\000\022/\n\006circle\030\002 \001("
           + "\0132\035.google.maps.places.v1.CircleH\000B\006\n\004ty"
-          + "pe\"\212\n\n\032AutocompletePlacesResponse\022Q\n\013sug"
-          + "gestions\030\001 \003(\0132<.google.maps.places.v1.A"
-          + "utocompletePlacesResponse.Suggestion\032\230\t\n"
-          + "\nSuggestion\022h\n\020place_prediction\030\001 \001(\0132L."
-          + "google.maps.places.v1.AutocompletePlaces"
-          + "Response.Suggestion.PlacePredictionH\000\022h\n"
-          + "\020query_prediction\030\002 \001(\0132L.google.maps.pl"
-          + "aces.v1.AutocompletePlacesResponse.Sugge"
-          + "stion.QueryPredictionH\000\0327\n\013StringRange\022\024"
-          + "\n\014start_offset\030\001 \001(\005\022\022\n\nend_offset\030\002 \001(\005"
-          + "\032z\n\017FormattableText\022\014\n\004text\030\001 \001(\t\022Y\n\007mat"
-          + "ches\030\002 \003(\0132H.google.maps.places.v1.Autoc"
-          + "ompletePlacesResponse.Suggestion.StringR"
-          + "ange\032\331\001\n\020StructuredFormat\022_\n\tmain_text\030\001"
-          + " \001(\0132L.google.maps.places.v1.Autocomplet"
-          + "ePlacesResponse.Suggestion.FormattableTe"
-          + "xt\022d\n\016secondary_text\030\002 \001(\0132L.google.maps"
-          + ".places.v1.AutocompletePlacesResponse.Su"
-          + "ggestion.FormattableText\032\302\002\n\017PlacePredic"
-          + "tion\022/\n\005place\030\001 \001(\tB \372A\035\n\033places.googlea"
-          + "pis.com/Place\022\020\n\010place_id\030\002 \001(\t\022Z\n\004text\030"
-          + "\003 \001(\0132L.google.maps.places.v1.Autocomple"
-          + "tePlacesResponse.Suggestion.FormattableT"
-          + "ext\022h\n\021structured_format\030\004 \001(\0132M.google."
-          + "maps.places.v1.AutocompletePlacesRespons"
-          + "e.Suggestion.StructuredFormat\022\r\n\005types\030\005"
-          + " \003(\t\022\027\n\017distance_meters\030\006 \001(\005\032\327\001\n\017QueryP"
-          + "rediction\022Z\n\004text\030\001 \001(\0132L.google.maps.pl"
-          + "aces.v1.AutocompletePlacesResponse.Sugge"
-          + "stion.FormattableText\022h\n\021structured_form"
-          + "at\030\002 \001(\0132M.google.maps.places.v1.Autocom"
-          + "pletePlacesResponse.Suggestion.Structure"
-          + "dFormatB\006\n\004kind2\341\005\n\006Places\022\213\001\n\014SearchNea"
-          + "rby\022*.google.maps.places.v1.SearchNearby"
-          + "Request\032+.google.maps.places.v1.SearchNe"
-          + "arbyResponse\"\"\202\323\344\223\002\034\"\027/v1/places:searchN"
-          + "earby:\001*\022\203\001\n\nSearchText\022(.google.maps.pl"
-          + "aces.v1.SearchTextRequest\032).google.maps."
-          + "places.v1.SearchTextResponse\" \202\323\344\223\002\032\"\025/v"
-          + "1/places:searchText:\001*\022\222\001\n\rGetPhotoMedia"
-          + "\022+.google.maps.places.v1.GetPhotoMediaRe"
-          + "quest\032!.google.maps.places.v1.PhotoMedia"
-          + "\"1\332A\004name\202\323\344\223\002$\022\"/v1/{name=places/*/phot"
-          + "os/*/media}\022t\n\010GetPlace\022&.google.maps.pl"
-          + "aces.v1.GetPlaceRequest\032\034.google.maps.pl"
-          + "aces.v1.Place\"\"\332A\004name\202\323\344\223\002\025\022\023/v1/{name="
-          + "places/*}\022\235\001\n\022AutocompletePlaces\0220.googl"
-          + "e.maps.places.v1.AutocompletePlacesReque"
-          + "st\0321.google.maps.places.v1.AutocompleteP"
-          + "lacesResponse\"\"\202\323\344\223\002\034\"\027/v1/places:autoco"
-          + "mplete:\001*\032\030\312A\025places.googleapis.comB\246\001\n\031"
-          + "com.google.maps.places.v1B\022PlacesService"
-          + "ProtoP\001Z7cloud.google.com/go/maps/places"
-          + "/apiv1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025G"
-          + "oogle.Maps.Places.V1\312\002\025Google\\Maps\\Place"
-          + "s\\V1b\006proto3"
+          + "pe\032~\n\023LocationRestriction\022.\n\trectangle\030\001"
+          + " \001(\0132\031.google.geo.type.ViewportH\000\022/\n\006cir"
+          + "cle\030\002 \001(\0132\035.google.maps.places.v1.Circle"
+          + "H\000B\006\n\004type\"\212\n\n\032AutocompletePlacesRespons"
+          + "e\022Q\n\013suggestions\030\001 \003(\0132<.google.maps.pla"
+          + "ces.v1.AutocompletePlacesResponse.Sugges"
+          + "tion\032\230\t\n\nSuggestion\022h\n\020place_prediction\030"
+          + "\001 \001(\0132L.google.maps.places.v1.Autocomple"
+          + "tePlacesResponse.Suggestion.PlacePredict"
+          + "ionH\000\022h\n\020query_prediction\030\002 \001(\0132L.google"
+          + ".maps.places.v1.AutocompletePlacesRespon"
+          + "se.Suggestion.QueryPredictionH\000\0327\n\013Strin"
+          + "gRange\022\024\n\014start_offset\030\001 \001(\005\022\022\n\nend_offs"
+          + "et\030\002 \001(\005\032z\n\017FormattableText\022\014\n\004text\030\001 \001("
+          + "\t\022Y\n\007matches\030\002 \003(\0132H.google.maps.places."
+          + "v1.AutocompletePlacesResponse.Suggestion"
+          + ".StringRange\032\331\001\n\020StructuredFormat\022_\n\tmai"
+          + "n_text\030\001 \001(\0132L.google.maps.places.v1.Aut"
+          + "ocompletePlacesResponse.Suggestion.Forma"
+          + "ttableText\022d\n\016secondary_text\030\002 \001(\0132L.goo"
+          + "gle.maps.places.v1.AutocompletePlacesRes"
+          + "ponse.Suggestion.FormattableText\032\302\002\n\017Pla"
+          + "cePrediction\022/\n\005place\030\001 \001(\tB \372A\035\n\033places"
+          + ".googleapis.com/Place\022\020\n\010place_id\030\002 \001(\t\022"
+          + "Z\n\004text\030\003 \001(\0132L.google.maps.places.v1.Au"
+          + "tocompletePlacesResponse.Suggestion.Form"
+          + "attableText\022h\n\021structured_format\030\004 \001(\0132M"
+          + ".google.maps.places.v1.AutocompletePlace"
+          + "sResponse.Suggestion.StructuredFormat\022\r\n"
+          + "\005types\030\005 \003(\t\022\027\n\017distance_meters\030\006 \001(\005\032\327\001"
+          + "\n\017QueryPrediction\022Z\n\004text\030\001 \001(\0132L.google"
+          + ".maps.places.v1.AutocompletePlacesRespon"
+          + "se.Suggestion.FormattableText\022h\n\021structu"
+          + "red_format\030\002 \001(\0132M.google.maps.places.v1"
+          + ".AutocompletePlacesResponse.Suggestion.S"
+          + "tructuredFormatB\006\n\004kind2\341\005\n\006Places\022\213\001\n\014S"
+          + "earchNearby\022*.google.maps.places.v1.Sear"
+          + "chNearbyRequest\032+.google.maps.places.v1."
+          + "SearchNearbyResponse\"\"\202\323\344\223\002\034\"\027/v1/places"
+          + ":searchNearby:\001*\022\203\001\n\nSearchText\022(.google"
+          + ".maps.places.v1.SearchTextRequest\032).goog"
+          + "le.maps.places.v1.SearchTextResponse\" \202\323"
+          + "\344\223\002\032\"\025/v1/places:searchText:\001*\022\222\001\n\rGetPh"
+          + "otoMedia\022+.google.maps.places.v1.GetPhot"
+          + "oMediaRequest\032!.google.maps.places.v1.Ph"
+          + "otoMedia\"1\332A\004name\202\323\344\223\002$\022\"/v1/{name=place"
+          + "s/*/photos/*/media}\022t\n\010GetPlace\022&.google"
+          + ".maps.places.v1.GetPlaceRequest\032\034.google"
+          + ".maps.places.v1.Place\"\"\332A\004name\202\323\344\223\002\025\022\023/v"
+          + "1/{name=places/*}\022\235\001\n\022AutocompletePlaces"
+          + "\0220.google.maps.places.v1.AutocompletePla"
+          + "cesRequest\0321.google.maps.places.v1.Autoc"
+          + "ompletePlacesResponse\"\"\202\323\344\223\002\034\"\027/v1/place"
+          + "s:autocomplete:\001*\032\030\312A\025places.googleapis."
+          + "comB\246\001\n\031com.google.maps.places.v1B\022Place"
+          + "sServiceProtoP\001Z7cloud.google.com/go/map"
+          + "s/places/apiv1/placespb;placespb\370\001\001\242\002\006GM"
+          + "PSV1\252\002\025Google.Maps.Places.V1\312\002\025Google\\Ma"
+          + "ps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -276,10 +308,23 @@ public final class PlacesServiceProto {
               com.google.maps.places.v1.EvChargingProto.getDescriptor(),
               com.google.maps.places.v1.GeometryProto.getDescriptor(),
               com.google.maps.places.v1.PlaceProto.getDescriptor(),
+              com.google.maps.places.v1.PolylineProto.getDescriptor(),
+              com.google.maps.places.v1.RouteModifiersProto.getDescriptor(),
+              com.google.maps.places.v1.RoutingPreferenceProto.getDescriptor(),
+              com.google.maps.places.v1.RoutingSummaryProto.getDescriptor(),
+              com.google.maps.places.v1.TravelModeProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
             });
-    internal_static_google_maps_places_v1_SearchNearbyRequest_descriptor =
+    internal_static_google_maps_places_v1_RoutingParameters_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_maps_places_v1_RoutingParameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_places_v1_RoutingParameters_descriptor,
+            new java.lang.String[] {
+              "Origin", "TravelMode", "RouteModifiers", "RoutingPreference",
+            });
+    internal_static_google_maps_places_v1_SearchNearbyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_maps_places_v1_SearchNearbyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_SearchNearbyRequest_descriptor,
@@ -293,6 +338,7 @@ public final class PlacesServiceProto {
               "MaxResultCount",
               "LocationRestriction",
               "RankPreference",
+              "RoutingParameters",
             });
     internal_static_google_maps_places_v1_SearchNearbyRequest_LocationRestriction_descriptor =
         internal_static_google_maps_places_v1_SearchNearbyRequest_descriptor
@@ -305,15 +351,15 @@ public final class PlacesServiceProto {
               "Circle", "Type",
             });
     internal_static_google_maps_places_v1_SearchNearbyResponse_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_maps_places_v1_SearchNearbyResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_SearchNearbyResponse_descriptor,
             new java.lang.String[] {
-              "Places",
+              "Places", "RoutingSummaries",
             });
     internal_static_google_maps_places_v1_SearchTextRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_maps_places_v1_SearchTextRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_SearchTextRequest_descriptor,
@@ -331,6 +377,8 @@ public final class PlacesServiceProto {
               "LocationBias",
               "LocationRestriction",
               "EvOptions",
+              "RoutingParameters",
+              "SearchAlongRouteParameters",
             });
     internal_static_google_maps_places_v1_SearchTextRequest_LocationBias_descriptor =
         internal_static_google_maps_places_v1_SearchTextRequest_descriptor.getNestedTypes().get(0);
@@ -356,16 +404,24 @@ public final class PlacesServiceProto {
             new java.lang.String[] {
               "MinimumChargingRateKw", "ConnectorTypes",
             });
+    internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor =
+        internal_static_google_maps_places_v1_SearchTextRequest_descriptor.getNestedTypes().get(3);
+    internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_places_v1_SearchTextRequest_SearchAlongRouteParameters_descriptor,
+            new java.lang.String[] {
+              "Polyline",
+            });
     internal_static_google_maps_places_v1_SearchTextResponse_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_maps_places_v1_SearchTextResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_SearchTextResponse_descriptor,
             new java.lang.String[] {
-              "Places", "ContextualContents",
+              "Places", "RoutingSummaries", "ContextualContents",
             });
     internal_static_google_maps_places_v1_GetPhotoMediaRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_maps_places_v1_GetPhotoMediaRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_GetPhotoMediaRequest_descriptor,
@@ -373,7 +429,7 @@ public final class PlacesServiceProto {
               "Name", "MaxWidthPx", "MaxHeightPx", "SkipHttpRedirect",
             });
     internal_static_google_maps_places_v1_PhotoMedia_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_maps_places_v1_PhotoMedia_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_PhotoMedia_descriptor,
@@ -381,7 +437,7 @@ public final class PlacesServiceProto {
               "Name", "PhotoUri",
             });
     internal_static_google_maps_places_v1_GetPlaceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_maps_places_v1_GetPlaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_GetPlaceRequest_descriptor,
@@ -389,7 +445,7 @@ public final class PlacesServiceProto {
               "Name", "LanguageCode", "RegionCode", "SessionToken",
             });
     internal_static_google_maps_places_v1_AutocompletePlacesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_maps_places_v1_AutocompletePlacesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_AutocompletePlacesRequest_descriptor,
@@ -427,7 +483,7 @@ public final class PlacesServiceProto {
               "Rectangle", "Circle", "Type",
             });
     internal_static_google_maps_places_v1_AutocompletePlacesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_maps_places_v1_AutocompletePlacesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_AutocompletePlacesResponse_descriptor,
@@ -513,6 +569,11 @@ public final class PlacesServiceProto {
     com.google.maps.places.v1.EvChargingProto.getDescriptor();
     com.google.maps.places.v1.GeometryProto.getDescriptor();
     com.google.maps.places.v1.PlaceProto.getDescriptor();
+    com.google.maps.places.v1.PolylineProto.getDescriptor();
+    com.google.maps.places.v1.RouteModifiersProto.getDescriptor();
+    com.google.maps.places.v1.RoutingPreferenceProto.getDescriptor();
+    com.google.maps.places.v1.RoutingSummaryProto.getDescriptor();
+    com.google.maps.places.v1.TravelModeProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
   }
 

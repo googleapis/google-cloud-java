@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Anthos Multi-Cloud API
+ * A client to GKE Multi-Cloud API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

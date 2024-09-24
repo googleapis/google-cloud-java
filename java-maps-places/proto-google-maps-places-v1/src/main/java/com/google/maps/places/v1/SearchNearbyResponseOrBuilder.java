@@ -79,4 +79,76 @@ public interface SearchNearbyResponseOrBuilder
    * <code>repeated .google.maps.places.v1.Place places = 1;</code>
    */
   com.google.maps.places.v1.PlaceOrBuilder getPlacesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list should have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list should have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list should have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  int getRoutingSummariesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list should have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  java.util.List<? extends com.google.maps.places.v1.RoutingSummaryOrBuilder>
+      getRoutingSummariesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of routing summaries where each entry associates to the
+   * corresponding place in the same index in the places field. If the routing
+   * summary is not available for one of the places, it will contain an empty
+   * entry. This list should have as many entries as the list of places if
+   * requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.RoutingSummary routing_summaries = 2;</code>
+   */
+  com.google.maps.places.v1.RoutingSummaryOrBuilder getRoutingSummariesOrBuilder(int index);
 }

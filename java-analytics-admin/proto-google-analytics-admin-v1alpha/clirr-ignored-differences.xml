@@ -16,116 +16,65 @@
     <className>com/google/analytics/admin/v1alpha/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/Conversion*</className>
-    <field>*_FIELD_NUMBER</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/Conversion*</className>
-    <method>* *Deletable*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/FirebaseLink*</className>
-    <field>*_FIELD_NUMBER</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* clear()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/FirebaseLink*</className>
-    <method>* *MaximumUserAccess*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
-    <field>*_FIELD_NUMBER</field>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
-    <method>* *EmailAddress*(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* clone()</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/UpdateFirebaseLinkRequest*</className>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/MaximumUserAccess*</className>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/*EnhancedMeasurementSettings*</className>
-  </difference>
-
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/AndroidAppDataStream*</className>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/ChangeHistoryChange$ChangeHistoryResource</className>
-    <field>*_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/ChangeHistoryChange*</className>
-    <method>* *DataStream*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/ChangeHistory*</className>
-    <field>*DATA_STREAM*</field>
-  </difference>
-  <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/ChangeHistory*</className>
-    <field>*DATA_STREAM*</field>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/*DataStreamRequest*</className>
-    <method>* *DataStream*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GlobalSiteTagName</className>
-    <method>* format(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GlobalSiteTagName</className>
-    <method>* of(*)</method>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/analytics/admin/v1alpha/*DataStream*</className>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/MeasurementProtocolSecretName*</className>
-    <method>* *WebDataStream*(*)</method>
-  </difference>
-
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/CustomDimensionName</className>
-    <method>* of(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/CustomDimensionName</className>
-    <method>* format(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/CustomMetricName</className>
-    <method>* of(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/analytics/admin/v1alpha/CustomMetricName</className>
-    <method>* format(*)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

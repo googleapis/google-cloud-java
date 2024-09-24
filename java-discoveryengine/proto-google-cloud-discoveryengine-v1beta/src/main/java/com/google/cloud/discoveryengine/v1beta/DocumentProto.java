@@ -36,6 +36,10 @@ public final class DocumentProto {
       internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,32 +54,37 @@ public final class DocumentProto {
           + "ne.v1beta\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\034google/pr"
           + "otobuf/struct.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\310\005\n\010Document\022.\n\013struct_data"
-          + "\030\004 \001(\0132\027.google.protobuf.StructH\000\022\023\n\tjso"
-          + "n_data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030"
-          + "\002 \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001(\t\022F\n\007content"
-          + "\030\n \001(\01325.google.cloud.discoveryengine.v1"
-          + "beta.Document.Content\022\032\n\022parent_document"
-          + "_id\030\007 \001(\t\0229\n\023derived_struct_data\030\006 \001(\0132\027"
-          + ".google.protobuf.StructB\003\340A\003\0223\n\nindex_ti"
-          + "me\030\r \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\032K\n\007Content\022\023\n\traw_bytes\030\002 \001(\014H\000\022\r\n\003uri"
-          + "\030\003 \001(\tH\000\022\021\n\tmime_type\030\001 \001(\tB\t\n\007content:\226"
-          + "\002\352A\222\002\n\'discoveryengine.googleapis.com/Do"
-          + "cument\022fprojects/{project}/locations/{lo"
-          + "cation}/dataStores/{data_store}/branches"
-          + "/{branch}/documents/{document}\022\177projects"
-          + "/{project}/locations/{location}/collecti"
-          + "ons/{collection}/dataStores/{data_store}"
-          + "/branches/{branch}/documents/{document}B"
-          + "\006\n\004dataB\224\002\n\'com.google.cloud.discoveryen"
-          + "gine.v1betaB\rDocumentProtoP\001ZQcloud.goog"
-          + "le.com/go/discoveryengine/apiv1beta/disc"
-          + "overyenginepb;discoveryenginepb\242\002\017DISCOV"
-          + "ERYENGINE\252\002#Google.Cloud.DiscoveryEngine"
-          + ".V1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V"
-          + "1beta\352\002&Google::Cloud::DiscoveryEngine::"
-          + "V1betab\006proto3"
+          + "estamp.proto\032\027google/rpc/status.proto\"\210\007"
+          + "\n\010Document\022.\n\013struct_data\030\004 \001(\0132\027.google"
+          + ".protobuf.StructH\000\022\023\n\tjson_data\030\005 \001(\tH\000\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\ts"
+          + "chema_id\030\003 \001(\t\022F\n\007content\030\n \001(\01325.google"
+          + ".cloud.discoveryengine.v1beta.Document.C"
+          + "ontent\022\032\n\022parent_document_id\030\007 \001(\t\0229\n\023de"
+          + "rived_struct_data\030\006 \001(\0132\027.google.protobu"
+          + "f.StructB\003\340A\003\0223\n\nindex_time\030\r \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022T\n\014index_stat"
+          + "us\030\017 \001(\01329.google.cloud.discoveryengine."
+          + "v1beta.Document.IndexStatusB\003\340A\003\032K\n\007Cont"
+          + "ent\022\023\n\traw_bytes\030\002 \001(\014H\000\022\r\n\003uri\030\003 \001(\tH\000\022"
+          + "\021\n\tmime_type\030\001 \001(\tB\t\n\007content\032h\n\013IndexSt"
+          + "atus\022.\n\nindex_time\030\001 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022)\n\rerror_samples\030\002 \003(\0132\022.go"
+          + "ogle.rpc.Status:\226\002\352A\222\002\n\'discoveryengine."
+          + "googleapis.com/Document\022fprojects/{proje"
+          + "ct}/locations/{location}/dataStores/{dat"
+          + "a_store}/branches/{branch}/documents/{do"
+          + "cument}\022\177projects/{project}/locations/{l"
+          + "ocation}/collections/{collection}/dataSt"
+          + "ores/{data_store}/branches/{branch}/docu"
+          + "ments/{document}B\006\n\004dataB\224\002\n\'com.google."
+          + "cloud.discoveryengine.v1betaB\rDocumentPr"
+          + "otoP\001ZQcloud.google.com/go/discoveryengi"
+          + "ne/apiv1beta/discoveryenginepb;discovery"
+          + "enginepb\242\002\017DISCOVERYENGINE\252\002#Google.Clou"
+          + "d.DiscoveryEngine.V1Beta\312\002#Google\\Cloud\\"
+          + "DiscoveryEngine\\V1beta\352\002&Google::Cloud::"
+          + "DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -85,6 +94,7 @@ public final class DocumentProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -101,6 +111,7 @@ public final class DocumentProto {
               "ParentDocumentId",
               "DerivedStructData",
               "IndexTime",
+              "IndexStatus",
               "Data",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor =
@@ -113,6 +124,16 @@ public final class DocumentProto {
             new java.lang.String[] {
               "RawBytes", "Uri", "MimeType", "Content",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor,
+            new java.lang.String[] {
+              "IndexTime", "ErrorSamples",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -123,6 +144,7 @@ public final class DocumentProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

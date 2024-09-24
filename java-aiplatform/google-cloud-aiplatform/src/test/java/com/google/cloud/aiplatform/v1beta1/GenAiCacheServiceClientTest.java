@@ -116,6 +116,7 @@ public class GenAiCacheServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setUsageMetadata(CachedContent.UsageMetadata.newBuilder().build())
             .build();
     mockGenAiCacheService.addResponse(expectedResponse);
 
@@ -165,6 +166,7 @@ public class GenAiCacheServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setUsageMetadata(CachedContent.UsageMetadata.newBuilder().build())
             .build();
     mockGenAiCacheService.addResponse(expectedResponse);
 
@@ -214,6 +216,7 @@ public class GenAiCacheServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setUsageMetadata(CachedContent.UsageMetadata.newBuilder().build())
             .build();
     mockGenAiCacheService.addResponse(expectedResponse);
 
@@ -260,6 +263,7 @@ public class GenAiCacheServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setUsageMetadata(CachedContent.UsageMetadata.newBuilder().build())
             .build();
     mockGenAiCacheService.addResponse(expectedResponse);
 
@@ -306,6 +310,7 @@ public class GenAiCacheServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setUsageMetadata(CachedContent.UsageMetadata.newBuilder().build())
             .build();
     mockGenAiCacheService.addResponse(expectedResponse);
 

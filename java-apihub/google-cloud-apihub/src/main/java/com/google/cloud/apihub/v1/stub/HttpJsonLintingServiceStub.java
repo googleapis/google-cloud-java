@@ -292,13 +292,13 @@ public class HttpJsonLintingServiceStub extends LintingServiceStub {
   public static final HttpJsonLintingServiceStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonLintingServiceStub(
-        LintingServiceStubSettings.newHttpJsonBuilder().build(), clientContext);
+        LintingServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonLintingServiceStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonLintingServiceStub(
-        LintingServiceStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        LintingServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**

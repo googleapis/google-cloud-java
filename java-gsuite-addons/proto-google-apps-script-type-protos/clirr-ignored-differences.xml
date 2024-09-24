@@ -15,6 +15,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/calendar/*OrBuilder</className>
@@ -29,6 +90,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/calendar/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/calendar/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/docs/*OrBuilder</className>
@@ -43,6 +165,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/docs/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/docs/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/drive/*OrBuilder</className>
@@ -57,6 +240,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/drive/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/drive/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/gmail/*OrBuilder</className>
@@ -71,6 +315,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/gmail/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/gmail/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/sheets/*OrBuilder</className>
@@ -85,6 +390,67 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/sheets/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/sheets/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>  <difference>
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/slides/*OrBuilder</className>
@@ -99,5 +465,66 @@
     <differenceType>7012</differenceType>
     <className>com/google/apps/script/type/slides/*OrBuilder</className>
     <method>boolean has*(*)</method>
+  </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/apps/script/type/slides/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
   </difference>
 </differences>

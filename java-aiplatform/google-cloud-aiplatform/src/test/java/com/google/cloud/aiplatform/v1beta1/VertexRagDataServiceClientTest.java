@@ -115,8 +115,10 @@ public class VertexRagDataServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
+            .setRagVectorDbConfig(RagVectorDbConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCorpusStatus(CorpusStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -169,8 +171,10 @@ public class VertexRagDataServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
+            .setRagVectorDbConfig(RagVectorDbConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCorpusStatus(CorpusStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -216,6 +220,59 @@ public class VertexRagDataServiceClientTest {
   }
 
   @Test
+  public void updateRagCorpusTest() throws Exception {
+    RagCorpus expectedResponse =
+        RagCorpus.newBuilder()
+            .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
+            .setRagVectorDbConfig(RagVectorDbConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRagCorpusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    RagCorpus ragCorpus = RagCorpus.newBuilder().build();
+
+    RagCorpus actualResponse = client.updateRagCorpusAsync(ragCorpus).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRagCorpusRequest actualRequest = ((UpdateRagCorpusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(ragCorpus, actualRequest.getRagCorpus());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRagCorpusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagCorpus ragCorpus = RagCorpus.newBuilder().build();
+      client.updateRagCorpusAsync(ragCorpus).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getRagCorpusTest() throws Exception {
     RagCorpus expectedResponse =
         RagCorpus.newBuilder()
@@ -223,8 +280,10 @@ public class VertexRagDataServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
+            .setRagVectorDbConfig(RagVectorDbConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCorpusStatus(CorpusStatus.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -266,8 +325,10 @@ public class VertexRagDataServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
+            .setRagVectorDbConfig(RagVectorDbConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCorpusStatus(CorpusStatus.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -672,6 +733,7 @@ public class VertexRagDataServiceClientTest {
             .setSizeBytes(-1796325715)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setFileStatus(FileStatus.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -716,6 +778,7 @@ public class VertexRagDataServiceClientTest {
             .setSizeBytes(-1796325715)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setFileStatus(FileStatus.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 

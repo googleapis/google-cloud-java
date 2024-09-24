@@ -62,6 +62,68 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
+  public static final int AIRFLOW_METADATA_RETENTION_CONFIG_FIELD_NUMBER = 1;
+  private com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+      airflowMetadataRetentionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the airflowMetadataRetentionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAirflowMetadataRetentionConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The airflowMetadataRetentionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+      getAirflowMetadataRetentionConfig() {
+    return airflowMetadataRetentionConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+            .getDefaultInstance()
+        : airflowMetadataRetentionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1
+          .AirflowMetadataRetentionPolicyConfigOrBuilder
+      getAirflowMetadataRetentionConfigOrBuilder() {
+    return airflowMetadataRetentionConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+            .getDefaultInstance()
+        : airflowMetadataRetentionConfig_;
+  }
+
   public static final int TASK_LOGS_RETENTION_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig
       taskLogsRetentionConfig_;
@@ -80,7 +142,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasTaskLogsRetentionConfig() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -138,6 +200,9 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getAirflowMetadataRetentionConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getTaskLogsRetentionConfig());
     }
     getUnknownFields().writeTo(output);
@@ -150,6 +215,11 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, getAirflowMetadataRetentionConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTaskLogsRetentionConfig());
     }
@@ -169,6 +239,12 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig other =
         (com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig) obj;
 
+    if (hasAirflowMetadataRetentionConfig() != other.hasAirflowMetadataRetentionConfig())
+      return false;
+    if (hasAirflowMetadataRetentionConfig()) {
+      if (!getAirflowMetadataRetentionConfig().equals(other.getAirflowMetadataRetentionConfig()))
+        return false;
+    }
     if (hasTaskLogsRetentionConfig() != other.hasTaskLogsRetentionConfig()) return false;
     if (hasTaskLogsRetentionConfig()) {
       if (!getTaskLogsRetentionConfig().equals(other.getTaskLogsRetentionConfig())) return false;
@@ -184,6 +260,10 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAirflowMetadataRetentionConfig()) {
+      hash = (37 * hash) + AIRFLOW_METADATA_RETENTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAirflowMetadataRetentionConfig().hashCode();
+    }
     if (hasTaskLogsRetentionConfig()) {
       hash = (37 * hash) + TASK_LOGS_RETENTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTaskLogsRetentionConfig().hashCode();
@@ -331,6 +411,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAirflowMetadataRetentionConfigFieldBuilder();
         getTaskLogsRetentionConfigFieldBuilder();
       }
     }
@@ -339,6 +420,11 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      airflowMetadataRetentionConfig_ = null;
+      if (airflowMetadataRetentionConfigBuilder_ != null) {
+        airflowMetadataRetentionConfigBuilder_.dispose();
+        airflowMetadataRetentionConfigBuilder_ = null;
+      }
       taskLogsRetentionConfig_ = null;
       if (taskLogsRetentionConfigBuilder_ != null) {
         taskLogsRetentionConfigBuilder_.dispose();
@@ -385,11 +471,18 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.airflowMetadataRetentionConfig_ =
+            airflowMetadataRetentionConfigBuilder_ == null
+                ? airflowMetadataRetentionConfig_
+                : airflowMetadataRetentionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.taskLogsRetentionConfig_ =
             taskLogsRetentionConfigBuilder_ == null
                 ? taskLogsRetentionConfig_
                 : taskLogsRetentionConfigBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -443,6 +536,9 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       if (other
           == com.google.cloud.orchestration.airflow.service.v1.DataRetentionConfig
               .getDefaultInstance()) return this;
+      if (other.hasAirflowMetadataRetentionConfig()) {
+        mergeAirflowMetadataRetentionConfig(other.getAirflowMetadataRetentionConfig());
+      }
       if (other.hasTaskLogsRetentionConfig()) {
         mergeTaskLogsRetentionConfig(other.getTaskLogsRetentionConfig());
       }
@@ -472,11 +568,19 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    getAirflowMetadataRetentionConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(
                     getTaskLogsRetentionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -497,6 +601,233 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int bitField0_;
+
+    private com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+        airflowMetadataRetentionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig,
+            com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1
+                .AirflowMetadataRetentionPolicyConfigOrBuilder>
+        airflowMetadataRetentionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the airflowMetadataRetentionConfig field is set.
+     */
+    public boolean hasAirflowMetadataRetentionConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The airflowMetadataRetentionConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+        getAirflowMetadataRetentionConfig() {
+      if (airflowMetadataRetentionConfigBuilder_ == null) {
+        return airflowMetadataRetentionConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+                .getDefaultInstance()
+            : airflowMetadataRetentionConfig_;
+      } else {
+        return airflowMetadataRetentionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAirflowMetadataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+            value) {
+      if (airflowMetadataRetentionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        airflowMetadataRetentionConfig_ = value;
+      } else {
+        airflowMetadataRetentionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAirflowMetadataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+                .Builder
+            builderForValue) {
+      if (airflowMetadataRetentionConfigBuilder_ == null) {
+        airflowMetadataRetentionConfig_ = builderForValue.build();
+      } else {
+        airflowMetadataRetentionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAirflowMetadataRetentionConfig(
+        com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+            value) {
+      if (airflowMetadataRetentionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && airflowMetadataRetentionConfig_ != null
+            && airflowMetadataRetentionConfig_
+                != com.google.cloud.orchestration.airflow.service.v1
+                    .AirflowMetadataRetentionPolicyConfig.getDefaultInstance()) {
+          getAirflowMetadataRetentionConfigBuilder().mergeFrom(value);
+        } else {
+          airflowMetadataRetentionConfig_ = value;
+        }
+      } else {
+        airflowMetadataRetentionConfigBuilder_.mergeFrom(value);
+      }
+      if (airflowMetadataRetentionConfig_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAirflowMetadataRetentionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      airflowMetadataRetentionConfig_ = null;
+      if (airflowMetadataRetentionConfigBuilder_ != null) {
+        airflowMetadataRetentionConfigBuilder_.dispose();
+        airflowMetadataRetentionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+            .Builder
+        getAirflowMetadataRetentionConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAirflowMetadataRetentionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1
+            .AirflowMetadataRetentionPolicyConfigOrBuilder
+        getAirflowMetadataRetentionConfigOrBuilder() {
+      if (airflowMetadataRetentionConfigBuilder_ != null) {
+        return airflowMetadataRetentionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return airflowMetadataRetentionConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+                .getDefaultInstance()
+            : airflowMetadataRetentionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retention policy for airflow metadata database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig,
+            com.google.cloud.orchestration.airflow.service.v1.AirflowMetadataRetentionPolicyConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1
+                .AirflowMetadataRetentionPolicyConfigOrBuilder>
+        getAirflowMetadataRetentionConfigFieldBuilder() {
+      if (airflowMetadataRetentionConfigBuilder_ == null) {
+        airflowMetadataRetentionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1
+                    .AirflowMetadataRetentionPolicyConfig,
+                com.google.cloud.orchestration.airflow.service.v1
+                    .AirflowMetadataRetentionPolicyConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1
+                    .AirflowMetadataRetentionPolicyConfigOrBuilder>(
+                getAirflowMetadataRetentionConfig(), getParentForChildren(), isClean());
+        airflowMetadataRetentionConfig_ = null;
+      }
+      return airflowMetadataRetentionConfigBuilder_;
+    }
 
     private com.google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig
         taskLogsRetentionConfig_;
@@ -519,7 +850,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the taskLogsRetentionConfig field is set.
      */
     public boolean hasTaskLogsRetentionConfig() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -566,7 +897,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       } else {
         taskLogsRetentionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -589,7 +920,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       } else {
         taskLogsRetentionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -607,7 +938,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeTaskLogsRetentionConfig(
         com.google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig value) {
       if (taskLogsRetentionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && taskLogsRetentionConfig_ != null
             && taskLogsRetentionConfig_
                 != com.google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig
@@ -620,7 +951,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
         taskLogsRetentionConfigBuilder_.mergeFrom(value);
       }
       if (taskLogsRetentionConfig_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -637,7 +968,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearTaskLogsRetentionConfig() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       taskLogsRetentionConfig_ = null;
       if (taskLogsRetentionConfigBuilder_ != null) {
         taskLogsRetentionConfigBuilder_.dispose();
@@ -659,7 +990,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.orchestration.airflow.service.v1.TaskLogsRetentionConfig.Builder
         getTaskLogsRetentionConfigBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTaskLogsRetentionConfigFieldBuilder().getBuilder();
     }

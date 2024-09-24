@@ -484,6 +484,59 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+      getGetPropertyQuotasSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPropertyQuotasSnapshot",
+      requestType = com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest.class,
+      responseType = com.google.analytics.data.v1alpha.PropertyQuotasSnapshot.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+      getGetPropertyQuotasSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+            com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+        getGetPropertyQuotasSnapshotMethod;
+    if ((getGetPropertyQuotasSnapshotMethod =
+            AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetPropertyQuotasSnapshotMethod =
+                AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getGetPropertyQuotasSnapshotMethod =
+              getGetPropertyQuotasSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+                          com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetPropertyQuotasSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.PropertyQuotasSnapshot
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier(
+                              "GetPropertyQuotasSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getGetPropertyQuotasSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.data.v1alpha.CreateReportTaskRequest,
           com.google.longrunning.Operation>
       getCreateReportTaskMethod;
@@ -975,10 +1028,30 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    default void getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPropertyQuotasSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates the creation of a report task. This method quickly
      * returns a report task and initiates a long running
      * asynchronous request to form a customized report of your Google Analytics
      * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
      * </pre>
      */
     default void createReportTask(
@@ -1348,10 +1421,32 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public void getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPropertyQuotasSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates the creation of a report task. This method quickly
      * returns a report task and initiates a long running
      * asynchronous request to form a customized report of your Google Analytics
      * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
      * </pre>
      */
     public void createReportTask(
@@ -1679,10 +1774,28 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPropertyQuotasSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates the creation of a report task. This method quickly
      * returns a report task and initiates a long running
      * asynchronous request to form a customized report of your Google Analytics
      * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
      * </pre>
      */
     public com.google.longrunning.Operation createReportTask(
@@ -2004,10 +2117,30 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Get all property quotas organized by quota category for a given property.
+     * This will charge 1 property quota from the category with the most quota.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>
+        getPropertyQuotasSnapshot(
+            com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPropertyQuotasSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates the creation of a report task. This method quickly
      * returns a report task and initiates a long running
      * asynchronous request to form a customized report of your Google Analytics
      * event data.
+     * A report task will be retained and available for querying for 72 hours
+     * after it has been created.
+     * A report task created by one user can be listed and queried by all users
+     * who have access to the property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2074,10 +2207,11 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_CREATE_RECURRING_AUDIENCE_LIST = 6;
   private static final int METHODID_GET_RECURRING_AUDIENCE_LIST = 7;
   private static final int METHODID_LIST_RECURRING_AUDIENCE_LISTS = 8;
-  private static final int METHODID_CREATE_REPORT_TASK = 9;
-  private static final int METHODID_QUERY_REPORT_TASK = 10;
-  private static final int METHODID_GET_REPORT_TASK = 11;
-  private static final int METHODID_LIST_REPORT_TASKS = 12;
+  private static final int METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT = 9;
+  private static final int METHODID_CREATE_REPORT_TASK = 10;
+  private static final int METHODID_QUERY_REPORT_TASK = 11;
+  private static final int METHODID_GET_REPORT_TASK = 12;
+  private static final int METHODID_LIST_REPORT_TASKS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2152,6 +2286,13 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT:
+          serviceImpl.getPropertyQuotasSnapshot(
+              (com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>)
                   responseObserver);
           break;
         case METHODID_CREATE_REPORT_TASK:
@@ -2260,6 +2401,13 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>(
                     service, METHODID_LIST_RECURRING_AUDIENCE_LISTS)))
         .addMethod(
+            getGetPropertyQuotasSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest,
+                    com.google.analytics.data.v1alpha.PropertyQuotasSnapshot>(
+                    service, METHODID_GET_PROPERTY_QUOTAS_SNAPSHOT)))
+        .addMethod(
             getCreateReportTaskMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2346,6 +2494,7 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getCreateRecurringAudienceListMethod())
                       .addMethod(getGetRecurringAudienceListMethod())
                       .addMethod(getListRecurringAudienceListsMethod())
+                      .addMethod(getGetPropertyQuotasSnapshotMethod())
                       .addMethod(getCreateReportTaskMethod())
                       .addMethod(getQueryReportTaskMethod())
                       .addMethod(getGetReportTaskMethod())

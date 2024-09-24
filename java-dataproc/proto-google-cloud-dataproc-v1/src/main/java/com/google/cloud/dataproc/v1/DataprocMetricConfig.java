@@ -158,6 +158,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVEMETASTORE = 7;</code>
      */
     HIVEMETASTORE(7),
+    /**
+     *
+     *
+     * <pre>
+     * flink metric source
+     * </pre>
+     *
+     * <code>FLINK = 8;</code>
+     */
+    FLINK(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -244,6 +254,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVEMETASTORE = 7;</code>
      */
     public static final int HIVEMETASTORE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * flink metric source
+     * </pre>
+     *
+     * <code>FLINK = 8;</code>
+     */
+    public static final int FLINK_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -285,6 +305,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
           return HIVESERVER2;
         case 7:
           return HIVEMETASTORE;
+        case 8:
+          return FLINK;
         default:
           return null;
       }

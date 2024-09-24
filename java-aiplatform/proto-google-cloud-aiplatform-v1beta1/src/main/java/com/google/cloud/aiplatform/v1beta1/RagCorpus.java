@@ -281,6 +281,63 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         : ragEmbeddingModelConfig_;
   }
 
+  public static final int RAG_VECTOR_DB_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig ragVectorDbConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the ragVectorDbConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagVectorDbConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ragVectorDbConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig() {
+    return ragVectorDbConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()
+        : ragVectorDbConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
+      getRagVectorDbConfigOrBuilder() {
+    return ragVectorDbConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()
+        : ragVectorDbConfig_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -297,7 +354,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -346,7 +403,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -379,6 +436,62 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int CORPUS_STATUS_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1beta1.CorpusStatus corpusStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the corpusStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasCorpusStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The corpusStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus() {
+    return corpusStatus_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CorpusStatus.getDefaultInstance()
+        : corpusStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder() {
+    return corpusStatus_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CorpusStatus.getDefaultInstance()
+        : corpusStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -402,14 +515,20 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getCreateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getUpdateTime());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getRagEmbeddingModelConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getRagVectorDbConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getCorpusStatus());
     }
     getUnknownFields().writeTo(output);
   }
@@ -429,15 +548,21 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateTime());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRagEmbeddingModelConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRagVectorDbConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCorpusStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -462,6 +587,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasRagEmbeddingModelConfig()) {
       if (!getRagEmbeddingModelConfig().equals(other.getRagEmbeddingModelConfig())) return false;
     }
+    if (hasRagVectorDbConfig() != other.hasRagVectorDbConfig()) return false;
+    if (hasRagVectorDbConfig()) {
+      if (!getRagVectorDbConfig().equals(other.getRagVectorDbConfig())) return false;
+    }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -469,6 +598,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasCorpusStatus() != other.hasCorpusStatus()) return false;
+    if (hasCorpusStatus()) {
+      if (!getCorpusStatus().equals(other.getCorpusStatus())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -491,6 +624,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RAG_EMBEDDING_MODEL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagEmbeddingModelConfig().hashCode();
     }
+    if (hasRagVectorDbConfig()) {
+      hash = (37 * hash) + RAG_VECTOR_DB_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagVectorDbConfig().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -498,6 +635,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasCorpusStatus()) {
+      hash = (37 * hash) + CORPUS_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getCorpusStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -641,8 +782,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRagEmbeddingModelConfigFieldBuilder();
+        getRagVectorDbConfigFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getCorpusStatusFieldBuilder();
       }
     }
 
@@ -658,6 +801,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         ragEmbeddingModelConfigBuilder_.dispose();
         ragEmbeddingModelConfigBuilder_ = null;
       }
+      ragVectorDbConfig_ = null;
+      if (ragVectorDbConfigBuilder_ != null) {
+        ragVectorDbConfigBuilder_.dispose();
+        ragVectorDbConfigBuilder_ = null;
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -667,6 +815,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      corpusStatus_ = null;
+      if (corpusStatusBuilder_ != null) {
+        corpusStatusBuilder_.dispose();
+        corpusStatusBuilder_ = null;
       }
       return this;
     }
@@ -722,12 +875,24 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.ragVectorDbConfig_ =
+            ragVectorDbConfigBuilder_ == null
+                ? ragVectorDbConfig_
+                : ragVectorDbConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.corpusStatus_ =
+            corpusStatusBuilder_ == null ? corpusStatus_ : corpusStatusBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -795,11 +960,17 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRagEmbeddingModelConfig()) {
         mergeRagEmbeddingModelConfig(other.getRagEmbeddingModelConfig());
       }
+      if (other.hasRagVectorDbConfig()) {
+        mergeRagVectorDbConfig(other.getRagVectorDbConfig());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasCorpusStatus()) {
+        mergeCorpusStatus(other.getCorpusStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -848,13 +1019,13 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -864,6 +1035,19 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getRagVectorDbConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getCorpusStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1422,6 +1606,215 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       return ragEmbeddingModelConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig ragVectorDbConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>
+        ragVectorDbConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the ragVectorDbConfig field is set.
+     */
+    public boolean hasRagVectorDbConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The ragVectorDbConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig() {
+      if (ragVectorDbConfigBuilder_ == null) {
+        return ragVectorDbConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()
+            : ragVectorDbConfig_;
+      } else {
+        return ragVectorDbConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setRagVectorDbConfig(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
+      if (ragVectorDbConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragVectorDbConfig_ = value;
+      } else {
+        ragVectorDbConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setRagVectorDbConfig(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder builderForValue) {
+      if (ragVectorDbConfigBuilder_ == null) {
+        ragVectorDbConfig_ = builderForValue.build();
+      } else {
+        ragVectorDbConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeRagVectorDbConfig(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
+      if (ragVectorDbConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && ragVectorDbConfig_ != null
+            && ragVectorDbConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()) {
+          getRagVectorDbConfigBuilder().mergeFrom(value);
+        } else {
+          ragVectorDbConfig_ = value;
+        }
+      } else {
+        ragVectorDbConfigBuilder_.mergeFrom(value);
+      }
+      if (ragVectorDbConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearRagVectorDbConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ragVectorDbConfig_ = null;
+      if (ragVectorDbConfigBuilder_ != null) {
+        ragVectorDbConfigBuilder_.dispose();
+        ragVectorDbConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder
+        getRagVectorDbConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRagVectorDbConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
+        getRagVectorDbConfigOrBuilder() {
+      if (ragVectorDbConfigBuilder_ != null) {
+        return ragVectorDbConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragVectorDbConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()
+            : ragVectorDbConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Vector DB config of the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>
+        getRagVectorDbConfigFieldBuilder() {
+      if (ragVectorDbConfigBuilder_ == null) {
+        ragVectorDbConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>(
+                getRagVectorDbConfig(), getParentForChildren(), isClean());
+        ragVectorDbConfig_ = null;
+      }
+      return ragVectorDbConfigBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1442,7 +1835,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1486,7 +1879,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1507,7 +1900,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1524,7 +1917,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1535,7 +1928,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1552,7 +1945,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1573,7 +1966,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1645,7 +2038,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1689,7 +2082,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1710,7 +2103,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1727,7 +2120,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1738,7 +2131,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1755,7 +2148,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1776,7 +2169,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1826,6 +2219,211 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.CorpusStatus corpusStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CorpusStatus,
+            com.google.cloud.aiplatform.v1beta1.CorpusStatus.Builder,
+            com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder>
+        corpusStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the corpusStatus field is set.
+     */
+    public boolean hasCorpusStatus() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The corpusStatus.
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus() {
+      if (corpusStatusBuilder_ == null) {
+        return corpusStatus_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CorpusStatus.getDefaultInstance()
+            : corpusStatus_;
+      } else {
+        return corpusStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCorpusStatus(com.google.cloud.aiplatform.v1beta1.CorpusStatus value) {
+      if (corpusStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        corpusStatus_ = value;
+      } else {
+        corpusStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCorpusStatus(
+        com.google.cloud.aiplatform.v1beta1.CorpusStatus.Builder builderForValue) {
+      if (corpusStatusBuilder_ == null) {
+        corpusStatus_ = builderForValue.build();
+      } else {
+        corpusStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCorpusStatus(com.google.cloud.aiplatform.v1beta1.CorpusStatus value) {
+      if (corpusStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && corpusStatus_ != null
+            && corpusStatus_
+                != com.google.cloud.aiplatform.v1beta1.CorpusStatus.getDefaultInstance()) {
+          getCorpusStatusBuilder().mergeFrom(value);
+        } else {
+          corpusStatus_ = value;
+        }
+      } else {
+        corpusStatusBuilder_.mergeFrom(value);
+      }
+      if (corpusStatus_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCorpusStatus() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      corpusStatus_ = null;
+      if (corpusStatusBuilder_ != null) {
+        corpusStatusBuilder_.dispose();
+        corpusStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorpusStatus.Builder getCorpusStatusBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getCorpusStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder() {
+      if (corpusStatusBuilder_ != null) {
+        return corpusStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return corpusStatus_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CorpusStatus.getDefaultInstance()
+            : corpusStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. RagCorpus state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CorpusStatus,
+            com.google.cloud.aiplatform.v1beta1.CorpusStatus.Builder,
+            com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder>
+        getCorpusStatusFieldBuilder() {
+      if (corpusStatusBuilder_ == null) {
+        corpusStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CorpusStatus,
+                com.google.cloud.aiplatform.v1beta1.CorpusStatus.Builder,
+                com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder>(
+                getCorpusStatus(), getParentForChildren(), isClean());
+        corpusStatus_ = null;
+      }
+      return corpusStatusBuilder_;
     }
 
     @java.lang.Override

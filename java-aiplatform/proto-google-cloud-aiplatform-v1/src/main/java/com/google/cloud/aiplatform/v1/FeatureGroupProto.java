@@ -58,7 +58,7 @@ public final class FeatureGroupProto {
           + "ogle/api/field_behavior.proto\032\031google/ap"
           + "i/resource.proto\032#google/cloud/aiplatfor"
           + "m/v1/io.proto\032\037google/protobuf/timestamp"
-          + ".proto\"\231\006\n\014FeatureGroup\022F\n\tbig_query\030\007 \001"
+          + ".proto\"\316\006\n\014FeatureGroup\022F\n\tbig_query\030\007 \001"
           + "(\01321.google.cloud.aiplatform.v1.FeatureG"
           + "roup.BigQueryH\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013cr"
           + "eate_time\030\002 \001(\0132\032.google.protobuf.Timest"
@@ -66,24 +66,25 @@ public final class FeatureGroupProto {
           + "rotobuf.TimestampB\003\340A\003\022\021\n\004etag\030\004 \001(\tB\003\340A"
           + "\001\022I\n\006labels\030\005 \003(\01324.google.cloud.aiplatf"
           + "orm.v1.FeatureGroup.LabelsEntryB\003\340A\001\022\030\n\013"
-          + "description\030\006 \001(\tB\003\340A\001\032\375\001\n\010BigQuery\022L\n\020b"
+          + "description\030\006 \001(\tB\003\340A\001\032\262\002\n\010BigQuery\022L\n\020b"
           + "ig_query_source\030\001 \001(\0132*.google.cloud.aip"
           + "latform.v1.BigQuerySourceB\006\340A\005\340A\002\022\036\n\021ent"
-          + "ity_id_columns\030\002 \003(\tB\003\340A\001\022V\n\013time_series"
-          + "\030\004 \001(\0132<.google.cloud.aiplatform.v1.Feat"
-          + "ureGroup.BigQuery.TimeSeriesB\003\340A\001\032+\n\nTim"
-          + "eSeries\022\035\n\020timestamp_column\030\001 \001(\tB\003\340A\001\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001:\220\001\352A\214\001\n&aiplatform.googleapis.com/"
-          + "FeatureGroup\022Eprojects/{project}/locatio"
-          + "ns/{location}/featureGroups/{feature_gro"
-          + "up}*\rfeatureGroups2\014featureGroupB\010\n\006sour"
-          + "ceB\317\001\n\036com.google.cloud.aiplatform.v1B\021F"
-          + "eatureGroupProtoP\001Z>cloud.google.com/go/"
-          + "aiplatform/apiv1/aiplatformpb;aiplatform"
-          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "ity_id_columns\030\002 \003(\tB\003\340A\001\022\037\n\022static_data"
+          + "_source\030\003 \001(\010B\003\340A\001\022V\n\013time_series\030\004 \001(\0132"
+          + "<.google.cloud.aiplatform.v1.FeatureGrou"
+          + "p.BigQuery.TimeSeriesB\003\340A\001\022\022\n\005dense\030\005 \001("
+          + "\010B\003\340A\001\032+\n\nTimeSeries\022\035\n\020timestamp_column"
+          + "\030\001 \001(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001:\220\001\352A\214\001\n&aiplatform.go"
+          + "ogleapis.com/FeatureGroup\022Eprojects/{pro"
+          + "ject}/locations/{location}/featureGroups"
+          + "/{feature_group}*\rfeatureGroups2\014feature"
+          + "GroupB\010\n\006sourceB\317\001\n\036com.google.cloud.aip"
+          + "latform.v1B\021FeatureGroupProtoP\001Z>cloud.g"
+          + "oogle.com/go/aiplatform/apiv1/aiplatform"
+          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
+          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
+          + "le::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -115,7 +116,7 @@ public final class FeatureGroupProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_descriptor,
             new java.lang.String[] {
-              "BigQuerySource", "EntityIdColumns", "TimeSeries",
+              "BigQuerySource", "EntityIdColumns", "StaticDataSource", "TimeSeries", "Dense",
             });
     internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_descriptor =
         internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_descriptor

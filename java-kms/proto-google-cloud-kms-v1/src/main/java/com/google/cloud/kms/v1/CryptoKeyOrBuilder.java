@@ -484,7 +484,7 @@ public interface CryptoKeyOrBuilder
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state before transitioning to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
-   * If not specified at creation time, the default duration is 24 hours.
+   * If not specified at creation time, the default duration is 30 days.
    * </pre>
    *
    * <code>
@@ -502,7 +502,7 @@ public interface CryptoKeyOrBuilder
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state before transitioning to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
-   * If not specified at creation time, the default duration is 24 hours.
+   * If not specified at creation time, the default duration is 30 days.
    * </pre>
    *
    * <code>
@@ -520,7 +520,7 @@ public interface CryptoKeyOrBuilder
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state before transitioning to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
-   * If not specified at creation time, the default duration is 24 hours.
+   * If not specified at creation time, the default duration is 30 days.
    * </pre>
    *
    * <code>

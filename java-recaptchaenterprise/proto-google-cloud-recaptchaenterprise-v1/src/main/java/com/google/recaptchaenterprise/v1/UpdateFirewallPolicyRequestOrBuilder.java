@@ -70,7 +70,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    *
    * <pre>
    * Optional. The mask to control which fields of the policy get updated. If
-   * the mask is not present, all fields will be updated.
+   * the mask is not present, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -84,7 +84,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    *
    * <pre>
    * Optional. The mask to control which fields of the policy get updated. If
-   * the mask is not present, all fields will be updated.
+   * the mask is not present, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -98,7 +98,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    *
    * <pre>
    * Optional. The mask to control which fields of the policy get updated. If
-   * the mask is not present, all fields will be updated.
+   * the mask is not present, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];

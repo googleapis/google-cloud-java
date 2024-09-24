@@ -144,7 +144,7 @@ public interface ImportAttachedClusterRequestOrBuilder
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -158,7 +158,7 @@ public interface ImportAttachedClusterRequestOrBuilder
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 5 [(.google.api.field_behavior) = REQUIRED];</code>

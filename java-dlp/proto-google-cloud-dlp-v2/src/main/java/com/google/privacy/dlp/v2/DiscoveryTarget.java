@@ -74,6 +74,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     CLOUD_SQL_TARGET(2),
     SECRETS_TARGET(3),
     CLOUD_STORAGE_TARGET(4),
+    OTHER_CLOUD_TARGET(5),
     TARGET_NOT_SET(0);
     private final int value;
 
@@ -100,6 +101,8 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           return SECRETS_TARGET;
         case 4:
           return CLOUD_STORAGE_TARGET;
+        case 5:
+          return OTHER_CLOUD_TARGET;
         case 0:
           return TARGET_NOT_SET;
         default:
@@ -336,6 +339,61 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
   }
 
+  public static final int OTHER_CLOUD_TARGET_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   *
+   * @return Whether the otherCloudTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasOtherCloudTarget() {
+    return targetCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   *
+   * @return The otherCloudTarget.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget getOtherCloudTarget() {
+    if (targetCase_ == 5) {
+      return (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Other clouds target for discovery. The first target to match a resource
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder
+      getOtherCloudTargetOrBuilder() {
+    if (targetCase_ == 5) {
+      return (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -361,6 +419,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     if (targetCase_ == 4) {
       output.writeMessage(4, (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 5) {
+      output.writeMessage(5, (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -390,6 +451,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -421,6 +487,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 4:
         if (!getCloudStorageTarget().equals(other.getCloudStorageTarget())) return false;
         break;
+      case 5:
+        if (!getOtherCloudTarget().equals(other.getOtherCloudTarget())) return false;
+        break;
       case 0:
       default:
     }
@@ -451,6 +520,10 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 4:
         hash = (37 * hash) + CLOUD_STORAGE_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getCloudStorageTarget().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + OTHER_CLOUD_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getOtherCloudTarget().hashCode();
         break;
       case 0:
       default:
@@ -606,6 +679,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       if (cloudStorageTargetBuilder_ != null) {
         cloudStorageTargetBuilder_.clear();
       }
+      if (otherCloudTargetBuilder_ != null) {
+        otherCloudTargetBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -661,6 +737,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       if (targetCase_ == 4 && cloudStorageTargetBuilder_ != null) {
         result.target_ = cloudStorageTargetBuilder_.build();
+      }
+      if (targetCase_ == 5 && otherCloudTargetBuilder_ != null) {
+        result.target_ = otherCloudTargetBuilder_.build();
       }
     }
 
@@ -730,6 +809,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             mergeCloudStorageTarget(other.getCloudStorageTarget());
             break;
           }
+        case OTHER_CLOUD_TARGET:
+          {
+            mergeOtherCloudTarget(other.getOtherCloudTarget());
+            break;
+          }
         case TARGET_NOT_SET:
           {
             break;
@@ -786,6 +870,13 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
                 targetCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getOtherCloudTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1703,6 +1794,228 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 4;
       onChanged();
       return cloudStorageTargetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder>
+        otherCloudTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     *
+     * @return Whether the otherCloudTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasOtherCloudTarget() {
+      return targetCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     *
+     * @return The otherCloudTarget.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget getOtherCloudTarget() {
+      if (otherCloudTargetBuilder_ == null) {
+        if (targetCase_ == 5) {
+          return (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+      } else {
+        if (targetCase_ == 5) {
+          return otherCloudTargetBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    public Builder setOtherCloudTarget(com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget value) {
+      if (otherCloudTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        otherCloudTargetBuilder_.setMessage(value);
+      }
+      targetCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    public Builder setOtherCloudTarget(
+        com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder builderForValue) {
+      if (otherCloudTargetBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        otherCloudTargetBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    public Builder mergeOtherCloudTarget(
+        com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget value) {
+      if (otherCloudTargetBuilder_ == null) {
+        if (targetCase_ == 5
+            && target_
+                != com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance()) {
+          target_ =
+              com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.newBuilder(
+                      (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 5) {
+          otherCloudTargetBuilder_.mergeFrom(value);
+        } else {
+          otherCloudTargetBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    public Builder clearOtherCloudTarget() {
+      if (otherCloudTargetBuilder_ == null) {
+        if (targetCase_ == 5) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 5) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        otherCloudTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder
+        getOtherCloudTargetBuilder() {
+      return getOtherCloudTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder
+        getOtherCloudTargetOrBuilder() {
+      if ((targetCase_ == 5) && (otherCloudTargetBuilder_ != null)) {
+        return otherCloudTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 5) {
+          return (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Other clouds target for discovery. The first target to match a resource
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OtherCloudDiscoveryTarget other_cloud_target = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder>
+        getOtherCloudTargetFieldBuilder() {
+      if (otherCloudTargetBuilder_ == null) {
+        if (!(targetCase_ == 5)) {
+          target_ = com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
+        }
+        otherCloudTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget,
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder,
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder>(
+                (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 5;
+      onChanged();
+      return otherCloudTargetBuilder_;
     }
 
     @java.lang.Override

@@ -97,6 +97,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -155,6 +156,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -256,6 +258,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -361,6 +364,7 @@ public class EnvironmentsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setStorageConfig(StorageConfig.newBuilder().build())
             .build();
     Operation resultOperation =

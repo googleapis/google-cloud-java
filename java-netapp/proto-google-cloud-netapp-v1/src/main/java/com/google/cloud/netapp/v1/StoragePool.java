@@ -1084,7 +1084,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=231
+   *     google/cloud/netapp/v1/storage_pool.proto;l=243
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Override
@@ -1103,13 +1103,33 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=231
+   *     google/cloud/netapp/v1/storage_pool.proto;l=243
    * @return The globalAccessAllowed.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean getGlobalAccessAllowed() {
     return globalAccessAllowed_;
+  }
+
+  public static final int ALLOW_AUTO_TIERING_FIELD_NUMBER = 18;
+  private boolean allowAutoTiering_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if the storage pool supports Auto Tiering enabled volumes.
+   * Default is false. Auto-tiering can be enabled after storage pool creation
+   * but it can't be disabled once enabled.
+   * </pre>
+   *
+   * <code>bool allow_auto_tiering = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allowAutoTiering.
+   */
+  @java.lang.Override
+  public boolean getAllowAutoTiering() {
+    return allowAutoTiering_;
   }
 
   public static final int REPLICA_ZONE_FIELD_NUMBER = 20;
@@ -1280,6 +1300,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(17, globalAccessAllowed_);
     }
+    if (allowAutoTiering_ != false) {
+      output.writeBool(18, allowAutoTiering_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, replicaZone_);
     }
@@ -1355,6 +1378,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, globalAccessAllowed_);
     }
+    if (allowAutoTiering_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, allowAutoTiering_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, replicaZone_);
     }
@@ -1399,6 +1425,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hasGlobalAccessAllowed()) {
       if (getGlobalAccessAllowed() != other.getGlobalAccessAllowed()) return false;
     }
+    if (getAllowAutoTiering() != other.getAllowAutoTiering()) return false;
     if (!getReplicaZone().equals(other.getReplicaZone())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1452,6 +1479,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GLOBAL_ACCESS_ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGlobalAccessAllowed());
     }
+    hash = (37 * hash) + ALLOW_AUTO_TIERING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowAutoTiering());
     hash = (37 * hash) + REPLICA_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getReplicaZone().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -1649,6 +1678,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       psaRange_ = "";
       encryptionType_ = 0;
       globalAccessAllowed_ = false;
+      allowAutoTiering_ = false;
       replicaZone_ = "";
       zone_ = "";
       return this;
@@ -1743,9 +1773,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.replicaZone_ = replicaZone_;
+        result.allowAutoTiering_ = allowAutoTiering_;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.replicaZone_ = replicaZone_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1860,14 +1893,17 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGlobalAccessAllowed()) {
         setGlobalAccessAllowed(other.getGlobalAccessAllowed());
       }
+      if (other.getAllowAutoTiering() != false) {
+        setAllowAutoTiering(other.getAllowAutoTiering());
+      }
       if (!other.getReplicaZone().isEmpty()) {
         replicaZone_ = other.replicaZone_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2004,16 +2040,22 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
+            case 144:
+              {
+                allowAutoTiering_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
             case 162:
               {
                 replicaZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 162
             case 170:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 170
             default:
@@ -3712,7 +3754,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=231
+     *     google/cloud/netapp/v1/storage_pool.proto;l=243
      * @return Whether the globalAccessAllowed field is set.
      */
     @java.lang.Override
@@ -3731,7 +3773,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=231
+     *     google/cloud/netapp/v1/storage_pool.proto;l=243
      * @return The globalAccessAllowed.
      */
     @java.lang.Override
@@ -3750,7 +3792,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=231
+     *     google/cloud/netapp/v1/storage_pool.proto;l=243
      * @param value The globalAccessAllowed to set.
      * @return This builder for chaining.
      */
@@ -3773,13 +3815,72 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=231
+     *     google/cloud/netapp/v1/storage_pool.proto;l=243
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearGlobalAccessAllowed() {
       bitField0_ = (bitField0_ & ~0x00010000);
       globalAccessAllowed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowAutoTiering_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the storage pool supports Auto Tiering enabled volumes.
+     * Default is false. Auto-tiering can be enabled after storage pool creation
+     * but it can't be disabled once enabled.
+     * </pre>
+     *
+     * <code>bool allow_auto_tiering = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowAutoTiering.
+     */
+    @java.lang.Override
+    public boolean getAllowAutoTiering() {
+      return allowAutoTiering_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the storage pool supports Auto Tiering enabled volumes.
+     * Default is false. Auto-tiering can be enabled after storage pool creation
+     * but it can't be disabled once enabled.
+     * </pre>
+     *
+     * <code>bool allow_auto_tiering = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The allowAutoTiering to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowAutoTiering(boolean value) {
+
+      allowAutoTiering_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the storage pool supports Auto Tiering enabled volumes.
+     * Default is false. Auto-tiering can be enabled after storage pool creation
+     * but it can't be disabled once enabled.
+     * </pre>
+     *
+     * <code>bool allow_auto_tiering = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowAutoTiering() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      allowAutoTiering_ = false;
       onChanged();
       return this;
     }
@@ -3846,7 +3947,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       replicaZone_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -3863,7 +3964,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReplicaZone() {
       replicaZone_ = getDefaultInstance().getReplicaZone();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -3885,7 +3986,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       replicaZone_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -3952,7 +4053,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3969,7 +4070,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -3991,7 +4092,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

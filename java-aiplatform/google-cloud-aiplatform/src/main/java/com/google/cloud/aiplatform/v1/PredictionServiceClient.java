@@ -1400,6 +1400,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1434,6 +1435,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1469,6 +1471,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();

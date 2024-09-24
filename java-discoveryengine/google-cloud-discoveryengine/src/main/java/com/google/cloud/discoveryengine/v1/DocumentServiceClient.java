@@ -200,6 +200,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> BatchGetDocumentsMetadata</td>
+ *      <td><p> Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1.Document]s. Supported for website search only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadata(BatchGetDocumentsMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadata(BranchName parent)
+ *           <li><p> batchGetDocumentsMetadata(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchGetDocumentsMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1199,6 +1218,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   PurgeDocumentsResponse response = documentServiceClient.purgeDocumentsAsync(request).get();
@@ -1245,6 +1265,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> future =
@@ -1292,6 +1313,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1303,6 +1325,142 @@ public class DocumentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
     return stub.purgeDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BranchName parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(BranchName parent) {
+    BatchGetDocumentsMetadataRequest request =
+        BatchGetDocumentsMetadataRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchGetDocumentsMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *           .toString();
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(String parent) {
+    BatchGetDocumentsMetadataRequest request =
+        BatchGetDocumentsMetadataRequest.newBuilder().setParent(parent).build();
+    return batchGetDocumentsMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchGetDocumentsMetadataRequest request =
+   *       BatchGetDocumentsMetadataRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setMatcher(BatchGetDocumentsMetadataRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   BatchGetDocumentsMetadataResponse response =
+   *       documentServiceClient.batchGetDocumentsMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(
+      BatchGetDocumentsMetadataRequest request) {
+    return batchGetDocumentsMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets index freshness metadata for [Document][google.cloud.discoveryengine.v1.Document]s.
+   * Supported for website search only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchGetDocumentsMetadataRequest request =
+   *       BatchGetDocumentsMetadataRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setMatcher(BatchGetDocumentsMetadataRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BatchGetDocumentsMetadataResponse> future =
+   *       documentServiceClient.batchGetDocumentsMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   BatchGetDocumentsMetadataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return stub.batchGetDocumentsMetadataCallable();
   }
 
   @Override

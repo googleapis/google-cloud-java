@@ -93,6 +93,7 @@ import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -169,6 +170,17 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteStoragePoolCallable()");
+  }
+
+  public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchActiveReplicaZoneOperationCallable()");
+  }
+
+  public UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    throw new UnsupportedOperationException("Not implemented: switchActiveReplicaZoneCallable()");
   }
 
   public UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse> listVolumesPagedCallable() {

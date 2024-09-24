@@ -136,7 +136,7 @@ public interface CustomTuningModelOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
    * @return Whether the createTime field is set.
    */
   @java.lang.Deprecated
@@ -151,7 +151,7 @@ public interface CustomTuningModelOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
-   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=88
    * @return The createTime.
    */
   @java.lang.Deprecated

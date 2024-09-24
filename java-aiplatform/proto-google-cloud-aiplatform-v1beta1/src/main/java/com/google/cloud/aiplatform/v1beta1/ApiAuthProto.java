@@ -48,16 +48,18 @@ public final class ApiAuthProto {
       "\n.google/cloud/aiplatform/v1beta1/api_au"
           + "th.proto\022\037google.cloud.aiplatform.v1beta"
           + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\"m\n\007ApiAuth\032b\n\014ApiK"
-          + "eyConfig\022R\n\026api_key_secret_version\030\001 \001(\t"
-          + "B2\340A\002\372A,\n*secretmanager.googleapis.com/S"
-          + "ecretVersionB\343\001\n#com.google.cloud.aiplat"
-          + "form.v1beta1B\014ApiAuthProtoP\001ZCcloud.goog"
-          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "le/api/resource.proto\"\315\001\n\007ApiAuth\022O\n\016api"
+          + "_key_config\030\001 \001(\01325.google.cloud.aiplatf"
+          + "orm.v1beta1.ApiAuth.ApiKeyConfigH\000\032b\n\014Ap"
+          + "iKeyConfig\022R\n\026api_key_secret_version\030\001 \001"
+          + "(\tB2\340A\002\372A,\n*secretmanager.googleapis.com"
+          + "/SecretVersionB\r\n\013auth_configB\343\001\n#com.go"
+          + "ogle.cloud.aiplatform.v1beta1B\014ApiAuthPr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,7 +73,9 @@ public final class ApiAuthProto {
     internal_static_google_cloud_aiplatform_v1beta1_ApiAuth_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ApiAuth_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ApiKeyConfig", "AuthConfig",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_ApiAuth_ApiKeyConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ApiAuth_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_ApiAuth_ApiKeyConfig_fieldAccessorTable =

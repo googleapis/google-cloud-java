@@ -180,6 +180,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

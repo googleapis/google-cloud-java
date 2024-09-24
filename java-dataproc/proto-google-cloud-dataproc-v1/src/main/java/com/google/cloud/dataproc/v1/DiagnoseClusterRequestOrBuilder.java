@@ -105,7 +105,7 @@ public interface DiagnoseClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The output Cloud Storage directory for the diagnostic
+   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
    * tarball. If not specified, a task-specific directory in the cluster's
    * staging bucket will be used.
    * </pre>
@@ -119,7 +119,7 @@ public interface DiagnoseClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The output Cloud Storage directory for the diagnostic
+   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
    * tarball. If not specified, a task-specific directory in the cluster's
    * staging bucket will be used.
    * </pre>
@@ -129,6 +129,37 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The bytes for tarballGcsDir.
    */
   com.google.protobuf.ByteString getTarballGcsDirBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tarballAccess.
+   */
+  int getTarballAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) The access type to the diagnostic tarball. If not
+   * specified, falls back to default access of the bucket
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess tarball_access = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tarballAccess.
+   */
+  com.google.cloud.dataproc.v1.DiagnoseClusterRequest.TarballAccess getTarballAccess();
 
   /**
    *

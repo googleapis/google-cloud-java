@@ -24,8 +24,9 @@ package com.google.cloud.discoveryengine.v1;
  *
  * <pre>
  * Defines a conditioned behavior to employ during serving.
- * Must be attached to a [ServingConfig][] to be considered at serving time.
- * Permitted actions dependent on `SolutionType`.
+ * Must be attached to a
+ * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] to be
+ * considered at serving time. Permitted actions dependent on `SolutionType`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1.Control}
@@ -3953,8 +3954,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -3970,8 +3972,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -3987,8 +3990,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -4005,8 +4009,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of all [ServingConfig][] ids this control is attached to.
-   * May take up to 10 minutes to update after changes.
+   * Output only. List of all
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+   * control is attached to. May take up to 10 minutes to update after changes.
    * </pre>
    *
    * <code>
@@ -4594,8 +4599,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a conditioned behavior to employ during serving.
-   * Must be attached to a [ServingConfig][] to be considered at serving time.
-   * Permitted actions dependent on `SolutionType`.
+   * Must be attached to a
+   * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] to be
+   * considered at serving time. Permitted actions dependent on `SolutionType`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.Control}
@@ -6124,8 +6130,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6142,8 +6149,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6159,8 +6167,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6177,8 +6186,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6195,8 +6205,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6221,8 +6232,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6246,8 +6258,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6268,8 +6281,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>
@@ -6289,8 +6303,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of all [ServingConfig][] ids this control is attached to.
-     * May take up to 10 minutes to update after changes.
+     * Output only. List of all
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig] IDs this
+     * control is attached to. May take up to 10 minutes to update after changes.
      * </pre>
      *
      * <code>

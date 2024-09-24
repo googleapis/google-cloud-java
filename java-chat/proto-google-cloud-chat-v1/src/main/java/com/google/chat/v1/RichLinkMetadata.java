@@ -94,6 +94,16 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      * <code>DRIVE_FILE = 1;</code>
      */
     DRIVE_FILE(1),
+    /**
+     *
+     *
+     * <pre>
+     * A Chat space rich link type. For example, a space smart chip.
+     * </pre>
+     *
+     * <code>CHAT_SPACE = 2;</code>
+     */
+    CHAT_SPACE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -117,6 +127,16 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      * <code>DRIVE_FILE = 1;</code>
      */
     public static final int DRIVE_FILE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A Chat space rich link type. For example, a space smart chip.
+     * </pre>
+     *
+     * <code>CHAT_SPACE = 2;</code>
+     */
+    public static final int CHAT_SPACE_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -146,6 +166,8 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           return RICH_LINK_TYPE_UNSPECIFIED;
         case 1:
           return DRIVE_FILE;
+        case 2:
+          return CHAT_SPACE;
         default:
           return null;
       }
@@ -209,6 +231,7 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DRIVE_LINK_DATA(3),
+    CHAT_SPACE_LINK_DATA(4),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -229,6 +252,8 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 3:
           return DRIVE_LINK_DATA;
+        case 4:
+          return CHAT_SPACE_LINK_DATA;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -382,6 +407,57 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     return com.google.chat.v1.DriveLinkData.getDefaultInstance();
   }
 
+  public static final int CHAT_SPACE_LINK_DATA_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   *
+   * @return Whether the chatSpaceLinkData field is set.
+   */
+  @java.lang.Override
+  public boolean hasChatSpaceLinkData() {
+    return dataCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   *
+   * @return The chatSpaceLinkData.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.ChatSpaceLinkData getChatSpaceLinkData() {
+    if (dataCase_ == 4) {
+      return (com.google.chat.v1.ChatSpaceLinkData) data_;
+    }
+    return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data for a chat space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.ChatSpaceLinkDataOrBuilder getChatSpaceLinkDataOrBuilder() {
+    if (dataCase_ == 4) {
+      return (com.google.chat.v1.ChatSpaceLinkData) data_;
+    }
+    return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -407,6 +483,9 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 3) {
       output.writeMessage(3, (com.google.chat.v1.DriveLinkData) data_);
     }
+    if (dataCase_ == 4) {
+      output.writeMessage(4, (com.google.chat.v1.ChatSpaceLinkData) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -428,6 +507,11 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.chat.v1.DriveLinkData) data_);
+    }
+    if (dataCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.chat.v1.ChatSpaceLinkData) data_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -451,6 +535,9 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       case 3:
         if (!getDriveLinkData().equals(other.getDriveLinkData())) return false;
         break;
+      case 4:
+        if (!getChatSpaceLinkData().equals(other.getChatSpaceLinkData())) return false;
+        break;
       case 0:
       default:
     }
@@ -473,6 +560,10 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + DRIVE_LINK_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getDriveLinkData().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + CHAT_SPACE_LINK_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getChatSpaceLinkData().hashCode();
         break;
       case 0:
       default:
@@ -620,6 +711,9 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       if (driveLinkDataBuilder_ != null) {
         driveLinkDataBuilder_.clear();
       }
+      if (chatSpaceLinkDataBuilder_ != null) {
+        chatSpaceLinkDataBuilder_.clear();
+      }
       dataCase_ = 0;
       data_ = null;
       return this;
@@ -671,6 +765,9 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       result.data_ = this.data_;
       if (dataCase_ == 3 && driveLinkDataBuilder_ != null) {
         result.data_ = driveLinkDataBuilder_.build();
+      }
+      if (dataCase_ == 4 && chatSpaceLinkDataBuilder_ != null) {
+        result.data_ = chatSpaceLinkDataBuilder_.build();
       }
     }
 
@@ -733,6 +830,11 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
             mergeDriveLinkData(other.getDriveLinkData());
             break;
           }
+        case CHAT_SPACE_LINK_DATA:
+          {
+            mergeChatSpaceLinkData(other.getChatSpaceLinkData());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -782,6 +884,13 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getChatSpaceLinkDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1215,6 +1324,212 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 3;
       onChanged();
       return driveLinkDataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.ChatSpaceLinkData,
+            com.google.chat.v1.ChatSpaceLinkData.Builder,
+            com.google.chat.v1.ChatSpaceLinkDataOrBuilder>
+        chatSpaceLinkDataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     *
+     * @return Whether the chatSpaceLinkData field is set.
+     */
+    @java.lang.Override
+    public boolean hasChatSpaceLinkData() {
+      return dataCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     *
+     * @return The chatSpaceLinkData.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.ChatSpaceLinkData getChatSpaceLinkData() {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 4) {
+          return (com.google.chat.v1.ChatSpaceLinkData) data_;
+        }
+        return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 4) {
+          return chatSpaceLinkDataBuilder_.getMessage();
+        }
+        return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    public Builder setChatSpaceLinkData(com.google.chat.v1.ChatSpaceLinkData value) {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        chatSpaceLinkDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    public Builder setChatSpaceLinkData(
+        com.google.chat.v1.ChatSpaceLinkData.Builder builderForValue) {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        chatSpaceLinkDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    public Builder mergeChatSpaceLinkData(com.google.chat.v1.ChatSpaceLinkData value) {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 4 && data_ != com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance()) {
+          data_ =
+              com.google.chat.v1.ChatSpaceLinkData.newBuilder(
+                      (com.google.chat.v1.ChatSpaceLinkData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 4) {
+          chatSpaceLinkDataBuilder_.mergeFrom(value);
+        } else {
+          chatSpaceLinkDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    public Builder clearChatSpaceLinkData() {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 4) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 4) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        chatSpaceLinkDataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    public com.google.chat.v1.ChatSpaceLinkData.Builder getChatSpaceLinkDataBuilder() {
+      return getChatSpaceLinkDataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.ChatSpaceLinkDataOrBuilder getChatSpaceLinkDataOrBuilder() {
+      if ((dataCase_ == 4) && (chatSpaceLinkDataBuilder_ != null)) {
+        return chatSpaceLinkDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 4) {
+          return (com.google.chat.v1.ChatSpaceLinkData) data_;
+        }
+        return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data for a chat space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.ChatSpaceLinkData chat_space_link_data = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.ChatSpaceLinkData,
+            com.google.chat.v1.ChatSpaceLinkData.Builder,
+            com.google.chat.v1.ChatSpaceLinkDataOrBuilder>
+        getChatSpaceLinkDataFieldBuilder() {
+      if (chatSpaceLinkDataBuilder_ == null) {
+        if (!(dataCase_ == 4)) {
+          data_ = com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
+        }
+        chatSpaceLinkDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.ChatSpaceLinkData,
+                com.google.chat.v1.ChatSpaceLinkData.Builder,
+                com.google.chat.v1.ChatSpaceLinkDataOrBuilder>(
+                (com.google.chat.v1.ChatSpaceLinkData) data_, getParentForChildren(), isClean());
+        data_ = null;
+      }
+      dataCase_ = 4;
+      onChanged();
+      return chatSpaceLinkDataBuilder_;
     }
 
     @java.lang.Override

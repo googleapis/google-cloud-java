@@ -402,5 +402,61 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexStatus field is set.
+   */
+  boolean hasIndexStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexStatus.
+   */
+  com.google.cloud.discoveryengine.v1alpha.Document.IndexStatus getIndexStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index status of the document.
+   *
+   * * If document is indexed successfully, the index_time field is populated.
+   * * Otherwise, if document is not indexed due to errors, the error_samples
+   *   field is populated.
+   * * Otherwise, index_status is unset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Document.IndexStatus index_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.Document.IndexStatusOrBuilder getIndexStatusOrBuilder();
+
   com.google.cloud.discoveryengine.v1alpha.Document.DataCase getDataCase();
 }

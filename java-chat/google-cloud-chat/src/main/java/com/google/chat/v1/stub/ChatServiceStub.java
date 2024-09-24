@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -56,6 +57,8 @@ import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -131,6 +134,14 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSpacesRequest, ListSpacesResponse> listSpacesCallable() {
     throw new UnsupportedOperationException("Not implemented: listSpacesCallable()");
+  }
+
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesPagedResponse> searchSpacesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchSpacesPagedCallable()");
+  }
+
+  public UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> searchSpacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchSpacesCallable()");
   }
 
   public UnaryCallable<GetSpaceRequest, Space> getSpaceCallable() {

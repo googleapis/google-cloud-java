@@ -978,7 +978,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Default GCS log bucket behavior options.
+   * Default Cloud Storage log bucket behavior options.
    * </pre>
    *
    * Protobuf enum {@code google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior}
@@ -1000,12 +1000,22 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Bucket is located in user-owned project in the same region as the
      * build. The builder service account must have access to create and write
-     * to GCS buckets in the build project.
+     * to Cloud Storage buckets in the build project.
      * </pre>
      *
      * <code>REGIONAL_USER_OWNED_BUCKET = 1;</code>
      */
     REGIONAL_USER_OWNED_BUCKET(1),
+    /**
+     *
+     *
+     * <pre>
+     * Bucket is located in a Google-owned project and is not regionalized.
+     * </pre>
+     *
+     * <code>LEGACY_BUCKET = 2;</code>
+     */
+    LEGACY_BUCKET(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -1025,12 +1035,22 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Bucket is located in user-owned project in the same region as the
      * build. The builder service account must have access to create and write
-     * to GCS buckets in the build project.
+     * to Cloud Storage buckets in the build project.
      * </pre>
      *
      * <code>REGIONAL_USER_OWNED_BUCKET = 1;</code>
      */
     public static final int REGIONAL_USER_OWNED_BUCKET_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Bucket is located in a Google-owned project and is not regionalized.
+     * </pre>
+     *
+     * <code>LEGACY_BUCKET = 2;</code>
+     */
+    public static final int LEGACY_BUCKET_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1060,6 +1080,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           return DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED;
         case 1:
           return REGIONAL_USER_OWNED_BUCKET;
+        case 2:
+          return LEGACY_BUCKET;
         default:
           return null;
       }
@@ -2140,7 +2162,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2166,7 +2188,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -4257,7 +4279,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4282,7 +4304,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4307,7 +4329,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4331,7 +4353,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4351,7 +4373,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */

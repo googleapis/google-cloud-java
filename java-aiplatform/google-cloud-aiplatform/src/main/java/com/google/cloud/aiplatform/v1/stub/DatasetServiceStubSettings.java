@@ -125,7 +125,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataset to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataset:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -142,9 +144,46 @@ import org.threeten.bp.Duration;
  *             .getDatasetSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DatasetServiceStubSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDataset:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DatasetServiceStubSettings.Builder datasetServiceSettingsBuilder =
+ *     DatasetServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * datasetServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -249,9 +288,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList() == null
-                  ? ImmutableList.<Dataset>of()
-                  : payload.getDatasetsList();
+              return payload.getDatasetsList();
             }
           };
 
@@ -289,9 +326,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DatasetVersion> extractResources(ListDatasetVersionsResponse payload) {
-              return payload.getDatasetVersionsList() == null
-                  ? ImmutableList.<DatasetVersion>of()
-                  : payload.getDatasetVersionsList();
+              return payload.getDatasetVersionsList();
             }
           };
 
@@ -325,9 +360,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DataItem> extractResources(ListDataItemsResponse payload) {
-              return payload.getDataItemsList() == null
-                  ? ImmutableList.<DataItem>of()
-                  : payload.getDataItemsList();
+              return payload.getDataItemsList();
             }
           };
 
@@ -364,9 +397,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<DataItemView> extractResources(SearchDataItemsResponse payload) {
-              return payload.getDataItemViewsList() == null
-                  ? ImmutableList.<DataItemView>of()
-                  : payload.getDataItemViewsList();
+              return payload.getDataItemViewsList();
             }
           };
 
@@ -403,9 +434,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<SavedQuery> extractResources(ListSavedQueriesResponse payload) {
-              return payload.getSavedQueriesList() == null
-                  ? ImmutableList.<SavedQuery>of()
-                  : payload.getSavedQueriesList();
+              return payload.getSavedQueriesList();
             }
           };
 
@@ -442,9 +471,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Annotation> extractResources(ListAnnotationsResponse payload) {
-              return payload.getAnnotationsList() == null
-                  ? ImmutableList.<Annotation>of()
-                  : payload.getAnnotationsList();
+              return payload.getAnnotationsList();
             }
           };
 
@@ -478,9 +505,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

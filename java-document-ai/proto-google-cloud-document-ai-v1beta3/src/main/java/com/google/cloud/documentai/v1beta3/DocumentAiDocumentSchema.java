@@ -89,42 +89,43 @@ public final class DocumentAiDocumentSchema {
           + "ctive\030\003 \001(\010\022[\n\031field_extraction_metadata"
           + "\030\t \001(\01328.google.cloud.documentai.v1beta3"
           + ".FieldExtractionMetadata\"&\n\022EntityTypeMe"
-          + "tadata\022\020\n\010inactive\030\005 \001(\010\"\367\010\n\016DocumentSch"
+          + "tadata\022\020\n\010inactive\030\005 \001(\010\"\241\t\n\016DocumentSch"
           + "ema\022\024\n\014display_name\030\001 \001(\t\022\023\n\013description"
           + "\030\002 \001(\t\022P\n\014entity_types\030\003 \003(\0132:.google.cl"
           + "oud.documentai.v1beta3.DocumentSchema.En"
           + "tityType\022J\n\010metadata\030\004 \001(\01328.google.clou"
           + "d.documentai.v1beta3.DocumentSchema.Meta"
-          + "data\032\204\006\n\nEntityType\022\\\n\013enum_values\030\016 \001(\013"
+          + "data\032\256\006\n\nEntityType\022\\\n\013enum_values\030\016 \001(\013"
           + "2E.google.cloud.documentai.v1beta3.Docum"
           + "entSchema.EntityType.EnumValuesH\000\022\024\n\014dis"
-          + "play_name\030\r \001(\t\022\014\n\004name\030\001 \001(\t\022\022\n\nbase_ty"
-          + "pes\030\002 \003(\t\022W\n\nproperties\030\006 \003(\0132C.google.c"
-          + "loud.documentai.v1beta3.DocumentSchema.E"
-          + "ntityType.Property\022Q\n\024entity_type_metada"
-          + "ta\030\013 \001(\01323.google.cloud.documentai.v1bet"
-          + "a3.EntityTypeMetadata\032\034\n\nEnumValues\022\016\n\006v"
-          + "alues\030\001 \003(\t\032\205\003\n\010Property\022\014\n\004name\030\001 \001(\t\022\024"
-          + "\n\014display_name\030\006 \001(\t\022\022\n\nvalue_type\030\002 \001(\t"
-          + "\022k\n\017occurrence_type\030\003 \001(\0162R.google.cloud"
-          + ".documentai.v1beta3.DocumentSchema.Entit"
-          + "yType.Property.OccurrenceType\022L\n\021propert"
-          + "y_metadata\030\005 \001(\01321.google.cloud.document"
-          + "ai.v1beta3.PropertyMetadata\"\205\001\n\016Occurren"
-          + "ceType\022\037\n\033OCCURRENCE_TYPE_UNSPECIFIED\020\000\022"
-          + "\021\n\rOPTIONAL_ONCE\020\001\022\025\n\021OPTIONAL_MULTIPLE\020"
-          + "\002\022\021\n\rREQUIRED_ONCE\020\003\022\025\n\021REQUIRED_MULTIPL"
-          + "E\020\004B\016\n\014value_source\032\224\001\n\010Metadata\022\031\n\021docu"
-          + "ment_splitter\030\001 \001(\010\022&\n\036document_allow_mu"
-          + "ltiple_labels\030\002 \001(\010\022%\n\035prefixed_naming_o"
-          + "n_properties\030\006 \001(\010\022\036\n\026skip_naming_valida"
-          + "tion\030\007 \001(\010B\357\001\n#com.google.cloud.document"
-          + "ai.v1beta3B\030DocumentAiDocumentSchemaP\001ZC"
-          + "cloud.google.com/go/documentai/apiv1beta"
-          + "3/documentaipb;documentaipb\252\002\037Google.Clo"
-          + "ud.DocumentAI.V1Beta3\312\002\037Google\\Cloud\\Doc"
-          + "umentAI\\V1beta3\352\002\"Google::Cloud::Documen"
-          + "tAI::V1beta3b\006proto3"
+          + "play_name\030\r \001(\t\022\014\n\004name\030\001 \001(\t\022\023\n\013descrip"
+          + "tion\030\017 \001(\t\022\022\n\nbase_types\030\002 \003(\t\022W\n\nproper"
+          + "ties\030\006 \003(\0132C.google.cloud.documentai.v1b"
+          + "eta3.DocumentSchema.EntityType.Property\022"
+          + "Q\n\024entity_type_metadata\030\013 \001(\01323.google.c"
+          + "loud.documentai.v1beta3.EntityTypeMetada"
+          + "ta\032\034\n\nEnumValues\022\016\n\006values\030\001 \003(\t\032\232\003\n\010Pro"
+          + "perty\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\007 \001(\t"
+          + "\022\024\n\014display_name\030\006 \001(\t\022\022\n\nvalue_type\030\002 \001"
+          + "(\t\022k\n\017occurrence_type\030\003 \001(\0162R.google.clo"
+          + "ud.documentai.v1beta3.DocumentSchema.Ent"
+          + "ityType.Property.OccurrenceType\022L\n\021prope"
+          + "rty_metadata\030\005 \001(\01321.google.cloud.docume"
+          + "ntai.v1beta3.PropertyMetadata\"\205\001\n\016Occurr"
+          + "enceType\022\037\n\033OCCURRENCE_TYPE_UNSPECIFIED\020"
+          + "\000\022\021\n\rOPTIONAL_ONCE\020\001\022\025\n\021OPTIONAL_MULTIPL"
+          + "E\020\002\022\021\n\rREQUIRED_ONCE\020\003\022\025\n\021REQUIRED_MULTI"
+          + "PLE\020\004B\016\n\014value_source\032\224\001\n\010Metadata\022\031\n\021do"
+          + "cument_splitter\030\001 \001(\010\022&\n\036document_allow_"
+          + "multiple_labels\030\002 \001(\010\022%\n\035prefixed_naming"
+          + "_on_properties\030\006 \001(\010\022\036\n\026skip_naming_vali"
+          + "dation\030\007 \001(\010B\357\001\n#com.google.cloud.docume"
+          + "ntai.v1beta3B\030DocumentAiDocumentSchemaP\001"
+          + "ZCcloud.google.com/go/documentai/apiv1be"
+          + "ta3/documentaipb;documentaipb\252\002\037Google.C"
+          + "loud.DocumentAI.V1Beta3\312\002\037Google\\Cloud\\D"
+          + "ocumentAI\\V1beta3\352\002\"Google::Cloud::Docum"
+          + "entAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -180,6 +181,7 @@ public final class DocumentAiDocumentSchema {
               "EnumValues",
               "DisplayName",
               "Name",
+              "Description",
               "BaseTypes",
               "Properties",
               "EntityTypeMetadata",
@@ -203,7 +205,12 @@ public final class DocumentAiDocumentSchema {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DocumentSchema_EntityType_Property_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "ValueType", "OccurrenceType", "PropertyMetadata",
+              "Name",
+              "Description",
+              "DisplayName",
+              "ValueType",
+              "OccurrenceType",
+              "PropertyMetadata",
             });
     internal_static_google_cloud_documentai_v1beta3_DocumentSchema_Metadata_descriptor =
         internal_static_google_cloud_documentai_v1beta3_DocumentSchema_descriptor

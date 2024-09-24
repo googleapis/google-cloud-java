@@ -240,6 +240,20 @@ public interface DocumentInfoOrBuilder
    */
   com.google.protobuf.ByteString getPromotionIdsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the referenced Document can be found in the data
+   * store.
+   * </pre>
+   *
+   * <code>bool joined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The joined.
+   */
+  boolean getJoined();
+
   com.google.cloud.discoveryengine.v1.DocumentInfo.DocumentDescriptorCase
       getDocumentDescriptorCase();
 }

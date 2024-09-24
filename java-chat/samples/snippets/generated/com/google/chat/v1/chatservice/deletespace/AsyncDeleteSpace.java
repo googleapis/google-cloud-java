@@ -37,7 +37,10 @@ public class AsyncDeleteSpace {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
       DeleteSpaceRequest request =
-          DeleteSpaceRequest.newBuilder().setName(SpaceName.of("[SPACE]").toString()).build();
+          DeleteSpaceRequest.newBuilder()
+              .setName(SpaceName.of("[SPACE]").toString())
+              .setUseAdminAccess(true)
+              .build();
       ApiFuture<Empty> future = chatServiceClient.deleteSpaceCallable().futureCall(request);
       // Do something.
       future.get();

@@ -804,6 +804,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -874,6 +875,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -944,6 +946,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -972,6 +975,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1020,6 +1024,7 @@ public class AwsClustersClientHttpJsonTest {
               .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
               .addAllErrors(new ArrayList<AwsNodePoolError>())
               .setManagement(AwsNodeManagement.newBuilder().build())
+              .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
               .setUpdateSettings(UpdateSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1049,6 +1054,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1116,6 +1122,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1183,6 +1190,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1245,6 +1253,7 @@ public class AwsClustersClientHttpJsonTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllErrors(new ArrayList<AwsNodePoolError>())
             .setManagement(AwsNodeManagement.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
             .setUpdateSettings(UpdateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);

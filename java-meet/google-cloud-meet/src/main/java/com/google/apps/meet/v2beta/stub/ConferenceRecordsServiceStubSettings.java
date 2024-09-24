@@ -97,7 +97,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getConferenceRecord to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getConferenceRecord:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -114,11 +116,22 @@ import org.threeten.bp.Duration;
  *             .getConferenceRecordSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConferenceRecordsServiceStubSettings conferenceRecordsServiceSettings =
  *     conferenceRecordsServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -197,9 +210,7 @@ public class ConferenceRecordsServiceStubSettings
             @Override
             public Iterable<ConferenceRecord> extractResources(
                 ListConferenceRecordsResponse payload) {
-              return payload.getConferenceRecordsList() == null
-                  ? ImmutableList.<ConferenceRecord>of()
-                  : payload.getConferenceRecordsList();
+              return payload.getConferenceRecordsList();
             }
           };
 
@@ -237,9 +248,7 @@ public class ConferenceRecordsServiceStubSettings
 
             @Override
             public Iterable<Participant> extractResources(ListParticipantsResponse payload) {
-              return payload.getParticipantsList() == null
-                  ? ImmutableList.<Participant>of()
-                  : payload.getParticipantsList();
+              return payload.getParticipantsList();
             }
           };
 
@@ -282,9 +291,7 @@ public class ConferenceRecordsServiceStubSettings
             @Override
             public Iterable<ParticipantSession> extractResources(
                 ListParticipantSessionsResponse payload) {
-              return payload.getParticipantSessionsList() == null
-                  ? ImmutableList.<ParticipantSession>of()
-                  : payload.getParticipantSessionsList();
+              return payload.getParticipantSessionsList();
             }
           };
 
@@ -319,9 +326,7 @@ public class ConferenceRecordsServiceStubSettings
 
             @Override
             public Iterable<Recording> extractResources(ListRecordingsResponse payload) {
-              return payload.getRecordingsList() == null
-                  ? ImmutableList.<Recording>of()
-                  : payload.getRecordingsList();
+              return payload.getRecordingsList();
             }
           };
 
@@ -358,9 +363,7 @@ public class ConferenceRecordsServiceStubSettings
 
             @Override
             public Iterable<Transcript> extractResources(ListTranscriptsResponse payload) {
-              return payload.getTranscriptsList() == null
-                  ? ImmutableList.<Transcript>of()
-                  : payload.getTranscriptsList();
+              return payload.getTranscriptsList();
             }
           };
 
@@ -399,9 +402,7 @@ public class ConferenceRecordsServiceStubSettings
             @Override
             public Iterable<TranscriptEntry> extractResources(
                 ListTranscriptEntriesResponse payload) {
-              return payload.getTranscriptEntriesList() == null
-                  ? ImmutableList.<TranscriptEntry>of()
-                  : payload.getTranscriptEntriesList();
+              return payload.getTranscriptEntriesList();
             }
           };
 

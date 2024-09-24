@@ -72,7 +72,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An identifying string to the type of resource being profiled.
-   * Current values: google/bigquery/table, google/project
+   * Current values:
+   *
+   * * google/bigquery/table
+   * * google/project
+   * * google/sql/table
+   * * google/gcs/bucket
    * </pre>
    *
    * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,7 +101,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An identifying string to the type of resource being profiled.
-   * Current values: google/bigquery/table, google/project
+   * Current values:
+   *
+   * * google/bigquery/table
+   * * google/project
+   * * google/sql/table
+   * * google/gcs/bucket
    * </pre>
    *
    * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -462,7 +472,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifying string to the type of resource being profiled.
-     * Current values: google/bigquery/table, google/project
+     * Current values:
+     *
+     * * google/bigquery/table
+     * * google/project
+     * * google/sql/table
+     * * google/gcs/bucket
      * </pre>
      *
      * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -485,7 +500,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifying string to the type of resource being profiled.
-     * Current values: google/bigquery/table, google/project
+     * Current values:
+     *
+     * * google/bigquery/table
+     * * google/project
+     * * google/sql/table
+     * * google/gcs/bucket
      * </pre>
      *
      * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -508,7 +528,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifying string to the type of resource being profiled.
-     * Current values: google/bigquery/table, google/project
+     * Current values:
+     *
+     * * google/bigquery/table
+     * * google/project
+     * * google/sql/table
+     * * google/gcs/bucket
      * </pre>
      *
      * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -530,7 +555,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifying string to the type of resource being profiled.
-     * Current values: google/bigquery/table, google/project
+     * Current values:
+     *
+     * * google/bigquery/table
+     * * google/project
+     * * google/sql/table
+     * * google/gcs/bucket
      * </pre>
      *
      * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -548,7 +578,12 @@ public final class DataSourceType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifying string to the type of resource being profiled.
-     * Current values: google/bigquery/table, google/project
+     * Current values:
+     *
+     * * google/bigquery/table
+     * * google/project
+     * * google/sql/table
+     * * google/gcs/bucket
      * </pre>
      *
      * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

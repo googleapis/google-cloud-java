@@ -127,7 +127,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRepository to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getRepository:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -144,9 +146,46 @@ import org.threeten.bp.Duration;
  *             .getRepositorySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ArtifactRegistryStubSettings artifactRegistrySettings = artifactRegistrySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for importAptArtifacts:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ArtifactRegistryStubSettings.Builder artifactRegistrySettingsBuilder =
+ *     ArtifactRegistryStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * artifactRegistrySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -247,9 +286,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Repository> extractResources(ListRepositoriesResponse payload) {
-              return payload.getRepositoriesList() == null
-                  ? ImmutableList.<Repository>of()
-                  : payload.getRepositoriesList();
+              return payload.getRepositoriesList();
             }
           };
 
@@ -283,9 +320,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Package> extractResources(ListPackagesResponse payload) {
-              return payload.getPackagesList() == null
-                  ? ImmutableList.<Package>of()
-                  : payload.getPackagesList();
+              return payload.getPackagesList();
             }
           };
 
@@ -319,9 +354,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Version> extractResources(ListVersionsResponse payload) {
-              return payload.getVersionsList() == null
-                  ? ImmutableList.<Version>of()
-                  : payload.getVersionsList();
+              return payload.getVersionsList();
             }
           };
 
@@ -355,9 +388,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<File> extractResources(ListFilesResponse payload) {
-              return payload.getFilesList() == null
-                  ? ImmutableList.<File>of()
-                  : payload.getFilesList();
+              return payload.getFilesList();
             }
           };
 
@@ -391,9 +422,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Tag> extractResources(ListTagsResponse payload) {
-              return payload.getTagsList() == null
-                  ? ImmutableList.<Tag>of()
-                  : payload.getTagsList();
+              return payload.getTagsList();
             }
           };
 
@@ -427,9 +456,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

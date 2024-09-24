@@ -620,6 +620,8 @@ public class PipelineServiceClientTest {
             .setPreflightValidations(true)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -685,6 +687,8 @@ public class PipelineServiceClientTest {
             .setPreflightValidations(true)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -750,6 +754,8 @@ public class PipelineServiceClientTest {
             .setPreflightValidations(true)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -809,6 +815,8 @@ public class PipelineServiceClientTest {
             .setPreflightValidations(true)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

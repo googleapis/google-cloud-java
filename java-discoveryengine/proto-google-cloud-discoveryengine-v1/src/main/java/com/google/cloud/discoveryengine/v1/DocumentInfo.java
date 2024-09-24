@@ -452,6 +452,25 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     return promotionIds_.getByteString(index);
   }
 
+  public static final int JOINED_FIELD_NUMBER = 5;
+  private boolean joined_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the referenced Document can be found in the data
+   * store.
+   * </pre>
+   *
+   * <code>bool joined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The joined.
+   */
+  @java.lang.Override
+  public boolean getJoined() {
+    return joined_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -477,6 +496,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < promotionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, promotionIds_.getRaw(i));
+    }
+    if (joined_ != false) {
+      output.writeBool(5, joined_);
     }
     if (documentDescriptorCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, documentDescriptor_);
@@ -507,6 +529,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getPromotionIdsList().size();
     }
+    if (joined_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, joined_);
+    }
     if (documentDescriptorCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, documentDescriptor_);
     }
@@ -531,6 +556,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (getQuantity() != other.getQuantity()) return false;
     }
     if (!getPromotionIdsList().equals(other.getPromotionIdsList())) return false;
+    if (getJoined() != other.getJoined()) return false;
     if (!getDocumentDescriptorCase().equals(other.getDocumentDescriptorCase())) return false;
     switch (documentDescriptorCase_) {
       case 1:
@@ -564,6 +590,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PROMOTION_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getPromotionIdsList().hashCode();
     }
+    hash = (37 * hash) + JOINED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getJoined());
     switch (documentDescriptorCase_) {
       case 1:
         hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -721,6 +749,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       quantity_ = 0;
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      joined_ = false;
       documentDescriptorCase_ = 0;
       documentDescriptor_ = null;
       return this;
@@ -768,6 +797,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.joined_ = joined_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -835,6 +867,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
           promotionIds_.addAll(other.promotionIds_);
         }
         onChanged();
+      }
+      if (other.getJoined() != false) {
+        setJoined(other.getJoined());
       }
       switch (other.getDocumentDescriptorCase()) {
         case ID:
@@ -916,6 +951,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
                 promotionIds_.add(s);
                 break;
               } // case 34
+            case 40:
+              {
+                joined_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 40
             case 50:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1655,6 +1696,62 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean joined_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the referenced Document can be found in the data
+     * store.
+     * </pre>
+     *
+     * <code>bool joined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The joined.
+     */
+    @java.lang.Override
+    public boolean getJoined() {
+      return joined_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the referenced Document can be found in the data
+     * store.
+     * </pre>
+     *
+     * <code>bool joined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The joined to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJoined(boolean value) {
+
+      joined_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the referenced Document can be found in the data
+     * store.
+     * </pre>
+     *
+     * <code>bool joined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJoined() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      joined_ = false;
       onChanged();
       return this;
     }

@@ -643,4 +643,78 @@ public interface DeployedIndexOrBuilder
    * @return The bytes for deploymentGroup.
    */
   com.google.protobuf.ByteString getDeploymentGroupBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      getPscAutomationConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPscAutomationConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+      getPscAutomationConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder getPscAutomationConfigsOrBuilder(
+      int index);
 }

@@ -94,6 +94,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     SPARK_R_JOB(11),
     SPARK_SQL_JOB(7),
     PRESTO_JOB(12),
+    TRINO_JOB(13),
+    FLINK_JOB(14),
     JOBTYPE_NOT_SET(0);
     private final int value;
 
@@ -128,6 +130,10 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
           return SPARK_SQL_JOB;
         case 12:
           return PRESTO_JOB;
+        case 13:
+          return TRINO_JOB;
+        case 14:
+          return FLINK_JOB;
         case 0:
           return JOBTYPE_NOT_SET;
         default:
@@ -665,6 +671,120 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.PrestoJob.getDefaultInstance();
   }
 
+  public static final int TRINO_JOB_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trinoJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrinoJob() {
+    return jobTypeCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trinoJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.TrinoJob getTrinoJob() {
+    if (jobTypeCase_ == 13) {
+      return (com.google.cloud.dataproc.v1.TrinoJob) jobType_;
+    }
+    return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder() {
+    if (jobTypeCase_ == 13) {
+      return (com.google.cloud.dataproc.v1.TrinoJob) jobType_;
+    }
+    return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+  }
+
+  public static final int FLINK_JOB_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flinkJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlinkJob() {
+    return jobTypeCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flinkJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlinkJob getFlinkJob() {
+    if (jobTypeCase_ == 14) {
+      return (com.google.cloud.dataproc.v1.FlinkJob) jobType_;
+    }
+    return com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Flink job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlinkJobOrBuilder getFlinkJobOrBuilder() {
+    if (jobTypeCase_ == 14) {
+      return (com.google.cloud.dataproc.v1.FlinkJob) jobType_;
+    }
+    return com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+  }
+
   public static final int LABELS_FIELD_NUMBER = 8;
 
   private static final class LabelsDefaultEntryHolder {
@@ -981,6 +1101,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     if (jobTypeCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.dataproc.v1.PrestoJob) jobType_);
     }
+    if (jobTypeCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.dataproc.v1.TrinoJob) jobType_);
+    }
+    if (jobTypeCase_ == 14) {
+      output.writeMessage(14, (com.google.cloud.dataproc.v1.FlinkJob) jobType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1054,6 +1180,16 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.dataproc.v1.PrestoJob) jobType_);
     }
+    if (jobTypeCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.dataproc.v1.TrinoJob) jobType_);
+    }
+    if (jobTypeCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.dataproc.v1.FlinkJob) jobType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1101,6 +1237,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         break;
       case 12:
         if (!getPrestoJob().equals(other.getPrestoJob())) return false;
+        break;
+      case 13:
+        if (!getTrinoJob().equals(other.getTrinoJob())) return false;
+        break;
+      case 14:
+        if (!getFlinkJob().equals(other.getFlinkJob())) return false;
         break;
       case 0:
       default:
@@ -1162,6 +1304,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       case 12:
         hash = (37 * hash) + PRESTO_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getPrestoJob().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + TRINO_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getTrinoJob().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + FLINK_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getFlinkJob().hashCode();
         break;
       case 0:
       default:
@@ -1361,6 +1511,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (prestoJobBuilder_ != null) {
         prestoJobBuilder_.clear();
       }
+      if (trinoJobBuilder_ != null) {
+        trinoJobBuilder_.clear();
+      }
+      if (flinkJobBuilder_ != null) {
+        flinkJobBuilder_.clear();
+      }
       internalGetMutableLabels().clear();
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
@@ -1410,16 +1566,16 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.stepId_ = stepId_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         prerequisiteStepIds_.makeImmutable();
         result.prerequisiteStepIds_ = prerequisiteStepIds_;
       }
@@ -1452,6 +1608,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (jobTypeCase_ == 12 && prestoJobBuilder_ != null) {
         result.jobType_ = prestoJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 13 && trinoJobBuilder_ != null) {
+        result.jobType_ = trinoJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 14 && flinkJobBuilder_ != null) {
+        result.jobType_ = flinkJobBuilder_.build();
       }
     }
 
@@ -1506,14 +1668,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
       }
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00002000;
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -1559,6 +1721,16 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         case PRESTO_JOB:
           {
             mergePrestoJob(other.getPrestoJob());
+            break;
+          }
+        case TRINO_JOB:
+          {
+            mergeTrinoJob(other.getTrinoJob());
+            break;
+          }
+        case FLINK_JOB:
+          {
+            mergeFlinkJob(other.getFlinkJob());
             break;
           }
         case JOBTYPE_NOT_SET:
@@ -1643,13 +1815,13 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 74
             case 82:
@@ -1671,6 +1843,18 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
                 jobTypeCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getTrinoJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getFlinkJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3656,6 +3840,458 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return prestoJobBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.TrinoJob,
+            com.google.cloud.dataproc.v1.TrinoJob.Builder,
+            com.google.cloud.dataproc.v1.TrinoJobOrBuilder>
+        trinoJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trinoJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrinoJob() {
+      return jobTypeCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trinoJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.TrinoJob getTrinoJob() {
+      if (trinoJobBuilder_ == null) {
+        if (jobTypeCase_ == 13) {
+          return (com.google.cloud.dataproc.v1.TrinoJob) jobType_;
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 13) {
+          return trinoJobBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrinoJob(com.google.cloud.dataproc.v1.TrinoJob value) {
+      if (trinoJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        trinoJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrinoJob(com.google.cloud.dataproc.v1.TrinoJob.Builder builderForValue) {
+      if (trinoJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        trinoJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTrinoJob(com.google.cloud.dataproc.v1.TrinoJob value) {
+      if (trinoJobBuilder_ == null) {
+        if (jobTypeCase_ == 13
+            && jobType_ != com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.dataproc.v1.TrinoJob.newBuilder(
+                      (com.google.cloud.dataproc.v1.TrinoJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 13) {
+          trinoJobBuilder_.mergeFrom(value);
+        } else {
+          trinoJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTrinoJob() {
+      if (trinoJobBuilder_ == null) {
+        if (jobTypeCase_ == 13) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 13) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        trinoJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.TrinoJob.Builder getTrinoJobBuilder() {
+      return getTrinoJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder() {
+      if ((jobTypeCase_ == 13) && (trinoJobBuilder_ != null)) {
+        return trinoJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 13) {
+          return (com.google.cloud.dataproc.v1.TrinoJob) jobType_;
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.TrinoJob,
+            com.google.cloud.dataproc.v1.TrinoJob.Builder,
+            com.google.cloud.dataproc.v1.TrinoJobOrBuilder>
+        getTrinoJobFieldBuilder() {
+      if (trinoJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 13)) {
+          jobType_ = com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+        }
+        trinoJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.TrinoJob,
+                com.google.cloud.dataproc.v1.TrinoJob.Builder,
+                com.google.cloud.dataproc.v1.TrinoJobOrBuilder>(
+                (com.google.cloud.dataproc.v1.TrinoJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 13;
+      onChanged();
+      return trinoJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.FlinkJob,
+            com.google.cloud.dataproc.v1.FlinkJob.Builder,
+            com.google.cloud.dataproc.v1.FlinkJobOrBuilder>
+        flinkJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the flinkJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlinkJob() {
+      return jobTypeCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The flinkJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.FlinkJob getFlinkJob() {
+      if (flinkJobBuilder_ == null) {
+        if (jobTypeCase_ == 14) {
+          return (com.google.cloud.dataproc.v1.FlinkJob) jobType_;
+        }
+        return com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 14) {
+          return flinkJobBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlinkJob(com.google.cloud.dataproc.v1.FlinkJob value) {
+      if (flinkJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        flinkJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlinkJob(com.google.cloud.dataproc.v1.FlinkJob.Builder builderForValue) {
+      if (flinkJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        flinkJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFlinkJob(com.google.cloud.dataproc.v1.FlinkJob value) {
+      if (flinkJobBuilder_ == null) {
+        if (jobTypeCase_ == 14
+            && jobType_ != com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.dataproc.v1.FlinkJob.newBuilder(
+                      (com.google.cloud.dataproc.v1.FlinkJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 14) {
+          flinkJobBuilder_.mergeFrom(value);
+        } else {
+          flinkJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFlinkJob() {
+      if (flinkJobBuilder_ == null) {
+        if (jobTypeCase_ == 14) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 14) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        flinkJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlinkJob.Builder getFlinkJobBuilder() {
+      return getFlinkJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.FlinkJobOrBuilder getFlinkJobOrBuilder() {
+      if ((jobTypeCase_ == 14) && (flinkJobBuilder_ != null)) {
+        return flinkJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 14) {
+          return (com.google.cloud.dataproc.v1.FlinkJob) jobType_;
+        }
+        return com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Flink job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlinkJob flink_job = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.FlinkJob,
+            com.google.cloud.dataproc.v1.FlinkJob.Builder,
+            com.google.cloud.dataproc.v1.FlinkJobOrBuilder>
+        getFlinkJobFieldBuilder() {
+      if (flinkJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 14)) {
+          jobType_ = com.google.cloud.dataproc.v1.FlinkJob.getDefaultInstance();
+        }
+        flinkJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.FlinkJob,
+                com.google.cloud.dataproc.v1.FlinkJob.Builder,
+                com.google.cloud.dataproc.v1.FlinkJobOrBuilder>(
+                (com.google.cloud.dataproc.v1.FlinkJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 14;
+      onChanged();
+      return flinkJobBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -3673,7 +4309,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return labels_;
     }
@@ -3794,7 +4430,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3826,7 +4462,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3855,7 +4491,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3878,7 +4514,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -3902,7 +4538,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3946,7 +4582,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3968,7 +4604,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3985,7 +4621,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.dataproc.v1.JobScheduling.getDefaultInstance()) {
           getSchedulingBuilder().mergeFrom(value);
@@ -3996,7 +4632,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4013,7 +4649,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -4034,7 +4670,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -4093,7 +4729,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (!prerequisiteStepIds_.isModifiable()) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -4183,7 +4819,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4207,7 +4843,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4228,7 +4864,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPrerequisiteStepIds(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStepIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prerequisiteStepIds_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4247,7 +4883,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -4273,7 +4909,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

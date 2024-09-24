@@ -128,6 +128,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * All information required from the customer for fulfillment of the order
+     * is complete.
+     * </pre>
+     *
+     * <code>INFO_COMPLETE = 12;</code>
+     */
+    INFO_COMPLETE(12),
+    /**
+     *
+     *
+     * <pre>
      * Order has been accepted by Google.
      * </pre>
      *
@@ -253,6 +264,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * All information required from the customer for fulfillment of the order
+     * is complete.
+     * </pre>
+     *
+     * <code>INFO_COMPLETE = 12;</code>
+     */
+    public static final int INFO_COMPLETE_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
      * Order has been accepted by Google.
      * </pre>
      *
@@ -372,6 +394,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           return DRAFT;
         case 2:
           return SUBMITTED;
+        case 12:
+          return INFO_COMPLETE;
         case 3:
           return ACCEPTED;
         case 4:

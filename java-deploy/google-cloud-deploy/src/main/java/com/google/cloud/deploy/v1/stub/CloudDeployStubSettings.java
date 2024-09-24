@@ -158,7 +158,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeliveryPipeline to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeliveryPipeline:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -175,9 +177,46 @@ import org.threeten.bp.Duration;
  *             .getDeliveryPipelineSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudDeployStubSettings cloudDeploySettings = cloudDeploySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeliveryPipeline:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudDeployStubSettings.Builder cloudDeploySettingsBuilder =
+ *     CloudDeployStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudDeploySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -335,9 +374,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             @Override
             public Iterable<DeliveryPipeline> extractResources(
                 ListDeliveryPipelinesResponse payload) {
-              return payload.getDeliveryPipelinesList() == null
-                  ? ImmutableList.<DeliveryPipeline>of()
-                  : payload.getDeliveryPipelinesList();
+              return payload.getDeliveryPipelinesList();
             }
           };
 
@@ -371,9 +408,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Target> extractResources(ListTargetsResponse payload) {
-              return payload.getTargetsList() == null
-                  ? ImmutableList.<Target>of()
-                  : payload.getTargetsList();
+              return payload.getTargetsList();
             }
           };
 
@@ -412,9 +447,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             @Override
             public Iterable<CustomTargetType> extractResources(
                 ListCustomTargetTypesResponse payload) {
-              return payload.getCustomTargetTypesList() == null
-                  ? ImmutableList.<CustomTargetType>of()
-                  : payload.getCustomTargetTypesList();
+              return payload.getCustomTargetTypesList();
             }
           };
 
@@ -448,9 +481,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Release> extractResources(ListReleasesResponse payload) {
-              return payload.getReleasesList() == null
-                  ? ImmutableList.<Release>of()
-                  : payload.getReleasesList();
+              return payload.getReleasesList();
             }
           };
 
@@ -484,9 +515,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Rollout> extractResources(ListRolloutsResponse payload) {
-              return payload.getRolloutsList() == null
-                  ? ImmutableList.<Rollout>of()
-                  : payload.getRolloutsList();
+              return payload.getRolloutsList();
             }
           };
 
@@ -520,9 +549,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<JobRun> extractResources(ListJobRunsResponse payload) {
-              return payload.getJobRunsList() == null
-                  ? ImmutableList.<JobRun>of()
-                  : payload.getJobRunsList();
+              return payload.getJobRunsList();
             }
           };
 
@@ -559,9 +586,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Automation> extractResources(ListAutomationsResponse payload) {
-              return payload.getAutomationsList() == null
-                  ? ImmutableList.<Automation>of()
-                  : payload.getAutomationsList();
+              return payload.getAutomationsList();
             }
           };
 
@@ -599,9 +624,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<AutomationRun> extractResources(ListAutomationRunsResponse payload) {
-              return payload.getAutomationRunsList() == null
-                  ? ImmutableList.<AutomationRun>of()
-                  : payload.getAutomationRunsList();
+              return payload.getAutomationRunsList();
             }
           };
 
@@ -635,9 +658,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

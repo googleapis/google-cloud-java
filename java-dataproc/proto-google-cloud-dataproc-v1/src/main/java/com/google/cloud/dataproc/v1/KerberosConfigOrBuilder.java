@@ -69,7 +69,7 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The URI of the KMS key used to encrypt sensitive
    * files.
    * </pre>
    *
@@ -82,7 +82,7 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The URI of the KMS key used to encrypt sensitive
    * files.
    * </pre>
    *

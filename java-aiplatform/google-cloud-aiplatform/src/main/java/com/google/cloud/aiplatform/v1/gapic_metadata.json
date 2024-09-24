@@ -496,6 +496,9 @@
             "ListTuningJobs": {
               "methods": ["listTuningJobs", "listTuningJobs", "listTuningJobs", "listTuningJobsPagedCallable", "listTuningJobsCallable"]
             },
+            "RebaseTunedModel": {
+              "methods": ["rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelOperationCallable", "rebaseTunedModelCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

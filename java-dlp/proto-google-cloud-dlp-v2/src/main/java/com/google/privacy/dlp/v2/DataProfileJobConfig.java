@@ -177,6 +177,64 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int OTHER_CLOUD_STARTING_LOCATION_FIELD_NUMBER = 8;
+  private com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation otherCloudStartingLocation_;
+  /**
+   *
+   *
+   * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   *
+   * @return Whether the otherCloudStartingLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasOtherCloudStartingLocation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   *
+   * @return The otherCloudStartingLocation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
+      getOtherCloudStartingLocation() {
+    return otherCloudStartingLocation_ == null
+        ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
+        : otherCloudStartingLocation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder
+      getOtherCloudStartingLocationOrBuilder() {
+    return otherCloudStartingLocation_ == null
+        ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
+        : otherCloudStartingLocation_;
+  }
+
   public static final int INSPECT_TEMPLATES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -399,6 +457,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < inspectTemplates_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, inspectTemplates_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getOtherCloudStartingLocation());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -426,6 +487,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 1 * getInspectTemplatesList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getOtherCloudStartingLocation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -447,6 +513,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       if (!getLocation().equals(other.getLocation())) return false;
     }
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (hasOtherCloudStartingLocation() != other.hasOtherCloudStartingLocation()) return false;
+    if (hasOtherCloudStartingLocation()) {
+      if (!getOtherCloudStartingLocation().equals(other.getOtherCloudStartingLocation()))
+        return false;
+    }
     if (!getInspectTemplatesList().equals(other.getInspectTemplatesList())) return false;
     if (!getDataProfileActionsList().equals(other.getDataProfileActionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -466,6 +537,10 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    if (hasOtherCloudStartingLocation()) {
+      hash = (37 * hash) + OTHER_CLOUD_STARTING_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOtherCloudStartingLocation().hashCode();
+    }
     if (getInspectTemplatesCount() > 0) {
       hash = (37 * hash) + INSPECT_TEMPLATES_FIELD_NUMBER;
       hash = (53 * hash) + getInspectTemplatesList().hashCode();
@@ -621,6 +696,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLocationFieldBuilder();
+        getOtherCloudStartingLocationFieldBuilder();
         getDataProfileActionsFieldBuilder();
       }
     }
@@ -635,6 +711,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         locationBuilder_ = null;
       }
       projectId_ = "";
+      otherCloudStartingLocation_ = null;
+      if (otherCloudStartingLocationBuilder_ != null) {
+        otherCloudStartingLocationBuilder_.dispose();
+        otherCloudStartingLocationBuilder_ = null;
+      }
       inspectTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
@@ -642,7 +723,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         dataProfileActions_ = null;
         dataProfileActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -680,9 +761,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.DataProfileJobConfig result) {
       if (dataProfileActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           dataProfileActions_ = java.util.Collections.unmodifiableList(dataProfileActions_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.dataProfileActions_ = dataProfileActions_;
       } else {
@@ -701,6 +782,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         result.projectId_ = projectId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.otherCloudStartingLocation_ =
+            otherCloudStartingLocationBuilder_ == null
+                ? otherCloudStartingLocation_
+                : otherCloudStartingLocationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         inspectTemplates_.makeImmutable();
         result.inspectTemplates_ = inspectTemplates_;
       }
@@ -760,10 +848,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasOtherCloudStartingLocation()) {
+        mergeOtherCloudStartingLocation(other.getOtherCloudStartingLocation());
+      }
       if (!other.inspectTemplates_.isEmpty()) {
         if (inspectTemplates_.isEmpty()) {
           inspectTemplates_ = other.inspectTemplates_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         } else {
           ensureInspectTemplatesIsMutable();
           inspectTemplates_.addAll(other.inspectTemplates_);
@@ -774,7 +865,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         if (!other.dataProfileActions_.isEmpty()) {
           if (dataProfileActions_.isEmpty()) {
             dataProfileActions_ = other.dataProfileActions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureDataProfileActionsIsMutable();
             dataProfileActions_.addAll(other.dataProfileActions_);
@@ -787,7 +878,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             dataProfileActionsBuilder_.dispose();
             dataProfileActionsBuilder_ = null;
             dataProfileActions_ = other.dataProfileActions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             dataProfileActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataProfileActionsFieldBuilder()
@@ -855,6 +946,13 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
                 inspectTemplates_.add(s);
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getOtherCloudStartingLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1176,6 +1274,218 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
+        otherCloudStartingLocation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder>
+        otherCloudStartingLocationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     *
+     * @return Whether the otherCloudStartingLocation field is set.
+     */
+    public boolean hasOtherCloudStartingLocation() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     *
+     * @return The otherCloudStartingLocation.
+     */
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
+        getOtherCloudStartingLocation() {
+      if (otherCloudStartingLocationBuilder_ == null) {
+        return otherCloudStartingLocation_ == null
+            ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
+            : otherCloudStartingLocation_;
+      } else {
+        return otherCloudStartingLocationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public Builder setOtherCloudStartingLocation(
+        com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation value) {
+      if (otherCloudStartingLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        otherCloudStartingLocation_ = value;
+      } else {
+        otherCloudStartingLocationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public Builder setOtherCloudStartingLocation(
+        com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder builderForValue) {
+      if (otherCloudStartingLocationBuilder_ == null) {
+        otherCloudStartingLocation_ = builderForValue.build();
+      } else {
+        otherCloudStartingLocationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public Builder mergeOtherCloudStartingLocation(
+        com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation value) {
+      if (otherCloudStartingLocationBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && otherCloudStartingLocation_ != null
+            && otherCloudStartingLocation_
+                != com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation
+                    .getDefaultInstance()) {
+          getOtherCloudStartingLocationBuilder().mergeFrom(value);
+        } else {
+          otherCloudStartingLocation_ = value;
+        }
+      } else {
+        otherCloudStartingLocationBuilder_.mergeFrom(value);
+      }
+      if (otherCloudStartingLocation_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public Builder clearOtherCloudStartingLocation() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      otherCloudStartingLocation_ = null;
+      if (otherCloudStartingLocationBuilder_ != null) {
+        otherCloudStartingLocationBuilder_.dispose();
+        otherCloudStartingLocationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder
+        getOtherCloudStartingLocationBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getOtherCloudStartingLocationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder
+        getOtherCloudStartingLocationOrBuilder() {
+      if (otherCloudStartingLocationBuilder_ != null) {
+        return otherCloudStartingLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return otherCloudStartingLocation_ == null
+            ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
+            : otherCloudStartingLocation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set only when scanning other clouds.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder,
+            com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder>
+        getOtherCloudStartingLocationFieldBuilder() {
+      if (otherCloudStartingLocationBuilder_ == null) {
+        otherCloudStartingLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation,
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder,
+                com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder>(
+                getOtherCloudStartingLocation(), getParentForChildren(), isClean());
+        otherCloudStartingLocation_ = null;
+      }
+      return otherCloudStartingLocationBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList inspectTemplates_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1183,7 +1493,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       if (!inspectTemplates_.isModifiable()) {
         inspectTemplates_ = new com.google.protobuf.LazyStringArrayList(inspectTemplates_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1338,7 +1648,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1375,7 +1685,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1409,7 +1719,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public Builder addAllInspectTemplates(java.lang.Iterable<java.lang.String> values) {
       ensureInspectTemplatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inspectTemplates_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1441,7 +1751,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder clearInspectTemplates() {
       inspectTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1480,7 +1790,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1489,11 +1799,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureDataProfileActionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         dataProfileActions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.DataProfileAction>(
                 dataProfileActions_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1711,7 +2021,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public Builder clearDataProfileActions() {
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         dataProfileActionsBuilder_.clear();
@@ -1837,7 +2147,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
                 com.google.privacy.dlp.v2.DataProfileAction.Builder,
                 com.google.privacy.dlp.v2.DataProfileActionOrBuilder>(
                 dataProfileActions_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         dataProfileActions_ = null;

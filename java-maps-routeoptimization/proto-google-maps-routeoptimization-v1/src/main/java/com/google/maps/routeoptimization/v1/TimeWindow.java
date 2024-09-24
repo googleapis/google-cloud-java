@@ -41,8 +41,9 @@ package com.google.maps.routeoptimization.v1;
  * [ShipmentModel.global_end_time][google.maps.routeoptimization.v1.ShipmentModel.global_end_time])
  * and should respect:
  * ```
- *   0 &lt;= `start_time` &lt;= `soft_start_time` &lt;= `end_time` and
- *   0 &lt;= `start_time` &lt;= `soft_end_time` &lt;= `end_time`.
+ *   0 &lt;= `start_time` &lt;= `end_time` and
+ *   0 &lt;= `start_time` &lt;= `soft_start_time` and
+ *   0 &lt;= `soft_end_time` &lt;= `end_time`.
  * ```
  * </pre>
  *
@@ -652,8 +653,9 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_end_time][google.maps.routeoptimization.v1.ShipmentModel.global_end_time])
    * and should respect:
    * ```
-   *   0 &lt;= `start_time` &lt;= `soft_start_time` &lt;= `end_time` and
-   *   0 &lt;= `start_time` &lt;= `soft_end_time` &lt;= `end_time`.
+   *   0 &lt;= `start_time` &lt;= `end_time` and
+   *   0 &lt;= `start_time` &lt;= `soft_start_time` and
+   *   0 &lt;= `soft_end_time` &lt;= `end_time`.
    * ```
    * </pre>
    *

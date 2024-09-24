@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iap</artifactId>
-  <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Identity-Aware Proxy API</name>
   <description>Cloud Identity-Aware Proxy API Controls access to cloud applications running on Google Cloud Platform.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iap-parent</artifactId>
-    <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-iap</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

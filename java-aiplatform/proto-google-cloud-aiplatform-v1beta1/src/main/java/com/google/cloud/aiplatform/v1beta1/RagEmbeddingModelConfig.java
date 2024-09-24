@@ -1278,6 +1278,3184 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     }
   }
 
+  public interface SparseEmbeddingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     *
+     * @return Whether the bm25 field is set.
+     */
+    boolean hasBm25();
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     *
+     * @return The bm25.
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+        getBm25();
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25OrBuilder
+        getBm25OrBuilder();
+
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.ModelCase
+        getModelCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sparse emebdding generation.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig}
+   */
+  public static final class SparseEmbeddingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+      SparseEmbeddingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SparseEmbeddingConfig.newBuilder() to construct.
+    private SparseEmbeddingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SparseEmbeddingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SparseEmbeddingConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .class,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Builder.class);
+    }
+
+    public interface Bm25OrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use multilingual tokenizer if set to true.
+       * </pre>
+       *
+       * <code>bool multilingual = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The multilingual.
+       */
+      boolean getMultilingual();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control term frequency saturation. It
+       * determines the scaling between the matching term frequency and final
+       * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+       * </pre>
+       *
+       * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the k1 field is set.
+       */
+      boolean hasK1();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control term frequency saturation. It
+       * determines the scaling between the matching term frequency and final
+       * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+       * </pre>
+       *
+       * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The k1.
+       */
+      float getK1();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control document length normalization. It
+       * determines how much the document length affects the final score. b is
+       * in the range of [0, 1]. The default value is 0.75.
+       * </pre>
+       *
+       * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the b field is set.
+       */
+      boolean hasB();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control document length normalization. It
+       * determines how much the document length affects the final score. b is
+       * in the range of [0, 1]. The default value is 0.75.
+       * </pre>
+       *
+       * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The b.
+       */
+      float getB();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message for BM25 parameters.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25}
+     */
+    public static final class Bm25 extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+        Bm25OrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Bm25.newBuilder() to construct.
+      private Bm25(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Bm25() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Bm25();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_Bm25_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_Bm25_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .Bm25.class,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .Bm25.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int MULTILINGUAL_FIELD_NUMBER = 1;
+      private boolean multilingual_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Use multilingual tokenizer if set to true.
+       * </pre>
+       *
+       * <code>bool multilingual = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The multilingual.
+       */
+      @java.lang.Override
+      public boolean getMultilingual() {
+        return multilingual_;
+      }
+
+      public static final int K1_FIELD_NUMBER = 2;
+      private float k1_ = 0F;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control term frequency saturation. It
+       * determines the scaling between the matching term frequency and final
+       * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+       * </pre>
+       *
+       * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the k1 field is set.
+       */
+      @java.lang.Override
+      public boolean hasK1() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control term frequency saturation. It
+       * determines the scaling between the matching term frequency and final
+       * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+       * </pre>
+       *
+       * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The k1.
+       */
+      @java.lang.Override
+      public float getK1() {
+        return k1_;
+      }
+
+      public static final int B_FIELD_NUMBER = 3;
+      private float b_ = 0F;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control document length normalization. It
+       * determines how much the document length affects the final score. b is
+       * in the range of [0, 1]. The default value is 0.75.
+       * </pre>
+       *
+       * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the b field is set.
+       */
+      @java.lang.Override
+      public boolean hasB() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The parameter to control document length normalization. It
+       * determines how much the document length affects the final score. b is
+       * in the range of [0, 1]. The default value is 0.75.
+       * </pre>
+       *
+       * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The b.
+       */
+      @java.lang.Override
+      public float getB() {
+        return b_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (multilingual_ != false) {
+          output.writeBool(1, multilingual_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeFloat(2, k1_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeFloat(3, b_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (multilingual_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, multilingual_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, k1_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, b_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+            other =
+                (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                        .Bm25)
+                    obj;
+
+        if (getMultilingual() != other.getMultilingual()) return false;
+        if (hasK1() != other.hasK1()) return false;
+        if (hasK1()) {
+          if (java.lang.Float.floatToIntBits(getK1())
+              != java.lang.Float.floatToIntBits(other.getK1())) return false;
+        }
+        if (hasB() != other.hasB()) return false;
+        if (hasB()) {
+          if (java.lang.Float.floatToIntBits(getB())
+              != java.lang.Float.floatToIntBits(other.getB())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MULTILINGUAL_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultilingual());
+        if (hasK1()) {
+          hash = (37 * hash) + K1_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getK1());
+        }
+        if (hasB()) {
+          hash = (37 * hash) + B_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getB());
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Message for BM25 parameters.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25OrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+              .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_Bm25_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+              .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_Bm25_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Bm25.class,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Bm25.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          multilingual_ = false;
+          k1_ = 0F;
+          b_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+              .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_Bm25_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25
+            build() {
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .SparseEmbeddingConfig.Bm25(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.multilingual_ = multilingual_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.k1_ = k1_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.b_ = b_;
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                        .Bm25)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25.getDefaultInstance()) return this;
+          if (other.getMultilingual() != false) {
+            setMultilingual(other.getMultilingual());
+          }
+          if (other.hasK1()) {
+            setK1(other.getK1());
+          }
+          if (other.hasB()) {
+            setB(other.getB());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    multilingual_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 21:
+                  {
+                    k1_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                case 29:
+                  {
+                    b_ = input.readFloat();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 29
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean multilingual_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use multilingual tokenizer if set to true.
+         * </pre>
+         *
+         * <code>bool multilingual = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The multilingual.
+         */
+        @java.lang.Override
+        public boolean getMultilingual() {
+          return multilingual_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use multilingual tokenizer if set to true.
+         * </pre>
+         *
+         * <code>bool multilingual = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The multilingual to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMultilingual(boolean value) {
+
+          multilingual_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Use multilingual tokenizer if set to true.
+         * </pre>
+         *
+         * <code>bool multilingual = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMultilingual() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          multilingual_ = false;
+          onChanged();
+          return this;
+        }
+
+        private float k1_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control term frequency saturation. It
+         * determines the scaling between the matching term frequency and final
+         * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+         * </pre>
+         *
+         * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the k1 field is set.
+         */
+        @java.lang.Override
+        public boolean hasK1() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control term frequency saturation. It
+         * determines the scaling between the matching term frequency and final
+         * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+         * </pre>
+         *
+         * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The k1.
+         */
+        @java.lang.Override
+        public float getK1() {
+          return k1_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control term frequency saturation. It
+         * determines the scaling between the matching term frequency and final
+         * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+         * </pre>
+         *
+         * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The k1 to set.
+         * @return This builder for chaining.
+         */
+        public Builder setK1(float value) {
+
+          k1_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control term frequency saturation. It
+         * determines the scaling between the matching term frequency and final
+         * score. k1 is in the range of [1.2, 3]. The default value is 1.2.
+         * </pre>
+         *
+         * <code>optional float k1 = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearK1() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          k1_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float b_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control document length normalization. It
+         * determines how much the document length affects the final score. b is
+         * in the range of [0, 1]. The default value is 0.75.
+         * </pre>
+         *
+         * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the b field is set.
+         */
+        @java.lang.Override
+        public boolean hasB() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control document length normalization. It
+         * determines how much the document length affects the final score. b is
+         * in the range of [0, 1]. The default value is 0.75.
+         * </pre>
+         *
+         * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The b.
+         */
+        @java.lang.Override
+        public float getB() {
+          return b_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control document length normalization. It
+         * determines how much the document length affects the final score. b is
+         * in the range of [0, 1]. The default value is 0.75.
+         * </pre>
+         *
+         * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The b to set.
+         * @return This builder for chaining.
+         */
+        public Builder setB(float value) {
+
+          b_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The parameter to control document length normalization. It
+         * determines how much the document length affects the final score. b is
+         * in the range of [0, 1]. The default value is 0.75.
+         * </pre>
+         *
+         * <code>optional float b = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearB() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          b_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+      private static final com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfig.Bm25
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Bm25> PARSER =
+          new com.google.protobuf.AbstractParser<Bm25>() {
+            @java.lang.Override
+            public Bm25 parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Bm25> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Bm25> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int modelCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object model_;
+
+    public enum ModelCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      BM25(1),
+      MODEL_NOT_SET(0);
+      private final int value;
+
+      private ModelCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModelCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ModelCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return BM25;
+          case 0:
+            return MODEL_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ModelCase getModelCase() {
+      return ModelCase.forNumber(modelCase_);
+    }
+
+    public static final int BM25_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     *
+     * @return Whether the bm25 field is set.
+     */
+    @java.lang.Override
+    public boolean hasBm25() {
+      return modelCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     *
+     * @return The bm25.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+        getBm25() {
+      if (modelCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25)
+            model_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use BM25 scoring algorithm.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+            .Bm25OrBuilder
+        getBm25OrBuilder() {
+      if (modelCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .Bm25)
+            model_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (modelCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
+                model_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modelCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                        .Bm25)
+                    model_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig other =
+          (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig) obj;
+
+      if (!getModelCase().equals(other.getModelCase())) return false;
+      switch (modelCase_) {
+        case 1:
+          if (!getBm25().equals(other.getBm25())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (modelCase_) {
+        case 1:
+          hash = (37 * hash) + BM25_FIELD_NUMBER;
+          hash = (53 * hash) + getBm25().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sparse emebdding generation.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (bm25Builder_ != null) {
+          bm25Builder_.clear();
+        }
+        modelCase_ = 0;
+        model_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_SparseEmbeddingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+          build() {
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig result =
+            new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              result) {
+        result.modelCase_ = modelCase_;
+        result.model_ = this.model_;
+        if (modelCase_ == 1 && bm25Builder_ != null) {
+          result.model_ = bm25Builder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                .getDefaultInstance()) return this;
+        switch (other.getModelCase()) {
+          case BM25:
+            {
+              mergeBm25(other.getBm25());
+              break;
+            }
+          case MODEL_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getBm25FieldBuilder().getBuilder(), extensionRegistry);
+                  modelCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int modelCase_ = 0;
+      private java.lang.Object model_;
+
+      public ModelCase getModelCase() {
+        return ModelCase.forNumber(modelCase_);
+      }
+
+      public Builder clearModel() {
+        modelCase_ = 0;
+        model_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25OrBuilder>
+          bm25Builder_;
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       *
+       * @return Whether the bm25 field is set.
+       */
+      @java.lang.Override
+      public boolean hasBm25() {
+        return modelCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       *
+       * @return The bm25.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+          getBm25() {
+        if (bm25Builder_ == null) {
+          if (modelCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                    .SparseEmbeddingConfig.Bm25)
+                model_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25.getDefaultInstance();
+        } else {
+          if (modelCase_ == 1) {
+            return bm25Builder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      public Builder setBm25(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              value) {
+        if (bm25Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          model_ = value;
+          onChanged();
+        } else {
+          bm25Builder_.setMessage(value);
+        }
+        modelCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      public Builder setBm25(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+                  .Builder
+              builderForValue) {
+        if (bm25Builder_ == null) {
+          model_ = builderForValue.build();
+          onChanged();
+        } else {
+          bm25Builder_.setMessage(builderForValue.build());
+        }
+        modelCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      public Builder mergeBm25(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              value) {
+        if (bm25Builder_ == null) {
+          if (modelCase_ == 1
+              && model_
+                  != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .SparseEmbeddingConfig.Bm25.getDefaultInstance()) {
+            model_ =
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .Bm25.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                                .SparseEmbeddingConfig.Bm25)
+                            model_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            model_ = value;
+          }
+          onChanged();
+        } else {
+          if (modelCase_ == 1) {
+            bm25Builder_.mergeFrom(value);
+          } else {
+            bm25Builder_.setMessage(value);
+          }
+        }
+        modelCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      public Builder clearBm25() {
+        if (bm25Builder_ == null) {
+          if (modelCase_ == 1) {
+            modelCase_ = 0;
+            model_ = null;
+            onChanged();
+          }
+        } else {
+          if (modelCase_ == 1) {
+            modelCase_ = 0;
+            model_ = null;
+          }
+          bm25Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+              .Builder
+          getBm25Builder() {
+        return getBm25FieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25OrBuilder
+          getBm25OrBuilder() {
+        if ((modelCase_ == 1) && (bm25Builder_ != null)) {
+          return bm25Builder_.getMessageOrBuilder();
+        } else {
+          if (modelCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                    .SparseEmbeddingConfig.Bm25)
+                model_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Bm25.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use BM25 scoring algorithm.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25 bm25 = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Bm25OrBuilder>
+          getBm25FieldBuilder() {
+        if (bm25Builder_ == null) {
+          if (!(modelCase_ == 1)) {
+            model_ =
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                    .Bm25.getDefaultInstance();
+          }
+          bm25Builder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Bm25,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Bm25.Builder,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Bm25OrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                          .Bm25)
+                      model_,
+                  getParentForChildren(),
+                  isClean());
+          model_ = null;
+        }
+        modelCase_ = 1;
+        onChanged();
+        return bm25Builder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+            .SparseEmbeddingConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SparseEmbeddingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SparseEmbeddingConfig>() {
+          @java.lang.Override
+          public SparseEmbeddingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SparseEmbeddingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SparseEmbeddingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface HybridSearchConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sparseEmbeddingConfig field is set.
+     */
+    boolean hasSparseEmbeddingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sparseEmbeddingConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        getSparseEmbeddingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfigOrBuilder
+        getSparseEmbeddingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the denseEmbeddingModelPredictionEndpoint field is set.
+     */
+    boolean hasDenseEmbeddingModelPredictionEndpoint();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The denseEmbeddingModelPredictionEndpoint.
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+        getDenseEmbeddingModelPredictionEndpoint();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpointOrBuilder
+        getDenseEmbeddingModelPredictionEndpointOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for hybrid search.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig}
+   */
+  public static final class HybridSearchConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+      HybridSearchConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use HybridSearchConfig.newBuilder() to construct.
+    private HybridSearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HybridSearchConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HybridSearchConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_HybridSearchConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_HybridSearchConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.class,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int SPARSE_EMBEDDING_CONFIG_FIELD_NUMBER = 1;
+    private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        sparseEmbeddingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sparseEmbeddingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSparseEmbeddingConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sparseEmbeddingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+        getSparseEmbeddingConfig() {
+      return sparseEmbeddingConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .getDefaultInstance()
+          : sparseEmbeddingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for sparse embedding generation. This field
+     * is optional the default behavior depends on the vector database choice on
+     * the RagCorpus.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+            .SparseEmbeddingConfigOrBuilder
+        getSparseEmbeddingConfigOrBuilder() {
+      return sparseEmbeddingConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .getDefaultInstance()
+          : sparseEmbeddingConfig_;
+    }
+
+    public static final int DENSE_EMBEDDING_MODEL_PREDICTION_ENDPOINT_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+        denseEmbeddingModelPredictionEndpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the denseEmbeddingModelPredictionEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasDenseEmbeddingModelPredictionEndpoint() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The denseEmbeddingModelPredictionEndpoint.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+        getDenseEmbeddingModelPredictionEndpoint() {
+      return denseEmbeddingModelPredictionEndpoint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+              .getDefaultInstance()
+          : denseEmbeddingModelPredictionEndpoint_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+     * model for dense embedding generations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+            .VertexPredictionEndpointOrBuilder
+        getDenseEmbeddingModelPredictionEndpointOrBuilder() {
+      return denseEmbeddingModelPredictionEndpoint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+              .getDefaultInstance()
+          : denseEmbeddingModelPredictionEndpoint_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getSparseEmbeddingConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getDenseEmbeddingModelPredictionEndpoint());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSparseEmbeddingConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getDenseEmbeddingModelPredictionEndpoint());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig other =
+          (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig) obj;
+
+      if (hasSparseEmbeddingConfig() != other.hasSparseEmbeddingConfig()) return false;
+      if (hasSparseEmbeddingConfig()) {
+        if (!getSparseEmbeddingConfig().equals(other.getSparseEmbeddingConfig())) return false;
+      }
+      if (hasDenseEmbeddingModelPredictionEndpoint()
+          != other.hasDenseEmbeddingModelPredictionEndpoint()) return false;
+      if (hasDenseEmbeddingModelPredictionEndpoint()) {
+        if (!getDenseEmbeddingModelPredictionEndpoint()
+            .equals(other.getDenseEmbeddingModelPredictionEndpoint())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSparseEmbeddingConfig()) {
+        hash = (37 * hash) + SPARSE_EMBEDDING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSparseEmbeddingConfig().hashCode();
+      }
+      if (hasDenseEmbeddingModelPredictionEndpoint()) {
+        hash = (37 * hash) + DENSE_EMBEDDING_MODEL_PREDICTION_ENDPOINT_FIELD_NUMBER;
+        hash = (53 * hash) + getDenseEmbeddingModelPredictionEndpoint().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for hybrid search.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_HybridSearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_HybridSearchConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getSparseEmbeddingConfigFieldBuilder();
+          getDenseEmbeddingModelPredictionEndpointFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sparseEmbeddingConfig_ = null;
+        if (sparseEmbeddingConfigBuilder_ != null) {
+          sparseEmbeddingConfigBuilder_.dispose();
+          sparseEmbeddingConfigBuilder_ = null;
+        }
+        denseEmbeddingModelPredictionEndpoint_ = null;
+        if (denseEmbeddingModelPredictionEndpointBuilder_ != null) {
+          denseEmbeddingModelPredictionEndpointBuilder_.dispose();
+          denseEmbeddingModelPredictionEndpointBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagEmbeddingModelConfig_HybridSearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+          build() {
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig result =
+            new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sparseEmbeddingConfig_ =
+              sparseEmbeddingConfigBuilder_ == null
+                  ? sparseEmbeddingConfig_
+                  : sparseEmbeddingConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.denseEmbeddingModelPredictionEndpoint_ =
+              denseEmbeddingModelPredictionEndpointBuilder_ == null
+                  ? denseEmbeddingModelPredictionEndpoint_
+                  : denseEmbeddingModelPredictionEndpointBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                .getDefaultInstance()) return this;
+        if (other.hasSparseEmbeddingConfig()) {
+          mergeSparseEmbeddingConfig(other.getSparseEmbeddingConfig());
+        }
+        if (other.hasDenseEmbeddingModelPredictionEndpoint()) {
+          mergeDenseEmbeddingModelPredictionEndpoint(
+              other.getDenseEmbeddingModelPredictionEndpoint());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getSparseEmbeddingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getDenseEmbeddingModelPredictionEndpointFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+          sparseEmbeddingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                  .SparseEmbeddingConfigOrBuilder>
+          sparseEmbeddingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sparseEmbeddingConfig field is set.
+       */
+      public boolean hasSparseEmbeddingConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sparseEmbeddingConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+          getSparseEmbeddingConfig() {
+        if (sparseEmbeddingConfigBuilder_ == null) {
+          return sparseEmbeddingConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .getDefaultInstance()
+              : sparseEmbeddingConfig_;
+        } else {
+          return sparseEmbeddingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSparseEmbeddingConfig(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig value) {
+        if (sparseEmbeddingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sparseEmbeddingConfig_ = value;
+        } else {
+          sparseEmbeddingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSparseEmbeddingConfig(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Builder
+              builderForValue) {
+        if (sparseEmbeddingConfigBuilder_ == null) {
+          sparseEmbeddingConfig_ = builderForValue.build();
+        } else {
+          sparseEmbeddingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSparseEmbeddingConfig(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig value) {
+        if (sparseEmbeddingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && sparseEmbeddingConfig_ != null
+              && sparseEmbeddingConfig_
+                  != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .SparseEmbeddingConfig.getDefaultInstance()) {
+            getSparseEmbeddingConfigBuilder().mergeFrom(value);
+          } else {
+            sparseEmbeddingConfig_ = value;
+          }
+        } else {
+          sparseEmbeddingConfigBuilder_.mergeFrom(value);
+        }
+        if (sparseEmbeddingConfig_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSparseEmbeddingConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sparseEmbeddingConfig_ = null;
+        if (sparseEmbeddingConfigBuilder_ != null) {
+          sparseEmbeddingConfigBuilder_.dispose();
+          sparseEmbeddingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+              .Builder
+          getSparseEmbeddingConfigBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getSparseEmbeddingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .SparseEmbeddingConfigOrBuilder
+          getSparseEmbeddingConfigOrBuilder() {
+        if (sparseEmbeddingConfigBuilder_ != null) {
+          return sparseEmbeddingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return sparseEmbeddingConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .getDefaultInstance()
+              : sparseEmbeddingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for sparse embedding generation. This field
+       * is optional the default behavior depends on the vector database choice on
+       * the RagCorpus.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig sparse_embedding_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                  .SparseEmbeddingConfigOrBuilder>
+          getSparseEmbeddingConfigFieldBuilder() {
+        if (sparseEmbeddingConfigBuilder_ == null) {
+          sparseEmbeddingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .SparseEmbeddingConfigOrBuilder>(
+                  getSparseEmbeddingConfig(), getParentForChildren(), isClean());
+          sparseEmbeddingConfig_ = null;
+        }
+        return sparseEmbeddingConfigBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+          denseEmbeddingModelPredictionEndpoint_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                  .VertexPredictionEndpointOrBuilder>
+          denseEmbeddingModelPredictionEndpointBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the denseEmbeddingModelPredictionEndpoint field is set.
+       */
+      public boolean hasDenseEmbeddingModelPredictionEndpoint() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The denseEmbeddingModelPredictionEndpoint.
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+          getDenseEmbeddingModelPredictionEndpoint() {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ == null) {
+          return denseEmbeddingModelPredictionEndpoint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+                  .getDefaultInstance()
+              : denseEmbeddingModelPredictionEndpoint_;
+        } else {
+          return denseEmbeddingModelPredictionEndpointBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDenseEmbeddingModelPredictionEndpoint(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+              value) {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          denseEmbeddingModelPredictionEndpoint_ = value;
+        } else {
+          denseEmbeddingModelPredictionEndpointBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDenseEmbeddingModelPredictionEndpoint(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+                  .Builder
+              builderForValue) {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ == null) {
+          denseEmbeddingModelPredictionEndpoint_ = builderForValue.build();
+        } else {
+          denseEmbeddingModelPredictionEndpointBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeDenseEmbeddingModelPredictionEndpoint(
+          com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+              value) {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && denseEmbeddingModelPredictionEndpoint_ != null
+              && denseEmbeddingModelPredictionEndpoint_
+                  != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .VertexPredictionEndpoint.getDefaultInstance()) {
+            getDenseEmbeddingModelPredictionEndpointBuilder().mergeFrom(value);
+          } else {
+            denseEmbeddingModelPredictionEndpoint_ = value;
+          }
+        } else {
+          denseEmbeddingModelPredictionEndpointBuilder_.mergeFrom(value);
+        }
+        if (denseEmbeddingModelPredictionEndpoint_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearDenseEmbeddingModelPredictionEndpoint() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        denseEmbeddingModelPredictionEndpoint_ = null;
+        if (denseEmbeddingModelPredictionEndpointBuilder_ != null) {
+          denseEmbeddingModelPredictionEndpointBuilder_.dispose();
+          denseEmbeddingModelPredictionEndpointBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+              .Builder
+          getDenseEmbeddingModelPredictionEndpointBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDenseEmbeddingModelPredictionEndpointFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+              .VertexPredictionEndpointOrBuilder
+          getDenseEmbeddingModelPredictionEndpointOrBuilder() {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ != null) {
+          return denseEmbeddingModelPredictionEndpointBuilder_.getMessageOrBuilder();
+        } else {
+          return denseEmbeddingModelPredictionEndpoint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+                  .getDefaultInstance()
+              : denseEmbeddingModelPredictionEndpoint_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Vertex AI Prediction Endpoint that hosts the embedding
+       * model for dense embedding generations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint dense_embedding_model_prediction_endpoint = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                  .VertexPredictionEndpointOrBuilder>
+          getDenseEmbeddingModelPredictionEndpointFieldBuilder() {
+        if (denseEmbeddingModelPredictionEndpointBuilder_ == null) {
+          denseEmbeddingModelPredictionEndpointBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .VertexPredictionEndpoint,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .VertexPredictionEndpoint.Builder,
+                  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                      .VertexPredictionEndpointOrBuilder>(
+                  getDenseEmbeddingModelPredictionEndpoint(), getParentForChildren(), isClean());
+          denseEmbeddingModelPredictionEndpoint_ = null;
+        }
+        return denseEmbeddingModelPredictionEndpointBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+            .HybridSearchConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HybridSearchConfig> PARSER =
+        new com.google.protobuf.AbstractParser<HybridSearchConfig>() {
+          @java.lang.Override
+          public HybridSearchConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HybridSearchConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HybridSearchConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int modelConfigCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1288,6 +4466,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VERTEX_PREDICTION_ENDPOINT(1),
+    HYBRID_SEARCH_CONFIG(2),
     MODELCONFIG_NOT_SET(0);
     private final int value;
 
@@ -1308,6 +4487,8 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       switch (value) {
         case 1:
           return VERTEX_PREDICTION_ENDPOINT;
+        case 2:
+          return HYBRID_SEARCH_CONFIG;
         case 0:
           return MODELCONFIG_NOT_SET;
         default:
@@ -1333,6 +4514,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -1353,6 +4535,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -1379,6 +4562,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
    * or an endpoint that is hosting a 1P fine-tuned text embedding model.
    * Endpoints hosting non-1P fine-tuned text embedding models are
    * currently not supported.
+   * This is used for dense vector search.
    * </pre>
    *
    * <code>
@@ -1394,6 +4578,69 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           modelConfig_;
     }
     return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
+        .getDefaultInstance();
+  }
+
+  public static final int HYBRID_SEARCH_CONFIG_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   *
+   * @return Whether the hybridSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHybridSearchConfig() {
+    return modelConfigCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   *
+   * @return The hybridSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+      getHybridSearchConfig() {
+    if (modelConfigCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+          modelConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for hybrid search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder
+      getHybridSearchConfigOrBuilder() {
+    if (modelConfigCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+          modelConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
         .getDefaultInstance();
   }
 
@@ -1417,6 +4664,12 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint)
               modelConfig_);
     }
+    if (modelConfigCase_ == 2) {
+      output.writeMessage(
+          2,
+          (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+              modelConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1431,6 +4684,13 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1,
               (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint)
+                  modelConfig_);
+    }
+    if (modelConfigCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2,
+              (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
                   modelConfig_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1455,6 +4715,9 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         if (!getVertexPredictionEndpoint().equals(other.getVertexPredictionEndpoint()))
           return false;
         break;
+      case 2:
+        if (!getHybridSearchConfig().equals(other.getHybridSearchConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -1473,6 +4736,10 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       case 1:
         hash = (37 * hash) + VERTEX_PREDICTION_ENDPOINT_FIELD_NUMBER;
         hash = (53 * hash) + getVertexPredictionEndpoint().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + HYBRID_SEARCH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getHybridSearchConfig().hashCode();
         break;
       case 0:
       default:
@@ -1620,6 +4887,9 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       if (vertexPredictionEndpointBuilder_ != null) {
         vertexPredictionEndpointBuilder_.clear();
       }
+      if (hybridSearchConfigBuilder_ != null) {
+        hybridSearchConfigBuilder_.clear();
+      }
       modelConfigCase_ = 0;
       modelConfig_ = null;
       return this;
@@ -1667,6 +4937,9 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       result.modelConfig_ = this.modelConfig_;
       if (modelConfigCase_ == 1 && vertexPredictionEndpointBuilder_ != null) {
         result.modelConfig_ = vertexPredictionEndpointBuilder_.build();
+      }
+      if (modelConfigCase_ == 2 && hybridSearchConfigBuilder_ != null) {
+        result.modelConfig_ = hybridSearchConfigBuilder_.build();
       }
     }
 
@@ -1722,6 +4995,11 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             mergeVertexPredictionEndpoint(other.getVertexPredictionEndpoint());
             break;
           }
+        case HYBRID_SEARCH_CONFIG:
+          {
+            mergeHybridSearchConfig(other.getHybridSearchConfig());
+            break;
+          }
         case MODELCONFIG_NOT_SET:
           {
             break;
@@ -1760,6 +5038,13 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
                 modelConfigCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getHybridSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                modelConfigCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1808,6 +5093,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1828,6 +5114,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1863,6 +5150,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1892,6 +5180,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1918,6 +5207,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1962,6 +5252,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -1992,6 +5283,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -2011,6 +5303,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -2041,6 +5334,7 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * or an endpoint that is hosting a 1P fine-tuned text embedding model.
      * Endpoints hosting non-1P fine-tuned text embedding models are
      * currently not supported.
+     * This is used for dense vector search.
      * </pre>
      *
      * <code>
@@ -2078,6 +5372,254 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 1;
       onChanged();
       return vertexPredictionEndpointBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder>
+        hybridSearchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     *
+     * @return Whether the hybridSearchConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasHybridSearchConfig() {
+      return modelConfigCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     *
+     * @return The hybridSearchConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+        getHybridSearchConfig() {
+      if (hybridSearchConfigBuilder_ == null) {
+        if (modelConfigCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+              modelConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+            .getDefaultInstance();
+      } else {
+        if (modelConfigCase_ == 2) {
+          return hybridSearchConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    public Builder setHybridSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig value) {
+      if (hybridSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelConfig_ = value;
+        onChanged();
+      } else {
+        hybridSearchConfigBuilder_.setMessage(value);
+      }
+      modelConfigCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    public Builder setHybridSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder
+            builderForValue) {
+      if (hybridSearchConfigBuilder_ == null) {
+        modelConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        hybridSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      modelConfigCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    public Builder mergeHybridSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig value) {
+      if (hybridSearchConfigBuilder_ == null) {
+        if (modelConfigCase_ == 2
+            && modelConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                    .getDefaultInstance()) {
+          modelConfig_ =
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                  .newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                              .HybridSearchConfig)
+                          modelConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelConfigCase_ == 2) {
+          hybridSearchConfigBuilder_.mergeFrom(value);
+        } else {
+          hybridSearchConfigBuilder_.setMessage(value);
+        }
+      }
+      modelConfigCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    public Builder clearHybridSearchConfig() {
+      if (hybridSearchConfigBuilder_ == null) {
+        if (modelConfigCase_ == 2) {
+          modelConfigCase_ = 0;
+          modelConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelConfigCase_ == 2) {
+          modelConfigCase_ = 0;
+          modelConfig_ = null;
+        }
+        hybridSearchConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder
+        getHybridSearchConfigBuilder() {
+      return getHybridSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder
+        getHybridSearchConfigOrBuilder() {
+      if ((modelConfigCase_ == 2) && (hybridSearchConfigBuilder_ != null)) {
+        return hybridSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelConfigCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+              modelConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for hybrid search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig hybrid_search_config = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder>
+        getHybridSearchConfigFieldBuilder() {
+      if (hybridSearchConfigBuilder_ == null) {
+        if (!(modelConfigCase_ == 2)) {
+          modelConfig_ =
+              com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                  .getDefaultInstance();
+        }
+        hybridSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                    .HybridSearchConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
+                    modelConfig_,
+                getParentForChildren(),
+                isClean());
+        modelConfig_ = null;
+      }
+      modelConfigCase_ = 2;
+      onChanged();
+      return hybridSearchConfigBuilder_;
     }
 
     @java.lang.Override

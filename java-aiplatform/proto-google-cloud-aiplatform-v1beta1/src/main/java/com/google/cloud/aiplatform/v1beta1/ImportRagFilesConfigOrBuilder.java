@@ -180,6 +180,130 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   *
+   * @return Whether the sharePointSources field is set.
+   */
+  boolean hasSharePointSources();
+  /**
+   *
+   *
+   * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   *
+   * @return The sharePointSources.
+   */
+  com.google.cloud.aiplatform.v1beta1.SharePointSources getSharePointSources();
+  /**
+   *
+   *
+   * <pre>
+   * SharePoint sources.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SharePointSources share_point_sources = 13;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder getSharePointSourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   *
+   * @return Whether the partialFailureGcsSink field is set.
+   */
+  boolean hasPartialFailureGcsSink();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   *
+   * @return The partialFailureGcsSink.
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write partial failures to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getPartialFailureGcsSinkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   *
+   * @return Whether the partialFailureBigquerySink field is set.
+   */
+  boolean hasPartialFailureBigquerySink();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   *
+   * @return The partialFailureBigquerySink.
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write partial failures to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
+   * exist, it will be created. If the table does not exist, it will be
+   * created with the expected schema. If the table exists, the schema will be
+   * validated and data will be added to this existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+      getPartialFailureBigquerySinkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
@@ -270,4 +394,7 @@ public interface ImportRagFilesConfigOrBuilder
   int getMaxEmbeddingRequestsPerMin();
 
   com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.ImportSourceCase getImportSourceCase();
+
+  com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.PartialFailureSinkCase
+      getPartialFailureSinkCase();
 }

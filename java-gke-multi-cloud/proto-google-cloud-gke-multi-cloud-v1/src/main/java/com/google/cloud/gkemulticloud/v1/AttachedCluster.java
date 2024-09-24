@@ -1611,6 +1611,63 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         : binaryAuthorization_;
   }
 
+  public static final int SECURITY_POSTURE_CONFIG_FIELD_NUMBER = 26;
+  private com.google.cloud.gkemulticloud.v1.SecurityPostureConfig securityPostureConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPostureConfig() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The securityPostureConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SecurityPostureConfig getSecurityPostureConfig() {
+    return securityPostureConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Security Posture configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder
+      getSecurityPostureConfigOrBuilder() {
+    return securityPostureConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1690,6 +1747,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(25, getBinaryAuthorization());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(26, getSecurityPostureConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1776,6 +1836,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(25, getBinaryAuthorization());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSecurityPostureConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1843,6 +1907,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasBinaryAuthorization() != other.hasBinaryAuthorization()) return false;
     if (hasBinaryAuthorization()) {
       if (!getBinaryAuthorization().equals(other.getBinaryAuthorization())) return false;
+    }
+    if (hasSecurityPostureConfig() != other.hasSecurityPostureConfig()) return false;
+    if (hasSecurityPostureConfig()) {
+      if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1922,6 +1990,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasBinaryAuthorization()) {
       hash = (37 * hash) + BINARY_AUTHORIZATION_FIELD_NUMBER;
       hash = (53 * hash) + getBinaryAuthorization().hashCode();
+    }
+    if (hasSecurityPostureConfig()) {
+      hash = (37 * hash) + SECURITY_POSTURE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPostureConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2096,6 +2168,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         getMonitoringConfigFieldBuilder();
         getProxyConfigFieldBuilder();
         getBinaryAuthorizationFieldBuilder();
+        getSecurityPostureConfigFieldBuilder();
       }
     }
 
@@ -2170,6 +2243,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (binaryAuthorizationBuilder_ != null) {
         binaryAuthorizationBuilder_.dispose();
         binaryAuthorizationBuilder_ = null;
+      }
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
       }
       return this;
     }
@@ -2305,6 +2383,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 ? binaryAuthorization_
                 : binaryAuthorizationBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.securityPostureConfig_ =
+            securityPostureConfigBuilder_ == null
+                ? securityPostureConfig_
+                : securityPostureConfigBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2459,6 +2544,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasBinaryAuthorization()) {
         mergeBinaryAuthorization(other.getBinaryAuthorization());
+      }
+      if (other.hasSecurityPostureConfig()) {
+        mergeSecurityPostureConfig(other.getSecurityPostureConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2635,6 +2723,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00200000;
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    getSecurityPostureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6438,6 +6533,215 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         binaryAuthorization_ = null;
       }
       return binaryAuthorizationBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.SecurityPostureConfig securityPostureConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfig,
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder>
+        securityPostureConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the securityPostureConfig field is set.
+     */
+    public boolean hasSecurityPostureConfig() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The securityPostureConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.SecurityPostureConfig getSecurityPostureConfig() {
+      if (securityPostureConfigBuilder_ == null) {
+        return securityPostureConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      } else {
+        return securityPostureConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecurityPostureConfig(
+        com.google.cloud.gkemulticloud.v1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        securityPostureConfig_ = value;
+      } else {
+        securityPostureConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecurityPostureConfig(
+        com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder builderForValue) {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfig_ = builderForValue.build();
+      } else {
+        securityPostureConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSecurityPostureConfig(
+        com.google.cloud.gkemulticloud.v1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && securityPostureConfig_ != null
+            && securityPostureConfig_
+                != com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()) {
+          getSecurityPostureConfigBuilder().mergeFrom(value);
+        } else {
+          securityPostureConfig_ = value;
+        }
+      } else {
+        securityPostureConfigBuilder_.mergeFrom(value);
+      }
+      if (securityPostureConfig_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSecurityPostureConfig() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder
+        getSecurityPostureConfigBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getSecurityPostureConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder
+        getSecurityPostureConfigOrBuilder() {
+      if (securityPostureConfigBuilder_ != null) {
+        return securityPostureConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return securityPostureConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Security Posture configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SecurityPostureConfig security_posture_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfig,
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder>
+        getSecurityPostureConfigFieldBuilder() {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.SecurityPostureConfig,
+                com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder>(
+                getSecurityPostureConfig(), getParentForChildren(), isClean());
+        securityPostureConfig_ = null;
+      }
+      return securityPostureConfigBuilder_;
     }
 
     @java.lang.Override

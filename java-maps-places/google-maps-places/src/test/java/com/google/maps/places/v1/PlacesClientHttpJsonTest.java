@@ -77,7 +77,10 @@ public class PlacesClientHttpJsonTest {
   @Test
   public void searchNearbyTest() throws Exception {
     SearchNearbyResponse expectedResponse =
-        SearchNearbyResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchNearbyResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
+            .build();
     mockService.addResponse(expectedResponse);
 
     SearchNearbyRequest request =
@@ -90,6 +93,7 @@ public class PlacesClientHttpJsonTest {
             .addAllExcludedPrimaryTypes(new ArrayList<String>())
             .setMaxResultCount(-1736124056)
             .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
             .build();
 
     SearchNearbyResponse actualResponse = client.searchNearby(request);
@@ -128,6 +132,7 @@ public class PlacesClientHttpJsonTest {
               .addAllExcludedPrimaryTypes(new ArrayList<String>())
               .setMaxResultCount(-1736124056)
               .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
               .build();
       client.searchNearby(request);
       Assert.fail("No exception raised");
@@ -141,6 +146,7 @@ public class PlacesClientHttpJsonTest {
     SearchTextResponse expectedResponse =
         SearchTextResponse.newBuilder()
             .addAllPlaces(new ArrayList<Place>())
+            .addAllRoutingSummaries(new ArrayList<RoutingSummary>())
             .addAllContextualContents(new ArrayList<ContextualContent>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -159,6 +165,9 @@ public class PlacesClientHttpJsonTest {
             .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
             .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
             .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+            .setRoutingParameters(RoutingParameters.newBuilder().build())
+            .setSearchAlongRouteParameters(
+                SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -201,6 +210,9 @@ public class PlacesClientHttpJsonTest {
               .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
               .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
               .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+              .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setSearchAlongRouteParameters(
+                  SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");

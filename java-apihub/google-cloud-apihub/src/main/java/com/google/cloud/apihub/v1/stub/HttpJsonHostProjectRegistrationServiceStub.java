@@ -279,13 +279,13 @@ public class HttpJsonHostProjectRegistrationServiceStub extends HostProjectRegis
   public static final HttpJsonHostProjectRegistrationServiceStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonHostProjectRegistrationServiceStub(
-        HostProjectRegistrationServiceStubSettings.newHttpJsonBuilder().build(), clientContext);
+        HostProjectRegistrationServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonHostProjectRegistrationServiceStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonHostProjectRegistrationServiceStub(
-        HostProjectRegistrationServiceStubSettings.newHttpJsonBuilder().build(),
+        HostProjectRegistrationServiceStubSettings.newBuilder().build(),
         clientContext,
         callableFactory);
   }

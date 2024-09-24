@@ -62,6 +62,198 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse.Builder.class);
   }
 
+  private int partialFailureSinkCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object partialFailureSink_;
+
+  public enum PartialFailureSinkCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PARTIAL_FAILURES_GCS_PATH(4),
+    PARTIAL_FAILURES_BIGQUERY_TABLE(5),
+    PARTIALFAILURESINK_NOT_SET(0);
+    private final int value;
+
+    private PartialFailureSinkCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PartialFailureSinkCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PartialFailureSinkCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return PARTIAL_FAILURES_GCS_PATH;
+        case 5:
+          return PARTIAL_FAILURES_BIGQUERY_TABLE;
+        case 0:
+          return PARTIALFAILURESINK_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PartialFailureSinkCase getPartialFailureSinkCase() {
+    return PartialFailureSinkCase.forNumber(partialFailureSinkCase_);
+  }
+
+  public static final int PARTIAL_FAILURES_GCS_PATH_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return Whether the partialFailuresGcsPath field is set.
+   */
+  public boolean hasPartialFailuresGcsPath() {
+    return partialFailureSinkCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return The partialFailuresGcsPath.
+   */
+  public java.lang.String getPartialFailuresGcsPath() {
+    java.lang.Object ref = "";
+    if (partialFailureSinkCase_ == 4) {
+      ref = partialFailureSink_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (partialFailureSinkCase_ == 4) {
+        partialFailureSink_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage path into which the partial failures were
+   * written.
+   * </pre>
+   *
+   * <code>string partial_failures_gcs_path = 4;</code>
+   *
+   * @return The bytes for partialFailuresGcsPath.
+   */
+  public com.google.protobuf.ByteString getPartialFailuresGcsPathBytes() {
+    java.lang.Object ref = "";
+    if (partialFailureSinkCase_ == 4) {
+      ref = partialFailureSink_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (partialFailureSinkCase_ == 4) {
+        partialFailureSink_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARTIAL_FAILURES_BIGQUERY_TABLE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return Whether the partialFailuresBigqueryTable field is set.
+   */
+  public boolean hasPartialFailuresBigqueryTable() {
+    return partialFailureSinkCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return The partialFailuresBigqueryTable.
+   */
+  public java.lang.String getPartialFailuresBigqueryTable() {
+    java.lang.Object ref = "";
+    if (partialFailureSinkCase_ == 5) {
+      ref = partialFailureSink_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (partialFailureSinkCase_ == 5) {
+        partialFailureSink_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table into which the partial failures were written.
+   * </pre>
+   *
+   * <code>string partial_failures_bigquery_table = 5;</code>
+   *
+   * @return The bytes for partialFailuresBigqueryTable.
+   */
+  public com.google.protobuf.ByteString getPartialFailuresBigqueryTableBytes() {
+    java.lang.Object ref = "";
+    if (partialFailureSinkCase_ == 5) {
+      ref = partialFailureSink_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (partialFailureSinkCase_ == 5) {
+        partialFailureSink_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IMPORTED_RAG_FILES_COUNT_FIELD_NUMBER = 1;
   private long importedRagFilesCount_ = 0L;
   /**
@@ -139,6 +331,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     if (skippedRagFilesCount_ != 0L) {
       output.writeInt64(3, skippedRagFilesCount_);
     }
+    if (partialFailureSinkCase_ == 4) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, partialFailureSink_);
+    }
+    if (partialFailureSinkCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, partialFailureSink_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -156,6 +354,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     }
     if (skippedRagFilesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, skippedRagFilesCount_);
+    }
+    if (partialFailureSinkCase_ == 4) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, partialFailureSink_);
+    }
+    if (partialFailureSinkCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, partialFailureSink_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -176,6 +380,18 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     if (getImportedRagFilesCount() != other.getImportedRagFilesCount()) return false;
     if (getFailedRagFilesCount() != other.getFailedRagFilesCount()) return false;
     if (getSkippedRagFilesCount() != other.getSkippedRagFilesCount()) return false;
+    if (!getPartialFailureSinkCase().equals(other.getPartialFailureSinkCase())) return false;
+    switch (partialFailureSinkCase_) {
+      case 4:
+        if (!getPartialFailuresGcsPath().equals(other.getPartialFailuresGcsPath())) return false;
+        break;
+      case 5:
+        if (!getPartialFailuresBigqueryTable().equals(other.getPartialFailuresBigqueryTable()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -193,6 +409,18 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailedRagFilesCount());
     hash = (37 * hash) + SKIPPED_RAG_FILES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSkippedRagFilesCount());
+    switch (partialFailureSinkCase_) {
+      case 4:
+        hash = (37 * hash) + PARTIAL_FAILURES_GCS_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getPartialFailuresGcsPath().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + PARTIAL_FAILURES_BIGQUERY_TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getPartialFailuresBigqueryTable().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -337,6 +565,8 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       importedRagFilesCount_ = 0L;
       failedRagFilesCount_ = 0L;
       skippedRagFilesCount_ = 0L;
+      partialFailureSinkCase_ = 0;
+      partialFailureSink_ = null;
       return this;
     }
 
@@ -367,21 +597,28 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.importedRagFilesCount_ = importedRagFilesCount_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.failedRagFilesCount_ = failedRagFilesCount_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.skippedRagFilesCount_ = skippedRagFilesCount_;
       }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse result) {
+      result.partialFailureSinkCase_ = partialFailureSinkCase_;
+      result.partialFailureSink_ = this.partialFailureSink_;
     }
 
     @java.lang.Override
@@ -439,6 +676,26 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       if (other.getSkippedRagFilesCount() != 0L) {
         setSkippedRagFilesCount(other.getSkippedRagFilesCount());
       }
+      switch (other.getPartialFailureSinkCase()) {
+        case PARTIAL_FAILURES_GCS_PATH:
+          {
+            partialFailureSinkCase_ = 4;
+            partialFailureSink_ = other.partialFailureSink_;
+            onChanged();
+            break;
+          }
+        case PARTIAL_FAILURES_BIGQUERY_TABLE:
+          {
+            partialFailureSinkCase_ = 5;
+            partialFailureSink_ = other.partialFailureSink_;
+            onChanged();
+            break;
+          }
+        case PARTIALFAILURESINK_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -468,21 +725,35 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
             case 8:
               {
                 importedRagFilesCount_ = input.readInt64();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 8
             case 16:
               {
                 failedRagFilesCount_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 24:
               {
                 skippedRagFilesCount_ = input.readInt64();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                partialFailureSinkCase_ = 4;
+                partialFailureSink_ = s;
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                partialFailureSinkCase_ = 5;
+                partialFailureSink_ = s;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -500,7 +771,295 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int partialFailureSinkCase_ = 0;
+    private java.lang.Object partialFailureSink_;
+
+    public PartialFailureSinkCase getPartialFailureSinkCase() {
+      return PartialFailureSinkCase.forNumber(partialFailureSinkCase_);
+    }
+
+    public Builder clearPartialFailureSink() {
+      partialFailureSinkCase_ = 0;
+      partialFailureSink_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @return Whether the partialFailuresGcsPath field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartialFailuresGcsPath() {
+      return partialFailureSinkCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @return The partialFailuresGcsPath.
+     */
+    @java.lang.Override
+    public java.lang.String getPartialFailuresGcsPath() {
+      java.lang.Object ref = "";
+      if (partialFailureSinkCase_ == 4) {
+        ref = partialFailureSink_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (partialFailureSinkCase_ == 4) {
+          partialFailureSink_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @return The bytes for partialFailuresGcsPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPartialFailuresGcsPathBytes() {
+      java.lang.Object ref = "";
+      if (partialFailureSinkCase_ == 4) {
+        ref = partialFailureSink_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (partialFailureSinkCase_ == 4) {
+          partialFailureSink_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @param value The partialFailuresGcsPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailuresGcsPath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      partialFailureSinkCase_ = 4;
+      partialFailureSink_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartialFailuresGcsPath() {
+      if (partialFailureSinkCase_ == 4) {
+        partialFailureSinkCase_ = 0;
+        partialFailureSink_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage path into which the partial failures were
+     * written.
+     * </pre>
+     *
+     * <code>string partial_failures_gcs_path = 4;</code>
+     *
+     * @param value The bytes for partialFailuresGcsPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailuresGcsPathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      partialFailureSinkCase_ = 4;
+      partialFailureSink_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @return Whether the partialFailuresBigqueryTable field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartialFailuresBigqueryTable() {
+      return partialFailureSinkCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @return The partialFailuresBigqueryTable.
+     */
+    @java.lang.Override
+    public java.lang.String getPartialFailuresBigqueryTable() {
+      java.lang.Object ref = "";
+      if (partialFailureSinkCase_ == 5) {
+        ref = partialFailureSink_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (partialFailureSinkCase_ == 5) {
+          partialFailureSink_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @return The bytes for partialFailuresBigqueryTable.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPartialFailuresBigqueryTableBytes() {
+      java.lang.Object ref = "";
+      if (partialFailureSinkCase_ == 5) {
+        ref = partialFailureSink_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (partialFailureSinkCase_ == 5) {
+          partialFailureSink_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @param value The partialFailuresBigqueryTable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailuresBigqueryTable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      partialFailureSinkCase_ = 5;
+      partialFailureSink_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartialFailuresBigqueryTable() {
+      if (partialFailureSinkCase_ == 5) {
+        partialFailureSinkCase_ = 0;
+        partialFailureSink_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table into which the partial failures were written.
+     * </pre>
+     *
+     * <code>string partial_failures_bigquery_table = 5;</code>
+     *
+     * @param value The bytes for partialFailuresBigqueryTable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailuresBigqueryTableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      partialFailureSinkCase_ = 5;
+      partialFailureSink_ = value;
+      onChanged();
+      return this;
+    }
 
     private long importedRagFilesCount_;
     /**
@@ -533,7 +1092,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public Builder setImportedRagFilesCount(long value) {
 
       importedRagFilesCount_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -549,7 +1108,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearImportedRagFilesCount() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       importedRagFilesCount_ = 0L;
       onChanged();
       return this;
@@ -586,7 +1145,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public Builder setFailedRagFilesCount(long value) {
 
       failedRagFilesCount_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -602,7 +1161,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFailedRagFilesCount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       failedRagFilesCount_ = 0L;
       onChanged();
       return this;
@@ -639,7 +1198,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public Builder setSkippedRagFilesCount(long value) {
 
       skippedRagFilesCount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -655,7 +1214,7 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSkippedRagFilesCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       skippedRagFilesCount_ = 0L;
       onChanged();
       return this;

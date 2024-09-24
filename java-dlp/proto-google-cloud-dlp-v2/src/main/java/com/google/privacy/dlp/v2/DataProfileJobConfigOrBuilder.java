@@ -92,6 +92,48 @@ public interface DataProfileJobConfigOrBuilder
    *
    *
    * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   *
+   * @return Whether the otherCloudStartingLocation field is set.
+   */
+  boolean hasOtherCloudStartingLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   *
+   * @return The otherCloudStartingLocation.
+   */
+  com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation getOtherCloudStartingLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Must be set only when scanning other clouds.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation other_cloud_starting_location = 8;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder
+      getOtherCloudStartingLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Detection logic for profile generation.
    *
    * Not all template features are used by profiles. FindingLimits,

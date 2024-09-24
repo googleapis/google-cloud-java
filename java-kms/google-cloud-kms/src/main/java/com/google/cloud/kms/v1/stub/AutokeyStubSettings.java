@@ -16,6 +16,7 @@
 
 package com.google.cloud.kms.v1.stub;
 
+import static com.google.cloud.kms.v1.AutokeyClient.ListKeyHandlesPagedResponse;
 import static com.google.cloud.kms.v1.AutokeyClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -88,7 +89,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getKeyHandle to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getKeyHandle:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -104,9 +107,45 @@ import org.threeten.bp.Duration;
  *             .getKeyHandleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AutokeyStubSettings autokeySettings = autokeySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createKeyHandle:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AutokeyStubSettings.Builder autokeySettingsBuilder = AutokeyStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * autokeySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -122,7 +161,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   private final OperationCallSettings<CreateKeyHandleRequest, KeyHandle, CreateKeyHandleMetadata>
       createKeyHandleOperationSettings;
   private final UnaryCallSettings<GetKeyHandleRequest, KeyHandle> getKeyHandleSettings;
-  private final UnaryCallSettings<ListKeyHandlesRequest, ListKeyHandlesResponse>
+  private final PagedCallSettings<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
       listKeyHandlesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -132,6 +172,41 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle>
+      LIST_KEY_HANDLES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeyHandlesRequest injectToken(ListKeyHandlesRequest payload, String token) {
+              return ListKeyHandlesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeyHandlesRequest injectPageSize(
+                ListKeyHandlesRequest payload, int pageSize) {
+              return ListKeyHandlesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeyHandlesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeyHandlesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KeyHandle> extractResources(ListKeyHandlesResponse payload) {
+              return payload.getKeyHandlesList();
+            }
+          };
 
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
@@ -163,9 +238,24 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
+      LIST_KEY_HANDLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeyHandlesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeyHandlesRequest, ListKeyHandlesResponse> callable,
+                ListKeyHandlesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeyHandlesResponse> futureResponse) {
+              PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> pageContext =
+                  PageContext.create(callable, LIST_KEY_HANDLES_PAGE_STR_DESC, request, context);
+              return ListKeyHandlesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -203,7 +293,9 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to listKeyHandles. */
-  public UnaryCallSettings<ListKeyHandlesRequest, ListKeyHandlesResponse> listKeyHandlesSettings() {
+  public PagedCallSettings<
+          ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
+      listKeyHandlesSettings() {
     return listKeyHandlesSettings;
   }
 
@@ -363,7 +455,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
             CreateKeyHandleRequest, KeyHandle, CreateKeyHandleMetadata>
         createKeyHandleOperationSettings;
     private final UnaryCallSettings.Builder<GetKeyHandleRequest, KeyHandle> getKeyHandleSettings;
-    private final UnaryCallSettings.Builder<ListKeyHandlesRequest, ListKeyHandlesResponse>
+    private final PagedCallSettings.Builder<
+            ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
         listKeyHandlesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -429,7 +522,7 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
       createKeyHandleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createKeyHandleOperationSettings = OperationCallSettings.newBuilder();
       getKeyHandleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listKeyHandlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listKeyHandlesSettings = PagedCallSettings.newBuilder(LIST_KEY_HANDLES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -598,7 +691,8 @@ public class AutokeyStubSettings extends StubSettings<AutokeyStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listKeyHandles. */
-    public UnaryCallSettings.Builder<ListKeyHandlesRequest, ListKeyHandlesResponse>
+    public PagedCallSettings.Builder<
+            ListKeyHandlesRequest, ListKeyHandlesResponse, ListKeyHandlesPagedResponse>
         listKeyHandlesSettings() {
       return listKeyHandlesSettings;
     }

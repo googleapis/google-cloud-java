@@ -24,6 +24,8 @@ import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClie
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
 import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
@@ -150,6 +152,15 @@ public abstract class EnvironmentsStub implements BackgroundResource {
 
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     throw new UnsupportedOperationException("Not implemented: listWorkloadsCallable()");
+  }
+
+  public OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: checkUpgradeOperationCallable()");
+  }
+
+  public UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    throw new UnsupportedOperationException("Not implemented: checkUpgradeCallable()");
   }
 
   public UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>

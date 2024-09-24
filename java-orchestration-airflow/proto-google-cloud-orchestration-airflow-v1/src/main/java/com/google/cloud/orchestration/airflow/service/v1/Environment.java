@@ -745,6 +745,24 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 10;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.orchestration.airflow.service.v1.StorageConfig storageConfig_;
   /**
@@ -844,6 +862,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(9, getStorageConfig());
     }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(10, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -889,6 +910,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getStorageConfig());
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -922,6 +946,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (hasStorageConfig() != other.hasStorageConfig()) return false;
     if (hasStorageConfig()) {
       if (!getStorageConfig().equals(other.getStorageConfig())) return false;
@@ -961,6 +986,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     if (hasStorageConfig()) {
       hash = (37 * hash) + STORAGE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStorageConfig().hashCode();
@@ -1159,6 +1186,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       storageConfig_ = null;
       if (storageConfigBuilder_ != null) {
         storageConfigBuilder_.dispose();
@@ -1232,6 +1260,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.storageConfig_ =
             storageConfigBuilder_ == null ? storageConfig_ : storageConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
@@ -1312,6 +1343,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       if (other.hasStorageConfig()) {
         mergeStorageConfig(other.getStorageConfig());
@@ -1399,9 +1433,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 80:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2581,6 +2621,59 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.orchestration.airflow.service.v1.StorageConfig storageConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.orchestration.airflow.service.v1.StorageConfig,
@@ -2601,7 +2694,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storageConfig field is set.
      */
     public boolean hasStorageConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2646,7 +2739,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       } else {
         storageConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2668,7 +2761,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       } else {
         storageConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2686,7 +2779,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStorageConfig(
         com.google.cloud.orchestration.airflow.service.v1.StorageConfig value) {
       if (storageConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && storageConfig_ != null
             && storageConfig_
                 != com.google.cloud.orchestration.airflow.service.v1.StorageConfig
@@ -2699,7 +2792,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         storageConfigBuilder_.mergeFrom(value);
       }
       if (storageConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2716,7 +2809,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStorageConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       storageConfig_ = null;
       if (storageConfigBuilder_ != null) {
         storageConfigBuilder_.dispose();
@@ -2738,7 +2831,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.orchestration.airflow.service.v1.StorageConfig.Builder
         getStorageConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getStorageConfigFieldBuilder().getBuilder();
     }

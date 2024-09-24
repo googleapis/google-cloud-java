@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.50.0 (2024-09-11)
+
+### Features
+
+* add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+
+
+
 ## 3.49.0 (2024-08-21)
 
 ### Features

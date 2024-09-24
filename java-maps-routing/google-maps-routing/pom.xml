@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-routing</artifactId>
-  <version>1.34.0-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
+  <version>1.35.0-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
   <packaging>jar</packaging>
   <name>Google Routes API</name>
   <description>Routes API Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-routing-parent</artifactId>
-    <version>1.34.0-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
+    <version>1.35.0-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-routing</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

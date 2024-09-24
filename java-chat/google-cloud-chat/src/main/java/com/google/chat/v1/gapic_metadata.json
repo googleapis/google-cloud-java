@@ -76,6 +76,9 @@
             "ListSpaces": {
               "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
             },
+            "SearchSpaces": {
+              "methods": ["searchSpaces", "searchSpaces", "searchSpacesPagedCallable", "searchSpacesCallable"]
+            },
             "SetUpSpace": {
               "methods": ["setUpSpace", "setUpSpaceCallable"]
             },

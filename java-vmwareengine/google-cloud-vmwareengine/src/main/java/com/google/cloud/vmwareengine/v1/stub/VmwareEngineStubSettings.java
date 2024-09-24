@@ -210,7 +210,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPrivateCloud to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getPrivateCloud:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -227,9 +229,46 @@ import org.threeten.bp.Duration;
  *             .getPrivateCloudSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * VmwareEngineStubSettings vmwareEngineSettings = vmwareEngineSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createPrivateCloud:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VmwareEngineStubSettings.Builder vmwareEngineSettingsBuilder =
+ *     VmwareEngineStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vmwareEngineSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -541,9 +580,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<PrivateCloud> extractResources(ListPrivateCloudsResponse payload) {
-              return payload.getPrivateCloudsList() == null
-                  ? ImmutableList.<PrivateCloud>of()
-                  : payload.getPrivateCloudsList();
+              return payload.getPrivateCloudsList();
             }
           };
 
@@ -577,9 +614,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
-              return payload.getClustersList() == null
-                  ? ImmutableList.<Cluster>of()
-                  : payload.getClustersList();
+              return payload.getClustersList();
             }
           };
 
@@ -613,9 +648,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<Node> extractResources(ListNodesResponse payload) {
-              return payload.getNodesList() == null
-                  ? ImmutableList.<Node>of()
-                  : payload.getNodesList();
+              return payload.getNodesList();
             }
           };
 
@@ -654,9 +687,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<ExternalAddress> extractResources(
                 ListExternalAddressesResponse payload) {
-              return payload.getExternalAddressesList() == null
-                  ? ImmutableList.<ExternalAddress>of()
-                  : payload.getExternalAddressesList();
+              return payload.getExternalAddressesList();
             }
           };
 
@@ -703,9 +734,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<ExternalAddress> extractResources(
                 FetchNetworkPolicyExternalAddressesResponse payload) {
-              return payload.getExternalAddressesList() == null
-                  ? ImmutableList.<ExternalAddress>of()
-                  : payload.getExternalAddressesList();
+              return payload.getExternalAddressesList();
             }
           };
 
@@ -739,9 +768,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<Subnet> extractResources(ListSubnetsResponse payload) {
-              return payload.getSubnetsList() == null
-                  ? ImmutableList.<Subnet>of()
-                  : payload.getSubnetsList();
+              return payload.getSubnetsList();
             }
           };
 
@@ -784,9 +811,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<ExternalAccessRule> extractResources(
                 ListExternalAccessRulesResponse payload) {
-              return payload.getExternalAccessRulesList() == null
-                  ? ImmutableList.<ExternalAccessRule>of()
-                  : payload.getExternalAccessRulesList();
+              return payload.getExternalAccessRulesList();
             }
           };
 
@@ -824,9 +849,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<LoggingServer> extractResources(ListLoggingServersResponse payload) {
-              return payload.getLoggingServersList() == null
-                  ? ImmutableList.<LoggingServer>of()
-                  : payload.getLoggingServersList();
+              return payload.getLoggingServersList();
             }
           };
 
@@ -860,9 +883,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<NodeType> extractResources(ListNodeTypesResponse payload) {
-              return payload.getNodeTypesList() == null
-                  ? ImmutableList.<NodeType>of()
-                  : payload.getNodeTypesList();
+              return payload.getNodeTypesList();
             }
           };
 
@@ -900,9 +921,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<NetworkPeering> extractResources(ListNetworkPeeringsResponse payload) {
-              return payload.getNetworkPeeringsList() == null
-                  ? ImmutableList.<NetworkPeering>of()
-                  : payload.getNetworkPeeringsList();
+              return payload.getNetworkPeeringsList();
             }
           };
 
@@ -940,9 +959,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<PeeringRoute> extractResources(ListPeeringRoutesResponse payload) {
-              return payload.getPeeringRoutesList() == null
-                  ? ImmutableList.<PeeringRoute>of()
-                  : payload.getPeeringRoutesList();
+              return payload.getPeeringRoutesList();
             }
           };
 
@@ -981,9 +998,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<HcxActivationKey> extractResources(
                 ListHcxActivationKeysResponse payload) {
-              return payload.getHcxActivationKeysList() == null
-                  ? ImmutableList.<HcxActivationKey>of()
-                  : payload.getHcxActivationKeysList();
+              return payload.getHcxActivationKeysList();
             }
           };
 
@@ -1021,9 +1036,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<NetworkPolicy> extractResources(ListNetworkPoliciesResponse payload) {
-              return payload.getNetworkPoliciesList() == null
-                  ? ImmutableList.<NetworkPolicy>of()
-                  : payload.getNetworkPoliciesList();
+              return payload.getNetworkPoliciesList();
             }
           };
 
@@ -1070,9 +1083,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<ManagementDnsZoneBinding> extractResources(
                 ListManagementDnsZoneBindingsResponse payload) {
-              return payload.getManagementDnsZoneBindingsList() == null
-                  ? ImmutableList.<ManagementDnsZoneBinding>of()
-                  : payload.getManagementDnsZoneBindingsList();
+              return payload.getManagementDnsZoneBindingsList();
             }
           };
 
@@ -1117,9 +1128,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<VmwareEngineNetwork> extractResources(
                 ListVmwareEngineNetworksResponse payload) {
-              return payload.getVmwareEngineNetworksList() == null
-                  ? ImmutableList.<VmwareEngineNetwork>of()
-                  : payload.getVmwareEngineNetworksList();
+              return payload.getVmwareEngineNetworksList();
             }
           };
 
@@ -1160,9 +1169,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<PrivateConnection> extractResources(
                 ListPrivateConnectionsResponse payload) {
-              return payload.getPrivateConnectionsList() == null
-                  ? ImmutableList.<PrivateConnection>of()
-                  : payload.getPrivateConnectionsList();
+              return payload.getPrivateConnectionsList();
             }
           };
 
@@ -1209,9 +1216,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             @Override
             public Iterable<PeeringRoute> extractResources(
                 ListPrivateConnectionPeeringRoutesResponse payload) {
-              return payload.getPeeringRoutesList() == null
-                  ? ImmutableList.<PeeringRoute>of()
-                  : payload.getPeeringRoutesList();
+              return payload.getPeeringRoutesList();
             }
           };
 
@@ -1245,9 +1250,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 

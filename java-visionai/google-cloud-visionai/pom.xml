@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-visionai</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-visionai:current} -->
+  <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-visionai:current} -->
   <packaging>jar</packaging>
   <name>Google Vision AI API</name>
   <description>Vision AI API Vertex AI Vision is an AI-powered platform to ingest, analyze and store video data.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-visionai-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-visionai:current} -->
+    <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-visionai:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-visionai</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

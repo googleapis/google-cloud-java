@@ -10586,11 +10586,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the search result mode. If unspecified, the
-     * search result mode is based on
-     * [DataStore.DocumentProcessingConfig.chunking_config][]:
-     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-     *   it defaults to `CHUNKS`.
-     * * Otherwise, it defaults to `DOCUMENTS`.
+     * search result mode defaults to `DOCUMENTS`.
      * </pre>
      *
      * <code>
@@ -10605,11 +10601,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the search result mode. If unspecified, the
-     * search result mode is based on
-     * [DataStore.DocumentProcessingConfig.chunking_config][]:
-     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-     *   it defaults to `CHUNKS`.
-     * * Otherwise, it defaults to `DOCUMENTS`.
+     * search result mode defaults to `DOCUMENTS`.
      * </pre>
      *
      * <code>
@@ -10724,11 +10716,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the search result mode. If unspecified, the
-     * search result mode is based on
-     * [DataStore.DocumentProcessingConfig.chunking_config][]:
-     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-     *   it defaults to `CHUNKS`.
-     * * Otherwise, it defaults to `DOCUMENTS`.
+     * search result mode defaults to `DOCUMENTS`.
      * </pre>
      *
      * Protobuf enum {@code
@@ -11842,6 +11830,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The ignoreNonSummarySeekingQuery.
        */
       boolean getIgnoreNonSummarySeekingQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance. The
+       * default value is `false`.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true`, only queries with
+       * high relevance search results will generate answers.
+       * </pre>
+       *
+       * <code>bool ignore_low_relevant_content = 9;</code>
+       *
+       * @return The ignoreLowRelevantContent.
+       */
+      boolean getIgnoreLowRelevantContent();
 
       /**
        *
@@ -13686,6 +13692,29 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return ignoreNonSummarySeekingQuery_;
       }
 
+      public static final int IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER = 9;
+      private boolean ignoreLowRelevantContent_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance. The
+       * default value is `false`.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true`, only queries with
+       * high relevance search results will generate answers.
+       * </pre>
+       *
+       * <code>bool ignore_low_relevant_content = 9;</code>
+       *
+       * @return The ignoreLowRelevantContent.
+       */
+      @java.lang.Override
+      public boolean getIgnoreLowRelevantContent() {
+        return ignoreLowRelevantContent_;
+      }
+
       public static final int MODEL_PROMPT_SPEC_FIELD_NUMBER = 5;
       private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
               .ModelPromptSpec
@@ -13936,6 +13965,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (useSemanticChunks_ != false) {
           output.writeBool(8, useSemanticChunks_);
         }
+        if (ignoreLowRelevantContent_ != false) {
+          output.writeBool(9, ignoreLowRelevantContent_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -13971,6 +14003,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (useSemanticChunks_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, useSemanticChunks_);
         }
+        if (ignoreLowRelevantContent_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(9, ignoreLowRelevantContent_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -13994,6 +14030,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
         if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
           return false;
+        if (getIgnoreLowRelevantContent() != other.getIgnoreLowRelevantContent()) return false;
         if (hasModelPromptSpec() != other.hasModelPromptSpec()) return false;
         if (hasModelPromptSpec()) {
           if (!getModelPromptSpec().equals(other.getModelPromptSpec())) return false;
@@ -14025,6 +14062,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash =
             (53 * hash)
                 + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
+        hash = (37 * hash) + IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreLowRelevantContent());
         if (hasModelPromptSpec()) {
           hash = (37 * hash) + MODEL_PROMPT_SPEC_FIELD_NUMBER;
           hash = (53 * hash) + getModelPromptSpec().hashCode();
@@ -14207,6 +14247,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           includeCitations_ = false;
           ignoreAdversarialQuery_ = false;
           ignoreNonSummarySeekingQuery_ = false;
+          ignoreLowRelevantContent_ = false;
           modelPromptSpec_ = null;
           if (modelPromptSpecBuilder_ != null) {
             modelPromptSpecBuilder_.dispose();
@@ -14275,22 +14316,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
           }
-          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.ignoreLowRelevantContent_ = ignoreLowRelevantContent_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.modelPromptSpec_ =
                 modelPromptSpecBuilder_ == null
                     ? modelPromptSpec_
                     : modelPromptSpecBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             result.languageCode_ = languageCode_;
           }
-          if (((from_bitField0_ & 0x00000040) != 0)) {
+          if (((from_bitField0_ & 0x00000080) != 0)) {
             result.modelSpec_ = modelSpecBuilder_ == null ? modelSpec_ : modelSpecBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
-          if (((from_bitField0_ & 0x00000080) != 0)) {
+          if (((from_bitField0_ & 0x00000100) != 0)) {
             result.useSemanticChunks_ = useSemanticChunks_;
           }
           result.bitField0_ |= to_bitField0_;
@@ -14362,12 +14406,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getIgnoreNonSummarySeekingQuery() != false) {
             setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
           }
+          if (other.getIgnoreLowRelevantContent() != false) {
+            setIgnoreLowRelevantContent(other.getIgnoreLowRelevantContent());
+          }
           if (other.hasModelPromptSpec()) {
             mergeModelPromptSpec(other.getModelPromptSpec());
           }
           if (!other.getLanguageCode().isEmpty()) {
             languageCode_ = other.languageCode_;
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000040;
             onChanged();
           }
           if (other.hasModelSpec()) {
@@ -14430,27 +14477,33 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getModelPromptSpecFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 42
                 case 50:
                   {
                     languageCode_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000020;
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 50
                 case 58:
                   {
                     input.readMessage(getModelSpecFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000040;
+                    bitField0_ |= 0x00000080;
                     break;
                   } // case 58
                 case 64:
                   {
                     useSemanticChunks_ = input.readBool();
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 64
+                case 72:
+                  {
+                    ignoreLowRelevantContent_ = input.readBool();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 72
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14811,6 +14864,74 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private boolean ignoreLowRelevantContent_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @return The ignoreLowRelevantContent.
+         */
+        @java.lang.Override
+        public boolean getIgnoreLowRelevantContent() {
+          return ignoreLowRelevantContent_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @param value The ignoreLowRelevantContent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIgnoreLowRelevantContent(boolean value) {
+
+          ignoreLowRelevantContent_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to filter out queries that have low relevance. The
+         * default value is `false`.
+         *
+         * If this field is set to `false`, all search results are used regardless
+         * of relevance to generate answers. If set to `true`, only queries with
+         * high relevance search results will generate answers.
+         * </pre>
+         *
+         * <code>bool ignore_low_relevant_content = 9;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIgnoreLowRelevantContent() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ignoreLowRelevantContent_ = false;
+          onChanged();
+          return this;
+        }
+
         private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelPromptSpec
             modelPromptSpec_;
@@ -14837,7 +14958,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the modelPromptSpec field is set.
          */
         public boolean hasModelPromptSpec() {
-          return ((bitField0_ & 0x00000010) != 0);
+          return ((bitField0_ & 0x00000020) != 0);
         }
         /**
          *
@@ -14889,7 +15010,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelPromptSpecBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14914,7 +15035,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelPromptSpecBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14935,7 +15056,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     .ModelPromptSpec
                 value) {
           if (modelPromptSpecBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)
+            if (((bitField0_ & 0x00000020) != 0)
                 && modelPromptSpec_ != null
                 && modelPromptSpec_
                     != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
@@ -14948,7 +15069,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             modelPromptSpecBuilder_.mergeFrom(value);
           }
           if (modelPromptSpec_ != null) {
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             onChanged();
           }
           return this;
@@ -14966,7 +15087,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearModelPromptSpec() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           modelPromptSpec_ = null;
           if (modelPromptSpecBuilder_ != null) {
             modelPromptSpecBuilder_.dispose();
@@ -14990,7 +15111,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelPromptSpec.Builder
             getModelPromptSpecBuilder() {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return getModelPromptSpecFieldBuilder().getBuilder();
         }
@@ -15121,7 +15242,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           languageCode_ = value;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -15140,7 +15261,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearLanguageCode() {
           languageCode_ = getDefaultInstance().getLanguageCode();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
           return this;
         }
@@ -15164,7 +15285,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           languageCode_ = value;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -15195,7 +15316,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the modelSpec field is set.
          */
         public boolean hasModelSpec() {
-          return ((bitField0_ & 0x00000040) != 0);
+          return ((bitField0_ & 0x00000080) != 0);
         }
         /**
          *
@@ -15247,7 +15368,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelSpecBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -15272,7 +15393,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             modelSpecBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -15293,7 +15414,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     .ModelSpec
                 value) {
           if (modelSpecBuilder_ == null) {
-            if (((bitField0_ & 0x00000040) != 0)
+            if (((bitField0_ & 0x00000080) != 0)
                 && modelSpec_ != null
                 && modelSpec_
                     != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
@@ -15306,7 +15427,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             modelSpecBuilder_.mergeFrom(value);
           }
           if (modelSpec_ != null) {
-            bitField0_ |= 0x00000040;
+            bitField0_ |= 0x00000080;
             onChanged();
           }
           return this;
@@ -15324,7 +15445,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearModelSpec() {
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           modelSpec_ = null;
           if (modelSpecBuilder_ != null) {
             modelSpecBuilder_.dispose();
@@ -15348,7 +15469,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec
                 .ModelSpec.Builder
             getModelSpecBuilder() {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return getModelSpecFieldBuilder().getBuilder();
         }
@@ -15451,7 +15572,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder setUseSemanticChunks(boolean value) {
 
           useSemanticChunks_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -15472,7 +15593,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUseSemanticChunks() {
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           useSemanticChunks_ = false;
           onChanged();
           return this;
@@ -17671,11 +17792,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the search result mode. If unspecified, the
-     * search result mode is based on
-     * [DataStore.DocumentProcessingConfig.chunking_config][]:
-     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-     *   it defaults to `CHUNKS`.
-     * * Otherwise, it defaults to `DOCUMENTS`.
+     * search result mode defaults to `DOCUMENTS`.
      * </pre>
      *
      * <code>
@@ -17693,11 +17810,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the search result mode. If unspecified, the
-     * search result mode is based on
-     * [DataStore.DocumentProcessingConfig.chunking_config][]:
-     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-     *   it defaults to `CHUNKS`.
-     * * Otherwise, it defaults to `DOCUMENTS`.
+     * search result mode defaults to `DOCUMENTS`.
      * </pre>
      *
      * <code>
@@ -19005,11 +19118,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies the search result mode. If unspecified, the
-       * search result mode is based on
-       * [DataStore.DocumentProcessingConfig.chunking_config][]:
-       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-       *   it defaults to `CHUNKS`.
-       * * Otherwise, it defaults to `DOCUMENTS`.
+       * search result mode defaults to `DOCUMENTS`.
        * </pre>
        *
        * <code>
@@ -19027,11 +19136,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies the search result mode. If unspecified, the
-       * search result mode is based on
-       * [DataStore.DocumentProcessingConfig.chunking_config][]:
-       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-       *   it defaults to `CHUNKS`.
-       * * Otherwise, it defaults to `DOCUMENTS`.
+       * search result mode defaults to `DOCUMENTS`.
        * </pre>
        *
        * <code>
@@ -19052,11 +19157,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies the search result mode. If unspecified, the
-       * search result mode is based on
-       * [DataStore.DocumentProcessingConfig.chunking_config][]:
-       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-       *   it defaults to `CHUNKS`.
-       * * Otherwise, it defaults to `DOCUMENTS`.
+       * search result mode defaults to `DOCUMENTS`.
        * </pre>
        *
        * <code>
@@ -19082,11 +19183,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies the search result mode. If unspecified, the
-       * search result mode is based on
-       * [DataStore.DocumentProcessingConfig.chunking_config][]:
-       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-       *   it defaults to `CHUNKS`.
-       * * Otherwise, it defaults to `DOCUMENTS`.
+       * search result mode defaults to `DOCUMENTS`.
        * </pre>
        *
        * <code>
@@ -19112,11 +19209,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies the search result mode. If unspecified, the
-       * search result mode is based on
-       * [DataStore.DocumentProcessingConfig.chunking_config][]:
-       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
-       *   it defaults to `CHUNKS`.
-       * * Otherwise, it defaults to `DOCUMENTS`.
+       * search result mode defaults to `DOCUMENTS`.
        * </pre>
        *
        * <code>
@@ -21982,9 +22075,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -22013,9 +22109,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * For more information on ordering for retail search, see
-   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-   *
+   * For more information on ordering the website search results, see
+   * [Order web search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+   * For more information on ordering the healthcare search results, see
+   * [Order healthcare search
+   * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
@@ -25952,9 +26051,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -25982,9 +26084,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -26012,9 +26117,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -26041,9 +26149,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *
@@ -26066,9 +26177,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Leave it unset if ordered by relevance. `order_by` expression is
      * case-sensitive.
      *
-     * For more information on ordering for retail search, see
-     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
-     *
+     * For more information on ordering the website search results, see
+     * [Order web search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-web-search-results).
+     * For more information on ordering the healthcare search results, see
+     * [Order healthcare search
+     * results](https://cloud.google.com/generative-ai-app-builder/docs/order-hc-results).
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
      *

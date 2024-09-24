@@ -489,5 +489,47 @@ public interface CachedContentOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the usageMetadata field is set.
+   */
+  boolean hasUsageMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The usageMetadata.
+   */
+  com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata getUsageMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata on the usage of the cached content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata usage_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder
+      getUsageMetadataOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.CachedContent.ExpirationCase getExpirationCase();
 }

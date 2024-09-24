@@ -79,6 +79,16 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
    */
   HARM_CATEGORY_SEXUALLY_EXPLICIT(4),
+  /**
+   *
+   *
+   * <pre>
+   * The harm category is civic integrity.
+   * </pre>
+   *
+   * <code>HARM_CATEGORY_CIVIC_INTEGRITY = 5;</code>
+   */
+  HARM_CATEGORY_CIVIC_INTEGRITY(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -132,6 +142,16 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
    */
   public static final int HARM_CATEGORY_SEXUALLY_EXPLICIT_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The harm category is civic integrity.
+   * </pre>
+   *
+   * <code>HARM_CATEGORY_CIVIC_INTEGRITY = 5;</code>
+   */
+  public static final int HARM_CATEGORY_CIVIC_INTEGRITY_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -167,6 +187,8 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
         return HARM_CATEGORY_HARASSMENT;
       case 4:
         return HARM_CATEGORY_SEXUALLY_EXPLICIT;
+      case 5:
+        return HARM_CATEGORY_CIVIC_INTEGRITY;
       default:
         return null;
     }

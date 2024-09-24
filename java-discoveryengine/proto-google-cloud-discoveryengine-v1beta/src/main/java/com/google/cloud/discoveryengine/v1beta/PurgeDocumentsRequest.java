@@ -66,6 +66,1052 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.Builder.class);
   }
 
+  public interface InlineSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the documents.
+     */
+    java.util.List<java.lang.String> getDocumentsList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of documents.
+     */
+    int getDocumentsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The documents at the given index.
+     */
+    java.lang.String getDocuments(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the documents at the given index.
+     */
+    com.google.protobuf.ByteString getDocumentsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The inline source for the input config for
+   * [DocumentService.PurgeDocuments][google.cloud.discoveryengine.v1beta.DocumentService.PurgeDocuments]
+   * method.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource}
+   */
+  public static final class InlineSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+      InlineSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InlineSource.newBuilder() to construct.
+    private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InlineSource() {
+      documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InlineSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.PurgeConfigProto
+          .internal_static_google_cloud_discoveryengine_v1beta_PurgeDocumentsRequest_InlineSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.PurgeConfigProto
+          .internal_static_google_cloud_discoveryengine_v1beta_PurgeDocumentsRequest_InlineSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.class,
+              com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder
+                  .class);
+    }
+
+    public static final int DOCUMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList documents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the documents.
+     */
+    public com.google.protobuf.ProtocolStringList getDocumentsList() {
+      return documents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of documents.
+     */
+    public int getDocumentsCount() {
+      return documents_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The documents at the given index.
+     */
+    public java.lang.String getDocuments(int index) {
+      return documents_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of full resource name of documents to purge. In the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+     * Recommended max of 100 items.
+     * </pre>
+     *
+     * <code>
+     * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the documents at the given index.
+     */
+    public com.google.protobuf.ByteString getDocumentsBytes(int index) {
+      return documents_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < documents_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, documents_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < documents_.size(); i++) {
+          dataSize += computeStringSizeNoTag(documents_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDocumentsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource other =
+          (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) obj;
+
+      if (!getDocumentsList().equals(other.getDocumentsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDocumentsCount() > 0) {
+        hash = (37 * hash) + DOCUMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getDocumentsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The inline source for the input config for
+     * [DocumentService.PurgeDocuments][google.cloud.discoveryengine.v1beta.DocumentService.PurgeDocuments]
+     * method.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.PurgeConfigProto
+            .internal_static_google_cloud_discoveryengine_v1beta_PurgeDocumentsRequest_InlineSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.PurgeConfigProto
+            .internal_static_google_cloud_discoveryengine_v1beta_PurgeDocumentsRequest_InlineSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.class,
+                com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.PurgeConfigProto
+            .internal_static_google_cloud_discoveryengine_v1beta_PurgeDocumentsRequest_InlineSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource build() {
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource result =
+            new com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          documents_.makeImmutable();
+          result.documents_ = documents_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+                .getDefaultInstance()) return this;
+        if (!other.documents_.isEmpty()) {
+          if (documents_.isEmpty()) {
+            documents_ = other.documents_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureDocumentsIsMutable();
+            documents_.addAll(other.documents_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDocumentsIsMutable();
+                  documents_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList documents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureDocumentsIsMutable() {
+        if (!documents_.isModifiable()) {
+          documents_ = new com.google.protobuf.LazyStringArrayList(documents_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the documents.
+       */
+      public com.google.protobuf.ProtocolStringList getDocumentsList() {
+        documents_.makeImmutable();
+        return documents_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of documents.
+       */
+      public int getDocumentsCount() {
+        return documents_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The documents at the given index.
+       */
+      public java.lang.String getDocuments(int index) {
+        return documents_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the documents at the given index.
+       */
+      public com.google.protobuf.ByteString getDocumentsBytes(int index) {
+        return documents_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The documents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocuments(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDocumentsIsMutable();
+        documents_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The documents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDocuments(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDocumentsIsMutable();
+        documents_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param values The documents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDocuments(java.lang.Iterable<java.lang.String> values) {
+        ensureDocumentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documents_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDocuments() {
+        documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of full resource name of documents to purge. In the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;branches/&#42;&#47;documents/&#42;`.
+       * Recommended max of 100 items.
+       * </pre>
+       *
+       * <code>
+       * repeated string documents = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes of the documents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDocumentsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureDocumentsIsMutable();
+        documents_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+    private static final com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InlineSource> PARSER =
+        new com.google.protobuf.AbstractParser<InlineSource>() {
+          @java.lang.Override
+          public InlineSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InlineSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InlineSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
+  private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object source_;
+
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCS_SOURCE(5),
+    INLINE_SOURCE(6),
+    SOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return GCS_SOURCE;
+        case 6:
+          return INLINE_SOURCE;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
+  }
+
+  public static final int GCS_SOURCE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsSource() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+   *
+   * @return The gcsSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.GcsSource getGcsSource() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.discoveryengine.v1beta.GcsSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder getGcsSourceOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.discoveryengine.v1beta.GcsSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+  }
+
+  public static final int INLINE_SOURCE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return Whether the inlineSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasInlineSource() {
+    return sourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return The inlineSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+      getInlineSource() {
+    if (sourceCase_ == 6) {
+      return (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder
+      getInlineSourceOrBuilder() {
+    if (sourceCase_ == 6) {
+      return (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        .getDefaultInstance();
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -178,6 +1224,57 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int ERROR_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig errorConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return Whether the errorConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasErrorConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return The errorConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig getErrorConfig() {
+    return errorConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()
+        : errorConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder
+      getErrorConfigOrBuilder() {
+    return errorConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()
+        : errorConfig_;
+  }
+
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
   /**
@@ -220,6 +1317,16 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     if (force_ != false) {
       output.writeBool(3, force_);
     }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.discoveryengine.v1beta.GcsSource) source_);
+    }
+    if (sourceCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) source_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getErrorConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -237,6 +1344,20 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
     if (force_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, force_);
+    }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.discoveryengine.v1beta.GcsSource) source_);
+    }
+    if (sourceCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6,
+              (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource) source_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getErrorConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -256,7 +1377,22 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (hasErrorConfig() != other.hasErrorConfig()) return false;
+    if (hasErrorConfig()) {
+      if (!getErrorConfig().equals(other.getErrorConfig())) return false;
+    }
     if (getForce() != other.getForce()) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 5:
+        if (!getGcsSource().equals(other.getGcsSource())) return false;
+        break;
+      case 6:
+        if (!getInlineSource().equals(other.getInlineSource())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -272,8 +1408,24 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    if (hasErrorConfig()) {
+      hash = (37 * hash) + ERROR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorConfig().hashCode();
+    }
     hash = (37 * hash) + FORCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
+    switch (sourceCase_) {
+      case 5:
+        hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsSource().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + INLINE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getInlineSource().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,19 +1558,41 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getErrorConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.clear();
+      }
+      if (inlineSourceBuilder_ != null) {
+        inlineSourceBuilder_.clear();
+      }
       parent_ = "";
       filter_ = "";
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
+        errorConfigBuilder_ = null;
+      }
       force_ = false;
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -450,6 +1624,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -457,14 +1632,33 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     private void buildPartial0(
         com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.errorConfig_ =
+            errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.force_ = force_;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 5 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 6 && inlineSourceBuilder_ != null) {
+        result.source_ = inlineSourceBuilder_.build();
       }
     }
 
@@ -517,16 +1711,35 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasErrorConfig()) {
+        mergeErrorConfig(other.getErrorConfig());
       }
       if (other.getForce() != false) {
         setForce(other.getForce());
+      }
+      switch (other.getSourceCase()) {
+        case GCS_SOURCE:
+          {
+            mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case INLINE_SOURCE:
+          {
+            mergeInlineSource(other.getInlineSource());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -557,21 +1770,39 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 24:
               {
                 force_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 24
+            case 42:
+              {
+                input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getInlineSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -589,7 +1820,502 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.GcsSource,
+            com.google.cloud.discoveryengine.v1beta.GcsSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder>
+        gcsSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     *
+     * @return Whether the gcsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsSource() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     *
+     * @return The gcsSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.GcsSource getGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.discoveryengine.v1beta.GcsSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return gcsSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    public Builder setGcsSource(com.google.cloud.discoveryengine.v1beta.GcsSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    public Builder setGcsSource(
+        com.google.cloud.discoveryengine.v1beta.GcsSource.Builder builderForValue) {
+      if (gcsSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    public Builder mergeGcsSource(com.google.cloud.discoveryengine.v1beta.GcsSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_ != com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.GcsSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.GcsSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    public Builder clearGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        gcsSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.GcsSource.Builder getGcsSourceBuilder() {
+      return getGcsSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder getGcsSourceOrBuilder() {
+      if ((sourceCase_ == 5) && (gcsSourceBuilder_ != null)) {
+        return gcsSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.discoveryengine.v1beta.GcsSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage location for the input content.
+     * Supported `data_schema`:
+     * * `document_id`: One valid
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id] per line.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.GcsSource,
+            com.google.cloud.discoveryengine.v1beta.GcsSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder>
+        getGcsSourceFieldBuilder() {
+      if (gcsSourceBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
+        }
+        gcsSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.GcsSource,
+                com.google.cloud.discoveryengine.v1beta.GcsSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.GcsSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      return gcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource,
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder>
+        inlineSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     *
+     * @return Whether the inlineSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlineSource() {
+      return sourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     *
+     * @return The inlineSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+        getInlineSource() {
+      if (inlineSourceBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          return (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+              source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+            .getDefaultInstance();
+      } else {
+        if (sourceCase_ == 6) {
+          return inlineSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    public Builder setInlineSource(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource value) {
+      if (inlineSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        inlineSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    public Builder setInlineSource(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder
+            builderForValue) {
+      if (inlineSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        inlineSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    public Builder mergeInlineSource(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource value) {
+      if (inlineSourceBuilder_ == null) {
+        if (sourceCase_ == 6
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+                          source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 6) {
+          inlineSourceBuilder_.mergeFrom(value);
+        } else {
+          inlineSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    public Builder clearInlineSource() {
+      if (inlineSourceBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        inlineSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder
+        getInlineSourceBuilder() {
+      return getInlineSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder
+        getInlineSourceOrBuilder() {
+      if ((sourceCase_ == 6) && (inlineSourceBuilder_ != null)) {
+        return inlineSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 6) {
+          return (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+              source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inline source for the input content for purge.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource inline_source = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource,
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder>
+        getInlineSourceFieldBuilder() {
+      if (inlineSourceBuilder_ == null) {
+        if (!(sourceCase_ == 6)) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
+                  .getDefaultInstance();
+        }
+        inlineSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource,
+                com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest
+                    .InlineSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
+                    source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 6;
+      onChanged();
+      return inlineSourceBuilder_;
+    }
 
     private java.lang.Object parent_ = "";
     /**
@@ -662,7 +2388,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -682,7 +2408,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -707,7 +2433,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -780,7 +2506,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -799,7 +2525,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -823,9 +2549,199 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig errorConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig,
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder>
+        errorConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     *
+     * @return Whether the errorConfig field is set.
+     */
+    public boolean hasErrorConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     *
+     * @return The errorConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig getErrorConfig() {
+      if (errorConfigBuilder_ == null) {
+        return errorConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()
+            : errorConfig_;
+      } else {
+        return errorConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public Builder setErrorConfig(com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig value) {
+      if (errorConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        errorConfig_ = value;
+      } else {
+        errorConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public Builder setErrorConfig(
+        com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder builderForValue) {
+      if (errorConfigBuilder_ == null) {
+        errorConfig_ = builderForValue.build();
+      } else {
+        errorConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public Builder mergeErrorConfig(
+        com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig value) {
+      if (errorConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && errorConfig_ != null
+            && errorConfig_
+                != com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()) {
+          getErrorConfigBuilder().mergeFrom(value);
+        } else {
+          errorConfig_ = value;
+        }
+      } else {
+        errorConfigBuilder_.mergeFrom(value);
+      }
+      if (errorConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public Builder clearErrorConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
+        errorConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder
+        getErrorConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getErrorConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder
+        getErrorConfigOrBuilder() {
+      if (errorConfigBuilder_ != null) {
+        return errorConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return errorConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()
+            : errorConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired location of errors incurred during the purge.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.PurgeErrorConfig error_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig,
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder>
+        getErrorConfigFieldBuilder() {
+      if (errorConfigBuilder_ == null) {
+        errorConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig,
+                com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder>(
+                getErrorConfig(), getParentForChildren(), isClean());
+        errorConfig_ = null;
+      }
+      return errorConfigBuilder_;
     }
 
     private boolean force_;
@@ -861,7 +2777,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public Builder setForce(boolean value) {
 
       force_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -878,7 +2794,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       force_ = false;
       onChanged();
       return this;

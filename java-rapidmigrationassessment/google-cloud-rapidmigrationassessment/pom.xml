@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-rapidmigrationassessment</artifactId>
-  <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-rapidmigrationassessment:current} -->
+  <version>0.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-rapidmigrationassessment:current} -->
   <packaging>jar</packaging>
   <name>Google Rapid Migration Assessment API</name>
   <description>Rapid Migration Assessment API Rapid Migration Assessment API</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-rapidmigrationassessment-parent</artifactId>
-    <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-rapidmigrationassessment:current} -->
+    <version>0.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-rapidmigrationassessment:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-rapidmigrationassessment</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

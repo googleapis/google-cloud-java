@@ -21,6 +21,7 @@ import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -80,6 +81,8 @@ import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchSpacesRequest;
+import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -116,7 +119,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createMessage to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createMessage:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -133,10 +138,21 @@ import org.threeten.bp.Duration;
  *             .createMessageSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ChatServiceStubSettings chatServiceSettings = chatServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSettings> {
@@ -183,6 +199,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       uploadAttachmentSettings;
   private final PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings;
+  private final PagedCallSettings<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings;
   private final UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings;
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;
   private final UnaryCallSettings<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -240,9 +259,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Message> extractResources(ListMessagesResponse payload) {
-              return payload.getMessagesList() == null
-                  ? ImmutableList.<Message>of()
-                  : payload.getMessagesList();
+              return payload.getMessagesList();
             }
           };
 
@@ -279,9 +296,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Membership> extractResources(ListMembershipsResponse payload) {
-              return payload.getMembershipsList() == null
-                  ? ImmutableList.<Membership>of()
-                  : payload.getMembershipsList();
+              return payload.getMembershipsList();
             }
           };
 
@@ -315,9 +330,41 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Space> extractResources(ListSpacesResponse payload) {
-              return payload.getSpacesList() == null
-                  ? ImmutableList.<Space>of()
-                  : payload.getSpacesList();
+              return payload.getSpacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>
+      SEARCH_SPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchSpacesRequest, SearchSpacesResponse, Space>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchSpacesRequest injectToken(SearchSpacesRequest payload, String token) {
+              return SearchSpacesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchSpacesRequest injectPageSize(SearchSpacesRequest payload, int pageSize) {
+              return SearchSpacesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchSpacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchSpacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Space> extractResources(SearchSpacesResponse payload) {
+              return payload.getSpacesList();
             }
           };
 
@@ -351,9 +398,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<Reaction> extractResources(ListReactionsResponse payload) {
-              return payload.getReactionsList() == null
-                  ? ImmutableList.<Reaction>of()
-                  : payload.getReactionsList();
+              return payload.getReactionsList();
             }
           };
 
@@ -390,9 +435,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
             @Override
             public Iterable<SpaceEvent> extractResources(ListSpaceEventsResponse payload) {
-              return payload.getSpaceEventsList() == null
-                  ? ImmutableList.<SpaceEvent>of()
-                  : payload.getSpaceEventsList();
+              return payload.getSpaceEventsList();
             }
           };
 
@@ -444,6 +487,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               PageContext<ListSpacesRequest, ListSpacesResponse, Space> pageContext =
                   PageContext.create(callable, LIST_SPACES_PAGE_STR_DESC, request, context);
               return ListSpacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      SEARCH_SPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchSpacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchSpacesRequest, SearchSpacesResponse> callable,
+                SearchSpacesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchSpacesResponse> futureResponse) {
+              PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> pageContext =
+                  PageContext.create(callable, SEARCH_SPACES_PAGE_STR_DESC, request, context);
+              return SearchSpacesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -534,6 +594,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   public PagedCallSettings<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       listSpacesSettings() {
     return listSpacesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchSpaces. */
+  public PagedCallSettings<SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+      searchSpacesSettings() {
+    return searchSpacesSettings;
   }
 
   /** Returns the object with the settings used for calls to getSpace. */
@@ -753,6 +819,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
     uploadAttachmentSettings = settingsBuilder.uploadAttachmentSettings().build();
     listSpacesSettings = settingsBuilder.listSpacesSettings().build();
+    searchSpacesSettings = settingsBuilder.searchSpacesSettings().build();
     getSpaceSettings = settingsBuilder.getSpaceSettings().build();
     createSpaceSettings = settingsBuilder.createSpaceSettings().build();
     setUpSpaceSettings = settingsBuilder.setUpSpaceSettings().build();
@@ -793,6 +860,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final PagedCallSettings.Builder<
             ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings;
+    private final PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings;
     private final UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings;
     private final UnaryCallSettings.Builder<CreateSpaceRequest, Space> createSpaceSettings;
     private final UnaryCallSettings.Builder<SetUpSpaceRequest, Space> setUpSpaceSettings;
@@ -871,6 +941,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpacesSettings = PagedCallSettings.newBuilder(LIST_SPACES_PAGE_STR_FACT);
+      searchSpacesSettings = PagedCallSettings.newBuilder(SEARCH_SPACES_PAGE_STR_FACT);
       getSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setUpSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -902,6 +973,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -936,6 +1008,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
       uploadAttachmentSettings = settings.uploadAttachmentSettings.toBuilder();
       listSpacesSettings = settings.listSpacesSettings.toBuilder();
+      searchSpacesSettings = settings.searchSpacesSettings.toBuilder();
       getSpaceSettings = settings.getSpaceSettings.toBuilder();
       createSpaceSettings = settings.createSpaceSettings.toBuilder();
       setUpSpaceSettings = settings.setUpSpaceSettings.toBuilder();
@@ -967,6 +1040,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
+              searchSpacesSettings,
               getSpaceSettings,
               createSpaceSettings,
               setUpSpaceSettings,
@@ -1059,6 +1133,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .listSpacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchSpacesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1224,6 +1303,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public PagedCallSettings.Builder<ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
         listSpacesSettings() {
       return listSpacesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchSpaces. */
+    public PagedCallSettings.Builder<
+            SearchSpacesRequest, SearchSpacesResponse, SearchSpacesPagedResponse>
+        searchSpacesSettings() {
+      return searchSpacesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSpace. */

@@ -109,6 +109,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +185,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -259,6 +261,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -292,6 +295,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -347,6 +351,7 @@ public class AttachedClustersClientHttpJsonTest {
               .setMonitoringConfig(MonitoringConfig.newBuilder().build())
               .setProxyConfig(AttachedProxyConfig.newBuilder().build())
               .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+              .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAttachedClusterAsync(attachedCluster, updateMask).get();
@@ -381,6 +386,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -454,6 +460,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -527,6 +534,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -594,6 +602,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

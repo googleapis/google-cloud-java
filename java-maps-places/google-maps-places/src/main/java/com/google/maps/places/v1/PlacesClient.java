@@ -51,6 +51,7 @@ import javax.annotation.Generated;
  *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
  *           .setMaxResultCount(-1736124056)
  *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+ *           .setRoutingParameters(RoutingParameters.newBuilder().build())
  *           .build();
  *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }
@@ -270,6 +271,7 @@ public class PlacesClient implements BackgroundResource {
    *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
    *           .setMaxResultCount(-1736124056)
    *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
    *           .build();
    *   SearchNearbyResponse response = placesClient.searchNearby(request);
    * }
@@ -305,6 +307,7 @@ public class PlacesClient implements BackgroundResource {
    *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
    *           .setMaxResultCount(-1736124056)
    *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchNearbyResponse> future =
    *       placesClient.searchNearbyCallable().futureCall(request);
@@ -344,6 +347,9 @@ public class PlacesClient implements BackgroundResource {
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
    *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setSearchAlongRouteParameters(
+   *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
    *           .build();
    *   SearchTextResponse response = placesClient.searchText(request);
    * }
@@ -383,6 +389,9 @@ public class PlacesClient implements BackgroundResource {
    *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
    *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
    *           .setEvOptions(SearchTextRequest.EVOptions.newBuilder().build())
+   *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+   *           .setSearchAlongRouteParameters(
+   *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
    *   // Do something.

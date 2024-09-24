@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gdchardwaremanagement</artifactId>
-  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gdchardwaremanagement:current} -->
+  <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gdchardwaremanagement:current} -->
   <packaging>jar</packaging>
   <name>Google GDC Hardware Management API</name>
   <description>GDC Hardware Management API Google Distributed Cloud connected allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gdchardwaremanagement-parent</artifactId>
-    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gdchardwaremanagement:current} -->
+    <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gdchardwaremanagement:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gdchardwaremanagement</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

@@ -41,6 +41,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
   private AutokeyConfig() {
     name_ = "";
     keyProject_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,189 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.kms.v1.AutokeyConfig.class,
             com.google.cloud.kms.v1.AutokeyConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The states AutokeyConfig can be in.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.AutokeyConfig.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The state of the AutokeyConfig is unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The AutokeyConfig is currently active.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * A previously configured key project has been deleted and the current
+     * AutokeyConfig is unusable.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_DELETED = 2;</code>
+     */
+    KEY_PROJECT_DELETED(2),
+    /**
+     *
+     *
+     * <pre>
+     * The AutokeyConfig is not yet initialized or has been reset to its default
+     * uninitialized state.
+     * </pre>
+     *
+     * <code>UNINITIALIZED = 3;</code>
+     */
+    UNINITIALIZED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The state of the AutokeyConfig is unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The AutokeyConfig is currently active.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    public static final int ACTIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A previously configured key project has been deleted and the current
+     * AutokeyConfig is unusable.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_DELETED = 2;</code>
+     */
+    public static final int KEY_PROJECT_DELETED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The AutokeyConfig is not yet initialized or has been reset to its default
+     * uninitialized state.
+     * </pre>
+     *
+     * <code>UNINITIALIZED = 3;</code>
+     */
+    public static final int UNINITIALIZED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return KEY_PROJECT_DELETED;
+        case 3:
+          return UNINITIALIZED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.kms.v1.AutokeyConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.AutokeyConfig.State)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -188,6 +372,45 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STATE_FIELD_NUMBER = 4;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state for the AutokeyConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state for the AutokeyConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.AutokeyConfig.State getState() {
+    com.google.cloud.kms.v1.AutokeyConfig.State result =
+        com.google.cloud.kms.v1.AutokeyConfig.State.forNumber(state_);
+    return result == null ? com.google.cloud.kms.v1.AutokeyConfig.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -208,6 +431,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyProject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyProject_);
     }
+    if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, state_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -222,6 +448,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyProject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyProject_);
+    }
+    if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -240,6 +469,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getKeyProject().equals(other.getKeyProject())) return false;
+    if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -255,6 +485,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + KEY_PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getKeyProject().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -395,6 +627,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       keyProject_ = "";
+      state_ = 0;
       return this;
     }
 
@@ -436,6 +669,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.keyProject_ = keyProject_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
       }
     }
 
@@ -494,6 +730,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -532,6 +771,12 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 32:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -814,6 +1059,106 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       keyProject_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state for the AutokeyConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state for the AutokeyConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state for the AutokeyConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.AutokeyConfig.State getState() {
+      com.google.cloud.kms.v1.AutokeyConfig.State result =
+          com.google.cloud.kms.v1.AutokeyConfig.State.forNumber(state_);
+      return result == null ? com.google.cloud.kms.v1.AutokeyConfig.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state for the AutokeyConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.kms.v1.AutokeyConfig.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state for the AutokeyConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      state_ = 0;
       onChanged();
       return this;
     }

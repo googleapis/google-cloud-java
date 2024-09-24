@@ -33,6 +33,10 @@ public final class VertexRagServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RagQuery_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_fieldAccessorTable;
@@ -70,8 +74,11 @@ public final class VertexRagServiceProto {
           + "orm.v1beta1\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\"G\n\010RagQuery\022\023\n\004text\030\001 \001(\tB\003\340A\001H\000\022"
-          + "\035\n\020similarity_top_k\030\002 \001(\005B\003\340A\001B\007\n\005query\""
+          + ".proto\"\276\001\n\010RagQuery\022\023\n\004text\030\001 \001(\tB\003\340A\001H\000"
+          + "\022\035\n\020similarity_top_k\030\002 \001(\005B\003\340A\001\022G\n\007ranki"
+          + "ng\030\004 \001(\01321.google.cloud.aiplatform.v1bet"
+          + "a1.RagQuery.RankingB\003\340A\001\032,\n\007Ranking\022\027\n\005a"
+          + "lpha\030\001 \001(\002B\003\340A\001H\000\210\001\001B\010\n\006_alphaB\007\n\005query\""
           + "\335\004\n\027RetrieveContextsRequest\022c\n\020vertex_ra"
           + "g_store\030\002 \001(\0132G.google.cloud.aiplatform."
           + "v1beta1.RetrieveContextsRequest.VertexRa"
@@ -87,27 +94,28 @@ public final class VertexRagServiceProto {
           + "rpus\030\001 \001(\tB+\340A\001\372A%\n#aiplatform.googleapi"
           + "s.com/RagCorpus\022\031\n\014rag_file_ids\030\002 \003(\tB\003\340"
           + "A\001B\034\n\032_vector_distance_thresholdB\r\n\013data"
-          + "_source\"\224\001\n\013RagContexts\022F\n\010contexts\030\001 \003("
+          + "_source\"\255\001\n\013RagContexts\022F\n\010contexts\030\001 \003("
           + "\01324.google.cloud.aiplatform.v1beta1.RagC"
-          + "ontexts.Context\032=\n\007Context\022\022\n\nsource_uri"
-          + "\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010distance\030\003 \001(\001\"Z"
-          + "\n\030RetrieveContextsResponse\022>\n\010contexts\030\001"
-          + " \001(\0132,.google.cloud.aiplatform.v1beta1.R"
-          + "agContexts2\300\002\n\020VertexRagService\022\334\001\n\020Retr"
-          + "ieveContexts\0228.google.cloud.aiplatform.v"
-          + "1beta1.RetrieveContextsRequest\0329.google."
-          + "cloud.aiplatform.v1beta1.RetrieveContext"
-          + "sResponse\"S\332A\014parent,query\202\323\344\223\002>\"9/v1bet"
-          + "a1/{parent=projects/*/locations/*}:retri"
-          + "eveContexts:\001*\032M\312A\031aiplatform.googleapis"
-          + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\354\001\n#com.google.cloud.aipla"
-          + "tform.v1beta1B\025VertexRagServiceProtoP\001ZC"
-          + "cloud.google.com/go/aiplatform/apiv1beta"
-          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + "ontexts.Context\032V\n\007Context\022\022\n\nsource_uri"
+          + "\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010distance\030\003 \001(\001\022\027"
+          + "\n\017sparse_distance\030\004 \001(\001\"Z\n\030RetrieveConte"
+          + "xtsResponse\022>\n\010contexts\030\001 \001(\0132,.google.c"
+          + "loud.aiplatform.v1beta1.RagContexts2\300\002\n\020"
+          + "VertexRagService\022\334\001\n\020RetrieveContexts\0228."
+          + "google.cloud.aiplatform.v1beta1.Retrieve"
+          + "ContextsRequest\0329.google.cloud.aiplatfor"
+          + "m.v1beta1.RetrieveContextsResponse\"S\332A\014p"
+          + "arent,query\202\323\344\223\002>\"9/v1beta1/{parent=proj"
+          + "ects/*/locations/*}:retrieveContexts:\001*\032"
+          + "M\312A\031aiplatform.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\354"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\025"
+          + "VertexRagServiceProtoP\001ZCcloud.google.co"
+          + "m/go/aiplatform/apiv1beta1/aiplatformpb;"
+          + "aiplatformpb\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -124,7 +132,15 @@ public final class VertexRagServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RagQuery_descriptor,
             new java.lang.String[] {
-              "Text", "SimilarityTopK", "Query",
+              "Text", "SimilarityTopK", "Ranking", "Query",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_RagQuery_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagQuery_Ranking_descriptor,
+            new java.lang.String[] {
+              "Alpha",
             });
     internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -170,7 +186,7 @@ public final class VertexRagServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RagContexts_Context_descriptor,
             new java.lang.String[] {
-              "SourceUri", "Text", "Distance",
+              "SourceUri", "Text", "Distance", "SparseDistance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsResponse_descriptor =
         getDescriptor().getMessageTypes().get(3);

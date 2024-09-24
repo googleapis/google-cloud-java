@@ -82,6 +82,44 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
+   * A set of conditions to satisfy that affect the way routes are calculated
+   * for the given vehicle.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.RouteModifiers route_modifiers = 2;</code>
+   *
+   * @return Whether the routeModifiers field is set.
+   */
+  boolean hasRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * A set of conditions to satisfy that affect the way routes are calculated
+   * for the given vehicle.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.RouteModifiers route_modifiers = 2;</code>
+   *
+   * @return The routeModifiers.
+   */
+  com.google.maps.routeoptimization.v1.RouteModifiers getRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * A set of conditions to satisfy that affect the way routes are calculated
+   * for the given vehicle.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.RouteModifiers route_modifiers = 2;</code>
+   */
+  com.google.maps.routeoptimization.v1.RouteModifiersOrBuilder getRouteModifiersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Geographic location where the vehicle starts before picking up any
    * shipments. If not specified, the vehicle starts at its first pickup.
    * If the shipment model has duration and distance matrices, `start_location`

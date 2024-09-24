@@ -174,10 +174,12 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
    * <pre>
    * The query response, which can be either an `error` or a valid `response`.
    *
-   * If `done` == `false` and the query result is being saved in a output, the
+   * If `done` == `false` and the query result is being saved in an output, the
    * output_config field will be set.
    * If `done` == `true`, exactly one of
    * `error`, `query_result` or `output_config` will be set.
+   * [done] is unset unless the [QueryAssetsResponse] contains a
+   * [QueryAssetsResponse.job_reference].
    * </pre>
    *
    * <code>bool done = 2;</code>
@@ -296,8 +298,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output configuration which indicates instead of being returned in API
-   * response on the fly, the query result will be saved in a specific output.
+   * Output configuration, which indicates that instead of being returned in
+   * an API response on the fly, the query result will be saved in a specific
+   * output.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -312,8 +315,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output configuration which indicates instead of being returned in API
-   * response on the fly, the query result will be saved in a specific output.
+   * Output configuration, which indicates that instead of being returned in
+   * an API response on the fly, the query result will be saved in a specific
+   * output.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -331,8 +335,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output configuration which indicates instead of being returned in API
-   * response on the fly, the query result will be saved in a specific output.
+   * Output configuration, which indicates that instead of being returned in
+   * an API response on the fly, the query result will be saved in a specific
+   * output.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -954,10 +959,12 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
      *
-     * If `done` == `false` and the query result is being saved in a output, the
+     * If `done` == `false` and the query result is being saved in an output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of
      * `error`, `query_result` or `output_config` will be set.
+     * [done] is unset unless the [QueryAssetsResponse] contains a
+     * [QueryAssetsResponse.job_reference].
      * </pre>
      *
      * <code>bool done = 2;</code>
@@ -974,10 +981,12 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
      *
-     * If `done` == `false` and the query result is being saved in a output, the
+     * If `done` == `false` and the query result is being saved in an output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of
      * `error`, `query_result` or `output_config` will be set.
+     * [done] is unset unless the [QueryAssetsResponse] contains a
+     * [QueryAssetsResponse.job_reference].
      * </pre>
      *
      * <code>bool done = 2;</code>
@@ -998,10 +1007,12 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
      *
-     * If `done` == `false` and the query result is being saved in a output, the
+     * If `done` == `false` and the query result is being saved in an output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of
      * `error`, `query_result` or `output_config` will be set.
+     * [done] is unset unless the [QueryAssetsResponse] contains a
+     * [QueryAssetsResponse.job_reference].
      * </pre>
      *
      * <code>bool done = 2;</code>
@@ -1432,8 +1443,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1448,8 +1460,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1474,8 +1487,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1497,8 +1511,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1518,8 +1533,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1552,8 +1568,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1578,8 +1595,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1591,8 +1609,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>
@@ -1612,8 +1631,9 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output configuration which indicates instead of being returned in API
-     * response on the fly, the query result will be saved in a specific output.
+     * Output configuration, which indicates that instead of being returned in
+     * an API response on the fly, the query result will be saved in a specific
+     * output.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.QueryAssetsOutputConfig output_config = 5;</code>

@@ -95,6 +95,47 @@ public interface CandidateOrBuilder
    *
    *
    * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the logprobsResult field is set.
+   */
+  boolean hasLogprobsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The logprobsResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.LogprobsResult getLogprobsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.LogprobsResultOrBuilder getLogprobsResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The reason why the model stopped generating tokens.
    * If empty, the model has not stopped generating the tokens.
    * </pre>

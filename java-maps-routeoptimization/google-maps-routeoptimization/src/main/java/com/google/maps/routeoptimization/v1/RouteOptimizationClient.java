@@ -105,7 +105,10 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> BatchOptimizeTours</td>
  *      <td><p> Optimizes vehicle tours for one or more `OptimizeToursRequest` messages as a batch.
- * <p>  This method is a Long Running Operation (LRO). The inputs for optimization (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read/written from/to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse` containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing the overall cost.</td>
+ * <p>  This method is a Long Running Operation (LRO). The inputs for optimization (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read from and written to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse` containing `ShipmentRoute` fields, which are a set of routes to be performed by vehicles minimizing the overall cost.
+ * <p>  The user can poll `operations.get` to check the status of the LRO:
+ * <p>  If the LRO `done` field is false, then at least one request is still being processed. Other requests may have completed successfully and their results are available in Cloud Storage.
+ * <p>  If the LRO's `done` field is true, then all requests have been processed. Any successfully processed requests will have their results available in Cloud Storage. Any requests that failed will not have their results available in Cloud Storage. If the LRO's `error` field is set, then it contains the error from one of the failed requests.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -362,11 +365,21 @@ public class RouteOptimizationClient implements BackgroundResource {
    * Optimizes vehicle tours for one or more `OptimizeToursRequest` messages as a batch.
    *
    * <p>This method is a Long Running Operation (LRO). The inputs for optimization
-   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are
-   * read/written from/to Cloud Storage in user-specified format. Like the `OptimizeTours` method,
-   * each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
-   * containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing
-   * the overall cost.
+   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read from
+   * and written to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each
+   * `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
+   * containing `ShipmentRoute` fields, which are a set of routes to be performed by vehicles
+   * minimizing the overall cost.
+   *
+   * <p>The user can poll `operations.get` to check the status of the LRO:
+   *
+   * <p>If the LRO `done` field is false, then at least one request is still being processed. Other
+   * requests may have completed successfully and their results are available in Cloud Storage.
+   *
+   * <p>If the LRO's `done` field is true, then all requests have been processed. Any successfully
+   * processed requests will have their results available in Cloud Storage. Any requests that failed
+   * will not have their results available in Cloud Storage. If the LRO's `error` field is set, then
+   * it contains the error from one of the failed requests.
    *
    * <p>Sample code:
    *
@@ -400,11 +413,21 @@ public class RouteOptimizationClient implements BackgroundResource {
    * Optimizes vehicle tours for one or more `OptimizeToursRequest` messages as a batch.
    *
    * <p>This method is a Long Running Operation (LRO). The inputs for optimization
-   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are
-   * read/written from/to Cloud Storage in user-specified format. Like the `OptimizeTours` method,
-   * each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
-   * containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing
-   * the overall cost.
+   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read from
+   * and written to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each
+   * `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
+   * containing `ShipmentRoute` fields, which are a set of routes to be performed by vehicles
+   * minimizing the overall cost.
+   *
+   * <p>The user can poll `operations.get` to check the status of the LRO:
+   *
+   * <p>If the LRO `done` field is false, then at least one request is still being processed. Other
+   * requests may have completed successfully and their results are available in Cloud Storage.
+   *
+   * <p>If the LRO's `done` field is true, then all requests have been processed. Any successfully
+   * processed requests will have their results available in Cloud Storage. Any requests that failed
+   * will not have their results available in Cloud Storage. If the LRO's `error` field is set, then
+   * it contains the error from one of the failed requests.
    *
    * <p>Sample code:
    *
@@ -438,11 +461,21 @@ public class RouteOptimizationClient implements BackgroundResource {
    * Optimizes vehicle tours for one or more `OptimizeToursRequest` messages as a batch.
    *
    * <p>This method is a Long Running Operation (LRO). The inputs for optimization
-   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are
-   * read/written from/to Cloud Storage in user-specified format. Like the `OptimizeTours` method,
-   * each `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
-   * containing `ShipmentRoute`s, which are a set of routes to be performed by vehicles minimizing
-   * the overall cost.
+   * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse` messages) are read from
+   * and written to Cloud Storage in user-specified format. Like the `OptimizeTours` method, each
+   * `OptimizeToursRequest` contains a `ShipmentModel` and returns an `OptimizeToursResponse`
+   * containing `ShipmentRoute` fields, which are a set of routes to be performed by vehicles
+   * minimizing the overall cost.
+   *
+   * <p>The user can poll `operations.get` to check the status of the LRO:
+   *
+   * <p>If the LRO `done` field is false, then at least one request is still being processed. Other
+   * requests may have completed successfully and their results are available in Cloud Storage.
+   *
+   * <p>If the LRO's `done` field is true, then all requests have been processed. Any successfully
+   * processed requests will have their results available in Cloud Storage. Any requests that failed
+   * will not have their results available in Cloud Storage. If the LRO's `error` field is set, then
+   * it contains the error from one of the failed requests.
    *
    * <p>Sample code:
    *

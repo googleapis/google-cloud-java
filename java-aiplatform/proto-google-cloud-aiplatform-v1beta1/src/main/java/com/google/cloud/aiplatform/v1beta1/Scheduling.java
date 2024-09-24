@@ -91,7 +91,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Regular on-demand provisioning strategy.
+     * Deprecated. Regular on-demand provisioning strategy.
      * </pre>
      *
      * <code>ON_DEMAND = 1 [deprecated = true];</code>
@@ -102,7 +102,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low cost by making potential use of spot resources.
+     * Deprecated. Low cost by making potential use of spot resources.
      * </pre>
      *
      * <code>LOW_COST = 2 [deprecated = true];</code>
@@ -129,6 +129,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>SPOT = 4;</code>
      */
     SPOT(4),
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start strategy uses DWS to queue for resources.
+     * </pre>
+     *
+     * <code>FLEX_START = 6;</code>
+     */
+    FLEX_START(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,7 +156,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Regular on-demand provisioning strategy.
+     * Deprecated. Regular on-demand provisioning strategy.
      * </pre>
      *
      * <code>ON_DEMAND = 1 [deprecated = true];</code>
@@ -156,7 +166,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low cost by making potential use of spot resources.
+     * Deprecated. Low cost by making potential use of spot resources.
      * </pre>
      *
      * <code>LOW_COST = 2 [deprecated = true];</code>
@@ -182,6 +192,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>SPOT = 4;</code>
      */
     public static final int SPOT_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start strategy uses DWS to queue for resources.
+     * </pre>
+     *
+     * <code>FLEX_START = 6;</code>
+     */
+    public static final int FLEX_START_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,6 +237,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           return STANDARD;
         case 4:
           return SPOT;
+        case 6:
+          return FLEX_START;
         default:
           return null;
       }

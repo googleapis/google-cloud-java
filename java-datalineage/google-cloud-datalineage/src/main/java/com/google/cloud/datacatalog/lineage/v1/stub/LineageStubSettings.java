@@ -107,7 +107,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of processOpenLineageRunEvent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of processOpenLineageRunEvent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -123,9 +125,45 @@ import org.threeten.bp.Duration;
  *             .processOpenLineageRunEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * LineageStubSettings lineageSettings = lineageSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteProcess:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * LineageStubSettings.Builder lineageSettingsBuilder = LineageStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * lineageSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -199,9 +237,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Process> extractResources(ListProcessesResponse payload) {
-              return payload.getProcessesList() == null
-                  ? ImmutableList.<Process>of()
-                  : payload.getProcessesList();
+              return payload.getProcessesList();
             }
           };
 
@@ -235,9 +271,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Run> extractResources(ListRunsResponse payload) {
-              return payload.getRunsList() == null
-                  ? ImmutableList.<Run>of()
-                  : payload.getRunsList();
+              return payload.getRunsList();
             }
           };
 
@@ -275,9 +309,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<LineageEvent> extractResources(ListLineageEventsResponse payload) {
-              return payload.getLineageEventsList() == null
-                  ? ImmutableList.<LineageEvent>of()
-                  : payload.getLineageEventsList();
+              return payload.getLineageEventsList();
             }
           };
 
@@ -311,9 +343,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
             @Override
             public Iterable<Link> extractResources(SearchLinksResponse payload) {
-              return payload.getLinksList() == null
-                  ? ImmutableList.<Link>of()
-                  : payload.getLinksList();
+              return payload.getLinksList();
             }
           };
 
@@ -356,9 +386,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             @Override
             public Iterable<ProcessLinks> extractResources(
                 BatchSearchLinkProcessesResponse payload) {
-              return payload.getProcessLinksList() == null
-                  ? ImmutableList.<ProcessLinks>of()
-                  : payload.getProcessLinksList();
+              return payload.getProcessLinksList();
             }
           };
 

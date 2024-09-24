@@ -41,6 +41,7 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
 
   private ListKeyHandlesRequest() {
     parent_ = "";
+    pageToken_ = "";
     filter_ = "";
   }
 
@@ -124,6 +125,84 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  private int pageSize_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional limit on the number of
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] to include in the response. The
+   * service may return fewer than this value. Further
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
+   * including the
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
+   * in a subsequent request.  If unspecified, at most
+   * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+   * </pre>
+   *
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
+   */
+  @java.lang.Override
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional pagination token, returned earlier via
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+   * </pre>
+   *
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional pagination token, returned earlier via
+   * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+   * </pre>
+   *
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FILTER_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -196,6 +275,12 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(2, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
@@ -210,6 +295,12 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
@@ -231,6 +322,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.kms.v1.ListKeyHandlesRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -245,6 +338,10 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -388,6 +485,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      pageSize_ = 0;
+      pageToken_ = "";
       filter_ = "";
       return this;
     }
@@ -429,6 +528,12 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
         result.parent_ = parent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
     }
@@ -483,9 +588,17 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -520,10 +633,22 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                pageSize_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+            case 26:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             case 34:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -671,6 +796,191 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int pageSize_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional limit on the number of
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] to include in the response. The
+     * service may return fewer than this value. Further
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
+     * including the
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
+     * in a subsequent request.  If unspecified, at most
+     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * </pre>
+     *
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional limit on the number of
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] to include in the response. The
+     * service may return fewer than this value. Further
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
+     * including the
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
+     * in a subsequent request.  If unspecified, at most
+     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * </pre>
+     *
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional limit on the number of
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] to include in the response. The
+     * service may return fewer than this value. Further
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
+     * including the
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
+     * in a subsequent request.  If unspecified, at most
+     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * </pre>
+     *
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional pagination token, returned earlier via
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+     * </pre>
+     *
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional pagination token, returned earlier via
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+     * </pre>
+     *
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pageToken.
+     */
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional pagination token, returned earlier via
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+     * </pre>
+     *
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pageToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional pagination token, returned earlier via
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+     * </pre>
+     *
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageToken() {
+      pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional pagination token, returned earlier via
+     * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token].
+     * </pre>
+     *
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pageToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object filter_ = "";
     /**
      *
@@ -739,7 +1049,7 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -758,7 +1068,7 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -782,7 +1092,7 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

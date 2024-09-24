@@ -967,6 +967,7 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -1010,6 +1011,7 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -1023,6 +1025,7 @@ public class PredictionServiceClientTest {
                 CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
             .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
@@ -1051,6 +1054,7 @@ public class PredictionServiceClientTest {
                 CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
             .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();

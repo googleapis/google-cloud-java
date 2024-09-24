@@ -105,6 +105,10 @@ public final class RouteOptimizationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_routeoptimization_v1_ShipmentTypeRequirement_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_routeoptimization_v1_RouteModifiers_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_routeoptimization_v1_RouteModifiers_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_routeoptimization_v1_Vehicle_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_routeoptimization_v1_Vehicle_fieldAccessorTable;
@@ -411,255 +415,263 @@ public final class RouteOptimizationServiceProto {
           + "ntMode\022 \n\034REQUIREMENT_MODE_UNSPECIFIED\020\000"
           + "\022\035\n\031PERFORMED_BY_SAME_VEHICLE\020\001\022\"\n\036IN_SA"
           + "ME_VEHICLE_AT_PICKUP_TIME\020\002\022$\n IN_SAME_V"
-          + "EHICLE_AT_DELIVERY_TIME\020\003\"\206\023\n\007Vehicle\022\024\n"
-          + "\014display_name\030  \001(\t\022I\n\013travel_mode\030\001 \001(\016"
-          + "24.google.maps.routeoptimization.v1.Vehi"
-          + "cle.TravelMode\022+\n\016start_location\030\003 \001(\0132\023"
-          + ".google.type.LatLng\022B\n\016start_waypoint\030\004 "
-          + "\001(\0132*.google.maps.routeoptimization.v1.W"
-          + "aypoint\022)\n\014end_location\030\005 \001(\0132\023.google.t"
-          + "ype.LatLng\022@\n\014end_waypoint\030\006 \001(\0132*.googl"
-          + "e.maps.routeoptimization.v1.Waypoint\022\022\n\n"
-          + "start_tags\030\007 \003(\t\022\020\n\010end_tags\030\010 \003(\t\022H\n\022st"
-          + "art_time_windows\030\t \003(\0132,.google.maps.rou"
-          + "teoptimization.v1.TimeWindow\022F\n\020end_time"
-          + "_windows\030\n \003(\0132,.google.maps.routeoptimi"
-          + "zation.v1.TimeWindow\022%\n\030travel_duration_"
-          + "multiple\030\013 \001(\001H\000\210\001\001\022S\n\020unloading_policy\030"
-          + "\014 \001(\01629.google.maps.routeoptimization.v1"
-          + ".Vehicle.UnloadingPolicy\022N\n\013load_limits\030"
-          + "\036 \003(\01329.google.maps.routeoptimization.v1"
-          + ".Vehicle.LoadLimitsEntry\022\025\n\rcost_per_hou"
-          + "r\030\020 \001(\001\022\036\n\026cost_per_traveled_hour\030\021 \001(\001\022"
-          + "\032\n\022cost_per_kilometer\030\022 \001(\001\022\022\n\nfixed_cos"
-          + "t\030\023 \001(\001\022\036\n\026used_if_route_is_empty\030\024 \001(\010\022"
-          + "U\n\024route_duration_limit\030\025 \001(\01327.google.m"
-          + "aps.routeoptimization.v1.Vehicle.Duratio"
-          + "nLimit\022V\n\025travel_duration_limit\030\026 \001(\01327."
-          + "google.maps.routeoptimization.v1.Vehicle"
-          + ".DurationLimit\022M\n\024route_distance_limit\030\027"
-          + " \001(\0132/.google.maps.routeoptimization.v1."
-          + "DistanceLimit\022z\n#extra_visit_duration_fo"
-          + "r_visit_type\030\030 \003(\0132M.google.maps.routeop"
-          + "timization.v1.Vehicle.ExtraVisitDuration"
-          + "ForVisitTypeEntry\022?\n\nbreak_rule\030\031 \001(\0132+."
-          + "google.maps.routeoptimization.v1.BreakRu"
-          + "le\022\r\n\005label\030\033 \001(\t\022\016\n\006ignore\030\034 \001(\010\032\323\002\n\tLo"
-          + "adLimit\022\025\n\010max_load\030\001 \001(\003H\000\210\001\001\022\025\n\rsoft_m"
-          + "ax_load\030\002 \001(\003\022$\n\034cost_per_unit_above_sof"
-          + "t_max\030\003 \001(\001\022Y\n\023start_load_interval\030\004 \001(\013"
-          + "2<.google.maps.routeoptimization.v1.Vehi"
-          + "cle.LoadLimit.Interval\022W\n\021end_load_inter"
-          + "val\030\005 \001(\0132<.google.maps.routeoptimizatio"
-          + "n.v1.Vehicle.LoadLimit.Interval\0321\n\010Inter"
-          + "val\022\013\n\003min\030\001 \001(\003\022\020\n\003max\030\002 \001(\003H\000\210\001\001B\006\n\004_m"
-          + "axB\013\n\t_max_load\032\360\002\n\rDurationLimit\022/\n\014max"
-          + "_duration\030\001 \001(\0132\031.google.protobuf.Durati"
-          + "on\0224\n\021soft_max_duration\030\002 \001(\0132\031.google.p"
-          + "rotobuf.Duration\022)\n\034cost_per_hour_after_"
-          + "soft_max\030\003 \001(\001H\000\210\001\001\022>\n\033quadratic_soft_ma"
-          + "x_duration\030\004 \001(\0132\031.google.protobuf.Durat"
-          + "ion\022:\n-cost_per_square_hour_after_quadra"
-          + "tic_soft_max\030\005 \001(\001H\001\210\001\001B\037\n\035_cost_per_hou"
-          + "r_after_soft_maxB0\n._cost_per_square_hou"
-          + "r_after_quadratic_soft_max\032f\n\017LoadLimits"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022B\n\005value\030\002 \001(\01323.goog"
+          + "EHICLE_AT_DELIVERY_TIME\020\003\"o\n\016RouteModifi"
+          + "ers\022\023\n\013avoid_tolls\030\002 \001(\010\022\026\n\016avoid_highwa"
+          + "ys\030\003 \001(\010\022\025\n\ravoid_ferries\030\004 \001(\010\022\031\n\014avoid"
+          + "_indoor\030\005 \001(\010B\003\340A\001\"\321\023\n\007Vehicle\022\024\n\014displa"
+          + "y_name\030  \001(\t\022I\n\013travel_mode\030\001 \001(\01624.goog"
+          + "le.maps.routeoptimization.v1.Vehicle.Tra"
+          + "velMode\022I\n\017route_modifiers\030\002 \001(\01320.googl"
+          + "e.maps.routeoptimization.v1.RouteModifie"
+          + "rs\022+\n\016start_location\030\003 \001(\0132\023.google.type"
+          + ".LatLng\022B\n\016start_waypoint\030\004 \001(\0132*.google"
+          + ".maps.routeoptimization.v1.Waypoint\022)\n\014e"
+          + "nd_location\030\005 \001(\0132\023.google.type.LatLng\022@"
+          + "\n\014end_waypoint\030\006 \001(\0132*.google.maps.route"
+          + "optimization.v1.Waypoint\022\022\n\nstart_tags\030\007"
+          + " \003(\t\022\020\n\010end_tags\030\010 \003(\t\022H\n\022start_time_win"
+          + "dows\030\t \003(\0132,.google.maps.routeoptimizati"
+          + "on.v1.TimeWindow\022F\n\020end_time_windows\030\n \003"
+          + "(\0132,.google.maps.routeoptimization.v1.Ti"
+          + "meWindow\022%\n\030travel_duration_multiple\030\013 \001"
+          + "(\001H\000\210\001\001\022S\n\020unloading_policy\030\014 \001(\01629.goog"
+          + "le.maps.routeoptimization.v1.Vehicle.Unl"
+          + "oadingPolicy\022N\n\013load_limits\030\036 \003(\01329.goog"
           + "le.maps.routeoptimization.v1.Vehicle.Loa"
-          + "dLimit:\0028\001\032`\n#ExtraVisitDurationForVisit"
-          + "TypeEntry\022\013\n\003key\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031."
-          + "google.protobuf.Duration:\0028\001\"C\n\nTravelMo"
-          + "de\022\033\n\027TRAVEL_MODE_UNSPECIFIED\020\000\022\013\n\007DRIVI"
-          + "NG\020\001\022\013\n\007WALKING\020\002\"b\n\017UnloadingPolicy\022 \n\034"
-          + "UNLOADING_POLICY_UNSPECIFIED\020\000\022\025\n\021LAST_I"
-          + "N_FIRST_OUT\020\001\022\026\n\022FIRST_IN_FIRST_OUT\020\002B\033\n"
-          + "\031_travel_duration_multiple\"\204\003\n\nTimeWindo"
-          + "w\022.\n\nstart_time\030\001 \001(\0132\032.google.protobuf."
-          + "Timestamp\022,\n\010end_time\030\002 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\0223\n\017soft_start_time\030\003 \001(\013"
-          + "2\032.google.protobuf.Timestamp\0221\n\rsoft_end"
-          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "1\n$cost_per_hour_before_soft_start_time\030"
-          + "\005 \001(\001H\000\210\001\001\022.\n!cost_per_hour_after_soft_e"
-          + "nd_time\030\006 \001(\001H\001\210\001\001B\'\n%_cost_per_hour_bef"
-          + "ore_soft_start_timeB$\n\"_cost_per_hour_af"
-          + "ter_soft_end_time\"\277\001\n\rDistanceLimit\022\027\n\nm"
-          + "ax_meters\030\001 \001(\003H\000\210\001\001\022\034\n\017soft_max_meters\030"
-          + "\002 \001(\003H\001\210\001\001\022.\n!cost_per_kilometer_above_s"
-          + "oft_max\030\003 \001(\001H\002\210\001\001B\r\n\013_max_metersB\022\n\020_so"
-          + "ft_max_metersB$\n\"_cost_per_kilometer_abo"
-          + "ve_soft_max\"\211\002\n\024TransitionAttributes\022\017\n\007"
-          + "src_tag\030\001 \001(\t\022\030\n\020excluded_src_tag\030\002 \001(\t\022"
-          + "\017\n\007dst_tag\030\003 \001(\t\022\030\n\020excluded_dst_tag\030\004 \001"
-          + "(\t\022\014\n\004cost\030\005 \001(\001\022\032\n\022cost_per_kilometer\030\006"
-          + " \001(\001\022G\n\016distance_limit\030\007 \001(\0132/.google.ma"
-          + "ps.routeoptimization.v1.DistanceLimit\022(\n"
-          + "\005delay\030\010 \001(\0132\031.google.protobuf.Duration\""
-          + "\212\001\n\010Waypoint\022>\n\010location\030\001 \001(\0132*.google."
-          + "maps.routeoptimization.v1.LocationH\000\022\022\n\010"
-          + "place_id\030\002 \001(\tH\000\022\031\n\014side_of_road\030\003 \001(\010B\003"
-          + "\340A\001B\017\n\rlocation_type\"R\n\010Location\022$\n\007lat_"
-          + "lng\030\001 \001(\0132\023.google.type.LatLng\022\024\n\007headin"
-          + "g\030\002 \001(\005H\000\210\001\001B\n\n\010_heading\"\224\004\n\tBreakRule\022P"
-          + "\n\016break_requests\030\001 \003(\01328.google.maps.rou"
-          + "teoptimization.v1.BreakRule.BreakRequest"
-          + "\022^\n\025frequency_constraints\030\002 \003(\0132?.google"
-          + ".maps.routeoptimization.v1.BreakRule.Fre"
-          + "quencyConstraint\032\276\001\n\014BreakRequest\022<\n\023ear"
-          + "liest_start_time\030\001 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\002\022:\n\021latest_start_time\030\002 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\002\0224\n\014m"
-          + "in_duration\030\003 \001(\0132\031.google.protobuf.Dura"
-          + "tionB\003\340A\002\032\223\001\n\023FrequencyConstraint\022:\n\022min"
-          + "_break_duration\030\001 \001(\0132\031.google.protobuf."
-          + "DurationB\003\340A\002\022@\n\030max_inter_break_duratio"
-          + "n\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\002\""
-          + "\346\017\n\rShipmentRoute\022\025\n\rvehicle_index\030\001 \001(\005"
-          + "\022\025\n\rvehicle_label\030\002 \001(\t\0226\n\022vehicle_start"
-          + "_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "4\n\020vehicle_end_time\030\006 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022E\n\006visits\030\007 \003(\01325.google.m"
-          + "aps.routeoptimization.v1.ShipmentRoute.V"
-          + "isit\022O\n\013transitions\030\010 \003(\0132:.google.maps."
-          + "routeoptimization.v1.ShipmentRoute.Trans"
-          + "ition\022#\n\033has_traffic_infeasibilities\030\t \001"
-          + "(\010\022W\n\016route_polyline\030\n \001(\0132?.google.maps"
-          + ".routeoptimization.v1.ShipmentRoute.Enco"
-          + "dedPolyline\022E\n\006breaks\030\013 \003(\01325.google.map"
-          + "s.routeoptimization.v1.ShipmentRoute.Bre"
-          + "ak\022D\n\007metrics\030\014 \001(\01323.google.maps.routeo"
-          + "ptimization.v1.AggregatedMetrics\022T\n\013rout"
-          + "e_costs\030\021 \003(\0132?.google.maps.routeoptimiz"
-          + "ation.v1.ShipmentRoute.RouteCostsEntry\022\030"
-          + "\n\020route_total_cost\030\022 \001(\001\032\232\003\n\005Visit\022\026\n\016sh"
-          + "ipment_index\030\001 \001(\005\022\021\n\tis_pickup\030\002 \001(\010\022\033\n"
-          + "\023visit_request_index\030\003 \001(\005\022.\n\nstart_time"
-          + "\030\004 \001(\0132\032.google.protobuf.Timestamp\022\\\n\014lo"
-          + "ad_demands\030\013 \003(\0132F.google.maps.routeopti"
-          + "mization.v1.ShipmentRoute.Visit.LoadDema"
-          + "ndsEntry\022)\n\006detour\030\006 \001(\0132\031.google.protob"
-          + "uf.Duration\022\026\n\016shipment_label\030\007 \001(\t\022\023\n\013v"
-          + "isit_label\030\010 \001(\t\032c\n\020LoadDemandsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022>\n\005value\030\002 \001(\0132/.google.maps.r"
-          + "outeoptimization.v1.Shipment.Load:\0028\001\032\255\005"
-          + "\n\nTransition\0222\n\017travel_duration\030\001 \001(\0132\031."
-          + "google.protobuf.Duration\022\036\n\026travel_dista"
-          + "nce_meters\030\002 \001(\001\022 \n\030traffic_info_unavail"
-          + "able\030\003 \001(\010\0221\n\016delay_duration\030\004 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\0221\n\016break_duration\030"
-          + "\005 \001(\0132\031.google.protobuf.Duration\0220\n\rwait"
-          + "_duration\030\006 \001(\0132\031.google.protobuf.Durati"
-          + "on\0221\n\016total_duration\030\007 \001(\0132\031.google.prot"
-          + "obuf.Duration\022.\n\nstart_time\030\010 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022W\n\016route_polyline\030"
-          + "\t \001(\0132?.google.maps.routeoptimization.v1"
-          + ".ShipmentRoute.EncodedPolyline\022c\n\rvehicl"
-          + "e_loads\030\013 \003(\0132L.google.maps.routeoptimiz"
-          + "ation.v1.ShipmentRoute.Transition.Vehicl"
-          + "eLoadsEntry\032p\n\021VehicleLoadsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022J\n\005value\030\002 \001(\0132;.google.maps.route"
-          + "optimization.v1.ShipmentRoute.VehicleLoa"
-          + "d:\0028\001\032\035\n\013VehicleLoad\022\016\n\006amount\030\001 \001(\003\032!\n\017"
-          + "EncodedPolyline\022\016\n\006points\030\001 \001(\t\032d\n\005Break"
-          + "\022.\n\nstart_time\030\001 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022+\n\010duration\030\002 \001(\0132\031.google.prot"
-          + "obuf.Duration\0321\n\017RouteCostsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\"\206\005\n\017SkippedShip"
-          + "ment\022\r\n\005index\030\001 \001(\005\022\r\n\005label\030\002 \001(\t\022I\n\007re"
-          + "asons\030\003 \003(\01328.google.maps.routeoptimizat"
-          + "ion.v1.SkippedShipment.Reason\032\211\004\n\006Reason"
-          + "\022K\n\004code\030\001 \001(\0162=.google.maps.routeoptimi"
-          + "zation.v1.SkippedShipment.Reason.Code\022\"\n"
-          + "\025example_vehicle_index\030\002 \001(\005H\000\210\001\001\022&\n\036exa"
-          + "mple_exceeded_capacity_type\030\003 \001(\t\"\313\002\n\004Co"
-          + "de\022\024\n\020CODE_UNSPECIFIED\020\000\022\016\n\nNO_VEHICLE\020\001"
-          + "\022#\n\037DEMAND_EXCEEDS_VEHICLE_CAPACITY\020\002\0225\n"
-          + "1CANNOT_BE_PERFORMED_WITHIN_VEHICLE_DIST"
-          + "ANCE_LIMIT\020\003\0225\n1CANNOT_BE_PERFORMED_WITH"
-          + "IN_VEHICLE_DURATION_LIMIT\020\004\022<\n8CANNOT_BE"
-          + "_PERFORMED_WITHIN_VEHICLE_TRAVEL_DURATIO"
-          + "N_LIMIT\020\005\0223\n/CANNOT_BE_PERFORMED_WITHIN_"
-          + "VEHICLE_TIME_WINDOWS\020\006\022\027\n\023VEHICLE_NOT_AL"
-          + "LOWED\020\007B\030\n\026_example_vehicle_index\"\313\004\n\021Ag"
-          + "gregatedMetrics\022 \n\030performed_shipment_co"
-          + "unt\030\001 \001(\005\0222\n\017travel_duration\030\002 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\0220\n\rwait_duration\030\003"
-          + " \001(\0132\031.google.protobuf.Duration\0221\n\016delay"
-          + "_duration\030\004 \001(\0132\031.google.protobuf.Durati"
-          + "on\0221\n\016break_duration\030\005 \001(\0132\031.google.prot"
-          + "obuf.Duration\0221\n\016visit_duration\030\006 \001(\0132\031."
-          + "google.protobuf.Duration\0221\n\016total_durati"
-          + "on\030\007 \001(\0132\031.google.protobuf.Duration\022\036\n\026t"
-          + "ravel_distance_meters\030\010 \001(\001\022T\n\tmax_loads"
-          + "\030\t \003(\0132A.google.maps.routeoptimization.v"
-          + "1.AggregatedMetrics.MaxLoadsEntry\032l\n\rMax"
-          + "LoadsEntry\022\013\n\003key\030\001 \001(\t\022J\n\005value\030\002 \001(\0132;"
-          + ".google.maps.routeoptimization.v1.Shipme"
-          + "ntRoute.VehicleLoad:\0028\001\"\263\006\n\032InjectedSolu"
-          + "tionConstraint\022?\n\006routes\030\001 \003(\0132/.google."
-          + "maps.routeoptimization.v1.ShipmentRoute\022"
-          + "L\n\021skipped_shipments\030\002 \003(\01321.google.maps"
-          + ".routeoptimization.v1.SkippedShipment\022q\n"
-          + "\026constraint_relaxations\030\003 \003(\0132Q.google.m"
-          + "aps.routeoptimization.v1.InjectedSolutio"
-          + "nConstraint.ConstraintRelaxation\032\222\004\n\024Con"
-          + "straintRelaxation\022q\n\013relaxations\030\001 \003(\0132\\"
-          + ".google.maps.routeoptimization.v1.Inject"
-          + "edSolutionConstraint.ConstraintRelaxatio"
-          + "n.Relaxation\022\027\n\017vehicle_indices\030\002 \003(\005\032\355\002"
-          + "\n\nRelaxation\022q\n\005level\030\001 \001(\0162b.google.map"
-          + "s.routeoptimization.v1.InjectedSolutionC"
-          + "onstraint.ConstraintRelaxation.Relaxatio"
-          + "n.Level\0222\n\016threshold_time\030\002 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022\035\n\025threshold_visit_c"
-          + "ount\030\003 \001(\005\"\230\001\n\005Level\022\025\n\021LEVEL_UNSPECIFIE"
-          + "D\020\000\022%\n!RELAX_VISIT_TIMES_AFTER_THRESHOLD"
-          + "\020\001\0222\n.RELAX_VISIT_TIMES_AND_SEQUENCE_AFT"
-          + "ER_THRESHOLD\020\002\022\035\n\031RELAX_ALL_AFTER_THRESH"
-          + "OLD\020\003\"\205\003\n\034OptimizeToursValidationError\022\014"
-          + "\n\004code\030\001 \001(\005\022\024\n\014display_name\030\002 \001(\t\022]\n\006fi"
-          + "elds\030\003 \003(\0132M.google.maps.routeoptimizati"
-          + "on.v1.OptimizeToursValidationError.Field"
-          + "Reference\022\025\n\rerror_message\030\004 \001(\t\022\030\n\020offe"
-          + "nding_values\030\005 \001(\t\032\260\001\n\016FieldReference\022\014\n"
-          + "\004name\030\001 \001(\t\022\017\n\005index\030\002 \001(\005H\000\022\r\n\003key\030\004 \001("
-          + "\tH\000\022`\n\tsub_field\030\003 \001(\0132M.google.maps.rou"
-          + "teoptimization.v1.OptimizeToursValidatio"
-          + "nError.FieldReferenceB\016\n\014index_or_key\"\242\001"
-          + "\n\013InputConfig\022A\n\ngcs_source\030\001 \001(\0132+.goog"
-          + "le.maps.routeoptimization.v1.GcsSourceH\000"
-          + "\022F\n\013data_format\030\002 \001(\0162,.google.maps.rout"
-          + "eoptimization.v1.DataFormatB\003\340A\002B\010\n\006sour"
-          + "ce\"\262\001\n\014OutputConfig\022K\n\017gcs_destination\030\001"
-          + " \001(\01320.google.maps.routeoptimization.v1."
-          + "GcsDestinationH\000\022F\n\013data_format\030\002 \001(\0162,."
-          + "google.maps.routeoptimization.v1.DataFor"
-          + "matB\003\340A\002B\r\n\013destination\"\035\n\tGcsSource\022\020\n\003"
-          + "uri\030\001 \001(\tB\003\340A\002\"\"\n\016GcsDestination\022\020\n\003uri\030"
-          + "\001 \001(\tB\003\340A\002*C\n\nDataFormat\022\033\n\027DATA_FORMAT_"
-          + "UNSPECIFIED\020\000\022\010\n\004JSON\020\001\022\016\n\nPROTO_TEXT\020\0022"
-          + "\371\004\n\021RouteOptimization\022\352\001\n\rOptimizeTours\022"
-          + "6.google.maps.routeoptimization.v1.Optim"
-          + "izeToursRequest\0327.google.maps.routeoptim"
-          + "ization.v1.OptimizeToursResponse\"h\202\323\344\223\002b"
-          + "\"1/v1/{parent=projects/*/locations/*}:op"
-          + "timizeTours:\001*Z*\"%/v1/{parent=projects/*"
-          + "}:optimizeTours:\001*\022\240\002\n\022BatchOptimizeTour"
-          + "s\022;.google.maps.routeoptimization.v1.Bat"
-          + "chOptimizeToursRequest\032\035.google.longrunn"
-          + "ing.Operation\"\255\001\312A8\n\032BatchOptimizeToursR"
-          + "esponse\022\032BatchOptimizeToursMetadata\202\323\344\223\002"
-          + "l\"6/v1/{parent=projects/*/locations/*}:b"
-          + "atchOptimizeTours:\001*Z/\"*/v1/{parent=proj"
-          + "ects/*}:batchOptimizeTours:\001*\032T\312A routeo"
-          + "ptimization.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\215\002\n$"
-          + "com.google.maps.routeoptimization.v1B\035Ro"
-          + "uteOptimizationServiceProtoP\001ZXcloud.goo"
-          + "gle.com/go/maps/routeoptimization/apiv1/"
-          + "routeoptimizationpb;routeoptimizationpb\252",
-      "\002 Google.Maps.RouteOptimization.V1\312\002 Goo"
-          + "gle\\Maps\\RouteOptimization\\V1\352\002#Google::"
-          + "Maps::RouteOptimization::V1b\006proto3"
+          + "dLimitsEntry\022\025\n\rcost_per_hour\030\020 \001(\001\022\036\n\026c"
+          + "ost_per_traveled_hour\030\021 \001(\001\022\032\n\022cost_per_"
+          + "kilometer\030\022 \001(\001\022\022\n\nfixed_cost\030\023 \001(\001\022\036\n\026u"
+          + "sed_if_route_is_empty\030\024 \001(\010\022U\n\024route_dur"
+          + "ation_limit\030\025 \001(\01327.google.maps.routeopt"
+          + "imization.v1.Vehicle.DurationLimit\022V\n\025tr"
+          + "avel_duration_limit\030\026 \001(\01327.google.maps."
+          + "routeoptimization.v1.Vehicle.DurationLim"
+          + "it\022M\n\024route_distance_limit\030\027 \001(\0132/.googl"
+          + "e.maps.routeoptimization.v1.DistanceLimi"
+          + "t\022z\n#extra_visit_duration_for_visit_type"
+          + "\030\030 \003(\0132M.google.maps.routeoptimization.v"
+          + "1.Vehicle.ExtraVisitDurationForVisitType"
+          + "Entry\022?\n\nbreak_rule\030\031 \001(\0132+.google.maps."
+          + "routeoptimization.v1.BreakRule\022\r\n\005label\030"
+          + "\033 \001(\t\022\016\n\006ignore\030\034 \001(\010\032\323\002\n\tLoadLimit\022\025\n\010m"
+          + "ax_load\030\001 \001(\003H\000\210\001\001\022\025\n\rsoft_max_load\030\002 \001("
+          + "\003\022$\n\034cost_per_unit_above_soft_max\030\003 \001(\001\022"
+          + "Y\n\023start_load_interval\030\004 \001(\0132<.google.ma"
+          + "ps.routeoptimization.v1.Vehicle.LoadLimi"
+          + "t.Interval\022W\n\021end_load_interval\030\005 \001(\0132<."
+          + "google.maps.routeoptimization.v1.Vehicle"
+          + ".LoadLimit.Interval\0321\n\010Interval\022\013\n\003min\030\001"
+          + " \001(\003\022\020\n\003max\030\002 \001(\003H\000\210\001\001B\006\n\004_maxB\013\n\t_max_l"
+          + "oad\032\360\002\n\rDurationLimit\022/\n\014max_duration\030\001 "
+          + "\001(\0132\031.google.protobuf.Duration\0224\n\021soft_m"
+          + "ax_duration\030\002 \001(\0132\031.google.protobuf.Dura"
+          + "tion\022)\n\034cost_per_hour_after_soft_max\030\003 \001"
+          + "(\001H\000\210\001\001\022>\n\033quadratic_soft_max_duration\030\004"
+          + " \001(\0132\031.google.protobuf.Duration\022:\n-cost_"
+          + "per_square_hour_after_quadratic_soft_max"
+          + "\030\005 \001(\001H\001\210\001\001B\037\n\035_cost_per_hour_after_soft"
+          + "_maxB0\n._cost_per_square_hour_after_quad"
+          + "ratic_soft_max\032f\n\017LoadLimitsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022B\n\005value\030\002 \001(\01323.google.maps.rout"
+          + "eoptimization.v1.Vehicle.LoadLimit:\0028\001\032`"
+          + "\n#ExtraVisitDurationForVisitTypeEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031.google.proto"
+          + "buf.Duration:\0028\001\"C\n\nTravelMode\022\033\n\027TRAVEL"
+          + "_MODE_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007WALK"
+          + "ING\020\002\"b\n\017UnloadingPolicy\022 \n\034UNLOADING_PO"
+          + "LICY_UNSPECIFIED\020\000\022\025\n\021LAST_IN_FIRST_OUT\020"
+          + "\001\022\026\n\022FIRST_IN_FIRST_OUT\020\002B\033\n\031_travel_dur"
+          + "ation_multiple\"\204\003\n\nTimeWindow\022.\n\nstart_t"
+          + "ime\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "amp\0223\n\017soft_start_time\030\003 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\0221\n\rsoft_end_time\030\004 \001(\0132"
+          + "\032.google.protobuf.Timestamp\0221\n$cost_per_"
+          + "hour_before_soft_start_time\030\005 \001(\001H\000\210\001\001\022."
+          + "\n!cost_per_hour_after_soft_end_time\030\006 \001("
+          + "\001H\001\210\001\001B\'\n%_cost_per_hour_before_soft_sta"
+          + "rt_timeB$\n\"_cost_per_hour_after_soft_end"
+          + "_time\"\225\002\n\rDistanceLimit\022\027\n\nmax_meters\030\001 "
+          + "\001(\003H\000\210\001\001\022\034\n\017soft_max_meters\030\002 \001(\003H\001\210\001\001\022."
+          + "\n!cost_per_kilometer_below_soft_max\030\004 \001("
+          + "\001H\002\210\001\001\022.\n!cost_per_kilometer_above_soft_"
+          + "max\030\003 \001(\001H\003\210\001\001B\r\n\013_max_metersB\022\n\020_soft_m"
+          + "ax_metersB$\n\"_cost_per_kilometer_below_s"
+          + "oft_maxB$\n\"_cost_per_kilometer_above_sof"
+          + "t_max\"\211\002\n\024TransitionAttributes\022\017\n\007src_ta"
+          + "g\030\001 \001(\t\022\030\n\020excluded_src_tag\030\002 \001(\t\022\017\n\007dst"
+          + "_tag\030\003 \001(\t\022\030\n\020excluded_dst_tag\030\004 \001(\t\022\014\n\004"
+          + "cost\030\005 \001(\001\022\032\n\022cost_per_kilometer\030\006 \001(\001\022G"
+          + "\n\016distance_limit\030\007 \001(\0132/.google.maps.rou"
+          + "teoptimization.v1.DistanceLimit\022(\n\005delay"
+          + "\030\010 \001(\0132\031.google.protobuf.Duration\"\212\001\n\010Wa"
+          + "ypoint\022>\n\010location\030\001 \001(\0132*.google.maps.r"
+          + "outeoptimization.v1.LocationH\000\022\022\n\010place_"
+          + "id\030\002 \001(\tH\000\022\031\n\014side_of_road\030\003 \001(\010B\003\340A\001B\017\n"
+          + "\rlocation_type\"R\n\010Location\022$\n\007lat_lng\030\001 "
+          + "\001(\0132\023.google.type.LatLng\022\024\n\007heading\030\002 \001("
+          + "\005H\000\210\001\001B\n\n\010_heading\"\224\004\n\tBreakRule\022P\n\016brea"
+          + "k_requests\030\001 \003(\01328.google.maps.routeopti"
+          + "mization.v1.BreakRule.BreakRequest\022^\n\025fr"
+          + "equency_constraints\030\002 \003(\0132?.google.maps."
+          + "routeoptimization.v1.BreakRule.Frequency"
+          + "Constraint\032\276\001\n\014BreakRequest\022<\n\023earliest_"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\002\022:\n\021latest_start_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\002\0224\n\014min_dur"
+          + "ation\030\003 \001(\0132\031.google.protobuf.DurationB\003"
+          + "\340A\002\032\223\001\n\023FrequencyConstraint\022:\n\022min_break"
+          + "_duration\030\001 \001(\0132\031.google.protobuf.Durati"
+          + "onB\003\340A\002\022@\n\030max_inter_break_duration\030\002 \001("
+          + "\0132\031.google.protobuf.DurationB\003\340A\002\"\200\020\n\rSh"
+          + "ipmentRoute\022\025\n\rvehicle_index\030\001 \001(\005\022\025\n\rve"
+          + "hicle_label\030\002 \001(\t\0226\n\022vehicle_start_time\030"
+          + "\005 \001(\0132\032.google.protobuf.Timestamp\0224\n\020veh"
+          + "icle_end_time\030\006 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\022E\n\006visits\030\007 \003(\01325.google.maps.ro"
+          + "uteoptimization.v1.ShipmentRoute.Visit\022O"
+          + "\n\013transitions\030\010 \003(\0132:.google.maps.routeo"
+          + "ptimization.v1.ShipmentRoute.Transition\022"
+          + "#\n\033has_traffic_infeasibilities\030\t \001(\010\022W\n\016"
+          + "route_polyline\030\n \001(\0132?.google.maps.route"
+          + "optimization.v1.ShipmentRoute.EncodedPol"
+          + "yline\022E\n\006breaks\030\013 \003(\01325.google.maps.rout"
+          + "eoptimization.v1.ShipmentRoute.Break\022D\n\007"
+          + "metrics\030\014 \001(\01323.google.maps.routeoptimiz"
+          + "ation.v1.AggregatedMetrics\022T\n\013route_cost"
+          + "s\030\021 \003(\0132?.google.maps.routeoptimization."
+          + "v1.ShipmentRoute.RouteCostsEntry\022\030\n\020rout"
+          + "e_total_cost\030\022 \001(\001\032\232\003\n\005Visit\022\026\n\016shipment"
+          + "_index\030\001 \001(\005\022\021\n\tis_pickup\030\002 \001(\010\022\033\n\023visit"
+          + "_request_index\030\003 \001(\005\022.\n\nstart_time\030\004 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022\\\n\014load_dem"
+          + "ands\030\013 \003(\0132F.google.maps.routeoptimizati"
+          + "on.v1.ShipmentRoute.Visit.LoadDemandsEnt"
+          + "ry\022)\n\006detour\030\006 \001(\0132\031.google.protobuf.Dur"
+          + "ation\022\026\n\016shipment_label\030\007 \001(\t\022\023\n\013visit_l"
+          + "abel\030\010 \001(\t\032c\n\020LoadDemandsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022>\n\005value\030\002 \001(\0132/.google.maps.routeop"
+          + "timization.v1.Shipment.Load:\0028\001\032\307\005\n\nTran"
+          + "sition\0222\n\017travel_duration\030\001 \001(\0132\031.google"
+          + ".protobuf.Duration\022\036\n\026travel_distance_me"
+          + "ters\030\002 \001(\001\022 \n\030traffic_info_unavailable\030\003"
+          + " \001(\010\0221\n\016delay_duration\030\004 \001(\0132\031.google.pr"
+          + "otobuf.Duration\0221\n\016break_duration\030\005 \001(\0132"
+          + "\031.google.protobuf.Duration\0220\n\rwait_durat"
+          + "ion\030\006 \001(\0132\031.google.protobuf.Duration\0221\n\016"
+          + "total_duration\030\007 \001(\0132\031.google.protobuf.D"
+          + "uration\022.\n\nstart_time\030\010 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\022W\n\016route_polyline\030\t \001(\0132"
+          + "?.google.maps.routeoptimization.v1.Shipm"
+          + "entRoute.EncodedPolyline\022\030\n\013route_token\030"
+          + "\014 \001(\tB\003\340A\003\022c\n\rvehicle_loads\030\013 \003(\0132L.goog"
+          + "le.maps.routeoptimization.v1.ShipmentRou"
+          + "te.Transition.VehicleLoadsEntry\032p\n\021Vehic"
+          + "leLoadsEntry\022\013\n\003key\030\001 \001(\t\022J\n\005value\030\002 \001(\013"
+          + "2;.google.maps.routeoptimization.v1.Ship"
+          + "mentRoute.VehicleLoad:\0028\001\032\035\n\013VehicleLoad"
+          + "\022\016\n\006amount\030\001 \001(\003\032!\n\017EncodedPolyline\022\016\n\006p"
+          + "oints\030\001 \001(\t\032d\n\005Break\022.\n\nstart_time\030\001 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022+\n\010duration"
+          + "\030\002 \001(\0132\031.google.protobuf.Duration\0321\n\017Rou"
+          + "teCostsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001"
+          + ":\0028\001\"\206\005\n\017SkippedShipment\022\r\n\005index\030\001 \001(\005\022"
+          + "\r\n\005label\030\002 \001(\t\022I\n\007reasons\030\003 \003(\01328.google"
+          + ".maps.routeoptimization.v1.SkippedShipme"
+          + "nt.Reason\032\211\004\n\006Reason\022K\n\004code\030\001 \001(\0162=.goo"
+          + "gle.maps.routeoptimization.v1.SkippedShi"
+          + "pment.Reason.Code\022\"\n\025example_vehicle_ind"
+          + "ex\030\002 \001(\005H\000\210\001\001\022&\n\036example_exceeded_capaci"
+          + "ty_type\030\003 \001(\t\"\313\002\n\004Code\022\024\n\020CODE_UNSPECIFI"
+          + "ED\020\000\022\016\n\nNO_VEHICLE\020\001\022#\n\037DEMAND_EXCEEDS_V"
+          + "EHICLE_CAPACITY\020\002\0225\n1CANNOT_BE_PERFORMED"
+          + "_WITHIN_VEHICLE_DISTANCE_LIMIT\020\003\0225\n1CANN"
+          + "OT_BE_PERFORMED_WITHIN_VEHICLE_DURATION_"
+          + "LIMIT\020\004\022<\n8CANNOT_BE_PERFORMED_WITHIN_VE"
+          + "HICLE_TRAVEL_DURATION_LIMIT\020\005\0223\n/CANNOT_"
+          + "BE_PERFORMED_WITHIN_VEHICLE_TIME_WINDOWS"
+          + "\020\006\022\027\n\023VEHICLE_NOT_ALLOWED\020\007B\030\n\026_example_"
+          + "vehicle_index\"\313\004\n\021AggregatedMetrics\022 \n\030p"
+          + "erformed_shipment_count\030\001 \001(\005\0222\n\017travel_"
+          + "duration\030\002 \001(\0132\031.google.protobuf.Duratio"
+          + "n\0220\n\rwait_duration\030\003 \001(\0132\031.google.protob"
+          + "uf.Duration\0221\n\016delay_duration\030\004 \001(\0132\031.go"
+          + "ogle.protobuf.Duration\0221\n\016break_duration"
+          + "\030\005 \001(\0132\031.google.protobuf.Duration\0221\n\016vis"
+          + "it_duration\030\006 \001(\0132\031.google.protobuf.Dura"
+          + "tion\0221\n\016total_duration\030\007 \001(\0132\031.google.pr"
+          + "otobuf.Duration\022\036\n\026travel_distance_meter"
+          + "s\030\010 \001(\001\022T\n\tmax_loads\030\t \003(\0132A.google.maps"
+          + ".routeoptimization.v1.AggregatedMetrics."
+          + "MaxLoadsEntry\032l\n\rMaxLoadsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022J\n\005value\030\002 \001(\0132;.google.maps.routeop"
+          + "timization.v1.ShipmentRoute.VehicleLoad:"
+          + "\0028\001\"\263\006\n\032InjectedSolutionConstraint\022?\n\006ro"
+          + "utes\030\001 \003(\0132/.google.maps.routeoptimizati"
+          + "on.v1.ShipmentRoute\022L\n\021skipped_shipments"
+          + "\030\002 \003(\01321.google.maps.routeoptimization.v"
+          + "1.SkippedShipment\022q\n\026constraint_relaxati"
+          + "ons\030\003 \003(\0132Q.google.maps.routeoptimizatio"
+          + "n.v1.InjectedSolutionConstraint.Constrai"
+          + "ntRelaxation\032\222\004\n\024ConstraintRelaxation\022q\n"
+          + "\013relaxations\030\001 \003(\0132\\.google.maps.routeop"
+          + "timization.v1.InjectedSolutionConstraint"
+          + ".ConstraintRelaxation.Relaxation\022\027\n\017vehi"
+          + "cle_indices\030\002 \003(\005\032\355\002\n\nRelaxation\022q\n\005leve"
+          + "l\030\001 \001(\0162b.google.maps.routeoptimization."
+          + "v1.InjectedSolutionConstraint.Constraint"
+          + "Relaxation.Relaxation.Level\0222\n\016threshold"
+          + "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "\035\n\025threshold_visit_count\030\003 \001(\005\"\230\001\n\005Level"
+          + "\022\025\n\021LEVEL_UNSPECIFIED\020\000\022%\n!RELAX_VISIT_T"
+          + "IMES_AFTER_THRESHOLD\020\001\0222\n.RELAX_VISIT_TI"
+          + "MES_AND_SEQUENCE_AFTER_THRESHOLD\020\002\022\035\n\031RE"
+          + "LAX_ALL_AFTER_THRESHOLD\020\003\"\205\003\n\034OptimizeTo"
+          + "ursValidationError\022\014\n\004code\030\001 \001(\005\022\024\n\014disp"
+          + "lay_name\030\002 \001(\t\022]\n\006fields\030\003 \003(\0132M.google."
+          + "maps.routeoptimization.v1.OptimizeToursV"
+          + "alidationError.FieldReference\022\025\n\rerror_m"
+          + "essage\030\004 \001(\t\022\030\n\020offending_values\030\005 \001(\t\032\260"
+          + "\001\n\016FieldReference\022\014\n\004name\030\001 \001(\t\022\017\n\005index"
+          + "\030\002 \001(\005H\000\022\r\n\003key\030\004 \001(\tH\000\022`\n\tsub_field\030\003 \001"
+          + "(\0132M.google.maps.routeoptimization.v1.Op"
+          + "timizeToursValidationError.FieldReferenc"
+          + "eB\016\n\014index_or_key\"\242\001\n\013InputConfig\022A\n\ngcs"
+          + "_source\030\001 \001(\0132+.google.maps.routeoptimiz"
+          + "ation.v1.GcsSourceH\000\022F\n\013data_format\030\002 \001("
+          + "\0162,.google.maps.routeoptimization.v1.Dat"
+          + "aFormatB\003\340A\002B\010\n\006source\"\262\001\n\014OutputConfig\022"
+          + "K\n\017gcs_destination\030\001 \001(\01320.google.maps.r"
+          + "outeoptimization.v1.GcsDestinationH\000\022F\n\013"
+          + "data_format\030\002 \001(\0162,.google.maps.routeopt"
+          + "imization.v1.DataFormatB\003\340A\002B\r\n\013destinat"
+          + "ion\"\035\n\tGcsSource\022\020\n\003uri\030\001 \001(\tB\003\340A\002\"\"\n\016Gc"
+          + "sDestination\022\020\n\003uri\030\001 \001(\tB\003\340A\002*C\n\nDataFo"
+          + "rmat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004JSO"
+          + "N\020\001\022\016\n\nPROTO_TEXT\020\0022\371\004\n\021RouteOptimizatio"
+          + "n\022\352\001\n\rOptimizeTours\0226.google.maps.routeo"
+          + "ptimization.v1.OptimizeToursRequest\0327.go"
+          + "ogle.maps.routeoptimization.v1.OptimizeT"
+          + "oursResponse\"h\202\323\344\223\002b\"1/v1/{parent=projec"
+          + "ts/*/locations/*}:optimizeTours:\001*Z*\"%/v"
+          + "1/{parent=projects/*}:optimizeTours:\001*\022\240"
+          + "\002\n\022BatchOptimizeTours\022;.google.maps.rout"
+          + "eoptimization.v1.BatchOptimizeToursReque"
+          + "st\032\035.google.longrunning.Operation\"\255\001\312A8\n"
+          + "\032BatchOptimizeToursResponse\022\032BatchOptimi"
+          + "zeToursMetadata\202\323\344\223\002l\"6/v1/{parent=proje"
+          + "cts/*/locations/*}:batchOptimizeTours:\001*",
+      "Z/\"*/v1/{parent=projects/*}:batchOptimiz"
+          + "eTours:\001*\032T\312A routeoptimization.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformB\215\002\n$com.google.maps.rout"
+          + "eoptimization.v1B\035RouteOptimizationServi"
+          + "ceProtoP\001ZXcloud.google.com/go/maps/rout"
+          + "eoptimization/apiv1/routeoptimizationpb;"
+          + "routeoptimizationpb\252\002 Google.Maps.RouteO"
+          + "ptimization.V1\312\002 Google\\Maps\\RouteOptimi"
+          + "zation\\V1\352\002#Google::Maps::RouteOptimizat"
+          + "ion::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -898,14 +910,23 @@ public final class RouteOptimizationServiceProto {
             new java.lang.String[] {
               "RequiredShipmentTypeAlternatives", "DependentShipmentTypes", "RequirementMode",
             });
-    internal_static_google_maps_routeoptimization_v1_Vehicle_descriptor =
+    internal_static_google_maps_routeoptimization_v1_RouteModifiers_descriptor =
         getDescriptor().getMessageTypes().get(9);
+    internal_static_google_maps_routeoptimization_v1_RouteModifiers_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_routeoptimization_v1_RouteModifiers_descriptor,
+            new java.lang.String[] {
+              "AvoidTolls", "AvoidHighways", "AvoidFerries", "AvoidIndoor",
+            });
+    internal_static_google_maps_routeoptimization_v1_Vehicle_descriptor =
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_maps_routeoptimization_v1_Vehicle_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_Vehicle_descriptor,
             new java.lang.String[] {
               "DisplayName",
               "TravelMode",
+              "RouteModifiers",
               "StartLocation",
               "StartWaypoint",
               "EndLocation",
@@ -981,7 +1002,7 @@ public final class RouteOptimizationServiceProto {
               "Key", "Value",
             });
     internal_static_google_maps_routeoptimization_v1_TimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_maps_routeoptimization_v1_TimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_TimeWindow_descriptor,
@@ -994,15 +1015,18 @@ public final class RouteOptimizationServiceProto {
               "CostPerHourAfterSoftEndTime",
             });
     internal_static_google_maps_routeoptimization_v1_DistanceLimit_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_maps_routeoptimization_v1_DistanceLimit_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_DistanceLimit_descriptor,
             new java.lang.String[] {
-              "MaxMeters", "SoftMaxMeters", "CostPerKilometerAboveSoftMax",
+              "MaxMeters",
+              "SoftMaxMeters",
+              "CostPerKilometerBelowSoftMax",
+              "CostPerKilometerAboveSoftMax",
             });
     internal_static_google_maps_routeoptimization_v1_TransitionAttributes_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_maps_routeoptimization_v1_TransitionAttributes_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_TransitionAttributes_descriptor,
@@ -1017,7 +1041,7 @@ public final class RouteOptimizationServiceProto {
               "Delay",
             });
     internal_static_google_maps_routeoptimization_v1_Waypoint_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_maps_routeoptimization_v1_Waypoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_Waypoint_descriptor,
@@ -1025,7 +1049,7 @@ public final class RouteOptimizationServiceProto {
               "Location", "PlaceId", "SideOfRoad", "LocationType",
             });
     internal_static_google_maps_routeoptimization_v1_Location_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_maps_routeoptimization_v1_Location_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_Location_descriptor,
@@ -1033,7 +1057,7 @@ public final class RouteOptimizationServiceProto {
               "LatLng", "Heading",
             });
     internal_static_google_maps_routeoptimization_v1_BreakRule_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_maps_routeoptimization_v1_BreakRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_BreakRule_descriptor,
@@ -1061,7 +1085,7 @@ public final class RouteOptimizationServiceProto {
               "MinBreakDuration", "MaxInterBreakDuration",
             });
     internal_static_google_maps_routeoptimization_v1_ShipmentRoute_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_maps_routeoptimization_v1_ShipmentRoute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_ShipmentRoute_descriptor,
@@ -1123,6 +1147,7 @@ public final class RouteOptimizationServiceProto {
               "TotalDuration",
               "StartTime",
               "RoutePolyline",
+              "RouteToken",
               "VehicleLoads",
             });
     internal_static_google_maps_routeoptimization_v1_ShipmentRoute_Transition_VehicleLoadsEntry_descriptor =
@@ -1176,7 +1201,7 @@ public final class RouteOptimizationServiceProto {
               "Key", "Value",
             });
     internal_static_google_maps_routeoptimization_v1_SkippedShipment_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_maps_routeoptimization_v1_SkippedShipment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_SkippedShipment_descriptor,
@@ -1194,7 +1219,7 @@ public final class RouteOptimizationServiceProto {
               "Code", "ExampleVehicleIndex", "ExampleExceededCapacityType",
             });
     internal_static_google_maps_routeoptimization_v1_AggregatedMetrics_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_maps_routeoptimization_v1_AggregatedMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_AggregatedMetrics_descriptor,
@@ -1220,7 +1245,7 @@ public final class RouteOptimizationServiceProto {
               "Key", "Value",
             });
     internal_static_google_maps_routeoptimization_v1_InjectedSolutionConstraint_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_maps_routeoptimization_v1_InjectedSolutionConstraint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_InjectedSolutionConstraint_descriptor,
@@ -1248,7 +1273,7 @@ public final class RouteOptimizationServiceProto {
               "Level", "ThresholdTime", "ThresholdVisitCount",
             });
     internal_static_google_maps_routeoptimization_v1_OptimizeToursValidationError_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_maps_routeoptimization_v1_OptimizeToursValidationError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_OptimizeToursValidationError_descriptor,
@@ -1266,7 +1291,7 @@ public final class RouteOptimizationServiceProto {
               "Name", "Index", "Key", "SubField", "IndexOrKey",
             });
     internal_static_google_maps_routeoptimization_v1_InputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_maps_routeoptimization_v1_InputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_InputConfig_descriptor,
@@ -1274,7 +1299,7 @@ public final class RouteOptimizationServiceProto {
               "GcsSource", "DataFormat", "Source",
             });
     internal_static_google_maps_routeoptimization_v1_OutputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_maps_routeoptimization_v1_OutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_OutputConfig_descriptor,
@@ -1282,7 +1307,7 @@ public final class RouteOptimizationServiceProto {
               "GcsDestination", "DataFormat", "Destination",
             });
     internal_static_google_maps_routeoptimization_v1_GcsSource_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_maps_routeoptimization_v1_GcsSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_GcsSource_descriptor,
@@ -1290,7 +1315,7 @@ public final class RouteOptimizationServiceProto {
               "Uri",
             });
     internal_static_google_maps_routeoptimization_v1_GcsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_maps_routeoptimization_v1_GcsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_routeoptimization_v1_GcsDestination_descriptor,

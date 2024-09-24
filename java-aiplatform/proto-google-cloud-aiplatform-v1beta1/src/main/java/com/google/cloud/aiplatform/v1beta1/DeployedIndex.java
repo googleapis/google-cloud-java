@@ -44,6 +44,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deploymentGroup_ = "";
+    pscAutomationConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -899,6 +900,101 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PSC_AUTOMATION_CONFIGS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      pscAutomationConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      getPscAutomationConfigsList() {
+    return pscAutomationConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+      getPscAutomationConfigsOrBuilderList() {
+    return pscAutomationConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPscAutomationConfigsCount() {
+    return pscAutomationConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(
+      int index) {
+    return pscAutomationConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set for PSC deployed index, PSC connection will be
+   * automatically created after deployment is done and the endpoint information
+   * is populated in private_endpoints.psc_automated_endpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder
+      getPscAutomationConfigsOrBuilder(int index) {
+    return pscAutomationConfigs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -948,6 +1044,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(16, getDedicatedResources());
+    }
+    for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
+      output.writeMessage(19, pscAutomationConfigs_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1000,6 +1099,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDedicatedResources());
     }
+    for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, pscAutomationConfigs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1046,6 +1150,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (!getDeploymentGroup().equals(other.getDeploymentGroup())) return false;
+    if (!getPscAutomationConfigsList().equals(other.getPscAutomationConfigsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1095,6 +1200,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DEPLOYMENT_GROUP_FIELD_NUMBER;
     hash = (53 * hash) + getDeploymentGroup().hashCode();
+    if (getPscAutomationConfigsCount() > 0) {
+      hash = (37 * hash) + PSC_AUTOMATION_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPscAutomationConfigsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1241,6 +1350,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         getAutomaticResourcesFieldBuilder();
         getDedicatedResourcesFieldBuilder();
         getDeployedIndexAuthConfigFieldBuilder();
+        getPscAutomationConfigsFieldBuilder();
       }
     }
 
@@ -1284,6 +1394,13 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       deploymentGroup_ = "";
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+      } else {
+        pscAutomationConfigs_ = null;
+        pscAutomationConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1311,11 +1428,25 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.DeployedIndex buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DeployedIndex result =
           new com.google.cloud.aiplatform.v1beta1.DeployedIndex(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.DeployedIndex result) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          pscAutomationConfigs_ = java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.pscAutomationConfigs_ = pscAutomationConfigs_;
+      } else {
+        result.pscAutomationConfigs_ = pscAutomationConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployedIndex result) {
@@ -1475,6 +1606,33 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (!other.pscAutomationConfigs_.isEmpty()) {
+          if (pscAutomationConfigs_.isEmpty()) {
+            pscAutomationConfigs_ = other.pscAutomationConfigs_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensurePscAutomationConfigsIsMutable();
+            pscAutomationConfigs_.addAll(other.pscAutomationConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pscAutomationConfigs_.isEmpty()) {
+          if (pscAutomationConfigsBuilder_.isEmpty()) {
+            pscAutomationConfigsBuilder_.dispose();
+            pscAutomationConfigsBuilder_ = null;
+            pscAutomationConfigs_ = other.pscAutomationConfigs_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            pscAutomationConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPscAutomationConfigsFieldBuilder()
+                    : null;
+          } else {
+            pscAutomationConfigsBuilder_.addAllMessages(other.pscAutomationConfigs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1578,6 +1736,20 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 130
+            case 154:
+              {
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.parser(),
+                        extensionRegistry);
+                if (pscAutomationConfigsBuilder_ == null) {
+                  ensurePscAutomationConfigsIsMutable();
+                  pscAutomationConfigs_.add(m);
+                } else {
+                  pscAutomationConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4081,6 +4253,447 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+
+    private void ensurePscAutomationConfigsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        pscAutomationConfigs_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>(
+                pscAutomationConfigs_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        pscAutomationConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+        getPscAutomationConfigsList() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPscAutomationConfigsCount() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.size();
+      } else {
+        return pscAutomationConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(
+        int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.get(index);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscAutomationConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.set(index, value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscAutomationConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(index, value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPscAutomationConfigs(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+            values) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscAutomationConfigs_);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscAutomationConfigs() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePscAutomationConfigs(int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.remove(index);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        getPscAutomationConfigsBuilder(int index) {
+      return getPscAutomationConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder
+        getPscAutomationConfigsOrBuilder(int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.get(index);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        getPscAutomationConfigsOrBuilderList() {
+      if (pscAutomationConfigsBuilder_ != null) {
+        return pscAutomationConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        addPscAutomationConfigsBuilder() {
+      return getPscAutomationConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        addPscAutomationConfigsBuilder(int index) {
+      return getPscAutomationConfigsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set for PSC deployed index, PSC connection will be
+     * automatically created after deployment is done and the endpoint information
+     * is populated in private_endpoints.psc_automated_endpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder>
+        getPscAutomationConfigsBuilderList() {
+      return getPscAutomationConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        getPscAutomationConfigsFieldBuilder() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>(
+                pscAutomationConfigs_,
+                ((bitField0_ & 0x00001000) != 0),
+                getParentForChildren(),
+                isClean());
+        pscAutomationConfigs_ = null;
+      }
+      return pscAutomationConfigsBuilder_;
     }
 
     @java.lang.Override
