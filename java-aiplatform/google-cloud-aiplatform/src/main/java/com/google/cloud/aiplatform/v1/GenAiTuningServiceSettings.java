@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -39,6 +40,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -94,6 +96,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for rebaseTunedModel:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * GenAiTuningServiceSettings.Builder genAiTuningServiceSettingsBuilder =
+ *     GenAiTuningServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * genAiTuningServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class GenAiTuningServiceSettings extends ClientSettings<GenAiTuningServiceSettings> {
@@ -118,6 +146,18 @@ public class GenAiTuningServiceSettings extends ClientSettings<GenAiTuningServic
   /** Returns the object with the settings used for calls to cancelTuningJob. */
   public UnaryCallSettings<CancelTuningJobRequest, Empty> cancelTuningJobSettings() {
     return ((GenAiTuningServiceStubSettings) getStubSettings()).cancelTuningJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rebaseTunedModel. */
+  public UnaryCallSettings<RebaseTunedModelRequest, Operation> rebaseTunedModelSettings() {
+    return ((GenAiTuningServiceStubSettings) getStubSettings()).rebaseTunedModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rebaseTunedModel. */
+  public OperationCallSettings<
+          RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+      rebaseTunedModelOperationSettings() {
+    return ((GenAiTuningServiceStubSettings) getStubSettings()).rebaseTunedModelOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -263,6 +303,19 @@ public class GenAiTuningServiceSettings extends ClientSettings<GenAiTuningServic
     /** Returns the builder for the settings used for calls to cancelTuningJob. */
     public UnaryCallSettings.Builder<CancelTuningJobRequest, Empty> cancelTuningJobSettings() {
       return getStubSettingsBuilder().cancelTuningJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rebaseTunedModel. */
+    public UnaryCallSettings.Builder<RebaseTunedModelRequest, Operation>
+        rebaseTunedModelSettings() {
+      return getStubSettingsBuilder().rebaseTunedModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rebaseTunedModel. */
+    public OperationCallSettings.Builder<
+            RebaseTunedModelRequest, TuningJob, RebaseTunedModelOperationMetadata>
+        rebaseTunedModelOperationSettings() {
+      return getStubSettingsBuilder().rebaseTunedModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

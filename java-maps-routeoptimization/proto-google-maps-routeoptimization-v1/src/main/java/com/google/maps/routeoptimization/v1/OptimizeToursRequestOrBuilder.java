@@ -712,7 +712,7 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * If true, polylines will be populated in response
+   * If true, polylines and route tokens will be populated in response
    * [ShipmentRoute.transitions][google.maps.routeoptimization.v1.ShipmentRoute.transitions].
    * </pre>
    *

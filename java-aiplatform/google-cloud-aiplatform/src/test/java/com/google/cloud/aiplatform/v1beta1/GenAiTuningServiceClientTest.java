@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -39,6 +40,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -53,6 +55,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -483,6 +486,138 @@ public class GenAiTuningServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void rebaseTunedModelTest() throws Exception {
+    TuningJob expectedResponse =
+        TuningJob.newBuilder()
+            .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
+            .setTunedModelDisplayName("tunedModelDisplayName759401232")
+            .setDescription("description-1724546052")
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setExperiment(
+                ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+                    .toString())
+            .setTunedModel(TunedModel.newBuilder().build())
+            .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rebaseTunedModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGenAiTuningService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+
+    TuningJob actualResponse = client.rebaseTunedModelAsync(parent, tunedModelRef).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGenAiTuningService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RebaseTunedModelRequest actualRequest = ((RebaseTunedModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(tunedModelRef, actualRequest.getTunedModelRef());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rebaseTunedModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGenAiTuningService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+      client.rebaseTunedModelAsync(parent, tunedModelRef).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rebaseTunedModelTest2() throws Exception {
+    TuningJob expectedResponse =
+        TuningJob.newBuilder()
+            .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
+            .setTunedModelDisplayName("tunedModelDisplayName759401232")
+            .setDescription("description-1724546052")
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setExperiment(
+                ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+                    .toString())
+            .setTunedModel(TunedModel.newBuilder().build())
+            .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rebaseTunedModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGenAiTuningService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+
+    TuningJob actualResponse = client.rebaseTunedModelAsync(parent, tunedModelRef).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGenAiTuningService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RebaseTunedModelRequest actualRequest = ((RebaseTunedModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(tunedModelRef, actualRequest.getTunedModelRef());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rebaseTunedModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGenAiTuningService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      TunedModelRef tunedModelRef = TunedModelRef.newBuilder().build();
+      client.rebaseTunedModelAsync(parent, tunedModelRef).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

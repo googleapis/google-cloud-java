@@ -1017,6 +1017,76 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.dialogflow.v2.SmartReplyModelMetadata.getDefaultInstance();
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 25;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Separation
+   * status of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Separation
+   * status of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 26;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Isolation status
+   * of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A read only boolean field reflecting Zone Isolation status
+   * of the model.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1058,6 +1128,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, languageCode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(25, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(26, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1096,6 +1172,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, languageCode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1121,6 +1203,14 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     if (!getDatasetsList().equals(other.getDatasetsList())) return false;
     if (state_ != other.state_) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
     if (!getModelMetadataCase().equals(other.getModelMetadataCase())) return false;
     switch (modelMetadataCase_) {
       case 8:
@@ -1160,6 +1250,14 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + state_;
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
     switch (modelMetadataCase_) {
       case 8:
         hash = (37 * hash) + ARTICLE_SUGGESTION_MODEL_METADATA_FIELD_NUMBER;
@@ -1343,6 +1441,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       if (smartReplyModelMetadataBuilder_ != null) {
         smartReplyModelMetadataBuilder_.clear();
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       modelMetadataCase_ = 0;
       modelMetadata_ = null;
       return this;
@@ -1412,6 +1512,14 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1521,6 +1629,12 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       switch (other.getModelMetadataCase()) {
         case ARTICLE_SUGGESTION_MODEL_METADATA:
           {
@@ -1621,6 +1735,18 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 154
+            case 200:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 200
+            case 208:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3151,6 +3277,150 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       modelMetadataCase_ = 9;
       onChanged();
       return smartReplyModelMetadataBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Separation
+     * status of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Separation
+     * status of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Separation
+     * status of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Separation
+     * status of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Isolation status
+     * of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Isolation status
+     * of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Isolation status
+     * of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A read only boolean field reflecting Zone Isolation status
+     * of the model.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

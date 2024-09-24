@@ -1267,7 +1267,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If true, polylines will be populated in response
+   * If true, polylines and route tokens will be populated in response
    * [ShipmentRoute.transitions][google.maps.routeoptimization.v1.ShipmentRoute.transitions].
    * </pre>
    *
@@ -5305,7 +5305,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, polylines will be populated in response
+     * If true, polylines and route tokens will be populated in response
      * [ShipmentRoute.transitions][google.maps.routeoptimization.v1.ShipmentRoute.transitions].
      * </pre>
      *
@@ -5321,7 +5321,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, polylines will be populated in response
+     * If true, polylines and route tokens will be populated in response
      * [ShipmentRoute.transitions][google.maps.routeoptimization.v1.ShipmentRoute.transitions].
      * </pre>
      *
@@ -5341,7 +5341,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, polylines will be populated in response
+     * If true, polylines and route tokens will be populated in response
      * [ShipmentRoute.transitions][google.maps.routeoptimization.v1.ShipmentRoute.transitions].
      * </pre>
      *

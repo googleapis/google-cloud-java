@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1.GenAiTuningServiceGrpc.GenAiTuningServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -139,6 +140,27 @@ public class MockGenAiTuningServiceImpl extends GenAiTuningServiceImplBase {
                   "Unrecognized response type %s for method CancelTuningJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rebaseTunedModel(
+      RebaseTunedModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RebaseTunedModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
