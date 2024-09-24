@@ -26,7 +26,8 @@
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
     ".github/workflows/ci.yaml",
     ".github/workflows/generated_files_sync.yaml",
-    ".github/workflows/unmanaged_dependency_check.yaml"
+    ".github/workflows/unmanaged_dependency_check.yaml",
+    ".github/workflows/hermetic_library_generation.yaml"
   ],
   "regexManagers": [
     {
@@ -57,10 +58,12 @@
     {
       "fileMatch": [
         ".github/workflows/ci.yaml",
-        ".github/workflows/generated_files_sync.yaml"
+        ".github/workflows/generated_files_sync.yaml",
+        ".github/workflows/hermetic_library_generation.yaml"
       ],
       "matchStrings": [
-        "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
+        "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n",
+        "uses: googleapis/sdk-platform-java/.github/scripts@v(?<currentValue>.+?)\\n"
       ],
       "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
