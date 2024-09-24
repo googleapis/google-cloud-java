@@ -191,6 +191,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -3250,6 +3251,7 @@ public class ITBigQueryTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-bigquery/issues/3471")
   public void testExecuteSelectWithCredentials() throws SQLException {
     // This test validate that executeSelect uses the same credential provided by the BigQuery
     // object used to create the Connection client.
