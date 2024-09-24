@@ -16,7 +16,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-datastore</site.installationModule>
-    <opentelemetry.version>1.42.0</opentelemetry.version>
+    <opentelemetry.version>1.42.1</opentelemetry.version>
   </properties>
   <dependencyManagement>
     <dependencies>
