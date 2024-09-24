@@ -1161,15 +1161,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.protobuf.DescriptorProtos$Edition",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.protobuf.DescriptorProtos$EnumDescriptorProto",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1368,43 +1359,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$Utf8Validation",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.protobuf.DescriptorProtos$FeatureSetDefaults",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.protobuf.DescriptorProtos$FeatureSetDefaults$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefault",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefault$Builder",
+    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$StringFieldValidation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
