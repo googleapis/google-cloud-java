@@ -3135,6 +3135,47 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only. An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route. This field
+     * is only populated if [populate_transition_polylines]
+     * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+     * is set to true.
+     * </pre>
+     *
+     * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The routeToken.
+     */
+    java.lang.String getRouteToken();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route. This field
+     * is only populated if [populate_transition_polylines]
+     * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+     * is set to true.
+     * </pre>
+     *
+     * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for routeToken.
+     */
+    com.google.protobuf.ByteString getRouteTokenBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Vehicle loads during this transition, for each type that either appears
      * in this vehicle's
      * [Vehicle.load_limits][google.maps.routeoptimization.v1.Vehicle.load_limits],
@@ -3275,7 +3316,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private Transition() {}
+    private Transition() {
+      routeToken_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -3756,6 +3799,73 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           : routePolyline_;
     }
 
+    public static final int ROUTE_TOKEN_FIELD_NUMBER = 12;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object routeToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route. This field
+     * is only populated if [populate_transition_polylines]
+     * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+     * is set to true.
+     * </pre>
+     *
+     * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The routeToken.
+     */
+    @java.lang.Override
+    public java.lang.String getRouteToken() {
+      java.lang.Object ref = routeToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeToken_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route. This field
+     * is only populated if [populate_transition_polylines]
+     * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+     * is set to true.
+     * </pre>
+     *
+     * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for routeToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRouteTokenBytes() {
+      java.lang.Object ref = routeToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        routeToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int VEHICLE_LOADS_FIELD_NUMBER = 11;
 
     private static final class VehicleLoadsDefaultEntryHolder {
@@ -3970,6 +4080,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetVehicleLoads(), VehicleLoadsDefaultEntryHolder.defaultEntry, 11);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeToken_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeToken_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4019,6 +4132,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, vehicleLoads__);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeToken_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeToken_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4066,6 +4182,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (hasRoutePolyline()) {
         if (!getRoutePolyline().equals(other.getRoutePolyline())) return false;
       }
+      if (!getRouteToken().equals(other.getRouteToken())) return false;
       if (!internalGetVehicleLoads().equals(other.internalGetVehicleLoads())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -4113,6 +4230,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ROUTE_POLYLINE_FIELD_NUMBER;
         hash = (53 * hash) + getRoutePolyline().hashCode();
       }
+      hash = (37 * hash) + ROUTE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteToken().hashCode();
       if (!internalGetVehicleLoads().getMap().isEmpty()) {
         hash = (37 * hash) + VEHICLE_LOADS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetVehicleLoads().hashCode();
@@ -4337,6 +4456,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           routePolylineBuilder_.dispose();
           routePolylineBuilder_ = null;
         }
+        routeToken_ = "";
         internalGetMutableVehicleLoads().clear();
         return this;
       }
@@ -4418,6 +4538,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.routeToken_ = routeToken_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.vehicleLoads_ =
               internalGetVehicleLoads().build(VehicleLoadsDefaultEntryHolder.defaultEntry);
         }
@@ -4501,8 +4624,13 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         if (other.hasRoutePolyline()) {
           mergeRoutePolyline(other.getRoutePolyline());
         }
+        if (!other.getRouteToken().isEmpty()) {
+          routeToken_ = other.routeToken_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
         internalGetMutableVehicleLoads().mergeFrom(other.internalGetVehicleLoads());
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4596,9 +4724,15 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableVehicleLoads()
                       .ensureBuilderMap()
                       .put(vehicleLoads__.getKey(), vehicleLoads__.getValue());
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 90
+              case 98:
+                {
+                  routeToken_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 98
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6215,6 +6349,152 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         return routePolylineBuilder_;
       }
 
+      private java.lang.Object routeToken_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An opaque token that can be passed to [Navigation
+       * SDK](https://developers.google.com/maps/documentation/navigation) to
+       * reconstruct the route during navigation, and, in the event of rerouting,
+       * honor the original intention when the route was created. Treat this token
+       * as an opaque blob.  Don't compare its value across requests as its value
+       * may change even if the service returns the exact same route. This field
+       * is only populated if [populate_transition_polylines]
+       * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+       * is set to true.
+       * </pre>
+       *
+       * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The routeToken.
+       */
+      public java.lang.String getRouteToken() {
+        java.lang.Object ref = routeToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routeToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An opaque token that can be passed to [Navigation
+       * SDK](https://developers.google.com/maps/documentation/navigation) to
+       * reconstruct the route during navigation, and, in the event of rerouting,
+       * honor the original intention when the route was created. Treat this token
+       * as an opaque blob.  Don't compare its value across requests as its value
+       * may change even if the service returns the exact same route. This field
+       * is only populated if [populate_transition_polylines]
+       * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+       * is set to true.
+       * </pre>
+       *
+       * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for routeToken.
+       */
+      public com.google.protobuf.ByteString getRouteTokenBytes() {
+        java.lang.Object ref = routeToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          routeToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An opaque token that can be passed to [Navigation
+       * SDK](https://developers.google.com/maps/documentation/navigation) to
+       * reconstruct the route during navigation, and, in the event of rerouting,
+       * honor the original intention when the route was created. Treat this token
+       * as an opaque blob.  Don't compare its value across requests as its value
+       * may change even if the service returns the exact same route. This field
+       * is only populated if [populate_transition_polylines]
+       * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+       * is set to true.
+       * </pre>
+       *
+       * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The routeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteToken(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        routeToken_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An opaque token that can be passed to [Navigation
+       * SDK](https://developers.google.com/maps/documentation/navigation) to
+       * reconstruct the route during navigation, and, in the event of rerouting,
+       * honor the original intention when the route was created. Treat this token
+       * as an opaque blob.  Don't compare its value across requests as its value
+       * may change even if the service returns the exact same route. This field
+       * is only populated if [populate_transition_polylines]
+       * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+       * is set to true.
+       * </pre>
+       *
+       * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRouteToken() {
+        routeToken_ = getDefaultInstance().getRouteToken();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An opaque token that can be passed to [Navigation
+       * SDK](https://developers.google.com/maps/documentation/navigation) to
+       * reconstruct the route during navigation, and, in the event of rerouting,
+       * honor the original intention when the route was created. Treat this token
+       * as an opaque blob.  Don't compare its value across requests as its value
+       * may change even if the service returns the exact same route. This field
+       * is only populated if [populate_transition_polylines]
+       * [google.maps.routeoptimization.v1.OptimizeToursRequest.populate_transition_polylines]
+       * is set to true.
+       * </pre>
+       *
+       * <code>string route_token = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for routeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteTokenBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        routeToken_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
       private static final class VehicleLoadsConverter
           implements com.google.protobuf.MapFieldBuilder.Converter<
               java.lang.String,
@@ -6269,7 +6549,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         if (vehicleLoads_ == null) {
           vehicleLoads_ = new com.google.protobuf.MapFieldBuilder<>(vehicleLoadsConverter);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return vehicleLoads_;
       }
@@ -6414,7 +6694,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearVehicleLoads() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         internalGetMutableVehicleLoads().clear();
         return this;
       }
@@ -6451,7 +6731,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<
               java.lang.String, com.google.maps.routeoptimization.v1.ShipmentRoute.VehicleLoad>
           getMutableVehicleLoads() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return internalGetMutableVehicleLoads().ensureMessageMap();
       }
       /**
@@ -6485,7 +6765,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException("map value");
         }
         internalGetMutableVehicleLoads().ensureBuilderMap().put(key, value);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
@@ -6521,7 +6801,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           }
         }
         internalGetMutableVehicleLoads().ensureBuilderMap().putAll(values);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
