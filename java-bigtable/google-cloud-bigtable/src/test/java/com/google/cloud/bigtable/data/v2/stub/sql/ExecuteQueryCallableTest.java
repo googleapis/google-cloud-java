@@ -20,15 +20,30 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadat
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.rpc.UnavailableException;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.ExecuteQueryRequest;
+import com.google.bigtable.v2.ExecuteQueryResponse;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.ProtoResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.internal.ProtoSqlRow;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
+import io.grpc.Server;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.StreamObserver;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -38,6 +53,29 @@ public class ExecuteQueryCallableTest {
 
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create("fake-project", "fake-instance", "fake-profile");
+
+  private Server server;
+  private FakeService fakeService = new FakeService();
+  private EnhancedBigtableStub stub;
+
+  @Before
+  public void setup() throws IOException {
+    server = FakeServiceBuilder.create(fakeService).start();
+
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId("fake-project")
+            .setInstanceId("fake-instance")
+            .build();
+
+    stub = EnhancedBigtableStub.create(settings.getStubSettings());
+  }
+
+  @After
+  public void tearDown() {
+    stub.close();
+    server.shutdown();
+  }
 
   @Test
   public void testCallContextAndServerStreamSetup() {
@@ -56,5 +94,30 @@ public class ExecuteQueryCallableTest {
     Iterator<SqlRow> responseIterator = stream.rows().iterator();
     assertThat(responseIterator.next()).isEqualTo(row);
     assertThat(responseIterator.hasNext()).isFalse();
+  }
+
+  @Test
+  public void testExecuteQueryRequestsAreNotRetried() {
+    // TODO: retries for execute query is currently disabled. This test should be
+    // updated once resumption token is in place.
+    SqlServerStream stream = stub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
+
+    Iterator<SqlRow> iterator = stream.rows().iterator();
+
+    assertThrows(UnavailableException.class, iterator::next).getCause();
+    assertThat(fakeService.attempts).isEqualTo(1);
+  }
+
+  private static class FakeService extends BigtableGrpc.BigtableImplBase {
+
+    private int attempts = 0;
+
+    @Override
+    public void executeQuery(
+        ExecuteQueryRequest request, StreamObserver<ExecuteQueryResponse> responseObserver) {
+      attempts++;
+      responseObserver.onNext(metadata(columnMetadata("test", stringType())));
+      responseObserver.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+    }
   }
 }
