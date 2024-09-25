@@ -105,6 +105,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     streamWriterBuilder.setLocation(builder.location);
     streamWriterBuilder.setDefaultMissingValueInterpretation(
         builder.defaultMissingValueInterpretation);
+    streamWriterBuilder.setMissingValueInterpretationMap(builder.missingValueInterpretationMap);
     streamWriterBuilder.setClientId(builder.clientId);
     streamWriterBuilder.setEnableLatencyProfiler(builder.enableRequestProfiler);
     requestProfilerHook = new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
@@ -298,18 +299,6 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     return streamWriter.getInflightWaitSeconds();
   }
 
-  /**
-   * Sets the missing value interpretation map for the SchemaAwareStreamWriter. The input
-   * missingValueInterpretationMap is used for all append requests unless otherwise changed.
-   *
-   * @param missingValueInterpretationMap the missing value interpretation map used by the
-   *     SchemaAwareStreamWriter.
-   */
-  public void setMissingValueInterpretationMap(
-      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
-    streamWriter.setMissingValueInterpretationMap(missingValueInterpretationMap);
-  }
-
   /** @return the missing value interpretation map used for the writer. */
   public Map<String, AppendRowsRequest.MissingValueInterpretation>
       getMissingValueInterpretationMap() {
@@ -475,6 +464,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
 
     private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+    private Map<String, AppendRowsRequest.MissingValueInterpretation>
+        missingValueInterpretationMap = new HashMap();
     private String clientId;
 
     private boolean enableRequestProfiler = false;
@@ -681,6 +672,20 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     public Builder setDefaultMissingValueInterpretation(
         AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
       this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
+      return this;
+    }
+
+    /**
+     * Sets the missing value interpretation map for the SchemaAwareStreamWriter. The input
+     * missingValueInterpretationMap is used for all append requests unless otherwise changed.
+     *
+     * @param missingValueInterpretationMap the missing value interpretation map used by the
+     *     SchemaAwareStreamWriter.
+     * @return Builder
+     */
+    public Builder setMissingValueInterpretationMap(
+        Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
+      this.missingValueInterpretationMap = missingValueInterpretationMap;
       return this;
     }
 

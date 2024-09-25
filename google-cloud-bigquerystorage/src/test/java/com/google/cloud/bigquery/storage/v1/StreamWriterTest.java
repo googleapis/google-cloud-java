@@ -171,12 +171,15 @@ public class StreamWriterTest {
         .build();
   }
 
-  private StreamWriter getTestStreamWriter() throws IOException {
+  private StreamWriter.Builder getTestStreamWriterBuilder() throws IOException {
     return StreamWriter.newBuilder(TEST_STREAM_1, client)
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
-        .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
-        .build();
+        .setMaxRetryDuration(java.time.Duration.ofSeconds(5));
+  }
+
+  private StreamWriter getTestStreamWriter() throws IOException {
+    return getTestStreamWriterBuilder().build();
   }
 
   private StreamWriter getTestStreamWriterRetryEnabled() throws IOException {
@@ -1583,47 +1586,54 @@ public class StreamWriterTest {
 
   @Test
   public void testSetAndGetMissingValueInterpretationMap() throws Exception {
-    StreamWriter writer = getTestStreamWriter();
+    StreamWriter.Builder writerBuilder = getTestStreamWriterBuilder();
     Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap();
     missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
     missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
-    writer.setMissingValueInterpretationMap(missingValueMap);
+    writerBuilder.setMissingValueInterpretationMap(missingValueMap);
+    StreamWriter writer = writerBuilder.build();
     assertEquals(missingValueMap, writer.getMissingValueInterpretationMap());
   }
 
   @Test
+  public void testAppendWithoutMissingValueMap() throws Exception {
+    try (StreamWriter writer = getTestStreamWriter()) {
+
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      ApiFuture<AppendRowsResponse> responseFuture =
+          writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0);
+
+      assertEquals(0, responseFuture.get().getAppendResult().getOffset().getValue());
+
+      verifyAppendRequests(1);
+      assertTrue(
+          testBigQueryWrite.getAppendRequests().get(0).getMissingValueInterpretations().isEmpty());
+    }
+  }
+
+  @Test
   public void testAppendWithMissingValueMap() throws Exception {
-    StreamWriter writer = getTestStreamWriter();
-
-    long appendCount = 2;
-    testBigQueryWrite.addResponse(createAppendResponse(0));
-    testBigQueryWrite.addResponse(createAppendResponse(1));
-
-    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
-    // The first append doesn't use a missing value map.
-    futures.add(writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0));
-
-    // The second append uses a missing value map.
     Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap();
     missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
     missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
-    writer.setMissingValueInterpretationMap(missingValueMap);
-    futures.add(writer.append(createProtoRows(new String[] {String.valueOf(1)}), 1));
 
-    for (int i = 0; i < appendCount; i++) {
-      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    try (StreamWriter writer =
+        getTestStreamWriterBuilder().setMissingValueInterpretationMap(missingValueMap).build()) {
+
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      ApiFuture<AppendRowsResponse> responseFuture =
+          writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0);
+
+      assertEquals(0, responseFuture.get().getAppendResult().getOffset().getValue());
+
+      verifyAppendRequests(1);
+
+      assertEquals(
+          testBigQueryWrite.getAppendRequests().get(0).getMissingValueInterpretations(),
+          missingValueMap);
     }
-
-    // Ensure that the AppendRowsRequest for the first append operation does not have a missing
-    // value map, and that the second AppendRowsRequest has the missing value map provided in the
-    // second append.
-    verifyAppendRequests(appendCount);
-    AppendRowsRequest request1 = testBigQueryWrite.getAppendRequests().get(0);
-    AppendRowsRequest request2 = testBigQueryWrite.getAppendRequests().get(1);
-    assertTrue(request1.getMissingValueInterpretations().isEmpty());
-    assertEquals(request2.getMissingValueInterpretations(), missingValueMap);
-
-    writer.close();
   }
 
   @Test(timeout = 10000)

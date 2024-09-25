@@ -869,6 +869,95 @@ public class JsonStreamWriterTest {
   }
 
   @Test
+  public void testSimpleSchemaUpdate_withInterpretationMap() throws Exception {
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setTableSchema(TABLE_SCHEMA)
+            .setLocation("us")
+            .build());
+    Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap<>();
+    missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
+    missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM)
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
+            .setMissingValueInterpretationMap(missingValueMap)
+            .build()) {
+
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+              .build());
+      testBigQueryWrite.addResponse(createAppendResponse(1));
+      // Verify the map before the writer is refreshed
+      assertEquals(missingValueMap, writer.getMissingValueInterpretationMap());
+      testBigQueryWrite.addResponse(createAppendResponse(2));
+      testBigQueryWrite.addResponse(createAppendResponse(3));
+
+      // First batch of appends. First append request will return an updated-schema, but the second
+      // and maybe the third append will be processed before the first response will refresh the
+      // StreamWriter.
+      JSONObject foo = new JSONObject();
+      foo.put("foo", "aaa");
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+
+      ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture3 = writer.append(jsonArr);
+
+      assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+      assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+      assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+
+      // Another append, this time with columns to match the updated schema.
+      JSONObject updatedFoo = new JSONObject();
+      updatedFoo.put("foo", "aaa");
+      updatedFoo.put("bar", "bbb");
+      JSONArray updatedJsonArr = new JSONArray();
+      updatedJsonArr.put(updatedFoo);
+      ApiFuture<AppendRowsResponse> appendFuture4 = writer.append(updatedJsonArr);
+
+      assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
+      assertEquals(4, testBigQueryWrite.getAppendRequests().size());
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(3)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(3)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          UpdatedFooType.newBuilder().setFoo("aaa").setBar("bbb").build().toByteString());
+
+      assertTrue(testBigQueryWrite.getAppendRequests().get(0).getProtoRows().hasWriterSchema());
+      assertTrue(
+          testBigQueryWrite.getAppendRequests().get(2).getProtoRows().hasWriterSchema()
+              || testBigQueryWrite.getAppendRequests().get(3).getProtoRows().hasWriterSchema());
+
+      // Verify the map after the writer is refreshed
+      assertEquals(missingValueMap, writer.getMissingValueInterpretationMap());
+      assertEquals(
+          testBigQueryWrite.getAppendRequests().get(3).getDefaultMissingValueInterpretation(),
+          MissingValueInterpretation.DEFAULT_VALUE);
+      assertEquals(
+          testBigQueryWrite.getAppendRequests().get(3).getMissingValueInterpretations(),
+          missingValueMap);
+    }
+  }
+
+  @Test
   public void testWithoutIgnoreUnknownFieldsUpdateImmeidateSuccess() throws Exception {
     TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
     TableSchema updatedSchema =
@@ -1523,13 +1612,16 @@ public class JsonStreamWriterTest {
     JSONArray jsonArr = new JSONArray();
     jsonArr.put(flexible);
 
-    try (JsonStreamWriter writer =
-        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).setTraceId("test:empty").build()) {
+    Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap<>();
+    missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
+    missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
 
-      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap<>();
-      missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
-      missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
-      writer.setMissingValueInterpretationMap(missingValueMap);
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema)
+            .setMissingValueInterpretationMap(missingValueMap)
+            .setTraceId("test:empty")
+            .build()) {
+
       assertEquals(missingValueMap, writer.getMissingValueInterpretationMap());
 
       testBigQueryWrite.addResponse(

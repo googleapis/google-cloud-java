@@ -68,11 +68,6 @@ public class StreamWriter implements AutoCloseable {
   // Cache of location info for a given dataset.
   private static Map<String, String> projectAndDatasetToLocation = new ConcurrentHashMap<>();
 
-  // Map of fields to their MissingValueInterpretation, which dictates how a field should be
-  // populated when it is missing from an input user row.
-  private Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap =
-      new HashMap();
-
   /*
    * The identifier of stream to write to.
    */
@@ -102,6 +97,11 @@ public class StreamWriter implements AutoCloseable {
    */
   private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
       MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+
+  // Map of fields to their MissingValueInterpretation, which dictates how a field should be
+  // populated when it is missing from an input user row.
+  private Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap =
+      new HashMap();
 
   /**
    * Stream can access a single connection or a pool of connection depending on whether multiplexing
@@ -229,6 +229,7 @@ public class StreamWriter implements AutoCloseable {
     this.streamName = builder.streamName;
     this.writerSchema = builder.writerSchema;
     this.defaultMissingValueInterpretation = builder.defaultMissingValueInterpretation;
+    this.missingValueInterpretationMap = builder.missingValueInterpretationMap;
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
     this.requestProfilerHook =
         new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
@@ -418,18 +419,6 @@ public class StreamWriter implements AutoCloseable {
                   + "value is %s.",
               storedLimitExceededBehavior, builder.limitExceededBehavior));
     }
-  }
-
-  /**
-   * Sets the missing value interpretation map for the stream writer. The input
-   * missingValueInterpretationMap is used for all write requests unless otherwise changed.
-   *
-   * @param missingValueInterpretationMap the missing value interpretation map used by stream
-   *     writer.
-   */
-  public void setMissingValueInterpretationMap(
-      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
-    this.missingValueInterpretationMap = missingValueInterpretationMap;
   }
 
   /**
@@ -700,6 +689,9 @@ public class StreamWriter implements AutoCloseable {
     private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
 
+    private Map<String, AppendRowsRequest.MissingValueInterpretation>
+        missingValueInterpretationMap = new HashMap();
+
     private boolean enableRequestProfiler = false;
     private boolean enableOpenTelemetry = false;
 
@@ -848,6 +840,20 @@ public class StreamWriter implements AutoCloseable {
     public Builder setDefaultMissingValueInterpretation(
         AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
       this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
+      return this;
+    }
+
+    /**
+     * Sets the missing value interpretation map for the stream writer. The input
+     * missingValueInterpretationMap is used for all write requests unless otherwise changed.
+     *
+     * @param missingValueInterpretationMap the missing value interpretation map used by stream
+     *     writer.
+     * @return Builder
+     */
+    public Builder setMissingValueInterpretationMap(
+        Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
+      this.missingValueInterpretationMap = missingValueInterpretationMap;
       return this;
     }
 
