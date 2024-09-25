@@ -36,6 +36,7 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+        JAVA_VERSION: ${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
