@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.56.0 (2024-09-26)
+
+### Features
+
+* created new boolean fields in conversation dataset for zone isolation and zone separation compliance status ([b1293e2](https://github.com/googleapis/google-cloud-java/commit/b1293e24112b911c31c6c0452080ffa4edca462f))
+* created new boolean fields in conversation model for zone isolation and zone separation compliance status ([058e805](https://github.com/googleapis/google-cloud-java/commit/058e805c925a32c31fa35056535036e056c178f1))
+
+
+
 ## 4.55.0 (2024-09-11)
 
 * No change

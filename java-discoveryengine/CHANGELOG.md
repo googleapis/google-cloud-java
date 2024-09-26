@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.46.0 (2024-09-26)
+
+### Features
+
+* promote search tuning service to v1 ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* return index status in document ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* support natural language understanding in search ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 0.45.0 (2024-09-11)
 
 * No change
