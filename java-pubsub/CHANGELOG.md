@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.132.3](https://github.com/googleapis/java-pubsub/compare/v1.132.2...v1.132.3) (2024-09-26)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.42.3 ([#2173](https://github.com/googleapis/java-pubsub/issues/2173)) ([294d039](https://github.com/googleapis/java-pubsub/commit/294d03974ab236c2ee5d0e420e8913eb6fc65fc9))
+* Update dependency com.google.cloud:google-cloud-core to v2.44.0 ([#2184](https://github.com/googleapis/java-pubsub/issues/2184)) ([faecb3b](https://github.com/googleapis/java-pubsub/commit/faecb3b90cb259ae376b8481ec30511ce19279bf))
+* Update dependency com.google.cloud:google-cloud-core to v2.44.1 ([#2190](https://github.com/googleapis/java-pubsub/issues/2190)) ([9ea45dc](https://github.com/googleapis/java-pubsub/commit/9ea45dc13f11076890cfff35e7acf2eafc2af70a))
+* Update dependency com.google.cloud:google-cloud-storage to v2.43.0 ([#2174](https://github.com/googleapis/java-pubsub/issues/2174)) ([ae800d7](https://github.com/googleapis/java-pubsub/commit/ae800d7b3ffd19302b416f03fad8b20e93afce8f))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.0 ([#2185](https://github.com/googleapis/java-pubsub/issues/2185)) ([5ca2c7c](https://github.com/googleapis/java-pubsub/commit/5ca2c7c52497514af30e4522f0ae245d0f8d73ce))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#2191](https://github.com/googleapis/java-pubsub/issues/2191)) ([555216e](https://github.com/googleapis/java-pubsub/commit/555216ee5bf9cfbba6664f133fc7cde1101f5f0b))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.28.2 ([#2179](https://github.com/googleapis/java-pubsub/issues/2179)) ([c9bbd2c](https://github.com/googleapis/java-pubsub/commit/c9bbd2cf3525e3ebdf9ce3af7fe50a16a87c9837))
+
 ## [1.132.2](https://github.com/googleapis/java-pubsub/compare/v1.132.1...v1.132.2) (2024-09-11)
 
 
