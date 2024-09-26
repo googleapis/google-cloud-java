@@ -131,6 +131,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -198,6 +200,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -265,6 +269,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -332,6 +338,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -399,6 +407,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -459,6 +469,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -519,6 +531,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -541,6 +555,8 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -589,6 +605,8 @@ public class SubscriptionAdminClientHttpJsonTest {
               .setDetached(true)
               .setEnableExactlyOnceDelivery(true)
               .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+              .setAnalyticsHubSubscriptionInfo(
+                  Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSubscription(subscription, updateMask);

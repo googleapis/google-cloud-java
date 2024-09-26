@@ -878,6 +878,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setDetached(true)
    *           .setEnableExactlyOnceDelivery(true)
    *           .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+   *           .setAnalyticsHubSubscriptionInfo(
+   *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
    *           .build();
    *   Subscription response = subscriptionAdminClient.createSubscription(request);
    * }
@@ -1141,6 +1143,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setDetached(true)
    *           .setEnableExactlyOnceDelivery(true)
    *           .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+   *           .setAnalyticsHubSubscriptionInfo(
+   *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
    *           .build();
    *   ApiFuture<Subscription> future =
    *       subscriptionAdminClient.createSubscriptionCallable().futureCall(request);

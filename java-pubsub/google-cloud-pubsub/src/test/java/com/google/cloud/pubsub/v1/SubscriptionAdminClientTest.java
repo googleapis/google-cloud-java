@@ -157,6 +157,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -221,6 +223,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -285,6 +289,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -349,6 +355,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -413,6 +421,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -467,6 +477,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -521,6 +533,8 @@ public class SubscriptionAdminClientTest {
             .setDetached(true)
             .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
+            .setAnalyticsHubSubscriptionInfo(
+                Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 

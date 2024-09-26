@@ -19,39 +19,37 @@
 // Protobuf Java Version: 3.25.5
 package com.google.pubsub.v1;
 
-public interface GetSubscriptionRequestOrBuilder
+public interface PlatformLogsSettingsOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSubscriptionRequest)
+    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PlatformLogsSettings)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the subscription to get.
-   * Format is `projects/{project}/subscriptions/{sub}`.
+   * Optional. The minimum severity level of Platform Logs that will be written.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.pubsub.v1.PlatformLogsSettings.Severity severity = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The subscription.
+   * @return The enum numeric value on the wire for severity.
    */
-  java.lang.String getSubscription();
+  int getSeverityValue();
   /**
    *
    *
    * <pre>
-   * Required. The name of the subscription to get.
-   * Format is `projects/{project}/subscriptions/{sub}`.
+   * Optional. The minimum severity level of Platform Logs that will be written.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.pubsub.v1.PlatformLogsSettings.Severity severity = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The bytes for subscription.
+   * @return The severity.
    */
-  com.google.protobuf.ByteString getSubscriptionBytes();
+  com.google.pubsub.v1.PlatformLogsSettings.Severity getSeverity();
 }
