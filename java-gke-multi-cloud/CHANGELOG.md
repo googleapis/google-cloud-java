@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.49.0 (2024-09-26)
+
+### Features
+
+* An optional field `security_posture_config` in message `.google.cloud.gkemulticloud.v1.AttachedCluster` is added ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 0.48.0 (2024-09-11)
 
 * No change

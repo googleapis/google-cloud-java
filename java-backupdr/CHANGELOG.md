@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 (2024-09-26)
+
+### Features
+
+* Client library for the backupvault api is added ([b1293e2](https://github.com/googleapis/google-cloud-java/commit/b1293e24112b911c31c6c0452080ffa4edca462f))
+
+
+
 ## 0.8.0 (2024-09-11)
 
 * No change

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.14.0 (2024-09-26)
+
+### Features
+
+* Add CHAT_SPACE link type support for GA launch ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* If you're a domain administrator or a delegated administrator, you can now include the `useAdminAccess` parameter when you call the Chat API with your administrator privileges with the following methods to manage Chat spaces and memberships in your Workspace organization: ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 0.13.0 (2024-09-11)
 
 * No change

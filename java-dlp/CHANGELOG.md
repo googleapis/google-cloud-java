@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.54.0 (2024-09-26)
+
+### Features
+
+* action for publishing data profiles to SecOps (formelly known as Chronicle) ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 3.53.0 (2024-09-11)
 
 * No change

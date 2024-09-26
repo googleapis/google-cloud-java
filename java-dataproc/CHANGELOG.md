@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.47.0 (2024-09-26)
+
+### Features
+
+* add resource reference for KMS keys and fix comments ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add support for new Dataproc features ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add support for new Dataproc features ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add support for Spark Connect sessions in Dataproc Serverless for Spark ([9a8ad80](https://github.com/googleapis/google-cloud-java/commit/9a8ad805f2ef3347651d0d7a6557468dda0b2725))
+
+
+
 ## 4.46.0 (2024-09-11)
 
 * No change
