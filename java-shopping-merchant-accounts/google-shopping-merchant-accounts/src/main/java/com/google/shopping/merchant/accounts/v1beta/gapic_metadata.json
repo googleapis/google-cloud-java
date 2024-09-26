@@ -62,6 +62,21 @@
         }
       }
     },
+    "AutofeedSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutofeedSettingsServiceClient",
+          "rpcs": {
+            "GetAutofeedSettings": {
+              "methods": ["getAutofeedSettings", "getAutofeedSettings", "getAutofeedSettings", "getAutofeedSettingsCallable"]
+            },
+            "UpdateAutofeedSettings": {
+              "methods": ["updateAutofeedSettings", "updateAutofeedSettings", "updateAutofeedSettingsCallable"]
+            }
+          }
+        }
+      }
+    },
     "BusinessIdentityService": {
       "clients": {
         "grpc": {

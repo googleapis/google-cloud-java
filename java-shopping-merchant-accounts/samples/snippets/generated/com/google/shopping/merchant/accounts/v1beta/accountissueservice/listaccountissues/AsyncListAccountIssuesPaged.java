@@ -23,7 +23,6 @@ import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceClient;
 import com.google.shopping.merchant.accounts.v1beta.AccountName;
 import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesResponse;
-import com.google.type.TimeZone;
 
 public class AsyncListAccountIssuesPaged {
 
@@ -44,7 +43,7 @@ public class AsyncListAccountIssuesPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLanguageCode("languageCode-2092349083")
-              .setTimeZone(TimeZone.newBuilder().build())
+              .setTimeZone("timeZone-2077180903")
               .build();
       while (true) {
         ListAccountIssuesResponse response =
