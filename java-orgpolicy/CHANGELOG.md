@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.50.0 (2024-09-26)
+
+### Features
+
+* Support adding constraints to new method types REMOVE_GRANTS and GOVERN_TAGS ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 2.49.0 (2024-09-11)
 
 * No change

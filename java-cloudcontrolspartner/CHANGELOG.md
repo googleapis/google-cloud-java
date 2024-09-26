@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.14.0 (2024-09-26)
+
+### ⚠ BREAKING CHANGES
+
+* Field behavior for field `display_name` in message `.google.cloud.cloudcontrolspartner.v1beta.Customer` is changed
+* Field behavior for field `display_name` in message `.google.cloud.cloudcontrolspartner.v1.Customer` is changed
+
+### Bug Fixes
+
+* Field behavior for field `display_name` in message `.google.cloud.cloudcontrolspartner.v1.Customer` is changed ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* Field behavior for field `display_name` in message `.google.cloud.cloudcontrolspartner.v1beta.Customer` is changed ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 0.13.0 (2024-09-11)
 
 * No change

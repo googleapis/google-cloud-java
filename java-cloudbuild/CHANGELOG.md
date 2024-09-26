@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.52.0 (2024-09-26)
+
+### Features
+
+* Add LEGACY_BUCKET option to DefaultLogsBucketBehavior ([058e805](https://github.com/googleapis/google-cloud-java/commit/058e805c925a32c31fa35056535036e056c178f1))
+
+
+
 ## 3.51.0 (2024-09-11)
 
 * No change

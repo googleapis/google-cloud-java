@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.18.0 (2024-09-26)
+
+### Bug Fixes
+
+* swap comments on `BONDED` and `NON_BONDED` enums in `BondingType` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 0.17.0 (2024-09-11)
 
 * No change

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.0 (2024-09-26)
+
+### Bug Fixes
+
+* cleanup of Parallelstore API descriptions ([b1293e2](https://github.com/googleapis/google-cloud-java/commit/b1293e24112b911c31c6c0452080ffa4edca462f))
+
+
+
 ## 0.12.0 (2024-09-11)
 
 * No change

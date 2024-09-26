@@ -46,20 +46,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-area-insights</artifactId>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-area-insights:0.0.1'
+implementation 'com.google.maps:google-maps-area-insights:0.1.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-area-insights" % "0.0.1"
+libraryDependencies += "com.google.maps" % "google-maps-area-insights" % "0.1.0"
 ```
 <!-- {x-version-update-end} -->
 

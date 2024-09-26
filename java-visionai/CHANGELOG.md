@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2024-09-26)
+
+### Bug Fixes
+
+* remove a proto which has no exported service and hasn't been generated ([058e805](https://github.com/googleapis/google-cloud-java/commit/058e805c925a32c31fa35056535036e056c178f1))
+
+
+
 ## 0.6.0 (2024-09-11)
 
 ### Features

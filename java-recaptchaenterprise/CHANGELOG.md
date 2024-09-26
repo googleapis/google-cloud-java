@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.47.0 (2024-09-26)
+
+### Bug Fixes
+
+* fix CreateAssessmentRequest comment ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* minor doc fixes ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
 ## 3.46.0 (2024-09-11)
 
 ### Features
