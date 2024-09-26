@@ -109,6 +109,7 @@ import com.google.cloud.bigquery.ParquetOptions;
 import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.RangePartitioning;
@@ -191,7 +192,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -3251,7 +3251,6 @@ public class ITBigQueryTest {
   }
 
   @Test
-  @Ignore("https://github.com/googleapis/java-bigquery/issues/3471")
   public void testExecuteSelectWithCredentials() throws SQLException {
     // This test validate that executeSelect uses the same credential provided by the BigQuery
     // object used to create the Connection client.
@@ -3272,7 +3271,7 @@ public class ITBigQueryTest {
 
     ConnectionSettings connectionSettings =
         ConnectionSettings.newBuilder()
-            .setJobTimeoutMs(10L) //  Force non-fast query to use BigQueryReadClient.
+            .setPriority(Priority.INTERACTIVE) //  Force non-fast query to use BigQueryReadClient.
             .setDefaultDataset(DatasetId.of(DATASET))
             .build();
     Connection connectionGoodCredentials =
