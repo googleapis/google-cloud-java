@@ -87,6 +87,7 @@ public class BusinessInfoServiceClientTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockBusinessInfoService.addResponse(expectedResponse);
 
@@ -129,6 +130,7 @@ public class BusinessInfoServiceClientTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockBusinessInfoService.addResponse(expectedResponse);
 
@@ -171,6 +173,7 @@ public class BusinessInfoServiceClientTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockBusinessInfoService.addResponse(expectedResponse);
 

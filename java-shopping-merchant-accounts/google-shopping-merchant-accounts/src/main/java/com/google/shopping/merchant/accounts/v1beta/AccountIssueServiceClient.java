@@ -278,7 +278,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
-   *           .setTimeZone(TimeZone.newBuilder().build())
+   *           .setTimeZone("timeZone-2077180903")
    *           .build();
    *   for (AccountIssue element :
    *       accountIssueServiceClient.listAccountIssues(request).iterateAll()) {
@@ -313,7 +313,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
-   *           .setTimeZone(TimeZone.newBuilder().build())
+   *           .setTimeZone("timeZone-2077180903")
    *           .build();
    *   ApiFuture<AccountIssue> future =
    *       accountIssueServiceClient.listAccountIssuesPagedCallable().futureCall(request);
@@ -348,7 +348,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLanguageCode("languageCode-2092349083")
-   *           .setTimeZone(TimeZone.newBuilder().build())
+   *           .setTimeZone("timeZone-2077180903")
    *           .build();
    *   while (true) {
    *     ListAccountIssuesResponse response =

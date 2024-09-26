@@ -16,6 +16,12 @@
 
 package com.google.cloud.backupdr.v1.stub;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
 
@@ -49,13 +55,57 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.backupdr.v1.AbandonBackupRequest;
+import com.google.cloud.backupdr.v1.Backup;
+import com.google.cloud.backupdr.v1.BackupPlan;
+import com.google.cloud.backupdr.v1.BackupPlanAssociation;
+import com.google.cloud.backupdr.v1.BackupVault;
+import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
+import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1.DataSource;
+import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupRequest;
+import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1.FetchAccessTokenRequest;
+import com.google.cloud.backupdr.v1.FetchAccessTokenResponse;
+import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
+import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.FinalizeBackupRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
+import com.google.cloud.backupdr.v1.GetBackupRequest;
+import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
+import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitiateBackupRequest;
+import com.google.cloud.backupdr.v1.InitiateBackupResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlansResponse;
+import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
+import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.ListBackupsRequest;
+import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1.ListManagementServersResponse;
 import com.google.cloud.backupdr.v1.ManagementServer;
 import com.google.cloud.backupdr.v1.OperationMetadata;
+import com.google.cloud.backupdr.v1.RemoveDataSourceRequest;
+import com.google.cloud.backupdr.v1.RestoreBackupRequest;
+import com.google.cloud.backupdr.v1.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1.SetInternalStatusRequest;
+import com.google.cloud.backupdr.v1.SetInternalStatusResponse;
+import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
+import com.google.cloud.backupdr.v1.UpdateDataSourceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -172,14 +222,99 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       deleteManagementServerSettings;
   private final OperationCallSettings<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationSettings;
+  private final UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings;
+  private final OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings;
+  private final PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings;
+  private final PagedCallSettings<
+          FetchUsableBackupVaultsRequest,
+          FetchUsableBackupVaultsResponse,
+          FetchUsableBackupVaultsPagedResponse>
+      fetchUsableBackupVaultsSettings;
+  private final UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings;
+  private final UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings;
+  private final OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings;
+  private final UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings;
+  private final OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
+  private final PagedCallSettings<
+          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+      listDataSourcesSettings;
+  private final UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings;
+  private final UnaryCallSettings<UpdateDataSourceRequest, Operation> updateDataSourceSettings;
+  private final OperationCallSettings<UpdateDataSourceRequest, DataSource, OperationMetadata>
+      updateDataSourceOperationSettings;
+  private final UnaryCallSettings<RemoveDataSourceRequest, Operation> removeDataSourceSettings;
+  private final OperationCallSettings<RemoveDataSourceRequest, Empty, OperationMetadata>
+      removeDataSourceOperationSettings;
+  private final UnaryCallSettings<SetInternalStatusRequest, Operation> setInternalStatusSettings;
+  private final OperationCallSettings<
+          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
+      setInternalStatusOperationSettings;
+  private final UnaryCallSettings<InitiateBackupRequest, InitiateBackupResponse>
+      initiateBackupSettings;
+  private final UnaryCallSettings<AbandonBackupRequest, Operation> abandonBackupSettings;
+  private final OperationCallSettings<AbandonBackupRequest, Empty, OperationMetadata>
+      abandonBackupOperationSettings;
+  private final UnaryCallSettings<FinalizeBackupRequest, Operation> finalizeBackupSettings;
+  private final OperationCallSettings<FinalizeBackupRequest, Backup, OperationMetadata>
+      finalizeBackupOperationSettings;
+  private final UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings;
+  private final OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Backup, OperationMetadata>
+      deleteBackupOperationSettings;
+  private final UnaryCallSettings<RestoreBackupRequest, Operation> restoreBackupSettings;
+  private final OperationCallSettings<
+          RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+      restoreBackupOperationSettings;
+  private final UnaryCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanSettings;
+  private final OperationCallSettings<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+      createBackupPlanOperationSettings;
+  private final UnaryCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings;
+  private final PagedCallSettings<
+          ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
+      listBackupPlansSettings;
+  private final UnaryCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanSettings;
+  private final OperationCallSettings<DeleteBackupPlanRequest, Empty, OperationMetadata>
+      deleteBackupPlanOperationSettings;
+  private final UnaryCallSettings<CreateBackupPlanAssociationRequest, Operation>
+      createBackupPlanAssociationSettings;
+  private final OperationCallSettings<
+          CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      createBackupPlanAssociationOperationSettings;
+  private final UnaryCallSettings<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+      getBackupPlanAssociationSettings;
+  private final PagedCallSettings<
+          ListBackupPlanAssociationsRequest,
+          ListBackupPlanAssociationsResponse,
+          ListBackupPlanAssociationsPagedResponse>
+      listBackupPlanAssociationsSettings;
+  private final UnaryCallSettings<DeleteBackupPlanAssociationRequest, Operation>
+      deleteBackupPlanAssociationSettings;
+  private final OperationCallSettings<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+      deleteBackupPlanAssociationOperationSettings;
+  private final UnaryCallSettings<TriggerBackupRequest, Operation> triggerBackupSettings;
+  private final OperationCallSettings<
+          TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+      triggerBackupOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
@@ -217,6 +352,239 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             public Iterable<ManagementServer> extractResources(
                 ListManagementServersResponse payload) {
               return payload.getManagementServersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+      LIST_BACKUP_VAULTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupVaultsRequest injectToken(
+                ListBackupVaultsRequest payload, String token) {
+              return ListBackupVaultsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupVaultsRequest injectPageSize(
+                ListBackupVaultsRequest payload, int pageSize) {
+              return ListBackupVaultsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupVaultsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupVaultsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupVault> extractResources(ListBackupVaultsResponse payload) {
+              return payload.getBackupVaultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
+      FETCH_USABLE_BACKUP_VAULTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchUsableBackupVaultsRequest injectToken(
+                FetchUsableBackupVaultsRequest payload, String token) {
+              return FetchUsableBackupVaultsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchUsableBackupVaultsRequest injectPageSize(
+                FetchUsableBackupVaultsRequest payload, int pageSize) {
+              return FetchUsableBackupVaultsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchUsableBackupVaultsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchUsableBackupVaultsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupVault> extractResources(FetchUsableBackupVaultsResponse payload) {
+              return payload.getBackupVaultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDataSourcesRequest, ListDataSourcesResponse, DataSource>
+      LIST_DATA_SOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDataSourcesRequest, ListDataSourcesResponse, DataSource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDataSourcesRequest injectToken(
+                ListDataSourcesRequest payload, String token) {
+              return ListDataSourcesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDataSourcesRequest injectPageSize(
+                ListDataSourcesRequest payload, int pageSize) {
+              return ListDataSourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDataSourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDataSourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
+              return payload.getDataSourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan>
+      LIST_BACKUP_PLANS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupPlansRequest injectToken(
+                ListBackupPlansRequest payload, String token) {
+              return ListBackupPlansRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupPlansRequest injectPageSize(
+                ListBackupPlansRequest payload, int pageSize) {
+              return ListBackupPlansRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupPlansRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupPlansResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPlan> extractResources(ListBackupPlansResponse payload) {
+              return payload.getBackupPlansList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupPlanAssociationsRequest,
+          ListBackupPlanAssociationsResponse,
+          BackupPlanAssociation>
+      LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupPlanAssociationsRequest,
+              ListBackupPlanAssociationsResponse,
+              BackupPlanAssociation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupPlanAssociationsRequest injectToken(
+                ListBackupPlanAssociationsRequest payload, String token) {
+              return ListBackupPlanAssociationsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListBackupPlanAssociationsRequest injectPageSize(
+                ListBackupPlanAssociationsRequest payload, int pageSize) {
+              return ListBackupPlanAssociationsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupPlanAssociationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupPlanAssociationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPlanAssociation> extractResources(
+                ListBackupPlanAssociationsResponse payload) {
+              return payload.getBackupPlanAssociationsList();
             }
           };
 
@@ -279,6 +647,129 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      LIST_BACKUP_VAULTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupVaultsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse> callable,
+                ListBackupVaultsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupVaultsResponse> futureResponse) {
+              PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_VAULTS_PAGE_STR_DESC, request, context);
+              return ListBackupVaultsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchUsableBackupVaultsRequest,
+          FetchUsableBackupVaultsResponse,
+          FetchUsableBackupVaultsPagedResponse>
+      FETCH_USABLE_BACKUP_VAULTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchUsableBackupVaultsRequest,
+              FetchUsableBackupVaultsResponse,
+              FetchUsableBackupVaultsPagedResponse>() {
+            @Override
+            public ApiFuture<FetchUsableBackupVaultsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
+                    callable,
+                FetchUsableBackupVaultsRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchUsableBackupVaultsResponse> futureResponse) {
+              PageContext<
+                      FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_USABLE_BACKUP_VAULTS_PAGE_STR_DESC, request, context);
+              return FetchUsableBackupVaultsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+      LIST_DATA_SOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDataSourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> callable,
+                ListDataSourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDataSourcesResponse> futureResponse) {
+              PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> pageContext =
+                  PageContext.create(callable, LIST_DATA_SOURCES_PAGE_STR_DESC, request, context);
+              return ListDataSourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
+      LIST_BACKUP_PLANS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupPlansPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupPlansRequest, ListBackupPlansResponse> callable,
+                ListBackupPlansRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupPlansResponse> futureResponse) {
+              PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> pageContext =
+                  PageContext.create(callable, LIST_BACKUP_PLANS_PAGE_STR_DESC, request, context);
+              return ListBackupPlansPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupPlanAssociationsRequest,
+          ListBackupPlanAssociationsResponse,
+          ListBackupPlanAssociationsPagedResponse>
+      LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupPlanAssociationsRequest,
+              ListBackupPlanAssociationsResponse,
+              ListBackupPlanAssociationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupPlanAssociationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
+                    callable,
+                ListBackupPlanAssociationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupPlanAssociationsResponse> futureResponse) {
+              PageContext<
+                      ListBackupPlanAssociationsRequest,
+                      ListBackupPlanAssociationsResponse,
+                      BackupPlanAssociation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_DESC, request, context);
+              return ListBackupPlanAssociationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -334,6 +825,274 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return deleteManagementServerOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
+    return createBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings() {
+    return createBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupVaults. */
+  public PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings() {
+    return listBackupVaultsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchUsableBackupVaults. */
+  public PagedCallSettings<
+          FetchUsableBackupVaultsRequest,
+          FetchUsableBackupVaultsResponse,
+          FetchUsableBackupVaultsPagedResponse>
+      fetchUsableBackupVaultsSettings() {
+    return fetchUsableBackupVaultsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupVault. */
+  public UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+    return getBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings() {
+    return updateBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings() {
+    return updateBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings() {
+    return deleteBackupVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings() {
+    return deleteBackupVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataSources. */
+  public PagedCallSettings<
+          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+      listDataSourcesSettings() {
+    return listDataSourcesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataSource. */
+  public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
+    return getDataSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDataSource. */
+  public UnaryCallSettings<UpdateDataSourceRequest, Operation> updateDataSourceSettings() {
+    return updateDataSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDataSource. */
+  public OperationCallSettings<UpdateDataSourceRequest, DataSource, OperationMetadata>
+      updateDataSourceOperationSettings() {
+    return updateDataSourceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeDataSource. */
+  public UnaryCallSettings<RemoveDataSourceRequest, Operation> removeDataSourceSettings() {
+    return removeDataSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeDataSource. */
+  public OperationCallSettings<RemoveDataSourceRequest, Empty, OperationMetadata>
+      removeDataSourceOperationSettings() {
+    return removeDataSourceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setInternalStatus. */
+  public UnaryCallSettings<SetInternalStatusRequest, Operation> setInternalStatusSettings() {
+    return setInternalStatusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setInternalStatus. */
+  public OperationCallSettings<
+          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
+      setInternalStatusOperationSettings() {
+    return setInternalStatusOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to initiateBackup. */
+  public UnaryCallSettings<InitiateBackupRequest, InitiateBackupResponse> initiateBackupSettings() {
+    return initiateBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to abandonBackup. */
+  public UnaryCallSettings<AbandonBackupRequest, Operation> abandonBackupSettings() {
+    return abandonBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to abandonBackup. */
+  public OperationCallSettings<AbandonBackupRequest, Empty, OperationMetadata>
+      abandonBackupOperationSettings() {
+    return abandonBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finalizeBackup. */
+  public UnaryCallSettings<FinalizeBackupRequest, Operation> finalizeBackupSettings() {
+    return finalizeBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finalizeBackup. */
+  public OperationCallSettings<FinalizeBackupRequest, Backup, OperationMetadata>
+      finalizeBackupOperationSettings() {
+    return finalizeBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchAccessToken. */
+  public UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenSettings() {
+    return fetchAccessTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings() {
+    return updateBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings() {
+    return updateBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Backup, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackup. */
+  public UnaryCallSettings<RestoreBackupRequest, Operation> restoreBackupSettings() {
+    return restoreBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackup. */
+  public OperationCallSettings<RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+      restoreBackupOperationSettings() {
+    return restoreBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPlan. */
+  public UnaryCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanSettings() {
+    return createBackupPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPlan. */
+  public OperationCallSettings<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+      createBackupPlanOperationSettings() {
+    return createBackupPlanOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPlan. */
+  public UnaryCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
+    return getBackupPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPlans. */
+  public PagedCallSettings<
+          ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
+      listBackupPlansSettings() {
+    return listBackupPlansSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPlan. */
+  public UnaryCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanSettings() {
+    return deleteBackupPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPlan. */
+  public OperationCallSettings<DeleteBackupPlanRequest, Empty, OperationMetadata>
+      deleteBackupPlanOperationSettings() {
+    return deleteBackupPlanOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPlanAssociation. */
+  public UnaryCallSettings<CreateBackupPlanAssociationRequest, Operation>
+      createBackupPlanAssociationSettings() {
+    return createBackupPlanAssociationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPlanAssociation. */
+  public OperationCallSettings<
+          CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      createBackupPlanAssociationOperationSettings() {
+    return createBackupPlanAssociationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPlanAssociation. */
+  public UnaryCallSettings<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+      getBackupPlanAssociationSettings() {
+    return getBackupPlanAssociationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPlanAssociations. */
+  public PagedCallSettings<
+          ListBackupPlanAssociationsRequest,
+          ListBackupPlanAssociationsResponse,
+          ListBackupPlanAssociationsPagedResponse>
+      listBackupPlanAssociationsSettings() {
+    return listBackupPlanAssociationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPlanAssociation. */
+  public UnaryCallSettings<DeleteBackupPlanAssociationRequest, Operation>
+      deleteBackupPlanAssociationSettings() {
+    return deleteBackupPlanAssociationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPlanAssociation. */
+  public OperationCallSettings<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+      deleteBackupPlanAssociationOperationSettings() {
+    return deleteBackupPlanAssociationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerBackup. */
+  public UnaryCallSettings<TriggerBackupRequest, Operation> triggerBackupSettings() {
+    return triggerBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerBackup. */
+  public OperationCallSettings<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+      triggerBackupOperationSettings() {
+    return triggerBackupOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -353,12 +1112,6 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
   }
 
   public BackupDRStub createStub() throws IOException {
@@ -478,11 +1231,65 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     deleteManagementServerSettings = settingsBuilder.deleteManagementServerSettings().build();
     deleteManagementServerOperationSettings =
         settingsBuilder.deleteManagementServerOperationSettings().build();
+    createBackupVaultSettings = settingsBuilder.createBackupVaultSettings().build();
+    createBackupVaultOperationSettings =
+        settingsBuilder.createBackupVaultOperationSettings().build();
+    listBackupVaultsSettings = settingsBuilder.listBackupVaultsSettings().build();
+    fetchUsableBackupVaultsSettings = settingsBuilder.fetchUsableBackupVaultsSettings().build();
+    getBackupVaultSettings = settingsBuilder.getBackupVaultSettings().build();
+    updateBackupVaultSettings = settingsBuilder.updateBackupVaultSettings().build();
+    updateBackupVaultOperationSettings =
+        settingsBuilder.updateBackupVaultOperationSettings().build();
+    deleteBackupVaultSettings = settingsBuilder.deleteBackupVaultSettings().build();
+    deleteBackupVaultOperationSettings =
+        settingsBuilder.deleteBackupVaultOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    listDataSourcesSettings = settingsBuilder.listDataSourcesSettings().build();
+    getDataSourceSettings = settingsBuilder.getDataSourceSettings().build();
+    updateDataSourceSettings = settingsBuilder.updateDataSourceSettings().build();
+    updateDataSourceOperationSettings = settingsBuilder.updateDataSourceOperationSettings().build();
+    removeDataSourceSettings = settingsBuilder.removeDataSourceSettings().build();
+    removeDataSourceOperationSettings = settingsBuilder.removeDataSourceOperationSettings().build();
+    setInternalStatusSettings = settingsBuilder.setInternalStatusSettings().build();
+    setInternalStatusOperationSettings =
+        settingsBuilder.setInternalStatusOperationSettings().build();
+    initiateBackupSettings = settingsBuilder.initiateBackupSettings().build();
+    abandonBackupSettings = settingsBuilder.abandonBackupSettings().build();
+    abandonBackupOperationSettings = settingsBuilder.abandonBackupOperationSettings().build();
+    finalizeBackupSettings = settingsBuilder.finalizeBackupSettings().build();
+    finalizeBackupOperationSettings = settingsBuilder.finalizeBackupOperationSettings().build();
+    fetchAccessTokenSettings = settingsBuilder.fetchAccessTokenSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    updateBackupSettings = settingsBuilder.updateBackupSettings().build();
+    updateBackupOperationSettings = settingsBuilder.updateBackupOperationSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    restoreBackupSettings = settingsBuilder.restoreBackupSettings().build();
+    restoreBackupOperationSettings = settingsBuilder.restoreBackupOperationSettings().build();
+    createBackupPlanSettings = settingsBuilder.createBackupPlanSettings().build();
+    createBackupPlanOperationSettings = settingsBuilder.createBackupPlanOperationSettings().build();
+    getBackupPlanSettings = settingsBuilder.getBackupPlanSettings().build();
+    listBackupPlansSettings = settingsBuilder.listBackupPlansSettings().build();
+    deleteBackupPlanSettings = settingsBuilder.deleteBackupPlanSettings().build();
+    deleteBackupPlanOperationSettings = settingsBuilder.deleteBackupPlanOperationSettings().build();
+    createBackupPlanAssociationSettings =
+        settingsBuilder.createBackupPlanAssociationSettings().build();
+    createBackupPlanAssociationOperationSettings =
+        settingsBuilder.createBackupPlanAssociationOperationSettings().build();
+    getBackupPlanAssociationSettings = settingsBuilder.getBackupPlanAssociationSettings().build();
+    listBackupPlanAssociationsSettings =
+        settingsBuilder.listBackupPlanAssociationsSettings().build();
+    deleteBackupPlanAssociationSettings =
+        settingsBuilder.deleteBackupPlanAssociationSettings().build();
+    deleteBackupPlanAssociationOperationSettings =
+        settingsBuilder.deleteBackupPlanAssociationOperationSettings().build();
+    triggerBackupSettings = settingsBuilder.triggerBackupSettings().build();
+    triggerBackupOperationSettings = settingsBuilder.triggerBackupOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for BackupDRStubSettings. */
@@ -505,14 +1312,115 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteManagementServerRequest, Empty, OperationMetadata>
         deleteManagementServerOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings;
+    private final PagedCallSettings.Builder<
+            FetchUsableBackupVaultsRequest,
+            FetchUsableBackupVaultsResponse,
+            FetchUsableBackupVaultsPagedResponse>
+        fetchUsableBackupVaultsSettings;
+    private final UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault>
+        getBackupVaultSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings;
+    private final OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
+    private final PagedCallSettings.Builder<
+            ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+        listDataSourcesSettings;
+    private final UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings;
+    private final UnaryCallSettings.Builder<UpdateDataSourceRequest, Operation>
+        updateDataSourceSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDataSourceRequest, DataSource, OperationMetadata>
+        updateDataSourceOperationSettings;
+    private final UnaryCallSettings.Builder<RemoveDataSourceRequest, Operation>
+        removeDataSourceSettings;
+    private final OperationCallSettings.Builder<RemoveDataSourceRequest, Empty, OperationMetadata>
+        removeDataSourceOperationSettings;
+    private final UnaryCallSettings.Builder<SetInternalStatusRequest, Operation>
+        setInternalStatusSettings;
+    private final OperationCallSettings.Builder<
+            SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
+        setInternalStatusOperationSettings;
+    private final UnaryCallSettings.Builder<InitiateBackupRequest, InitiateBackupResponse>
+        initiateBackupSettings;
+    private final UnaryCallSettings.Builder<AbandonBackupRequest, Operation> abandonBackupSettings;
+    private final OperationCallSettings.Builder<AbandonBackupRequest, Empty, OperationMetadata>
+        abandonBackupOperationSettings;
+    private final UnaryCallSettings.Builder<FinalizeBackupRequest, Operation>
+        finalizeBackupSettings;
+    private final OperationCallSettings.Builder<FinalizeBackupRequest, Backup, OperationMetadata>
+        finalizeBackupOperationSettings;
+    private final UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings;
+    private final OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Backup, OperationMetadata>
+        deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<RestoreBackupRequest, Operation> restoreBackupSettings;
+    private final OperationCallSettings.Builder<
+            RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+        restoreBackupOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupPlanRequest, Operation>
+        createBackupPlanSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+        createBackupPlanOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
+        listBackupPlansSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupPlanRequest, Operation>
+        deleteBackupPlanSettings;
+    private final OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
+        deleteBackupPlanOperationSettings;
+    private final UnaryCallSettings.Builder<CreateBackupPlanAssociationRequest, Operation>
+        createBackupPlanAssociationSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+        createBackupPlanAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+        getBackupPlanAssociationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupPlanAssociationsRequest,
+            ListBackupPlanAssociationsResponse,
+            ListBackupPlanAssociationsPagedResponse>
+        listBackupPlanAssociationsSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupPlanAssociationRequest, Operation>
+        deleteBackupPlanAssociationSettings;
+    private final OperationCallSettings.Builder<
+            DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+        deleteBackupPlanAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<TriggerBackupRequest, Operation> triggerBackupSettings;
+    private final OperationCallSettings.Builder<
+            TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+        triggerBackupOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -571,11 +1479,58 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       createManagementServerOperationSettings = OperationCallSettings.newBuilder();
       deleteManagementServerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteManagementServerOperationSettings = OperationCallSettings.newBuilder();
+      createBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      listBackupVaultsSettings = PagedCallSettings.newBuilder(LIST_BACKUP_VAULTS_PAGE_STR_FACT);
+      fetchUsableBackupVaultsSettings =
+          PagedCallSettings.newBuilder(FETCH_USABLE_BACKUP_VAULTS_PAGE_STR_FACT);
+      getBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupVaultOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDataSourcesSettings = PagedCallSettings.newBuilder(LIST_DATA_SOURCES_PAGE_STR_FACT);
+      getDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDataSourceOperationSettings = OperationCallSettings.newBuilder();
+      removeDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeDataSourceOperationSettings = OperationCallSettings.newBuilder();
+      setInternalStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setInternalStatusOperationSettings = OperationCallSettings.newBuilder();
+      initiateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      abandonBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      abandonBackupOperationSettings = OperationCallSettings.newBuilder();
+      finalizeBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      finalizeBackupOperationSettings = OperationCallSettings.newBuilder();
+      fetchAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      restoreBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreBackupOperationSettings = OperationCallSettings.newBuilder();
+      createBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupPlanOperationSettings = OperationCallSettings.newBuilder();
+      getBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupPlansSettings = PagedCallSettings.newBuilder(LIST_BACKUP_PLANS_PAGE_STR_FACT);
+      deleteBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupPlanOperationSettings = OperationCallSettings.newBuilder();
+      createBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
+      getBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupPlanAssociationsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_FACT);
+      deleteBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
+      triggerBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      triggerBackupOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -583,11 +1538,40 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getManagementServerSettings,
               createManagementServerSettings,
               deleteManagementServerSettings,
+              createBackupVaultSettings,
+              listBackupVaultsSettings,
+              fetchUsableBackupVaultsSettings,
+              getBackupVaultSettings,
+              updateBackupVaultSettings,
+              deleteBackupVaultSettings,
+              testIamPermissionsSettings,
+              listDataSourcesSettings,
+              getDataSourceSettings,
+              updateDataSourceSettings,
+              removeDataSourceSettings,
+              setInternalStatusSettings,
+              initiateBackupSettings,
+              abandonBackupSettings,
+              finalizeBackupSettings,
+              fetchAccessTokenSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              updateBackupSettings,
+              deleteBackupSettings,
+              restoreBackupSettings,
+              createBackupPlanSettings,
+              getBackupPlanSettings,
+              listBackupPlansSettings,
+              deleteBackupPlanSettings,
+              createBackupPlanAssociationSettings,
+              getBackupPlanAssociationSettings,
+              listBackupPlanAssociationsSettings,
+              deleteBackupPlanAssociationSettings,
+              triggerBackupSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              getIamPolicySettings);
       initDefaults(this);
     }
 
@@ -602,11 +1586,60 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       deleteManagementServerSettings = settings.deleteManagementServerSettings.toBuilder();
       deleteManagementServerOperationSettings =
           settings.deleteManagementServerOperationSettings.toBuilder();
+      createBackupVaultSettings = settings.createBackupVaultSettings.toBuilder();
+      createBackupVaultOperationSettings = settings.createBackupVaultOperationSettings.toBuilder();
+      listBackupVaultsSettings = settings.listBackupVaultsSettings.toBuilder();
+      fetchUsableBackupVaultsSettings = settings.fetchUsableBackupVaultsSettings.toBuilder();
+      getBackupVaultSettings = settings.getBackupVaultSettings.toBuilder();
+      updateBackupVaultSettings = settings.updateBackupVaultSettings.toBuilder();
+      updateBackupVaultOperationSettings = settings.updateBackupVaultOperationSettings.toBuilder();
+      deleteBackupVaultSettings = settings.deleteBackupVaultSettings.toBuilder();
+      deleteBackupVaultOperationSettings = settings.deleteBackupVaultOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      listDataSourcesSettings = settings.listDataSourcesSettings.toBuilder();
+      getDataSourceSettings = settings.getDataSourceSettings.toBuilder();
+      updateDataSourceSettings = settings.updateDataSourceSettings.toBuilder();
+      updateDataSourceOperationSettings = settings.updateDataSourceOperationSettings.toBuilder();
+      removeDataSourceSettings = settings.removeDataSourceSettings.toBuilder();
+      removeDataSourceOperationSettings = settings.removeDataSourceOperationSettings.toBuilder();
+      setInternalStatusSettings = settings.setInternalStatusSettings.toBuilder();
+      setInternalStatusOperationSettings = settings.setInternalStatusOperationSettings.toBuilder();
+      initiateBackupSettings = settings.initiateBackupSettings.toBuilder();
+      abandonBackupSettings = settings.abandonBackupSettings.toBuilder();
+      abandonBackupOperationSettings = settings.abandonBackupOperationSettings.toBuilder();
+      finalizeBackupSettings = settings.finalizeBackupSettings.toBuilder();
+      finalizeBackupOperationSettings = settings.finalizeBackupOperationSettings.toBuilder();
+      fetchAccessTokenSettings = settings.fetchAccessTokenSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      updateBackupSettings = settings.updateBackupSettings.toBuilder();
+      updateBackupOperationSettings = settings.updateBackupOperationSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      restoreBackupSettings = settings.restoreBackupSettings.toBuilder();
+      restoreBackupOperationSettings = settings.restoreBackupOperationSettings.toBuilder();
+      createBackupPlanSettings = settings.createBackupPlanSettings.toBuilder();
+      createBackupPlanOperationSettings = settings.createBackupPlanOperationSettings.toBuilder();
+      getBackupPlanSettings = settings.getBackupPlanSettings.toBuilder();
+      listBackupPlansSettings = settings.listBackupPlansSettings.toBuilder();
+      deleteBackupPlanSettings = settings.deleteBackupPlanSettings.toBuilder();
+      deleteBackupPlanOperationSettings = settings.deleteBackupPlanOperationSettings.toBuilder();
+      createBackupPlanAssociationSettings =
+          settings.createBackupPlanAssociationSettings.toBuilder();
+      createBackupPlanAssociationOperationSettings =
+          settings.createBackupPlanAssociationOperationSettings.toBuilder();
+      getBackupPlanAssociationSettings = settings.getBackupPlanAssociationSettings.toBuilder();
+      listBackupPlanAssociationsSettings = settings.listBackupPlanAssociationsSettings.toBuilder();
+      deleteBackupPlanAssociationSettings =
+          settings.deleteBackupPlanAssociationSettings.toBuilder();
+      deleteBackupPlanAssociationOperationSettings =
+          settings.deleteBackupPlanAssociationOperationSettings.toBuilder();
+      triggerBackupSettings = settings.triggerBackupSettings.toBuilder();
+      triggerBackupOperationSettings = settings.triggerBackupOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -614,11 +1647,40 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getManagementServerSettings,
               createManagementServerSettings,
               deleteManagementServerSettings,
+              createBackupVaultSettings,
+              listBackupVaultsSettings,
+              fetchUsableBackupVaultsSettings,
+              getBackupVaultSettings,
+              updateBackupVaultSettings,
+              deleteBackupVaultSettings,
+              testIamPermissionsSettings,
+              listDataSourcesSettings,
+              getDataSourceSettings,
+              updateDataSourceSettings,
+              removeDataSourceSettings,
+              setInternalStatusSettings,
+              initiateBackupSettings,
+              abandonBackupSettings,
+              finalizeBackupSettings,
+              fetchAccessTokenSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              updateBackupSettings,
+              deleteBackupSettings,
+              restoreBackupSettings,
+              createBackupPlanSettings,
+              getBackupPlanSettings,
+              listBackupPlansSettings,
+              deleteBackupPlanSettings,
+              createBackupPlanAssociationSettings,
+              getBackupPlanAssociationSettings,
+              listBackupPlanAssociationsSettings,
+              deleteBackupPlanAssociationSettings,
+              triggerBackupSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              getIamPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -667,6 +1729,156 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .createBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBackupVaultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchUsableBackupVaultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDataSourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDataSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDataSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .removeDataSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setInternalStatusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .initiateBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .abandonBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .finalizeBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchAccessTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .restoreBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createBackupPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupPlansSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBackupPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createBackupPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupPlanAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBackupPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .triggerBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -683,11 +1895,6 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -725,6 +1932,393 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupVaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDataSourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDataSourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DataSource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .removeDataSourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveDataSourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .setInternalStatusOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetInternalStatusRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SetInternalStatusResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .abandonBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AbandonBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .finalizeBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<FinalizeBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restoreBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreBackupResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupPlanOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupPlanRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPlan.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupPlanOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupPlanRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupPlanAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupPlanAssociationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPlanAssociation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupPlanAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupPlanAssociationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .triggerBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<TriggerBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPlanAssociation.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -797,6 +2391,287 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       return deleteManagementServerOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings() {
+      return createBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public OperationCallSettings.Builder<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings() {
+      return createBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupVaults. */
+    public PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings() {
+      return listBackupVaultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchUsableBackupVaults. */
+    public PagedCallSettings.Builder<
+            FetchUsableBackupVaultsRequest,
+            FetchUsableBackupVaultsResponse,
+            FetchUsableBackupVaultsPagedResponse>
+        fetchUsableBackupVaultsSettings() {
+      return fetchUsableBackupVaultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupVault. */
+    public UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+      return getBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings() {
+      return updateBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public OperationCallSettings.Builder<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings() {
+      return updateBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings() {
+      return deleteBackupVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings() {
+      return deleteBackupVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDataSources. */
+    public PagedCallSettings.Builder<
+            ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+        listDataSourcesSettings() {
+      return listDataSourcesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataSource. */
+    public UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings() {
+      return getDataSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataSource. */
+    public UnaryCallSettings.Builder<UpdateDataSourceRequest, Operation>
+        updateDataSourceSettings() {
+      return updateDataSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataSource. */
+    public OperationCallSettings.Builder<UpdateDataSourceRequest, DataSource, OperationMetadata>
+        updateDataSourceOperationSettings() {
+      return updateDataSourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeDataSource. */
+    public UnaryCallSettings.Builder<RemoveDataSourceRequest, Operation>
+        removeDataSourceSettings() {
+      return removeDataSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeDataSource. */
+    public OperationCallSettings.Builder<RemoveDataSourceRequest, Empty, OperationMetadata>
+        removeDataSourceOperationSettings() {
+      return removeDataSourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setInternalStatus. */
+    public UnaryCallSettings.Builder<SetInternalStatusRequest, Operation>
+        setInternalStatusSettings() {
+      return setInternalStatusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setInternalStatus. */
+    public OperationCallSettings.Builder<
+            SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
+        setInternalStatusOperationSettings() {
+      return setInternalStatusOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to initiateBackup. */
+    public UnaryCallSettings.Builder<InitiateBackupRequest, InitiateBackupResponse>
+        initiateBackupSettings() {
+      return initiateBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to abandonBackup. */
+    public UnaryCallSettings.Builder<AbandonBackupRequest, Operation> abandonBackupSettings() {
+      return abandonBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to abandonBackup. */
+    public OperationCallSettings.Builder<AbandonBackupRequest, Empty, OperationMetadata>
+        abandonBackupOperationSettings() {
+      return abandonBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finalizeBackup. */
+    public UnaryCallSettings.Builder<FinalizeBackupRequest, Operation> finalizeBackupSettings() {
+      return finalizeBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finalizeBackup. */
+    public OperationCallSettings.Builder<FinalizeBackupRequest, Backup, OperationMetadata>
+        finalizeBackupOperationSettings() {
+      return finalizeBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchAccessToken. */
+    public UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenSettings() {
+      return fetchAccessTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings() {
+      return updateBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings() {
+      return updateBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Backup, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackup. */
+    public UnaryCallSettings.Builder<RestoreBackupRequest, Operation> restoreBackupSettings() {
+      return restoreBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackup. */
+    public OperationCallSettings.Builder<
+            RestoreBackupRequest, RestoreBackupResponse, OperationMetadata>
+        restoreBackupOperationSettings() {
+      return restoreBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPlan. */
+    public UnaryCallSettings.Builder<CreateBackupPlanRequest, Operation>
+        createBackupPlanSettings() {
+      return createBackupPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPlan. */
+    public OperationCallSettings.Builder<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
+        createBackupPlanOperationSettings() {
+      return createBackupPlanOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPlan. */
+    public UnaryCallSettings.Builder<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
+      return getBackupPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPlans. */
+    public PagedCallSettings.Builder<
+            ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
+        listBackupPlansSettings() {
+      return listBackupPlansSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPlan. */
+    public UnaryCallSettings.Builder<DeleteBackupPlanRequest, Operation>
+        deleteBackupPlanSettings() {
+      return deleteBackupPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPlan. */
+    public OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
+        deleteBackupPlanOperationSettings() {
+      return deleteBackupPlanOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPlanAssociation. */
+    public UnaryCallSettings.Builder<CreateBackupPlanAssociationRequest, Operation>
+        createBackupPlanAssociationSettings() {
+      return createBackupPlanAssociationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPlanAssociation. */
+    public OperationCallSettings.Builder<
+            CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+        createBackupPlanAssociationOperationSettings() {
+      return createBackupPlanAssociationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPlanAssociation. */
+    public UnaryCallSettings.Builder<GetBackupPlanAssociationRequest, BackupPlanAssociation>
+        getBackupPlanAssociationSettings() {
+      return getBackupPlanAssociationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPlanAssociations. */
+    public PagedCallSettings.Builder<
+            ListBackupPlanAssociationsRequest,
+            ListBackupPlanAssociationsResponse,
+            ListBackupPlanAssociationsPagedResponse>
+        listBackupPlanAssociationsSettings() {
+      return listBackupPlanAssociationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPlanAssociation. */
+    public UnaryCallSettings.Builder<DeleteBackupPlanAssociationRequest, Operation>
+        deleteBackupPlanAssociationSettings() {
+      return deleteBackupPlanAssociationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPlanAssociation. */
+    public OperationCallSettings.Builder<
+            DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
+        deleteBackupPlanAssociationOperationSettings() {
+      return deleteBackupPlanAssociationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerBackup. */
+    public UnaryCallSettings.Builder<TriggerBackupRequest, Operation> triggerBackupSettings() {
+      return triggerBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerBackup. */
+    public OperationCallSettings.Builder<
+            TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
+        triggerBackupOperationSettings() {
+      return triggerBackupOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -817,12 +2692,6 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     @Override

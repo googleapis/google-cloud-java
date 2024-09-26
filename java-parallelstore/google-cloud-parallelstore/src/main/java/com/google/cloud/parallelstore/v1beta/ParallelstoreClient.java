@@ -94,7 +94,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInstances</td>
- *      <td><p> Lists Instances in a given project and location.</td>
+ *      <td><p> Lists all instances in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -114,7 +114,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetInstance</td>
- *      <td><p> Gets details of a single Instance.</td>
+ *      <td><p> Gets details of a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -153,7 +153,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateInstance</td>
- *      <td><p> Updates the parameters of a single Instance.</td>
+ *      <td><p> Updates the parameters of a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +172,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteInstance</td>
- *      <td><p> Deletes a single Instance.</td>
+ *      <td><p> Deletes a single instance.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +192,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ImportData</td>
- *      <td><p> ImportData copies data from Cloud Storage to Parallelstore.</td>
+ *      <td><p> Copies data from Cloud Storage to Parallelstore.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ExportData</td>
- *      <td><p> ExportData copies data from Parallelstore to Cloud Storage</td>
+ *      <td><p> Copies data from Parallelstore to Cloud Storage.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -382,7 +382,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -401,13 +401,9 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format `projects/{project_id}/locations/{location}`. For Parallelstore locations map to
-   *     Google Cloud zones, for example
-   *     <ul>
-   *       <li>&#42;us-central1-a&#42;&#42;. To retrieve instance information for all locations, use
-   *           "-" for the `{location}` value.
-   *     </ul>
-   *
+   *     the format `projects/{project_id}/locations/{location}`.
+   *     <p>To retrieve instance information for all locations, use "-" as the value of
+   *     `{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(LocationName parent) {
@@ -420,7 +416,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -439,13 +435,9 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format `projects/{project_id}/locations/{location}`. For Parallelstore locations map to
-   *     Google Cloud zones, for example
-   *     <ul>
-   *       <li>&#42;us-central1-a&#42;&#42;. To retrieve instance information for all locations, use
-   *           "-" for the `{location}` value.
-   *     </ul>
-   *
+   *     the format `projects/{project_id}/locations/{location}`.
+   *     <p>To retrieve instance information for all locations, use "-" as the value of
+   *     `{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(String parent) {
@@ -455,7 +447,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -489,7 +481,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -524,7 +516,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists all instances in a given project and location.
    *
    * <p>Sample code:
    *
@@ -564,7 +556,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -592,7 +584,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -619,7 +611,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -647,7 +639,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Instance.
+   * Gets details of a single instance.
    *
    * <p>Sample code:
    *
@@ -694,11 +686,10 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones, for example
-   *     &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones; for
+   *     example, `us-west1-b`.
    * @param instance Required. The instance to create.
-   * @param instanceId Required. The logical name of the Parallelstore instance in the user project
-   *     with the following restrictions:
+   * @param instanceId Required. The name of the Parallelstore instance.
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers, and hyphens.
    *       <li>Must start with a letter.
@@ -742,11 +733,10 @@ public class ParallelstoreClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones, for example
-   *     &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project}/locations/{location}`. Locations map to Google Cloud zones; for
+   *     example, `us-west1-b`.
    * @param instance Required. The instance to create.
-   * @param instanceId Required. The logical name of the Parallelstore instance in the user project
-   *     with the following restrictions:
+   * @param instanceId Required. The name of the Parallelstore instance.
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers, and hyphens.
    *       <li>Must start with a letter.
@@ -865,7 +855,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -882,8 +872,8 @@ public class ParallelstoreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param instance Required. The instance to update
-   * @param updateMask Required. Mask of fields to update .Field mask is used to specify the fields
+   * @param instance Required. The instance to update.
+   * @param updateMask Required. Mask of fields to update. Field mask is used to specify the fields
    *     to be overwritten in the Instance resource by the update. At least one path must be
    *     supplied in this field. The fields specified in the update_mask are relative to the
    *     resource, not the full request.
@@ -898,7 +888,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -929,7 +919,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -960,7 +950,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Instance.
+   * Updates the parameters of a single instance.
    *
    * <p>Sample code:
    *
@@ -990,7 +980,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1017,7 +1007,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1043,7 +1033,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1073,7 +1063,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1103,7 +1093,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Instance.
+   * Deletes a single instance.
    *
    * <p>Sample code:
    *
@@ -1132,7 +1122,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ImportData copies data from Cloud Storage to Parallelstore.
+   * Copies data from Cloud Storage to Parallelstore.
    *
    * <p>Sample code:
    *
@@ -1163,7 +1153,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ImportData copies data from Cloud Storage to Parallelstore.
+   * Copies data from Cloud Storage to Parallelstore.
    *
    * <p>Sample code:
    *
@@ -1194,7 +1184,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ImportData copies data from Cloud Storage to Parallelstore.
+   * Copies data from Cloud Storage to Parallelstore.
    *
    * <p>Sample code:
    *
@@ -1223,7 +1213,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ExportData copies data from Parallelstore to Cloud Storage
+   * Copies data from Parallelstore to Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -1254,7 +1244,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ExportData copies data from Parallelstore to Cloud Storage
+   * Copies data from Parallelstore to Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -1285,7 +1275,7 @@ public class ParallelstoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ExportData copies data from Parallelstore to Cloud Storage
+   * Copies data from Parallelstore to Cloud Storage.
    *
    * <p>Sample code:
    *

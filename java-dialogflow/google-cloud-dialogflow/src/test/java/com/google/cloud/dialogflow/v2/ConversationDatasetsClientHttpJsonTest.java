@@ -99,6 +99,8 @@ public class ConversationDatasetsClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setConversationInfo(ConversationInfo.newBuilder().build())
             .setConversationCount(1994187347)
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -159,6 +161,8 @@ public class ConversationDatasetsClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setConversationInfo(ConversationInfo.newBuilder().build())
             .setConversationCount(1994187347)
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -213,6 +217,8 @@ public class ConversationDatasetsClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setConversationInfo(ConversationInfo.newBuilder().build())
             .setConversationCount(1994187347)
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 

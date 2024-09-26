@@ -236,7 +236,8 @@ public class TermsOfServiceAgreementStateServiceClient implements BackgroundReso
    * }</pre>
    *
    * @param name Required. The resource name of the terms of service version. Format:
-   *     `accounts/{account}/termsOfServiceAgreementState/{identifier}`
+   *     `accounts/{account}/termsOfServiceAgreementState/{identifier}` The identifier format is:
+   *     `{TermsOfServiceKind}-{country}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TermsOfServiceAgreementState getTermsOfServiceAgreementState(
@@ -269,7 +270,8 @@ public class TermsOfServiceAgreementStateServiceClient implements BackgroundReso
    * }</pre>
    *
    * @param name Required. The resource name of the terms of service version. Format:
-   *     `accounts/{account}/termsOfServiceAgreementState/{identifier}`
+   *     `accounts/{account}/termsOfServiceAgreementState/{identifier}` The identifier format is:
+   *     `{TermsOfServiceKind}-{country}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TermsOfServiceAgreementState getTermsOfServiceAgreementState(String name) {

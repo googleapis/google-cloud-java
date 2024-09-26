@@ -83,6 +83,7 @@ public class BusinessInfoServiceClientHttpJsonTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -131,6 +132,7 @@ public class BusinessInfoServiceClientHttpJsonTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -179,6 +181,7 @@ public class BusinessInfoServiceClientHttpJsonTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -189,6 +192,7 @@ public class BusinessInfoServiceClientHttpJsonTest {
             .setPhone(PhoneNumber.newBuilder().build())
             .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
             .setCustomerService(CustomerService.newBuilder().build())
+            .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -225,6 +229,7 @@ public class BusinessInfoServiceClientHttpJsonTest {
               .setPhone(PhoneNumber.newBuilder().build())
               .setPhoneVerificationState(PhoneVerificationState.forNumber(0))
               .setCustomerService(CustomerService.newBuilder().build())
+              .setKoreanBusinessRegistrationNumber("koreanBusinessRegistrationNumber-812236442")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBusinessInfo(businessInfo, updateMask);

@@ -428,7 +428,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     default void listInstances(
@@ -443,7 +443,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     default void getInstance(
@@ -472,7 +472,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     default void updateInstance(
@@ -486,7 +486,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     default void deleteInstance(
@@ -500,7 +500,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ImportData copies data from Cloud Storage to Parallelstore.
+     * Copies data from Cloud Storage to Parallelstore.
      * </pre>
      */
     default void importData(
@@ -513,7 +513,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ExportData copies data from Parallelstore to Cloud Storage
+     * Copies data from Parallelstore to Cloud Storage.
      * </pre>
      */
     default void exportData(
@@ -583,7 +583,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public void listInstances(
@@ -600,7 +600,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public void getInstance(
@@ -633,7 +633,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public void updateInstance(
@@ -649,7 +649,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public void deleteInstance(
@@ -665,7 +665,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ImportData copies data from Cloud Storage to Parallelstore.
+     * Copies data from Cloud Storage to Parallelstore.
      * </pre>
      */
     public void importData(
@@ -679,7 +679,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ExportData copies data from Parallelstore to Cloud Storage
+     * Copies data from Parallelstore to Cloud Storage.
      * </pre>
      */
     public void exportData(
@@ -724,7 +724,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.ListInstancesResponse listInstances(
@@ -737,7 +737,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.Instance getInstance(
@@ -763,7 +763,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
@@ -776,7 +776,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
@@ -789,7 +789,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ImportData copies data from Cloud Storage to Parallelstore.
+     * Copies data from Cloud Storage to Parallelstore.
      * </pre>
      */
     public com.google.longrunning.Operation importData(
@@ -802,7 +802,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ExportData copies data from Parallelstore to Cloud Storage
+     * Copies data from Parallelstore to Cloud Storage.
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
@@ -846,7 +846,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists all instances in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -860,7 +860,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Instance.
+     * Gets details of a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -887,7 +887,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Instance.
+     * Updates the parameters of a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -900,7 +900,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * Deletes a single Instance.
+     * Deletes a single instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -913,7 +913,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ImportData copies data from Cloud Storage to Parallelstore.
+     * Copies data from Cloud Storage to Parallelstore.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -926,7 +926,7 @@ public final class ParallelstoreGrpc {
      *
      *
      * <pre>
-     * ExportData copies data from Parallelstore to Cloud Storage
+     * Copies data from Parallelstore to Cloud Storage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

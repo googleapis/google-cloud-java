@@ -38,6 +38,24 @@
  *   DataSource response = dataSourcesServiceClient.getDataSource(name);
  * }
  * }</pre>
+ *
+ * <p>======================= FileUploadsServiceClient =======================
+ *
+ * <p>Service Description: Service to manage data source file uploads.
+ *
+ * <p>Sample for FileUploadsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FileUploadsServiceClient fileUploadsServiceClient = FileUploadsServiceClient.create()) {
+ *   FileUploadName name = FileUploadName.of("[ACCOUNT]", "[DATASOURCE]", "[FILEUPLOAD]");
+ *   FileUpload response = fileUploadsServiceClient.getFileUpload(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.shopping.merchant.datasources.v1beta;
