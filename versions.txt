@@ -14,7 +14,7 @@ grpc-google-cloud-aiplatform-v1:3.52.0:3.52.0
 grpc-google-cloud-aiplatform-v1beta1:0.68.0:0.68.0
 proto-google-cloud-aiplatform-v1:3.52.0:3.52.0
 proto-google-cloud-aiplatform-v1beta1:0.68.0:0.68.0
-google-analytics-admin:0.2.0:0.2.0
+google-analytics-admin:0.61.0:0.61.0
 grpc-google-analytics-admin-v1alpha:0.61.0:0.61.0
 proto-google-analytics-admin-v1alpha:0.61.0:0.61.0
 proto-google-analytics-admin-v1beta:0.61.0:0.61.0
