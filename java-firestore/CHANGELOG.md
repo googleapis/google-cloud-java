@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.26.4](https://github.com/googleapis/java-firestore/compare/v3.26.3...v3.26.4) (2024-09-27)
+
+
+### Features
+
+* Java record serialization/deserialization ([#1842](https://github.com/googleapis/java-firestore/issues/1842)) ([aff93bf](https://github.com/googleapis/java-firestore/commit/aff93bfbf1d39188a050f4423bddd26a1390dad8))
+
+
+### Bug Fixes
+
+* Fix clirr check failure ([#1841](https://github.com/googleapis/java-firestore/issues/1841)) ([b8b995f](https://github.com/googleapis/java-firestore/commit/b8b995f543de95fb35d6568570b625ddcccfdb6a))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.0 ([#1843](https://github.com/googleapis/java-firestore/issues/1843)) ([4ef02c3](https://github.com/googleapis/java-firestore/commit/4ef02c34c03c00c924aadeee281b3d1a5f523234))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#1847](https://github.com/googleapis/java-firestore/issues/1847)) ([7415278](https://github.com/googleapis/java-firestore/commit/74152785d92b866a8bc39b908e9079c446abf894))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.32.0 ([#1845](https://github.com/googleapis/java-firestore/issues/1845)) ([310d680](https://github.com/googleapis/java-firestore/commit/310d68093b29584e13d1f651a981768225d1c716))
+* Update dependency ubuntu to v24 ([#1848](https://github.com/googleapis/java-firestore/issues/1848)) ([c60fb51](https://github.com/googleapis/java-firestore/commit/c60fb51c213fd81907138825651f12fe598fdce8))
+
 ## [3.26.3](https://github.com/googleapis/java-firestore/compare/v3.26.2...v3.26.3) (2024-09-18)
 
 
