@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.44.1](https://github.com/googleapis/java-bigtable/compare/v2.44.0...v2.44.1) (2024-09-26)
+
+
+### Bug Fixes
+
+* Add RetryCallable to the callable chain ([#2348](https://github.com/googleapis/java-bigtable/issues/2348)) ([0330d77](https://github.com/googleapis/java-bigtable/commit/0330d77ac29d47e8610ddd23c324a55d1f9912cb))
+* Pass deadline through ExecuteQuery RetrySettings ([#2355](https://github.com/googleapis/java-bigtable/issues/2355)) ([6bc9820](https://github.com/googleapis/java-bigtable/commit/6bc98202897cebe09be8a4a78316cf5463106866))
+* Time based flakiness in execute query deadline test ([#2358](https://github.com/googleapis/java-bigtable/issues/2358)) ([b474173](https://github.com/googleapis/java-bigtable/commit/b474173a778cba273d2713e667000c5633de75bd))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#2351](https://github.com/googleapis/java-bigtable/issues/2351)) ([40c428e](https://github.com/googleapis/java-bigtable/commit/40c428ec8e8cccb4dc3bb10d6674c94e9527e797))
+
 ## [2.44.0](https://github.com/googleapis/java-bigtable/compare/v2.43.0...v2.44.0) (2024-09-16)
 
 
