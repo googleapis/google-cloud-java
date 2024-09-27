@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.45.0](https://github.com/googleapis/google-cloud-java/compare/v1.44.0...v1.45.0) (2024-09-27)
+
+
+### Bug Fixes
+
+* revert "feat: [marketingplatformadminapi] new module for marketingplatformadminapi ([#11194](https://github.com/googleapis/google-cloud-java/issues/11194))" ([#11196](https://github.com/googleapis/google-cloud-java/issues/11196)) ([8743a89](https://github.com/googleapis/google-cloud-java/commit/8743a89d2236d957d765184516fc5f55ce9ff134))
+
 ## [1.44.0](https://github.com/googleapis/google-cloud-java/compare/v1.43.0...v1.44.0) (2024-09-26)
 
 
