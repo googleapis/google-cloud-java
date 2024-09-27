@@ -27,7 +27,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-admin</artifactId>
-        <version>3.45.0</version><!-- {x-version-update:google-iam-admin:current} -->
+        <version>0.1.0</version><!-- {x-version-update:google-iam-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

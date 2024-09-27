@@ -27,7 +27,7 @@
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin</artifactId>
-        <version>0.60.0</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <version>0.1.0</version><!-- {x-version-update:google-analytics-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
