@@ -24,7 +24,7 @@
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin-bom</artifactId>
-        <version>0.2.0</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <version>0.61.0</version><!-- {x-version-update:google-analytics-admin:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
