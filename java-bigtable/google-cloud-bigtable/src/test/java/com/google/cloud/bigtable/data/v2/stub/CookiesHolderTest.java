@@ -63,6 +63,7 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -94,9 +95,9 @@ public class CookiesHolderTest {
   private final FakeService fakeService = new FakeService();
   private BigtableDataSettings.Builder settings;
   private BigtableDataClient client;
-  private final List<Metadata> serverMetadata = new ArrayList<>();
+  private final List<Metadata> serverMetadata = Collections.synchronizedList(new ArrayList<>());
 
-  private final Set<String> methods = new HashSet<>();
+  private final Set<String> methods = Collections.synchronizedSet(new HashSet<>());
 
   @Before
   public void setup() throws Exception {
@@ -111,13 +112,17 @@ public class CookiesHolderTest {
             if (metadata.containsKey(ROUTING_COOKIE_1)) {
               methods.add(serverCall.getMethodDescriptor().getBareMethodName());
             }
+
+            Metadata responseHeaders = new Metadata();
+            responseHeaders.put(ROUTING_COOKIE_HEADER, testHeaderCookie);
+            responseHeaders.put(ROUTING_COOKIE_1, routingCookie1Header);
+            serverCall.sendHeaders(responseHeaders);
+
             return serverCallHandler.startCall(
                 new ForwardingServerCall.SimpleForwardingServerCall<ReqT, RespT>(serverCall) {
                   @Override
                   public void sendHeaders(Metadata responseHeaders) {
-                    responseHeaders.put(ROUTING_COOKIE_HEADER, testHeaderCookie);
-                    responseHeaders.put(ROUTING_COOKIE_1, routingCookie1Header);
-                    super.sendHeaders(responseHeaders);
+                    // headers already sent!
                   }
                 },
                 metadata);
@@ -450,8 +455,8 @@ public class CookiesHolderTest {
 
     Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
 
-    assertThat(lastMetadata)
-        .doesNotContainKeys(ROUTING_COOKIE_1.name(), ROUTING_COOKIE_2.name(), BAD_KEY.name());
+    assertThat(lastMetadata).doesNotContainKeys(ROUTING_COOKIE_2.name(), BAD_KEY.name());
+    assertThat(lastMetadata).containsAtLeast(ROUTING_COOKIE_1.name(), routingCookie1Header);
 
     serverMetadata.clear();
   }
@@ -657,7 +662,7 @@ public class CookiesHolderTest {
 
   static class FakeService extends BigtableGrpc.BigtableImplBase {
 
-    private boolean returnCookie = true;
+    private volatile boolean returnCookie = true;
     private final AtomicInteger count = new AtomicInteger();
 
     @Override
@@ -666,7 +671,6 @@ public class CookiesHolderTest {
       if (count.getAndIncrement() < 1) {
         Metadata trailers = new Metadata();
         maybePopulateCookie(trailers, "readRows");
-        responseObserver.onNext(ReadRowsResponse.getDefaultInstance());
         StatusRuntimeException exception = new StatusRuntimeException(Status.UNAVAILABLE, trailers);
         responseObserver.onError(exception);
         return;
@@ -681,7 +685,6 @@ public class CookiesHolderTest {
       if (count.getAndIncrement() < 1) {
         Metadata trailers = new Metadata();
         maybePopulateCookie(trailers, "mutateRow");
-        responseObserver.onNext(MutateRowResponse.getDefaultInstance());
         StatusRuntimeException exception = new StatusRuntimeException(Status.UNAVAILABLE, trailers);
         responseObserver.onError(exception);
         return;
@@ -696,7 +699,6 @@ public class CookiesHolderTest {
       if (count.getAndIncrement() < 1) {
         Metadata trailers = new Metadata();
         maybePopulateCookie(trailers, "mutateRows");
-        responseObserver.onNext(MutateRowsResponse.getDefaultInstance());
         StatusRuntimeException exception = new StatusRuntimeException(Status.UNAVAILABLE, trailers);
         responseObserver.onError(exception);
         return;
@@ -714,7 +716,6 @@ public class CookiesHolderTest {
       if (count.getAndIncrement() < 1) {
         Metadata trailers = new Metadata();
         maybePopulateCookie(trailers, "sampleRowKeys");
-        responseObserver.onNext(SampleRowKeysResponse.getDefaultInstance());
         StatusRuntimeException exception = new StatusRuntimeException(Status.UNAVAILABLE, trailers);
         responseObserver.onError(exception);
         return;
