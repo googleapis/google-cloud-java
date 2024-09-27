@@ -810,6 +810,3 @@ grpc-google-cloud-connectgateway-v1:0.2.0:0.2.0
 google-maps-area-insights:0.1.0:0.1.0
 proto-google-maps-area-insights-v1:0.1.0:0.1.0
 grpc-google-maps-area-insights-v1:0.1.0:0.1.0
-admin:0.1.0:0.1.0
-proto-admin-v1alpha:0.1.0:0.1.0
-grpc-admin-v1alpha:0.1.0:0.1.0
