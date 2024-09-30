@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-firestore</artifactId>
-      <version>3.26.3</version>
+      <version>3.26.4</version>
     </dependency>
 
     <dependency>
