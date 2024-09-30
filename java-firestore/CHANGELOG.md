@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.26.5](https://github.com/googleapis/java-firestore/compare/v3.26.4...v3.26.5) (2024-09-30)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.46.1 ([f9ddf32](https://github.com/googleapis/java-firestore/commit/f9ddf32e6a9c071d5008b101523b83ffbacf712e))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.51.0 ([#1852](https://github.com/googleapis/java-firestore/issues/1852)) ([1efbb10](https://github.com/googleapis/java-firestore/commit/1efbb10c20b7cb3e696b14867b1149d83cb53a16))
+* Update dependency com.google.cloud:google-cloud-trace to v2.51.0 ([#1853](https://github.com/googleapis/java-firestore/issues/1853)) ([e674b7a](https://github.com/googleapis/java-firestore/commit/e674b7a77915a5f55582ee54f5304ea958e274b4))
+
 ## [3.26.4](https://github.com/googleapis/java-firestore/compare/v3.26.3...v3.26.4) (2024-09-27)
 
 
