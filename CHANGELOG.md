@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.22.0](https://github.com/googleapis/java-datastore/compare/v2.21.3...v2.22.0) (2024-09-26)
+
+
+### Features
+
+* Add sample code for multiple inequalities indexing consideration query ([#1579](https://github.com/googleapis/java-datastore/issues/1579)) ([1286792](https://github.com/googleapis/java-datastore/commit/1286792d7b49229d698df652cd117d229a5cd97e))
+* Introducing Tracing with OpenTelemetry API [#1537](https://github.com/googleapis/java-datastore/issues/1537) ([#1576](https://github.com/googleapis/java-datastore/issues/1576)) ([5440c22](https://github.com/googleapis/java-datastore/commit/5440c22364074c108450c3a748a6a17d5f1dddda))
+
+
+### Bug Fixes
+
+* Update opentelemetry-sdk dependency to be test-only ([#1595](https://github.com/googleapis/java-datastore/issues/1595)) ([9d719e8](https://github.com/googleapis/java-datastore/commit/9d719e809ea830d8602399b72e432580f14ae6bd))
+* Update opentelemetry.version to 1.42.1 to match the BOM version ([#1598](https://github.com/googleapis/java-datastore/issues/1598)) ([23c5c26](https://github.com/googleapis/java-datastore/commit/23c5c2662117370c66c611604c56b878d41f4738))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.43.0 ([#1584](https://github.com/googleapis/java-datastore/issues/1584)) ([fae3b74](https://github.com/googleapis/java-datastore/commit/fae3b74eaa3494a27fd43f56435c01e8fc09e5ee))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.0 ([#1590](https://github.com/googleapis/java-datastore/issues/1590)) ([2db9e43](https://github.com/googleapis/java-datastore/commit/2db9e439189baf8f97127f6cff1de5d47efb0073))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#1602](https://github.com/googleapis/java-datastore/issues/1602)) ([e1b7d4b](https://github.com/googleapis/java-datastore/commit/e1b7d4b205312d7d4c2a285f3d1f61388da65c83))
+* Update dependency com.google.guava:guava-testlib to v33.3.1-jre ([#1592](https://github.com/googleapis/java-datastore/issues/1592)) ([5d078a4](https://github.com/googleapis/java-datastore/commit/5d078a4b294d071716f51f0d4b9baa5d65a0fe90))
+* Update dependency com.google.testparameterinjector:test-parameter-injector to v1.17 ([#1585](https://github.com/googleapis/java-datastore/issues/1585)) ([8f74a49](https://github.com/googleapis/java-datastore/commit/8f74a49c5982d00bd168e78671163683f7b41126))
+
 ## [2.21.3](https://github.com/googleapis/java-datastore/compare/v2.21.2...v2.21.3) (2024-09-11)
 
 
