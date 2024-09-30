@@ -21,7 +21,7 @@ on:
 
 jobs:
   update-generation-config:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     env:
       # the branch into which the pull request is merged
       base_branch: main
