@@ -188,7 +188,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: cloud.google.com/beyondcorp-enterprise/
+[product-docs]: https://cloud.google.com/beyondcorp-enterprise/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-beyondcorp-appconnectors/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
@@ -202,7 +202,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-beyondcorp-appconnectors.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-beyondcorp-appconnectors/0.47.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-beyondcorp-appconnectors/0.49.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
