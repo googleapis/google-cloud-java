@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.132.4](https://github.com/googleapis/java-pubsub/compare/v1.132.3...v1.132.4) (2024-09-30)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.43.1 ([#2194](https://github.com/googleapis/java-pubsub/issues/2194)) ([979e420](https://github.com/googleapis/java-pubsub/commit/979e420377327cf3843ac23151d8b44a7e5188c5))
+* Update dependency ubuntu to v24 ([#2193](https://github.com/googleapis/java-pubsub/issues/2193)) ([f295b01](https://github.com/googleapis/java-pubsub/commit/f295b01cb93fe26612c79c3d2ba0bb68f0404d7e))
+
 ## [1.132.3](https://github.com/googleapis/java-pubsub/compare/v1.132.2...v1.132.3) (2024-09-26)
 
 
