@@ -2111,9 +2111,13 @@ public class ITBigQueryTest {
   public void testCreateExternalTable() throws InterruptedException {
     String tableName = "test_create_external_table";
     TableId tableId = TableId.of(DATASET, tableName);
+
     ExternalTableDefinition externalTableDefinition =
         ExternalTableDefinition.of(
-            "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json());
+                "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json())
+            .toBuilder()
+            .setMaxStaleness("INTERVAL 15 MINUTE")
+            .build();
     TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
     Table createdTable = bigquery.create(tableInfo);
     assertNotNull(createdTable);

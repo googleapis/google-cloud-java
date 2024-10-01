@@ -59,8 +59,8 @@ public class ExternalTableDefinitionTest {
           .setSourceUriPrefix(SOURCE_URIS.get(0))
           .build();
   private static final String OBJECT_METADATA = "SIMPLE";
-
   private static final String METADATA_CACHE_MODE = "AUTOMATIC";
+  private static final String MAX_STALENESS = "INTERVAL 15 MINUTE";
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setFileSetSpecType("FILE_SET_SPEC_TYPE_FILE_SYSTEM_MATCH")
@@ -73,6 +73,7 @@ public class ExternalTableDefinitionTest {
           .setHivePartitioningOptions(HIVE_PARTITIONING_OPTIONS)
           .setObjectMetadata(OBJECT_METADATA)
           .setMetadataCacheMode(METADATA_CACHE_MODE)
+          .setMaxStaleness(MAX_STALENESS)
           .build();
 
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION_AVRO =
@@ -174,5 +175,6 @@ public class ExternalTableDefinitionTest {
     assertEquals(expected.getHivePartitioningOptions(), value.getHivePartitioningOptions());
     assertEquals(expected.getObjectMetadata(), value.getObjectMetadata());
     assertEquals(expected.getMetadataCacheMode(), value.getMetadataCacheMode());
+    assertEquals(expected.getMaxStaleness(), value.getMaxStaleness());
   }
 }

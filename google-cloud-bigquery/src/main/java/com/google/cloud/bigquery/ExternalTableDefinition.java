@@ -200,6 +200,20 @@ public abstract class ExternalTableDefinition extends TableDefinition {
 
     abstract Builder setMetadataCacheModeInner(String metadataCacheMode);
 
+    /**
+     * [Optional] Metadata Cache Mode for the table. Set this to enable caching of metadata from
+     * external data source.
+     *
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+     *     MaxStaleness</a>
+     */
+    public Builder setMaxStaleness(String maxStaleness) {
+      return setMaxStalenessInner(maxStaleness);
+    }
+
+    abstract Builder setMaxStalenessInner(String maxStaleness);
+
     /** Creates an {@code ExternalTableDefinition} object. */
     @Override
     public abstract ExternalTableDefinition build();
@@ -306,6 +320,22 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   abstract String getMetadataCacheModeInner();
 
   /**
+   * Returns the maximum staleness of data that could be returned when the table is queried.
+   * Staleness encoded as a string encoding of sql IntervalValue type.
+   *
+   * @see <a
+   *     href="hhttps://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+   *     MaxStaleness</a>
+   */
+  @Nullable
+  public String getMaxStaleness() {
+    return getMaxStalenessInner();
+  }
+
+  @Nullable
+  abstract String getMaxStalenessInner();
+
+  /**
    * Returns the source format, and possibly some parsing options, of the external data. Supported
    * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
    */
@@ -351,6 +381,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   com.google.api.services.bigquery.model.Table toPb() {
     Table tablePb = super.toPb();
     tablePb.setExternalDataConfiguration(toExternalDataConfigurationPb());
+    if (getMaxStaleness() != null) {
+      tablePb.setMaxStaleness(getMaxStaleness());
+    }
     return tablePb;
   }
 
@@ -615,6 +648,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       }
       if (externalDataConfiguration.getMetadataCacheMode() != null) {
         builder.setMetadataCacheMode(externalDataConfiguration.getMetadataCacheMode());
+      }
+      if (tablePb.getMaxStaleness() != null) {
+        builder.setMaxStaleness(tablePb.getMaxStaleness());
       }
     }
     return builder.build();
