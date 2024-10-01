@@ -22,10 +22,12 @@ import java.util.Optional;
 public class AckRequestData {
   private final String ackId;
   private final Optional<SettableApiFuture<AckResponse>> messageFuture;
+  private PubsubMessageWrapper messageWrapper;
 
   protected AckRequestData(Builder builder) {
     this.ackId = builder.ackId;
     this.messageFuture = builder.messageFuture;
+    this.messageWrapper = builder.messageWrapper;
   }
 
   public String getAckId() {
@@ -34,6 +36,17 @@ public class AckRequestData {
 
   public SettableApiFuture<AckResponse> getMessageFutureIfExists() {
     return this.messageFuture.orElse(null);
+  }
+
+  /**
+   * Returns an empty PubsubMessageWrapper with OpenTelemetry tracing disabled. This allows methods
+   * that use this method to be unit tested.
+   */
+  public PubsubMessageWrapper getMessageWrapper() {
+    if (this.messageWrapper == null) {
+      return PubsubMessageWrapper.newBuilder(null, null).build();
+    }
+    return messageWrapper;
   }
 
   public AckRequestData setResponse(AckResponse ackResponse, boolean setResponseOnSuccess) {
@@ -68,6 +81,7 @@ public class AckRequestData {
   protected static final class Builder {
     private final String ackId;
     private Optional<SettableApiFuture<AckResponse>> messageFuture = Optional.empty();
+    private PubsubMessageWrapper messageWrapper;
 
     protected Builder(String ackId) {
       this.ackId = ackId;
@@ -75,6 +89,11 @@ public class AckRequestData {
 
     public Builder setMessageFuture(SettableApiFuture<AckResponse> messageFuture) {
       this.messageFuture = Optional.of(messageFuture);
+      return this;
+    }
+
+    public Builder setMessageWrapper(PubsubMessageWrapper messageWrapper) {
+      this.messageWrapper = messageWrapper;
       return this;
     }
 

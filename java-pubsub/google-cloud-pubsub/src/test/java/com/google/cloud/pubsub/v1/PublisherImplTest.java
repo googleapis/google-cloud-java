@@ -48,6 +48,12 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.sdk.testing.assertj.OpenTelemetryAssertions;
+import io.opentelemetry.sdk.testing.assertj.SpanDataAssert;
+import io.opentelemetry.sdk.testing.junit4.OpenTelemetryRule;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -73,6 +79,11 @@ public class PublisherImplTest {
 
   private static final TransportChannelProvider TEST_CHANNEL_PROVIDER =
       LocalChannelProvider.create("test-server");
+
+  private static final String PUBLISHER_SPAN_NAME = TEST_TOPIC.getTopic() + " create";
+  private static final String PUBLISH_FLOW_CONTROL_SPAN_NAME = "publisher flow control";
+  private static final String PUBLISH_BATCHING_SPAN_NAME = "publisher batching";
+  private static final String PUBLISH_RPC_SPAN_NAME = TEST_TOPIC.getTopic() + " publish";
 
   private FakeScheduledExecutorService fakeExecutor;
 
@@ -1302,6 +1313,70 @@ public class PublisherImplTest {
     response3Sent.countDown();
 
     publish4Completed.await();
+  }
+
+  @Test
+  public void testPublishOpenTelemetryTracing() throws Exception {
+    OpenTelemetryRule openTelemetryTesting = OpenTelemetryRule.create();
+    OpenTelemetry openTelemetry = openTelemetryTesting.getOpenTelemetry();
+    final Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setFlowControlSettings(
+                        FlowControlSettings.newBuilder()
+                            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
+                            .setMaxOutstandingElementCount(2L)
+                            .setMaxOutstandingRequestBytes(100L)
+                            .build())
+                    .build())
+            .setOpenTelemetry(openTelemetry)
+            .setEnableOpenTelemetryTracing(true)
+            .build();
+
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+    ApiFuture<String> publishFuture = sendTestMessage(publisher, "A");
+    fakeExecutor.advanceTime(Duration.ofSeconds(5));
+    assertEquals("1", publishFuture.get());
+    fakeExecutor.advanceTime(Duration.ofSeconds(5));
+
+    List<SpanData> allSpans = openTelemetryTesting.getSpans();
+    assertEquals(4, allSpans.size());
+    SpanData flowControlSpanData = allSpans.get(0);
+    SpanData batchingSpanData = allSpans.get(1);
+    SpanData publishRpcSpanData = allSpans.get(2);
+    SpanData publisherSpanData = allSpans.get(3);
+
+    SpanDataAssert flowControlSpanDataAssert =
+        OpenTelemetryAssertions.assertThat(flowControlSpanData);
+    flowControlSpanDataAssert
+        .hasName(PUBLISH_FLOW_CONTROL_SPAN_NAME)
+        .hasParent(publisherSpanData)
+        .hasEnded();
+
+    SpanDataAssert batchingSpanDataAssert = OpenTelemetryAssertions.assertThat(batchingSpanData);
+    batchingSpanDataAssert
+        .hasName(PUBLISH_BATCHING_SPAN_NAME)
+        .hasParent(publisherSpanData)
+        .hasEnded();
+
+    SpanDataAssert publishRpcSpanDataAssert =
+        OpenTelemetryAssertions.assertThat(publishRpcSpanData);
+    publishRpcSpanDataAssert
+        .hasName(PUBLISH_RPC_SPAN_NAME)
+        .hasKind(SpanKind.CLIENT)
+        .hasNoParent()
+        .hasEnded();
+
+    SpanDataAssert publishSpanDataAssert = OpenTelemetryAssertions.assertThat(publisherSpanData);
+    publishSpanDataAssert
+        .hasName(PUBLISHER_SPAN_NAME)
+        .hasKind(SpanKind.PRODUCER)
+        .hasNoParent()
+        .hasEnded();
   }
 
   private Builder getTestPublisherBuilder() {

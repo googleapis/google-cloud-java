@@ -92,6 +92,11 @@
       <artifactId>google-cloud-storage</artifactId>
       <version>2.43.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-trace</artifactId>
+      <version>0.31.0</version>
+    </dependency>
   </dependencies>
 
   <!-- compile and run all snippet tests -->

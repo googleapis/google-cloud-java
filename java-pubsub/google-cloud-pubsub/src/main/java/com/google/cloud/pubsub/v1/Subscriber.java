@@ -43,6 +43,8 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +119,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
+  private static final String OPEN_TELEMETRY_TRACER_NAME = "com.google.cloud.pubsub.v1";
+
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final boolean useLegacyFlowControl;
@@ -144,6 +148,10 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final ApiClock clock;
   private final List<BackgroundResource> backgroundResources = new ArrayList<>();
+
+  private final boolean enableOpenTelemetryTracing;
+  private final OpenTelemetry openTelemetry;
+  private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
@@ -197,6 +205,16 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
       // TODO(pongad): what about internal header??
     } catch (Exception e) {
       throw new IllegalStateException(e);
+    }
+
+    this.enableOpenTelemetryTracing = builder.enableOpenTelemetryTracing;
+    this.openTelemetry = builder.openTelemetry;
+    if (this.openTelemetry != null && this.enableOpenTelemetryTracing) {
+      Tracer openTelemetryTracer = builder.openTelemetry.getTracer(OPEN_TELEMETRY_TRACER_NAME);
+      if (openTelemetryTracer != null) {
+        this.tracer =
+            new OpenTelemetryPubsubTracer(openTelemetryTracer, this.enableOpenTelemetryTracing);
+      }
     }
 
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numPullers);
@@ -386,6 +404,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 .setExecutor(executor)
                 .setSystemExecutor(alarmsExecutor)
                 .setClock(clock)
+                .setEnableOpenTelemetryTracing(enableOpenTelemetryTracing)
+                .setTracer(tracer)
                 .build();
 
         streamingSubscriberConnections.add(streamingSubscriberConnection);
@@ -494,6 +514,9 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private int parallelPullCount = 1;
     private String endpoint = null;
     private String universeDomain = null;
+
+    private boolean enableOpenTelemetryTracing = false;
+    private OpenTelemetry openTelemetry = null;
 
     Builder(String subscription, MessageReceiver receiver) {
       this.subscription = subscription;
@@ -681,6 +704,26 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
+      return this;
+    }
+
+    /**
+     * OpenTelemetry will be enabled if setEnableOpenTelemetry is true and and instance of
+     * OpenTelemetry has been provied. Warning: traces are subject to change. The name and
+     * attributes of a span might change without notice. Only use run traces interactively. Don't
+     * use in automation. Running non-interactive traces can cause problems if the underlying trace
+     * architecture changes without notice.
+     */
+
+    /** Gives the ability to enable Open Telemetry Tracing */
+    public Builder setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
+      this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
+      return this;
+    }
+
+    /** Sets the instance of OpenTelemetry for the Publisher class. */
+    public Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
+      this.openTelemetry = openTelemetry;
       return this;
     }
 

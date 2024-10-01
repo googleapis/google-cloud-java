@@ -21,6 +21,7 @@ import java.util.*;
 class ModackRequestData {
   private final int deadlineExtensionSeconds;
   private List<AckRequestData> ackRequestData;
+  private boolean isReceiptModack;
 
   ModackRequestData(int deadlineExtensionSeconds) {
     this.deadlineExtensionSeconds = deadlineExtensionSeconds;
@@ -45,8 +46,17 @@ class ModackRequestData {
     return ackRequestData;
   }
 
+  public boolean getIsReceiptModack() {
+    return isReceiptModack;
+  }
+
   public ModackRequestData addAckRequestData(AckRequestData ackRequestData) {
     this.ackRequestData.add(ackRequestData);
+    return this;
+  }
+
+  public ModackRequestData setIsReceiptModack(boolean isReceiptModack) {
+    this.isReceiptModack = isReceiptModack;
     return this;
   }
 }
