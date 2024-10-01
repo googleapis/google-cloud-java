@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.133.0](https://github.com/googleapis/java-pubsub/compare/v1.132.4...v1.133.0) (2024-10-01)
+
+
+### Features
+
+* Add OpenTelemetry tracing to the Publisher and Subscriber ([#2086](https://github.com/googleapis/java-pubsub/issues/2086)) ([db522b6](https://github.com/googleapis/java-pubsub/commit/db522b60f1bbec9cc1bfa0c37477044fd2f807c7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.32.0 ([#2205](https://github.com/googleapis/java-pubsub/issues/2205)) ([76f17e4](https://github.com/googleapis/java-pubsub/commit/76f17e4149bf369f2be12fe9d316a23a7f49f137))
+* Update dependency org.assertj:assertj-core to v3.26.3 ([#2204](https://github.com/googleapis/java-pubsub/issues/2204)) ([71c2e76](https://github.com/googleapis/java-pubsub/commit/71c2e762e94895c465c4e737ed8bf7bc583a9c14))
+
 ## [1.132.4](https://github.com/googleapis/java-pubsub/compare/v1.132.3...v1.132.4) (2024-09-30)
 
 
