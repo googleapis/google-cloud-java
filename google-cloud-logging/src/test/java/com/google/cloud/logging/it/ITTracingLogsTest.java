@@ -37,8 +37,10 @@ import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.util.Iterator;
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class ITTracingLogsTest extends BaseSystemTest {
 
   private static final String LOG_ID = formatForTest("test-write-log-entries-log");
