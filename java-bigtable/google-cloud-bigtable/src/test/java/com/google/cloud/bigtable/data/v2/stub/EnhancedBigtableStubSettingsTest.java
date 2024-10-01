@@ -81,6 +81,7 @@ public class EnhancedBigtableStubSettingsTest {
     Duration watchdogInterval = Duration.ofSeconds(12);
     boolean enableRoutingCookie = false;
     boolean enableRetryInfo = false;
+    String metricsEndpoint = "test-endpoint:443";
 
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
@@ -93,7 +94,8 @@ public class EnhancedBigtableStubSettingsTest {
             .setStreamWatchdogProvider(watchdogProvider)
             .setStreamWatchdogCheckInterval(watchdogInterval)
             .setEnableRoutingCookie(enableRoutingCookie)
-            .setEnableRetryInfo(enableRetryInfo);
+            .setEnableRetryInfo(enableRetryInfo)
+            .setMetricsEndpoint(metricsEndpoint);
 
     verifyBuilder(
         builder,
@@ -106,7 +108,8 @@ public class EnhancedBigtableStubSettingsTest {
         watchdogProvider,
         watchdogInterval,
         enableRoutingCookie,
-        enableRetryInfo);
+        enableRetryInfo,
+        metricsEndpoint);
     verifySettings(
         builder.build(),
         projectId,
@@ -118,7 +121,8 @@ public class EnhancedBigtableStubSettingsTest {
         watchdogProvider,
         watchdogInterval,
         enableRoutingCookie,
-        enableRetryInfo);
+        enableRetryInfo,
+        metricsEndpoint);
     verifyBuilder(
         builder.build().toBuilder(),
         projectId,
@@ -130,7 +134,8 @@ public class EnhancedBigtableStubSettingsTest {
         watchdogProvider,
         watchdogInterval,
         enableRoutingCookie,
-        enableRetryInfo);
+        enableRetryInfo,
+        metricsEndpoint);
   }
 
   private void verifyBuilder(
@@ -144,7 +149,8 @@ public class EnhancedBigtableStubSettingsTest {
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval,
       boolean enableRoutingCookie,
-      boolean enableRetryInfo) {
+      boolean enableRetryInfo,
+      String metricsEndpoint) {
     assertThat(builder.getProjectId()).isEqualTo(projectId);
     assertThat(builder.getInstanceId()).isEqualTo(instanceId);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
@@ -155,6 +161,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(builder.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
     assertThat(builder.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
+    assertThat(builder.getMetricsEndpoint()).isEqualTo(metricsEndpoint);
   }
 
   private void verifySettings(
@@ -168,7 +175,8 @@ public class EnhancedBigtableStubSettingsTest {
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval,
       boolean enableRoutingCookie,
-      boolean enableRetryInfo) {
+      boolean enableRetryInfo,
+      String metricsEndpoint) {
     assertThat(settings.getProjectId()).isEqualTo(projectId);
     assertThat(settings.getInstanceId()).isEqualTo(instanceId);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
@@ -179,6 +187,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(settings.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
     assertThat(settings.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
+    assertThat(settings.getMetricsEndpoint()).isEqualTo(metricsEndpoint);
   }
 
   @Test
@@ -965,6 +974,7 @@ public class EnhancedBigtableStubSettingsTest {
     "pingAndWarmSettings",
     "executeQuerySettings",
     "metricsProvider",
+    "metricsEndpoint",
   };
 
   @Test

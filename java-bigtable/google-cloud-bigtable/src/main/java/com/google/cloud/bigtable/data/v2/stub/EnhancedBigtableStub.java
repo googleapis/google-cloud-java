@@ -223,7 +223,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
           getOpenTelemetry(
               settings.getProjectId(),
               settings.getMetricsProvider(),
-              clientContext.getCredentials());
+              clientContext.getCredentials(),
+              settings.getMetricsEndpoint());
     } catch (Throwable t) {
       logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
     }
@@ -268,7 +269,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
       // We don't want client side metrics to crash the client, so catch any exception when getting
       // the OTEL instance and log the exception instead.
       openTelemetry =
-          getOpenTelemetry(settings.getProjectId(), settings.getMetricsProvider(), credentials);
+          getOpenTelemetry(
+              settings.getProjectId(),
+              settings.getMetricsProvider(),
+              credentials,
+              settings.getMetricsEndpoint());
     } catch (Throwable t) {
       logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
     }
@@ -378,7 +383,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   @Nullable
   public static OpenTelemetry getOpenTelemetry(
-      String projectId, MetricsProvider metricsProvider, @Nullable Credentials defaultCredentials)
+      String projectId,
+      MetricsProvider metricsProvider,
+      @Nullable Credentials defaultCredentials,
+      @Nullable String metricsEndpoint)
       throws IOException {
     if (metricsProvider instanceof CustomOpenTelemetryMetricsProvider) {
       CustomOpenTelemetryMetricsProvider customMetricsProvider =
@@ -390,7 +398,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
               ? BigtableDataSettings.getMetricsCredentials()
               : defaultCredentials;
       DefaultMetricsProvider defaultMetricsProvider = (DefaultMetricsProvider) metricsProvider;
-      return defaultMetricsProvider.getOpenTelemetry(projectId, credentials);
+      return defaultMetricsProvider.getOpenTelemetry(projectId, metricsEndpoint, credentials);
     } else if (metricsProvider instanceof NoopMetricsProvider) {
       return null;
     }

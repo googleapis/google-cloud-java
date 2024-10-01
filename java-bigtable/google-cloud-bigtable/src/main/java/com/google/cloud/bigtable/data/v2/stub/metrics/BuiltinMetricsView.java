@@ -37,7 +37,7 @@ public class BuiltinMetricsView {
 
   /**
    * Register built-in metrics on the {@link SdkMeterProviderBuilder} with application default
-   * credentials.
+   * credentials and default endpoint.
    */
   public static void registerBuiltinMetrics(String projectId, SdkMeterProviderBuilder builder)
       throws IOException {
@@ -45,11 +45,28 @@ public class BuiltinMetricsView {
         projectId, GoogleCredentials.getApplicationDefault(), builder);
   }
 
-  /** Register built-in metrics on the {@link SdkMeterProviderBuilder} with credentials. */
+  /**
+   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
+   * default endpoint.
+   */
   public static void registerBuiltinMetrics(
       String projectId, @Nullable Credentials credentials, SdkMeterProviderBuilder builder)
       throws IOException {
-    MetricExporter metricExporter = BigtableCloudMonitoringExporter.create(projectId, credentials);
+    BuiltinMetricsView.registerBuiltinMetrics(projectId, credentials, builder, null);
+  }
+
+  /**
+   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
+   * endpoint.
+   */
+  public static void registerBuiltinMetrics(
+      String projectId,
+      @Nullable Credentials credentials,
+      SdkMeterProviderBuilder builder,
+      @Nullable String endpoint)
+      throws IOException {
+    MetricExporter metricExporter =
+        BigtableCloudMonitoringExporter.create(projectId, credentials, endpoint);
     for (Map.Entry<InstrumentSelector, View> entry :
         BuiltinMetricsConstants.getAllViews().entrySet()) {
       builder.registerView(entry.getKey(), entry.getValue());

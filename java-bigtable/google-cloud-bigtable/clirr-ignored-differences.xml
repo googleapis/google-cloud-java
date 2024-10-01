@@ -265,4 +265,14 @@
         <className>com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub</className>
         <method>*</method>
     </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableCloudMonitoringExporter</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/DefaultMetricsProvider</className>
+        <method>*</method>
+    </difference>
 </differences>

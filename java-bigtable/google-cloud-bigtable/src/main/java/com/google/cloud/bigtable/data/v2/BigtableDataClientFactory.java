@@ -90,7 +90,8 @@ public final class BigtableDataClientFactory implements AutoCloseable {
           EnhancedBigtableStub.getOpenTelemetry(
               defaultSettings.getProjectId(),
               defaultSettings.getMetricsProvider(),
-              sharedClientContext.getCredentials());
+              sharedClientContext.getCredentials(),
+              defaultSettings.getStubSettings().getMetricsEndpoint());
     } catch (Throwable t) {
       logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
     }
