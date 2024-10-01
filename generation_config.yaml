@@ -306,7 +306,7 @@ libraries:
 
 - api_shortname: batch
   name_pretty: Cloud Batch
-  product_documentation: https://cloud.google.com/
+  product_documentation: https://cloud.google.com/batch
   api_description: n/a
   GAPICs:
   - proto_path: google/cloud/batch/v1
@@ -325,7 +325,7 @@ libraries:
 
 - api_shortname: beyondcorp-appconnectors
   name_pretty: BeyondCorp AppConnectors
-  product_documentation: cloud.google.com/beyondcorp-enterprise/
+  product_documentation: https://cloud.google.com/beyondcorp-enterprise/
   api_description: provides methods to manage (create/read/update/delete) BeyondCorp
     AppConnectors.
   GAPICs:
@@ -1567,7 +1567,7 @@ libraries:
 
 - api_shortname: parallelstore
   name_pretty: Parallelstore API
-  product_documentation: https://cloud/parallelstore?hl=en
+  product_documentation: https://cloud.google.com/parallelstore?hl=en
   api_description: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater
     read throughput performance compared to competitive Lustre scratch offerings. '
   client_documentation: 
