@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.20.3](https://github.com/googleapis/java-logging/compare/v3.20.2...v3.20.3) (2024-10-01)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#1698](https://github.com/googleapis/java-logging/issues/1698)) ([9491512](https://github.com/googleapis/java-logging/commit/94915125fd2425ffba5ef86da0c54af3c1d2c138))
+* Update dependency org.apache.maven.plugins:maven-deploy-plugin to v3.1.3 ([2b6ea70](https://github.com/googleapis/java-logging/commit/2b6ea703aad05e714f5634fbd74e0b9bca0c51f9))
+
 ## [3.20.2](https://github.com/googleapis/java-logging/compare/v3.20.1...v3.20.2) (2024-09-12)
 
 
