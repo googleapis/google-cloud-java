@@ -67,19 +67,23 @@ message="chore: generate libraries at $(date)"
 
 git checkout "${target_branch}"
 git checkout "${current_branch}"
-# if the last commit doesn't contain changes to generation configuration,
-# do not generate again as the result will be the same.
-change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
-if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
-    echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
-    exit 0
-fi
+
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
-config_diff=$(diff "${generation_config}" "${baseline_generation_config}" || true)
 
 # parse image tag from the generation configuration.
 image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
+
+repo_root_dir=$(pwd)
+mkdir -p "${repo_root_dir}/output"
+# download api definitions from googleapis repository
+googleapis_commitish=$(grep googleapis_commitish "${generation_config}" | cut -d ":" -f 2 | xargs)
+api_def_dir=$(mktemp -d)
+git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
+pushd "${api_def_dir}"
+git checkout "${googleapis_commitish}"
+cp -r google/ grafeas/ "${repo_root_dir}/output"
+popd
 
 # run hermetic code generation docker image.
 docker run \
@@ -90,26 +94,21 @@ docker run \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
   --current-generation-config-path="${workspace_name}/${generation_config}"
 
+# remove api definitions after generation
+rm -rf "${api_def_dir}"
 
 # commit the change to the pull request.
-if [[ $(basename $(pwd)) == "google-cloud-java" ]]; then
-  git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
-else
-  # The image leaves intermediate folders and files it works with. Here we remove them
-  rm -rdf output googleapis "${baseline_generation_config}"
-  git add --all -- ':!pr_description.txt'
-fi
+rm -rdf output googleapis "${baseline_generation_config}"
+git add --all -- ':!pr_description.txt' ':!hermetic_library_generation.sh'
 changed_files=$(git diff --cached --name-only)
-if [[ "${changed_files}" == "" ]]; then
-    echo "There is no generated code change with the generation config change ${config_diff}."
-    echo "Skip committing to the pull request."
-    exit 0
+if [[ "${changed_files}" != "" ]]; then
+    echo "Commit changes..."
+    git commit -m "${message}"
+    git push
+else
+    echo "There is no generated code change, skip commit."
 fi
 
-echo "Configuration diff:"
-echo "${config_diff}"
-git commit -m "${message}"
-git push
 # set pr body if pr_description.txt is generated.
 if [[ -f "pr_description.txt" ]]; then
   pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")

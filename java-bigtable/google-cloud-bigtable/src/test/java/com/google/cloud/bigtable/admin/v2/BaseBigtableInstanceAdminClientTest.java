@@ -911,6 +911,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertEquals(request.getState(), actualRequest.getState());
     Assert.assertEquals(request.getServeNodes(), actualRequest.getServeNodes());
+    Assert.assertEquals(request.getNodeScalingFactor(), actualRequest.getNodeScalingFactor());
     Assert.assertEquals(request.getClusterConfig(), actualRequest.getClusterConfig());
     Assert.assertEquals(request.getDefaultStorageType(), actualRequest.getDefaultStorageType());
     Assert.assertEquals(request.getEncryptionConfig(), actualRequest.getEncryptionConfig());
