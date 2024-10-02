@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.43.0](https://github.com/googleapis/java-bigquery/compare/v2.42.4...v2.43.0) (2024-10-01)
+
+
+### Features
+
+* Add max staleness to ExternalTableDefinition ([#3499](https://github.com/googleapis/java-bigquery/issues/3499)) ([f1ebd5b](https://github.com/googleapis/java-bigquery/commit/f1ebd5be5877a68f76efafc30e3b5b0763f343c5))
+
 ## [2.42.4](https://github.com/googleapis/java-bigquery/compare/v2.42.3...v2.42.4) (2024-09-30)
 
 
