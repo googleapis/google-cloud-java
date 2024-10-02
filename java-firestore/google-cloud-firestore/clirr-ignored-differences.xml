@@ -306,4 +306,12 @@
     <className>com/google/cloud/firestore/encoding/CustomClassMapper</className>
     <to>*</to>
   </difference>
+
+  <!-- GenericQuerySnapshot -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/QuerySnapshot</className>
+    <method>com.google.cloud.firestore.Query getQuery()</method>
+  </difference>
+
 </differences>

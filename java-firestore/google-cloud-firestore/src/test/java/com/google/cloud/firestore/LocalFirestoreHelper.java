@@ -63,10 +63,7 @@ import com.google.firestore.v1.Value;
 import com.google.firestore.v1.Write;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.protobuf.ByteString;
-import com.google.protobuf.Empty;
-import com.google.protobuf.Message;
-import com.google.protobuf.NullValue;
+import com.google.protobuf.*;
 import com.google.type.LatLng;
 import java.lang.reflect.Type;
 import java.math.BigInteger;
@@ -647,6 +644,39 @@ public final class LocalFirestoreHelper {
 
   public static StructuredQuery filter(StructuredQuery.FieldFilter.Operator operator) {
     return filter(operator, "foo", "bar");
+  }
+
+  public static StructuredQuery findNearest(
+      String fieldPath,
+      double[] queryVector,
+      int limit,
+      StructuredQuery.FindNearest.DistanceMeasure measure) {
+    ArrayValue.Builder vectorArrayBuilder = ArrayValue.newBuilder();
+    for (double d : queryVector) {
+      vectorArrayBuilder.addValues(Value.newBuilder().setDoubleValue(d));
+    }
+
+    StructuredQuery.FindNearest.Builder findNearest =
+        StructuredQuery.FindNearest.newBuilder()
+            .setVectorField(StructuredQuery.FieldReference.newBuilder().setFieldPath(fieldPath))
+            .setQueryVector(
+                Value.newBuilder()
+                    .setMapValue(
+                        MapValue.newBuilder()
+                            .putFields(
+                                "__type__", Value.newBuilder().setStringValue("__vector__").build())
+                            .putFields(
+                                "value",
+                                Value.newBuilder()
+                                    .setArrayValue(vectorArrayBuilder.build())
+                                    .build())))
+            .setLimit(Int32Value.newBuilder().setValue(limit))
+            .setDistanceMeasure(measure);
+
+    StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
+    structuredQuery.setFindNearest(findNearest.build());
+
+    return structuredQuery.build();
   }
 
   public static StructuredQuery filter(

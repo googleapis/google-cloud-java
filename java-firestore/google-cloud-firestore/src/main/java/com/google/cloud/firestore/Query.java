@@ -16,8 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import static com.google.cloud.firestore.telemetry.TraceUtil.*;
-import static com.google.common.collect.Lists.reverse;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.EQUAL;
@@ -33,19 +31,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.api.gax.rpc.ResponseObserver;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.StreamController;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Query.QueryOptions.Builder;
 import com.google.cloud.firestore.encoding.CustomClassMapper;
-import com.google.cloud.firestore.telemetry.TraceUtil;
-import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
-import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.firestore.bundle.BundledQuery;
 import com.google.firestore.v1.Cursor;
 import com.google.firestore.v1.Document;
@@ -61,7 +52,6 @@ import com.google.firestore.v1.StructuredQuery.Order;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
-import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -70,27 +60,22 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * A Query which you can read or listen to. You can also construct refined Query objects by adding
  * filters and ordering.
  */
 @InternalExtensionOnly
-public class Query {
+public class Query extends StreamableQuery<QuerySnapshot> {
 
-  static final Comparator<QueryDocumentSnapshot> DOCUMENT_ID_COMPARATOR = Query::compareDocumentId;
-  final FirestoreRpcContext<?> rpcContext;
-  final QueryOptions options;
-
+  static final Comparator<QueryDocumentSnapshot> DOCUMENT_ID_COMPARATOR =
+      QueryDocumentSnapshot::compareDocumentId;
   private static final Logger LOGGER = Logger.getLogger(Query.class.getName());
 
   /** The direction of a sort. */
@@ -481,18 +466,12 @@ public class Query {
   }
 
   protected Query(FirestoreRpcContext<?> rpcContext, QueryOptions queryOptions) {
-    this.rpcContext = rpcContext;
-    this.options = queryOptions;
+    super(rpcContext, queryOptions);
   }
 
-  /**
-   * Gets the Firestore instance associated with this query.
-   *
-   * @return The Firestore instance associated with this query.
-   */
-  @Nonnull
-  public Firestore getFirestore() {
-    return rpcContext.getFirestore();
+  @Override
+  QuerySnapshot createSnaphot(Timestamp readTime, final List<QueryDocumentSnapshot> documents) {
+    return QuerySnapshot.withDocuments(this, readTime, documents);
   }
 
   /** Checks whether the provided object is NULL or NaN. */
@@ -1232,6 +1211,11 @@ public class Query {
     return new Query(rpcContext, newOptions.build());
   }
 
+  @Override
+  boolean isRetryableWithCursor() {
+    return true;
+  }
+
   /**
    * Creates and returns a new Query that starts after the provided document (exclusive). The
    * starting position is relative to the order of the query. The document must contain all of the
@@ -1241,6 +1225,7 @@ public class Query {
    * @return The created Query.
    */
   @Nonnull
+  @Override
   public Query startAfter(@Nonnull DocumentSnapshot snapshot) {
     ImmutableList<FieldOrder> fieldOrders = createImplicitOrderBy();
     Cursor cursor = createCursor(fieldOrders, snapshot, false);
@@ -1601,9 +1586,30 @@ public class Query {
    * @return the serialized RunQueryRequest
    */
   public RunQueryRequest toProto() {
+    return toRunQueryRequestBuilder(null, null, null).build();
+  }
+
+  @Override
+  protected RunQueryRequest.Builder toRunQueryRequestBuilder(
+      @Nullable final ByteString transactionId,
+      @Nullable final Timestamp readTime,
+      @Nullable ExplainOptions explainOptions) {
+
+    // Builder for RunQueryRequest
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
-    request.setStructuredQuery(buildQuery()).setParent(options.getParentPath().toString());
-    return request.build();
+    request.setStructuredQuery(buildQuery());
+    request.setParent(options.getParentPath().toString());
+    if (explainOptions != null) {
+      request.setExplainOptions(explainOptions.toProto());
+    }
+    if (transactionId != null) {
+      request.setTransaction(transactionId);
+    }
+    if (readTime != null) {
+      request.setReadTime(readTime.toProto());
+    }
+
+    return request;
   }
 
   /**
@@ -1705,147 +1711,12 @@ public class Query {
     return encodedValue;
   }
 
-  private void internalStream(
-      final ApiStreamObserver<RunQueryResponse> runQueryResponseObserver,
-      final long startTimeNanos,
-      @Nullable final ByteString transactionId,
-      @Nullable final Timestamp readTime,
-      @Nullable final ExplainOptions explainOptions,
-      final boolean isRetryRequestWithCursor) {
-    TraceUtil traceUtil = getFirestore().getOptions().getTraceUtil();
-    // To reduce the size of traces, we only register one event for every 100 responses
-    // that we receive from the server.
-    final int NUM_RESPONSES_PER_TRACE_EVENT = 100;
-
-    RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
-    request.setStructuredQuery(buildQuery()).setParent(options.getParentPath().toString());
-
-    if (explainOptions != null) {
-      request.setExplainOptions(explainOptions.toProto());
-    }
-
-    if (transactionId != null) {
-      request.setTransaction(transactionId);
-    }
-    if (readTime != null) {
-      request.setReadTime(readTime.toProto());
-    }
-
-    TraceUtil.Span currentSpan = traceUtil.currentSpan();
-    currentSpan.addEvent(
-        TraceUtil.SPAN_NAME_RUN_QUERY,
-        new ImmutableMap.Builder<String, Object>()
-            .put(ATTRIBUTE_KEY_IS_TRANSACTIONAL, transactionId != null)
-            .put(ATTRIBUTE_KEY_IS_RETRY_WITH_CURSOR, isRetryRequestWithCursor)
-            .build());
-
-    final AtomicReference<QueryDocumentSnapshot> lastReceivedDocument = new AtomicReference<>();
-
-    ResponseObserver<RunQueryResponse> observer =
-        new ResponseObserver<RunQueryResponse>() {
-          Timestamp readTime;
-          boolean firstResponse = false;
-          int numDocuments = 0;
-
-          // The stream's `onComplete()` could be called more than once,
-          // this flag makes sure only the first one is actually processed.
-          boolean hasCompleted = false;
-
-          @Override
-          public void onStart(StreamController streamController) {}
-
-          @Override
-          public void onResponse(RunQueryResponse response) {
-            if (!firstResponse) {
-              firstResponse = true;
-              currentSpan.addEvent(TraceUtil.SPAN_NAME_RUN_QUERY + ": First Response");
-            }
-
-            runQueryResponseObserver.onNext(response);
-
-            if (response.hasDocument()) {
-              numDocuments++;
-              if (numDocuments % NUM_RESPONSES_PER_TRACE_EVENT == 0) {
-                currentSpan.addEvent(
-                    TraceUtil.SPAN_NAME_RUN_QUERY + ": Received " + numDocuments + " documents");
-              }
-              Document document = response.getDocument();
-              QueryDocumentSnapshot documentSnapshot =
-                  QueryDocumentSnapshot.fromDocument(
-                      rpcContext, Timestamp.fromProto(response.getReadTime()), document);
-              lastReceivedDocument.set(documentSnapshot);
-            }
-
-            if (response.getDone()) {
-              currentSpan.addEvent(
-                  TraceUtil.SPAN_NAME_RUN_QUERY + ": Received RunQueryResponse.Done");
-              onComplete();
-            }
-          }
-
-          @Override
-          public void onError(Throwable throwable) {
-            QueryDocumentSnapshot cursor = lastReceivedDocument.get();
-            if (shouldRetry(cursor, throwable)) {
-              currentSpan.addEvent(
-                  TraceUtil.SPAN_NAME_RUN_QUERY + ": Retryable Error",
-                  Collections.singletonMap("error.message", throwable.getMessage()));
-
-              Query.this
-                  .startAfter(cursor)
-                  .internalStream(
-                      runQueryResponseObserver,
-                      startTimeNanos,
-                      /* transactionId= */ null,
-                      options.getRequireConsistency() ? cursor.getReadTime() : null,
-                      explainOptions,
-                      /* isRetryRequestWithCursor= */ true);
-            } else {
-              currentSpan.addEvent(
-                  TraceUtil.SPAN_NAME_RUN_QUERY + ": Error",
-                  Collections.singletonMap("error.message", throwable.getMessage()));
-              runQueryResponseObserver.onError(throwable);
-            }
-          }
-
-          @Override
-          public void onComplete() {
-            if (hasCompleted) return;
-            hasCompleted = true;
-            currentSpan.addEvent(
-                TraceUtil.SPAN_NAME_RUN_QUERY + ": Completed",
-                Collections.singletonMap(ATTRIBUTE_KEY_DOC_COUNT, numDocuments));
-            runQueryResponseObserver.onCompleted();
-          }
-
-          boolean shouldRetry(DocumentSnapshot lastDocument, Throwable t) {
-            if (lastDocument == null) {
-              // Only retry if we have received a single result. Retries for RPCs with initial
-              // failure are handled by Google Gax, which also implements backoff.
-              return false;
-            }
-
-            // Do not retry EXPLAIN requests because it'd be executing
-            // multiple queries. This means stats would have to be aggregated,
-            // and that may not even make sense for many statistics.
-            if (explainOptions != null) {
-              return false;
-            }
-
-            Set<StatusCode.Code> retryableCodes =
-                FirestoreSettings.newBuilder().runQuerySettings().getRetryableCodes();
-            return shouldRetryQuery(t, transactionId, startTimeNanos, retryableCodes);
-          }
-        };
-
-    rpcContext.streamRequest(request.build(), observer, rpcContext.getClient().runQueryCallable());
-  }
-
   /**
    * Executes the query and returns the results as QuerySnapshot.
    *
    * @return An ApiFuture that will be resolved with the results of the Query.
    */
+  @Override
   @Nonnull
   public ApiFuture<QuerySnapshot> get() {
     return get(null, null);
@@ -1859,79 +1730,10 @@ public class Query {
    * @return An ApiFuture that will be resolved with the planner information, statistics from the
    *     query execution (if any), and the query results (if any).
    */
+  @Override
   @Nonnull
   public ApiFuture<ExplainResults<QuerySnapshot>> explain(ExplainOptions options) {
-    TraceUtil.Span span =
-        getFirestore().getOptions().getTraceUtil().startSpan(TraceUtil.SPAN_NAME_QUERY_GET);
-
-    try (Scope ignored = span.makeCurrent()) {
-      final SettableApiFuture<ExplainResults<QuerySnapshot>> result = SettableApiFuture.create();
-      internalStream(
-          new ApiStreamObserver<RunQueryResponse>() {
-            @Nullable List<QueryDocumentSnapshot> documentSnapshots = null;
-            Timestamp readTime;
-            ExplainMetrics metrics;
-
-            @Override
-            public void onNext(RunQueryResponse runQueryResponse) {
-              if (runQueryResponse.hasDocument()) {
-                if (documentSnapshots == null) {
-                  documentSnapshots = new ArrayList<>();
-                }
-
-                Document document = runQueryResponse.getDocument();
-                QueryDocumentSnapshot documentSnapshot =
-                    QueryDocumentSnapshot.fromDocument(
-                        rpcContext, Timestamp.fromProto(runQueryResponse.getReadTime()), document);
-                documentSnapshots.add(documentSnapshot);
-              }
-
-              if (readTime == null) {
-                readTime = Timestamp.fromProto(runQueryResponse.getReadTime());
-              }
-
-              if (runQueryResponse.hasExplainMetrics()) {
-                metrics = new ExplainMetrics(runQueryResponse.getExplainMetrics());
-                if (documentSnapshots == null && metrics.getExecutionStats() != null) {
-                  // This indicates that the query was executed, but no documents
-                  // had matched the query. Create an empty list.
-                  documentSnapshots = Collections.emptyList();
-                }
-              }
-            }
-
-            @Override
-            public void onError(Throwable throwable) {
-              result.setException(throwable);
-            }
-
-            @Override
-            public void onCompleted() {
-              @Nullable QuerySnapshot snapshot = null;
-              if (documentSnapshots != null) {
-                // The results for limitToLast queries need to be flipped since we reversed the
-                // ordering constraints before sending the query to the backend.
-                List<QueryDocumentSnapshot> resultView =
-                    LimitType.Last.equals(Query.this.options.getLimitType())
-                        ? reverse(documentSnapshots)
-                        : documentSnapshots;
-                snapshot = QuerySnapshot.withDocuments(Query.this, readTime, resultView);
-              }
-              result.set(new ExplainResults<>(metrics, snapshot));
-            }
-          },
-          /* startTimeNanos= */ rpcContext.getClock().nanoTime(),
-          /* transactionId= */ null,
-          /* readTime= */ null,
-          /* explainOptions= */ options,
-          /* isRetryRequestWithCursor= */ false);
-
-      span.endAtFuture(result);
-      return result;
-    } catch (Exception error) {
-      span.end(error);
-      throw error;
-    }
+    return super.explain(options);
   }
 
   /**
@@ -1958,69 +1760,6 @@ public class Query {
     return Watch.forQuery(this).runWatch(executor, listener);
   }
 
-  ApiFuture<QuerySnapshot> get(
-      @Nullable ByteString transactionId, @Nullable Timestamp requestReadTime) {
-    TraceUtil.Span span =
-        getFirestore()
-            .getOptions()
-            .getTraceUtil()
-            .startSpan(
-                transactionId == null
-                    ? TraceUtil.SPAN_NAME_QUERY_GET
-                    : TraceUtil.SPAN_NAME_TRANSACTION_GET_QUERY);
-    try (Scope ignored = span.makeCurrent()) {
-      final SettableApiFuture<QuerySnapshot> result = SettableApiFuture.create();
-      internalStream(
-          new ApiStreamObserver<RunQueryResponse>() {
-            final List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
-            Timestamp responseReadTime;
-
-            @Override
-            public void onNext(RunQueryResponse runQueryResponse) {
-              if (runQueryResponse.hasDocument()) {
-                Document document = runQueryResponse.getDocument();
-                QueryDocumentSnapshot documentSnapshot =
-                    QueryDocumentSnapshot.fromDocument(
-                        rpcContext, Timestamp.fromProto(runQueryResponse.getReadTime()), document);
-                documentSnapshots.add(documentSnapshot);
-              }
-              if (responseReadTime == null) {
-                responseReadTime = Timestamp.fromProto(runQueryResponse.getReadTime());
-              }
-            }
-
-            @Override
-            public void onError(Throwable throwable) {
-              result.setException(throwable);
-            }
-
-            @Override
-            public void onCompleted() {
-              // The results for limitToLast queries need to be flipped since we reversed the
-              // ordering constraints before sending the query to the backend.
-              List<QueryDocumentSnapshot> resultView =
-                  LimitType.Last.equals(Query.this.options.getLimitType())
-                      ? reverse(documentSnapshots)
-                      : documentSnapshots;
-              QuerySnapshot querySnapshot =
-                  QuerySnapshot.withDocuments(Query.this, responseReadTime, resultView);
-              result.set(querySnapshot);
-            }
-          },
-          /* startTimeNanos= */ rpcContext.getClock().nanoTime(),
-          transactionId,
-          /* readTime= */ requestReadTime,
-          /* explainOptions= */ null,
-          /* isRetryRequestWithCursor= */ false);
-
-      span.endAtFuture(result);
-      return result;
-    } catch (Exception error) {
-      span.end(error);
-      throw error;
-    }
-  }
-
   Comparator<QueryDocumentSnapshot> comparator() {
     Iterator<FieldOrder> iterator = options.getFieldOrders().iterator();
     if (!iterator.hasNext()) {
@@ -2037,10 +1776,6 @@ public class Query {
     return comparator.thenComparing(lastDirection.documentIdComparator);
   }
 
-  private static int compareDocumentId(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
-    return doc1.getReference().getResourcePath().compareTo(doc2.getReference().getResourcePath());
-  }
-
   /**
    * Helper method to append an element to an existing ImmutableList. Returns the newly created
    * list.
@@ -2051,43 +1786,6 @@ public class Query {
     builder.addAll(existingList);
     builder.add(newElement);
     return builder.build();
-  }
-
-  /** Verifies whether the given exception is retryable based on the RunQuery configuration. */
-  private boolean isRetryableError(Throwable throwable, Set<StatusCode.Code> retryableCodes) {
-    if (!(throwable instanceof FirestoreException)) {
-      return false;
-    }
-    Status status = ((FirestoreException) throwable).getStatus();
-    for (StatusCode.Code code : retryableCodes) {
-      if (code.equals(StatusCode.Code.valueOf(status.getCode().name()))) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  /** Returns whether a query that failed in the given scenario should be retried. */
-  boolean shouldRetryQuery(
-      Throwable throwable,
-      @Nullable ByteString transactionId,
-      long startTimeNanos,
-      Set<StatusCode.Code> retryableCodes) {
-    if (transactionId != null) {
-      // Transactional queries are retried via the transaction runner.
-      return false;
-    }
-
-    if (!isRetryableError(throwable, retryableCodes)) {
-      return false;
-    }
-
-    if (rpcContext.getTotalRequestTimeout().isZero()) {
-      return true;
-    }
-
-    Duration duration = Duration.ofNanos(rpcContext.getClock().nanoTime() - startTimeNanos);
-    return duration.compareTo(rpcContext.getTotalRequestTimeout()) < 0;
   }
 
   /**
@@ -2126,6 +1824,171 @@ public class Query {
     aggregateFieldList.add(aggregateField1);
     aggregateFieldList.addAll(Arrays.asList(aggregateFields));
     return new AggregateQuery(this, aggregateFieldList);
+  }
+
+  /**
+   * Returns a VectorQuery that can perform vector distance (similarity) search with given
+   * parameters.
+   *
+   * <p>The returned query, when executed, performs a distance (similarity) search on the specified
+   * `vectorField` against the given `queryVector` and returns the top documents that are closest to
+   * the `queryVector`.
+   *
+   * <p>Only documents whose `vectorField` field is a {@link VectorValue} of the same dimension as
+   * `queryVector` participate in the query, all other documents are ignored.
+   *
+   * <p>{@code VectorQuery vectorQuery = col.findNearest("embedding", new double[] {41, 42}, 10,
+   * VectorQuery.DistanceMeasure.EUCLIDEAN); QuerySnapshot querySnapshot = await
+   * vectorQuery.get().get(); DocumentSnapshot mostSimilarDocument =
+   * querySnapshot.getDocuments().get(0);}
+   *
+   * @param vectorField A string specifying the vector field to search on.
+   * @param queryVector A representation of the vector used to measure the distance from
+   *     `vectorField` values in the documents.
+   * @param limit The upper bound of documents to return, must be a positive integer with a maximum
+   *     value of 1000.
+   * @param distanceMeasure What type of distance is calculated when performing the query. See
+   *     {@link VectorQuery.DistanceMeasure}.
+   * @return an {@link VectorQuery} that performs vector distance (similarity) search with the given
+   *     parameters.
+   */
+  public VectorQuery findNearest(
+      String vectorField,
+      double[] queryVector,
+      int limit,
+      VectorQuery.DistanceMeasure distanceMeasure) {
+    return findNearest(
+        FieldPath.fromDotSeparatedString(vectorField),
+        FieldValue.vector(queryVector),
+        limit,
+        distanceMeasure,
+        VectorQueryOptions.getDefaultInstance());
+  }
+
+  /**
+   * Returns a VectorQuery that can perform vector distance (similarity) search with given
+   * parameters.
+   *
+   * <p>The returned query, when executed, performs a distance (similarity) search on the specified
+   * `vectorField` against the given `queryVector` and returns the top documents that are closest to
+   * the `queryVector`.
+   *
+   * <p>Only documents whose `vectorField` field is a {@link VectorValue} of the same dimension as
+   * `queryVector` participate in the query, all other documents are ignored.
+   *
+   * <p>{@code VectorQuery vectorQuery = col.findNearest( "embedding", new double[] {41, 42}, 10,
+   * VectorQuery.DistanceMeasure.EUCLIDEAN,
+   * FindNearestOptions.newBuilder().setDistanceThreshold(0.11).setDistanceResultField("foo").build());
+   * QuerySnapshot querySnapshot = await vectorQuery.get().get(); DocumentSnapshot
+   * mostSimilarDocument = querySnapshot.getDocuments().get(0);}
+   *
+   * @param vectorField A string specifying the vector field to search on.
+   * @param queryVector A representation of the vector used to measure the distance from
+   *     `vectorField` values in the documents.
+   * @param limit The upper bound of documents to return, must be a positive integer with a maximum
+   *     value of 1000.
+   * @param distanceMeasure What type of distance is calculated when performing the query. See
+   *     {@link VectorQuery.DistanceMeasure}.
+   * @param vectorQueryOptions Optional arguments for VectorQueries, see {@link VectorQueryOptions}.
+   * @return an {@link VectorQuery} that performs vector distance (similarity) search with the given
+   *     parameters.
+   */
+  public VectorQuery findNearest(
+      String vectorField,
+      double[] queryVector,
+      int limit,
+      VectorQuery.DistanceMeasure distanceMeasure,
+      VectorQueryOptions vectorQueryOptions) {
+    return findNearest(
+        FieldPath.fromDotSeparatedString(vectorField),
+        FieldValue.vector(queryVector),
+        limit,
+        distanceMeasure,
+        vectorQueryOptions);
+  }
+
+  /**
+   * Returns a VectorQuery that can perform vector distance (similarity) search with given
+   * parameters.
+   *
+   * <p>The returned query, when executed, performs a distance (similarity) search on the specified
+   * `vectorField` against the given `queryVector` and returns the top documents that are closest to
+   * the `queryVector`.
+   *
+   * <p>Only documents whose `vectorField` field is a {@link VectorValue} of the same dimension as
+   * `queryVector` participate in the query, all other documents are ignored.
+   *
+   * <p>{@code VectorValue queryVector = FieldValue.vector(new double[] {41, 42}); VectorQuery
+   * vectorQuery = col.findNearest( FieldPath.of("embedding"), queryVector, 10,
+   * VectorQuery.DistanceMeasure.EUCLIDEAN); QuerySnapshot querySnapshot = await
+   * vectorQuery.get().get(); DocumentSnapshot mostSimilarDocument =
+   * querySnapshot.getDocuments().get(0);}
+   *
+   * @param vectorField A {@link FieldPath} specifying the vector field to search on.
+   * @param queryVector The {@link VectorValue} used to measure the distance from `vectorField`
+   *     values in the documents.
+   * @param limit The upper bound of documents to return, must be a positive integer with a maximum
+   *     value of 1000.
+   * @param distanceMeasure What type of distance is calculated when performing the query. See
+   *     {@link VectorQuery.DistanceMeasure}.
+   * @return an {@link VectorQuery} that performs vector distance (similarity) search with the given
+   *     parameters.
+   */
+  public VectorQuery findNearest(
+      FieldPath vectorField,
+      VectorValue queryVector,
+      int limit,
+      VectorQuery.DistanceMeasure distanceMeasure) {
+    return findNearest(
+        vectorField, queryVector, limit, distanceMeasure, VectorQueryOptions.getDefaultInstance());
+  }
+
+  /**
+   * Returns a VectorQuery that can perform vector distance (similarity) search with given
+   * parameters.
+   *
+   * <p>The returned query, when executed, performs a distance (similarity) search on the specified
+   * `vectorField` against the given `queryVector` and returns the top documents that are closest to
+   * the `queryVector`.
+   *
+   * <p>Only documents whose `vectorField` field is a {@link VectorValue} of the same dimension as
+   * `queryVector` participate in the query, all other documents are ignored.
+   *
+   * <p>{@code VectorQuery vectorQuery = col.findNearest( FieldPath.of("embedding"), queryVector,
+   * 10, VectorQuery.DistanceMeasure.EUCLIDEAN,
+   * FindNearestOptions.newBuilder().setDistanceThreshold(0.11).setDistanceResultField("foo").build());
+   * QuerySnapshot querySnapshot = await vectorQuery.get().get(); DocumentSnapshot
+   * mostSimilarDocument = querySnapshot.getDocuments().get(0);}
+   *
+   * @param vectorField A {@link FieldPath} specifying the vector field to search on.
+   * @param queryVector The {@link VectorValue} used to measure the distance from `vectorField`
+   *     values in the documents.
+   * @param limit The upper bound of documents to return, must be a positive integer with a maximum
+   *     value of 1000.
+   * @param distanceMeasure What type of distance is calculated when performing the query. See
+   *     {@link VectorQuery.DistanceMeasure}.
+   * @param vectorQueryOptions Optional arguments for VectorQueries, see {@link VectorQueryOptions}.
+   * @return an {@link VectorQuery} that performs vector distance (similarity) search with the given
+   *     parameters.
+   */
+  public VectorQuery findNearest(
+      FieldPath vectorField,
+      VectorValue queryVector,
+      int limit,
+      VectorQuery.DistanceMeasure distanceMeasure,
+      VectorQueryOptions vectorQueryOptions) {
+    if (limit <= 0) {
+      throw FirestoreException.forInvalidArgument(
+          "Not a valid positive `limit` number. `limit` must be larger than 0.");
+    }
+
+    if (queryVector.size() == 0) {
+      throw FirestoreException.forInvalidArgument(
+          "Not a valid vector size. `queryVector` size must be larger than 0.");
+    }
+
+    return new VectorQuery(
+        this, vectorField, queryVector, limit, distanceMeasure, vectorQueryOptions);
   }
 
   /**

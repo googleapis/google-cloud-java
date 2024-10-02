@@ -87,4 +87,8 @@ public class QueryDocumentSnapshot extends DocumentSnapshot {
     Preconditions.checkNotNull(result, "Object in a QueryDocumentSnapshot should be non-null");
     return result;
   }
+
+  static int compareDocumentId(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
+    return doc1.getReference().getResourcePath().compareTo(doc2.getReference().getResourcePath());
+  }
 }

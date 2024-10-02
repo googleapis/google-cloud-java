@@ -69,4 +69,11 @@ public final class VectorValue implements Serializable {
   MapValue toProto() {
     return UserDataConverter.encodeVector(this.values);
   }
+
+  /**
+   * Returns the number of dimensions of the vector. Note: package private until API review is done.
+   */
+  int size() {
+    return this.values.length;
+  }
 }
