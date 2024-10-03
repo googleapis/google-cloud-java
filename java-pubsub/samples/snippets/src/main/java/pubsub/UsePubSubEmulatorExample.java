@@ -16,6 +16,15 @@
 
 package pubsub;
 
+/**
+ * Snippet that demonstrates creating Pub/Sub clients using the Google Cloud Pub/Sub emulator.
+ *
+ * <p>Note: clients cannot start/stop the emulator.
+ */
+
+// [START pubsub_use_emulator]
+
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
@@ -24,20 +33,16 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 
-/**
- * Snippet that demonstrates creating Pub/Sub clients using the Google Cloud Pub/Sub emulator.
- *
- * <p>Note: clients cannot start/stop the emulator.
- */
 public class UsePubSubEmulatorExample {
-
-  public static void main(String... args) throws IOException {
-    // [START pubsub_use_emulator]
+  public static void main(String... args) throws Exception {
     String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
     ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext().build();
     try {
@@ -46,8 +51,8 @@ public class UsePubSubEmulatorExample {
       CredentialsProvider credentialsProvider = NoCredentialsProvider.create();
 
       // Set the channel and credentials provider when creating a `TopicAdminClient`.
-      // Similarly for SubscriptionAdminClient
-      TopicAdminClient topicClient =
+      // Can be done similarly for a `SubscriptionAdminClient`.
+      TopicAdminClient topicAdminClient =
           TopicAdminClient.create(
               TopicAdminSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
@@ -55,16 +60,27 @@ public class UsePubSubEmulatorExample {
                   .build());
 
       TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
+      Topic topic = topicAdminClient.createTopic(topicName);
+      System.out.println("Created topic: " + topic.getName());
+
       // Set the channel and credentials provider when creating a `Publisher`.
-      // Similarly for Subscriber
+      // Can be done similarly for a `Subscriber`.
       Publisher publisher =
           Publisher.newBuilder(topicName)
               .setChannelProvider(channelProvider)
               .setCredentialsProvider(credentialsProvider)
               .build();
+
+      String message = "Hello World!";
+      ByteString data = ByteString.copyFromUtf8(message);
+      PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+
+      ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+      String messageId = messageIdFuture.get();
+      System.out.println("Published message ID: " + messageId);
     } finally {
       channel.shutdown();
     }
-    // [END pubsub_use_emulator]
   }
 }
+// [END pubsub_use_emulator]
