@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.45.0](https://github.com/googleapis/java-bigtable/compare/v2.44.1...v2.45.0) (2024-10-03)
+
+
+### Features
+
+* Add support for Cloud Bigtable Node Scaling Factor for CBT Clusters ([caf879c](https://github.com/googleapis/java-bigtable/commit/caf879cb4086d74bd4571662510014b27e6113a7))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.46.1 ([caf879c](https://github.com/googleapis/java-bigtable/commit/caf879cb4086d74bd4571662510014b27e6113a7))
+* Support override monitoring endpoint ([#2364](https://github.com/googleapis/java-bigtable/issues/2364)) ([a341eb8](https://github.com/googleapis/java-bigtable/commit/a341eb8530d959edabac0282c52c3e928abf733d))
+
+
+### Dependencies
+
+* Downgrade grpc to 1.67.1 ([#2366](https://github.com/googleapis/java-bigtable/issues/2366)) ([1baecb3](https://github.com/googleapis/java-bigtable/commit/1baecb3f6cd34a1daab632c322a1fb415efb9895))
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.45.0 ([#2363](https://github.com/googleapis/java-bigtable/issues/2363)) ([9d24c45](https://github.com/googleapis/java-bigtable/commit/9d24c45b389f2edef0b02f6a8c3badbca2fd3946))
+
 ## [2.44.1](https://github.com/googleapis/java-bigtable/compare/v2.44.0...v2.44.1) (2024-09-26)
 
 
