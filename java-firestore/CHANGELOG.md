@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.27.0](https://github.com/googleapis/java-firestore/compare/v3.26.5...v3.27.0) (2024-10-02)
+
+
+### Features
+
+* Add support for vector search with Query#findNearest ([#1827](https://github.com/googleapis/java-firestore/issues/1827)) ([4ad463a](https://github.com/googleapis/java-firestore/commit/4ad463a6932b90ca0cb3dd015b2543ffbf850eb9))
+
+
+### Dependencies
+
+* Update googleapis/sdk-platform-java action to v2.46.1 ([#1862](https://github.com/googleapis/java-firestore/issues/1862)) ([f35bcdb](https://github.com/googleapis/java-firestore/commit/f35bcdbfced37438379b969efe071958b6ac94a0))
+
 ## [3.26.5](https://github.com/googleapis/java-firestore/compare/v3.26.4...v3.26.5) (2024-09-30)
 
 
