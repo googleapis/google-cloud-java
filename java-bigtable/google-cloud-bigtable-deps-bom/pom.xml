@@ -63,6 +63,17 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- Temporarily downgrade grpc version since 1.68.0 was a mistake:
+      https://github.com/grpc/grpc-java/releases/tag/v1.68.0 -->
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>1.67.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- google cloud boms -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>gapic-libraries-bom</artifactId>
