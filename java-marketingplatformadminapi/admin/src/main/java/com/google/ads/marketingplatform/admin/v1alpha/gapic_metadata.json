@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.marketingplatform.admin.v1alpha",
+  "libraryPackage": "com.google.ads.marketingplatform.admin.v1alpha",
+  "services": {
+    "MarketingplatformAdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MarketingplatformAdminServiceClient",
+          "rpcs": {
+            "CreateAnalyticsAccountLink": {
+              "methods": ["createAnalyticsAccountLink", "createAnalyticsAccountLink", "createAnalyticsAccountLink", "createAnalyticsAccountLinkCallable"]
+            },
+            "DeleteAnalyticsAccountLink": {
+              "methods": ["deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLinkCallable"]
+            },
+            "GetOrganization": {
+              "methods": ["getOrganization", "getOrganization", "getOrganization", "getOrganizationCallable"]
+            },
+            "ListAnalyticsAccountLinks": {
+              "methods": ["listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinksPagedCallable", "listAnalyticsAccountLinksCallable"]
+            },
+            "SetPropertyServiceLevel": {
+              "methods": ["setPropertyServiceLevel", "setPropertyServiceLevel", "setPropertyServiceLevelCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -810,5 +810,8 @@ grpc-google-cloud-connectgateway-v1:0.3.0:0.4.0-SNAPSHOT
 google-maps-area-insights:0.2.0:0.3.0-SNAPSHOT
 proto-google-maps-area-insights-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-maps-area-insights-v1:0.2.0:0.3.0-SNAPSHOT
+admin:0.0.0:0.0.1-SNAPSHOT
+proto-admin-v1alpha:0.0.0:0.0.1-SNAPSHOT
+grpc-admin-v1alpha:0.0.0:0.0.1-SNAPSHOT
 google-cloud-oracledatabase:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-oracledatabase-v1:0.0.0:0.0.1-SNAPSHOT
