@@ -12,7 +12,7 @@ jobs:
         java-version: 11
     - name: Install modules
       shell: bash
-      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
     - name: Unmanaged dependency check
       uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.36.1
       with:
