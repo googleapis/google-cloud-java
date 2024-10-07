@@ -47,14 +47,6 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-document-ai-v1beta1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-document-ai-v1beta2</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-document-ai-v1beta3</artifactId>
     </dependency>
     <dependency>
@@ -86,17 +78,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-document-ai-v1beta1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-document-ai-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-document-ai-v1beta2</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

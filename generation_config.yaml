@@ -882,8 +882,6 @@ libraries:
   issue_tracker: https://issuetracker.google.com/savedsearches/559755
   GAPICs:
   - proto_path: google/cloud/documentai/v1
-  - proto_path: google/cloud/documentai/v1beta1
-  - proto_path: google/cloud/documentai/v1beta2
   - proto_path: google/cloud/documentai/v1beta3
 
 - api_shortname: domains
