@@ -231,12 +231,8 @@ google-cloud-dms:2.50.0:2.51.0-SNAPSHOT
 grpc-google-cloud-dms-v1:2.50.0:2.51.0-SNAPSHOT
 proto-google-cloud-dms-v1:2.50.0:2.51.0-SNAPSHOT
 google-cloud-document-ai:2.55.0:2.56.0-SNAPSHOT
-grpc-google-cloud-document-ai-v1beta1:0.67.0:0.68.0-SNAPSHOT
-grpc-google-cloud-document-ai-v1beta2:0.67.0:0.68.0-SNAPSHOT
 grpc-google-cloud-document-ai-v1beta3:0.67.0:0.68.0-SNAPSHOT
 grpc-google-cloud-document-ai-v1:2.55.0:2.56.0-SNAPSHOT
-proto-google-cloud-document-ai-v1beta1:0.67.0:0.68.0-SNAPSHOT
-proto-google-cloud-document-ai-v1beta2:0.67.0:0.68.0-SNAPSHOT
 proto-google-cloud-document-ai-v1beta3:0.67.0:0.68.0-SNAPSHOT
 proto-google-cloud-document-ai-v1:2.55.0:2.56.0-SNAPSHOT
 google-cloud-domains:1.48.0:1.49.0-SNAPSHOT
