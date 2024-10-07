@@ -224,12 +224,6 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     return ((BackupDRStubSettings) getStubSettings()).deleteBackupVaultOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
   /** Returns the object with the settings used for calls to listDataSources. */
   public PagedCallSettings<
           ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
@@ -251,62 +245,6 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   public OperationCallSettings<UpdateDataSourceRequest, DataSource, OperationMetadata>
       updateDataSourceOperationSettings() {
     return ((BackupDRStubSettings) getStubSettings()).updateDataSourceOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to removeDataSource. */
-  public UnaryCallSettings<RemoveDataSourceRequest, Operation> removeDataSourceSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).removeDataSourceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to removeDataSource. */
-  public OperationCallSettings<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).removeDataSourceOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to setInternalStatus. */
-  public UnaryCallSettings<SetInternalStatusRequest, Operation> setInternalStatusSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).setInternalStatusSettings();
-  }
-
-  /** Returns the object with the settings used for calls to setInternalStatus. */
-  public OperationCallSettings<
-          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).setInternalStatusOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to initiateBackup. */
-  public UnaryCallSettings<InitiateBackupRequest, InitiateBackupResponse> initiateBackupSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).initiateBackupSettings();
-  }
-
-  /** Returns the object with the settings used for calls to abandonBackup. */
-  public UnaryCallSettings<AbandonBackupRequest, Operation> abandonBackupSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).abandonBackupSettings();
-  }
-
-  /** Returns the object with the settings used for calls to abandonBackup. */
-  public OperationCallSettings<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).abandonBackupOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to finalizeBackup. */
-  public UnaryCallSettings<FinalizeBackupRequest, Operation> finalizeBackupSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).finalizeBackupSettings();
-  }
-
-  /** Returns the object with the settings used for calls to finalizeBackup. */
-  public OperationCallSettings<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).finalizeBackupOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to fetchAccessToken. */
-  public UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenSettings() {
-    return ((BackupDRStubSettings) getStubSettings()).fetchAccessTokenSettings();
   }
 
   /** Returns the object with the settings used for calls to listBackups. */
@@ -459,6 +397,12 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return ((BackupDRStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final BackupDRSettings create(BackupDRStubSettings stub) throws IOException {
@@ -669,12 +613,6 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
       return getStubSettingsBuilder().deleteBackupVaultOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listDataSources. */
     public PagedCallSettings.Builder<
             ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
@@ -697,65 +635,6 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     public OperationCallSettings.Builder<UpdateDataSourceRequest, DataSource, OperationMetadata>
         updateDataSourceOperationSettings() {
       return getStubSettingsBuilder().updateDataSourceOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to removeDataSource. */
-    public UnaryCallSettings.Builder<RemoveDataSourceRequest, Operation>
-        removeDataSourceSettings() {
-      return getStubSettingsBuilder().removeDataSourceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to removeDataSource. */
-    public OperationCallSettings.Builder<RemoveDataSourceRequest, Empty, OperationMetadata>
-        removeDataSourceOperationSettings() {
-      return getStubSettingsBuilder().removeDataSourceOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setInternalStatus. */
-    public UnaryCallSettings.Builder<SetInternalStatusRequest, Operation>
-        setInternalStatusSettings() {
-      return getStubSettingsBuilder().setInternalStatusSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setInternalStatus. */
-    public OperationCallSettings.Builder<
-            SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-        setInternalStatusOperationSettings() {
-      return getStubSettingsBuilder().setInternalStatusOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to initiateBackup. */
-    public UnaryCallSettings.Builder<InitiateBackupRequest, InitiateBackupResponse>
-        initiateBackupSettings() {
-      return getStubSettingsBuilder().initiateBackupSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to abandonBackup. */
-    public UnaryCallSettings.Builder<AbandonBackupRequest, Operation> abandonBackupSettings() {
-      return getStubSettingsBuilder().abandonBackupSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to abandonBackup. */
-    public OperationCallSettings.Builder<AbandonBackupRequest, Empty, OperationMetadata>
-        abandonBackupOperationSettings() {
-      return getStubSettingsBuilder().abandonBackupOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to finalizeBackup. */
-    public UnaryCallSettings.Builder<FinalizeBackupRequest, Operation> finalizeBackupSettings() {
-      return getStubSettingsBuilder().finalizeBackupSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to finalizeBackup. */
-    public OperationCallSettings.Builder<FinalizeBackupRequest, Backup, OperationMetadata>
-        finalizeBackupOperationSettings() {
-      return getStubSettingsBuilder().finalizeBackupOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to fetchAccessToken. */
-    public UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
-        fetchAccessTokenSettings() {
-      return getStubSettingsBuilder().fetchAccessTokenSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBackups. */
@@ -913,6 +792,12 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

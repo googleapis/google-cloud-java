@@ -239,4 +239,127 @@ public class ConsumerProcurementServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void modifyOrderTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .addAllLineItems(new ArrayList<LineItem>())
+            .addAllCancelledLineItems(new ArrayList<LineItem>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("modifyOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConsumerProcurementService.addResponse(resultOperation);
+
+    ModifyOrderRequest request =
+        ModifyOrderRequest.newBuilder()
+            .setName("name3373707")
+            .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
+            .build();
+
+    Order actualResponse = client.modifyOrderAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConsumerProcurementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyOrderRequest actualRequest = ((ModifyOrderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getModificationsList(), actualRequest.getModificationsList());
+    Assert.assertEquals(request.getDisplayName(), actualRequest.getDisplayName());
+    Assert.assertEquals(request.getEtag(), actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyOrderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConsumerProcurementService.addException(exception);
+
+    try {
+      ModifyOrderRequest request =
+          ModifyOrderRequest.newBuilder()
+              .setName("name3373707")
+              .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+              .setDisplayName("displayName1714148973")
+              .setEtag("etag3123477")
+              .build();
+      client.modifyOrderAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelOrderTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .addAllLineItems(new ArrayList<LineItem>())
+            .addAllCancelledLineItems(new ArrayList<LineItem>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConsumerProcurementService.addResponse(resultOperation);
+
+    CancelOrderRequest request =
+        CancelOrderRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
+
+    Order actualResponse = client.cancelOrderAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConsumerProcurementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelOrderRequest actualRequest = ((CancelOrderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getEtag(), actualRequest.getEtag());
+    Assert.assertEquals(request.getCancellationPolicy(), actualRequest.getCancellationPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelOrderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConsumerProcurementService.addException(exception);
+
+    try {
+      CancelOrderRequest request =
+          CancelOrderRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
+      client.cancelOrderAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

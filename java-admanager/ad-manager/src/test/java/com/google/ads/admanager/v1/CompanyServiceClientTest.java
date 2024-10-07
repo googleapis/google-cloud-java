@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,8 +91,10 @@ public class CompanyServiceClientTest {
             .setExternalId("externalId-1699764666")
             .setComment("comment950398559")
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
-            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .setPrimaryContact("primaryContact-532068418")
             .addAllAppliedTeams(new ArrayList<String>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setThirdPartyCompanyId(2003341038)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -145,8 +148,10 @@ public class CompanyServiceClientTest {
             .setExternalId("externalId-1699764666")
             .setComment("comment950398559")
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
-            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .setPrimaryContact("primaryContact-532068418")
             .addAllAppliedTeams(new ArrayList<String>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setThirdPartyCompanyId(2003341038)
             .build();
     mockService.addResponse(expectedResponse);
 

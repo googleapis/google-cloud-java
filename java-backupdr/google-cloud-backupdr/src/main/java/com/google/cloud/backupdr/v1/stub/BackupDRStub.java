@@ -28,7 +28,6 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersP
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.backupdr.v1.AbandonBackupRequest;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
@@ -43,19 +42,14 @@ import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
-import com.google.cloud.backupdr.v1.FinalizeBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
 import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -70,11 +64,8 @@ import com.google.cloud.backupdr.v1.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1.ListManagementServersResponse;
 import com.google.cloud.backupdr.v1.ManagementServer;
 import com.google.cloud.backupdr.v1.OperationMetadata;
-import com.google.cloud.backupdr.v1.RemoveDataSourceRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
-import com.google.cloud.backupdr.v1.SetInternalStatusRequest;
-import com.google.cloud.backupdr.v1.SetInternalStatusResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
@@ -200,11 +191,6 @@ public abstract class BackupDRStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteBackupVaultCallable()");
   }
 
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
-  }
-
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
       listDataSourcesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listDataSourcesPagedCallable()");
@@ -225,52 +211,6 @@ public abstract class BackupDRStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDataSourceCallable()");
-  }
-
-  public OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: removeDataSourceOperationCallable()");
-  }
-
-  public UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable() {
-    throw new UnsupportedOperationException("Not implemented: removeDataSourceCallable()");
-  }
-
-  public OperationCallable<SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: setInternalStatusOperationCallable()");
-  }
-
-  public UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable() {
-    throw new UnsupportedOperationException("Not implemented: setInternalStatusCallable()");
-  }
-
-  public UnaryCallable<InitiateBackupRequest, InitiateBackupResponse> initiateBackupCallable() {
-    throw new UnsupportedOperationException("Not implemented: initiateBackupCallable()");
-  }
-
-  public OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: abandonBackupOperationCallable()");
-  }
-
-  public UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable() {
-    throw new UnsupportedOperationException("Not implemented: abandonBackupCallable()");
-  }
-
-  public OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: finalizeBackupOperationCallable()");
-  }
-
-  public UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable() {
-    throw new UnsupportedOperationException("Not implemented: finalizeBackupCallable()");
-  }
-
-  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable() {
-    throw new UnsupportedOperationException("Not implemented: fetchAccessTokenCallable()");
   }
 
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
@@ -413,6 +353,11 @@ public abstract class BackupDRStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

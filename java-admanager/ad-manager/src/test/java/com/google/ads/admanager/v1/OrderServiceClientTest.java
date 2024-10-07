@@ -96,6 +96,7 @@ public class OrderServiceClientTest {
             .setCurrencyCode("currencyCode1004773790")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setUnlimitedEndTime(true)
             .setExternalOrderId(-1332092512)
             .setArchived(true)
             .setLastModifiedByApp("lastModifiedByApp-522754549")
@@ -107,6 +108,7 @@ public class OrderServiceClientTest {
             .addAllSecondaryTraffickers(new ArrayList<String>())
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -165,6 +167,7 @@ public class OrderServiceClientTest {
             .setCurrencyCode("currencyCode1004773790")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setUnlimitedEndTime(true)
             .setExternalOrderId(-1332092512)
             .setArchived(true)
             .setLastModifiedByApp("lastModifiedByApp-522754549")
@@ -176,6 +179,7 @@ public class OrderServiceClientTest {
             .addAllSecondaryTraffickers(new ArrayList<String>())
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
             .build();
     mockService.addResponse(expectedResponse);
 

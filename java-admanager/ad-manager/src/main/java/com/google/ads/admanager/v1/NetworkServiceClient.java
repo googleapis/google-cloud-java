@@ -72,6 +72,20 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ListNetworks</td>
+ *      <td><p> API to retrieve all the networks the current user has access to.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNetworks(ListNetworksRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNetworksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -269,6 +283,56 @@ public class NetworkServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     return stub.getNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve all the networks the current user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+   *   ListNetworksResponse response = networkServiceClient.listNetworks(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworksResponse listNetworks(ListNetworksRequest request) {
+    return listNetworksCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve all the networks the current user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+   *   ApiFuture<ListNetworksResponse> future =
+   *       networkServiceClient.listNetworksCallable().futureCall(request);
+   *   // Do something.
+   *   ListNetworksResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
+    return stub.listNetworksCallable();
   }
 
   @Override

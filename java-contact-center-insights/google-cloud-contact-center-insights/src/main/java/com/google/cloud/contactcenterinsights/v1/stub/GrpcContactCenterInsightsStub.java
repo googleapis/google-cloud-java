@@ -58,19 +58,30 @@ import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.EncryptionSpec;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.GetConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecMetadata;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -347,6 +358,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportIssueModelRequest, Operation>
+      exportIssueModelMethodDescriptor =
+          MethodDescriptor.<ExportIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ExportIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportIssueModelRequest, Operation>
+      importIssueModelMethodDescriptor =
+          MethodDescriptor.<ImportIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ImportIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetIssueRequest, Issue> getIssueMethodDescriptor =
       MethodDescriptor.<GetIssueRequest, Issue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -485,6 +518,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetEncryptionSpecRequest, EncryptionSpec>
+      getEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EncryptionSpec.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/InitializeEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(InitializeEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateViewRequest, View> createViewMethodDescriptor =
       MethodDescriptor.<CreateViewRequest, View>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -590,6 +645,14 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final OperationCallable<
           UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
       undeployIssueModelOperationCallable;
+  private final UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable;
+  private final OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable;
+  private final UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable;
+  private final OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable;
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
   private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
@@ -609,6 +672,14 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable;
+  private final UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable;
+  private final OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable;
   private final UnaryCallable<CreateViewRequest, View> createViewCallable;
   private final UnaryCallable<GetViewRequest, View> getViewCallable;
   private final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable;
@@ -876,6 +947,26 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportIssueModelRequest, Operation> exportIssueModelTransportSettings =
+        GrpcCallSettings.<ExportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportIssueModelRequest, Operation> importIssueModelTransportSettings =
+        GrpcCallSettings.<ImportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         GrpcCallSettings.<GetIssueRequest, Issue>newBuilder()
             .setMethodDescriptor(getIssueMethodDescriptor)
@@ -1014,6 +1105,29 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecTransportSettings =
+        GrpcCallSettings.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+            .setMethodDescriptor(getEncryptionSpecMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<InitializeEncryptionSpecRequest, Operation>
+        initializeEncryptionSpecTransportSettings =
+            GrpcCallSettings.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+                .setMethodDescriptor(initializeEncryptionSpecMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "encryption_spec.name",
+                          String.valueOf(request.getEncryptionSpec().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateViewRequest, View> createViewTransportSettings =
         GrpcCallSettings.<CreateViewRequest, View>newBuilder()
             .setMethodDescriptor(createViewMethodDescriptor)
@@ -1216,6 +1330,24 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             settings.undeployIssueModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.exportIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            exportIssueModelTransportSettings, settings.exportIssueModelSettings(), clientContext);
+    this.exportIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            exportIssueModelTransportSettings,
+            settings.exportIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            importIssueModelTransportSettings, settings.importIssueModelSettings(), clientContext);
+    this.importIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            importIssueModelTransportSettings,
+            settings.importIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getIssueCallable =
         callableFactory.createUnaryCallable(
             getIssueTransportSettings, settings.getIssueSettings(), clientContext);
@@ -1270,6 +1402,22 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.updateSettingsCallable =
         callableFactory.createUnaryCallable(
             updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.getEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            getEncryptionSpecTransportSettings,
+            settings.getEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createViewCallable =
         callableFactory.createUnaryCallable(
             createViewTransportSettings, settings.createViewSettings(), clientContext);
@@ -1487,6 +1635,30 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable() {
+    return exportIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable() {
+    return exportIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable() {
+    return importIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable() {
+    return importIssueModelOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     return getIssueCallable;
   }
@@ -1557,6 +1729,26 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return updateSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
+    return getEncryptionSpecCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable() {
+    return initializeEncryptionSpecCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable() {
+    return initializeEncryptionSpecOperationCallable;
   }
 
   @Override

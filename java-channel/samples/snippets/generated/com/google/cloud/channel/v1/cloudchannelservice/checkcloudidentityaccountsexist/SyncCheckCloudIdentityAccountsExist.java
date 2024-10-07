@@ -38,6 +38,7 @@ public class SyncCheckCloudIdentityAccountsExist {
           CheckCloudIdentityAccountsExistRequest.newBuilder()
               .setParent("parent-995424086")
               .setDomain("domain-1326197564")
+              .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
               .build();
       CheckCloudIdentityAccountsExistResponse response =
           cloudChannelServiceClient.checkCloudIdentityAccountsExist(request);

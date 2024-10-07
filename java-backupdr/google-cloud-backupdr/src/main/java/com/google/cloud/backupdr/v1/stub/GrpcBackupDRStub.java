@@ -33,7 +33,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.backupdr.v1.AbandonBackupRequest;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
@@ -48,19 +47,14 @@ import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
-import com.google.cloud.backupdr.v1.FinalizeBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
 import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -75,11 +69,8 @@ import com.google.cloud.backupdr.v1.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1.ListManagementServersResponse;
 import com.google.cloud.backupdr.v1.ManagementServer;
 import com.google.cloud.backupdr.v1.OperationMetadata;
-import com.google.cloud.backupdr.v1.RemoveDataSourceRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
-import com.google.cloud.backupdr.v1.SetInternalStatusRequest;
-import com.google.cloud.backupdr.v1.SetInternalStatusResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
@@ -215,17 +206,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/TestIamPermissions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesMethodDescriptor =
           MethodDescriptor.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
@@ -255,68 +235,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<RemoveDataSourceRequest, Operation>
-      removeDataSourceMethodDescriptor =
-          MethodDescriptor.<RemoveDataSourceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/RemoveDataSource")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(RemoveDataSourceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<SetInternalStatusRequest, Operation>
-      setInternalStatusMethodDescriptor =
-          MethodDescriptor.<SetInternalStatusRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/SetInternalStatus")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(SetInternalStatusRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<InitiateBackupRequest, InitiateBackupResponse>
-      initiateBackupMethodDescriptor =
-          MethodDescriptor.<InitiateBackupRequest, InitiateBackupResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/InitiateBackup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(InitiateBackupRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(InitiateBackupResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<AbandonBackupRequest, Operation>
-      abandonBackupMethodDescriptor =
-          MethodDescriptor.<AbandonBackupRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/AbandonBackup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AbandonBackupRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<FinalizeBackupRequest, Operation>
-      finalizeBackupMethodDescriptor =
-          MethodDescriptor.<FinalizeBackupRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FinalizeBackup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(FinalizeBackupRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenMethodDescriptor =
-          MethodDescriptor.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchAccessToken")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(FetchAccessTokenRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(FetchAccessTokenResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -495,6 +413,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListManagementServersRequest, ListManagementServersResponse>
       listManagementServersCallable;
   private final UnaryCallable<ListManagementServersRequest, ListManagementServersPagedResponse>
@@ -528,8 +457,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable;
   private final OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
       deleteBackupVaultOperationCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
@@ -538,22 +465,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable;
   private final OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
       updateDataSourceOperationCallable;
-  private final UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable;
-  private final OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable;
-  private final UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable;
-  private final OperationCallable<
-          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable;
-  private final UnaryCallable<InitiateBackupRequest, InitiateBackupResponse> initiateBackupCallable;
-  private final UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable;
-  private final OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable;
-  private final UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable;
-  private final OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable;
-  private final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
@@ -603,6 +514,8 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -752,17 +665,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("resource", String.valueOf(request.getResource()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
             GrpcCallSettings.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
@@ -795,68 +697,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<RemoveDataSourceRequest, Operation> removeDataSourceTransportSettings =
-        GrpcCallSettings.<RemoveDataSourceRequest, Operation>newBuilder()
-            .setMethodDescriptor(removeDataSourceMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<SetInternalStatusRequest, Operation> setInternalStatusTransportSettings =
-        GrpcCallSettings.<SetInternalStatusRequest, Operation>newBuilder()
-            .setMethodDescriptor(setInternalStatusMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<InitiateBackupRequest, InitiateBackupResponse>
-        initiateBackupTransportSettings =
-            GrpcCallSettings.<InitiateBackupRequest, InitiateBackupResponse>newBuilder()
-                .setMethodDescriptor(initiateBackupMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("data_source", String.valueOf(request.getDataSource()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<AbandonBackupRequest, Operation> abandonBackupTransportSettings =
-        GrpcCallSettings.<AbandonBackupRequest, Operation>newBuilder()
-            .setMethodDescriptor(abandonBackupMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<FinalizeBackupRequest, Operation> finalizeBackupTransportSettings =
-        GrpcCallSettings.<FinalizeBackupRequest, Operation>newBuilder()
-            .setMethodDescriptor(finalizeBackupMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
-        fetchAccessTokenTransportSettings =
-            GrpcCallSettings.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
-                .setMethodDescriptor(fetchAccessTokenMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
             .setMethodDescriptor(listBackupsMethodDescriptor)
@@ -1043,6 +883,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listManagementServersCallable =
         callableFactory.createUnaryCallable(
@@ -1133,11 +984,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.deleteBackupVaultOperationSettings(),
             clientContext,
             operationsStub);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
     this.listDataSourcesCallable =
         callableFactory.createUnaryCallable(
             listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
@@ -1156,50 +1002,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.updateDataSourceOperationSettings(),
             clientContext,
             operationsStub);
-    this.removeDataSourceCallable =
-        callableFactory.createUnaryCallable(
-            removeDataSourceTransportSettings, settings.removeDataSourceSettings(), clientContext);
-    this.removeDataSourceOperationCallable =
-        callableFactory.createOperationCallable(
-            removeDataSourceTransportSettings,
-            settings.removeDataSourceOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.setInternalStatusCallable =
-        callableFactory.createUnaryCallable(
-            setInternalStatusTransportSettings,
-            settings.setInternalStatusSettings(),
-            clientContext);
-    this.setInternalStatusOperationCallable =
-        callableFactory.createOperationCallable(
-            setInternalStatusTransportSettings,
-            settings.setInternalStatusOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.initiateBackupCallable =
-        callableFactory.createUnaryCallable(
-            initiateBackupTransportSettings, settings.initiateBackupSettings(), clientContext);
-    this.abandonBackupCallable =
-        callableFactory.createUnaryCallable(
-            abandonBackupTransportSettings, settings.abandonBackupSettings(), clientContext);
-    this.abandonBackupOperationCallable =
-        callableFactory.createOperationCallable(
-            abandonBackupTransportSettings,
-            settings.abandonBackupOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.finalizeBackupCallable =
-        callableFactory.createUnaryCallable(
-            finalizeBackupTransportSettings, settings.finalizeBackupSettings(), clientContext);
-    this.finalizeBackupOperationCallable =
-        callableFactory.createOperationCallable(
-            finalizeBackupTransportSettings,
-            settings.finalizeBackupOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.fetchAccessTokenCallable =
-        callableFactory.createUnaryCallable(
-            fetchAccessTokenTransportSettings, settings.fetchAccessTokenSettings(), clientContext);
     this.listBackupsCallable =
         callableFactory.createUnaryCallable(
             listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
@@ -1324,6 +1126,11 @@ public class GrpcBackupDRStub extends BackupDRStub {
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1435,12 +1242,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
   }
 
   @Override
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
-  }
-
-  @Override
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
     return listDataSourcesCallable;
   }
@@ -1465,61 +1266,6 @@ public class GrpcBackupDRStub extends BackupDRStub {
   public OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
       updateDataSourceOperationCallable() {
     return updateDataSourceOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable() {
-    return removeDataSourceCallable;
-  }
-
-  @Override
-  public OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable() {
-    return removeDataSourceOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable() {
-    return setInternalStatusCallable;
-  }
-
-  @Override
-  public OperationCallable<SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable() {
-    return setInternalStatusOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<InitiateBackupRequest, InitiateBackupResponse> initiateBackupCallable() {
-    return initiateBackupCallable;
-  }
-
-  @Override
-  public UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable() {
-    return abandonBackupCallable;
-  }
-
-  @Override
-  public OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable() {
-    return abandonBackupOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable() {
-    return finalizeBackupCallable;
-  }
-
-  @Override
-  public OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable() {
-    return finalizeBackupOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable() {
-    return fetchAccessTokenCallable;
   }
 
   @Override
@@ -1686,6 +1432,12 @@ public class GrpcBackupDRStub extends BackupDRStub {
   @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

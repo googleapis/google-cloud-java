@@ -34,7 +34,6 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.backupdr.v1.stub.HttpJsonBackupDRStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -47,6 +46,7 @@ import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -1197,95 +1197,6 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
-  public void testIamPermissionsTest() throws Exception {
-    TestIamPermissionsResponse expectedResponse =
-        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockService.addResponse(expectedResponse);
-
-    ResourceName resource = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]");
-    List<String> permissions = new ArrayList<>();
-
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void testIamPermissionsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ResourceName resource = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]");
-      List<String> permissions = new ArrayList<>();
-      client.testIamPermissions(resource, permissions);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void testIamPermissionsTest2() throws Exception {
-    TestIamPermissionsResponse expectedResponse =
-        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockService.addResponse(expectedResponse);
-
-    String resource = "projects/project-7520/locations/location-7520/backupVaults/backupVault-7520";
-    List<String> permissions = new ArrayList<>();
-
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void testIamPermissionsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String resource =
-          "projects/project-7520/locations/location-7520/backupVaults/backupVault-7520";
-      List<String> permissions = new ArrayList<>();
-      client.testIamPermissions(resource, permissions);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void listDataSourcesTest() throws Exception {
     DataSource responsesElement = DataSource.newBuilder().build();
     ListDataSourcesResponse expectedResponse =
@@ -1581,614 +1492,6 @@ public class BackupDRClientHttpJsonTest {
       client.updateDataSourceAsync(dataSource, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void removeDataSourceTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("removeDataSourceTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    DataSourceName name =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    client.removeDataSourceAsync(name).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void removeDataSourceExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName name =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.removeDataSourceAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void removeDataSourceTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("removeDataSourceTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String name =
-        "projects/project-1411/locations/location-1411/backupVaults/backupVault-1411/dataSources/dataSource-1411";
-
-    client.removeDataSourceAsync(name).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void removeDataSourceExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-1411/locations/location-1411/backupVaults/backupVault-1411/dataSources/dataSource-1411";
-      client.removeDataSourceAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void setInternalStatusTest() throws Exception {
-    SetInternalStatusResponse expectedResponse = SetInternalStatusResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("setInternalStatusTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    DataSourceName dataSource =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    SetInternalStatusResponse actualResponse = client.setInternalStatusAsync(dataSource).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void setInternalStatusExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName dataSource =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.setInternalStatusAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void setInternalStatusTest2() throws Exception {
-    SetInternalStatusResponse expectedResponse = SetInternalStatusResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("setInternalStatusTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String dataSource =
-        "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-
-    SetInternalStatusResponse actualResponse = client.setInternalStatusAsync(dataSource).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void setInternalStatusExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String dataSource =
-          "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-      client.setInternalStatusAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void initiateBackupTest() throws Exception {
-    InitiateBackupResponse expectedResponse =
-        InitiateBackupResponse.newBuilder()
-            .setBackup("backup-1396673086")
-            .setNewBackupGenerationId(-1061891292)
-            .setBaseBackupGenerationId(678252179)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    DataSourceName dataSource =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    InitiateBackupResponse actualResponse = client.initiateBackup(dataSource);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void initiateBackupExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName dataSource =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.initiateBackup(dataSource);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void initiateBackupTest2() throws Exception {
-    InitiateBackupResponse expectedResponse =
-        InitiateBackupResponse.newBuilder()
-            .setBackup("backup-1396673086")
-            .setNewBackupGenerationId(-1061891292)
-            .setBaseBackupGenerationId(678252179)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String dataSource =
-        "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-
-    InitiateBackupResponse actualResponse = client.initiateBackup(dataSource);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void initiateBackupExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String dataSource =
-          "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-      client.initiateBackup(dataSource);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void abandonBackupTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("abandonBackupTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    DataSourceName dataSource =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    client.abandonBackupAsync(dataSource).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void abandonBackupExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName dataSource =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.abandonBackupAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void abandonBackupTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("abandonBackupTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String dataSource =
-        "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-
-    client.abandonBackupAsync(dataSource).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void abandonBackupExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String dataSource =
-          "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-      client.abandonBackupAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void finalizeBackupTest() throws Exception {
-    Backup expectedResponse =
-        Backup.newBuilder()
-            .setName(
-                BackupName.of(
-                        "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
-            .setExpireTime(Timestamp.newBuilder().build())
-            .setConsistencyTime(Timestamp.newBuilder().build())
-            .setEtag("etag3123477")
-            .addAllServiceLocks(new ArrayList<BackupLock>())
-            .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
-            .setResourceSizeBytes(-275424386)
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("finalizeBackupTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    DataSourceName dataSource =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    Backup actualResponse = client.finalizeBackupAsync(dataSource).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void finalizeBackupExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName dataSource =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.finalizeBackupAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void finalizeBackupTest2() throws Exception {
-    Backup expectedResponse =
-        Backup.newBuilder()
-            .setName(
-                BackupName.of(
-                        "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
-            .setExpireTime(Timestamp.newBuilder().build())
-            .setConsistencyTime(Timestamp.newBuilder().build())
-            .setEtag("etag3123477")
-            .addAllServiceLocks(new ArrayList<BackupLock>())
-            .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
-            .setResourceSizeBytes(-275424386)
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("finalizeBackupTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String dataSource =
-        "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-
-    Backup actualResponse = client.finalizeBackupAsync(dataSource).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void finalizeBackupExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String dataSource =
-          "projects/project-8659/locations/location-8659/backupVaults/backupVault-8659/dataSources/dataSource-8659";
-      client.finalizeBackupAsync(dataSource).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void fetchAccessTokenTest() throws Exception {
-    FetchAccessTokenResponse expectedResponse =
-        FetchAccessTokenResponse.newBuilder()
-            .setReadLocation("readLocation453994347")
-            .setWriteLocation("writeLocation54660276")
-            .setToken("token110541305")
-            .setExpireTime(Timestamp.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    DataSourceName name =
-        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-
-    FetchAccessTokenResponse actualResponse = client.fetchAccessToken(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void fetchAccessTokenExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DataSourceName name =
-          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-      client.fetchAccessToken(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void fetchAccessTokenTest2() throws Exception {
-    FetchAccessTokenResponse expectedResponse =
-        FetchAccessTokenResponse.newBuilder()
-            .setReadLocation("readLocation453994347")
-            .setWriteLocation("writeLocation54660276")
-            .setToken("token110541305")
-            .setExpireTime(Timestamp.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-1411/locations/location-1411/backupVaults/backupVault-1411/dataSources/dataSource-1411";
-
-    FetchAccessTokenResponse actualResponse = client.fetchAccessToken(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void fetchAccessTokenExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-1411/locations/location-1411/backupVaults/backupVault-1411/dataSources/dataSource-1411";
-      client.fetchAccessToken(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
     }
   }
 
@@ -3967,6 +3270,59 @@ public class BackupDRClientHttpJsonTest {
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(
+                ManagementServerName.of("[PROJECT]", "[LOCATION]", "[MANAGEMENTSERVER]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(
+                  ManagementServerName.of("[PROJECT]", "[LOCATION]", "[MANAGEMENTSERVER]")
+                      .toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

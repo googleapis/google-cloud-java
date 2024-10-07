@@ -28,7 +28,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.backupdr.v1.stub.BackupDRStub;
 import com.google.cloud.backupdr.v1.stub.BackupDRStubSettings;
 import com.google.cloud.location.GetLocationRequest;
@@ -277,26 +276,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> TestIamPermissions</td>
- *      <td><p> Returns the caller's permissions on a BackupVault resource.
- * <p>  A caller is not required to have Google IAM permission to make this request.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
- *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> testIamPermissionsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> ListDataSources</td>
  *      <td><p> Lists DataSources in a given project and location.</td>
  *      <td>
@@ -351,124 +330,6 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateDataSourceOperationCallable()
  *           <li><p> updateDataSourceCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> RemoveDataSource</td>
- *      <td><p> Deletes a DataSource. This is a custom method instead of a standard delete method because external clients will not delete DataSources except for BackupDR backup appliances.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> removeDataSourceAsync(RemoveDataSourceRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> removeDataSourceAsync(DataSourceName name)
- *           <li><p> removeDataSourceAsync(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> removeDataSourceOperationCallable()
- *           <li><p> removeDataSourceCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> SetInternalStatus</td>
- *      <td><p> Sets the internal status of a DataSource.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> setInternalStatusAsync(SetInternalStatusRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> setInternalStatusAsync(DataSourceName dataSource)
- *           <li><p> setInternalStatusAsync(String dataSource)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> setInternalStatusOperationCallable()
- *           <li><p> setInternalStatusCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> InitiateBackup</td>
- *      <td><p> Internal only. Initiates a backup.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> initiateBackup(InitiateBackupRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> initiateBackup(DataSourceName dataSource)
- *           <li><p> initiateBackup(String dataSource)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> initiateBackupCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> AbandonBackup</td>
- *      <td><p> Internal only. Abandons a backup.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> abandonBackupAsync(AbandonBackupRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> abandonBackupAsync(DataSourceName dataSource)
- *           <li><p> abandonBackupAsync(String dataSource)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> abandonBackupOperationCallable()
- *           <li><p> abandonBackupCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FinalizeBackup</td>
- *      <td><p> Internal only. Finalize a backup that was started by a call to InitiateBackup.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> finalizeBackupAsync(FinalizeBackupRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> finalizeBackupAsync(DataSourceName dataSource)
- *           <li><p> finalizeBackupAsync(String dataSource)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> finalizeBackupOperationCallable()
- *           <li><p> finalizeBackupCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FetchAccessToken</td>
- *      <td><p> Internal only. Fetch access token for a given data source.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> fetchAccessToken(FetchAccessTokenRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> fetchAccessToken(DataSourceName name)
- *           <li><p> fetchAccessToken(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> fetchAccessTokenCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -803,6 +664,21 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2531,151 +2407,6 @@ public class BackupDRClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the caller's permissions on a BackupVault resource.
-   *
-   * <p>A caller is not required to have Google IAM permission to make this request.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   ResourceName resource = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]");
-   *   List<String> permissions = new ArrayList<>();
-   *   TestIamPermissionsResponse response =
-   *       backupDRClient.testIamPermissions(resource, permissions);
-   * }
-   * }</pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the caller's permissions on a BackupVault resource.
-   *
-   * <p>A caller is not required to have Google IAM permission to make this request.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String resource =
-   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
-   *           .toString();
-   *   List<String> permissions = new ArrayList<>();
-   *   TestIamPermissionsResponse response =
-   *       backupDRClient.testIamPermissions(resource, permissions);
-   * }
-   * }</pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      String resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource)
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the caller's permissions on a BackupVault resource.
-   *
-   * <p>A caller is not required to have Google IAM permission to make this request.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   TestIamPermissionsRequest request =
-   *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
-   *           .addAllPermissions(new ArrayList<String>())
-   *           .build();
-   *   TestIamPermissionsResponse response = backupDRClient.testIamPermissions(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the caller's permissions on a BackupVault resource.
-   *
-   * <p>A caller is not required to have Google IAM permission to make this request.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   TestIamPermissionsRequest request =
-   *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
-   *           .addAllPermissions(new ArrayList<String>())
-   *           .build();
-   *   ApiFuture<TestIamPermissionsResponse> future =
-   *       backupDRClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something.
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return stub.testIamPermissionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Lists DataSources in a given project and location.
    *
    * <p>Sample code:
@@ -3093,899 +2824,6 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable() {
     return stub.updateDataSourceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a DataSource. This is a custom method instead of a standard delete method because
-   * external clients will not delete DataSources except for BackupDR backup appliances.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName name =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   backupDRClient.removeDataSourceAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> removeDataSourceAsync(
-      DataSourceName name) {
-    RemoveDataSourceRequest request =
-        RemoveDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return removeDataSourceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a DataSource. This is a custom method instead of a standard delete method because
-   * external clients will not delete DataSources except for BackupDR backup appliances.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String name =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   backupDRClient.removeDataSourceAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> removeDataSourceAsync(String name) {
-    RemoveDataSourceRequest request = RemoveDataSourceRequest.newBuilder().setName(name).build();
-    return removeDataSourceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a DataSource. This is a custom method instead of a standard delete method because
-   * external clients will not delete DataSources except for BackupDR backup appliances.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   RemoveDataSourceRequest request =
-   *       RemoveDataSourceRequest.newBuilder()
-   *           .setName(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   backupDRClient.removeDataSourceAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> removeDataSourceAsync(
-      RemoveDataSourceRequest request) {
-    return removeDataSourceOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a DataSource. This is a custom method instead of a standard delete method because
-   * external clients will not delete DataSources except for BackupDR backup appliances.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   RemoveDataSourceRequest request =
-   *       RemoveDataSourceRequest.newBuilder()
-   *           .setName(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       backupDRClient.removeDataSourceOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable() {
-    return stub.removeDataSourceOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a DataSource. This is a custom method instead of a standard delete method because
-   * external clients will not delete DataSources except for BackupDR backup appliances.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   RemoveDataSourceRequest request =
-   *       RemoveDataSourceRequest.newBuilder()
-   *           .setName(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   ApiFuture<Operation> future = backupDRClient.removeDataSourceCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable() {
-    return stub.removeDataSourceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the internal status of a DataSource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   SetInternalStatusResponse response = backupDRClient.setInternalStatusAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<SetInternalStatusResponse, OperationMetadata> setInternalStatusAsync(
-      DataSourceName dataSource) {
-    SetInternalStatusRequest request =
-        SetInternalStatusRequest.newBuilder()
-            .setDataSource(dataSource == null ? null : dataSource.toString())
-            .build();
-    return setInternalStatusAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the internal status of a DataSource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   SetInternalStatusResponse response = backupDRClient.setInternalStatusAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<SetInternalStatusResponse, OperationMetadata> setInternalStatusAsync(
-      String dataSource) {
-    SetInternalStatusRequest request =
-        SetInternalStatusRequest.newBuilder().setDataSource(dataSource).build();
-    return setInternalStatusAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the internal status of a DataSource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   SetInternalStatusRequest request =
-   *       SetInternalStatusRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setValue(ByteString.EMPTY)
-   *           .setBackupConfigState(BackupConfigState.forNumber(0))
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   SetInternalStatusResponse response = backupDRClient.setInternalStatusAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<SetInternalStatusResponse, OperationMetadata> setInternalStatusAsync(
-      SetInternalStatusRequest request) {
-    return setInternalStatusOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the internal status of a DataSource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   SetInternalStatusRequest request =
-   *       SetInternalStatusRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setValue(ByteString.EMPTY)
-   *           .setBackupConfigState(BackupConfigState.forNumber(0))
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   OperationFuture<SetInternalStatusResponse, OperationMetadata> future =
-   *       backupDRClient.setInternalStatusOperationCallable().futureCall(request);
-   *   // Do something.
-   *   SetInternalStatusResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<
-          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable() {
-    return stub.setInternalStatusOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the internal status of a DataSource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   SetInternalStatusRequest request =
-   *       SetInternalStatusRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setValue(ByteString.EMPTY)
-   *           .setBackupConfigState(BackupConfigState.forNumber(0))
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   ApiFuture<Operation> future = backupDRClient.setInternalStatusCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable() {
-    return stub.setInternalStatusCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Initiates a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   InitiateBackupResponse response = backupDRClient.initiateBackup(dataSource);
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final InitiateBackupResponse initiateBackup(DataSourceName dataSource) {
-    InitiateBackupRequest request =
-        InitiateBackupRequest.newBuilder()
-            .setDataSource(dataSource == null ? null : dataSource.toString())
-            .build();
-    return initiateBackup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Initiates a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   InitiateBackupResponse response = backupDRClient.initiateBackup(dataSource);
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final InitiateBackupResponse initiateBackup(String dataSource) {
-    InitiateBackupRequest request =
-        InitiateBackupRequest.newBuilder().setDataSource(dataSource).build();
-    return initiateBackup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Initiates a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   InitiateBackupRequest request =
-   *       InitiateBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .setBackupId("backupId2121930365")
-   *           .build();
-   *   InitiateBackupResponse response = backupDRClient.initiateBackup(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final InitiateBackupResponse initiateBackup(InitiateBackupRequest request) {
-    return initiateBackupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Initiates a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   InitiateBackupRequest request =
-   *       InitiateBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .setBackupId("backupId2121930365")
-   *           .build();
-   *   ApiFuture<InitiateBackupResponse> future =
-   *       backupDRClient.initiateBackupCallable().futureCall(request);
-   *   // Do something.
-   *   InitiateBackupResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<InitiateBackupRequest, InitiateBackupResponse>
-      initiateBackupCallable() {
-    return stub.initiateBackupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Abandons a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   backupDRClient.abandonBackupAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> abandonBackupAsync(
-      DataSourceName dataSource) {
-    AbandonBackupRequest request =
-        AbandonBackupRequest.newBuilder()
-            .setDataSource(dataSource == null ? null : dataSource.toString())
-            .build();
-    return abandonBackupAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Abandons a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   backupDRClient.abandonBackupAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> abandonBackupAsync(String dataSource) {
-    AbandonBackupRequest request =
-        AbandonBackupRequest.newBuilder().setDataSource(dataSource).build();
-    return abandonBackupAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Abandons a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   AbandonBackupRequest request =
-   *       AbandonBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   backupDRClient.abandonBackupAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> abandonBackupAsync(
-      AbandonBackupRequest request) {
-    return abandonBackupOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Abandons a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   AbandonBackupRequest request =
-   *       AbandonBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       backupDRClient.abandonBackupOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable() {
-    return stub.abandonBackupOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Abandons a backup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   AbandonBackupRequest request =
-   *       AbandonBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setRequestId("requestId693933066")
-   *           .build();
-   *   ApiFuture<Operation> future = backupDRClient.abandonBackupCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable() {
-    return stub.abandonBackupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Finalize a backup that was started by a call to InitiateBackup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   Backup response = backupDRClient.finalizeBackupAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Backup, OperationMetadata> finalizeBackupAsync(
-      DataSourceName dataSource) {
-    FinalizeBackupRequest request =
-        FinalizeBackupRequest.newBuilder()
-            .setDataSource(dataSource == null ? null : dataSource.toString())
-            .build();
-    return finalizeBackupAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Finalize a backup that was started by a call to InitiateBackup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String dataSource =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   Backup response = backupDRClient.finalizeBackupAsync(dataSource).get();
-   * }
-   * }</pre>
-   *
-   * @param dataSource Required. The resource name of the instance, in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources/'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Backup, OperationMetadata> finalizeBackupAsync(String dataSource) {
-    FinalizeBackupRequest request =
-        FinalizeBackupRequest.newBuilder().setDataSource(dataSource).build();
-    return finalizeBackupAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Finalize a backup that was started by a call to InitiateBackup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   FinalizeBackupRequest request =
-   *       FinalizeBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setDescription("description-1724546052")
-   *           .setConsistencyTime(Timestamp.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .setBackupId("backupId2121930365")
-   *           .setRecoveryRangeStartTime(Timestamp.newBuilder().build())
-   *           .setRecoveryRangeEndTime(Timestamp.newBuilder().build())
-   *           .setRetentionDuration(Duration.newBuilder().build())
-   *           .build();
-   *   Backup response = backupDRClient.finalizeBackupAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Backup, OperationMetadata> finalizeBackupAsync(
-      FinalizeBackupRequest request) {
-    return finalizeBackupOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Finalize a backup that was started by a call to InitiateBackup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   FinalizeBackupRequest request =
-   *       FinalizeBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setDescription("description-1724546052")
-   *           .setConsistencyTime(Timestamp.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .setBackupId("backupId2121930365")
-   *           .setRecoveryRangeStartTime(Timestamp.newBuilder().build())
-   *           .setRecoveryRangeEndTime(Timestamp.newBuilder().build())
-   *           .setRetentionDuration(Duration.newBuilder().build())
-   *           .build();
-   *   OperationFuture<Backup, OperationMetadata> future =
-   *       backupDRClient.finalizeBackupOperationCallable().futureCall(request);
-   *   // Do something.
-   *   Backup response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable() {
-    return stub.finalizeBackupOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Finalize a backup that was started by a call to InitiateBackup.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   FinalizeBackupRequest request =
-   *       FinalizeBackupRequest.newBuilder()
-   *           .setDataSource(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setDescription("description-1724546052")
-   *           .setConsistencyTime(Timestamp.newBuilder().build())
-   *           .setRequestId("requestId693933066")
-   *           .setBackupId("backupId2121930365")
-   *           .setRecoveryRangeStartTime(Timestamp.newBuilder().build())
-   *           .setRecoveryRangeEndTime(Timestamp.newBuilder().build())
-   *           .setRetentionDuration(Duration.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Operation> future = backupDRClient.finalizeBackupCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable() {
-    return stub.finalizeBackupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Fetch access token for a given data source.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   DataSourceName name =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
-   *   FetchAccessTokenResponse response = backupDRClient.fetchAccessToken(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name for the location for which static IPs should be
-   *     returned. Must be in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchAccessTokenResponse fetchAccessToken(DataSourceName name) {
-    FetchAccessTokenRequest request =
-        FetchAccessTokenRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return fetchAccessToken(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Fetch access token for a given data source.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   String name =
-   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
-   *   FetchAccessTokenResponse response = backupDRClient.fetchAccessToken(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name for the location for which static IPs should be
-   *     returned. Must be in the format
-   *     'projects/&#42;/locations/&#42;/backupVaults/&#42;/dataSources'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchAccessTokenResponse fetchAccessToken(String name) {
-    FetchAccessTokenRequest request = FetchAccessTokenRequest.newBuilder().setName(name).build();
-    return fetchAccessToken(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Fetch access token for a given data source.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   FetchAccessTokenRequest request =
-   *       FetchAccessTokenRequest.newBuilder()
-   *           .setName(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setGenerationId(1873220002)
-   *           .build();
-   *   FetchAccessTokenResponse response = backupDRClient.fetchAccessToken(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchAccessTokenResponse fetchAccessToken(FetchAccessTokenRequest request) {
-    return fetchAccessTokenCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Internal only. Fetch access token for a given data source.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-   *   FetchAccessTokenRequest request =
-   *       FetchAccessTokenRequest.newBuilder()
-   *           .setName(
-   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
-   *                   .toString())
-   *           .setGenerationId(1873220002)
-   *           .build();
-   *   ApiFuture<FetchAccessTokenResponse> future =
-   *       backupDRClient.fetchAccessTokenCallable().futureCall(request);
-   *   // Do something.
-   *   FetchAccessTokenResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable() {
-    return stub.fetchAccessTokenCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6439,6 +5277,79 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               ManagementServerName.of("[PROJECT]", "[LOCATION]", "[MANAGEMENTSERVER]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = backupDRClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               ManagementServerName.of("[PROJECT]", "[LOCATION]", "[MANAGEMENTSERVER]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       backupDRClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

@@ -16,6 +16,9 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsPagedResponse;
+import static com.google.ads.admanager.v1.ReportServiceClient.ListReportsPagedResponse;
+
 import com.google.ads.admanager.v1.stub.ReportServiceStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.longrunning.Operation;
@@ -49,7 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of exportSavedReport:
+ * of getReport:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -59,10 +63,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ReportServiceSettings.Builder reportServiceSettingsBuilder = ReportServiceSettings.newBuilder();
  * reportServiceSettingsBuilder
- *     .exportSavedReportSettings()
+ *     .getReportSettings()
  *     .setRetrySettings(
  *         reportServiceSettingsBuilder
- *             .exportSavedReportSettings()
+ *             .getReportSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -83,7 +87,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for exportSavedReport:
+ * configure the RetrySettings for runReport:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -109,16 +113,45 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class ReportServiceSettings extends ClientSettings<ReportServiceSettings> {
 
-  /** Returns the object with the settings used for calls to exportSavedReport. */
-  public UnaryCallSettings<ExportSavedReportRequest, Operation> exportSavedReportSettings() {
-    return ((ReportServiceStubSettings) getStubSettings()).exportSavedReportSettings();
+  /** Returns the object with the settings used for calls to getReport. */
+  public UnaryCallSettings<GetReportRequest, Report> getReportSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).getReportSettings();
   }
 
-  /** Returns the object with the settings used for calls to exportSavedReport. */
-  public OperationCallSettings<
-          ExportSavedReportRequest, ExportSavedReportResponse, ExportSavedReportMetadata>
-      exportSavedReportOperationSettings() {
-    return ((ReportServiceStubSettings) getStubSettings()).exportSavedReportOperationSettings();
+  /** Returns the object with the settings used for calls to listReports. */
+  public PagedCallSettings<ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
+      listReportsSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).listReportsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createReport. */
+  public UnaryCallSettings<CreateReportRequest, Report> createReportSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).createReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateReport. */
+  public UnaryCallSettings<UpdateReportRequest, Report> updateReportSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).updateReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runReport. */
+  public UnaryCallSettings<RunReportRequest, Operation> runReportSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).runReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runReport. */
+  public OperationCallSettings<RunReportRequest, RunReportResponse, RunReportMetadata>
+      runReportOperationSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).runReportOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchReportResultRows. */
+  public PagedCallSettings<
+          FetchReportResultRowsRequest,
+          FetchReportResultRowsResponse,
+          FetchReportResultRowsPagedResponse>
+      fetchReportResultRowsSettings() {
+    return ((ReportServiceStubSettings) getStubSettings()).fetchReportResultRowsSettings();
   }
 
   public static final ReportServiceSettings create(ReportServiceStubSettings stub)
@@ -218,17 +251,46 @@ public class ReportServiceSettings extends ClientSettings<ReportServiceSettings>
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to exportSavedReport. */
-    public UnaryCallSettings.Builder<ExportSavedReportRequest, Operation>
-        exportSavedReportSettings() {
-      return getStubSettingsBuilder().exportSavedReportSettings();
+    /** Returns the builder for the settings used for calls to getReport. */
+    public UnaryCallSettings.Builder<GetReportRequest, Report> getReportSettings() {
+      return getStubSettingsBuilder().getReportSettings();
     }
 
-    /** Returns the builder for the settings used for calls to exportSavedReport. */
-    public OperationCallSettings.Builder<
-            ExportSavedReportRequest, ExportSavedReportResponse, ExportSavedReportMetadata>
-        exportSavedReportOperationSettings() {
-      return getStubSettingsBuilder().exportSavedReportOperationSettings();
+    /** Returns the builder for the settings used for calls to listReports. */
+    public PagedCallSettings.Builder<
+            ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
+        listReportsSettings() {
+      return getStubSettingsBuilder().listReportsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReport. */
+    public UnaryCallSettings.Builder<CreateReportRequest, Report> createReportSettings() {
+      return getStubSettingsBuilder().createReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReport. */
+    public UnaryCallSettings.Builder<UpdateReportRequest, Report> updateReportSettings() {
+      return getStubSettingsBuilder().updateReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runReport. */
+    public UnaryCallSettings.Builder<RunReportRequest, Operation> runReportSettings() {
+      return getStubSettingsBuilder().runReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runReport. */
+    public OperationCallSettings.Builder<RunReportRequest, RunReportResponse, RunReportMetadata>
+        runReportOperationSettings() {
+      return getStubSettingsBuilder().runReportOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchReportResultRows. */
+    public PagedCallSettings.Builder<
+            FetchReportResultRowsRequest,
+            FetchReportResultRowsResponse,
+            FetchReportResultRowsPagedResponse>
+        fetchReportResultRowsSettings() {
+      return getStubSettingsBuilder().fetchReportResultRowsSettings();
     }
 
     @Override

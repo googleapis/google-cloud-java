@@ -100,7 +100,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteAccount</td>
- *      <td><p> Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin access.</td>
+ *      <td><p> Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin access. The deletion succeeds only if the account does not provide services to any other account and has no processed offers. You can use the `force` parameter to override this.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -137,7 +137,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAccounts</td>
- *      <td><p> Lists accounts accessible to the calling user and matching the constraints of the request such as page size or filters. This is not just listing the sub-accounts of an MCA, but all accounts the calling user has access to including other MCAs, linked accounts, standalone accounts and so on.</td>
+ *      <td><p> Lists accounts accessible to the calling user and matching the constraints of the request such as page size or filters. This is not just listing the sub-accounts of an MCA, but all accounts the calling user has access to including other MCAs, linked accounts, standalone accounts and so on. If no filter is provided, then it returns accounts the user is directly added to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -458,7 +458,8 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting
    * an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin
-   * access.
+   * access. The deletion succeeds only if the account does not provide services to any other
+   * account and has no processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -487,7 +488,8 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting
    * an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin
-   * access.
+   * access. The deletion succeeds only if the account does not provide services to any other
+   * account and has no processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -515,7 +517,8 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting
    * an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin
-   * access.
+   * access. The deletion succeeds only if the account does not provide services to any other
+   * account and has no processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -527,7 +530,10 @@ public class AccountsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AccountsServiceClient accountsServiceClient = AccountsServiceClient.create()) {
    *   DeleteAccountRequest request =
-   *       DeleteAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *       DeleteAccountRequest.newBuilder()
+   *           .setName(AccountName.of("[ACCOUNT]").toString())
+   *           .setForce(true)
+   *           .build();
    *   accountsServiceClient.deleteAccount(request);
    * }
    * }</pre>
@@ -543,7 +549,8 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, MCA or sub-account. Deleting
    * an MCA leads to the deletion of all of its sub-accounts. Executing this method requires admin
-   * access.
+   * access. The deletion succeeds only if the account does not provide services to any other
+   * account and has no processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -555,7 +562,10 @@ public class AccountsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AccountsServiceClient accountsServiceClient = AccountsServiceClient.create()) {
    *   DeleteAccountRequest request =
-   *       DeleteAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *       DeleteAccountRequest.newBuilder()
+   *           .setName(AccountName.of("[ACCOUNT]").toString())
+   *           .setForce(true)
+   *           .build();
    *   ApiFuture<Empty> future = accountsServiceClient.deleteAccountCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -660,7 +670,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * Lists accounts accessible to the calling user and matching the constraints of the request such
    * as page size or filters. This is not just listing the sub-accounts of an MCA, but all accounts
    * the calling user has access to including other MCAs, linked accounts, standalone accounts and
-   * so on.
+   * so on. If no filter is provided, then it returns accounts the user is directly added to.
    *
    * <p>Sample code:
    *
@@ -695,7 +705,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * Lists accounts accessible to the calling user and matching the constraints of the request such
    * as page size or filters. This is not just listing the sub-accounts of an MCA, but all accounts
    * the calling user has access to including other MCAs, linked accounts, standalone accounts and
-   * so on.
+   * so on. If no filter is provided, then it returns accounts the user is directly added to.
    *
    * <p>Sample code:
    *
@@ -731,7 +741,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * Lists accounts accessible to the calling user and matching the constraints of the request such
    * as page size or filters. This is not just listing the sub-accounts of an MCA, but all accounts
    * the calling user has access to including other MCAs, linked accounts, standalone accounts and
-   * so on.
+   * so on. If no filter is provided, then it returns accounts the user is directly added to.
    *
    * <p>Sample code:
    *

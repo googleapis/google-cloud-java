@@ -22,6 +22,7 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class AsyncIgnoreJob {
 
@@ -48,6 +49,7 @@ public class AsyncIgnoreJob {
                       .toString())
               .setPhaseId("phaseId-608264202")
               .setJobId("jobId101296568")
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<IgnoreJobResponse> future =
           cloudDeployClient.ignoreJobCallable().futureCall(request);

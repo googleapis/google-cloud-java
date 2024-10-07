@@ -46,6 +46,7 @@ public class AsyncIngestConversations {
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
               .setRedactionConfig(RedactionConfig.newBuilder().build())
               .setSpeechConfig(SpeechConfig.newBuilder().build())
+              .setSampleSize(153230710)
               .build();
       ApiFuture<Operation> future =
           contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);

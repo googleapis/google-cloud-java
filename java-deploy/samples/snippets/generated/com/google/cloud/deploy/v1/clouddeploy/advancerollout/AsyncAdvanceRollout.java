@@ -22,6 +22,7 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class AsyncAdvanceRollout {
 
@@ -47,6 +48,7 @@ public class AsyncAdvanceRollout {
                           "[ROLLOUT]")
                       .toString())
               .setPhaseId("phaseId-608264202")
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<AdvanceRolloutResponse> future =
           cloudDeployClient.advanceRolloutCallable().futureCall(request);

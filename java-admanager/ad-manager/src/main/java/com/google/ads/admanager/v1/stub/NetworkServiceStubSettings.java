@@ -17,6 +17,8 @@
 package com.google.ads.admanager.v1.stub;
 
 import com.google.ads.admanager.v1.GetNetworkRequest;
+import com.google.ads.admanager.v1.ListNetworksRequest;
+import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ObsoleteApi;
@@ -98,10 +100,16 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
       ImmutableList.<String>builder().build();
 
   private final UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings;
+  private final UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings;
 
   /** Returns the object with the settings used for calls to getNetwork. */
   public UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings() {
     return getNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNetworks. */
+  public UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings() {
+    return listNetworksSettings;
   }
 
   public NetworkServiceStub createStub() throws IOException {
@@ -187,12 +195,15 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
     super(settingsBuilder);
 
     getNetworkSettings = settingsBuilder.getNetworkSettings().build();
+    listNetworksSettings = settingsBuilder.listNetworksSettings().build();
   }
 
   /** Builder for NetworkServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<NetworkServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings;
+    private final UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+        listNetworksSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -221,9 +232,11 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
       super(clientContext);
 
       getNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listNetworksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getNetworkSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getNetworkSettings, listNetworksSettings);
       initDefaults(this);
     }
 
@@ -231,9 +244,11 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
       super(settings);
 
       getNetworkSettings = settings.getNetworkSettings.toBuilder();
+      listNetworksSettings = settings.listNetworksSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getNetworkSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getNetworkSettings, listNetworksSettings);
     }
 
     private static Builder createDefault() {
@@ -251,6 +266,11 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
     private static Builder initDefaults(Builder builder) {
       builder
           .getNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listNetworksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -275,6 +295,12 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
     /** Returns the builder for the settings used for calls to getNetwork. */
     public UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings() {
       return getNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNetworks. */
+    public UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+        listNetworksSettings() {
+      return listNetworksSettings;
     }
 
     @Override

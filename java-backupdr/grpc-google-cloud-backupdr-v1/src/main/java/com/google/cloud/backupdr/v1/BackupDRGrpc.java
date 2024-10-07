@@ -498,49 +498,6 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      getTestIamPermissionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
-      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
-      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
-      getTestIamPermissionsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.iam.v1.TestIamPermissionsRequest,
-            com.google.iam.v1.TestIamPermissionsResponse>
-        getTestIamPermissionsMethod;
-    if ((getTestIamPermissionsMethod = BackupDRGrpc.getTestIamPermissionsMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getTestIamPermissionsMethod = BackupDRGrpc.getTestIamPermissionsMethod) == null) {
-          BackupDRGrpc.getTestIamPermissionsMethod =
-              getTestIamPermissionsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.iam.v1.TestIamPermissionsRequest,
-                          com.google.iam.v1.TestIamPermissionsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BackupDRMethodDescriptorSupplier("TestIamPermissions"))
-                      .build();
-        }
-      }
-    }
-    return getTestIamPermissionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1.ListDataSourcesRequest,
           com.google.cloud.backupdr.v1.ListDataSourcesResponse>
       getListDataSourcesMethod;
@@ -671,267 +628,6 @@ public final class BackupDRGrpc {
       }
     }
     return getUpdateDataSourceMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.RemoveDataSourceRequest, com.google.longrunning.Operation>
-      getRemoveDataSourceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RemoveDataSource",
-      requestType = com.google.cloud.backupdr.v1.RemoveDataSourceRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.RemoveDataSourceRequest, com.google.longrunning.Operation>
-      getRemoveDataSourceMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.RemoveDataSourceRequest, com.google.longrunning.Operation>
-        getRemoveDataSourceMethod;
-    if ((getRemoveDataSourceMethod = BackupDRGrpc.getRemoveDataSourceMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getRemoveDataSourceMethod = BackupDRGrpc.getRemoveDataSourceMethod) == null) {
-          BackupDRGrpc.getRemoveDataSourceMethod =
-              getRemoveDataSourceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.RemoveDataSourceRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveDataSource"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.RemoveDataSourceRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("RemoveDataSource"))
-                      .build();
-        }
-      }
-    }
-    return getRemoveDataSourceMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.SetInternalStatusRequest, com.google.longrunning.Operation>
-      getSetInternalStatusMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetInternalStatus",
-      requestType = com.google.cloud.backupdr.v1.SetInternalStatusRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.SetInternalStatusRequest, com.google.longrunning.Operation>
-      getSetInternalStatusMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.SetInternalStatusRequest, com.google.longrunning.Operation>
-        getSetInternalStatusMethod;
-    if ((getSetInternalStatusMethod = BackupDRGrpc.getSetInternalStatusMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getSetInternalStatusMethod = BackupDRGrpc.getSetInternalStatusMethod) == null) {
-          BackupDRGrpc.getSetInternalStatusMethod =
-              getSetInternalStatusMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.SetInternalStatusRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetInternalStatus"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.SetInternalStatusRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BackupDRMethodDescriptorSupplier("SetInternalStatus"))
-                      .build();
-        }
-      }
-    }
-    return getSetInternalStatusMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.InitiateBackupRequest,
-          com.google.cloud.backupdr.v1.InitiateBackupResponse>
-      getInitiateBackupMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "InitiateBackup",
-      requestType = com.google.cloud.backupdr.v1.InitiateBackupRequest.class,
-      responseType = com.google.cloud.backupdr.v1.InitiateBackupResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.InitiateBackupRequest,
-          com.google.cloud.backupdr.v1.InitiateBackupResponse>
-      getInitiateBackupMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.InitiateBackupRequest,
-            com.google.cloud.backupdr.v1.InitiateBackupResponse>
-        getInitiateBackupMethod;
-    if ((getInitiateBackupMethod = BackupDRGrpc.getInitiateBackupMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getInitiateBackupMethod = BackupDRGrpc.getInitiateBackupMethod) == null) {
-          BackupDRGrpc.getInitiateBackupMethod =
-              getInitiateBackupMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.InitiateBackupRequest,
-                          com.google.cloud.backupdr.v1.InitiateBackupResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InitiateBackup"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.InitiateBackupRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.InitiateBackupResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("InitiateBackup"))
-                      .build();
-        }
-      }
-    }
-    return getInitiateBackupMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.AbandonBackupRequest, com.google.longrunning.Operation>
-      getAbandonBackupMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AbandonBackup",
-      requestType = com.google.cloud.backupdr.v1.AbandonBackupRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.AbandonBackupRequest, com.google.longrunning.Operation>
-      getAbandonBackupMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.AbandonBackupRequest, com.google.longrunning.Operation>
-        getAbandonBackupMethod;
-    if ((getAbandonBackupMethod = BackupDRGrpc.getAbandonBackupMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getAbandonBackupMethod = BackupDRGrpc.getAbandonBackupMethod) == null) {
-          BackupDRGrpc.getAbandonBackupMethod =
-              getAbandonBackupMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.AbandonBackupRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AbandonBackup"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.AbandonBackupRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("AbandonBackup"))
-                      .build();
-        }
-      }
-    }
-    return getAbandonBackupMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.FinalizeBackupRequest, com.google.longrunning.Operation>
-      getFinalizeBackupMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FinalizeBackup",
-      requestType = com.google.cloud.backupdr.v1.FinalizeBackupRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.FinalizeBackupRequest, com.google.longrunning.Operation>
-      getFinalizeBackupMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.FinalizeBackupRequest, com.google.longrunning.Operation>
-        getFinalizeBackupMethod;
-    if ((getFinalizeBackupMethod = BackupDRGrpc.getFinalizeBackupMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getFinalizeBackupMethod = BackupDRGrpc.getFinalizeBackupMethod) == null) {
-          BackupDRGrpc.getFinalizeBackupMethod =
-              getFinalizeBackupMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.FinalizeBackupRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FinalizeBackup"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.FinalizeBackupRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("FinalizeBackup"))
-                      .build();
-        }
-      }
-    }
-    return getFinalizeBackupMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.FetchAccessTokenRequest,
-          com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-      getFetchAccessTokenMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FetchAccessToken",
-      requestType = com.google.cloud.backupdr.v1.FetchAccessTokenRequest.class,
-      responseType = com.google.cloud.backupdr.v1.FetchAccessTokenResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.backupdr.v1.FetchAccessTokenRequest,
-          com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-      getFetchAccessTokenMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.backupdr.v1.FetchAccessTokenRequest,
-            com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-        getFetchAccessTokenMethod;
-    if ((getFetchAccessTokenMethod = BackupDRGrpc.getFetchAccessTokenMethod) == null) {
-      synchronized (BackupDRGrpc.class) {
-        if ((getFetchAccessTokenMethod = BackupDRGrpc.getFetchAccessTokenMethod) == null) {
-          BackupDRGrpc.getFetchAccessTokenMethod =
-              getFetchAccessTokenMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.backupdr.v1.FetchAccessTokenRequest,
-                          com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchAccessToken"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.FetchAccessTokenRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.backupdr.v1.FetchAccessTokenResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("FetchAccessToken"))
-                      .build();
-        }
-      }
-    }
-    return getFetchAccessTokenMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1762,23 +1458,6 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
-     * Returns the caller's permissions on a BackupVault resource.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
-     * </pre>
-     */
-    default void testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getTestIamPermissionsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists DataSources in a given project and location.
      * </pre>
      */
@@ -1816,98 +1495,6 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateDataSourceMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a DataSource. This is a custom method instead of a standard delete
-     * method because external clients will not delete DataSources except for
-     * BackupDR backup appliances.
-     * </pre>
-     */
-    default void removeDataSource(
-        com.google.cloud.backupdr.v1.RemoveDataSourceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getRemoveDataSourceMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets the internal status of a DataSource.
-     * </pre>
-     */
-    default void setInternalStatus(
-        com.google.cloud.backupdr.v1.SetInternalStatusRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getSetInternalStatusMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Initiates a backup.
-     * </pre>
-     */
-    default void initiateBackup(
-        com.google.cloud.backupdr.v1.InitiateBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.InitiateBackupResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getInitiateBackupMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Abandons a backup.
-     * </pre>
-     */
-    default void abandonBackup(
-        com.google.cloud.backupdr.v1.AbandonBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getAbandonBackupMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Finalize a backup that was started by a call to InitiateBackup.
-     * </pre>
-     */
-    default void finalizeBackup(
-        com.google.cloud.backupdr.v1.FinalizeBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getFinalizeBackupMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Fetch access token for a given data source.
-     * </pre>
-     */
-    default void fetchAccessToken(
-        com.google.cloud.backupdr.v1.FetchAccessTokenRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getFetchAccessTokenMethod(), responseObserver);
     }
 
     /**
@@ -2312,25 +1899,6 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
-     * Returns the caller's permissions on a BackupVault resource.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
-     * </pre>
-     */
-    public void testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists DataSources in a given project and location.
      * </pre>
      */
@@ -2372,110 +1940,6 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDataSourceMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a DataSource. This is a custom method instead of a standard delete
-     * method because external clients will not delete DataSources except for
-     * BackupDR backup appliances.
-     * </pre>
-     */
-    public void removeDataSource(
-        com.google.cloud.backupdr.v1.RemoveDataSourceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRemoveDataSourceMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets the internal status of a DataSource.
-     * </pre>
-     */
-    public void setInternalStatus(
-        com.google.cloud.backupdr.v1.SetInternalStatusRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetInternalStatusMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Initiates a backup.
-     * </pre>
-     */
-    public void initiateBackup(
-        com.google.cloud.backupdr.v1.InitiateBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.InitiateBackupResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getInitiateBackupMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Abandons a backup.
-     * </pre>
-     */
-    public void abandonBackup(
-        com.google.cloud.backupdr.v1.AbandonBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAbandonBackupMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Finalize a backup that was started by a call to InitiateBackup.
-     * </pre>
-     */
-    public void finalizeBackup(
-        com.google.cloud.backupdr.v1.FinalizeBackupRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFinalizeBackupMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Fetch access token for a given data source.
-     * </pre>
-     */
-    public void fetchAccessToken(
-        com.google.cloud.backupdr.v1.FetchAccessTokenRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFetchAccessTokenMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2861,21 +2325,6 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
-     * Returns the caller's permissions on a BackupVault resource.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
-     * </pre>
-     */
-    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists DataSources in a given project and location.
      * </pre>
      */
@@ -2909,90 +2358,6 @@ public final class BackupDRGrpc {
         com.google.cloud.backupdr.v1.UpdateDataSourceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a DataSource. This is a custom method instead of a standard delete
-     * method because external clients will not delete DataSources except for
-     * BackupDR backup appliances.
-     * </pre>
-     */
-    public com.google.longrunning.Operation removeDataSource(
-        com.google.cloud.backupdr.v1.RemoveDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRemoveDataSourceMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets the internal status of a DataSource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation setInternalStatus(
-        com.google.cloud.backupdr.v1.SetInternalStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetInternalStatusMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Initiates a backup.
-     * </pre>
-     */
-    public com.google.cloud.backupdr.v1.InitiateBackupResponse initiateBackup(
-        com.google.cloud.backupdr.v1.InitiateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInitiateBackupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Abandons a backup.
-     * </pre>
-     */
-    public com.google.longrunning.Operation abandonBackup(
-        com.google.cloud.backupdr.v1.AbandonBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAbandonBackupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Finalize a backup that was started by a call to InitiateBackup.
-     * </pre>
-     */
-    public com.google.longrunning.Operation finalizeBackup(
-        com.google.cloud.backupdr.v1.FinalizeBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFinalizeBackupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Fetch access token for a given data source.
-     * </pre>
-     */
-    public com.google.cloud.backupdr.v1.FetchAccessTokenResponse fetchAccessToken(
-        com.google.cloud.backupdr.v1.FetchAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchAccessTokenMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3339,22 +2704,6 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
-     * Returns the caller's permissions on a BackupVault resource.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.iam.v1.TestIamPermissionsResponse>
-        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists DataSources in a given project and location.
      * </pre>
      */
@@ -3390,92 +2739,6 @@ public final class BackupDRGrpc {
         updateDataSource(com.google.cloud.backupdr.v1.UpdateDataSourceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDataSourceMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a DataSource. This is a custom method instead of a standard delete
-     * method because external clients will not delete DataSources except for
-     * BackupDR backup appliances.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        removeDataSource(com.google.cloud.backupdr.v1.RemoveDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRemoveDataSourceMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets the internal status of a DataSource.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        setInternalStatus(com.google.cloud.backupdr.v1.SetInternalStatusRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetInternalStatusMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Initiates a backup.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.backupdr.v1.InitiateBackupResponse>
-        initiateBackup(com.google.cloud.backupdr.v1.InitiateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getInitiateBackupMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Abandons a backup.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        abandonBackup(com.google.cloud.backupdr.v1.AbandonBackupRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAbandonBackupMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Finalize a backup that was started by a call to InitiateBackup.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        finalizeBackup(com.google.cloud.backupdr.v1.FinalizeBackupRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFinalizeBackupMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal only.
-     * Fetch access token for a given data source.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.backupdr.v1.FetchAccessTokenResponse>
-        fetchAccessToken(com.google.cloud.backupdr.v1.FetchAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFetchAccessTokenMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3680,30 +2943,23 @@ public final class BackupDRGrpc {
   private static final int METHODID_GET_BACKUP_VAULT = 7;
   private static final int METHODID_UPDATE_BACKUP_VAULT = 8;
   private static final int METHODID_DELETE_BACKUP_VAULT = 9;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 10;
-  private static final int METHODID_LIST_DATA_SOURCES = 11;
-  private static final int METHODID_GET_DATA_SOURCE = 12;
-  private static final int METHODID_UPDATE_DATA_SOURCE = 13;
-  private static final int METHODID_REMOVE_DATA_SOURCE = 14;
-  private static final int METHODID_SET_INTERNAL_STATUS = 15;
-  private static final int METHODID_INITIATE_BACKUP = 16;
-  private static final int METHODID_ABANDON_BACKUP = 17;
-  private static final int METHODID_FINALIZE_BACKUP = 18;
-  private static final int METHODID_FETCH_ACCESS_TOKEN = 19;
-  private static final int METHODID_LIST_BACKUPS = 20;
-  private static final int METHODID_GET_BACKUP = 21;
-  private static final int METHODID_UPDATE_BACKUP = 22;
-  private static final int METHODID_DELETE_BACKUP = 23;
-  private static final int METHODID_RESTORE_BACKUP = 24;
-  private static final int METHODID_CREATE_BACKUP_PLAN = 25;
-  private static final int METHODID_GET_BACKUP_PLAN = 26;
-  private static final int METHODID_LIST_BACKUP_PLANS = 27;
-  private static final int METHODID_DELETE_BACKUP_PLAN = 28;
-  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 29;
-  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 30;
-  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 31;
-  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 32;
-  private static final int METHODID_TRIGGER_BACKUP = 33;
+  private static final int METHODID_LIST_DATA_SOURCES = 10;
+  private static final int METHODID_GET_DATA_SOURCE = 11;
+  private static final int METHODID_UPDATE_DATA_SOURCE = 12;
+  private static final int METHODID_LIST_BACKUPS = 13;
+  private static final int METHODID_GET_BACKUP = 14;
+  private static final int METHODID_UPDATE_BACKUP = 15;
+  private static final int METHODID_DELETE_BACKUP = 16;
+  private static final int METHODID_RESTORE_BACKUP = 17;
+  private static final int METHODID_CREATE_BACKUP_PLAN = 18;
+  private static final int METHODID_GET_BACKUP_PLAN = 19;
+  private static final int METHODID_LIST_BACKUP_PLANS = 20;
+  private static final int METHODID_DELETE_BACKUP_PLAN = 21;
+  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 22;
+  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 23;
+  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 24;
+  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 25;
+  private static final int METHODID_TRIGGER_BACKUP = 26;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3779,12 +3035,6 @@ public final class BackupDRGrpc {
               (com.google.cloud.backupdr.v1.DeleteBackupVaultRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_TEST_IAM_PERMISSIONS:
-          serviceImpl.testIamPermissions(
-              (com.google.iam.v1.TestIamPermissionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
-                  responseObserver);
-          break;
         case METHODID_LIST_DATA_SOURCES:
           serviceImpl.listDataSources(
               (com.google.cloud.backupdr.v1.ListDataSourcesRequest) request,
@@ -3801,38 +3051,6 @@ public final class BackupDRGrpc {
           serviceImpl.updateDataSource(
               (com.google.cloud.backupdr.v1.UpdateDataSourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_REMOVE_DATA_SOURCE:
-          serviceImpl.removeDataSource(
-              (com.google.cloud.backupdr.v1.RemoveDataSourceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_SET_INTERNAL_STATUS:
-          serviceImpl.setInternalStatus(
-              (com.google.cloud.backupdr.v1.SetInternalStatusRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_INITIATE_BACKUP:
-          serviceImpl.initiateBackup(
-              (com.google.cloud.backupdr.v1.InitiateBackupRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.InitiateBackupResponse>)
-                  responseObserver);
-          break;
-        case METHODID_ABANDON_BACKUP:
-          serviceImpl.abandonBackup(
-              (com.google.cloud.backupdr.v1.AbandonBackupRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_FINALIZE_BACKUP:
-          serviceImpl.finalizeBackup(
-              (com.google.cloud.backupdr.v1.FinalizeBackupRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_FETCH_ACCESS_TOKEN:
-          serviceImpl.fetchAccessToken(
-              (com.google.cloud.backupdr.v1.FetchAccessTokenRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.FetchAccessTokenResponse>)
-                  responseObserver);
           break;
         case METHODID_LIST_BACKUPS:
           serviceImpl.listBackups(
@@ -3993,13 +3211,6 @@ public final class BackupDRGrpc {
                     com.google.cloud.backupdr.v1.DeleteBackupVaultRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_VAULT)))
         .addMethod(
-            getTestIamPermissionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.iam.v1.TestIamPermissionsRequest,
-                    com.google.iam.v1.TestIamPermissionsResponse>(
-                    service, METHODID_TEST_IAM_PERMISSIONS)))
-        .addMethod(
             getListDataSourcesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4018,44 +3229,6 @@ public final class BackupDRGrpc {
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1.UpdateDataSourceRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_DATA_SOURCE)))
-        .addMethod(
-            getRemoveDataSourceMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.RemoveDataSourceRequest,
-                    com.google.longrunning.Operation>(service, METHODID_REMOVE_DATA_SOURCE)))
-        .addMethod(
-            getSetInternalStatusMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.SetInternalStatusRequest,
-                    com.google.longrunning.Operation>(service, METHODID_SET_INTERNAL_STATUS)))
-        .addMethod(
-            getInitiateBackupMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.InitiateBackupRequest,
-                    com.google.cloud.backupdr.v1.InitiateBackupResponse>(
-                    service, METHODID_INITIATE_BACKUP)))
-        .addMethod(
-            getAbandonBackupMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.AbandonBackupRequest,
-                    com.google.longrunning.Operation>(service, METHODID_ABANDON_BACKUP)))
-        .addMethod(
-            getFinalizeBackupMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.FinalizeBackupRequest,
-                    com.google.longrunning.Operation>(service, METHODID_FINALIZE_BACKUP)))
-        .addMethod(
-            getFetchAccessTokenMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.backupdr.v1.FetchAccessTokenRequest,
-                    com.google.cloud.backupdr.v1.FetchAccessTokenResponse>(
-                    service, METHODID_FETCH_ACCESS_TOKEN)))
         .addMethod(
             getListBackupsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4205,16 +3378,9 @@ public final class BackupDRGrpc {
                       .addMethod(getGetBackupVaultMethod())
                       .addMethod(getUpdateBackupVaultMethod())
                       .addMethod(getDeleteBackupVaultMethod())
-                      .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getListDataSourcesMethod())
                       .addMethod(getGetDataSourceMethod())
                       .addMethod(getUpdateDataSourceMethod())
-                      .addMethod(getRemoveDataSourceMethod())
-                      .addMethod(getSetInternalStatusMethod())
-                      .addMethod(getInitiateBackupMethod())
-                      .addMethod(getAbandonBackupMethod())
-                      .addMethod(getFinalizeBackupMethod())
-                      .addMethod(getFetchAccessTokenMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getGetBackupMethod())
                       .addMethod(getUpdateBackupMethod())
