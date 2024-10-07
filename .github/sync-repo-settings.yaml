@@ -12,7 +12,7 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
-      # - enforcer
+      - enforcer
       - lint
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: GraalVM Native Image A'
