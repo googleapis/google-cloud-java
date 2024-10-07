@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.133.1](https://github.com/googleapis/java-pubsub/compare/v1.133.0...v1.133.1) (2024-10-07)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.47.0 ([ccd23af](https://github.com/googleapis/java-pubsub/commit/ccd23afd99e7cb5a28747b06d0a97d1cb8163391))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.45.0 ([#2213](https://github.com/googleapis/java-pubsub/issues/2213)) ([5ee969b](https://github.com/googleapis/java-pubsub/commit/5ee969bb9ed873073895881062ec72f419bbc837))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.37.0 ([#2214](https://github.com/googleapis/java-pubsub/issues/2214)) ([d938709](https://github.com/googleapis/java-pubsub/commit/d93870934f610cffb705837ed8391eb276a18c05))
+* Update googleapis/sdk-platform-java action to v2.47.0 ([#2212](https://github.com/googleapis/java-pubsub/issues/2212)) ([6a9723d](https://github.com/googleapis/java-pubsub/commit/6a9723d2872c82bbb525119cac7471d1a2f3b7cd))
+
+
+### Documentation
+
+* Add ingestion from GCS sample ([#2211](https://github.com/googleapis/java-pubsub/issues/2211)) ([ddb7391](https://github.com/googleapis/java-pubsub/commit/ddb739113b38d4e2f4617a105cd0ab071f21d4de))
+* Update emulator sample to create a topic and publish to it ([#2039](https://github.com/googleapis/java-pubsub/issues/2039)) ([21d5cfc](https://github.com/googleapis/java-pubsub/commit/21d5cfc3b9484ffc2c1a0084b8bc2f6f76b6bf62))
+
 ## [1.133.0](https://github.com/googleapis/java-pubsub/compare/v1.132.4...v1.133.0) (2024-10-01)
 
 
