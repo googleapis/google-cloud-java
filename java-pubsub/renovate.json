@@ -41,6 +41,16 @@
       ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": [
+        "^.github/workflows/hermetic_library_generation.yaml$"
+      ],
+      "matchStrings": [
+        "uses: googleapis/sdk-platform-java/.github/scripts@v(?<currentValue>.+?)\\n"
+      ],
+      "depNameTemplate": "com.google.api:gapic-generator-java",
+      "datasourceTemplate": "maven"
     }
   ],
   "packageRules": [
@@ -101,6 +111,13 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
+    },
+    {
+      "matchPackagePatterns": [
+        "^com.google.api:gapic-generator-java",
+        "^com.google.cloud:sdk-platform-java-config"
+      ],
+      "groupName": "SDK platform Java dependencies"
     }
   ],
   "semanticCommits": true,
