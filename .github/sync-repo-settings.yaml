@@ -12,7 +12,8 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
-      - enforcer
+      # temp disable, will revert after #11221 gets in
+      # - enforcer
       - lint
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: GraalVM Native Image A'
