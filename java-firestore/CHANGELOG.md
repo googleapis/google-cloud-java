@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.27.1](https://github.com/googleapis/java-firestore/compare/v3.27.0...v3.27.1) (2024-10-07)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.47.0 ([c606cea](https://github.com/googleapis/java-firestore/commit/c606ceaccd61cede8799d12b074682a15a03ccff))
+* Update to Java 11, since runtime doesn't support 8. ([#1867](https://github.com/googleapis/java-firestore/issues/1867)) ([723c7cc](https://github.com/googleapis/java-firestore/commit/723c7ccc783b2f56ca72867cd741df197a9f68d7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.37.0 ([#1871](https://github.com/googleapis/java-firestore/issues/1871)) ([8503a3e](https://github.com/googleapis/java-firestore/commit/8503a3e6badc31eaae4d318925097d010d9d73e4))
+* Update googleapis/sdk-platform-java action to v2.47.0 ([#1870](https://github.com/googleapis/java-firestore/issues/1870)) ([971b164](https://github.com/googleapis/java-firestore/commit/971b164104fe072255a26dfaa4e93958fb43b706))
+
 ## [3.27.0](https://github.com/googleapis/java-firestore/compare/v3.26.5...v3.27.0) (2024-10-02)
 
 
