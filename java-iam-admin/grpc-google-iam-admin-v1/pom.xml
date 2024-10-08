@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-iam-admin-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
+    <version>3.47.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
   </parent>
   <dependencies>
     <dependency>
