@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-admanager/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-admanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-admanager/ad-manager-.*/src/test/java/com/google/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/ads/admanager/(v.*)/.*-java/proto-google-.*/src"
