@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.ReleaseName;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.longrunning.Operation;
+import java.util.ArrayList;
 
 public class AsyncCreateRollout {
 
@@ -46,6 +47,7 @@ public class AsyncCreateRollout {
               .setRollout(Rollout.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .setStartingPhaseId("startingPhaseId-326529130")
               .build();
       ApiFuture<Operation> future = cloudDeployClient.createRolloutCallable().futureCall(request);

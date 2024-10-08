@@ -47,6 +47,7 @@ public class AsyncIngestConversationsLRO {
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
               .setRedactionConfig(RedactionConfig.newBuilder().build())
               .setSpeechConfig(SpeechConfig.newBuilder().build())
+              .setSampleSize(153230710)
               .build();
       OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
           contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);

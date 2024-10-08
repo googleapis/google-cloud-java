@@ -284,6 +284,7 @@ public class CloudChannelServiceClientHttpJsonTest {
         CheckCloudIdentityAccountsExistRequest.newBuilder()
             .setParent("accounts/account-4811")
             .setDomain("domain-1326197564")
+            .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
             .build();
 
     CheckCloudIdentityAccountsExistResponse actualResponse =
@@ -317,6 +318,7 @@ public class CloudChannelServiceClientHttpJsonTest {
           CheckCloudIdentityAccountsExistRequest.newBuilder()
               .setParent("accounts/account-4811")
               .setDomain("domain-1326197564")
+              .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
               .build();
       client.checkCloudIdentityAccountsExist(request);
       Assert.fail("No exception raised");

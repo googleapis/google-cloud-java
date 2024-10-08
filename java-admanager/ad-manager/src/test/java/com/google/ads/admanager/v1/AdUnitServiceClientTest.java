@@ -16,6 +16,7 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse;
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.stub.HttpJsonAdUnitServiceStub;
@@ -97,11 +98,11 @@ public class AdUnitServiceClientTest {
             .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
             .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
             .setRefreshDelay(Duration.newBuilder().build())
-            .setCtvApplicationId(-1772918844)
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
             .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
             .setEffectiveAdsenseEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -161,11 +162,11 @@ public class AdUnitServiceClientTest {
             .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
             .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
             .setRefreshDelay(Duration.newBuilder().build())
-            .setCtvApplicationId(-1772918844)
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
             .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
             .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
             .setEffectiveAdsenseEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -300,6 +301,106 @@ public class AdUnitServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listAdUnits(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdUnitSizesTest() throws Exception {
+    AdUnitSize responsesElement = AdUnitSize.newBuilder().build();
+    ListAdUnitSizesResponse expectedResponse =
+        ListAdUnitSizesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdUnitSizes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+
+    ListAdUnitSizesPagedResponse pagedListResponse = client.listAdUnitSizes(parent);
+
+    List<AdUnitSize> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdUnitSizesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdUnitSizesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      client.listAdUnitSizes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdUnitSizesTest2() throws Exception {
+    AdUnitSize responsesElement = AdUnitSize.newBuilder().build();
+    ListAdUnitSizesResponse expectedResponse =
+        ListAdUnitSizesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdUnitSizes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+
+    ListAdUnitSizesPagedResponse pagedListResponse = client.listAdUnitSizes(parent);
+
+    List<AdUnitSize> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdUnitSizesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdUnitSizesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      client.listAdUnitSizes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

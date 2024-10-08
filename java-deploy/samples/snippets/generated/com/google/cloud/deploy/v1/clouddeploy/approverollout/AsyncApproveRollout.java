@@ -22,6 +22,7 @@ import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class AsyncApproveRollout {
 
@@ -47,6 +48,7 @@ public class AsyncApproveRollout {
                           "[ROLLOUT]")
                       .toString())
               .setApproved(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<ApproveRolloutResponse> future =
           cloudDeployClient.approveRolloutCallable().futureCall(request);

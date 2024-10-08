@@ -17,6 +17,8 @@
 package com.google.ads.admanager.v1.stub;
 
 import com.google.ads.admanager.v1.GetNetworkRequest;
+import com.google.ads.admanager.v1.ListNetworksRequest;
+import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -82,7 +84,41 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ListNetworksRequest, ListNetworksResponse>
+      listNetworksMethodDescriptor =
+          ApiMethodDescriptor.<ListNetworksRequest, ListNetworksResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.NetworkService/ListNetworks")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListNetworksRequest>newBuilder()
+                      .setPath(
+                          "/v1/networks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListNetworksResponse>newBuilder()
+                      .setDefaultInstance(ListNetworksResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetNetworkRequest, Network> getNetworkCallable;
+  private final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -137,10 +173,18 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
+        HttpJsonCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
+            .setMethodDescriptor(listNetworksMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.getNetworkCallable =
         callableFactory.createUnaryCallable(
             getNetworkTransportSettings, settings.getNetworkSettings(), clientContext);
+    this.listNetworksCallable =
+        callableFactory.createUnaryCallable(
+            listNetworksTransportSettings, settings.listNetworksSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -150,12 +194,18 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getNetworkMethodDescriptor);
+    methodDescriptors.add(listNetworksMethodDescriptor);
     return methodDescriptors;
   }
 
   @Override
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     return getNetworkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
+    return listNetworksCallable;
   }
 
   @Override

@@ -16,8 +16,6 @@
 
 package com.google.ads.admanager.v1;
 
-import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
-
 import com.google.ads.admanager.v1.stub.HttpJsonUserServiceStub;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -28,9 +26,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -173,106 +169,6 @@ public class UserServiceClientTest {
     try {
       String name = "networks/network-3631/users/user-3631";
       client.getUser(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listUsersTest() throws Exception {
-    User responsesElement = User.newBuilder().build();
-    ListUsersResponse expectedResponse =
-        ListUsersResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUsers(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
-
-    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
-
-    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listUsersExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
-      client.listUsers(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listUsersTest2() throws Exception {
-    User responsesElement = User.newBuilder().build();
-    ListUsersResponse expectedResponse =
-        ListUsersResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUsers(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "networks/network-5450";
-
-    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
-
-    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listUsersExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "networks/network-5450";
-      client.listUsers(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

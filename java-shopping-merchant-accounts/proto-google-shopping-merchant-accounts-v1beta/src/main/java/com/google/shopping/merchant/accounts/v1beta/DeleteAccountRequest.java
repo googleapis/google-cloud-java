@@ -120,6 +120,25 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to `true`, the account is deleted even if it provides
+   * services to other accounts or has processed offers.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -137,6 +156,9 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +170,9 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +191,7 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
         (com.google.shopping.merchant.accounts.v1beta.DeleteAccountRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +205,8 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +350,7 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      force_ = false;
       return this;
     }
 
@@ -362,6 +391,9 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
       }
     }
 
@@ -418,6 +450,9 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -450,6 +485,12 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                force_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -586,6 +627,62 @@ public final class DeleteAccountRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to `true`, the account is deleted even if it provides
+     * services to other accounts or has processed offers.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to `true`, the account is deleted even if it provides
+     * services to other accounts or has processed offers.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to `true`, the account is deleted even if it provides
+     * services to other accounts or has processed offers.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      force_ = false;
       onChanged();
       return this;
     }

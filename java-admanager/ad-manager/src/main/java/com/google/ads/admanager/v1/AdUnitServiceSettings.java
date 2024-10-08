@@ -16,6 +16,7 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse;
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.stub.AdUnitServiceStubSettings;
@@ -94,6 +95,13 @@ public class AdUnitServiceSettings extends ClientSettings<AdUnitServiceSettings>
   public PagedCallSettings<ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
       listAdUnitsSettings() {
     return ((AdUnitServiceStubSettings) getStubSettings()).listAdUnitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAdUnitSizes. */
+  public PagedCallSettings<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).listAdUnitSizesSettings();
   }
 
   public static final AdUnitServiceSettings create(AdUnitServiceStubSettings stub)
@@ -203,6 +211,13 @@ public class AdUnitServiceSettings extends ClientSettings<AdUnitServiceSettings>
             ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
         listAdUnitsSettings() {
       return getStubSettingsBuilder().listAdUnitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAdUnitSizes. */
+    public PagedCallSettings.Builder<
+            ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+        listAdUnitSizesSettings() {
+      return getStubSettingsBuilder().listAdUnitSizesSettings();
     }
 
     @Override

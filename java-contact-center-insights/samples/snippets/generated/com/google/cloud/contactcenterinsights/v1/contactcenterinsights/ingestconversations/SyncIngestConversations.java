@@ -45,6 +45,7 @@ public class SyncIngestConversations {
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
               .setRedactionConfig(RedactionConfig.newBuilder().build())
               .setSpeechConfig(SpeechConfig.newBuilder().build())
+              .setSampleSize(153230710)
               .build();
       IngestConversationsResponse response =
           contactCenterInsightsClient.ingestConversationsAsync(request).get();

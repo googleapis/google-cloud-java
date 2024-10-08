@@ -21,6 +21,7 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.Release;
+import java.util.ArrayList;
 
 public class SyncCreateRelease {
 
@@ -44,6 +45,7 @@ public class SyncCreateRelease {
               .setRelease(Release.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       Release response = cloudDeployClient.createReleaseAsync(request).get();
     }

@@ -1047,6 +1047,100 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest,
+          com.google.longrunning.Operation>
+      getExportIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest,
+          com.google.longrunning.Operation>
+      getExportIssueModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest,
+            com.google.longrunning.Operation>
+        getExportIssueModelMethod;
+    if ((getExportIssueModelMethod = ContactCenterInsightsGrpc.getExportIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getExportIssueModelMethod = ContactCenterInsightsGrpc.getExportIssueModelMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getExportIssueModelMethod =
+              getExportIssueModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportIssueModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("ExportIssueModel"))
+                      .build();
+        }
+      }
+    }
+    return getExportIssueModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest,
+          com.google.longrunning.Operation>
+      getImportIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest,
+          com.google.longrunning.Operation>
+      getImportIssueModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest,
+            com.google.longrunning.Operation>
+        getImportIssueModelMethod;
+    if ((getImportIssueModelMethod = ContactCenterInsightsGrpc.getImportIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getImportIssueModelMethod = ContactCenterInsightsGrpc.getImportIssueModelMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getImportIssueModelMethod =
+              getImportIssueModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportIssueModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("ImportIssueModel"))
+                      .build();
+        }
+      }
+    }
+    return getImportIssueModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contactcenterinsights.v1.GetIssueRequest,
           com.google.cloud.contactcenterinsights.v1.Issue>
       getGetIssueMethod;
@@ -1671,6 +1765,107 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest,
+          com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+      getGetEncryptionSpecMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEncryptionSpec",
+      requestType = com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.EncryptionSpec.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest,
+          com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+      getGetEncryptionSpecMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest,
+            com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+        getGetEncryptionSpecMethod;
+    if ((getGetEncryptionSpecMethod = ContactCenterInsightsGrpc.getGetEncryptionSpecMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getGetEncryptionSpecMethod = ContactCenterInsightsGrpc.getGetEncryptionSpecMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getGetEncryptionSpecMethod =
+              getGetEncryptionSpecMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest,
+                          com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEncryptionSpec"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.EncryptionSpec
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("GetEncryptionSpec"))
+                      .build();
+        }
+      }
+    }
+    return getGetEncryptionSpecMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest,
+          com.google.longrunning.Operation>
+      getInitializeEncryptionSpecMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InitializeEncryptionSpec",
+      requestType = com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest,
+          com.google.longrunning.Operation>
+      getInitializeEncryptionSpecMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest,
+            com.google.longrunning.Operation>
+        getInitializeEncryptionSpecMethod;
+    if ((getInitializeEncryptionSpecMethod =
+            ContactCenterInsightsGrpc.getInitializeEncryptionSpecMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getInitializeEncryptionSpecMethod =
+                ContactCenterInsightsGrpc.getInitializeEncryptionSpecMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getInitializeEncryptionSpecMethod =
+              getInitializeEncryptionSpecMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "InitializeEncryptionSpec"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1
+                                  .InitializeEncryptionSpecRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier(
+                              "InitializeEncryptionSpec"))
+                      .build();
+        }
+      }
+    }
+    return getInitializeEncryptionSpecMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
           com.google.cloud.contactcenterinsights.v1.View>
       getCreateViewMethod;
@@ -1953,6 +2148,8 @@ public final class ContactCenterInsightsGrpc {
      *
      * <pre>
      * Creates a conversation.
+     * Note that this method does not support audio transcription or redaction.
+     * Use `conversations.upload` instead.
      * </pre>
      */
     default void createConversation(
@@ -1967,8 +2164,8 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
-     * Create a longrunning conversation upload operation. This method differs
-     * from CreateConversation by allowing audio transcription and optional DLP
+     * Create a long-running conversation upload operation. This method differs
+     * from `CreateConversation` by allowing audio transcription and optional DLP
      * redaction.
      * </pre>
      */
@@ -2263,6 +2460,34 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Exports an issue model to the provided destination.
+     * </pre>
+     */
+    default void exportIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an issue model from a Cloud Storage bucket.
+     * </pre>
+     */
+    default void importIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -2457,6 +2682,39 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    default void getEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEncryptionSpecMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification.  An error will
+     * be thrown if the location has resources already created before the
+     * initialization. Once the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    default void initializeEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getInitializeEncryptionSpecMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a view.
      * </pre>
      */
@@ -2563,6 +2821,8 @@ public final class ContactCenterInsightsGrpc {
      *
      * <pre>
      * Creates a conversation.
+     * Note that this method does not support audio transcription or redaction.
+     * Use `conversations.upload` instead.
      * </pre>
      */
     public void createConversation(
@@ -2579,8 +2839,8 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
-     * Create a longrunning conversation upload operation. This method differs
-     * from CreateConversation by allowing audio transcription and optional DLP
+     * Create a long-running conversation upload operation. This method differs
+     * from `CreateConversation` by allowing audio transcription and optional DLP
      * redaction.
      * </pre>
      */
@@ -2915,6 +3175,38 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Exports an issue model to the provided destination.
+     * </pre>
+     */
+    public void exportIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportIssueModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an issue model from a Cloud Storage bucket.
+     * </pre>
+     */
+    public void importIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportIssueModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -3133,6 +3425,43 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    public void getEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEncryptionSpecMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification.  An error will
+     * be thrown if the location has resources already created before the
+     * initialization. Once the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    public void initializeEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInitializeEncryptionSpecMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a view.
      * </pre>
      */
@@ -3229,6 +3558,8 @@ public final class ContactCenterInsightsGrpc {
      *
      * <pre>
      * Creates a conversation.
+     * Note that this method does not support audio transcription or redaction.
+     * Use `conversations.upload` instead.
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Conversation createConversation(
@@ -3241,8 +3572,8 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
-     * Create a longrunning conversation upload operation. This method differs
-     * from CreateConversation by allowing audio transcription and optional DLP
+     * Create a long-running conversation upload operation. This method differs
+     * from `CreateConversation` by allowing audio transcription and optional DLP
      * redaction.
      * </pre>
      */
@@ -3507,6 +3838,32 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Exports an issue model to the provided destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an issue model from a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -3677,6 +4034,36 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.EncryptionSpec getEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEncryptionSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification.  An error will
+     * be thrown if the location has resources already created before the
+     * initialization. Once the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation initializeEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeEncryptionSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a view.
      * </pre>
      */
@@ -3765,6 +4152,8 @@ public final class ContactCenterInsightsGrpc {
      *
      * <pre>
      * Creates a conversation.
+     * Note that this method does not support audio transcription or redaction.
+     * Use `conversations.upload` instead.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3779,8 +4168,8 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
-     * Create a longrunning conversation upload operation. This method differs
-     * from CreateConversation by allowing audio transcription and optional DLP
+     * Create a long-running conversation upload operation. This method differs
+     * from `CreateConversation` by allowing audio transcription and optional DLP
      * redaction.
      * </pre>
      */
@@ -4066,6 +4455,34 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Exports an issue model to the provided destination.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportIssueModel(
+            com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an issue model from a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importIssueModel(
+            com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -4252,6 +4669,39 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.EncryptionSpec>
+        getEncryptionSpec(
+            com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEncryptionSpecMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification.  An error will
+     * be thrown if the location has resources already created before the
+     * initialization. Once the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        initializeEncryptionSpec(
+            com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInitializeEncryptionSpecMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a view.
      * </pre>
      */
@@ -4339,24 +4789,28 @@ public final class ContactCenterInsightsGrpc {
   private static final int METHODID_DELETE_ISSUE_MODEL = 18;
   private static final int METHODID_DEPLOY_ISSUE_MODEL = 19;
   private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 20;
-  private static final int METHODID_GET_ISSUE = 21;
-  private static final int METHODID_LIST_ISSUES = 22;
-  private static final int METHODID_UPDATE_ISSUE = 23;
-  private static final int METHODID_DELETE_ISSUE = 24;
-  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 25;
-  private static final int METHODID_CREATE_PHRASE_MATCHER = 26;
-  private static final int METHODID_GET_PHRASE_MATCHER = 27;
-  private static final int METHODID_LIST_PHRASE_MATCHERS = 28;
-  private static final int METHODID_DELETE_PHRASE_MATCHER = 29;
-  private static final int METHODID_UPDATE_PHRASE_MATCHER = 30;
-  private static final int METHODID_CALCULATE_STATS = 31;
-  private static final int METHODID_GET_SETTINGS = 32;
-  private static final int METHODID_UPDATE_SETTINGS = 33;
-  private static final int METHODID_CREATE_VIEW = 34;
-  private static final int METHODID_GET_VIEW = 35;
-  private static final int METHODID_LIST_VIEWS = 36;
-  private static final int METHODID_UPDATE_VIEW = 37;
-  private static final int METHODID_DELETE_VIEW = 38;
+  private static final int METHODID_EXPORT_ISSUE_MODEL = 21;
+  private static final int METHODID_IMPORT_ISSUE_MODEL = 22;
+  private static final int METHODID_GET_ISSUE = 23;
+  private static final int METHODID_LIST_ISSUES = 24;
+  private static final int METHODID_UPDATE_ISSUE = 25;
+  private static final int METHODID_DELETE_ISSUE = 26;
+  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 27;
+  private static final int METHODID_CREATE_PHRASE_MATCHER = 28;
+  private static final int METHODID_GET_PHRASE_MATCHER = 29;
+  private static final int METHODID_LIST_PHRASE_MATCHERS = 30;
+  private static final int METHODID_DELETE_PHRASE_MATCHER = 31;
+  private static final int METHODID_UPDATE_PHRASE_MATCHER = 32;
+  private static final int METHODID_CALCULATE_STATS = 33;
+  private static final int METHODID_GET_SETTINGS = 34;
+  private static final int METHODID_UPDATE_SETTINGS = 35;
+  private static final int METHODID_GET_ENCRYPTION_SPEC = 36;
+  private static final int METHODID_INITIALIZE_ENCRYPTION_SPEC = 37;
+  private static final int METHODID_CREATE_VIEW = 38;
+  private static final int METHODID_GET_VIEW = 39;
+  private static final int METHODID_LIST_VIEWS = 40;
+  private static final int METHODID_UPDATE_VIEW = 41;
+  private static final int METHODID_DELETE_VIEW = 42;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4492,6 +4946,16 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_EXPORT_ISSUE_MODEL:
+          serviceImpl.exportIssueModel(
+              (com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_ISSUE_MODEL:
+          serviceImpl.importIssueModel(
+              (com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_GET_ISSUE:
           serviceImpl.getIssue(
               (com.google.cloud.contactcenterinsights.v1.GetIssueRequest) request,
@@ -4571,6 +5035,18 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Settings>)
                   responseObserver);
+          break;
+        case METHODID_GET_ENCRYPTION_SPEC:
+          serviceImpl.getEncryptionSpec(
+              (com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.contactcenterinsights.v1.EncryptionSpec>)
+                  responseObserver);
+          break;
+        case METHODID_INITIALIZE_ENCRYPTION_SPEC:
+          serviceImpl.initializeEncryptionSpec(
+              (com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_VIEW:
           serviceImpl.createView(
@@ -4757,6 +5233,18 @@ public final class ContactCenterInsightsGrpc {
                     com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_UNDEPLOY_ISSUE_MODEL)))
         .addMethod(
+            getExportIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_ISSUE_MODEL)))
+        .addMethod(
+            getImportIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_ISSUE_MODEL)))
+        .addMethod(
             getGetIssueMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4844,6 +5332,20 @@ public final class ContactCenterInsightsGrpc {
                     com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest,
                     com.google.cloud.contactcenterinsights.v1.Settings>(
                     service, METHODID_UPDATE_SETTINGS)))
+        .addMethod(
+            getGetEncryptionSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest,
+                    com.google.cloud.contactcenterinsights.v1.EncryptionSpec>(
+                    service, METHODID_GET_ENCRYPTION_SPEC)))
+        .addMethod(
+            getInitializeEncryptionSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_INITIALIZE_ENCRYPTION_SPEC)))
         .addMethod(
             getCreateViewMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4947,6 +5449,8 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getDeleteIssueModelMethod())
                       .addMethod(getDeployIssueModelMethod())
                       .addMethod(getUndeployIssueModelMethod())
+                      .addMethod(getExportIssueModelMethod())
+                      .addMethod(getImportIssueModelMethod())
                       .addMethod(getGetIssueMethod())
                       .addMethod(getListIssuesMethod())
                       .addMethod(getUpdateIssueMethod())
@@ -4960,6 +5464,8 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getCalculateStatsMethod())
                       .addMethod(getGetSettingsMethod())
                       .addMethod(getUpdateSettingsMethod())
+                      .addMethod(getGetEncryptionSpecMethod())
+                      .addMethod(getInitializeEncryptionSpecMethod())
                       .addMethod(getCreateViewMethod())
                       .addMethod(getGetViewMethod())
                       .addMethod(getListViewsMethod())

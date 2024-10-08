@@ -16,10 +16,13 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse;
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.AdUnit;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
 import com.google.api.gax.core.BackgroundResource;
@@ -45,6 +48,15 @@ public abstract class AdUnitServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListAdUnitsRequest, ListAdUnitsResponse> listAdUnitsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAdUnitsCallable()");
+  }
+
+  public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAdUnitSizesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse> listAdUnitSizesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAdUnitSizesCallable()");
   }
 
   @Override

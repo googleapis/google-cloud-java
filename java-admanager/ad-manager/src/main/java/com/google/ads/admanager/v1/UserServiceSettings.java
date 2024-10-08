@@ -16,8 +16,6 @@
 
 package com.google.ads.admanager.v1;
 
-import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
-
 import com.google.ads.admanager.v1.stub.UserServiceStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -26,7 +24,6 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
@@ -88,12 +85,6 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
   /** Returns the object with the settings used for calls to getUser. */
   public UnaryCallSettings<GetUserRequest, User> getUserSettings() {
     return ((UserServiceStubSettings) getStubSettings()).getUserSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listUsers. */
-  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
-      listUsersSettings() {
-    return ((UserServiceStubSettings) getStubSettings()).listUsersSettings();
   }
 
   public static final UserServiceSettings create(UserServiceStubSettings stub) throws IOException {
@@ -195,12 +186,6 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
     /** Returns the builder for the settings used for calls to getUser. */
     public UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings() {
       return getStubSettingsBuilder().getUserSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listUsers. */
-    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
-        listUsersSettings() {
-      return getStubSettingsBuilder().listUsersSettings();
     }
 
     @Override

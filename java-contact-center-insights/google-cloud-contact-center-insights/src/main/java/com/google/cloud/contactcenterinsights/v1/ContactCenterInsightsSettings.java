@@ -315,6 +315,32 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
         .undeployIssueModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportIssueModel. */
+  public UnaryCallSettings<ExportIssueModelRequest, Operation> exportIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).exportIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportIssueModel. */
+  public OperationCallSettings<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .exportIssueModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importIssueModel. */
+  public UnaryCallSettings<ImportIssueModelRequest, Operation> importIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).importIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importIssueModel. */
+  public OperationCallSettings<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .importIssueModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getIssue. */
   public UnaryCallSettings<GetIssueRequest, Issue> getIssueSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).getIssueSettings();
@@ -384,6 +410,28 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
   /** Returns the object with the settings used for calls to updateSettings. */
   public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).updateSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEncryptionSpec. */
+  public UnaryCallSettings<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).getEncryptionSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to initializeEncryptionSpec. */
+  public UnaryCallSettings<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .initializeEncryptionSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to initializeEncryptionSpec. */
+  public OperationCallSettings<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .initializeEncryptionSpecOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createView. */
@@ -722,6 +770,32 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
       return getStubSettingsBuilder().undeployIssueModelOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to exportIssueModel. */
+    public UnaryCallSettings.Builder<ExportIssueModelRequest, Operation>
+        exportIssueModelSettings() {
+      return getStubSettingsBuilder().exportIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportIssueModel. */
+    public OperationCallSettings.Builder<
+            ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+        exportIssueModelOperationSettings() {
+      return getStubSettingsBuilder().exportIssueModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIssueModel. */
+    public UnaryCallSettings.Builder<ImportIssueModelRequest, Operation>
+        importIssueModelSettings() {
+      return getStubSettingsBuilder().importIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIssueModel. */
+    public OperationCallSettings.Builder<
+            ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+        importIssueModelOperationSettings() {
+      return getStubSettingsBuilder().importIssueModelOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getIssue. */
     public UnaryCallSettings.Builder<GetIssueRequest, Issue> getIssueSettings() {
       return getStubSettingsBuilder().getIssueSettings();
@@ -794,6 +868,27 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     /** Returns the builder for the settings used for calls to updateSettings. */
     public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
       return getStubSettingsBuilder().updateSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEncryptionSpec. */
+    public UnaryCallSettings.Builder<GetEncryptionSpecRequest, EncryptionSpec>
+        getEncryptionSpecSettings() {
+      return getStubSettingsBuilder().getEncryptionSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to initializeEncryptionSpec. */
+    public UnaryCallSettings.Builder<InitializeEncryptionSpecRequest, Operation>
+        initializeEncryptionSpecSettings() {
+      return getStubSettingsBuilder().initializeEncryptionSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to initializeEncryptionSpec. */
+    public OperationCallSettings.Builder<
+            InitializeEncryptionSpecRequest,
+            InitializeEncryptionSpecResponse,
+            InitializeEncryptionSpecMetadata>
+        initializeEncryptionSpecOperationSettings() {
+      return getStubSettingsBuilder().initializeEncryptionSpecOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createView. */

@@ -246,4 +246,134 @@ public class ConsumerProcurementServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void modifyOrderTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .addAllLineItems(new ArrayList<LineItem>())
+            .addAllCancelledLineItems(new ArrayList<LineItem>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("modifyOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ModifyOrderRequest request =
+        ModifyOrderRequest.newBuilder()
+            .setName("billingAccounts/billingAccount-9614/orders/order-9614")
+            .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
+            .build();
+
+    Order actualResponse = client.modifyOrderAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void modifyOrderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ModifyOrderRequest request =
+          ModifyOrderRequest.newBuilder()
+              .setName("billingAccounts/billingAccount-9614/orders/order-9614")
+              .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+              .setDisplayName("displayName1714148973")
+              .setEtag("etag3123477")
+              .build();
+      client.modifyOrderAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelOrderTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .addAllLineItems(new ArrayList<LineItem>())
+            .addAllCancelledLineItems(new ArrayList<LineItem>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CancelOrderRequest request =
+        CancelOrderRequest.newBuilder()
+            .setName("billingAccounts/billingAccount-9614/orders/order-9614")
+            .setEtag("etag3123477")
+            .build();
+
+    Order actualResponse = client.cancelOrderAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelOrderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CancelOrderRequest request =
+          CancelOrderRequest.newBuilder()
+              .setName("billingAccounts/billingAccount-9614/orders/order-9614")
+              .setEtag("etag3123477")
+              .build();
+      client.cancelOrderAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
 }

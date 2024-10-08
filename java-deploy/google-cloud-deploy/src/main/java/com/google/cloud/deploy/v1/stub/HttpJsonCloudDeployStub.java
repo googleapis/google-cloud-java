@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -58,6 +59,7 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -65,13 +67,16 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -87,6 +92,8 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
+import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -108,6 +115,7 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -141,6 +149,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DeployPolicy.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Rollout.getDescriptor())
           .add(Automation.getDescriptor())
@@ -908,6 +917,10 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateReleaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "overrideDeployPolicy",
+                                request.getOverrideDeployPolicyList());
                             serializer.putQueryParam(fields, "releaseId", request.getReleaseId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
@@ -963,6 +976,213 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AbandonReleaseResponse>newBuilder()
                       .setDefaultInstance(AbandonReleaseResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDeployPolicyRequest, Operation>
+      createDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateDeployPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deployPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "deployPolicyId", request.getDeployPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deployPolicy", request.getDeployPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDeployPolicyRequest, Operation>
+      updateDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateDeployPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{deployPolicy.name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "deployPolicy.name", request.getDeployPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deployPolicy", request.getDeployPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDeployPolicyRequest, Operation>
+      deleteDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteDeployPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListDeployPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDeployPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deployPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeployPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeployPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDeployPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListDeployPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDeployPolicyRequest, DeployPolicy>
+      getDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetDeployPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeployPolicy>newBuilder()
+                      .setDefaultInstance(DeployPolicy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1171,6 +1391,10 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateRolloutRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "overrideDeployPolicy",
+                                request.getOverrideDeployPolicyList());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "rolloutId", request.getRolloutId());
                             serializer.putQueryParam(
@@ -1972,6 +2196,20 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
+  private final UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable;
+  private final OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable;
+  private final UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable;
+  private final OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable;
+  private final UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable;
+  private final OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable;
+  private final UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
   private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
@@ -2329,6 +2567,63 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "deploy_policy.name", String.valueOf(request.getDeployPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+        listDeployPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listDeployPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+            .setMethodDescriptor(getDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             HttpJsonCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -2771,6 +3066,52 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.abandonReleaseCallable =
         callableFactory.createUnaryCallable(
             abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
+    this.createDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicySettings(),
+            clientContext);
+    this.createDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicySettings(),
+            clientContext);
+    this.updateDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicySettings(),
+            clientContext);
+    this.deleteDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDeployPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.listDeployPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.getDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getDeployPolicyTransportSettings, settings.getDeployPolicySettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -2921,6 +3262,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(getReleaseMethodDescriptor);
     methodDescriptors.add(createReleaseMethodDescriptor);
     methodDescriptors.add(abandonReleaseMethodDescriptor);
+    methodDescriptors.add(createDeployPolicyMethodDescriptor);
+    methodDescriptors.add(updateDeployPolicyMethodDescriptor);
+    methodDescriptors.add(deleteDeployPolicyMethodDescriptor);
+    methodDescriptors.add(listDeployPoliciesMethodDescriptor);
+    methodDescriptors.add(getDeployPolicyMethodDescriptor);
     methodDescriptors.add(approveRolloutMethodDescriptor);
     methodDescriptors.add(advanceRolloutMethodDescriptor);
     methodDescriptors.add(cancelRolloutMethodDescriptor);
@@ -3135,6 +3481,56 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
     return abandonReleaseCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
+    return createDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable() {
+    return createDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
+    return updateDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable() {
+    return updateDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
+    return deleteDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable() {
+    return deleteDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable() {
+    return listDeployPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable() {
+    return listDeployPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
+    return getDeployPolicyCallable;
   }
 
   @Override

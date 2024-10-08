@@ -19,24 +19,6 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= AdPartnerServiceClient =======================
- *
- * <p>Service Description: Provides methods for handling AdPartner objects.
- *
- * <p>Sample for AdPartnerServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (AdPartnerServiceClient adPartnerServiceClient = AdPartnerServiceClient.create()) {
- *   AdPartnerName name = AdPartnerName.of("[NETWORK_CODE]", "[AD_PARTNER]");
- *   AdPartner response = adPartnerServiceClient.getAdPartner(name);
- * }
- * }</pre>
- *
  * <p>======================= AdUnitServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling AdUnit objects.
@@ -70,42 +52,6 @@
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   CompanyName name = CompanyName.of("[NETWORK_CODE]", "[COMPANY]");
  *   Company response = companyServiceClient.getCompany(name);
- * }
- * }</pre>
- *
- * <p>======================= ContactServiceClient =======================
- *
- * <p>Service Description: Provides methods for handling Contact objects.
- *
- * <p>Sample for ContactServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (ContactServiceClient contactServiceClient = ContactServiceClient.create()) {
- *   ContactName name = ContactName.of("[NETWORK_CODE]", "[CONTACT]");
- *   Contact response = contactServiceClient.getContact(name);
- * }
- * }</pre>
- *
- * <p>======================= CreativeServiceClient =======================
- *
- * <p>Service Description: Provides methods for handling Creative objects.
- *
- * <p>Sample for CreativeServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
- *   CreativeName name = CreativeName.of("[NETWORK_CODE]", "[CREATIVE]");
- *   Creative response = creativeServiceClient.getCreative(name);
  * }
  * }</pre>
  *
@@ -169,29 +115,11 @@
  * }
  * }</pre>
  *
- * <p>======================= LabelServiceClient =======================
+ * <p>======================= EntitySignalsMappingServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling Label objects.
+ * <p>Service Description: Provides methods for handling `EntitySignalsMapping` objects.
  *
- * <p>Sample for LabelServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (LabelServiceClient labelServiceClient = LabelServiceClient.create()) {
- *   LabelName name = LabelName.of("[NETWORK_CODE]", "[LABEL]");
- *   Label response = labelServiceClient.getLabel(name);
- * }
- * }</pre>
- *
- * <p>======================= LineItemServiceClient =======================
- *
- * <p>Service Description: Provides methods for handling LineItem objects.
- *
- * <p>Sample for LineItemServiceClient:
+ * <p>Sample for EntitySignalsMappingServiceClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -199,9 +127,12 @@
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (LineItemServiceClient lineItemServiceClient = LineItemServiceClient.create()) {
- *   LineItemName name = LineItemName.of("[NETWORK_CODE]", "[ORDER]", "[LINE_ITEM]");
- *   LineItem response = lineItemServiceClient.getLineItem(name);
+ * try (EntitySignalsMappingServiceClient entitySignalsMappingServiceClient =
+ *     EntitySignalsMappingServiceClient.create()) {
+ *   EntitySignalsMappingName name =
+ *       EntitySignalsMappingName.of("[NETWORK_CODE]", "[ENTITY_SIGNALS_MAPPING]");
+ *   EntitySignalsMapping response =
+ *       entitySignalsMappingServiceClient.getEntitySignalsMapping(name);
  * }
  * }</pre>
  *
@@ -261,7 +192,7 @@
  *
  * <p>======================= ReportServiceClient =======================
  *
- * <p>Service Description: Provides methods for interacting with Reports.
+ * <p>Service Description: Provides methods for interacting with reports.
  *
  * <p>Sample for ReportServiceClient:
  *
@@ -272,14 +203,14 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ReportServiceClient reportServiceClient = ReportServiceClient.create()) {
- *   ReportName report = ReportName.of("[NETWORK_CODE]", "[REPORT]");
- *   ExportSavedReportResponse response = reportServiceClient.exportSavedReportAsync(report).get();
+ *   ReportName name = ReportName.of("[NETWORK_CODE]", "[REPORT]");
+ *   Report response = reportServiceClient.getReport(name);
  * }
  * }</pre>
  *
  * <p>======================= RoleServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling Role objects.
+ * <p>Service Description: Provides methods for handling `Role` objects.
  *
  * <p>Sample for RoleServiceClient:
  *
@@ -295,11 +226,11 @@
  * }
  * }</pre>
  *
- * <p>======================= TeamServiceClient =======================
+ * <p>======================= TaxonomyCategoryServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling Team objects.
+ * <p>Service Description: Provides methods for handling `TaxonomyCategory` objects.
  *
- * <p>Sample for TeamServiceClient:
+ * <p>Sample for TaxonomyCategoryServiceClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -307,9 +238,10 @@
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (TeamServiceClient teamServiceClient = TeamServiceClient.create()) {
- *   TeamName name = TeamName.of("[NETWORK_CODE]", "[TEAM]");
- *   Team response = teamServiceClient.getTeam(name);
+ * try (TaxonomyCategoryServiceClient taxonomyCategoryServiceClient =
+ *     TaxonomyCategoryServiceClient.create()) {
+ *   TaxonomyCategoryName name = TaxonomyCategoryName.of("[NETWORK_CODE]", "[TAXONOMY_CATEGORY]");
+ *   TaxonomyCategory response = taxonomyCategoryServiceClient.getTaxonomyCategory(name);
  * }
  * }</pre>
  *

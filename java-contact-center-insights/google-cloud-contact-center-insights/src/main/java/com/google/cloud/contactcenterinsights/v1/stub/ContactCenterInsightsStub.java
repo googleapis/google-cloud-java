@@ -53,19 +53,30 @@ import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.EncryptionSpec;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.GetConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecMetadata;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -278,6 +289,26 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: undeployIssueModelCallable()");
   }
 
+  public OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportIssueModelCallable()");
+  }
+
+  public OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIssueModelCallable()");
+  }
+
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     throw new UnsupportedOperationException("Not implemented: getIssueCallable()");
   }
@@ -335,6 +366,24 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSettingsCallable()");
+  }
+
+  public UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEncryptionSpecCallable()");
+  }
+
+  public OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: initializeEncryptionSpecOperationCallable()");
+  }
+
+  public UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: initializeEncryptionSpecCallable()");
   }
 
   public UnaryCallable<CreateViewRequest, View> createViewCallable() {

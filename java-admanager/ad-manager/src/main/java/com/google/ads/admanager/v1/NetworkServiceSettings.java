@@ -88,6 +88,11 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
     return ((NetworkServiceStubSettings) getStubSettings()).getNetworkSettings();
   }
 
+  /** Returns the object with the settings used for calls to listNetworks. */
+  public UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings()).listNetworksSettings();
+  }
+
   public static final NetworkServiceSettings create(NetworkServiceStubSettings stub)
       throws IOException {
     return new NetworkServiceSettings.Builder(stub.toBuilder()).build();
@@ -188,6 +193,12 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
     /** Returns the builder for the settings used for calls to getNetwork. */
     public UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings() {
       return getStubSettingsBuilder().getNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNetworks. */
+    public UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+        listNetworksSettings() {
+      return getStubSettingsBuilder().listNetworksSettings();
     }
 
     @Override

@@ -21,6 +21,7 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class SyncAdvanceRollout {
 
@@ -46,6 +47,7 @@ public class SyncAdvanceRollout {
                           "[ROLLOUT]")
                       .toString())
               .setPhaseId("phaseId-608264202")
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       AdvanceRolloutResponse response = cloudDeployClient.advanceRollout(request);
     }

@@ -16,10 +16,13 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse;
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.AdUnit;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
 import com.google.api.core.InternalApi;
@@ -125,10 +128,53 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListAdUnitSizesRequest, ListAdUnitSizesResponse>
+      listAdUnitSizesMethodDescriptor =
+          ApiMethodDescriptor.<ListAdUnitSizesRequest, ListAdUnitSizesResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/ListAdUnitSizes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAdUnitSizesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnitSizes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdUnitSizesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdUnitSizesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "skip", request.getSkip());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAdUnitSizesResponse>newBuilder()
+                      .setDefaultInstance(ListAdUnitSizesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAdUnitRequest, AdUnit> getAdUnitCallable;
   private final UnaryCallable<ListAdUnitsRequest, ListAdUnitsResponse> listAdUnitsCallable;
   private final UnaryCallable<ListAdUnitsRequest, ListAdUnitsPagedResponse>
       listAdUnitsPagedCallable;
+  private final UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse>
+      listAdUnitSizesCallable;
+  private final UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -194,6 +240,18 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListAdUnitSizesRequest, ListAdUnitSizesResponse>
+        listAdUnitSizesTransportSettings =
+            HttpJsonCallSettings.<ListAdUnitSizesRequest, ListAdUnitSizesResponse>newBuilder()
+                .setMethodDescriptor(listAdUnitSizesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAdUnitCallable =
         callableFactory.createUnaryCallable(
@@ -204,6 +262,12 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
     this.listAdUnitsPagedCallable =
         callableFactory.createPagedCallable(
             listAdUnitsTransportSettings, settings.listAdUnitsSettings(), clientContext);
+    this.listAdUnitSizesCallable =
+        callableFactory.createUnaryCallable(
+            listAdUnitSizesTransportSettings, settings.listAdUnitSizesSettings(), clientContext);
+    this.listAdUnitSizesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdUnitSizesTransportSettings, settings.listAdUnitSizesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -214,6 +278,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getAdUnitMethodDescriptor);
     methodDescriptors.add(listAdUnitsMethodDescriptor);
+    methodDescriptors.add(listAdUnitSizesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -230,6 +295,17 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
   @Override
   public UnaryCallable<ListAdUnitsRequest, ListAdUnitsPagedResponse> listAdUnitsPagedCallable() {
     return listAdUnitsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse> listAdUnitSizesCallable() {
+    return listAdUnitSizesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesPagedCallable() {
+    return listAdUnitSizesPagedCallable;
   }
 
   @Override

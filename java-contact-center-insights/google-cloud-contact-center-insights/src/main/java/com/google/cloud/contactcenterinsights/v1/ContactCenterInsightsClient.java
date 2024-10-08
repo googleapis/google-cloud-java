@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateConversation</td>
- *      <td><p> Creates a conversation.</td>
+ *      <td><p> Creates a conversation. Note that this method does not support audio transcription or redaction. Use `conversations.upload` instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -94,7 +94,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UploadConversation</td>
- *      <td><p> Create a longrunning conversation upload operation. This method differs from CreateConversation by allowing audio transcription and optional DLP redaction.</td>
+ *      <td><p> Create a long-running conversation upload operation. This method differs from `CreateConversation` by allowing audio transcription and optional DLP redaction.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -478,6 +478,46 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportIssueModel</td>
+ *      <td><p> Exports an issue model to the provided destination.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportIssueModelAsync(ExportIssueModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportIssueModelAsync(IssueModelName name)
+ *           <li><p> exportIssueModelAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportIssueModelOperationCallable()
+ *           <li><p> exportIssueModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportIssueModel</td>
+ *      <td><p> Imports an issue model from a Cloud Storage bucket.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importIssueModelAsync(ImportIssueModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> importIssueModelAsync(LocationName parent)
+ *           <li><p> importIssueModelAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importIssueModelOperationCallable()
+ *           <li><p> importIssueModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetIssue</td>
  *      <td><p> Gets an issue.</td>
  *      <td>
@@ -723,6 +763,44 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetEncryptionSpec</td>
+ *      <td><p> Gets location-level encryption key specification.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEncryptionSpec(GetEncryptionSpecRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEncryptionSpec(EncryptionSpecName name)
+ *           <li><p> getEncryptionSpec(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEncryptionSpecCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InitializeEncryptionSpec</td>
+ *      <td><p> Initializes a location-level encryption key specification.  An error will be thrown if the location has resources already created before the initialization. Once the encryption specification is initialized at a location, it is immutable and all newly created resources under the location will be encrypted with the existing specification.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> initializeEncryptionSpecAsync(InitializeEncryptionSpecRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> initializeEncryptionSpecAsync(EncryptionSpec encryptionSpec)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> initializeEncryptionSpecOperationCallable()
+ *           <li><p> initializeEncryptionSpecCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateView</td>
  *      <td><p> Creates a view.</td>
  *      <td>
@@ -952,7 +1030,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversation.
+   * Creates a conversation. Note that this method does not support audio transcription or
+   * redaction. Use `conversations.upload` instead.
    *
    * <p>Sample code:
    *
@@ -994,7 +1073,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversation.
+   * Creates a conversation. Note that this method does not support audio transcription or
+   * redaction. Use `conversations.upload` instead.
    *
    * <p>Sample code:
    *
@@ -1036,7 +1116,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversation.
+   * Creates a conversation. Note that this method does not support audio transcription or
+   * redaction. Use `conversations.upload` instead.
    *
    * <p>Sample code:
    *
@@ -1067,7 +1148,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a conversation.
+   * Creates a conversation. Note that this method does not support audio transcription or
+   * redaction. Use `conversations.upload` instead.
    *
    * <p>Sample code:
    *
@@ -1098,8 +1180,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a longrunning conversation upload operation. This method differs from CreateConversation
-   * by allowing audio transcription and optional DLP redaction.
+   * Create a long-running conversation upload operation. This method differs from
+   * `CreateConversation` by allowing audio transcription and optional DLP redaction.
    *
    * <p>Sample code:
    *
@@ -1133,8 +1215,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a longrunning conversation upload operation. This method differs from CreateConversation
-   * by allowing audio transcription and optional DLP redaction.
+   * Create a long-running conversation upload operation. This method differs from
+   * `CreateConversation` by allowing audio transcription and optional DLP redaction.
    *
    * <p>Sample code:
    *
@@ -1169,8 +1251,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a longrunning conversation upload operation. This method differs from CreateConversation
-   * by allowing audio transcription and optional DLP redaction.
+   * Create a long-running conversation upload operation. This method differs from
+   * `CreateConversation` by allowing audio transcription and optional DLP redaction.
    *
    * <p>Sample code:
    *
@@ -1223,7 +1305,20 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * }</pre>
    *
    * @param conversation Required. The new values for the conversation.
-   * @param updateMask The list of fields to be updated.
+   * @param updateMask The list of fields to be updated. All possible fields can be updated by
+   *     passing `&#42;`, or a subset of the following updateable fields can be provided:
+   *     <ul>
+   *       <li>`agent_id`
+   *       <li>`language_code`
+   *       <li>`labels`
+   *       <li>`metadata`
+   *       <li>`quality_metadata`
+   *       <li>`call_metadata`
+   *       <li>`start_time`
+   *       <li>`expire_time` or `ttl`
+   *       <li>`data_source.gcs_source.audio_uri` or `data_source.dialogflow_source.audio_uri`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation updateConversation(Conversation conversation, FieldMask updateMask) {
@@ -1494,6 +1589,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   for (Conversation element :
@@ -1530,6 +1626,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   ApiFuture<Conversation> future =
@@ -1566,6 +1663,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   while (true) {
@@ -2723,6 +2821,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
    *           .setSpeechConfig(SpeechConfig.newBuilder().build())
+   *           .setSampleSize(153230710)
    *           .build();
    *   IngestConversationsResponse response =
    *       contactCenterInsightsClient.ingestConversationsAsync(request).get();
@@ -2758,6 +2857,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
    *           .setSpeechConfig(SpeechConfig.newBuilder().build())
+   *           .setSampleSize(153230710)
    *           .build();
    *   OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
    *       contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);
@@ -2793,6 +2893,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
    *           .setSpeechConfig(SpeechConfig.newBuilder().build())
+   *           .setSampleSize(153230710)
    *           .build();
    *   ApiFuture<Operation> future =
    *       contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);
@@ -3901,6 +4002,312 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final UnaryCallable<UndeployIssueModelRequest, Operation> undeployIssueModelCallable() {
     return stub.undeployIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an issue model to the provided destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+   *   ExportIssueModelResponse response =
+   *       contactCenterInsightsClient.exportIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelAsync(IssueModelName name) {
+    ExportIssueModelRequest request =
+        ExportIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return exportIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an issue model to the provided destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString();
+   *   ExportIssueModelResponse response =
+   *       contactCenterInsightsClient.exportIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelAsync(String name) {
+    ExportIssueModelRequest request = ExportIssueModelRequest.newBuilder().setName(name).build();
+    return exportIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an issue model to the provided destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ExportIssueModelRequest request =
+   *       ExportIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   ExportIssueModelResponse response =
+   *       contactCenterInsightsClient.exportIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelAsync(ExportIssueModelRequest request) {
+    return exportIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an issue model to the provided destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ExportIssueModelRequest request =
+   *       ExportIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   OperationFuture<ExportIssueModelResponse, ExportIssueModelMetadata> future =
+   *       contactCenterInsightsClient.exportIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportIssueModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable() {
+    return stub.exportIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an issue model to the provided destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ExportIssueModelRequest request =
+   *       ExportIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.exportIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable() {
+    return stub.exportIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an issue model from a Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportIssueModelResponse response =
+   *       contactCenterInsightsClient.importIssueModelAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the issue model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelAsync(LocationName parent) {
+    ImportIssueModelRequest request =
+        ImportIssueModelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return importIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an issue model from a Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ImportIssueModelResponse response =
+   *       contactCenterInsightsClient.importIssueModelAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the issue model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelAsync(String parent) {
+    ImportIssueModelRequest request =
+        ImportIssueModelRequest.newBuilder().setParent(parent).build();
+    return importIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an issue model from a Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ImportIssueModelRequest request =
+   *       ImportIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCreateNewModel(true)
+   *           .build();
+   *   ImportIssueModelResponse response =
+   *       contactCenterInsightsClient.importIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelAsync(ImportIssueModelRequest request) {
+    return importIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an issue model from a Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ImportIssueModelRequest request =
+   *       ImportIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCreateNewModel(true)
+   *           .build();
+   *   OperationFuture<ImportIssueModelResponse, ImportIssueModelMetadata> future =
+   *       contactCenterInsightsClient.importIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportIssueModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable() {
+    return stub.importIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an issue model from a Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ImportIssueModelRequest request =
+   *       ImportIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCreateNewModel(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.importIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable() {
+    return stub.importIssueModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5418,6 +5825,262 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return stub.updateSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets location-level encryption key specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   EncryptionSpecName name = EncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+   *   EncryptionSpec response = contactCenterInsightsClient.getEncryptionSpec(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the encryption spec resource to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EncryptionSpec getEncryptionSpec(EncryptionSpecName name) {
+    GetEncryptionSpecRequest request =
+        GetEncryptionSpecRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getEncryptionSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets location-level encryption key specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString();
+   *   EncryptionSpec response = contactCenterInsightsClient.getEncryptionSpec(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the encryption spec resource to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EncryptionSpec getEncryptionSpec(String name) {
+    GetEncryptionSpecRequest request = GetEncryptionSpecRequest.newBuilder().setName(name).build();
+    return getEncryptionSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets location-level encryption key specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetEncryptionSpecRequest request =
+   *       GetEncryptionSpecRequest.newBuilder()
+   *           .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   EncryptionSpec response = contactCenterInsightsClient.getEncryptionSpec(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EncryptionSpec getEncryptionSpec(GetEncryptionSpecRequest request) {
+    return getEncryptionSpecCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets location-level encryption key specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetEncryptionSpecRequest request =
+   *       GetEncryptionSpecRequest.newBuilder()
+   *           .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<EncryptionSpec> future =
+   *       contactCenterInsightsClient.getEncryptionSpecCallable().futureCall(request);
+   *   // Do something.
+   *   EncryptionSpec response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
+    return stub.getEncryptionSpecCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes a location-level encryption key specification. An error will be thrown if the
+   * location has resources already created before the initialization. Once the encryption
+   * specification is initialized at a location, it is immutable and all newly created resources
+   * under the location will be encrypted with the existing specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   EncryptionSpec encryptionSpec = EncryptionSpec.newBuilder().build();
+   *   InitializeEncryptionSpecResponse response =
+   *       contactCenterInsightsClient.initializeEncryptionSpecAsync(encryptionSpec).get();
+   * }
+   * }</pre>
+   *
+   * @param encryptionSpec Required. The encryption spec used for CMEK encryption. It is required
+   *     that the kms key is in the same region as the endpoint. The same key will be used for all
+   *     provisioned resources, if encryption is available. If the kms_key_name is left empty, no
+   *     encryption will be enforced.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<InitializeEncryptionSpecResponse, InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecAsync(EncryptionSpec encryptionSpec) {
+    InitializeEncryptionSpecRequest request =
+        InitializeEncryptionSpecRequest.newBuilder().setEncryptionSpec(encryptionSpec).build();
+    return initializeEncryptionSpecAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes a location-level encryption key specification. An error will be thrown if the
+   * location has resources already created before the initialization. Once the encryption
+   * specification is initialized at a location, it is immutable and all newly created resources
+   * under the location will be encrypted with the existing specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   InitializeEncryptionSpecRequest request =
+   *       InitializeEncryptionSpecRequest.newBuilder()
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   InitializeEncryptionSpecResponse response =
+   *       contactCenterInsightsClient.initializeEncryptionSpecAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<InitializeEncryptionSpecResponse, InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecAsync(InitializeEncryptionSpecRequest request) {
+    return initializeEncryptionSpecOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes a location-level encryption key specification. An error will be thrown if the
+   * location has resources already created before the initialization. Once the encryption
+   * specification is initialized at a location, it is immutable and all newly created resources
+   * under the location will be encrypted with the existing specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   InitializeEncryptionSpecRequest request =
+   *       InitializeEncryptionSpecRequest.newBuilder()
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   OperationFuture<InitializeEncryptionSpecResponse, InitializeEncryptionSpecMetadata> future =
+   *       contactCenterInsightsClient
+   *           .initializeEncryptionSpecOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   InitializeEncryptionSpecResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable() {
+    return stub.initializeEncryptionSpecOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes a location-level encryption key specification. An error will be thrown if the
+   * location has resources already created before the initialization. Once the encryption
+   * specification is initialized at a location, it is immutable and all newly created resources
+   * under the location will be encrypted with the existing specification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   InitializeEncryptionSpecRequest request =
+   *       InitializeEncryptionSpecRequest.newBuilder()
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.initializeEncryptionSpecCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable() {
+    return stub.initializeEncryptionSpecCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -26,9 +26,13 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.GetOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderRequest;
@@ -76,12 +80,36 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
               .setResponseMarshaller(ProtoUtils.marshaller(ListOrdersResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ModifyOrderRequest, Operation> modifyOrderMethodDescriptor =
+      MethodDescriptor.<ModifyOrderRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/ModifyOrder")
+          .setRequestMarshaller(ProtoUtils.marshaller(ModifyOrderRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CancelOrderRequest, Operation> cancelOrderMethodDescriptor =
+      MethodDescriptor.<CancelOrderRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/CancelOrder")
+          .setRequestMarshaller(ProtoUtils.marshaller(CancelOrderRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<PlaceOrderRequest, Operation> placeOrderCallable;
   private final OperationCallable<PlaceOrderRequest, Order, PlaceOrderMetadata>
       placeOrderOperationCallable;
   private final UnaryCallable<GetOrderRequest, Order> getOrderCallable;
   private final UnaryCallable<ListOrdersRequest, ListOrdersResponse> listOrdersCallable;
   private final UnaryCallable<ListOrdersRequest, ListOrdersPagedResponse> listOrdersPagedCallable;
+  private final UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable;
+  private final OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable;
+  private final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable;
+  private final OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -160,6 +188,26 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ModifyOrderRequest, Operation> modifyOrderTransportSettings =
+        GrpcCallSettings.<ModifyOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(modifyOrderMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
+        GrpcCallSettings.<CancelOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelOrderMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.placeOrderCallable =
         callableFactory.createUnaryCallable(
@@ -179,6 +227,24 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
     this.listOrdersPagedCallable =
         callableFactory.createPagedCallable(
             listOrdersTransportSettings, settings.listOrdersSettings(), clientContext);
+    this.modifyOrderCallable =
+        callableFactory.createUnaryCallable(
+            modifyOrderTransportSettings, settings.modifyOrderSettings(), clientContext);
+    this.modifyOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            modifyOrderTransportSettings,
+            settings.modifyOrderOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelOrderCallable =
+        callableFactory.createUnaryCallable(
+            cancelOrderTransportSettings, settings.cancelOrderSettings(), clientContext);
+    this.cancelOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelOrderTransportSettings,
+            settings.cancelOrderOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -212,6 +278,28 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
   @Override
   public UnaryCallable<ListOrdersRequest, ListOrdersPagedResponse> listOrdersPagedCallable() {
     return listOrdersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable() {
+    return modifyOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable() {
+    return modifyOrderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return cancelOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable() {
+    return cancelOrderOperationCallable;
   }
 
   @Override

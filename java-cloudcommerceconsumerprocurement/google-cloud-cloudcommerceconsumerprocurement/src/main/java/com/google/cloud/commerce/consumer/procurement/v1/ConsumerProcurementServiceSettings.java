@@ -142,6 +142,30 @@ public class ConsumerProcurementServiceSettings
     return ((ConsumerProcurementServiceStubSettings) getStubSettings()).listOrdersSettings();
   }
 
+  /** Returns the object with the settings used for calls to modifyOrder. */
+  public UnaryCallSettings<ModifyOrderRequest, Operation> modifyOrderSettings() {
+    return ((ConsumerProcurementServiceStubSettings) getStubSettings()).modifyOrderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to modifyOrder. */
+  public OperationCallSettings<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationSettings() {
+    return ((ConsumerProcurementServiceStubSettings) getStubSettings())
+        .modifyOrderOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings() {
+    return ((ConsumerProcurementServiceStubSettings) getStubSettings()).cancelOrderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public OperationCallSettings<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationSettings() {
+    return ((ConsumerProcurementServiceStubSettings) getStubSettings())
+        .cancelOrderOperationSettings();
+  }
+
   public static final ConsumerProcurementServiceSettings create(
       ConsumerProcurementServiceStubSettings stub) throws IOException {
     return new ConsumerProcurementServiceSettings.Builder(stub.toBuilder()).build();
@@ -275,6 +299,28 @@ public class ConsumerProcurementServiceSettings
     public PagedCallSettings.Builder<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings() {
       return getStubSettingsBuilder().listOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to modifyOrder. */
+    public UnaryCallSettings.Builder<ModifyOrderRequest, Operation> modifyOrderSettings() {
+      return getStubSettingsBuilder().modifyOrderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to modifyOrder. */
+    public OperationCallSettings.Builder<ModifyOrderRequest, Order, ModifyOrderMetadata>
+        modifyOrderOperationSettings() {
+      return getStubSettingsBuilder().modifyOrderOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings() {
+      return getStubSettingsBuilder().cancelOrderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public OperationCallSettings.Builder<CancelOrderRequest, Order, CancelOrderMetadata>
+        cancelOrderOperationSettings() {
+      return getStubSettingsBuilder().cancelOrderOperationSettings();
     }
 
     @Override

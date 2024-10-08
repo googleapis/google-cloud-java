@@ -19,7 +19,7 @@ package com.google.cloud.backupdr.v1.samples;
 // [START backupdr_v1_generated_BackupDR_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.backupdr.v1.BackupDRClient;
-import com.google.cloud.backupdr.v1.BackupVaultName;
+import com.google.cloud.backupdr.v1.ManagementServerName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -40,7 +40,8 @@ public class AsyncTestIamPermissions {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
+                  ManagementServerName.of("[PROJECT]", "[LOCATION]", "[MANAGEMENTSERVER]")
+                      .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

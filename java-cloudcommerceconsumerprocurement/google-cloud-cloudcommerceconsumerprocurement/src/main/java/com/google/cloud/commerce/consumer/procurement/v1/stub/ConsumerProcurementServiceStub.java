@@ -21,9 +21,13 @@ import static com.google.cloud.commerce.consumer.procurement.v1.ConsumerProcurem
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.GetOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderRequest;
@@ -67,6 +71,24 @@ public abstract class ConsumerProcurementServiceStub implements BackgroundResour
 
   public UnaryCallable<ListOrdersRequest, ListOrdersResponse> listOrdersCallable() {
     throw new UnsupportedOperationException("Not implemented: listOrdersCallable()");
+  }
+
+  public OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyOrderOperationCallable()");
+  }
+
+  public UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyOrderCallable()");
+  }
+
+  public OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelOrderOperationCallable()");
+  }
+
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelOrderCallable()");
   }
 
   @Override

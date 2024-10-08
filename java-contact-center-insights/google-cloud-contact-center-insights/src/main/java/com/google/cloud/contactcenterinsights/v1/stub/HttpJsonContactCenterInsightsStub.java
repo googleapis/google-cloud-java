@@ -66,19 +66,30 @@ import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.EncryptionSpec;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.GetConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecMetadata;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -129,26 +140,32 @@ import javax.annotation.Generated;
 public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(InitializeEncryptionSpecResponse.getDescriptor())
+          .add(ExportInsightsDataMetadata.getDescriptor())
+          .add(InitializeEncryptionSpecMetadata.getDescriptor())
+          .add(IssueModel.getDescriptor())
+          .add(DeleteIssueModelMetadata.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(UndeployIssueModelResponse.getDescriptor())
+          .add(BulkDeleteConversationsResponse.getDescriptor())
+          .add(ImportIssueModelResponse.getDescriptor())
+          .add(BulkAnalyzeConversationsResponse.getDescriptor())
           .add(DeployIssueModelMetadata.getDescriptor())
+          .add(ExportIssueModelMetadata.getDescriptor())
           .add(Analysis.getDescriptor())
           .add(IngestConversationsResponse.getDescriptor())
+          .add(ExportIssueModelResponse.getDescriptor())
           .add(CreateIssueModelMetadata.getDescriptor())
           .add(UploadConversationMetadata.getDescriptor())
-          .add(ExportInsightsDataMetadata.getDescriptor())
-          .add(IssueModel.getDescriptor())
           .add(IngestConversationsMetadata.getDescriptor())
           .add(DeployIssueModelResponse.getDescriptor())
-          .add(DeleteIssueModelMetadata.getDescriptor())
           .add(CreateAnalysisOperationMetadata.getDescriptor())
-          .add(Empty.getDescriptor())
           .add(BulkAnalyzeConversationsMetadata.getDescriptor())
+          .add(ImportIssueModelMetadata.getDescriptor())
           .add(Conversation.getDescriptor())
           .add(ExportInsightsDataResponse.getDescriptor())
-          .add(UndeployIssueModelResponse.getDescriptor())
           .add(UndeployIssueModelMetadata.getDescriptor())
           .add(BulkDeleteConversationsMetadata.getDescriptor())
-          .add(BulkDeleteConversationsResponse.getDescriptor())
-          .add(BulkAnalyzeConversationsResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateConversationRequest, Conversation>
@@ -332,6 +349,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                             ProtoRestSerializer<ListConversationsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
@@ -967,6 +985,88 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportIssueModelRequest, Operation>
+      exportIssueModelMethodDescriptor =
+          ApiMethodDescriptor.<ExportIssueModelRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ExportIssueModel")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportIssueModelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/issueModels/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportIssueModelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportIssueModelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportIssueModelRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ImportIssueModelRequest, Operation>
+      importIssueModelMethodDescriptor =
+          ApiMethodDescriptor.<ImportIssueModelRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ImportIssueModel")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportIssueModelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/issueModels:import",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportIssueModelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportIssueModelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportIssueModelRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<GetIssueRequest, Issue> getIssueMethodDescriptor =
       ApiMethodDescriptor.<GetIssueRequest, Issue>newBuilder()
           .setFullMethodName("google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetIssue")
@@ -1440,6 +1540,85 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetEncryptionSpecRequest, EncryptionSpec>
+      getEncryptionSpecMethodDescriptor =
+          ApiMethodDescriptor.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetEncryptionSpec")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEncryptionSpecRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/encryptionSpec}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEncryptionSpecRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEncryptionSpecRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EncryptionSpec>newBuilder()
+                      .setDefaultInstance(EncryptionSpec.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecMethodDescriptor =
+          ApiMethodDescriptor.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/InitializeEncryptionSpec")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<InitializeEncryptionSpecRequest>newBuilder()
+                      .setPath(
+                          "/v1/{encryptionSpec.name=projects/*/locations/*/encryptionSpec}:initialize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeEncryptionSpecRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "encryptionSpec.name",
+                                request.getEncryptionSpec().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeEncryptionSpecRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (InitializeEncryptionSpecRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateViewRequest, View> createViewMethodDescriptor =
       ApiMethodDescriptor.<CreateViewRequest, View>newBuilder()
           .setFullMethodName(
@@ -1677,6 +1856,14 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final OperationCallable<
           UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
       undeployIssueModelOperationCallable;
+  private final UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable;
+  private final OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable;
+  private final UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable;
+  private final OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable;
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
   private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
@@ -1696,6 +1883,14 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable;
+  private final UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable;
+  private final OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable;
   private final UnaryCallable<CreateViewRequest, View> createViewCallable;
   private final UnaryCallable<GetViewRequest, View> getViewCallable;
   private final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable;
@@ -2010,6 +2205,28 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportIssueModelRequest, Operation> exportIssueModelTransportSettings =
+        HttpJsonCallSettings.<ExportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportIssueModelMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ImportIssueModelRequest, Operation> importIssueModelTransportSettings =
+        HttpJsonCallSettings.<ImportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIssueModelMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         HttpJsonCallSettings.<GetIssueRequest, Issue>newBuilder()
             .setMethodDescriptor(getIssueMethodDescriptor)
@@ -2161,6 +2378,32 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetEncryptionSpecRequest, EncryptionSpec>
+        getEncryptionSpecTransportSettings =
+            HttpJsonCallSettings.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+                .setMethodDescriptor(getEncryptionSpecMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<InitializeEncryptionSpecRequest, Operation>
+        initializeEncryptionSpecTransportSettings =
+            HttpJsonCallSettings.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+                .setMethodDescriptor(initializeEncryptionSpecMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "encryption_spec.name",
+                          String.valueOf(request.getEncryptionSpec().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateViewRequest, View> createViewTransportSettings =
         HttpJsonCallSettings.<CreateViewRequest, View>newBuilder()
             .setMethodDescriptor(createViewMethodDescriptor)
@@ -2368,6 +2611,24 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
             settings.undeployIssueModelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            exportIssueModelTransportSettings, settings.exportIssueModelSettings(), clientContext);
+    this.exportIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            exportIssueModelTransportSettings,
+            settings.exportIssueModelOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.importIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            importIssueModelTransportSettings, settings.importIssueModelSettings(), clientContext);
+    this.importIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            importIssueModelTransportSettings,
+            settings.importIssueModelOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getIssueCallable =
         callableFactory.createUnaryCallable(
             getIssueTransportSettings, settings.getIssueSettings(), clientContext);
@@ -2422,6 +2683,22 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     this.updateSettingsCallable =
         callableFactory.createUnaryCallable(
             updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.getEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            getEncryptionSpecTransportSettings,
+            settings.getEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createViewCallable =
         callableFactory.createUnaryCallable(
             createViewTransportSettings, settings.createViewSettings(), clientContext);
@@ -2469,6 +2746,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(deleteIssueModelMethodDescriptor);
     methodDescriptors.add(deployIssueModelMethodDescriptor);
     methodDescriptors.add(undeployIssueModelMethodDescriptor);
+    methodDescriptors.add(exportIssueModelMethodDescriptor);
+    methodDescriptors.add(importIssueModelMethodDescriptor);
     methodDescriptors.add(getIssueMethodDescriptor);
     methodDescriptors.add(listIssuesMethodDescriptor);
     methodDescriptors.add(updateIssueMethodDescriptor);
@@ -2482,6 +2761,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(calculateStatsMethodDescriptor);
     methodDescriptors.add(getSettingsMethodDescriptor);
     methodDescriptors.add(updateSettingsMethodDescriptor);
+    methodDescriptors.add(getEncryptionSpecMethodDescriptor);
+    methodDescriptors.add(initializeEncryptionSpecMethodDescriptor);
     methodDescriptors.add(createViewMethodDescriptor);
     methodDescriptors.add(getViewMethodDescriptor);
     methodDescriptors.add(listViewsMethodDescriptor);
@@ -2684,6 +2965,30 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   }
 
   @Override
+  public UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable() {
+    return exportIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable() {
+    return exportIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable() {
+    return importIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable() {
+    return importIssueModelOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     return getIssueCallable;
   }
@@ -2754,6 +3059,26 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   @Override
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return updateSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
+    return getEncryptionSpecCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable() {
+    return initializeEncryptionSpecCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable() {
+    return initializeEncryptionSpecOperationCallable;
   }
 
   @Override

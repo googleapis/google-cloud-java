@@ -17,7 +17,7 @@
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
 
-// Protobuf Java Version: 3.25.4
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.securitycenter.v1;
 
 /**
