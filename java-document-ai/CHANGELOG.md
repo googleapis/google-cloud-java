@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.56.0 (2024-10-08)
+
+### ⚠ BREAKING CHANGES
+
+* remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228))
+
+### Features
+
+* remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228)) ([5876f54](https://github.com/googleapis/google-cloud-java/commit/5876f54b761610596aa0fe76cc78e47f0a9bf122))
+
+
+
 ## 2.54.0 (2024-09-26)
 
 * No change
