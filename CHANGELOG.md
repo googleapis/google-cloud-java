@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.9.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.9.2...v3.9.3) (2024-10-07)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.46.1 ([c0f14d8](https://github.com/googleapis/java-bigquerystorage/commit/c0f14d85f5ac4ccb44563449431ca05ccb5591e9))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.47.0 ([3183017](https://github.com/googleapis/java-bigquerystorage/commit/3183017127ee8ff9219eccb8d85f3d1398ab34ed))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.43.0 ([#2677](https://github.com/googleapis/java-bigquerystorage/issues/2677)) ([e03db45](https://github.com/googleapis/java-bigquerystorage/commit/e03db4515dbee57ae9a60fdc851d97a3991ac906))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.37.0 ([#2684](https://github.com/googleapis/java-bigquerystorage/issues/2684)) ([23684e5](https://github.com/googleapis/java-bigquerystorage/commit/23684e50c198eccb696f0be387ab9d24a58dfd92))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.2 ([#2682](https://github.com/googleapis/java-bigquerystorage/issues/2682)) ([8cc01e1](https://github.com/googleapis/java-bigquerystorage/commit/8cc01e13dbbb224b2dd64d4fd226755a4884363e))
+* Update googleapis/sdk-platform-java action to v2.47.0 ([#2685](https://github.com/googleapis/java-bigquerystorage/issues/2685)) ([c7c9ccd](https://github.com/googleapis/java-bigquerystorage/commit/c7c9ccdba11effff15a24e4fe985132142308b98))
+
 ## [3.9.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.9.1...v3.9.2) (2024-09-26)
 
 
