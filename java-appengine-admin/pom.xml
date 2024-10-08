@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appengine-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+  <version>2.52.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   <name>Google App Engine Admin API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
