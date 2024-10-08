@@ -40,7 +40,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-alloydb:released} -->
 
 ```xml
 <dependency>
@@ -61,7 +60,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-alloydb" % "0.35.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
