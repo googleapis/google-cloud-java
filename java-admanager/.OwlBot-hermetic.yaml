@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/java-admanager/grpc-google-.*/src"
-- "/java-admanager/proto-google-.*/src"
-- "/java-admanager/google-.*/src"
+- "/java-admanager/grpc-ad-manager.*/src"
+- "/java-admanager/proto-ad-manager-.*/src"
+- "/java-admanager/ad-manager-.*/src"
 - "/java-admanager/samples/snippets/generated"
 
 deep-preserve-regex:
