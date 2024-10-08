@@ -1342,6 +1342,7 @@ public class PublisherImplTest {
     fakeExecutor.advanceTime(Duration.ofSeconds(5));
     assertEquals("1", publishFuture.get());
     fakeExecutor.advanceTime(Duration.ofSeconds(5));
+    shutdownTestPublisher(publisher);
 
     List<SpanData> allSpans = openTelemetryTesting.getSpans();
     assertEquals(4, allSpans.size());

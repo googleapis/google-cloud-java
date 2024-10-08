@@ -81,8 +81,8 @@ public class AdminIT {
   private static final String cloudStorageInputFormat = "text";
   private static final String cloudStorageTextDelimiter = ",";
   private static final String cloudStorageMatchGlob = "**.txt";
-  private static final String cloudStorageMinimumObjectCreateTime = "1970-01-01T00:00:00Z";
-  private static final String cloudStorageMinimumObjectCreateTimeSeconds = "0";
+  private static final String cloudStorageMinimumObjectCreateTime = "1970-01-01T00:00:01Z";
+  private static final String cloudStorageMinimumObjectCreateTimeSeconds = "seconds: 1";
 
   private static final TopicName topicName = TopicName.of(projectId, topicId);
   private static final TopicName kinesisIngestionTopicName =

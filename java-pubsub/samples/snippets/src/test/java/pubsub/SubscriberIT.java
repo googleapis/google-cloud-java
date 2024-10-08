@@ -39,6 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -46,8 +47,8 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 
 public class SubscriberIT {
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
+  private static ByteArrayOutputStream bout;
+  private static PrintStream out;
 
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String _suffix = UUID.randomUUID().toString();
@@ -129,8 +130,8 @@ public class SubscriberIT {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeClass
+  public static void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -162,8 +163,8 @@ public class SubscriberIT {
     }
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterClass
+  public static void tearDown() throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.deleteSubscription(subscriptionName.toString());
       subscriptionAdminClient.deleteSubscription(subscriptionEodName.toString());
