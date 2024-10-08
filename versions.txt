@@ -42,7 +42,7 @@ grpc-google-cloud-apigee-registry-v1:0.51.0:0.52.0-SNAPSHOT
 google-cloud-apikeys:0.49.0:0.50.0-SNAPSHOT
 proto-google-cloud-apikeys-v2:0.49.0:0.50.0-SNAPSHOT
 grpc-google-cloud-apikeys-v2:0.49.0:0.50.0-SNAPSHOT
-google-cloud-appengine-admin:0.2.0:0.3.0-SNAPSHOT
+google-cloud-appengine-admin:2.51.0:2.52.0-SNAPSHOT
 grpc-google-cloud-appengine-admin-v1:2.51.0:2.52.0-SNAPSHOT
 proto-google-cloud-appengine-admin-v1:2.51.0:2.52.0-SNAPSHOT
 google-area120-tables:0.55.0:0.56.0-SNAPSHOT
@@ -299,7 +299,7 @@ google-cloud-gsuite-addons:2.51.0:2.52.0-SNAPSHOT
 grpc-google-cloud-gsuite-addons-v1:2.51.0:2.52.0-SNAPSHOT
 proto-google-cloud-gsuite-addons-v1:2.51.0:2.52.0-SNAPSHOT
 proto-google-apps-script-type-protos:2.51.0:2.52.0-SNAPSHOT
-google-iam-admin:0.2.0:0.3.0-SNAPSHOT
+google-iam-admin:3.46.0:3.47.0-SNAPSHOT
 grpc-google-iam-admin-v1:3.46.0:3.47.0-SNAPSHOT
 proto-google-iam-admin-v1:3.46.0:3.47.0-SNAPSHOT
 google-cloud-iamcredentials:2.51.0:2.52.0-SNAPSHOT
