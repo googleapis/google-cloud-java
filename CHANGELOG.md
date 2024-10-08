@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.46.0](https://github.com/googleapis/google-cloud-java/compare/v1.45.0...v1.46.0) (2024-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* [documentai] remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228))
+
+### Features
+
+* [documentai] remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228)) ([5876f54](https://github.com/googleapis/google-cloud-java/commit/5876f54b761610596aa0fe76cc78e47f0a9bf122))
+* [marketingplatformadminapi] new module for marketingplatformadminapi ([#11225](https://github.com/googleapis/google-cloud-java/issues/11225)) ([c2d44dc](https://github.com/googleapis/google-cloud-java/commit/c2d44dcf12d47ef7616876170e0b58cbc3197775))
+* [oracledatabase] new module for oracledatabase ([#11224](https://github.com/googleapis/google-cloud-java/issues/11224)) ([1c83c78](https://github.com/googleapis/google-cloud-java/commit/1c83c781f391b79de148d89fd3b82aa38f2317a5))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240924-2.0.0 ([#11207](https://github.com/googleapis/google-cloud-java/issues/11207)) ([a649470](https://github.com/googleapis/google-cloud-java/commit/a6494706f4018d8097ba1221da30d1308cddca6d))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.132.3 ([#11201](https://github.com/googleapis/google-cloud-java/issues/11201)) ([a8ff751](https://github.com/googleapis/google-cloud-java/commit/a8ff75186e630803081ae5456245ed4c1e0b5563))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.133.0 ([#11212](https://github.com/googleapis/google-cloud-java/issues/11212)) ([9c4f9e2](https://github.com/googleapis/google-cloud-java/commit/9c4f9e25af0f67bc45b3064cd2ce6d149ab61a1a))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.133.1 ([#11231](https://github.com/googleapis/google-cloud-java/issues/11231)) ([3a00b64](https://github.com/googleapis/google-cloud-java/commit/3a00b648c762f9b71495d5eff66adc59dde65f71))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.43.1 ([#11198](https://github.com/googleapis/google-cloud-java/issues/11198)) ([0cdd505](https://github.com/googleapis/google-cloud-java/commit/0cdd50546a1412dd74463dec9d4400ea6944f4bc))
+
 ## [1.45.0](https://github.com/googleapis/google-cloud-java/compare/v1.44.0...v1.45.0) (2024-09-27)
 
 
