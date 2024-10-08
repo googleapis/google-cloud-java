@@ -43,20 +43,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>3.55.0</version>
+  <version>3.56.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-asset:3.55.0'
+implementation 'com.google.cloud:google-cloud-asset:3.56.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.55.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.56.0"
 ```
 <!-- {x-version-update-end} -->
 
