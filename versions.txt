@@ -42,7 +42,7 @@ grpc-google-cloud-apigee-registry-v1:0.52.0:0.52.0
 google-cloud-apikeys:0.50.0:0.50.0
 proto-google-cloud-apikeys-v2:0.50.0:0.50.0
 grpc-google-cloud-apikeys-v2:0.50.0:0.50.0
-google-cloud-appengine-admin:0.1.0:0.1.0
+google-cloud-appengine-admin:2.52.0:2.52.0
 grpc-google-cloud-appengine-admin-v1:2.52.0:2.52.0
 proto-google-cloud-appengine-admin-v1:2.52.0:2.52.0
 google-area120-tables:0.56.0:0.56.0
@@ -299,7 +299,7 @@ google-cloud-gsuite-addons:2.52.0:2.52.0
 grpc-google-cloud-gsuite-addons-v1:2.52.0:2.52.0
 proto-google-cloud-gsuite-addons-v1:2.52.0:2.52.0
 proto-google-apps-script-type-protos:2.52.0:2.52.0
-google-iam-admin:0.1.0:0.1.0
+google-iam-admin:3.47.0:3.47.0
 grpc-google-iam-admin-v1:3.47.0:3.47.0
 proto-google-iam-admin-v1:3.47.0:3.47.0
 google-cloud-iamcredentials:2.52.0:2.52.0
