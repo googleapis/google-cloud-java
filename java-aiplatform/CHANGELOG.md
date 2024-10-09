@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.53.0 (2024-10-09)
+
+### Features
+
+* add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add continuous sync option in feature_view.proto ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add enable_secure_private_service_connect in service attachment ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add new `PscInterfaceConfig` field to `pipeline_job.proto` ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add partner_model_tuning_spec to TuningJob ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add psc_automation_configs to DeployIndex v1 ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+### Bug Fixes
+
+* annotate PipelineJob and PipelineTaskRerunConfig fields as optional ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
 ## 3.51.0 (2024-09-26)
 
 ### Features

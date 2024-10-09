@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.49.0 (2024-10-09)
+
+### Bug Fixes
+
+* minor wording and branding adjustments ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+
+
+
 ## 3.47.0 (2024-09-26)
 
 ### Bug Fixes
