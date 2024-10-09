@@ -529,9 +529,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If true, attribute suggestions are enabled and provided in response.
+   * If true, attribute suggestions are enabled and provided in the response.
    *
-   * This field is only available for "cloud-retail" dataset.
+   * This field is only available for the "cloud-retail" dataset.
    * </pre>
    *
    * <code>bool enable_attribute_suggestions = 9;</code>
@@ -2197,9 +2197,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, attribute suggestions are enabled and provided in response.
+     * If true, attribute suggestions are enabled and provided in the response.
      *
-     * This field is only available for "cloud-retail" dataset.
+     * This field is only available for the "cloud-retail" dataset.
      * </pre>
      *
      * <code>bool enable_attribute_suggestions = 9;</code>
@@ -2214,9 +2214,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, attribute suggestions are enabled and provided in response.
+     * If true, attribute suggestions are enabled and provided in the response.
      *
-     * This field is only available for "cloud-retail" dataset.
+     * This field is only available for the "cloud-retail" dataset.
      * </pre>
      *
      * <code>bool enable_attribute_suggestions = 9;</code>
@@ -2235,9 +2235,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, attribute suggestions are enabled and provided in response.
+     * If true, attribute suggestions are enabled and provided in the response.
      *
-     * This field is only available for "cloud-retail" dataset.
+     * This field is only available for the "cloud-retail" dataset.
      * </pre>
      *
      * <code>bool enable_attribute_suggestions = 9;</code>

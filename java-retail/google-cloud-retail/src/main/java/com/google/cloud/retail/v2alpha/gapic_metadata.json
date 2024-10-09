@@ -116,6 +116,30 @@
         }
       }
     },
+    "GenerativeQuestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenerativeQuestionServiceClient",
+          "rpcs": {
+            "BatchUpdateGenerativeQuestionConfigs": {
+              "methods": ["batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigsCallable"]
+            },
+            "GetGenerativeQuestionsFeatureConfig": {
+              "methods": ["getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfigCallable"]
+            },
+            "ListGenerativeQuestionConfigs": {
+              "methods": ["listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigsCallable"]
+            },
+            "UpdateGenerativeQuestionConfig": {
+              "methods": ["updateGenerativeQuestionConfig", "updateGenerativeQuestionConfig", "updateGenerativeQuestionConfigCallable"]
+            },
+            "UpdateGenerativeQuestionsFeatureConfig": {
+              "methods": ["updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "MerchantCenterAccountLinkService": {
       "clients": {
         "grpc": {
@@ -195,6 +219,9 @@
             },
             "DeleteProduct": {
               "methods": ["deleteProduct", "deleteProduct", "deleteProduct", "deleteProductCallable"]
+            },
+            "ExportProducts": {
+              "methods": ["exportProductsAsync", "exportProductsOperationCallable", "exportProductsCallable"]
             },
             "GetProduct": {
               "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
@@ -306,6 +333,9 @@
           "rpcs": {
             "CollectUserEvent": {
               "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ExportUserEvents": {
+              "methods": ["exportUserEventsAsync", "exportUserEventsOperationCallable", "exportUserEventsCallable"]
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]

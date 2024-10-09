@@ -45,6 +45,14 @@ public final class ExportConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_ExportErrorsConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_ExportProductsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_ExportProductsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_ExportUserEventsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_ExportUserEventsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_fieldAccessorTable;
@@ -100,41 +108,49 @@ public final class ExportConfigProto {
           + "(\tB\003\340A\002\022\034\n\017table_id_prefix\030\002 \001(\tB\003\340A\002\022\027\n"
           + "\ntable_type\030\003 \001(\tB\003\340A\002B\r\n\013destination\"9\n"
           + "\022ExportErrorsConfig\022\024\n\ngcs_prefix\030\001 \001(\tH"
-          + "\000B\r\n\013destination\"\213\001\n\035ExportAnalyticsMetr"
-          + "icsRequest\022\024\n\007catalog\030\001 \001(\tB\003\340A\002\022D\n\routp"
-          + "ut_config\030\002 \001(\0132(.google.cloud.retail.v2"
-          + "beta.OutputConfigB\003\340A\002\022\016\n\006filter\030\003 \001(\t\"r"
-          + "\n\016ExportMetadata\022/\n\013create_time\030\001 \001(\0132\032."
-          + "google.protobuf.Timestamp\022/\n\013update_time"
-          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"\313\001\n\026E"
-          + "xportProductsResponse\022)\n\rerror_samples\030\001"
-          + " \003(\0132\022.google.rpc.Status\022E\n\rerrors_confi"
-          + "g\030\002 \001(\0132..google.cloud.retail.v2beta.Exp"
-          + "ortErrorsConfig\022?\n\routput_result\030\003 \001(\0132("
-          + ".google.cloud.retail.v2beta.OutputResult"
-          + "\"\315\001\n\030ExportUserEventsResponse\022)\n\rerror_s"
-          + "amples\030\001 \003(\0132\022.google.rpc.Status\022E\n\rerro"
-          + "rs_config\030\002 \001(\0132..google.cloud.retail.v2"
-          + "beta.ExportErrorsConfig\022?\n\routput_result"
-          + "\030\003 \001(\0132(.google.cloud.retail.v2beta.Outp"
-          + "utResult\"\323\001\n\036ExportAnalyticsMetricsRespo"
-          + "nse\022)\n\rerror_samples\030\001 \003(\0132\022.google.rpc."
-          + "Status\022E\n\rerrors_config\030\002 \001(\0132..google.c"
-          + "loud.retail.v2beta.ExportErrorsConfig\022?\n"
-          + "\routput_result\030\003 \001(\0132(.google.cloud.reta"
-          + "il.v2beta.OutputResult\"\232\001\n\014OutputResult\022"
-          + "I\n\017bigquery_result\030\001 \003(\01320.google.cloud."
-          + "retail.v2beta.BigQueryOutputResult\022?\n\ngc"
-          + "s_result\030\002 \003(\0132+.google.cloud.retail.v2b"
-          + "eta.GcsOutputResult\"<\n\024BigQueryOutputRes"
-          + "ult\022\022\n\ndataset_id\030\001 \001(\t\022\020\n\010table_id\030\002 \001("
-          + "\t\"%\n\017GcsOutputResult\022\022\n\noutput_uri\030\001 \001(\t"
-          + "B\320\001\n\036com.google.cloud.retail.v2betaB\021Exp"
-          + "ortConfigProtoP\001Z6cloud.google.com/go/re"
-          + "tail/apiv2beta/retailpb;retailpb\242\002\006RETAI"
-          + "L\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Google\\"
-          + "Cloud\\Retail\\V2beta\352\002\035Google::Cloud::Ret"
-          + "ail::V2betab\006proto3"
+          + "\000B\r\n\013destination\"\243\001\n\025ExportProductsReque"
+          + "st\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034retail.googl"
+          + "eapis.com/Branch\022D\n\routput_config\030\002 \001(\0132"
+          + "(.google.cloud.retail.v2beta.OutputConfi"
+          + "gB\003\340A\002\022\016\n\006filter\030\003 \001(\t\"\246\001\n\027ExportUserEve"
+          + "ntsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035reta"
+          + "il.googleapis.com/Catalog\022D\n\routput_conf"
+          + "ig\030\002 \001(\0132(.google.cloud.retail.v2beta.Ou"
+          + "tputConfigB\003\340A\002\022\016\n\006filter\030\003 \001(\t\"\213\001\n\035Expo"
+          + "rtAnalyticsMetricsRequest\022\024\n\007catalog\030\001 \001"
+          + "(\tB\003\340A\002\022D\n\routput_config\030\002 \001(\0132(.google."
+          + "cloud.retail.v2beta.OutputConfigB\003\340A\002\022\016\n"
+          + "\006filter\030\003 \001(\t\"r\n\016ExportMetadata\022/\n\013creat"
+          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022/\n\013update_time\030\002 \001(\0132\032.google.protobuf."
+          + "Timestamp\"\313\001\n\026ExportProductsResponse\022)\n\r"
+          + "error_samples\030\001 \003(\0132\022.google.rpc.Status\022"
+          + "E\n\rerrors_config\030\002 \001(\0132..google.cloud.re"
+          + "tail.v2beta.ExportErrorsConfig\022?\n\routput"
+          + "_result\030\003 \001(\0132(.google.cloud.retail.v2be"
+          + "ta.OutputResult\"\315\001\n\030ExportUserEventsResp"
+          + "onse\022)\n\rerror_samples\030\001 \003(\0132\022.google.rpc"
+          + ".Status\022E\n\rerrors_config\030\002 \001(\0132..google."
+          + "cloud.retail.v2beta.ExportErrorsConfig\022?"
+          + "\n\routput_result\030\003 \001(\0132(.google.cloud.ret"
+          + "ail.v2beta.OutputResult\"\323\001\n\036ExportAnalyt"
+          + "icsMetricsResponse\022)\n\rerror_samples\030\001 \003("
+          + "\0132\022.google.rpc.Status\022E\n\rerrors_config\030\002"
+          + " \001(\0132..google.cloud.retail.v2beta.Export"
+          + "ErrorsConfig\022?\n\routput_result\030\003 \001(\0132(.go"
+          + "ogle.cloud.retail.v2beta.OutputResult\"\232\001"
+          + "\n\014OutputResult\022I\n\017bigquery_result\030\001 \003(\0132"
+          + "0.google.cloud.retail.v2beta.BigQueryOut"
+          + "putResult\022?\n\ngcs_result\030\002 \003(\0132+.google.c"
+          + "loud.retail.v2beta.GcsOutputResult\"<\n\024Bi"
+          + "gQueryOutputResult\022\022\n\ndataset_id\030\001 \001(\t\022\020"
+          + "\n\010table_id\030\002 \001(\t\"%\n\017GcsOutputResult\022\022\n\no"
+          + "utput_uri\030\001 \001(\tB\320\001\n\036com.google.cloud.ret"
+          + "ail.v2betaB\021ExportConfigProtoP\001Z6cloud.g"
+          + "oogle.com/go/retail/apiv2beta/retailpb;r"
+          + "etailpb\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V"
+          + "2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Goo"
+          + "gle::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -177,8 +193,24 @@ public final class ExportConfigProto {
             new java.lang.String[] {
               "GcsPrefix", "Destination",
             });
-    internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_descriptor =
+    internal_static_google_cloud_retail_v2beta_ExportProductsRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_retail_v2beta_ExportProductsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_ExportProductsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "OutputConfig", "Filter",
+            });
+    internal_static_google_cloud_retail_v2beta_ExportUserEventsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_retail_v2beta_ExportUserEventsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_ExportUserEventsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "OutputConfig", "Filter",
+            });
+    internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsRequest_descriptor,
@@ -186,7 +218,7 @@ public final class ExportConfigProto {
               "Catalog", "OutputConfig", "Filter",
             });
     internal_static_google_cloud_retail_v2beta_ExportMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_retail_v2beta_ExportMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ExportMetadata_descriptor,
@@ -194,7 +226,7 @@ public final class ExportConfigProto {
               "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_retail_v2beta_ExportProductsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_retail_v2beta_ExportProductsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ExportProductsResponse_descriptor,
@@ -202,7 +234,7 @@ public final class ExportConfigProto {
               "ErrorSamples", "ErrorsConfig", "OutputResult",
             });
     internal_static_google_cloud_retail_v2beta_ExportUserEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_retail_v2beta_ExportUserEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ExportUserEventsResponse_descriptor,
@@ -210,7 +242,7 @@ public final class ExportConfigProto {
               "ErrorSamples", "ErrorsConfig", "OutputResult",
             });
     internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ExportAnalyticsMetricsResponse_descriptor,
@@ -218,7 +250,7 @@ public final class ExportConfigProto {
               "ErrorSamples", "ErrorsConfig", "OutputResult",
             });
     internal_static_google_cloud_retail_v2beta_OutputResult_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_retail_v2beta_OutputResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_OutputResult_descriptor,
@@ -226,7 +258,7 @@ public final class ExportConfigProto {
               "BigqueryResult", "GcsResult",
             });
     internal_static_google_cloud_retail_v2beta_BigQueryOutputResult_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_retail_v2beta_BigQueryOutputResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_BigQueryOutputResult_descriptor,
@@ -234,7 +266,7 @@ public final class ExportConfigProto {
               "DatasetId", "TableId",
             });
     internal_static_google_cloud_retail_v2beta_GcsOutputResult_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_retail_v2beta_GcsOutputResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_GcsOutputResult_descriptor,
@@ -244,6 +276,7 @@ public final class ExportConfigProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

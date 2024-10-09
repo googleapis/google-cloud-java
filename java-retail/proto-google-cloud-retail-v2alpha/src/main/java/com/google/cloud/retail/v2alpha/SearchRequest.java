@@ -12579,6 +12579,5256 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ConversationalSearchSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies whether the customer would like to do conversational
+     * search. If this field is set to true, conversational related extra
+     * information will be returned from server side, including follow-up
+     * question, answer options, etc.
+     * </pre>
+     *
+     * <code>bool followup_conversation_requested = 1;</code>
+     *
+     * @return The followupConversationRequested.
+     */
+    boolean getFollowupConversationRequested();
+
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the conversation id, which maintains the state of
+     * the conversation between client side and server side. Use the value from
+     * the previous [ConversationalSearchResult.conversation_id][]. For the
+     * initial request, this should be empty.
+     * </pre>
+     *
+     * <code>string conversation_id = 2;</code>
+     *
+     * @return The conversationId.
+     */
+    java.lang.String getConversationId();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the conversation id, which maintains the state of
+     * the conversation between client side and server side. Use the value from
+     * the previous [ConversationalSearchResult.conversation_id][]. For the
+     * initial request, this should be empty.
+     * </pre>
+     *
+     * <code>string conversation_id = 2;</code>
+     *
+     * @return The bytes for conversationId.
+     */
+    com.google.protobuf.ByteString getConversationIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     *
+     * @return Whether the userAnswer field is set.
+     */
+    boolean hasUserAnswer();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     *
+     * @return The userAnswer.
+     */
+    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+        getUserAnswer();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswerOrBuilder
+        getUserAnswerOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all conversational related parameters addition to
+   * traditional retail search.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec}
+   */
+  public static final class ConversationalSearchSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)
+      ConversationalSearchSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConversationalSearchSpec.newBuilder() to construct.
+    private ConversationalSearchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConversationalSearchSpec() {
+      conversationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConversationalSearchSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.class,
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder.class);
+    }
+
+    public interface UserAnswerOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return Whether the textAnswer field is set.
+       */
+      boolean hasTextAnswer();
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return The textAnswer.
+       */
+      java.lang.String getTextAnswer();
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return The bytes for textAnswer.
+       */
+      com.google.protobuf.ByteString getTextAnswerBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       *
+       * @return Whether the selectedAnswer field is set.
+       */
+      boolean hasSelectedAnswer();
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       *
+       * @return The selectedAnswer.
+       */
+      com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .SelectedAnswer
+          getSelectedAnswer();
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       */
+      com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .SelectedAnswerOrBuilder
+          getSelectedAnswerOrBuilder();
+
+      com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.TypeCase
+          getTypeCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer}
+     */
+    public static final class UserAnswer extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+        UserAnswerOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use UserAnswer.newBuilder() to construct.
+      private UserAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private UserAnswer() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new UserAnswer();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .class,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .Builder.class);
+      }
+
+      public interface SelectedAnswerOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue>
+            getProductAttributeValuesList();
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValues(int index);
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        int getProductAttributeValuesCount();
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        java.util.List<? extends com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+            getProductAttributeValuesOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+            getProductAttributeValuesOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         *
+         * @return Whether the productAttributeValue field is set.
+         */
+        boolean hasProductAttributeValue();
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         *
+         * @return The productAttributeValue.
+         */
+        com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValue();
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         */
+        com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+            getProductAttributeValueOrBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected answers during the conversational
+       * search.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer}
+       */
+      public static final class SelectedAnswer extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
+          SelectedAnswerOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use SelectedAnswer.newBuilder() to construct.
+        private SelectedAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private SelectedAnswer() {
+          productAttributeValues_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new SelectedAnswer();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.SearchServiceProto
+              .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_SelectedAnswer_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.SearchServiceProto
+              .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_SelectedAnswer_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer.class,
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int PRODUCT_ATTRIBUTE_VALUES_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue>
+            productAttributeValues_;
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue>
+            getProductAttributeValuesList() {
+          return productAttributeValues_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.List<
+                ? extends com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+            getProductAttributeValuesOrBuilderList() {
+          return productAttributeValues_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public int getProductAttributeValuesCount() {
+          return productAttributeValues_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValues(
+            int index) {
+          return productAttributeValues_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field is deprecated and should not be set.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+            getProductAttributeValuesOrBuilder(int index) {
+          return productAttributeValues_.get(index);
+        }
+
+        public static final int PRODUCT_ATTRIBUTE_VALUE_FIELD_NUMBER = 2;
+        private com.google.cloud.retail.v2alpha.ProductAttributeValue productAttributeValue_;
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         *
+         * @return Whether the productAttributeValue field is set.
+         */
+        @java.lang.Override
+        public boolean hasProductAttributeValue() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         *
+         * @return The productAttributeValue.
+         */
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValue() {
+          return productAttributeValue_ == null
+              ? com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance()
+              : productAttributeValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answer which is a attribute
+         * key-value.
+         * </pre>
+         *
+         * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+            getProductAttributeValueOrBuilder() {
+          return productAttributeValue_ == null
+              ? com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance()
+              : productAttributeValue_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < productAttributeValues_.size(); i++) {
+            output.writeMessage(1, productAttributeValues_.get(i));
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(2, getProductAttributeValue());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < productAttributeValues_.size(); i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    1, productAttributeValues_.get(i));
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    2, getProductAttributeValue());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer
+              other =
+                  (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                          .SelectedAnswer)
+                      obj;
+
+          if (!getProductAttributeValuesList().equals(other.getProductAttributeValuesList()))
+            return false;
+          if (hasProductAttributeValue() != other.hasProductAttributeValue()) return false;
+          if (hasProductAttributeValue()) {
+            if (!getProductAttributeValue().equals(other.getProductAttributeValue())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getProductAttributeValuesCount() > 0) {
+            hash = (37 * hash) + PRODUCT_ATTRIBUTE_VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getProductAttributeValuesList().hashCode();
+          }
+          if (hasProductAttributeValue()) {
+            hash = (37 * hash) + PRODUCT_ATTRIBUTE_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getProductAttributeValue().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected answers during the conversational
+         * search.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswerOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.retail.v2alpha.SearchServiceProto
+                .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_SelectedAnswer_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.retail.v2alpha.SearchServiceProto
+                .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_SelectedAnswer_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer.class,
+                    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getProductAttributeValuesFieldBuilder();
+              getProductAttributeValueFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (productAttributeValuesBuilder_ == null) {
+              productAttributeValues_ = java.util.Collections.emptyList();
+            } else {
+              productAttributeValues_ = null;
+              productAttributeValuesBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            productAttributeValue_ = null;
+            if (productAttributeValueBuilder_ != null) {
+              productAttributeValueBuilder_.dispose();
+              productAttributeValueBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.retail.v2alpha.SearchServiceProto
+                .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_SelectedAnswer_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer
+              getDefaultInstanceForType() {
+            return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer
+              build() {
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer
+              buildPartial() {
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer
+                result =
+                    new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer
+                  result) {
+            if (productAttributeValuesBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                productAttributeValues_ =
+                    java.util.Collections.unmodifiableList(productAttributeValues_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.productAttributeValues_ = productAttributeValues_;
+            } else {
+              result.productAttributeValues_ = productAttributeValuesBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer
+                  result) {
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.productAttributeValue_ =
+                  productAttributeValueBuilder_ == null
+                      ? productAttributeValue_
+                      : productAttributeValueBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer) {
+              return mergeFrom(
+                  (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                          .SelectedAnswer)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer
+                  other) {
+            if (other
+                == com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer.getDefaultInstance()) return this;
+            if (productAttributeValuesBuilder_ == null) {
+              if (!other.productAttributeValues_.isEmpty()) {
+                if (productAttributeValues_.isEmpty()) {
+                  productAttributeValues_ = other.productAttributeValues_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureProductAttributeValuesIsMutable();
+                  productAttributeValues_.addAll(other.productAttributeValues_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.productAttributeValues_.isEmpty()) {
+                if (productAttributeValuesBuilder_.isEmpty()) {
+                  productAttributeValuesBuilder_.dispose();
+                  productAttributeValuesBuilder_ = null;
+                  productAttributeValues_ = other.productAttributeValues_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  productAttributeValuesBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getProductAttributeValuesFieldBuilder()
+                          : null;
+                } else {
+                  productAttributeValuesBuilder_.addAllMessages(other.productAttributeValues_);
+                }
+              }
+            }
+            if (other.hasProductAttributeValue()) {
+              mergeProductAttributeValue(other.getProductAttributeValue());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.retail.v2alpha.ProductAttributeValue m =
+                          input.readMessage(
+                              com.google.cloud.retail.v2alpha.ProductAttributeValue.parser(),
+                              extensionRegistry);
+                      if (productAttributeValuesBuilder_ == null) {
+                        ensureProductAttributeValuesIsMutable();
+                        productAttributeValues_.add(m);
+                      } else {
+                        productAttributeValuesBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(
+                          getProductAttributeValueFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue>
+              productAttributeValues_ = java.util.Collections.emptyList();
+
+          private void ensureProductAttributeValuesIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              productAttributeValues_ =
+                  new java.util.ArrayList<com.google.cloud.retail.v2alpha.ProductAttributeValue>(
+                      productAttributeValues_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+              productAttributeValuesBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue>
+              getProductAttributeValuesList() {
+            if (productAttributeValuesBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(productAttributeValues_);
+            } else {
+              return productAttributeValuesBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public int getProductAttributeValuesCount() {
+            if (productAttributeValuesBuilder_ == null) {
+              return productAttributeValues_.size();
+            } else {
+              return productAttributeValuesBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValues(
+              int index) {
+            if (productAttributeValuesBuilder_ == null) {
+              return productAttributeValues_.get(index);
+            } else {
+              return productAttributeValuesBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder setProductAttributeValues(
+              int index, com.google.cloud.retail.v2alpha.ProductAttributeValue value) {
+            if (productAttributeValuesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.set(index, value);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder setProductAttributeValues(
+              int index,
+              com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder builderForValue) {
+            if (productAttributeValuesBuilder_ == null) {
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder addProductAttributeValues(
+              com.google.cloud.retail.v2alpha.ProductAttributeValue value) {
+            if (productAttributeValuesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.add(value);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder addProductAttributeValues(
+              int index, com.google.cloud.retail.v2alpha.ProductAttributeValue value) {
+            if (productAttributeValuesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.add(index, value);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder addProductAttributeValues(
+              com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder builderForValue) {
+            if (productAttributeValuesBuilder_ == null) {
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.add(builderForValue.build());
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder addProductAttributeValues(
+              int index,
+              com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder builderForValue) {
+            if (productAttributeValuesBuilder_ == null) {
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder addAllProductAttributeValues(
+              java.lang.Iterable<? extends com.google.cloud.retail.v2alpha.ProductAttributeValue>
+                  values) {
+            if (productAttributeValuesBuilder_ == null) {
+              ensureProductAttributeValuesIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                  values, productAttributeValues_);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder clearProductAttributeValues() {
+            if (productAttributeValuesBuilder_ == null) {
+              productAttributeValues_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public Builder removeProductAttributeValues(int index) {
+            if (productAttributeValuesBuilder_ == null) {
+              ensureProductAttributeValuesIsMutable();
+              productAttributeValues_.remove(index);
+              onChanged();
+            } else {
+              productAttributeValuesBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder
+              getProductAttributeValuesBuilder(int index) {
+            return getProductAttributeValuesFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+              getProductAttributeValuesOrBuilder(int index) {
+            if (productAttributeValuesBuilder_ == null) {
+              return productAttributeValues_.get(index);
+            } else {
+              return productAttributeValuesBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public java.util.List<
+                  ? extends com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+              getProductAttributeValuesOrBuilderList() {
+            if (productAttributeValuesBuilder_ != null) {
+              return productAttributeValuesBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(productAttributeValues_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder
+              addProductAttributeValuesBuilder() {
+            return getProductAttributeValuesFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder
+              addProductAttributeValuesBuilder(int index) {
+            return getProductAttributeValuesFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field is deprecated and should not be set.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_values = 1 [deprecated = true];
+           * </code>
+           */
+          @java.lang.Deprecated
+          public java.util.List<com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder>
+              getProductAttributeValuesBuilderList() {
+            return getProductAttributeValuesFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+              getProductAttributeValuesFieldBuilder() {
+            if (productAttributeValuesBuilder_ == null) {
+              productAttributeValuesBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                      com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                      com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>(
+                      productAttributeValues_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              productAttributeValues_ = null;
+            }
+            return productAttributeValuesBuilder_;
+          }
+
+          private com.google.cloud.retail.v2alpha.ProductAttributeValue productAttributeValue_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+              productAttributeValueBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           *
+           * @return Whether the productAttributeValue field is set.
+           */
+          public boolean hasProductAttributeValue() {
+            return ((bitField0_ & 0x00000002) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           *
+           * @return The productAttributeValue.
+           */
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValue() {
+            if (productAttributeValueBuilder_ == null) {
+              return productAttributeValue_ == null
+                  ? com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance()
+                  : productAttributeValue_;
+            } else {
+              return productAttributeValueBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public Builder setProductAttributeValue(
+              com.google.cloud.retail.v2alpha.ProductAttributeValue value) {
+            if (productAttributeValueBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              productAttributeValue_ = value;
+            } else {
+              productAttributeValueBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public Builder setProductAttributeValue(
+              com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder builderForValue) {
+            if (productAttributeValueBuilder_ == null) {
+              productAttributeValue_ = builderForValue.build();
+            } else {
+              productAttributeValueBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public Builder mergeProductAttributeValue(
+              com.google.cloud.retail.v2alpha.ProductAttributeValue value) {
+            if (productAttributeValueBuilder_ == null) {
+              if (((bitField0_ & 0x00000002) != 0)
+                  && productAttributeValue_ != null
+                  && productAttributeValue_
+                      != com.google.cloud.retail.v2alpha.ProductAttributeValue
+                          .getDefaultInstance()) {
+                getProductAttributeValueBuilder().mergeFrom(value);
+              } else {
+                productAttributeValue_ = value;
+              }
+            } else {
+              productAttributeValueBuilder_.mergeFrom(value);
+            }
+            if (productAttributeValue_ != null) {
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public Builder clearProductAttributeValue() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            productAttributeValue_ = null;
+            if (productAttributeValueBuilder_ != null) {
+              productAttributeValueBuilder_.dispose();
+              productAttributeValueBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder
+              getProductAttributeValueBuilder() {
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return getProductAttributeValueFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          public com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder
+              getProductAttributeValueOrBuilder() {
+            if (productAttributeValueBuilder_ != null) {
+              return productAttributeValueBuilder_.getMessageOrBuilder();
+            } else {
+              return productAttributeValue_ == null
+                  ? com.google.cloud.retail.v2alpha.ProductAttributeValue.getDefaultInstance()
+                  : productAttributeValue_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * This field specifies the selected answer which is a attribute
+           * key-value.
+           * </pre>
+           *
+           * <code>.google.cloud.retail.v2alpha.ProductAttributeValue product_attribute_value = 2;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                  com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>
+              getProductAttributeValueFieldBuilder() {
+            if (productAttributeValueBuilder_ == null) {
+              productAttributeValueBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.retail.v2alpha.ProductAttributeValue,
+                      com.google.cloud.retail.v2alpha.ProductAttributeValue.Builder,
+                      com.google.cloud.retail.v2alpha.ProductAttributeValueOrBuilder>(
+                      getProductAttributeValue(), getParentForChildren(), isClean());
+              productAttributeValue_ = null;
+            }
+            return productAttributeValueBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
+        private static final com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer();
+        }
+
+        public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .UserAnswer.SelectedAnswer
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SelectedAnswer> PARSER =
+            new com.google.protobuf.AbstractParser<SelectedAnswer>() {
+              @java.lang.Override
+              public SelectedAnswer parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<SelectedAnswer> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SelectedAnswer> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int typeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object type_;
+
+      public enum TypeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        TEXT_ANSWER(1),
+        SELECTED_ANSWER(2),
+        TYPE_NOT_SET(0);
+        private final int value;
+
+        private TypeCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TypeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static TypeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return TEXT_ANSWER;
+            case 2:
+              return SELECTED_ANSWER;
+            case 0:
+              return TYPE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public TypeCase getTypeCase() {
+        return TypeCase.forNumber(typeCase_);
+      }
+
+      public static final int TEXT_ANSWER_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return Whether the textAnswer field is set.
+       */
+      public boolean hasTextAnswer() {
+        return typeCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return The textAnswer.
+       */
+      public java.lang.String getTextAnswer() {
+        java.lang.Object ref = "";
+        if (typeCase_ == 1) {
+          ref = type_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (typeCase_ == 1) {
+            type_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the incremental input text from the user during
+       * the conversational search.
+       * </pre>
+       *
+       * <code>string text_answer = 1;</code>
+       *
+       * @return The bytes for textAnswer.
+       */
+      public com.google.protobuf.ByteString getTextAnswerBytes() {
+        java.lang.Object ref = "";
+        if (typeCase_ == 1) {
+          ref = type_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (typeCase_ == 1) {
+            type_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SELECTED_ANSWER_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       *
+       * @return Whether the selectedAnswer field is set.
+       */
+      @java.lang.Override
+      public boolean hasSelectedAnswer() {
+        return typeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       *
+       * @return The selectedAnswer.
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .SelectedAnswer
+          getSelectedAnswer() {
+        if (typeCase_ == 2) {
+          return (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer)
+              type_;
+        }
+        return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+            .SelectedAnswer.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the selected attributes during the
+       * conversational search. This should be a subset of
+       * [ConversationalSearchResult.suggested_answers][].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .SelectedAnswerOrBuilder
+          getSelectedAnswerOrBuilder() {
+        if (typeCase_ == 2) {
+          return (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .SelectedAnswer)
+              type_;
+        }
+        return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+            .SelectedAnswer.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (typeCase_ == 1) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+        }
+        if (typeCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer)
+                  type_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (typeCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+        }
+        if (typeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                          .SelectedAnswer)
+                      type_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer other =
+            (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer) obj;
+
+        if (!getTypeCase().equals(other.getTypeCase())) return false;
+        switch (typeCase_) {
+          case 1:
+            if (!getTextAnswer().equals(other.getTextAnswer())) return false;
+            break;
+          case 2:
+            if (!getSelectedAnswer().equals(other.getSelectedAnswer())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (typeCase_) {
+          case 1:
+            hash = (37 * hash) + TEXT_ANSWER_FIELD_NUMBER;
+            hash = (53 * hash) + getTextAnswer().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + SELECTED_ANSWER_FIELD_NUMBER;
+            hash = (53 * hash) + getSelectedAnswer().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.SearchServiceProto
+              .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.SearchServiceProto
+              .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .class,
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (selectedAnswerBuilder_ != null) {
+            selectedAnswerBuilder_.clear();
+          }
+          typeCase_ = 0;
+          type_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2alpha.SearchServiceProto
+              .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_UserAnswer_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+            build() {
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+            buildPartial() {
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer result =
+              new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                result) {
+          result.typeCase_ = typeCase_;
+          result.type_ = this.type_;
+          if (typeCase_ == 2 && selectedAnswerBuilder_ != null) {
+            result.type_ = selectedAnswerBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                other) {
+          if (other
+              == com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .getDefaultInstance()) return this;
+          switch (other.getTypeCase()) {
+            case TEXT_ANSWER:
+              {
+                typeCase_ = 1;
+                type_ = other.type_;
+                onChanged();
+                break;
+              }
+            case SELECTED_ANSWER:
+              {
+                mergeSelectedAnswer(other.getSelectedAnswer());
+                break;
+              }
+            case TYPE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    typeCase_ = 1;
+                    type_ = s;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getSelectedAnswerFieldBuilder().getBuilder(), extensionRegistry);
+                    typeCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int typeCase_ = 0;
+        private java.lang.Object type_;
+
+        public TypeCase getTypeCase() {
+          return TypeCase.forNumber(typeCase_);
+        }
+
+        public Builder clearType() {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @return Whether the textAnswer field is set.
+         */
+        @java.lang.Override
+        public boolean hasTextAnswer() {
+          return typeCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @return The textAnswer.
+         */
+        @java.lang.Override
+        public java.lang.String getTextAnswer() {
+          java.lang.Object ref = "";
+          if (typeCase_ == 1) {
+            ref = type_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (typeCase_ == 1) {
+              type_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @return The bytes for textAnswer.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTextAnswerBytes() {
+          java.lang.Object ref = "";
+          if (typeCase_ == 1) {
+            ref = type_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (typeCase_ == 1) {
+              type_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @param value The textAnswer to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTextAnswer(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          typeCase_ = 1;
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTextAnswer() {
+          if (typeCase_ == 1) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the incremental input text from the user during
+         * the conversational search.
+         * </pre>
+         *
+         * <code>string text_answer = 1;</code>
+         *
+         * @param value The bytes for textAnswer to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTextAnswerBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          typeCase_ = 1;
+          type_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer.Builder,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswerOrBuilder>
+            selectedAnswerBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         *
+         * @return Whether the selectedAnswer field is set.
+         */
+        @java.lang.Override
+        public boolean hasSelectedAnswer() {
+          return typeCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         *
+         * @return The selectedAnswer.
+         */
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer
+            getSelectedAnswer() {
+          if (selectedAnswerBuilder_ == null) {
+            if (typeCase_ == 2) {
+              return (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                      .UserAnswer.SelectedAnswer)
+                  type_;
+            }
+            return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer.getDefaultInstance();
+          } else {
+            if (typeCase_ == 2) {
+              return selectedAnswerBuilder_.getMessage();
+            }
+            return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        public Builder setSelectedAnswer(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer
+                value) {
+          if (selectedAnswerBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+            onChanged();
+          } else {
+            selectedAnswerBuilder_.setMessage(value);
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        public Builder setSelectedAnswer(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer.Builder
+                builderForValue) {
+          if (selectedAnswerBuilder_ == null) {
+            type_ = builderForValue.build();
+            onChanged();
+          } else {
+            selectedAnswerBuilder_.setMessage(builderForValue.build());
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        public Builder mergeSelectedAnswer(
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer
+                value) {
+          if (selectedAnswerBuilder_ == null) {
+            if (typeCase_ == 2
+                && type_
+                    != com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer.getDefaultInstance()) {
+              type_ =
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer.newBuilder(
+                          (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                                  .UserAnswer.SelectedAnswer)
+                              type_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              type_ = value;
+            }
+            onChanged();
+          } else {
+            if (typeCase_ == 2) {
+              selectedAnswerBuilder_.mergeFrom(value);
+            } else {
+              selectedAnswerBuilder_.setMessage(value);
+            }
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        public Builder clearSelectedAnswer() {
+          if (selectedAnswerBuilder_ == null) {
+            if (typeCase_ == 2) {
+              typeCase_ = 0;
+              type_ = null;
+              onChanged();
+            }
+          } else {
+            if (typeCase_ == 2) {
+              typeCase_ = 0;
+              type_ = null;
+            }
+            selectedAnswerBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer.Builder
+            getSelectedAnswerBuilder() {
+          return getSelectedAnswerFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswerOrBuilder
+            getSelectedAnswerOrBuilder() {
+          if ((typeCase_ == 2) && (selectedAnswerBuilder_ != null)) {
+            return selectedAnswerBuilder_.getMessageOrBuilder();
+          } else {
+            if (typeCase_ == 2) {
+              return (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                      .UserAnswer.SelectedAnswer)
+                  type_;
+            }
+            return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                .SelectedAnswer.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This field specifies the selected attributes during the
+         * conversational search. This should be a subset of
+         * [ConversationalSearchResult.suggested_answers][].
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer selected_answer = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswer.Builder,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                    .SelectedAnswerOrBuilder>
+            getSelectedAnswerFieldBuilder() {
+          if (selectedAnswerBuilder_ == null) {
+            if (!(typeCase_ == 2)) {
+              type_ =
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .SelectedAnswer.getDefaultInstance();
+            }
+            selectedAnswerBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer,
+                    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswer.Builder,
+                    com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                        .UserAnswer.SelectedAnswerOrBuilder>(
+                    (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                            .UserAnswer.SelectedAnswer)
+                        type_,
+                    getParentForChildren(),
+                    isClean());
+            type_ = null;
+          }
+          typeCase_ = 2;
+          onChanged();
+          return selectedAnswerBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer)
+      private static final com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer();
+      }
+
+      public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswer
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<UserAnswer> PARSER =
+          new com.google.protobuf.AbstractParser<UserAnswer>() {
+            @java.lang.Override
+            public UserAnswer parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<UserAnswer> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<UserAnswer> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int FOLLOWUP_CONVERSATION_REQUESTED_FIELD_NUMBER = 1;
+    private boolean followupConversationRequested_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies whether the customer would like to do conversational
+     * search. If this field is set to true, conversational related extra
+     * information will be returned from server side, including follow-up
+     * question, answer options, etc.
+     * </pre>
+     *
+     * <code>bool followup_conversation_requested = 1;</code>
+     *
+     * @return The followupConversationRequested.
+     */
+    @java.lang.Override
+    public boolean getFollowupConversationRequested() {
+      return followupConversationRequested_;
+    }
+
+    public static final int CONVERSATION_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object conversationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the conversation id, which maintains the state of
+     * the conversation between client side and server side. Use the value from
+     * the previous [ConversationalSearchResult.conversation_id][]. For the
+     * initial request, this should be empty.
+     * </pre>
+     *
+     * <code>string conversation_id = 2;</code>
+     *
+     * @return The conversationId.
+     */
+    @java.lang.Override
+    public java.lang.String getConversationId() {
+      java.lang.Object ref = conversationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conversationId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the conversation id, which maintains the state of
+     * the conversation between client side and server side. Use the value from
+     * the previous [ConversationalSearchResult.conversation_id][]. For the
+     * initial request, this should be empty.
+     * </pre>
+     *
+     * <code>string conversation_id = 2;</code>
+     *
+     * @return The bytes for conversationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConversationIdBytes() {
+      java.lang.Object ref = conversationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        conversationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ANSWER_FIELD_NUMBER = 3;
+    private com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+        userAnswer_;
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     *
+     * @return Whether the userAnswer field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserAnswer() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     *
+     * @return The userAnswer.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+        getUserAnswer() {
+      return userAnswer_ == null
+          ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .getDefaultInstance()
+          : userAnswer_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the current user answer during the conversational
+     * search. This can be either user selected from suggested answers or user
+     * input plain text.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+            .UserAnswerOrBuilder
+        getUserAnswerOrBuilder() {
+      return userAnswer_ == null
+          ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .getDefaultInstance()
+          : userAnswer_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (followupConversationRequested_ != false) {
+        output.writeBool(1, followupConversationRequested_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, conversationId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getUserAnswer());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (followupConversationRequested_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                1, followupConversationRequested_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, conversationId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUserAnswer());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec other =
+          (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec) obj;
+
+      if (getFollowupConversationRequested() != other.getFollowupConversationRequested())
+        return false;
+      if (!getConversationId().equals(other.getConversationId())) return false;
+      if (hasUserAnswer() != other.hasUserAnswer()) return false;
+      if (hasUserAnswer()) {
+        if (!getUserAnswer().equals(other.getUserAnswer())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FOLLOWUP_CONVERSATION_REQUESTED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getFollowupConversationRequested());
+      hash = (37 * hash) + CONVERSATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConversationId().hashCode();
+      if (hasUserAnswer()) {
+        hash = (37 * hash) + USER_ANSWER_FIELD_NUMBER;
+        hash = (53 * hash) + getUserAnswer().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies all conversational related parameters addition to
+     * traditional retail search.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.class,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getUserAnswerFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        followupConversationRequested_ = false;
+        conversationId_ = "";
+        userAnswer_ = null;
+        if (userAnswerBuilder_ != null) {
+          userAnswerBuilder_.dispose();
+          userAnswerBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_ConversationalSearchSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec build() {
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec buildPartial() {
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec result =
+            new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.followupConversationRequested_ = followupConversationRequested_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.conversationId_ = conversationId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.userAnswer_ =
+              userAnswerBuilder_ == null ? userAnswer_ : userAnswerBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec other) {
+        if (other
+            == com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .getDefaultInstance()) return this;
+        if (other.getFollowupConversationRequested() != false) {
+          setFollowupConversationRequested(other.getFollowupConversationRequested());
+        }
+        if (!other.getConversationId().isEmpty()) {
+          conversationId_ = other.conversationId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasUserAnswer()) {
+          mergeUserAnswer(other.getUserAnswer());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  followupConversationRequested_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  conversationId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getUserAnswerFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean followupConversationRequested_;
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to do conversational
+       * search. If this field is set to true, conversational related extra
+       * information will be returned from server side, including follow-up
+       * question, answer options, etc.
+       * </pre>
+       *
+       * <code>bool followup_conversation_requested = 1;</code>
+       *
+       * @return The followupConversationRequested.
+       */
+      @java.lang.Override
+      public boolean getFollowupConversationRequested() {
+        return followupConversationRequested_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to do conversational
+       * search. If this field is set to true, conversational related extra
+       * information will be returned from server side, including follow-up
+       * question, answer options, etc.
+       * </pre>
+       *
+       * <code>bool followup_conversation_requested = 1;</code>
+       *
+       * @param value The followupConversationRequested to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFollowupConversationRequested(boolean value) {
+
+        followupConversationRequested_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to do conversational
+       * search. If this field is set to true, conversational related extra
+       * information will be returned from server side, including follow-up
+       * question, answer options, etc.
+       * </pre>
+       *
+       * <code>bool followup_conversation_requested = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFollowupConversationRequested() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        followupConversationRequested_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object conversationId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the conversation id, which maintains the state of
+       * the conversation between client side and server side. Use the value from
+       * the previous [ConversationalSearchResult.conversation_id][]. For the
+       * initial request, this should be empty.
+       * </pre>
+       *
+       * <code>string conversation_id = 2;</code>
+       *
+       * @return The conversationId.
+       */
+      public java.lang.String getConversationId() {
+        java.lang.Object ref = conversationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          conversationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the conversation id, which maintains the state of
+       * the conversation between client side and server side. Use the value from
+       * the previous [ConversationalSearchResult.conversation_id][]. For the
+       * initial request, this should be empty.
+       * </pre>
+       *
+       * <code>string conversation_id = 2;</code>
+       *
+       * @return The bytes for conversationId.
+       */
+      public com.google.protobuf.ByteString getConversationIdBytes() {
+        java.lang.Object ref = conversationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          conversationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the conversation id, which maintains the state of
+       * the conversation between client side and server side. Use the value from
+       * the previous [ConversationalSearchResult.conversation_id][]. For the
+       * initial request, this should be empty.
+       * </pre>
+       *
+       * <code>string conversation_id = 2;</code>
+       *
+       * @param value The conversationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConversationId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conversationId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the conversation id, which maintains the state of
+       * the conversation between client side and server side. Use the value from
+       * the previous [ConversationalSearchResult.conversation_id][]. For the
+       * initial request, this should be empty.
+       * </pre>
+       *
+       * <code>string conversation_id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConversationId() {
+        conversationId_ = getDefaultInstance().getConversationId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the conversation id, which maintains the state of
+       * the conversation between client side and server side. Use the value from
+       * the previous [ConversationalSearchResult.conversation_id][]. For the
+       * initial request, this should be empty.
+       * </pre>
+       *
+       * <code>string conversation_id = 2;</code>
+       *
+       * @param value The bytes for conversationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConversationIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        conversationId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+          userAnswer_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer,
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .Builder,
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                  .UserAnswerOrBuilder>
+          userAnswerBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       *
+       * @return Whether the userAnswer field is set.
+       */
+      public boolean hasUserAnswer() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       *
+       * @return The userAnswer.
+       */
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+          getUserAnswer() {
+        if (userAnswerBuilder_ == null) {
+          return userAnswer_ == null
+              ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .getDefaultInstance()
+              : userAnswer_;
+        } else {
+          return userAnswerBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public Builder setUserAnswer(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer value) {
+        if (userAnswerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          userAnswer_ = value;
+        } else {
+          userAnswerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public Builder setUserAnswer(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer.Builder
+              builderForValue) {
+        if (userAnswerBuilder_ == null) {
+          userAnswer_ = builderForValue.build();
+        } else {
+          userAnswerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public Builder mergeUserAnswer(
+          com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer value) {
+        if (userAnswerBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && userAnswer_ != null
+              && userAnswer_
+                  != com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                      .UserAnswer.getDefaultInstance()) {
+            getUserAnswerBuilder().mergeFrom(value);
+          } else {
+            userAnswer_ = value;
+          }
+        } else {
+          userAnswerBuilder_.mergeFrom(value);
+        }
+        if (userAnswer_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public Builder clearUserAnswer() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userAnswer_ = null;
+        if (userAnswerBuilder_ != null) {
+          userAnswerBuilder_.dispose();
+          userAnswerBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+              .Builder
+          getUserAnswerBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getUserAnswerFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+              .UserAnswerOrBuilder
+          getUserAnswerOrBuilder() {
+        if (userAnswerBuilder_ != null) {
+          return userAnswerBuilder_.getMessageOrBuilder();
+        } else {
+          return userAnswer_ == null
+              ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .getDefaultInstance()
+              : userAnswer_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the current user answer during the conversational
+       * search. This can be either user selected from suggested answers or user
+       * input plain text.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer user_answer = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer,
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                  .Builder,
+              com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                  .UserAnswerOrBuilder>
+          getUserAnswerFieldBuilder() {
+        if (userAnswerBuilder_ == null) {
+          userAnswerBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer,
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.UserAnswer
+                      .Builder,
+                  com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                      .UserAnswerOrBuilder>(getUserAnswer(), getParentForChildren(), isClean());
+          userAnswer_ = null;
+        }
+        return userAnswerBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec)
+    private static final com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec();
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConversationalSearchSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ConversationalSearchSpec>() {
+          @java.lang.Override
+          public ConversationalSearchSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConversationalSearchSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConversationalSearchSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TileNavigationSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies whether the customer would like to request tile
+     * navigation.
+     * </pre>
+     *
+     * <code>bool tile_navigation_requested = 1;</code>
+     *
+     * @return The tileNavigationRequested.
+     */
+    boolean getTileNavigationRequested();
+
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    java.util.List<com.google.cloud.retail.v2alpha.Tile> getAppliedTilesList();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    com.google.cloud.retail.v2alpha.Tile getAppliedTiles(int index);
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    int getAppliedTilesCount();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.retail.v2alpha.TileOrBuilder>
+        getAppliedTilesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    com.google.cloud.retail.v2alpha.TileOrBuilder getAppliedTilesOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec}
+   */
+  public static final class TileNavigationSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)
+      TileNavigationSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TileNavigationSpec.newBuilder() to construct.
+    private TileNavigationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TileNavigationSpec() {
+      appliedTiles_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TileNavigationSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_TileNavigationSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_TileNavigationSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.class,
+              com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder.class);
+    }
+
+    public static final int TILE_NAVIGATION_REQUESTED_FIELD_NUMBER = 1;
+    private boolean tileNavigationRequested_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies whether the customer would like to request tile
+     * navigation.
+     * </pre>
+     *
+     * <code>bool tile_navigation_requested = 1;</code>
+     *
+     * @return The tileNavigationRequested.
+     */
+    @java.lang.Override
+    public boolean getTileNavigationRequested() {
+      return tileNavigationRequested_;
+    }
+
+    public static final int APPLIED_TILES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.retail.v2alpha.Tile> appliedTiles_;
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.retail.v2alpha.Tile> getAppliedTilesList() {
+      return appliedTiles_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.retail.v2alpha.TileOrBuilder>
+        getAppliedTilesOrBuilderList() {
+      return appliedTiles_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    @java.lang.Override
+    public int getAppliedTilesCount() {
+      return appliedTiles_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.Tile getAppliedTiles(int index) {
+      return appliedTiles_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies the tiles which are already clicked in client side.
+     * NOTE: This field is not being used for filtering search products. Client
+     * side should also put all the applied tiles in
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.TileOrBuilder getAppliedTilesOrBuilder(int index) {
+      return appliedTiles_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (tileNavigationRequested_ != false) {
+        output.writeBool(1, tileNavigationRequested_);
+      }
+      for (int i = 0; i < appliedTiles_.size(); i++) {
+        output.writeMessage(2, appliedTiles_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tileNavigationRequested_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, tileNavigationRequested_);
+      }
+      for (int i = 0; i < appliedTiles_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, appliedTiles_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec other =
+          (com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec) obj;
+
+      if (getTileNavigationRequested() != other.getTileNavigationRequested()) return false;
+      if (!getAppliedTilesList().equals(other.getAppliedTilesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TILE_NAVIGATION_REQUESTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTileNavigationRequested());
+      if (getAppliedTilesCount() > 0) {
+        hash = (37 * hash) + APPLIED_TILES_FIELD_NUMBER;
+        hash = (53 * hash) + getAppliedTilesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_TileNavigationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_TileNavigationSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.class,
+                com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tileNavigationRequested_ = false;
+        if (appliedTilesBuilder_ == null) {
+          appliedTiles_ = java.util.Collections.emptyList();
+        } else {
+          appliedTiles_ = null;
+          appliedTilesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_TileNavigationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec build() {
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec buildPartial() {
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec result =
+            new com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec result) {
+        if (appliedTilesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            appliedTiles_ = java.util.Collections.unmodifiableList(appliedTiles_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.appliedTiles_ = appliedTiles_;
+        } else {
+          result.appliedTiles_ = appliedTilesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tileNavigationRequested_ = tileNavigationRequested_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec other) {
+        if (other
+            == com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+                .getDefaultInstance()) return this;
+        if (other.getTileNavigationRequested() != false) {
+          setTileNavigationRequested(other.getTileNavigationRequested());
+        }
+        if (appliedTilesBuilder_ == null) {
+          if (!other.appliedTiles_.isEmpty()) {
+            if (appliedTiles_.isEmpty()) {
+              appliedTiles_ = other.appliedTiles_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureAppliedTilesIsMutable();
+              appliedTiles_.addAll(other.appliedTiles_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.appliedTiles_.isEmpty()) {
+            if (appliedTilesBuilder_.isEmpty()) {
+              appliedTilesBuilder_.dispose();
+              appliedTilesBuilder_ = null;
+              appliedTiles_ = other.appliedTiles_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              appliedTilesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAppliedTilesFieldBuilder()
+                      : null;
+            } else {
+              appliedTilesBuilder_.addAllMessages(other.appliedTiles_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  tileNavigationRequested_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  com.google.cloud.retail.v2alpha.Tile m =
+                      input.readMessage(
+                          com.google.cloud.retail.v2alpha.Tile.parser(), extensionRegistry);
+                  if (appliedTilesBuilder_ == null) {
+                    ensureAppliedTilesIsMutable();
+                    appliedTiles_.add(m);
+                  } else {
+                    appliedTilesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean tileNavigationRequested_;
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to request tile
+       * navigation.
+       * </pre>
+       *
+       * <code>bool tile_navigation_requested = 1;</code>
+       *
+       * @return The tileNavigationRequested.
+       */
+      @java.lang.Override
+      public boolean getTileNavigationRequested() {
+        return tileNavigationRequested_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to request tile
+       * navigation.
+       * </pre>
+       *
+       * <code>bool tile_navigation_requested = 1;</code>
+       *
+       * @param value The tileNavigationRequested to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTileNavigationRequested(boolean value) {
+
+        tileNavigationRequested_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies whether the customer would like to request tile
+       * navigation.
+       * </pre>
+       *
+       * <code>bool tile_navigation_requested = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTileNavigationRequested() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tileNavigationRequested_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.retail.v2alpha.Tile> appliedTiles_ =
+          java.util.Collections.emptyList();
+
+      private void ensureAppliedTilesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          appliedTiles_ =
+              new java.util.ArrayList<com.google.cloud.retail.v2alpha.Tile>(appliedTiles_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.Tile,
+              com.google.cloud.retail.v2alpha.Tile.Builder,
+              com.google.cloud.retail.v2alpha.TileOrBuilder>
+          appliedTilesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public java.util.List<com.google.cloud.retail.v2alpha.Tile> getAppliedTilesList() {
+        if (appliedTilesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(appliedTiles_);
+        } else {
+          return appliedTilesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public int getAppliedTilesCount() {
+        if (appliedTilesBuilder_ == null) {
+          return appliedTiles_.size();
+        } else {
+          return appliedTilesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Tile getAppliedTiles(int index) {
+        if (appliedTilesBuilder_ == null) {
+          return appliedTiles_.get(index);
+        } else {
+          return appliedTilesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder setAppliedTiles(int index, com.google.cloud.retail.v2alpha.Tile value) {
+        if (appliedTilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.set(index, value);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder setAppliedTiles(
+          int index, com.google.cloud.retail.v2alpha.Tile.Builder builderForValue) {
+        if (appliedTilesBuilder_ == null) {
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          appliedTilesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder addAppliedTiles(com.google.cloud.retail.v2alpha.Tile value) {
+        if (appliedTilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.add(value);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder addAppliedTiles(int index, com.google.cloud.retail.v2alpha.Tile value) {
+        if (appliedTilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.add(index, value);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder addAppliedTiles(com.google.cloud.retail.v2alpha.Tile.Builder builderForValue) {
+        if (appliedTilesBuilder_ == null) {
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.add(builderForValue.build());
+          onChanged();
+        } else {
+          appliedTilesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder addAppliedTiles(
+          int index, com.google.cloud.retail.v2alpha.Tile.Builder builderForValue) {
+        if (appliedTilesBuilder_ == null) {
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          appliedTilesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder addAllAppliedTiles(
+          java.lang.Iterable<? extends com.google.cloud.retail.v2alpha.Tile> values) {
+        if (appliedTilesBuilder_ == null) {
+          ensureAppliedTilesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedTiles_);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder clearAppliedTiles() {
+        if (appliedTilesBuilder_ == null) {
+          appliedTiles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public Builder removeAppliedTiles(int index) {
+        if (appliedTilesBuilder_ == null) {
+          ensureAppliedTilesIsMutable();
+          appliedTiles_.remove(index);
+          onChanged();
+        } else {
+          appliedTilesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Tile.Builder getAppliedTilesBuilder(int index) {
+        return getAppliedTilesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public com.google.cloud.retail.v2alpha.TileOrBuilder getAppliedTilesOrBuilder(int index) {
+        if (appliedTilesBuilder_ == null) {
+          return appliedTiles_.get(index);
+        } else {
+          return appliedTilesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public java.util.List<? extends com.google.cloud.retail.v2alpha.TileOrBuilder>
+          getAppliedTilesOrBuilderList() {
+        if (appliedTilesBuilder_ != null) {
+          return appliedTilesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(appliedTiles_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Tile.Builder addAppliedTilesBuilder() {
+        return getAppliedTilesFieldBuilder()
+            .addBuilder(com.google.cloud.retail.v2alpha.Tile.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Tile.Builder addAppliedTilesBuilder(int index) {
+        return getAppliedTilesFieldBuilder()
+            .addBuilder(index, com.google.cloud.retail.v2alpha.Tile.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field specifies the tiles which are already clicked in client side.
+       * NOTE: This field is not being used for filtering search products. Client
+       * side should also put all the applied tiles in
+       * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Tile applied_tiles = 2;</code>
+       */
+      public java.util.List<com.google.cloud.retail.v2alpha.Tile.Builder>
+          getAppliedTilesBuilderList() {
+        return getAppliedTilesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.Tile,
+              com.google.cloud.retail.v2alpha.Tile.Builder,
+              com.google.cloud.retail.v2alpha.TileOrBuilder>
+          getAppliedTilesFieldBuilder() {
+        if (appliedTilesBuilder_ == null) {
+          appliedTilesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.Tile,
+                  com.google.cloud.retail.v2alpha.Tile.Builder,
+                  com.google.cloud.retail.v2alpha.TileOrBuilder>(
+                  appliedTiles_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          appliedTiles_ = null;
+        }
+        return appliedTilesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec)
+    private static final com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec();
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TileNavigationSpec> PARSER =
+        new com.google.protobuf.AbstractParser<TileNavigationSpec>() {
+          @java.lang.Override
+          public TileNavigationSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TileNavigationSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TileNavigationSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int PLACEMENT_FIELD_NUMBER = 1;
 
@@ -13299,7 +18549,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=621
+   *     google/cloud/retail/v2alpha/search_service.proto;l=721
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -13323,7 +18573,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=621
+   *     google/cloud/retail/v2alpha/search_service.proto;l=721
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -14439,6 +19689,127 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CONVERSATIONAL_SEARCH_SPEC_FIELD_NUMBER = 40;
+  private com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+      conversationalSearchSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the conversationalSearchSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversationalSearchSpec() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The conversationalSearchSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+      getConversationalSearchSpec() {
+    return conversationalSearchSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+            .getDefaultInstance()
+        : conversationalSearchSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder
+      getConversationalSearchSpecOrBuilder() {
+    return conversationalSearchSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+            .getDefaultInstance()
+        : conversationalSearchSpec_;
+  }
+
+  public static final int TILE_NAVIGATION_SPEC_FIELD_NUMBER = 41;
+  private com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tileNavigationSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tileNavigationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasTileNavigationSpec() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tileNavigationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec getTileNavigationSpec() {
+    return tileNavigationSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.getDefaultInstance()
+        : tileNavigationSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder
+      getTileNavigationSpecOrBuilder() {
+    return tileNavigationSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.getDefaultInstance()
+        : tileNavigationSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -14525,6 +19896,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 38, entity_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(40, getConversationalSearchSpec());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(41, getTileNavigationSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -14628,6 +20005,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38, entity_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40, getConversationalSearchSpec());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getTileNavigationSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -14685,6 +20070,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getSpellCorrectionSpec().equals(other.getSpellCorrectionSpec())) return false;
     }
     if (!getEntity().equals(other.getEntity())) return false;
+    if (hasConversationalSearchSpec() != other.hasConversationalSearchSpec()) return false;
+    if (hasConversationalSearchSpec()) {
+      if (!getConversationalSearchSpec().equals(other.getConversationalSearchSpec())) return false;
+    }
+    if (hasTileNavigationSpec() != other.hasTileNavigationSpec()) return false;
+    if (hasTileNavigationSpec()) {
+      if (!getTileNavigationSpec().equals(other.getTileNavigationSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -14762,6 +20155,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENTITY_FIELD_NUMBER;
     hash = (53 * hash) + getEntity().hashCode();
+    if (hasConversationalSearchSpec()) {
+      hash = (37 * hash) + CONVERSATIONAL_SEARCH_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getConversationalSearchSpec().hashCode();
+    }
+    if (hasTileNavigationSpec()) {
+      hash = (37 * hash) + TILE_NAVIGATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getTileNavigationSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -14933,6 +20334,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getQueryExpansionSpecFieldBuilder();
         getPersonalizationSpecFieldBuilder();
         getSpellCorrectionSpecFieldBuilder();
+        getConversationalSearchSpecFieldBuilder();
+        getTileNavigationSpecFieldBuilder();
       }
     }
 
@@ -14993,6 +20396,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         spellCorrectionSpecBuilder_ = null;
       }
       entity_ = "";
+      conversationalSearchSpec_ = null;
+      if (conversationalSearchSpecBuilder_ != null) {
+        conversationalSearchSpecBuilder_.dispose();
+        conversationalSearchSpecBuilder_ = null;
+      }
+      tileNavigationSpec_ = null;
+      if (tileNavigationSpecBuilder_ != null) {
+        tileNavigationSpecBuilder_.dispose();
+        tileNavigationSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -15127,6 +20540,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.entity_ = entity_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.conversationalSearchSpec_ =
+            conversationalSearchSpecBuilder_ == null
+                ? conversationalSearchSpec_
+                : conversationalSearchSpecBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.tileNavigationSpec_ =
+            tileNavigationSpecBuilder_ == null
+                ? tileNavigationSpec_
+                : tileNavigationSpecBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -15299,6 +20726,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         entity_ = other.entity_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (other.hasConversationalSearchSpec()) {
+        mergeConversationalSearchSpec(other.getConversationalSearchSpec());
+      }
+      if (other.hasTileNavigationSpec()) {
+        mergeTileNavigationSpec(other.getTileNavigationSpec());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -15484,6 +20917,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00400000;
                 break;
               } // case 306
+            case 322:
+              {
+                input.readMessage(
+                    getConversationalSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 322
+            case 330:
+              {
+                input.readMessage(
+                    getTileNavigationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 330
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17384,7 +22831,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=621
+     *     google/cloud/retail/v2alpha/search_service.proto;l=721
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -17407,7 +22854,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=621
+     *     google/cloud/retail/v2alpha/search_service.proto;l=721
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -20410,6 +25857,441 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        conversationalSearchSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder>
+        conversationalSearchSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the conversationalSearchSpec field is set.
+     */
+    public boolean hasConversationalSearchSpec() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The conversationalSearchSpec.
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+        getConversationalSearchSpec() {
+      if (conversationalSearchSpecBuilder_ == null) {
+        return conversationalSearchSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .getDefaultInstance()
+            : conversationalSearchSpec_;
+      } else {
+        return conversationalSearchSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConversationalSearchSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec value) {
+      if (conversationalSearchSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conversationalSearchSpec_ = value;
+      } else {
+        conversationalSearchSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConversationalSearchSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder
+            builderForValue) {
+      if (conversationalSearchSpecBuilder_ == null) {
+        conversationalSearchSpec_ = builderForValue.build();
+      } else {
+        conversationalSearchSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConversationalSearchSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec value) {
+      if (conversationalSearchSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && conversationalSearchSpec_ != null
+            && conversationalSearchSpec_
+                != com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                    .getDefaultInstance()) {
+          getConversationalSearchSpecBuilder().mergeFrom(value);
+        } else {
+          conversationalSearchSpec_ = value;
+        }
+      } else {
+        conversationalSearchSpecBuilder_.mergeFrom(value);
+      }
+      if (conversationalSearchSpec_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConversationalSearchSpec() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      conversationalSearchSpec_ = null;
+      if (conversationalSearchSpecBuilder_ != null) {
+        conversationalSearchSpecBuilder_.dispose();
+        conversationalSearchSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder
+        getConversationalSearchSpecBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getConversationalSearchSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder
+        getConversationalSearchSpecOrBuilder() {
+      if (conversationalSearchSpecBuilder_ != null) {
+        return conversationalSearchSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return conversationalSearchSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
+                .getDefaultInstance()
+            : conversationalSearchSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies all conversational related parameters
+     * addition to traditional retail search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder>
+        getConversationalSearchSpecFieldBuilder() {
+      if (conversationalSearchSpecBuilder_ == null) {
+        conversationalSearchSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder,
+                com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpecOrBuilder>(
+                getConversationalSearchSpec(), getParentForChildren(), isClean());
+        conversationalSearchSpec_ = null;
+      }
+      return conversationalSearchSpecBuilder_;
+    }
+
+    private com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tileNavigationSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder>
+        tileNavigationSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tileNavigationSpec field is set.
+     */
+    public boolean hasTileNavigationSpec() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tileNavigationSpec.
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+        getTileNavigationSpec() {
+      if (tileNavigationSpecBuilder_ == null) {
+        return tileNavigationSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.getDefaultInstance()
+            : tileNavigationSpec_;
+      } else {
+        return tileNavigationSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTileNavigationSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec value) {
+      if (tileNavigationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tileNavigationSpec_ = value;
+      } else {
+        tileNavigationSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTileNavigationSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder builderForValue) {
+      if (tileNavigationSpecBuilder_ == null) {
+        tileNavigationSpec_ = builderForValue.build();
+      } else {
+        tileNavigationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTileNavigationSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec value) {
+      if (tileNavigationSpecBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && tileNavigationSpec_ != null
+            && tileNavigationSpec_
+                != com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
+                    .getDefaultInstance()) {
+          getTileNavigationSpecBuilder().mergeFrom(value);
+        } else {
+          tileNavigationSpec_ = value;
+        }
+      } else {
+        tileNavigationSpecBuilder_.mergeFrom(value);
+      }
+      if (tileNavigationSpec_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTileNavigationSpec() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      tileNavigationSpec_ = null;
+      if (tileNavigationSpecBuilder_ != null) {
+        tileNavigationSpecBuilder_.dispose();
+        tileNavigationSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder
+        getTileNavigationSpecBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getTileNavigationSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder
+        getTileNavigationSpecOrBuilder() {
+      if (tileNavigationSpecBuilder_ != null) {
+        return tileNavigationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return tileNavigationSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.getDefaultInstance()
+            : tileNavigationSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies tile navigation related parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder>
+        getTileNavigationSpecFieldBuilder() {
+      if (tileNavigationSpecBuilder_ == null) {
+        tileNavigationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec,
+                com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder,
+                com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpecOrBuilder>(
+                getTileNavigationSpec(), getParentForChildren(), isClean());
+        tileNavigationSpec_ = null;
+      }
+      return tileNavigationSpecBuilder_;
     }
 
     @java.lang.Override

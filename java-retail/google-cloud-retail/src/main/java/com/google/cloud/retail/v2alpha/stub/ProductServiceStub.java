@@ -30,6 +30,9 @@ import com.google.cloud.retail.v2alpha.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2alpha.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2alpha.CreateProductRequest;
 import com.google.cloud.retail.v2alpha.DeleteProductRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportProductsRequest;
+import com.google.cloud.retail.v2alpha.ExportProductsResponse;
 import com.google.cloud.retail.v2alpha.GetProductRequest;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportProductsRequest;
@@ -113,6 +116,15 @@ public abstract class ProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductsCallable()");
+  }
+
+  public OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportProductsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportProductsCallable()");
   }
 
   public OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>

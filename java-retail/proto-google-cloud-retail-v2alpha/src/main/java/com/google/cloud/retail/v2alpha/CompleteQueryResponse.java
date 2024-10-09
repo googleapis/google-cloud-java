@@ -2833,36 +2833,18 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
      */
     java.util.List<java.lang.String> getSuggestionsList();
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
      */
     int getSuggestionsCount();
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
@@ -2870,12 +2852,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     java.lang.String getSuggestions(int index);
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -2888,6 +2864,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Resource that represents attribute results.
+   * The list of suggestions for the attribute.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -2933,12 +2910,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.LazyStringArrayList suggestions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
@@ -2947,12 +2918,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return suggestions_;
     }
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
@@ -2961,12 +2926,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return suggestions_.size();
     }
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
@@ -2976,12 +2935,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return suggestions_.get(index);
     }
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -3165,6 +3118,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource that represents attribute results.
+     * The list of suggestions for the attribute.
      * </pre>
      *
      * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -3373,12 +3327,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return A list containing the suggestions.
@@ -3388,12 +3336,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return suggestions_;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return The count of suggestions.
@@ -3402,12 +3344,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return suggestions_.size();
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the element to return.
@@ -3417,12 +3353,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return suggestions_.get(index);
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the value to return.
@@ -3432,12 +3362,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return suggestions_.getByteString(index);
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index to set the value at.
@@ -3455,12 +3379,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The suggestions to add.
@@ -3477,12 +3395,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param values The suggestions to add.
@@ -3496,12 +3408,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return This builder for chaining.
@@ -3514,12 +3420,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The bytes of the suggestions to add.

@@ -23,7 +23,8 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * A data branch that stores [Product][google.cloud.retail.v2alpha.Product]s.
+ * A data branch that stores all instances of
+ * [Product][google.cloud.retail.v2alpha.Product]s.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.Branch}
@@ -5064,7 +5065,8 @@ public final class Branch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A data branch that stores [Product][google.cloud.retail.v2alpha.Product]s.
+   * A data branch that stores all instances of
+   * [Product][google.cloud.retail.v2alpha.Product]s.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.Branch}

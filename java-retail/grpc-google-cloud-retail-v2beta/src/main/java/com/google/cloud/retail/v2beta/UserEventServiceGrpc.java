@@ -212,6 +212,50 @@ public final class UserEventServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.ExportUserEventsRequest, com.google.longrunning.Operation>
+      getExportUserEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportUserEvents",
+      requestType = com.google.cloud.retail.v2beta.ExportUserEventsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.ExportUserEventsRequest, com.google.longrunning.Operation>
+      getExportUserEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+            com.google.longrunning.Operation>
+        getExportUserEventsMethod;
+    if ((getExportUserEventsMethod = UserEventServiceGrpc.getExportUserEventsMethod) == null) {
+      synchronized (UserEventServiceGrpc.class) {
+        if ((getExportUserEventsMethod = UserEventServiceGrpc.getExportUserEventsMethod) == null) {
+          UserEventServiceGrpc.getExportUserEventsMethod =
+              getExportUserEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportUserEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2beta.ExportUserEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new UserEventServiceMethodDescriptorSupplier("ExportUserEvents"))
+                      .build();
+        }
+      }
+    }
+    return getExportUserEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2beta.RejoinUserEventsRequest, com.google.longrunning.Operation>
       getRejoinUserEventsMethod;
 
@@ -376,6 +420,22 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    default void exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportUserEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Starts a user-event rejoin operation with latest product catalog. Events
      * are not annotated with detailed product information for products that are
      * missing from the catalog when the user event is ingested. These
@@ -507,6 +567,24 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public void exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportUserEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Starts a user-event rejoin operation with latest product catalog. Events
      * are not annotated with detailed product information for products that are
      * missing from the catalog when the user event is ingested. These
@@ -607,6 +685,21 @@ public final class UserEventServiceGrpc {
         com.google.cloud.retail.v2beta.ImportUserEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportUserEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -717,6 +810,21 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportUserEvents(com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportUserEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Starts a user-event rejoin operation with latest product catalog. Events
      * are not annotated with detailed product information for products that are
      * missing from the catalog when the user event is ingested. These
@@ -738,7 +846,8 @@ public final class UserEventServiceGrpc {
   private static final int METHODID_COLLECT_USER_EVENT = 1;
   private static final int METHODID_PURGE_USER_EVENTS = 2;
   private static final int METHODID_IMPORT_USER_EVENTS = 3;
-  private static final int METHODID_REJOIN_USER_EVENTS = 4;
+  private static final int METHODID_EXPORT_USER_EVENTS = 4;
+  private static final int METHODID_REJOIN_USER_EVENTS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -776,6 +885,11 @@ public final class UserEventServiceGrpc {
         case METHODID_IMPORT_USER_EVENTS:
           serviceImpl.importUserEvents(
               (com.google.cloud.retail.v2beta.ImportUserEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_USER_EVENTS:
+          serviceImpl.exportUserEvents(
+              (com.google.cloud.retail.v2beta.ExportUserEventsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_REJOIN_USER_EVENTS:
@@ -825,6 +939,12 @@ public final class UserEventServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.retail.v2beta.ImportUserEventsRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_USER_EVENTS)))
+        .addMethod(
+            getExportUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ExportUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_USER_EVENTS)))
         .addMethod(
             getRejoinUserEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -886,6 +1006,7 @@ public final class UserEventServiceGrpc {
                       .addMethod(getCollectUserEventMethod())
                       .addMethod(getPurgeUserEventsMethod())
                       .addMethod(getImportUserEventsMethod())
+                      .addMethod(getExportUserEventsMethod())
                       .addMethod(getRejoinUserEventsMethod())
                       .build();
         }

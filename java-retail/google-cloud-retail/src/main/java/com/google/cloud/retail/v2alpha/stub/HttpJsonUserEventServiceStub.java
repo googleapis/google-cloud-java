@@ -35,6 +35,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CollectUserEventRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportUserEventsRequest;
+import com.google.cloud.retail.v2alpha.ExportUserEventsResponse;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportUserEventsRequest;
 import com.google.cloud.retail.v2alpha.ImportUserEventsResponse;
@@ -68,12 +71,14 @@ import javax.annotation.Generated;
 public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(ExportMetadata.getDescriptor())
           .add(RejoinUserEventsResponse.getDescriptor())
           .add(PurgeUserEventsResponse.getDescriptor())
           .add(ImportMetadata.getDescriptor())
           .add(ImportUserEventsResponse.getDescriptor())
           .add(RejoinUserEventsMetadata.getDescriptor())
           .add(PurgeMetadata.getDescriptor())
+          .add(ExportUserEventsResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<WriteUserEventRequest, UserEvent>
@@ -234,6 +239,46 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportUserEventsRequest, Operation>
+      exportUserEventsMethodDescriptor =
+          ApiMethodDescriptor.<ExportUserEventsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2alpha.UserEventService/ExportUserEvents")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportUserEventsRequest>newBuilder()
+                      .setPath(
+                          "/v2alpha/{parent=projects/*/locations/*/catalogs/*}/userEvents:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportUserEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportUserEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportUserEventsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<RejoinUserEventsRequest, Operation>
       rejoinUserEventsMethodDescriptor =
           ApiMethodDescriptor.<RejoinUserEventsRequest, Operation>newBuilder()
@@ -282,6 +327,9 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
   private final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable;
   private final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable;
+  private final UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable;
+  private final OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable;
   private final UnaryCallable<RejoinUserEventsRequest, Operation> rejoinUserEventsCallable;
   private final OperationCallable<
           RejoinUserEventsRequest, RejoinUserEventsResponse, RejoinUserEventsMetadata>
@@ -418,6 +466,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportUserEventsRequest, Operation> exportUserEventsTransportSettings =
+        HttpJsonCallSettings.<ExportUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportUserEventsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsTransportSettings =
         HttpJsonCallSettings.<RejoinUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(rejoinUserEventsMethodDescriptor)
@@ -454,6 +513,15 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
             settings.importUserEventsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportUserEventsCallable =
+        callableFactory.createUnaryCallable(
+            exportUserEventsTransportSettings, settings.exportUserEventsSettings(), clientContext);
+    this.exportUserEventsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportUserEventsTransportSettings,
+            settings.exportUserEventsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.rejoinUserEventsCallable =
         callableFactory.createUnaryCallable(
             rejoinUserEventsTransportSettings, settings.rejoinUserEventsSettings(), clientContext);
@@ -475,6 +543,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
     methodDescriptors.add(collectUserEventMethodDescriptor);
     methodDescriptors.add(purgeUserEventsMethodDescriptor);
     methodDescriptors.add(importUserEventsMethodDescriptor);
+    methodDescriptors.add(exportUserEventsMethodDescriptor);
     methodDescriptors.add(rejoinUserEventsMethodDescriptor);
     return methodDescriptors;
   }
@@ -513,6 +582,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
   public OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable() {
     return importUserEventsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable() {
+    return exportUserEventsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable() {
+    return exportUserEventsOperationCallable;
   }
 
   @Override

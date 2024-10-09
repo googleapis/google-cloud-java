@@ -61,7 +61,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListBranches</td>
- *      <td><p> Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].</td>
+ *      <td><p> Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -205,7 +205,7 @@ public class BranchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified parent
+   * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under the specified parent
    * [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
@@ -235,7 +235,7 @@ public class BranchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified parent
+   * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under the specified parent
    * [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
@@ -262,7 +262,7 @@ public class BranchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified parent
+   * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under the specified parent
    * [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
@@ -292,7 +292,7 @@ public class BranchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified parent
+   * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under the specified parent
    * [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:

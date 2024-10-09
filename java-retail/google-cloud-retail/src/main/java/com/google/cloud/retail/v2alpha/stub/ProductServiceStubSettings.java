@@ -56,6 +56,9 @@ import com.google.cloud.retail.v2alpha.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2alpha.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2alpha.CreateProductRequest;
 import com.google.cloud.retail.v2alpha.DeleteProductRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportProductsRequest;
+import com.google.cloud.retail.v2alpha.ExportProductsResponse;
 import com.google.cloud.retail.v2alpha.GetProductRequest;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportProductsRequest;
@@ -184,6 +187,9 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
   private final UnaryCallSettings<ImportProductsRequest, Operation> importProductsSettings;
   private final OperationCallSettings<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationSettings;
+  private final UnaryCallSettings<ExportProductsRequest, Operation> exportProductsSettings;
+  private final OperationCallSettings<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationSettings;
   private final UnaryCallSettings<SetInventoryRequest, Operation> setInventorySettings;
   private final OperationCallSettings<
           SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
@@ -310,6 +316,17 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
   public OperationCallSettings<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationSettings() {
     return importProductsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public UnaryCallSettings<ExportProductsRequest, Operation> exportProductsSettings() {
+    return exportProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public OperationCallSettings<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationSettings() {
+    return exportProductsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setInventory. */
@@ -497,6 +514,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     purgeProductsOperationSettings = settingsBuilder.purgeProductsOperationSettings().build();
     importProductsSettings = settingsBuilder.importProductsSettings().build();
     importProductsOperationSettings = settingsBuilder.importProductsOperationSettings().build();
+    exportProductsSettings = settingsBuilder.exportProductsSettings().build();
+    exportProductsOperationSettings = settingsBuilder.exportProductsOperationSettings().build();
     setInventorySettings = settingsBuilder.setInventorySettings().build();
     setInventoryOperationSettings = settingsBuilder.setInventoryOperationSettings().build();
     addFulfillmentPlacesSettings = settingsBuilder.addFulfillmentPlacesSettings().build();
@@ -532,6 +551,11 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     private final OperationCallSettings.Builder<
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings;
+    private final UnaryCallSettings.Builder<ExportProductsRequest, Operation>
+        exportProductsSettings;
+    private final OperationCallSettings.Builder<
+            ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+        exportProductsOperationSettings;
     private final UnaryCallSettings.Builder<SetInventoryRequest, Operation> setInventorySettings;
     private final OperationCallSettings.Builder<
             SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
@@ -625,6 +649,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       purgeProductsOperationSettings = OperationCallSettings.newBuilder();
       importProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importProductsOperationSettings = OperationCallSettings.newBuilder();
+      exportProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportProductsOperationSettings = OperationCallSettings.newBuilder();
       setInventorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setInventoryOperationSettings = OperationCallSettings.newBuilder();
       addFulfillmentPlacesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -645,6 +671,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               deleteProductSettings,
               purgeProductsSettings,
               importProductsSettings,
+              exportProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
               removeFulfillmentPlacesSettings,
@@ -665,6 +692,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       purgeProductsOperationSettings = settings.purgeProductsOperationSettings.toBuilder();
       importProductsSettings = settings.importProductsSettings.toBuilder();
       importProductsOperationSettings = settings.importProductsOperationSettings.toBuilder();
+      exportProductsSettings = settings.exportProductsSettings.toBuilder();
+      exportProductsOperationSettings = settings.exportProductsOperationSettings.toBuilder();
       setInventorySettings = settings.setInventorySettings.toBuilder();
       setInventoryOperationSettings = settings.setInventoryOperationSettings.toBuilder();
       addFulfillmentPlacesSettings = settings.addFulfillmentPlacesSettings.toBuilder();
@@ -689,6 +718,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               deleteProductSettings,
               purgeProductsSettings,
               importProductsSettings,
+              exportProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
               removeFulfillmentPlacesSettings,
@@ -757,6 +787,11 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
+          .exportProductsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
           .setInventorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
@@ -817,6 +852,30 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               ProtoOperationTransformers.ResponseTransformer.create(ImportProductsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(ImportMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportProductsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportProductsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1024,6 +1083,18 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings() {
       return importProductsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public UnaryCallSettings.Builder<ExportProductsRequest, Operation> exportProductsSettings() {
+      return exportProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public OperationCallSettings.Builder<
+            ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+        exportProductsOperationSettings() {
+      return exportProductsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setInventory. */

@@ -111,6 +111,9 @@ public class SearchServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setEntity("entity-1298275357")
+            .setConversationalSearchSpec(
+                SearchRequest.ConversationalSearchSpec.newBuilder().build())
+            .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -169,6 +172,9 @@ public class SearchServiceClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setEntity("entity-1298275357")
+              .setConversationalSearchSpec(
+                  SearchRequest.ConversationalSearchSpec.newBuilder().build())
+              .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

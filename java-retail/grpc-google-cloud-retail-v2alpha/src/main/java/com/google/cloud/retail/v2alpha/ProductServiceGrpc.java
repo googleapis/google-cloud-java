@@ -350,6 +350,49 @@ public final class ProductServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2alpha.ExportProductsRequest, com.google.longrunning.Operation>
+      getExportProductsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportProducts",
+      requestType = com.google.cloud.retail.v2alpha.ExportProductsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2alpha.ExportProductsRequest, com.google.longrunning.Operation>
+      getExportProductsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2alpha.ExportProductsRequest, com.google.longrunning.Operation>
+        getExportProductsMethod;
+    if ((getExportProductsMethod = ProductServiceGrpc.getExportProductsMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getExportProductsMethod = ProductServiceGrpc.getExportProductsMethod) == null) {
+          ProductServiceGrpc.getExportProductsMethod =
+              getExportProductsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2alpha.ExportProductsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportProducts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2alpha.ExportProductsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("ExportProducts"))
+                      .build();
+        }
+      }
+    }
+    return getExportProductsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2alpha.SetInventoryRequest, com.google.longrunning.Operation>
       getSetInventoryMethod;
 
@@ -758,6 +801,20 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Exports multiple [Product][google.cloud.retail.v2alpha.Product]s.
+     * </pre>
+     */
+    default void exportProducts(
+        com.google.cloud.retail.v2alpha.ExportProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportProductsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates inventory information for a
      * [Product][google.cloud.retail.v2alpha.Product] while respecting the last
      * update timestamps of each inventory field.
@@ -1129,6 +1186,22 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Exports multiple [Product][google.cloud.retail.v2alpha.Product]s.
+     * </pre>
+     */
+    public void exportProducts(
+        com.google.cloud.retail.v2alpha.ExportProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportProductsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates inventory information for a
      * [Product][google.cloud.retail.v2alpha.Product] while respecting the last
      * update timestamps of each inventory field.
@@ -1474,6 +1547,19 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Exports multiple [Product][google.cloud.retail.v2alpha.Product]s.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportProducts(
+        com.google.cloud.retail.v2alpha.ExportProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates inventory information for a
      * [Product][google.cloud.retail.v2alpha.Product] while respecting the last
      * update timestamps of each inventory field.
@@ -1808,6 +1894,19 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Exports multiple [Product][google.cloud.retail.v2alpha.Product]s.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportProducts(com.google.cloud.retail.v2alpha.ExportProductsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportProductsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates inventory information for a
      * [Product][google.cloud.retail.v2alpha.Product] while respecting the last
      * update timestamps of each inventory field.
@@ -2014,11 +2113,12 @@ public final class ProductServiceGrpc {
   private static final int METHODID_DELETE_PRODUCT = 4;
   private static final int METHODID_PURGE_PRODUCTS = 5;
   private static final int METHODID_IMPORT_PRODUCTS = 6;
-  private static final int METHODID_SET_INVENTORY = 7;
-  private static final int METHODID_ADD_FULFILLMENT_PLACES = 8;
-  private static final int METHODID_REMOVE_FULFILLMENT_PLACES = 9;
-  private static final int METHODID_ADD_LOCAL_INVENTORIES = 10;
-  private static final int METHODID_REMOVE_LOCAL_INVENTORIES = 11;
+  private static final int METHODID_EXPORT_PRODUCTS = 7;
+  private static final int METHODID_SET_INVENTORY = 8;
+  private static final int METHODID_ADD_FULFILLMENT_PLACES = 9;
+  private static final int METHODID_REMOVE_FULFILLMENT_PLACES = 10;
+  private static final int METHODID_ADD_LOCAL_INVENTORIES = 11;
+  private static final int METHODID_REMOVE_LOCAL_INVENTORIES = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2074,6 +2174,11 @@ public final class ProductServiceGrpc {
         case METHODID_IMPORT_PRODUCTS:
           serviceImpl.importProducts(
               (com.google.cloud.retail.v2alpha.ImportProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_PRODUCTS:
+          serviceImpl.exportProducts(
+              (com.google.cloud.retail.v2alpha.ExportProductsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_SET_INVENTORY:
@@ -2163,6 +2268,12 @@ public final class ProductServiceGrpc {
                     com.google.cloud.retail.v2alpha.ImportProductsRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_PRODUCTS)))
         .addMethod(
+            getExportProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2alpha.ExportProductsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_PRODUCTS)))
+        .addMethod(
             getSetInventoryMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2250,6 +2361,7 @@ public final class ProductServiceGrpc {
                       .addMethod(getDeleteProductMethod())
                       .addMethod(getPurgeProductsMethod())
                       .addMethod(getImportProductsMethod())
+                      .addMethod(getExportProductsMethod())
                       .addMethod(getSetInventoryMethod())
                       .addMethod(getAddFulfillmentPlacesMethod())
                       .addMethod(getRemoveFulfillmentPlacesMethod())

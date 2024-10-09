@@ -49,6 +49,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UserEventServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockUserEventService mockUserEventService;
   private LocalChannelProvider channelProvider;
@@ -57,9 +58,11 @@ public class UserEventServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockUserEventService = new MockUserEventService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockUserEventService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockUserEventService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -322,6 +325,66 @@ public class UserEventServiceClientTest {
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .build();
       client.importUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportUserEventsTest() throws Exception {
+    ExportUserEventsResponse expectedResponse =
+        ExportUserEventsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ExportErrorsConfig.newBuilder().build())
+            .setOutputResult(OutputResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockUserEventService.addResponse(resultOperation);
+
+    ExportUserEventsRequest request =
+        ExportUserEventsRequest.newBuilder()
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .build();
+
+    ExportUserEventsResponse actualResponse = client.exportUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportUserEventsRequest actualRequest = ((ExportUserEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportUserEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      ExportUserEventsRequest request =
+          ExportUserEventsRequest.newBuilder()
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setFilter("filter-1274492040")
+              .build();
+      client.exportUserEventsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

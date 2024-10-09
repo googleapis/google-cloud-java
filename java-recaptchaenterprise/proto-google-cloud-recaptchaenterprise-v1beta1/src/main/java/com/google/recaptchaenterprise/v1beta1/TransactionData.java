@@ -23,7 +23,7 @@ package com.google.recaptchaenterprise.v1beta1;
  *
  *
  * <pre>
- * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
+ * Transaction data associated with a payment protected by reCAPTCHA.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.TransactionData}
@@ -4457,7 +4457,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * AVS response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string avs_response_code = 3;</code>
@@ -4470,7 +4470,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * AVS response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string avs_response_code = 3;</code>
@@ -4484,7 +4484,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * CVV response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string cvv_response_code = 4;</code>
@@ -4497,7 +4497,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * CVV response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string cvv_response_code = 4;</code>
@@ -4664,7 +4664,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * AVS response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string avs_response_code = 3;</code>
@@ -4688,7 +4688,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * AVS response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string avs_response_code = 3;</code>
@@ -4717,7 +4717,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * CVV response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string cvv_response_code = 4;</code>
@@ -4741,7 +4741,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * CVV response code from the gateway
-     * (available only when reCAPTCHA Enterprise is called after authorization).
+     * (available only when reCAPTCHA is called after authorization).
      * </pre>
      *
      * <code>string cvv_response_code = 4;</code>
@@ -5406,7 +5406,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * AVS response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string avs_response_code = 3;</code>
@@ -5429,7 +5429,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * AVS response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string avs_response_code = 3;</code>
@@ -5452,7 +5452,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * AVS response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string avs_response_code = 3;</code>
@@ -5474,7 +5474,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * AVS response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string avs_response_code = 3;</code>
@@ -5492,7 +5492,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * AVS response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string avs_response_code = 3;</code>
@@ -5517,7 +5517,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * CVV response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string cvv_response_code = 4;</code>
@@ -5540,7 +5540,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * CVV response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string cvv_response_code = 4;</code>
@@ -5563,7 +5563,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * CVV response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string cvv_response_code = 4;</code>
@@ -5585,7 +5585,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * CVV response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string cvv_response_code = 4;</code>
@@ -5603,7 +5603,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * CVV response code from the gateway
-       * (available only when reCAPTCHA Enterprise is called after authorization).
+       * (available only when reCAPTCHA is called after authorization).
        * </pre>
        *
        * <code>string cvv_response_code = 4;</code>
@@ -6701,7 +6701,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
+   * Transaction data associated with a payment protected by reCAPTCHA.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.TransactionData}

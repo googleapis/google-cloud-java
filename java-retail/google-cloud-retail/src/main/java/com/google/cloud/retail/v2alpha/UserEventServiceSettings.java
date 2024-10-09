@@ -147,6 +147,17 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
     return ((UserEventServiceStubSettings) getStubSettings()).importUserEventsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportUserEvents. */
+  public UnaryCallSettings<ExportUserEventsRequest, Operation> exportUserEventsSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).exportUserEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportUserEvents. */
+  public OperationCallSettings<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).exportUserEventsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to rejoinUserEvents. */
   public UnaryCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsSettings() {
     return ((UserEventServiceStubSettings) getStubSettings()).rejoinUserEventsSettings();
@@ -304,6 +315,19 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings() {
       return getStubSettingsBuilder().importUserEventsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportUserEvents. */
+    public UnaryCallSettings.Builder<ExportUserEventsRequest, Operation>
+        exportUserEventsSettings() {
+      return getStubSettingsBuilder().exportUserEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportUserEvents. */
+    public OperationCallSettings.Builder<
+            ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+        exportUserEventsOperationSettings() {
+      return getStubSettingsBuilder().exportUserEventsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to rejoinUserEvents. */
