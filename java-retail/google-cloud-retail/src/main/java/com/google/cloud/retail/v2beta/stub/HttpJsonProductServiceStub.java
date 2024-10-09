@@ -43,6 +43,9 @@ import com.google.cloud.retail.v2beta.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2beta.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2beta.CreateProductRequest;
 import com.google.cloud.retail.v2beta.DeleteProductRequest;
+import com.google.cloud.retail.v2beta.ExportMetadata;
+import com.google.cloud.retail.v2beta.ExportProductsRequest;
+import com.google.cloud.retail.v2beta.ExportProductsResponse;
 import com.google.cloud.retail.v2beta.GetProductRequest;
 import com.google.cloud.retail.v2beta.ImportMetadata;
 import com.google.cloud.retail.v2beta.ImportProductsRequest;
@@ -86,12 +89,14 @@ import javax.annotation.Generated;
 public class HttpJsonProductServiceStub extends ProductServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(ExportMetadata.getDescriptor())
           .add(RemoveLocalInventoriesResponse.getDescriptor())
           .add(ImportMetadata.getDescriptor())
           .add(AddFulfillmentPlacesMetadata.getDescriptor())
           .add(ImportProductsResponse.getDescriptor())
           .add(SetInventoryResponse.getDescriptor())
           .add(SetInventoryMetadata.getDescriptor())
+          .add(ExportProductsResponse.getDescriptor())
           .add(AddLocalInventoriesMetadata.getDescriptor())
           .add(RemoveFulfillmentPlacesMetadata.getDescriptor())
           .add(PurgeProductsResponse.getDescriptor())
@@ -366,6 +371,46 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportProductsRequest, Operation>
+      exportProductsMethodDescriptor =
+          ApiMethodDescriptor.<ExportProductsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/ExportProducts")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportProductsRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/products:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportProductsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<SetInventoryRequest, Operation>
       setInventoryMethodDescriptor =
           ApiMethodDescriptor.<SetInventoryRequest, Operation>newBuilder()
@@ -582,6 +627,9 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
+  private final UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable;
+  private final OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable;
   private final UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable;
   private final OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
       setInventoryOperationCallable;
@@ -767,6 +815,17 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportProductsRequest, Operation> exportProductsTransportSettings =
+        HttpJsonCallSettings.<ExportProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportProductsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         HttpJsonCallSettings.<SetInventoryRequest, Operation>newBuilder()
             .setMethodDescriptor(setInventoryMethodDescriptor)
@@ -863,6 +922,15 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
             settings.importProductsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportProductsCallable =
+        callableFactory.createUnaryCallable(
+            exportProductsTransportSettings, settings.exportProductsSettings(), clientContext);
+    this.exportProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportProductsTransportSettings,
+            settings.exportProductsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setInventoryCallable =
         callableFactory.createUnaryCallable(
             setInventoryTransportSettings, settings.setInventorySettings(), clientContext);
@@ -931,6 +999,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
     methodDescriptors.add(deleteProductMethodDescriptor);
     methodDescriptors.add(purgeProductsMethodDescriptor);
     methodDescriptors.add(importProductsMethodDescriptor);
+    methodDescriptors.add(exportProductsMethodDescriptor);
     methodDescriptors.add(setInventoryMethodDescriptor);
     methodDescriptors.add(addFulfillmentPlacesMethodDescriptor);
     methodDescriptors.add(removeFulfillmentPlacesMethodDescriptor);
@@ -993,6 +1062,17 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     return importProductsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    return exportProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    return exportProductsOperationCallable;
   }
 
   @Override

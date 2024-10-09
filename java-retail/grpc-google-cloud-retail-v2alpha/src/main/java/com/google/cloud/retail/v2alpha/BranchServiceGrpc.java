@@ -189,8 +189,8 @@ public final class BranchServiceGrpc {
      *
      *
      * <pre>
-     * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified
-     * parent [Catalog][google.cloud.retail.v2alpha.Catalog].
+     * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under
+     * the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].
      * </pre>
      */
     default void listBranches(
@@ -263,8 +263,8 @@ public final class BranchServiceGrpc {
      *
      *
      * <pre>
-     * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified
-     * parent [Catalog][google.cloud.retail.v2alpha.Catalog].
+     * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under
+     * the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].
      * </pre>
      */
     public void listBranches(
@@ -320,8 +320,8 @@ public final class BranchServiceGrpc {
      *
      *
      * <pre>
-     * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified
-     * parent [Catalog][google.cloud.retail.v2alpha.Catalog].
+     * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under
+     * the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ListBranchesResponse listBranches(
@@ -372,8 +372,8 @@ public final class BranchServiceGrpc {
      *
      *
      * <pre>
-     * Lists all [Branch][google.cloud.retail.v2alpha.Branch]s under the specified
-     * parent [Catalog][google.cloud.retail.v2alpha.Catalog].
+     * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under
+     * the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

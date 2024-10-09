@@ -334,6 +334,66 @@ public class UserEventServiceClientTest {
   }
 
   @Test
+  public void exportUserEventsTest() throws Exception {
+    ExportUserEventsResponse expectedResponse =
+        ExportUserEventsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ExportErrorsConfig.newBuilder().build())
+            .setOutputResult(OutputResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockUserEventService.addResponse(resultOperation);
+
+    ExportUserEventsRequest request =
+        ExportUserEventsRequest.newBuilder()
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .build();
+
+    ExportUserEventsResponse actualResponse = client.exportUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportUserEventsRequest actualRequest = ((ExportUserEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportUserEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      ExportUserEventsRequest request =
+          ExportUserEventsRequest.newBuilder()
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setFilter("filter-1274492040")
+              .build();
+      client.exportUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void rejoinUserEventsTest() throws Exception {
     RejoinUserEventsResponse expectedResponse =
         RejoinUserEventsResponse.newBuilder().setRejoinedUserEventsCount(-1152281574).build();

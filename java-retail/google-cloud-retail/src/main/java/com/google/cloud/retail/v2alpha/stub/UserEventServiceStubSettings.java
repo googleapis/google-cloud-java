@@ -41,6 +41,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.retail.v2alpha.CollectUserEventRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportUserEventsRequest;
+import com.google.cloud.retail.v2alpha.ExportUserEventsResponse;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportUserEventsRequest;
 import com.google.cloud.retail.v2alpha.ImportUserEventsResponse;
@@ -155,6 +158,10 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   private final OperationCallSettings<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings;
+  private final UnaryCallSettings<ExportUserEventsRequest, Operation> exportUserEventsSettings;
+  private final OperationCallSettings<
+          ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationSettings;
   private final UnaryCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsSettings;
   private final OperationCallSettings<
           RejoinUserEventsRequest, RejoinUserEventsResponse, RejoinUserEventsMetadata>
@@ -190,6 +197,17 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   public OperationCallSettings<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings() {
     return importUserEventsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportUserEvents. */
+  public UnaryCallSettings<ExportUserEventsRequest, Operation> exportUserEventsSettings() {
+    return exportUserEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportUserEvents. */
+  public OperationCallSettings<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationSettings() {
+    return exportUserEventsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to rejoinUserEvents. */
@@ -321,6 +339,8 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     purgeUserEventsOperationSettings = settingsBuilder.purgeUserEventsOperationSettings().build();
     importUserEventsSettings = settingsBuilder.importUserEventsSettings().build();
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
+    exportUserEventsSettings = settingsBuilder.exportUserEventsSettings().build();
+    exportUserEventsOperationSettings = settingsBuilder.exportUserEventsOperationSettings().build();
     rejoinUserEventsSettings = settingsBuilder.rejoinUserEventsSettings().build();
     rejoinUserEventsOperationSettings = settingsBuilder.rejoinUserEventsOperationSettings().build();
   }
@@ -342,6 +362,11 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     private final OperationCallSettings.Builder<
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings;
+    private final UnaryCallSettings.Builder<ExportUserEventsRequest, Operation>
+        exportUserEventsSettings;
+    private final OperationCallSettings.Builder<
+            ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+        exportUserEventsOperationSettings;
     private final UnaryCallSettings.Builder<RejoinUserEventsRequest, Operation>
         rejoinUserEventsSettings;
     private final OperationCallSettings.Builder<
@@ -425,6 +450,8 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
       importUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importUserEventsOperationSettings = OperationCallSettings.newBuilder();
+      exportUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportUserEventsOperationSettings = OperationCallSettings.newBuilder();
       rejoinUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rejoinUserEventsOperationSettings = OperationCallSettings.newBuilder();
 
@@ -434,6 +461,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
               collectUserEventSettings,
               purgeUserEventsSettings,
               importUserEventsSettings,
+              exportUserEventsSettings,
               rejoinUserEventsSettings);
       initDefaults(this);
     }
@@ -447,6 +475,8 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
       importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
       importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
+      exportUserEventsSettings = settings.exportUserEventsSettings.toBuilder();
+      exportUserEventsOperationSettings = settings.exportUserEventsOperationSettings.toBuilder();
       rejoinUserEventsSettings = settings.rejoinUserEventsSettings.toBuilder();
       rejoinUserEventsOperationSettings = settings.rejoinUserEventsOperationSettings.toBuilder();
 
@@ -456,6 +486,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
               collectUserEventSettings,
               purgeUserEventsSettings,
               importUserEventsSettings,
+              exportUserEventsSettings,
               rejoinUserEventsSettings);
     }
 
@@ -505,6 +536,11 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
+          .exportUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .rejoinUserEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -545,6 +581,30 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
               ProtoOperationTransformers.ResponseTransformer.create(ImportUserEventsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(ImportMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportUserEventsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportUserEventsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -632,6 +692,19 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings() {
       return importUserEventsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportUserEvents. */
+    public UnaryCallSettings.Builder<ExportUserEventsRequest, Operation>
+        exportUserEventsSettings() {
+      return exportUserEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportUserEvents. */
+    public OperationCallSettings.Builder<
+            ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+        exportUserEventsOperationSettings() {
+      return exportUserEventsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to rejoinUserEvents. */

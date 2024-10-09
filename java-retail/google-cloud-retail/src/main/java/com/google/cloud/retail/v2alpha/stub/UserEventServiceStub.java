@@ -22,6 +22,9 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CollectUserEventRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportUserEventsRequest;
+import com.google.cloud.retail.v2alpha.ExportUserEventsResponse;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportUserEventsRequest;
 import com.google.cloud.retail.v2alpha.ImportUserEventsResponse;
@@ -79,6 +82,15 @@ public abstract class UserEventServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: importUserEventsCallable()");
+  }
+
+  public OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportUserEventsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportUserEventsCallable()");
   }
 
   public OperationCallable<

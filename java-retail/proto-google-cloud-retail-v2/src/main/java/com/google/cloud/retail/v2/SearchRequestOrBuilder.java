@@ -486,7 +486,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=596
+   *     google/cloud/retail/v2/search_service.proto;l=696
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -507,7 +507,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=596
+   *     google/cloud/retail/v2/search_service.proto;l=696
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated
@@ -1369,4 +1369,91 @@ public interface SearchRequestOrBuilder
    * @return The bytes for entity.
    */
   com.google.protobuf.ByteString getEntityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the conversationalSearchSpec field is set.
+   */
+  boolean hasConversationalSearchSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The conversationalSearchSpec.
+   */
+  com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec getConversationalSearchSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies all conversational related parameters
+   * addition to traditional retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec conversational_search_spec = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpecOrBuilder
+      getConversationalSearchSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tileNavigationSpec field is set.
+   */
+  boolean hasTileNavigationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tileNavigationSpec.
+   */
+  com.google.cloud.retail.v2.SearchRequest.TileNavigationSpec getTileNavigationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies tile navigation related parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.TileNavigationSpec tile_navigation_spec = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.TileNavigationSpecOrBuilder
+      getTileNavigationSpecOrBuilder();
 }

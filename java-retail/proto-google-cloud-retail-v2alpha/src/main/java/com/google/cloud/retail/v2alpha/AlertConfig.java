@@ -73,8 +73,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The feature that provides alerting capability. Supported value is
-     * only `search-data-quality` for now.
+     * The feature that provides alerting capability.
+     * Supported value:
+     * - `search-data-quality` for retail search customers.
+     * - `conv-data-quality` for retail conversation customers.
      * </pre>
      *
      * <code>string alert_group = 1;</code>
@@ -86,8 +88,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The feature that provides alerting capability. Supported value is
-     * only `search-data-quality` for now.
+     * The feature that provides alerting capability.
+     * Supported value:
+     * - `search-data-quality` for retail search customers.
+     * - `conv-data-quality` for retail conversation customers.
      * </pre>
      *
      * <code>string alert_group = 1;</code>
@@ -1057,8 +1061,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The feature that provides alerting capability. Supported value is
-     * only `search-data-quality` for now.
+     * The feature that provides alerting capability.
+     * Supported value:
+     * - `search-data-quality` for retail search customers.
+     * - `conv-data-quality` for retail conversation customers.
      * </pre>
      *
      * <code>string alert_group = 1;</code>
@@ -1081,8 +1087,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The feature that provides alerting capability. Supported value is
-     * only `search-data-quality` for now.
+     * The feature that provides alerting capability.
+     * Supported value:
+     * - `search-data-quality` for retail search customers.
+     * - `conv-data-quality` for retail conversation customers.
      * </pre>
      *
      * <code>string alert_group = 1;</code>
@@ -1682,8 +1690,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The feature that provides alerting capability. Supported value is
-       * only `search-data-quality` for now.
+       * The feature that provides alerting capability.
+       * Supported value:
+       * - `search-data-quality` for retail search customers.
+       * - `conv-data-quality` for retail conversation customers.
        * </pre>
        *
        * <code>string alert_group = 1;</code>
@@ -1705,8 +1715,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The feature that provides alerting capability. Supported value is
-       * only `search-data-quality` for now.
+       * The feature that provides alerting capability.
+       * Supported value:
+       * - `search-data-quality` for retail search customers.
+       * - `conv-data-quality` for retail conversation customers.
        * </pre>
        *
        * <code>string alert_group = 1;</code>
@@ -1728,8 +1740,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The feature that provides alerting capability. Supported value is
-       * only `search-data-quality` for now.
+       * The feature that provides alerting capability.
+       * Supported value:
+       * - `search-data-quality` for retail search customers.
+       * - `conv-data-quality` for retail conversation customers.
        * </pre>
        *
        * <code>string alert_group = 1;</code>
@@ -1750,8 +1764,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The feature that provides alerting capability. Supported value is
-       * only `search-data-quality` for now.
+       * The feature that provides alerting capability.
+       * Supported value:
+       * - `search-data-quality` for retail search customers.
+       * - `conv-data-quality` for retail conversation customers.
        * </pre>
        *
        * <code>string alert_group = 1;</code>
@@ -1768,8 +1784,10 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The feature that provides alerting capability. Supported value is
-       * only `search-data-quality` for now.
+       * The feature that provides alerting capability.
+       * Supported value:
+       * - `search-data-quality` for retail search customers.
+       * - `conv-data-quality` for retail conversation customers.
        * </pre>
        *
        * <code>string alert_group = 1;</code>

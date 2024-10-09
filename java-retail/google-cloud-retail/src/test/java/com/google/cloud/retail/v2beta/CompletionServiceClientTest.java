@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -46,6 +47,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class CompletionServiceClientTest {
   private static MockCompletionService mockCompletionService;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private CompletionServiceClient client;
@@ -53,9 +55,11 @@ public class CompletionServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockCompletionService = new MockCompletionService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockCompletionService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockCompletionService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -88,6 +92,7 @@ public class CompletionServiceClientTest {
             .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
+            .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
             .build();
     mockCompletionService.addResponse(expectedResponse);
 

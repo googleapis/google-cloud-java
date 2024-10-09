@@ -241,8 +241,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA Enterprise
-   * client-side integration on your site.
+   * Optional. The user response token provided by the reCAPTCHA client-side
+   * integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -265,8 +265,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA Enterprise
-   * client-side integration on your site.
+   * Optional. The user response token provided by the reCAPTCHA client-side
+   * integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -294,8 +294,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-   * site and generate the token.
+   * Optional. The site key that was used to invoke reCAPTCHA on your site and
+   * generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -318,8 +318,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-   * site and generate the token.
+   * Optional. The site key that was used to invoke reCAPTCHA on your site and
+   * generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -455,7 +455,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The expected action for this type of event. This should be the
    * same action provided at token generation time on client-side platforms
-   * already integrated with recaptcha enterprise.
+   * already integrated with reCAPTCHA.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -480,7 +480,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The expected action for this type of event. This should be the
    * same action provided at token generation time on client-side platforms
-   * already integrated with recaptcha enterprise.
+   * already integrated with reCAPTCHA.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -526,7 +526,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -545,7 +545,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -566,7 +566,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * this data enables reCAPTCHA Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -1149,8 +1149,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA Enterprise
-     * client-side integration on your site.
+     * Optional. The user response token provided by the reCAPTCHA client-side
+     * integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1172,8 +1172,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA Enterprise
-     * client-side integration on your site.
+     * Optional. The user response token provided by the reCAPTCHA client-side
+     * integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1195,8 +1195,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA Enterprise
-     * client-side integration on your site.
+     * Optional. The user response token provided by the reCAPTCHA client-side
+     * integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1217,8 +1217,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA Enterprise
-     * client-side integration on your site.
+     * Optional. The user response token provided by the reCAPTCHA client-side
+     * integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1235,8 +1235,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA Enterprise
-     * client-side integration on your site.
+     * Optional. The user response token provided by the reCAPTCHA client-side
+     * integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1260,8 +1260,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-     * site and generate the token.
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and
+     * generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1283,8 +1283,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-     * site and generate the token.
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and
+     * generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1306,8 +1306,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-     * site and generate the token.
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and
+     * generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1328,8 +1328,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-     * site and generate the token.
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and
+     * generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1346,8 +1346,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
-     * site and generate the token.
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and
+     * generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1595,7 +1595,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The expected action for this type of event. This should be the
      * same action provided at token generation time on client-side platforms
-     * already integrated with recaptcha enterprise.
+     * already integrated with reCAPTCHA.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1619,7 +1619,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The expected action for this type of event. This should be the
      * same action provided at token generation time on client-side platforms
-     * already integrated with recaptcha enterprise.
+     * already integrated with reCAPTCHA.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1643,7 +1643,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The expected action for this type of event. This should be the
      * same action provided at token generation time on client-side platforms
-     * already integrated with recaptcha enterprise.
+     * already integrated with reCAPTCHA.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1666,7 +1666,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The expected action for this type of event. This should be the
      * same action provided at token generation time on client-side platforms
-     * already integrated with recaptcha enterprise.
+     * already integrated with reCAPTCHA.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1685,7 +1685,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The expected action for this type of event. This should be the
      * same action provided at token generation time on client-side platforms
-     * already integrated with recaptcha enterprise.
+     * already integrated with reCAPTCHA.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1773,7 +1773,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1791,7 +1791,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1815,7 +1815,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1842,7 +1842,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1866,7 +1866,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1899,7 +1899,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1922,7 +1922,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1941,7 +1941,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *
@@ -1964,7 +1964,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Data describing a payment transaction to be assessed. Sending
-     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * this data enables reCAPTCHA Fraud Prevention and the
      * FraudPreventionAssessment component in the response.
      * </pre>
      *

@@ -495,4 +495,95 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.ExperimentInfo experiment_info = 17;</code>
    */
   com.google.cloud.retail.v2beta.ExperimentInfoOrBuilder getExperimentInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information that is needed on client
+   * side for UI rendering of conversational retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.ConversationalSearchResult conversational_search_result = 18;
+   * </code>
+   *
+   * @return Whether the conversationalSearchResult field is set.
+   */
+  boolean hasConversationalSearchResult();
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information that is needed on client
+   * side for UI rendering of conversational retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.ConversationalSearchResult conversational_search_result = 18;
+   * </code>
+   *
+   * @return The conversationalSearchResult.
+   */
+  com.google.cloud.retail.v2beta.SearchResponse.ConversationalSearchResult
+      getConversationalSearchResult();
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information that is needed on client
+   * side for UI rendering of conversational retail search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.ConversationalSearchResult conversational_search_result = 18;
+   * </code>
+   */
+  com.google.cloud.retail.v2beta.SearchResponse.ConversationalSearchResultOrBuilder
+      getConversationalSearchResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information for tile navigation that will
+   * be used in client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.TileNavigationResult tile_navigation_result = 19;
+   * </code>
+   *
+   * @return Whether the tileNavigationResult field is set.
+   */
+  boolean hasTileNavigationResult();
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information for tile navigation that will
+   * be used in client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.TileNavigationResult tile_navigation_result = 19;
+   * </code>
+   *
+   * @return The tileNavigationResult.
+   */
+  com.google.cloud.retail.v2beta.SearchResponse.TileNavigationResult getTileNavigationResult();
+  /**
+   *
+   *
+   * <pre>
+   * This field specifies all related information for tile navigation that will
+   * be used in client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.SearchResponse.TileNavigationResult tile_navigation_result = 19;
+   * </code>
+   */
+  com.google.cloud.retail.v2beta.SearchResponse.TileNavigationResultOrBuilder
+      getTileNavigationResultOrBuilder();
 }

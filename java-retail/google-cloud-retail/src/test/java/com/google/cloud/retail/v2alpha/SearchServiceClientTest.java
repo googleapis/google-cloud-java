@@ -116,6 +116,9 @@ public class SearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setEntity("entity-1298275357")
+            .setConversationalSearchSpec(
+                SearchRequest.ConversationalSearchSpec.newBuilder().build())
+            .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -154,6 +157,9 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
+    Assert.assertEquals(
+        request.getConversationalSearchSpec(), actualRequest.getConversationalSearchSpec());
+    Assert.assertEquals(request.getTileNavigationSpec(), actualRequest.getTileNavigationSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -190,6 +196,9 @@ public class SearchServiceClientTest {
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setEntity("entity-1298275357")
+              .setConversationalSearchSpec(
+                  SearchRequest.ConversationalSearchSpec.newBuilder().build())
+              .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

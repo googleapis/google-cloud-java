@@ -201,6 +201,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportProducts</td>
+ *      <td><p> Exports multiple [Product][google.cloud.retail.v2beta.Product]s.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportProductsAsync(ExportProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportProductsOperationCallable()
+ *           <li><p> exportProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SetInventory</td>
  *      <td><p> Updates inventory information for a [Product][google.cloud.retail.v2beta.Product] while respecting the last update timestamps of each inventory field.
  * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2beta.Product] to exist before updating fulfillment information. If the request is valid, the update is enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the [Product][google.cloud.retail.v2beta.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
@@ -1412,6 +1427,101 @@ public class ProductServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     return stub.importProductsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports multiple [Product][google.cloud.retail.v2beta.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ExportProductsRequest request =
+   *       ExportProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ExportProductsResponse response = productServiceClient.exportProductsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportProductsResponse, ExportMetadata> exportProductsAsync(
+      ExportProductsRequest request) {
+    return exportProductsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports multiple [Product][google.cloud.retail.v2beta.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ExportProductsRequest request =
+   *       ExportProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   OperationFuture<ExportProductsResponse, ExportMetadata> future =
+   *       productServiceClient.exportProductsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportProductsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    return stub.exportProductsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports multiple [Product][google.cloud.retail.v2beta.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ExportProductsRequest request =
+   *       ExportProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.exportProductsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    return stub.exportProductsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

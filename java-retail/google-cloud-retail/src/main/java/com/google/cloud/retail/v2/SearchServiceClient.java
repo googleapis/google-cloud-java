@@ -73,6 +73,9 @@ import javax.annotation.Generated;
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setEntity("entity-1298275357")
+ *           .setConversationalSearchSpec(
+ *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+ *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -251,6 +254,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .putAllLabels(new HashMap<String, String>())
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setEntity("entity-1298275357")
+   *           .setConversationalSearchSpec(
+   *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+   *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -305,6 +311,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .putAllLabels(new HashMap<String, String>())
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setEntity("entity-1298275357")
+   *           .setConversationalSearchSpec(
+   *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+   *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -359,6 +368,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .putAllLabels(new HashMap<String, String>())
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setEntity("entity-1298275357")
+   *           .setConversationalSearchSpec(
+   *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+   *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);

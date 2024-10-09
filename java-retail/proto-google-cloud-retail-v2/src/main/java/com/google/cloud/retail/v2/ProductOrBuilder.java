@@ -1372,6 +1372,15 @@ public interface ProductOrBuilder
    * Default to
    * [Availability.IN_STOCK][google.cloud.retail.v2.Product.Availability.IN_STOCK].
    *
+   * For primary products with variants set the availability of the primary as
+   * [Availability.OUT_OF_STOCK][google.cloud.retail.v2.Product.Availability.OUT_OF_STOCK]
+   * and set the true availability at the variant level. This way the primary
+   * product will be considered "in stock" as long as it has at least one
+   * variant in stock.
+   *
+   * For primary products with no variants set the true availability at the
+   * primary level.
+   *
    * Corresponding properties: Google Merchant Center property
    * [availability](https://support.google.com/merchants/answer/6324448).
    * Schema.org property [Offer.availability](https://schema.org/availability).
@@ -1389,6 +1398,15 @@ public interface ProductOrBuilder
    * The online availability of the [Product][google.cloud.retail.v2.Product].
    * Default to
    * [Availability.IN_STOCK][google.cloud.retail.v2.Product.Availability.IN_STOCK].
+   *
+   * For primary products with variants set the availability of the primary as
+   * [Availability.OUT_OF_STOCK][google.cloud.retail.v2.Product.Availability.OUT_OF_STOCK]
+   * and set the true availability at the variant level. This way the primary
+   * product will be considered "in stock" as long as it has at least one
+   * variant in stock.
+   *
+   * For primary products with no variants set the true availability at the
+   * primary level.
    *
    * Corresponding properties: Google Merchant Center property
    * [availability](https://support.google.com/merchants/answer/6324448).
@@ -2289,8 +2307,6 @@ public interface ProductOrBuilder
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
    *
-   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
-   * returned.
    *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -2302,7 +2318,7 @@ public interface ProductOrBuilder
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2/product.proto;l=563
+   *     google/cloud/retail/v2/product.proto;l=570
    * @return Whether the retrievableFields field is set.
    */
   @java.lang.Deprecated
@@ -2362,8 +2378,6 @@ public interface ProductOrBuilder
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
    *
-   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
-   * returned.
    *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -2375,7 +2389,7 @@ public interface ProductOrBuilder
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2/product.proto;l=563
+   *     google/cloud/retail/v2/product.proto;l=570
    * @return The retrievableFields.
    */
   @java.lang.Deprecated
@@ -2435,8 +2449,6 @@ public interface ProductOrBuilder
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
    *
-   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
-   * returned.
    *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase

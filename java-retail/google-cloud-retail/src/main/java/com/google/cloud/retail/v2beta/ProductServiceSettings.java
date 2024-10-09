@@ -166,6 +166,17 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     return ((ProductServiceStubSettings) getStubSettings()).importProductsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public UnaryCallSettings<ExportProductsRequest, Operation> exportProductsSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).exportProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public OperationCallSettings<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).exportProductsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setInventory. */
   public UnaryCallSettings<SetInventoryRequest, Operation> setInventorySettings() {
     return ((ProductServiceStubSettings) getStubSettings()).setInventorySettings();
@@ -394,6 +405,18 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings() {
       return getStubSettingsBuilder().importProductsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public UnaryCallSettings.Builder<ExportProductsRequest, Operation> exportProductsSettings() {
+      return getStubSettingsBuilder().exportProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public OperationCallSettings.Builder<
+            ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+        exportProductsOperationSettings() {
+      return getStubSettingsBuilder().exportProductsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setInventory. */

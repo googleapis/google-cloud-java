@@ -55,6 +55,18 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetAttributeResults();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -2005,6 +2017,681 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface AttributeResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @return A list containing the suggestions.
+     */
+    java.util.List<java.lang.String> getSuggestionsList();
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @return The count of suggestions.
+     */
+    int getSuggestionsCount();
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The suggestions at the given index.
+     */
+    java.lang.String getSuggestions(int index);
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the suggestions at the given index.
+     */
+    com.google.protobuf.ByteString getSuggestionsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource that represents attribute results.
+   * The list of suggestions for the attribute.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult}
+   */
+  public static final class AttributeResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)
+      AttributeResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AttributeResult.newBuilder() to construct.
+    private AttributeResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AttributeResult() {
+      suggestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AttributeResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2beta.CompletionServiceProto
+          .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2beta.CompletionServiceProto
+          .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.class,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder.class);
+    }
+
+    public static final int SUGGESTIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList suggestions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @return A list containing the suggestions.
+     */
+    public com.google.protobuf.ProtocolStringList getSuggestionsList() {
+      return suggestions_;
+    }
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @return The count of suggestions.
+     */
+    public int getSuggestionsCount() {
+      return suggestions_.size();
+    }
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The suggestions at the given index.
+     */
+    public java.lang.String getSuggestions(int index) {
+      return suggestions_.get(index);
+    }
+    /**
+     * <code>repeated string suggestions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the suggestions at the given index.
+     */
+    public com.google.protobuf.ByteString getSuggestionsBytes(int index) {
+      return suggestions_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < suggestions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suggestions_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < suggestions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(suggestions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSuggestionsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult other =
+          (com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) obj;
+
+      if (!getSuggestionsList().equals(other.getSuggestionsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSuggestionsCount() > 0) {
+        hash = (37 * hash) + SUGGESTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestionsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource that represents attribute results.
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)
+        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2beta.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2beta.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.class,
+                com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        suggestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2beta.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult build() {
+        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult buildPartial() {
+        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult result =
+            new com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          suggestions_.makeImmutable();
+          result.suggestions_ = suggestions_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult other) {
+        if (other
+            == com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+                .getDefaultInstance()) return this;
+        if (!other.suggestions_.isEmpty()) {
+          if (suggestions_.isEmpty()) {
+            suggestions_ = other.suggestions_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureSuggestionsIsMutable();
+            suggestions_.addAll(other.suggestions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureSuggestionsIsMutable();
+                  suggestions_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList suggestions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureSuggestionsIsMutable() {
+        if (!suggestions_.isModifiable()) {
+          suggestions_ = new com.google.protobuf.LazyStringArrayList(suggestions_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @return A list containing the suggestions.
+       */
+      public com.google.protobuf.ProtocolStringList getSuggestionsList() {
+        suggestions_.makeImmutable();
+        return suggestions_;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @return The count of suggestions.
+       */
+      public int getSuggestionsCount() {
+        return suggestions_.size();
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The suggestions at the given index.
+       */
+      public java.lang.String getSuggestions(int index) {
+        return suggestions_.get(index);
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the suggestions at the given index.
+       */
+      public com.google.protobuf.ByteString getSuggestionsBytes(int index) {
+        return suggestions_.getByteString(index);
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The suggestions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuggestions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSuggestionsIsMutable();
+        suggestions_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param value The suggestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSuggestions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSuggestionsIsMutable();
+        suggestions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param values The suggestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSuggestions(java.lang.Iterable<java.lang.String> values) {
+        ensureSuggestionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, suggestions_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSuggestions() {
+        suggestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string suggestions = 1;</code>
+       *
+       * @param value The bytes of the suggestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSuggestionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureSuggestionsIsMutable();
+        suggestions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult)
+    private static final com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult();
+    }
+
+    public static com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AttributeResult> PARSER =
+        new com.google.protobuf.AbstractParser<AttributeResult>() {
+          @java.lang.Override
+          public AttributeResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AttributeResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AttributeResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -2345,6 +3032,165 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     return recentSearchResults_.get(index);
   }
 
+  public static final int ATTRIBUTE_RESULTS_FIELD_NUMBER = 4;
+
+  private static final class AttributeResultsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String,
+                    com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+                    newDefaultInstance(
+                        com.google.cloud.retail.v2beta.CompletionServiceProto
+                            .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_AttributeResultsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+      attributeResults_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+      internalGetAttributeResults() {
+    if (attributeResults_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AttributeResultsDefaultEntryHolder.defaultEntry);
+    }
+    return attributeResults_;
+  }
+
+  public int getAttributeResultsCount() {
+    return internalGetAttributeResults().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   *
+   * Current supported keys:
+   *
+   * * `brands`
+   *
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAttributeResults(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAttributeResults().getMap().containsKey(key);
+  }
+  /** Use {@link #getAttributeResultsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+      getAttributeResults() {
+    return getAttributeResultsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   *
+   * Current supported keys:
+   *
+   * * `brands`
+   *
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+      getAttributeResultsMap() {
+    return internalGetAttributeResults().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   *
+   * Current supported keys:
+   *
+   * * `brands`
+   *
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+      getAttributeResultsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        map = internalGetAttributeResults().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   *
+   * Current supported keys:
+   *
+   * * `brands`
+   *
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+      getAttributeResultsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        map = internalGetAttributeResults().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2368,6 +3214,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < recentSearchResults_.size(); i++) {
       output.writeMessage(3, recentSearchResults_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAttributeResults(), AttributeResultsDefaultEntryHolder.defaultEntry, 4);
     getUnknownFields().writeTo(output);
   }
 
@@ -2388,6 +3236,20 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, recentSearchResults_.get(i));
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        entry : internalGetAttributeResults().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+          attributeResults__ =
+              AttributeResultsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, attributeResults__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2407,6 +3269,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     if (!getCompletionResultsList().equals(other.getCompletionResultsList())) return false;
     if (!getAttributionToken().equals(other.getAttributionToken())) return false;
     if (!getRecentSearchResultsList().equals(other.getRecentSearchResultsList())) return false;
+    if (!internalGetAttributeResults().equals(other.internalGetAttributeResults())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2427,6 +3290,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     if (getRecentSearchResultsCount() > 0) {
       hash = (37 * hash) + RECENT_SEARCH_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getRecentSearchResultsList().hashCode();
+    }
+    if (!internalGetAttributeResults().getMap().isEmpty()) {
+      hash = (37 * hash) + ATTRIBUTE_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAttributeResults().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2546,6 +3413,28 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           .internal_static_google_cloud_retail_v2beta_CompleteQueryResponse_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetAttributeResults();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableAttributeResults();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2582,6 +3471,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         recentSearchResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableAttributeResults().clear();
       return this;
     }
 
@@ -2643,6 +3533,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.attributionToken_ = attributionToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.attributeResults_ =
+            internalGetAttributeResults().build(AttributeResultsDefaultEntryHolder.defaultEntry);
       }
     }
 
@@ -2751,6 +3645,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      internalGetMutableAttributeResults().mergeFrom(other.internalGetAttributeResults());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2813,6 +3709,21 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+                    attributeResults__ =
+                        input.readMessage(
+                            AttributeResultsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAttributeResults()
+                    .ensureBuilderMap()
+                    .put(attributeResults__.getKey(), attributeResults__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4179,6 +5090,336 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         recentSearchResults_ = null;
       }
       return recentSearchResultsBuilder_;
+    }
+
+    private static final class AttributeResultsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult> {
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult build(
+          com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder val) {
+        if (val instanceof com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) {
+          return (com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) val;
+        }
+        return ((com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder) val)
+            .build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+          defaultEntry() {
+        return AttributeResultsDefaultEntryHolder.defaultEntry;
+      }
+    };
+
+    private static final AttributeResultsConverter attributeResultsConverter =
+        new AttributeResultsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder>
+        attributeResults_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder>
+        internalGetAttributeResults() {
+      if (attributeResults_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(attributeResultsConverter);
+      }
+      return attributeResults_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult,
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder>
+        internalGetMutableAttributeResults() {
+      if (attributeResults_ == null) {
+        attributeResults_ = new com.google.protobuf.MapFieldBuilder<>(attributeResultsConverter);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return attributeResults_;
+    }
+
+    public int getAttributeResultsCount() {
+      return internalGetAttributeResults().ensureBuilderMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAttributeResults(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAttributeResults().ensureBuilderMap().containsKey(key);
+    }
+    /** Use {@link #getAttributeResultsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        getAttributeResults() {
+      return getAttributeResultsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        getAttributeResultsMap() {
+      return internalGetAttributeResults().getImmutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        getAttributeResultsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder>
+          map = internalGetMutableAttributeResults().ensureBuilderMap();
+      return map.containsKey(key) ? attributeResultsConverter.build(map.get(key)) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult
+        getAttributeResultsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder>
+          map = internalGetMutableAttributeResults().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return attributeResultsConverter.build(map.get(key));
+    }
+
+    public Builder clearAttributeResults() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalGetMutableAttributeResults().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    public Builder removeAttributeResults(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAttributeResults().ensureBuilderMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+        getMutableAttributeResults() {
+      bitField0_ |= 0x00000008;
+      return internalGetMutableAttributeResults().ensureMessageMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    public Builder putAttributeResults(
+        java.lang.String key,
+        com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAttributeResults().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    public Builder putAllAttributeResults(
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableAttributeResults().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of matched attribute suggestions. This field is only available for
+     * "cloud-retail" dataset.
+     *
+     * Current supported keys:
+     *
+     * * `brands`
+     *
+     * * `categories`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+     * </code>
+     */
+    public com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder
+        putAttributeResultsBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder>
+          builderMap = internalGetMutableAttributeResults().ensureBuilderMap();
+      com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResultOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) {
+        entry =
+            ((com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult) entry)
+                .toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.retail.v2beta.CompleteQueryResponse.AttributeResult.Builder) entry;
     }
 
     @java.lang.Override

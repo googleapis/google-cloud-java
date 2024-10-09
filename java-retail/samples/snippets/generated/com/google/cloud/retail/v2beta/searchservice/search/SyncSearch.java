@@ -62,6 +62,9 @@ public class SyncSearch {
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setEntity("entity-1298275357")
+              .setConversationalSearchSpec(
+                  SearchRequest.ConversationalSearchSpec.newBuilder().build())
+              .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

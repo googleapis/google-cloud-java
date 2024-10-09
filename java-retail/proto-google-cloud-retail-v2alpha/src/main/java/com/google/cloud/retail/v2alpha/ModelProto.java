@@ -56,6 +56,10 @@ public final class ModelProto {
       internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_LlmEmbeddingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_LlmEmbeddingConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -70,7 +74,7 @@ public final class ModelProto {
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032(google/cloud/retail/v2alpha/"
           + "common.proto\032\037google/protobuf/timestamp."
-          + "proto\"\201\025\n\005Model\022b\n\030page_optimization_con"
+          + "proto\"\251\026\n\005Model\022b\n\030page_optimization_con"
           + "fig\030\021 \001(\01329.google.cloud.retail.v2alpha."
           + "Model.PageOptimizationConfigB\003\340A\001H\000\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\002\022\031\n\014display_name\030\002 \001(\tB\003\340A"
@@ -117,32 +121,37 @@ public final class ModelProto {
           + "\003(\tB\003\340A\001\032\204\001\n&FrequentlyBoughtTogetherFea"
           + "turesConfig\022Z\n\025context_products_type\030\002 \001"
           + "(\01626.google.cloud.retail.v2alpha.Model.C"
-          + "ontextProductsTypeB\003\340A\001\032\246\001\n\023ModelFeature"
+          + "ontextProductsTypeB\003\340A\001\032\316\002\n\023ModelFeature"
           + "sConfig\022v\n!frequently_bought_together_co"
           + "nfig\030\001 \001(\0132I.google.cloud.retail.v2alpha"
           + ".Model.FrequentlyBoughtTogetherFeaturesC"
-          + "onfigH\000B\027\n\025type_dedicated_config\"R\n\014Serv"
-          + "ingState\022\035\n\031SERVING_STATE_UNSPECIFIED\020\000\022"
-          + "\014\n\010INACTIVE\020\001\022\n\n\006ACTIVE\020\002\022\t\n\005TUNED\020\003\"I\n\r"
-          + "TrainingState\022\036\n\032TRAINING_STATE_UNSPECIF"
-          + "IED\020\000\022\n\n\006PAUSED\020\001\022\014\n\010TRAINING\020\002\"\220\001\n\023Peri"
-          + "odicTuningState\022%\n!PERIODIC_TUNING_STATE"
-          + "_UNSPECIFIED\020\000\022\034\n\030PERIODIC_TUNING_DISABL"
-          + "ED\020\001\022\027\n\023ALL_TUNING_DISABLED\020\003\022\033\n\027PERIODI"
-          + "C_TUNING_ENABLED\020\002\"D\n\tDataState\022\032\n\026DATA_"
-          + "STATE_UNSPECIFIED\020\000\022\013\n\007DATA_OK\020\001\022\016\n\nDATA"
-          + "_ERROR\020\002\"w\n\023ContextProductsType\022%\n!CONTE"
-          + "XT_PRODUCTS_TYPE_UNSPECIFIED\020\000\022\032\n\026SINGLE"
-          + "_CONTEXT_PRODUCT\020\001\022\035\n\031MULTIPLE_CONTEXT_P"
-          + "RODUCTS\020\002:k\352Ah\n\033retail.googleapis.com/Mo"
-          + "del\022Iprojects/{project}/locations/{locat"
-          + "ion}/catalogs/{catalog}/models/{model}B\021"
-          + "\n\017training_configB\316\001\n\037com.google.cloud.r"
-          + "etail.v2alphaB\nModelProtoP\001Z7cloud.googl"
-          + "e.com/go/retail/apiv2alpha/retailpb;reta"
-          + "ilpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Al"
-          + "pha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Goog"
-          + "le::Cloud::Retail::V2alphab\006proto3"
+          + "onfigH\000\022l\n\024llm_embedding_config\030\002 \001(\0132I."
+          + "google.cloud.retail.v2alpha.Model.ModelF"
+          + "eaturesConfig.LlmEmbeddingConfigB\003\340A\001\0328\n"
+          + "\022LlmEmbeddingConfig\022\"\n\025llm_embedding_ver"
+          + "sion\030\001 \001(\tB\003\340A\001B\027\n\025type_dedicated_config"
+          + "\"R\n\014ServingState\022\035\n\031SERVING_STATE_UNSPEC"
+          + "IFIED\020\000\022\014\n\010INACTIVE\020\001\022\n\n\006ACTIVE\020\002\022\t\n\005TUN"
+          + "ED\020\003\"I\n\rTrainingState\022\036\n\032TRAINING_STATE_"
+          + "UNSPECIFIED\020\000\022\n\n\006PAUSED\020\001\022\014\n\010TRAINING\020\002\""
+          + "\220\001\n\023PeriodicTuningState\022%\n!PERIODIC_TUNI"
+          + "NG_STATE_UNSPECIFIED\020\000\022\034\n\030PERIODIC_TUNIN"
+          + "G_DISABLED\020\001\022\027\n\023ALL_TUNING_DISABLED\020\003\022\033\n"
+          + "\027PERIODIC_TUNING_ENABLED\020\002\"D\n\tDataState\022"
+          + "\032\n\026DATA_STATE_UNSPECIFIED\020\000\022\013\n\007DATA_OK\020\001"
+          + "\022\016\n\nDATA_ERROR\020\002\"w\n\023ContextProductsType\022"
+          + "%\n!CONTEXT_PRODUCTS_TYPE_UNSPECIFIED\020\000\022\032"
+          + "\n\026SINGLE_CONTEXT_PRODUCT\020\001\022\035\n\031MULTIPLE_C"
+          + "ONTEXT_PRODUCTS\020\002:k\352Ah\n\033retail.googleapi"
+          + "s.com/Model\022Iprojects/{project}/location"
+          + "s/{location}/catalogs/{catalog}/models/{"
+          + "model}B\021\n\017training_configB\316\001\n\037com.google"
+          + ".cloud.retail.v2alphaB\nModelProtoP\001Z7clo"
+          + "ud.google.com/go/retail/apiv2alpha/retai"
+          + "lpb;retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Ret"
+          + "ail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alph"
+          + "a\352\002\036Google::Cloud::Retail::V2alphab\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -227,7 +236,17 @@ public final class ModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor,
             new java.lang.String[] {
-              "FrequentlyBoughtTogetherConfig", "TypeDedicatedConfig",
+              "FrequentlyBoughtTogetherConfig", "LlmEmbeddingConfig", "TypeDedicatedConfig",
+            });
+    internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_LlmEmbeddingConfig_descriptor =
+        internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_LlmEmbeddingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_LlmEmbeddingConfig_descriptor,
+            new java.lang.String[] {
+              "LlmEmbeddingVersion",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

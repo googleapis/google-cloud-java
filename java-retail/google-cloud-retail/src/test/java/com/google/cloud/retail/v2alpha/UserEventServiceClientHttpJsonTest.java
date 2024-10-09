@@ -333,6 +333,67 @@ public class UserEventServiceClientHttpJsonTest {
   }
 
   @Test
+  public void exportUserEventsTest() throws Exception {
+    ExportUserEventsResponse expectedResponse =
+        ExportUserEventsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ExportErrorsConfig.newBuilder().build())
+            .setOutputResult(OutputResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportUserEventsRequest request =
+        ExportUserEventsRequest.newBuilder()
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .build();
+
+    ExportUserEventsResponse actualResponse = client.exportUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportUserEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportUserEventsRequest request =
+          ExportUserEventsRequest.newBuilder()
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setFilter("filter-1274492040")
+              .build();
+      client.exportUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void rejoinUserEventsTest() throws Exception {
     RejoinUserEventsResponse expectedResponse =
         RejoinUserEventsResponse.newBuilder().setRejoinedUserEventsCount(-1152281574).build();

@@ -31,6 +31,7 @@ import com.google.protobuf.Any;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -83,6 +84,7 @@ public class CompletionServiceClientHttpJsonTest {
             .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
+            .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
             .build();
     mockService.addResponse(expectedResponse);
 

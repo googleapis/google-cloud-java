@@ -126,6 +126,22 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportUserEvents</td>
+ *      <td><p> Exports user events.
+ * <p>  `Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type `ExportMetadata`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportUserEventsAsync(ExportUserEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportUserEventsOperationCallable()
+ *           <li><p> exportUserEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> RejoinUserEvents</td>
  *      <td><p> Starts a user-event rejoin operation with latest product catalog. Events are not annotated with detailed product information for products that are missing from the catalog when the user event is ingested. These events are stored as unjoined events with limited usage on training and serving. You can use this method to start a join operation on specified events with the latest version of product catalog. You can also use this method to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete.</td>
  *      <td>
@@ -607,6 +623,108 @@ public class UserEventServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return stub.importUserEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ExportUserEventsResponse response =
+   *       userEventServiceClient.exportUserEventsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportUserEventsResponse, ExportMetadata> exportUserEventsAsync(
+      ExportUserEventsRequest request) {
+    return exportUserEventsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   OperationFuture<ExportUserEventsResponse, ExportMetadata> future =
+   *       userEventServiceClient.exportUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportUserEventsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable() {
+    return stub.exportUserEventsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports user events.
+   *
+   * <p>`Operation.response` is of type `ExportResponse`. `Operation.metadata` is of type
+   * `ExportMetadata`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ExportUserEventsRequest request =
+   *       ExportUserEventsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.exportUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable() {
+    return stub.exportUserEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

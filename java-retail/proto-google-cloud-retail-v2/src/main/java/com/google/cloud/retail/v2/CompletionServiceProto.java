@@ -48,6 +48,14 @@ public final class CompletionServiceProto {
       internal_static_google_cloud_retail_v2_CompleteQueryResponse_RecentSearchResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_CompleteQueryResponse_RecentSearchResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResultsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResultsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -71,39 +79,46 @@ public final class CompletionServiceProto {
           + "codes\030\003 \003(\t\022\023\n\013device_type\030\004 \001(\t\022\017\n\007data"
           + "set\030\006 \001(\t\022\027\n\017max_suggestions\030\005 \001(\005\022$\n\034en"
           + "able_attribute_suggestions\030\t \001(\010\022\016\n\006enti"
-          + "ty\030\n \001(\t\"\215\004\n\025CompleteQueryResponse\022Z\n\022co"
+          + "ty\030\n \001(\t\"\215\006\n\025CompleteQueryResponse\022Z\n\022co"
           + "mpletion_results\030\001 \003(\0132>.google.cloud.re"
           + "tail.v2.CompleteQueryResponse.Completion"
           + "Result\022\031\n\021attribution_token\030\002 \001(\t\022c\n\025rec"
           + "ent_search_results\030\003 \003(\0132@.google.cloud."
           + "retail.v2.CompleteQueryResponse.RecentSe"
-          + "archResultB\002\030\001\032\346\001\n\020CompletionResult\022\022\n\ns"
-          + "uggestion\030\001 \001(\t\022b\n\nattributes\030\002 \003(\0132N.go"
-          + "ogle.cloud.retail.v2.CompleteQueryRespon"
-          + "se.CompletionResult.AttributesEntry\032Z\n\017A"
-          + "ttributesEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001"
-          + "(\0132\'.google.cloud.retail.v2.CustomAttrib"
-          + "ute:\0028\001\032/\n\022RecentSearchResult\022\025\n\rrecent_"
-          + "search\030\001 \001(\t:\002\030\0012\262\004\n\021CompletionService\022\263"
-          + "\001\n\rCompleteQuery\022,.google.cloud.retail.v"
-          + "2.CompleteQueryRequest\032-.google.cloud.re"
-          + "tail.v2.CompleteQueryResponse\"E\202\323\344\223\002?\022=/"
-          + "v2/{catalog=projects/*/locations/*/catal"
-          + "ogs/*}:completeQuery\022\233\002\n\024ImportCompletio"
-          + "nData\0223.google.cloud.retail.v2.ImportCom"
-          + "pletionDataRequest\032\035.google.longrunning."
-          + "Operation\"\256\001\312A\\\n3google.cloud.retail.v2."
-          + "ImportCompletionDataResponse\022%google.clo"
-          + "ud.retail.v2.ImportMetadata\202\323\344\223\002I\"D/v2/{"
-          + "parent=projects/*/locations/*/catalogs/*"
-          + "}/completionData:import:\001*\032I\312A\025retail.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\301\001\n\032com.google.clo"
-          + "ud.retail.v2B\026CompletionServiceProtoP\001Z2"
-          + "cloud.google.com/go/retail/apiv2/retailp"
-          + "b;retailpb\242\002\006RETAIL\252\002\026Google.Cloud.Retai"
-          + "l.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::"
-          + "Cloud::Retail::V2b\006proto3"
+          + "archResultB\002\030\001\022^\n\021attribute_results\030\004 \003("
+          + "\0132C.google.cloud.retail.v2.CompleteQuery"
+          + "Response.AttributeResultsEntry\032\346\001\n\020Compl"
+          + "etionResult\022\022\n\nsuggestion\030\001 \001(\t\022b\n\nattri"
+          + "butes\030\002 \003(\0132N.google.cloud.retail.v2.Com"
+          + "pleteQueryResponse.CompletionResult.Attr"
+          + "ibutesEntry\032Z\n\017AttributesEntry\022\013\n\003key\030\001 "
+          + "\001(\t\0226\n\005value\030\002 \001(\0132\'.google.cloud.retail"
+          + ".v2.CustomAttribute:\0028\001\032/\n\022RecentSearchR"
+          + "esult\022\025\n\rrecent_search\030\001 \001(\t:\002\030\001\032&\n\017Attr"
+          + "ibuteResult\022\023\n\013suggestions\030\001 \003(\t\032v\n\025Attr"
+          + "ibuteResultsEntry\022\013\n\003key\030\001 \001(\t\022L\n\005value\030"
+          + "\002 \001(\0132=.google.cloud.retail.v2.CompleteQ"
+          + "ueryResponse.AttributeResult:\0028\0012\262\004\n\021Com"
+          + "pletionService\022\263\001\n\rCompleteQuery\022,.googl"
+          + "e.cloud.retail.v2.CompleteQueryRequest\032-"
+          + ".google.cloud.retail.v2.CompleteQueryRes"
+          + "ponse\"E\202\323\344\223\002?\022=/v2/{catalog=projects/*/l"
+          + "ocations/*/catalogs/*}:completeQuery\022\233\002\n"
+          + "\024ImportCompletionData\0223.google.cloud.ret"
+          + "ail.v2.ImportCompletionDataRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\256\001\312A\\\n3google."
+          + "cloud.retail.v2.ImportCompletionDataResp"
+          + "onse\022%google.cloud.retail.v2.ImportMetad"
+          + "ata\202\323\344\223\002I\"D/v2/{parent=projects/*/locati"
+          + "ons/*/catalogs/*}/completionData:import:"
+          + "\001*\032I\312A\025retail.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\301\001"
+          + "\n\032com.google.cloud.retail.v2B\026Completion"
+          + "ServiceProtoP\001Z2cloud.google.com/go/reta"
+          + "il/apiv2/retailpb;retailpb\242\002\006RETAIL\252\002\026Go"
+          + "ogle.Cloud.Retail.V2\312\002\026Google\\Cloud\\Reta"
+          + "il\\V2\352\002\031Google::Cloud::Retail::V2b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,7 +154,7 @@ public final class CompletionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_CompleteQueryResponse_descriptor,
             new java.lang.String[] {
-              "CompletionResults", "AttributionToken", "RecentSearchResults",
+              "CompletionResults", "AttributionToken", "RecentSearchResults", "AttributeResults",
             });
     internal_static_google_cloud_retail_v2_CompleteQueryResponse_CompletionResult_descriptor =
         internal_static_google_cloud_retail_v2_CompleteQueryResponse_descriptor
@@ -170,6 +185,26 @@ public final class CompletionServiceProto {
             internal_static_google_cloud_retail_v2_CompleteQueryResponse_RecentSearchResult_descriptor,
             new java.lang.String[] {
               "RecentSearch",
+            });
+    internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResult_descriptor =
+        internal_static_google_cloud_retail_v2_CompleteQueryResponse_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResult_descriptor,
+            new java.lang.String[] {
+              "Suggestions",
+            });
+    internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResultsEntry_descriptor =
+        internal_static_google_cloud_retail_v2_CompleteQueryResponse_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResultsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_CompleteQueryResponse_AttributeResultsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

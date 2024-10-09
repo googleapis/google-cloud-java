@@ -115,6 +115,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= GenerativeQuestionServiceClient =======================
+ *
+ * <p>Service Description: Service for managing LLM generated questions in search serving.
+ *
+ * <p>Sample for GenerativeQuestionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenerativeQuestionServiceClient generativeQuestionServiceClient =
+ *     GenerativeQuestionServiceClient.create()) {
+ *   GenerativeQuestionsFeatureConfig generativeQuestionsFeatureConfig =
+ *       GenerativeQuestionsFeatureConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   GenerativeQuestionsFeatureConfig response =
+ *       generativeQuestionServiceClient.updateGenerativeQuestionsFeatureConfig(
+ *           generativeQuestionsFeatureConfig, updateMask);
+ * }
+ * }</pre>
+ *
  * <p>======================= ModelServiceClient =======================
  *
  * <p>Service Description: Service for performing CRUD operations on models. Recommendation models
@@ -234,6 +257,9 @@
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setEntity("entity-1298275357")
+ *           .setConversationalSearchSpec(
+ *               SearchRequest.ConversationalSearchSpec.newBuilder().build())
+ *           .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
