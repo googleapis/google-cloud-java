@@ -1,5 +1,60 @@
 # Changelog
 
+## [1.46.0](https://github.com/googleapis/google-cloud-java/compare/v1.45.0...v1.46.0) (2024-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* [backupdr] Remove visibility of unneeded TestIamPermissions RPC
+* [documentai] remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228))
+
+### Features
+
+* [admanager] Added support for Interactive Reporting ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add continuous sync option in feature_view.proto ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add enable_secure_private_service_connect in service attachment ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add new `PscInterfaceConfig` field to `pipeline_job.proto` ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add partner_model_tuning_spec to TuningJob ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [aiplatform] add psc_automation_configs to DeployIndex v1 ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [bigquerydatatransfer]Add scheduleOptionsV2 and Error fields for TransferConfig ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [channel] Add support for primary_admin_email as customer_identity for ImportCustomer ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [chat] Add doc for permission settings & announcement space support ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [cloudcommerceconsumerprocurement] add Order modification RPCs and License Management Service ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [contact-center-insights] Add import / export IssueModel ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [deploy] added support for deploy policies ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [documentai] remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228)) ([5876f54](https://github.com/googleapis/google-cloud-java/commit/5876f54b761610596aa0fe76cc78e47f0a9bf122))
+* [marketingplatformadminapi] new module for marketingplatformadminapi ([#11225](https://github.com/googleapis/google-cloud-java/issues/11225)) ([c2d44dc](https://github.com/googleapis/google-cloud-java/commit/c2d44dcf12d47ef7616876170e0b58cbc3197775))
+* [oracledatabase] new module for oracledatabase ([#11224](https://github.com/googleapis/google-cloud-java/issues/11224)) ([1c83c78](https://github.com/googleapis/google-cloud-java/commit/1c83c781f391b79de148d89fd3b82aa38f2317a5))
+* [retail] add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* [retail] add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* [retail] add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* [shopping-merchant-accounts] add 'force' parameter for accounts.delete method ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [shopping-merchant-datasources] adding some more information about supplemental data sources ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+### Bug Fixes
+
+* [aiplatform] annotate PipelineJob and PipelineTaskRerunConfig fields as optional ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [backupdr] Remove visibility of unneeded TestIamPermissions RPC ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240924-2.0.0 ([#11207](https://github.com/googleapis/google-cloud-java/issues/11207)) ([a649470](https://github.com/googleapis/google-cloud-java/commit/a6494706f4018d8097ba1221da30d1308cddca6d))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.132.3 ([#11201](https://github.com/googleapis/google-cloud-java/issues/11201)) ([a8ff751](https://github.com/googleapis/google-cloud-java/commit/a8ff75186e630803081ae5456245ed4c1e0b5563))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.133.0 ([#11212](https://github.com/googleapis/google-cloud-java/issues/11212)) ([9c4f9e2](https://github.com/googleapis/google-cloud-java/commit/9c4f9e25af0f67bc45b3064cd2ce6d149ab61a1a))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.133.1 ([#11231](https://github.com/googleapis/google-cloud-java/issues/11231)) ([3a00b64](https://github.com/googleapis/google-cloud-java/commit/3a00b648c762f9b71495d5eff66adc59dde65f71))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.43.1 ([#11198](https://github.com/googleapis/google-cloud-java/issues/11198)) ([0cdd505](https://github.com/googleapis/google-cloud-java/commit/0cdd50546a1412dd74463dec9d4400ea6944f4bc))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.43.2 ([#11236](https://github.com/googleapis/google-cloud-java/issues/11236)) ([46e7ba4](https://github.com/googleapis/google-cloud-java/commit/46e7ba4644daaca737436cc234949496e7f9b2e6))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.47.0 ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+### Documentation
+
+* [batch] Clarify Batch only supports global custom instance template now ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [parallelstore] minor documentation formatting fix for Parallelstore ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [parallelstore] minor documentation formatting fix for Parallelstore ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* [recaptchaenterprise] minor wording and branding adjustments ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* [run]fixed formatting of some documentation ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
 ## [1.45.0](https://github.com/googleapis/google-cloud-java/compare/v1.44.0...v1.45.0) (2024-09-27)
 
 
