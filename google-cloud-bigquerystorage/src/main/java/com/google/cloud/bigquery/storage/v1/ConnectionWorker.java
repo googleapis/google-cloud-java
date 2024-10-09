@@ -245,6 +245,9 @@ class ConnectionWorker implements AutoCloseable {
   private final RequestProfiler.RequestProfilerHook requestProfilerHook;
   private final TelemetryMetrics telemetryMetrics;
 
+  /** Indicate whether this connection is created during multiplexing mode. */
+  private final Boolean isMultiplexing;
+
   private static String projectMatching = "projects/[^/]+/";
   private static Pattern streamPatternProject = Pattern.compile(projectMatching);
 
@@ -327,7 +330,8 @@ class ConnectionWorker implements AutoCloseable {
       BigQueryWriteSettings clientSettings,
       RetrySettings retrySettings,
       boolean enableRequestProfiler,
-      boolean enableOpenTelemetry)
+      boolean enableOpenTelemetry,
+      boolean isMultiplexing)
       throws IOException {
     this.lock = new ReentrantLock();
     this.hasMessageInWaitingQueue = lock.newCondition();
@@ -353,6 +357,7 @@ class ConnectionWorker implements AutoCloseable {
     this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
     this.telemetryMetrics =
         new TelemetryMetrics(this, enableOpenTelemetry, getTableName(), writerId, traceId);
+    this.isMultiplexing = isMultiplexing;
 
     // Always recreate a client for connection worker.
     HashMap<String, String> newHeaders = new HashMap<>();
@@ -744,8 +749,6 @@ class ConnectionWorker implements AutoCloseable {
     // Indicate whether we are at the first request after switching destination.
     // True means the schema and other metadata are needed.
     boolean firstRequestForTableOrSchemaSwitch = true;
-    // Represent whether we have entered multiplexing.
-    boolean isMultiplexing = false;
 
     while (!waitingQueueDrained()) {
       this.lock.lock();
@@ -848,7 +851,6 @@ class ConnectionWorker implements AutoCloseable {
           streamName = originalRequest.getWriteStream();
           telemetryMetrics.refreshOpenTelemetryTableNameAttributes(getTableName());
           writerSchema = originalRequest.getProtoRows().getWriterSchema();
-          isMultiplexing = true;
           firstRequestForTableOrSchemaSwitch = true;
         }
 

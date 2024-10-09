@@ -256,7 +256,8 @@ public class StreamWriter implements AutoCloseable {
                   clientSettings,
                   builder.retrySettings,
                   builder.enableRequestProfiler,
-                  builder.enableOpenTelemetry));
+                  builder.enableOpenTelemetry,
+                  /*isMultiplexing=*/ false));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(

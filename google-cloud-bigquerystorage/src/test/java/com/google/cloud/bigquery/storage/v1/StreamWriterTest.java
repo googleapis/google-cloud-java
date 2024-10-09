@@ -949,11 +949,7 @@ public class StreamWriterTest {
         assertEquals(
             appendRowsRequest.getProtoRows().getWriterSchema(), ProtoSchema.getDefaultInstance());
         // Before entering multiplexing (i == 1) case, the write stream won't be populated.
-        if (i == 1) {
-          assertEquals(appendRowsRequest.getWriteStream(), "");
-        } else {
-          assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_1);
-        }
+        assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_1);
       } else if (i % 4 == 2) {
         assertEquals(appendRowsRequest.getProtoRows().getWriterSchema(), schema2);
         assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_2);
