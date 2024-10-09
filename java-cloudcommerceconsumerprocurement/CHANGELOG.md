@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.50.0 (2024-10-09)
+
+### Features
+
+* add Order modification RPCs and License Management Service ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
 ## 0.48.0 (2024-09-26)
 
 * No change

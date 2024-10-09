@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.54.0 (2024-10-09)
+
+### Features
+
+* add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+* add conversational search ([9d60986](https://github.com/googleapis/google-cloud-java/commit/9d60986f1d774a0a9c5ee382aa58576d4d4c6622))
+
+
+
 ## 2.52.0 (2024-09-26)
 
 * No change

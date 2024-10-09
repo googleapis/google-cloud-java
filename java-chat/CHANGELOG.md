@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0 (2024-10-09)
+
+### Features
+
+* Add doc for permission settings & announcement space support ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
 ## 0.14.0 (2024-09-26)
 
 ### Features

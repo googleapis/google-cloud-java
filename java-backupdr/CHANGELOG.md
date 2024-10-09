@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.11.0 (2024-10-09)
+
+### ⚠ BREAKING CHANGES
+
+* Remove visibility of unneeded TestIamPermissions RPC
+
+### Bug Fixes
+
+* Remove visibility of unneeded TestIamPermissions RPC ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
 ## 0.9.0 (2024-09-26)
 
 ### Features
