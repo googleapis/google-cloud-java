@@ -36,7 +36,10 @@ public class SyncDeleteAccount {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AccountsServiceClient accountsServiceClient = AccountsServiceClient.create()) {
       DeleteAccountRequest request =
-          DeleteAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+          DeleteAccountRequest.newBuilder()
+              .setName(AccountName.of("[ACCOUNT]").toString())
+              .setForce(true)
+              .build();
       accountsServiceClient.deleteAccount(request);
     }
   }

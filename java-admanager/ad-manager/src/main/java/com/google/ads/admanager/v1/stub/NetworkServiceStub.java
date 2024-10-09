@@ -17,6 +17,8 @@
 package com.google.ads.admanager.v1.stub;
 
 import com.google.ads.admanager.v1.GetNetworkRequest;
+import com.google.ads.admanager.v1.ListNetworksRequest;
+import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -33,6 +35,10 @@ public abstract class NetworkServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: getNetworkCallable()");
+  }
+
+  public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworksCallable()");
   }
 
   @Override

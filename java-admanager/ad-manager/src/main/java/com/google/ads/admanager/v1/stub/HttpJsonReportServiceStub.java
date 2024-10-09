@@ -16,9 +16,20 @@
 
 package com.google.ads.admanager.v1.stub;
 
-import com.google.ads.admanager.v1.ExportSavedReportMetadata;
-import com.google.ads.admanager.v1.ExportSavedReportRequest;
-import com.google.ads.admanager.v1.ExportSavedReportResponse;
+import static com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsPagedResponse;
+import static com.google.ads.admanager.v1.ReportServiceClient.ListReportsPagedResponse;
+
+import com.google.ads.admanager.v1.CreateReportRequest;
+import com.google.ads.admanager.v1.FetchReportResultRowsRequest;
+import com.google.ads.admanager.v1.FetchReportResultRowsResponse;
+import com.google.ads.admanager.v1.GetReportRequest;
+import com.google.ads.admanager.v1.ListReportsRequest;
+import com.google.ads.admanager.v1.ListReportsResponse;
+import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.RunReportMetadata;
+import com.google.ads.admanager.v1.RunReportRequest;
+import com.google.ads.admanager.v1.RunReportResponse;
+import com.google.ads.admanager.v1.UpdateReportRequest;
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -56,31 +67,103 @@ import javax.annotation.Generated;
 public class HttpJsonReportServiceStub extends ReportServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(ExportSavedReportMetadata.getDescriptor())
-          .add(ExportSavedReportResponse.getDescriptor())
+          .add(RunReportMetadata.getDescriptor())
+          .add(RunReportResponse.getDescriptor())
           .build();
 
-  private static final ApiMethodDescriptor<ExportSavedReportRequest, Operation>
-      exportSavedReportMethodDescriptor =
-          ApiMethodDescriptor.<ExportSavedReportRequest, Operation>newBuilder()
-              .setFullMethodName("google.ads.admanager.v1.ReportService/ExportSavedReport")
-              .setHttpMethod("POST")
+  private static final ApiMethodDescriptor<GetReportRequest, Report> getReportMethodDescriptor =
+      ApiMethodDescriptor.<GetReportRequest, Report>newBuilder()
+          .setFullMethodName("google.ads.admanager.v1.ReportService/GetReport")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetReportRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=networks/*/reports/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetReportRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetReportRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Report>newBuilder()
+                  .setDefaultInstance(Report.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListReportsRequest, ListReportsResponse>
+      listReportsMethodDescriptor =
+          ApiMethodDescriptor.<ListReportsRequest, ListReportsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ReportService/ListReports")
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ExportSavedReportRequest>newBuilder()
+                  ProtoMessageRequestFormatter.<ListReportsRequest>newBuilder()
                       .setPath(
-                          "/v1/{report=networks/*/reports/*}:exportSavedReport",
+                          "/v1/{parent=networks/*}/reports",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ExportSavedReportRequest> serializer =
+                            ProtoRestSerializer<ListReportsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "report", request.getReport());
+                            serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ExportSavedReportRequest> serializer =
+                            ProtoRestSerializer<ListReportsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "skip", request.getSkip());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListReportsResponse>newBuilder()
+                      .setDefaultInstance(ListReportsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateReportRequest, Report>
+      createReportMethodDescriptor =
+          ApiMethodDescriptor.<CreateReportRequest, Report>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ReportService/CreateReport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateReportRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/reports",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReportRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -88,22 +171,144 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearReport().build(), true))
+                                  .toBody("report", request.getReport(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
+                  ProtoMessageResponseParser.<Report>newBuilder()
+                      .setDefaultInstance(Report.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
-              .setOperationSnapshotFactory(
-                  (ExportSavedReportRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
               .build();
 
-  private final UnaryCallable<ExportSavedReportRequest, Operation> exportSavedReportCallable;
-  private final OperationCallable<
-          ExportSavedReportRequest, ExportSavedReportResponse, ExportSavedReportMetadata>
-      exportSavedReportOperationCallable;
+  private static final ApiMethodDescriptor<UpdateReportRequest, Report>
+      updateReportMethodDescriptor =
+          ApiMethodDescriptor.<UpdateReportRequest, Report>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ReportService/UpdateReport")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateReportRequest>newBuilder()
+                      .setPath(
+                          "/v1/{report.name=networks/*/reports/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "report.name", request.getReport().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("report", request.getReport(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Report>newBuilder()
+                      .setDefaultInstance(Report.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RunReportRequest, Operation> runReportMethodDescriptor =
+      ApiMethodDescriptor.<RunReportRequest, Operation>newBuilder()
+          .setFullMethodName("google.ads.admanager.v1.ReportService/RunReport")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<RunReportRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=networks/*/reports/*}:run",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<RunReportRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<RunReportRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (RunReportRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<
+          FetchReportResultRowsRequest, FetchReportResultRowsResponse>
+      fetchReportResultRowsMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchReportResultRowsRequest, FetchReportResultRowsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ReportService/FetchReportResultRows")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchReportResultRowsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=networks/*/reports/*/results/*}:fetchRows",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchReportResultRowsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchReportResultRowsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchReportResultRowsResponse>newBuilder()
+                      .setDefaultInstance(FetchReportResultRowsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<GetReportRequest, Report> getReportCallable;
+  private final UnaryCallable<ListReportsRequest, ListReportsResponse> listReportsCallable;
+  private final UnaryCallable<ListReportsRequest, ListReportsPagedResponse>
+      listReportsPagedCallable;
+  private final UnaryCallable<CreateReportRequest, Report> createReportCallable;
+  private final UnaryCallable<UpdateReportRequest, Report> updateReportCallable;
+  private final UnaryCallable<RunReportRequest, Operation> runReportCallable;
+  private final OperationCallable<RunReportRequest, RunReportResponse, RunReportMetadata>
+      runReportOperationCallable;
+  private final UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsResponse>
+      fetchReportResultRowsCallable;
+  private final UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsPagedResponse>
+      fetchReportResultRowsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -156,37 +361,117 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
-                        .setGet("/v1/{name=networks/*/operations/reports/exports/*}")
+                        .setGet("/v1/{name=networks/*/operations/reports/runs/*}")
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/v1/{name=networks/*/operations/reports/runs/*}")
+                                .setGet("/v1/{name=networks/*/operations/reports/exports/*}")
                                 .build())
                         .build())
                 .build());
 
-    HttpJsonCallSettings<ExportSavedReportRequest, Operation> exportSavedReportTransportSettings =
-        HttpJsonCallSettings.<ExportSavedReportRequest, Operation>newBuilder()
-            .setMethodDescriptor(exportSavedReportMethodDescriptor)
+    HttpJsonCallSettings<GetReportRequest, Report> getReportTransportSettings =
+        HttpJsonCallSettings.<GetReportRequest, Report>newBuilder()
+            .setMethodDescriptor(getReportMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("report", String.valueOf(request.getReport()));
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
+        HttpJsonCallSettings.<ListReportsRequest, ListReportsResponse>newBuilder()
+            .setMethodDescriptor(listReportsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateReportRequest, Report> createReportTransportSettings =
+        HttpJsonCallSettings.<CreateReportRequest, Report>newBuilder()
+            .setMethodDescriptor(createReportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateReportRequest, Report> updateReportTransportSettings =
+        HttpJsonCallSettings.<UpdateReportRequest, Report>newBuilder()
+            .setMethodDescriptor(updateReportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("report.name", String.valueOf(request.getReport().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RunReportRequest, Operation> runReportTransportSettings =
+        HttpJsonCallSettings.<RunReportRequest, Operation>newBuilder()
+            .setMethodDescriptor(runReportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<FetchReportResultRowsRequest, FetchReportResultRowsResponse>
+        fetchReportResultRowsTransportSettings =
+            HttpJsonCallSettings
+                .<FetchReportResultRowsRequest, FetchReportResultRowsResponse>newBuilder()
+                .setMethodDescriptor(fetchReportResultRowsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
-    this.exportSavedReportCallable =
+    this.getReportCallable =
         callableFactory.createUnaryCallable(
-            exportSavedReportTransportSettings,
-            settings.exportSavedReportSettings(),
-            clientContext);
-    this.exportSavedReportOperationCallable =
+            getReportTransportSettings, settings.getReportSettings(), clientContext);
+    this.listReportsCallable =
+        callableFactory.createUnaryCallable(
+            listReportsTransportSettings, settings.listReportsSettings(), clientContext);
+    this.listReportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReportsTransportSettings, settings.listReportsSettings(), clientContext);
+    this.createReportCallable =
+        callableFactory.createUnaryCallable(
+            createReportTransportSettings, settings.createReportSettings(), clientContext);
+    this.updateReportCallable =
+        callableFactory.createUnaryCallable(
+            updateReportTransportSettings, settings.updateReportSettings(), clientContext);
+    this.runReportCallable =
+        callableFactory.createUnaryCallable(
+            runReportTransportSettings, settings.runReportSettings(), clientContext);
+    this.runReportOperationCallable =
         callableFactory.createOperationCallable(
-            exportSavedReportTransportSettings,
-            settings.exportSavedReportOperationSettings(),
+            runReportTransportSettings,
+            settings.runReportOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.fetchReportResultRowsCallable =
+        callableFactory.createUnaryCallable(
+            fetchReportResultRowsTransportSettings,
+            settings.fetchReportResultRowsSettings(),
+            clientContext);
+    this.fetchReportResultRowsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchReportResultRowsTransportSettings,
+            settings.fetchReportResultRowsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -195,7 +480,12 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
-    methodDescriptors.add(exportSavedReportMethodDescriptor);
+    methodDescriptors.add(getReportMethodDescriptor);
+    methodDescriptors.add(listReportsMethodDescriptor);
+    methodDescriptors.add(createReportMethodDescriptor);
+    methodDescriptors.add(updateReportMethodDescriptor);
+    methodDescriptors.add(runReportMethodDescriptor);
+    methodDescriptors.add(fetchReportResultRowsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -204,15 +494,51 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
   }
 
   @Override
-  public UnaryCallable<ExportSavedReportRequest, Operation> exportSavedReportCallable() {
-    return exportSavedReportCallable;
+  public UnaryCallable<GetReportRequest, Report> getReportCallable() {
+    return getReportCallable;
   }
 
   @Override
-  public OperationCallable<
-          ExportSavedReportRequest, ExportSavedReportResponse, ExportSavedReportMetadata>
-      exportSavedReportOperationCallable() {
-    return exportSavedReportOperationCallable;
+  public UnaryCallable<ListReportsRequest, ListReportsResponse> listReportsCallable() {
+    return listReportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportsRequest, ListReportsPagedResponse> listReportsPagedCallable() {
+    return listReportsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReportRequest, Report> createReportCallable() {
+    return createReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReportRequest, Report> updateReportCallable() {
+    return updateReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunReportRequest, Operation> runReportCallable() {
+    return runReportCallable;
+  }
+
+  @Override
+  public OperationCallable<RunReportRequest, RunReportResponse, RunReportMetadata>
+      runReportOperationCallable() {
+    return runReportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsResponse>
+      fetchReportResultRowsCallable() {
+    return fetchReportResultRowsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsPagedResponse>
+      fetchReportResultRowsPagedCallable() {
+    return fetchReportResultRowsPagedCallable;
   }
 
   @Override

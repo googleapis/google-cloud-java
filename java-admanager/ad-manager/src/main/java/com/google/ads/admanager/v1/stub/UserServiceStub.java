@@ -16,11 +16,7 @@
 
 package com.google.ads.admanager.v1.stub;
 
-import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
-
 import com.google.ads.admanager.v1.GetUserRequest;
-import com.google.ads.admanager.v1.ListUsersRequest;
-import com.google.ads.admanager.v1.ListUsersResponse;
 import com.google.ads.admanager.v1.User;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -37,14 +33,6 @@ public abstract class UserServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetUserRequest, User> getUserCallable() {
     throw new UnsupportedOperationException("Not implemented: getUserCallable()");
-  }
-
-  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUsersPagedCallable()");
-  }
-
-  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
   }
 
   @Override

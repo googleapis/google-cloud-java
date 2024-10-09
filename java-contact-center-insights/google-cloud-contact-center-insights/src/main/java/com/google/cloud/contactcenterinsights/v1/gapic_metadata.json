@@ -61,11 +61,17 @@
             "ExportInsightsData": {
               "methods": ["exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataOperationCallable", "exportInsightsDataCallable"]
             },
+            "ExportIssueModel": {
+              "methods": ["exportIssueModelAsync", "exportIssueModelAsync", "exportIssueModelAsync", "exportIssueModelOperationCallable", "exportIssueModelCallable"]
+            },
             "GetAnalysis": {
               "methods": ["getAnalysis", "getAnalysis", "getAnalysis", "getAnalysisCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "GetEncryptionSpec": {
+              "methods": ["getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpecCallable"]
             },
             "GetIssue": {
               "methods": ["getIssue", "getIssue", "getIssue", "getIssueCallable"]
@@ -82,8 +88,14 @@
             "GetView": {
               "methods": ["getView", "getView", "getView", "getViewCallable"]
             },
+            "ImportIssueModel": {
+              "methods": ["importIssueModelAsync", "importIssueModelAsync", "importIssueModelAsync", "importIssueModelOperationCallable", "importIssueModelCallable"]
+            },
             "IngestConversations": {
               "methods": ["ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsOperationCallable", "ingestConversationsCallable"]
+            },
+            "InitializeEncryptionSpec": {
+              "methods": ["initializeEncryptionSpecAsync", "initializeEncryptionSpecAsync", "initializeEncryptionSpecOperationCallable", "initializeEncryptionSpecCallable"]
             },
             "ListAnalyses": {
               "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]

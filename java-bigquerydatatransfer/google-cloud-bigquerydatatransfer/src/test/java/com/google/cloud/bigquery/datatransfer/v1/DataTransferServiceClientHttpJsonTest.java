@@ -381,6 +381,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -392,6 +393,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -445,6 +447,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -456,6 +459,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -509,6 +513,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -520,6 +525,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -574,6 +580,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -585,6 +592,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -599,6 +607,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -610,6 +619,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -650,6 +660,7 @@ public class DataTransferServiceClientHttpJsonTest {
               .setParams(Struct.newBuilder().build())
               .setSchedule("schedule-697920873")
               .setScheduleOptions(ScheduleOptions.newBuilder().build())
+              .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
               .setDataRefreshWindowDays(327632845)
               .setDisabled(true)
               .setUpdateTime(Timestamp.newBuilder().build())
@@ -661,6 +672,7 @@ public class DataTransferServiceClientHttpJsonTest {
               .setEmailPreferences(EmailPreferences.newBuilder().build())
               .setOwnerInfo(UserInfo.newBuilder().build())
               .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+              .setError(Status.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTransferConfig(transferConfig, updateMask);
@@ -769,6 +781,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -780,6 +793,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -836,6 +850,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -847,6 +862,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

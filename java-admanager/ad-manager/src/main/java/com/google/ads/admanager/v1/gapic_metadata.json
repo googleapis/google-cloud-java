@@ -5,21 +5,6 @@
   "protoPackage": "google.ads.admanager.v1",
   "libraryPackage": "com.google.ads.admanager.v1",
   "services": {
-    "AdPartnerService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "AdPartnerServiceClient",
-          "rpcs": {
-            "GetAdPartner": {
-              "methods": ["getAdPartner", "getAdPartner", "getAdPartner", "getAdPartnerCallable"]
-            },
-            "ListAdPartners": {
-              "methods": ["listAdPartners", "listAdPartners", "listAdPartners", "listAdPartnersPagedCallable", "listAdPartnersCallable"]
-            }
-          }
-        }
-      }
-    },
     "AdUnitService": {
       "clients": {
         "grpc": {
@@ -27,6 +12,9 @@
           "rpcs": {
             "GetAdUnit": {
               "methods": ["getAdUnit", "getAdUnit", "getAdUnit", "getAdUnitCallable"]
+            },
+            "ListAdUnitSizes": {
+              "methods": ["listAdUnitSizes", "listAdUnitSizes", "listAdUnitSizes", "listAdUnitSizesPagedCallable", "listAdUnitSizesCallable"]
             },
             "ListAdUnits": {
               "methods": ["listAdUnits", "listAdUnits", "listAdUnits", "listAdUnitsPagedCallable", "listAdUnitsCallable"]
@@ -45,36 +33,6 @@
             },
             "ListCompanies": {
               "methods": ["listCompanies", "listCompanies", "listCompanies", "listCompaniesPagedCallable", "listCompaniesCallable"]
-            }
-          }
-        }
-      }
-    },
-    "ContactService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ContactServiceClient",
-          "rpcs": {
-            "GetContact": {
-              "methods": ["getContact", "getContact", "getContact", "getContactCallable"]
-            },
-            "ListContacts": {
-              "methods": ["listContacts", "listContacts", "listContacts", "listContactsPagedCallable", "listContactsCallable"]
-            }
-          }
-        }
-      }
-    },
-    "CreativeService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "CreativeServiceClient",
-          "rpcs": {
-            "GetCreative": {
-              "methods": ["getCreative", "getCreative", "getCreative", "getCreativeCallable"]
-            },
-            "ListCreatives": {
-              "methods": ["listCreatives", "listCreatives", "listCreatives", "listCreativesPagedCallable", "listCreativesCallable"]
             }
           }
         }
@@ -125,31 +83,28 @@
         }
       }
     },
-    "LabelService": {
+    "EntitySignalsMappingService": {
       "clients": {
         "grpc": {
-          "libraryClient": "LabelServiceClient",
+          "libraryClient": "EntitySignalsMappingServiceClient",
           "rpcs": {
-            "GetLabel": {
-              "methods": ["getLabel", "getLabel", "getLabel", "getLabelCallable"]
+            "BatchCreateEntitySignalsMappings": {
+              "methods": ["batchCreateEntitySignalsMappings", "batchCreateEntitySignalsMappings", "batchCreateEntitySignalsMappings", "batchCreateEntitySignalsMappingsCallable"]
             },
-            "ListLabels": {
-              "methods": ["listLabels", "listLabels", "listLabels", "listLabelsPagedCallable", "listLabelsCallable"]
-            }
-          }
-        }
-      }
-    },
-    "LineItemService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "LineItemServiceClient",
-          "rpcs": {
-            "GetLineItem": {
-              "methods": ["getLineItem", "getLineItem", "getLineItem", "getLineItemCallable"]
+            "BatchUpdateEntitySignalsMappings": {
+              "methods": ["batchUpdateEntitySignalsMappings", "batchUpdateEntitySignalsMappings", "batchUpdateEntitySignalsMappings", "batchUpdateEntitySignalsMappingsCallable"]
             },
-            "ListLineItems": {
-              "methods": ["listLineItems", "listLineItems", "listLineItems", "listLineItemsPagedCallable", "listLineItemsCallable"]
+            "CreateEntitySignalsMapping": {
+              "methods": ["createEntitySignalsMapping", "createEntitySignalsMapping", "createEntitySignalsMapping", "createEntitySignalsMappingCallable"]
+            },
+            "GetEntitySignalsMapping": {
+              "methods": ["getEntitySignalsMapping", "getEntitySignalsMapping", "getEntitySignalsMapping", "getEntitySignalsMappingCallable"]
+            },
+            "ListEntitySignalsMappings": {
+              "methods": ["listEntitySignalsMappings", "listEntitySignalsMappings", "listEntitySignalsMappings", "listEntitySignalsMappingsPagedCallable", "listEntitySignalsMappingsCallable"]
+            },
+            "UpdateEntitySignalsMapping": {
+              "methods": ["updateEntitySignalsMapping", "updateEntitySignalsMapping", "updateEntitySignalsMappingCallable"]
             }
           }
         }
@@ -162,6 +117,9 @@
           "rpcs": {
             "GetNetwork": {
               "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
+            },
+            "ListNetworks": {
+              "methods": ["listNetworks", "listNetworksCallable"]
             }
           }
         }
@@ -202,8 +160,23 @@
         "grpc": {
           "libraryClient": "ReportServiceClient",
           "rpcs": {
-            "ExportSavedReport": {
-              "methods": ["exportSavedReportAsync", "exportSavedReportAsync", "exportSavedReportAsync", "exportSavedReportOperationCallable", "exportSavedReportCallable"]
+            "CreateReport": {
+              "methods": ["createReport", "createReport", "createReport", "createReportCallable"]
+            },
+            "FetchReportResultRows": {
+              "methods": ["fetchReportResultRows", "fetchReportResultRows", "fetchReportResultRowsPagedCallable", "fetchReportResultRowsCallable"]
+            },
+            "GetReport": {
+              "methods": ["getReport", "getReport", "getReport", "getReportCallable"]
+            },
+            "ListReports": {
+              "methods": ["listReports", "listReports", "listReports", "listReportsPagedCallable", "listReportsCallable"]
+            },
+            "RunReport": {
+              "methods": ["runReportAsync", "runReportAsync", "runReportAsync", "runReportOperationCallable", "runReportCallable"]
+            },
+            "UpdateReport": {
+              "methods": ["updateReport", "updateReport", "updateReportCallable"]
             }
           }
         }
@@ -224,16 +197,16 @@
         }
       }
     },
-    "TeamService": {
+    "TaxonomyCategoryService": {
       "clients": {
         "grpc": {
-          "libraryClient": "TeamServiceClient",
+          "libraryClient": "TaxonomyCategoryServiceClient",
           "rpcs": {
-            "GetTeam": {
-              "methods": ["getTeam", "getTeam", "getTeam", "getTeamCallable"]
+            "GetTaxonomyCategory": {
+              "methods": ["getTaxonomyCategory", "getTaxonomyCategory", "getTaxonomyCategory", "getTaxonomyCategoryCallable"]
             },
-            "ListTeams": {
-              "methods": ["listTeams", "listTeams", "listTeams", "listTeamsPagedCallable", "listTeamsCallable"]
+            "ListTaxonomyCategories": {
+              "methods": ["listTaxonomyCategories", "listTaxonomyCategories", "listTaxonomyCategories", "listTaxonomyCategoriesPagedCallable", "listTaxonomyCategoriesCallable"]
             }
           }
         }
@@ -246,9 +219,6 @@
           "rpcs": {
             "GetUser": {
               "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
-            },
-            "ListUsers": {
-              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
             }
           }
         }

@@ -189,9 +189,9 @@ public interface ExportDataRequestOrBuilder
    * performing the transfer.
    * Use one of the following formats:
    *
-   * * {EMAIL_ADDRESS_OR_UNIQUE_ID}
+   * * `{EMAIL_ADDRESS_OR_UNIQUE_ID}`
    * * `projects/{PROJECT_ID_OR_NUMBER}/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}`
-   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}
+   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}`
    *
    * If unspecified, the Parallelstore service agent is used:
    * `service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com`
@@ -212,9 +212,9 @@ public interface ExportDataRequestOrBuilder
    * performing the transfer.
    * Use one of the following formats:
    *
-   * * {EMAIL_ADDRESS_OR_UNIQUE_ID}
+   * * `{EMAIL_ADDRESS_OR_UNIQUE_ID}`
    * * `projects/{PROJECT_ID_OR_NUMBER}/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}`
-   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}
+   * * `projects/-/serviceAccounts/{EMAIL_ADDRESS_OR_UNIQUE_ID}`
    *
    * If unspecified, the Parallelstore service agent is used:
    * `service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com`

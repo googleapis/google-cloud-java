@@ -54,4 +54,18 @@ public interface DeleteAccountRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to `true`, the account is deleted even if it provides
+   * services to other accounts or has processed offers.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

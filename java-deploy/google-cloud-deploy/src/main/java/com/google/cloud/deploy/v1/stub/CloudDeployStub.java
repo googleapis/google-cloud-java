@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -45,6 +46,7 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -52,13 +54,16 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -74,6 +79,8 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
+import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -95,6 +102,7 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -283,6 +291,50 @@ public abstract class CloudDeployStub implements BackgroundResource {
 
   public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
     throw new UnsupportedOperationException("Not implemented: abandonReleaseCallable()");
+  }
+
+  public OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDeployPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDeployPolicyCallable()");
+  }
+
+  public OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDeployPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDeployPolicyCallable()");
+  }
+
+  public OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDeployPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDeployPolicyCallable()");
+  }
+
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeployPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeployPoliciesCallable()");
+  }
+
+  public UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDeployPolicyCallable()");
   }
 
   public UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable() {

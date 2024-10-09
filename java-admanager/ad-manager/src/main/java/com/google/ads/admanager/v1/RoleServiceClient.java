@@ -34,7 +34,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides methods for handling Role objects.
+ * Service Description: Provides methods for handling `Role` objects.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -63,7 +63,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetRole</td>
- *      <td><p> API to retrieve a Role object.</td>
+ *      <td><p> API to retrieve a `Role` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -82,7 +82,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRoles</td>
- *      <td><p> API to retrieve a list of Role objects.</td>
+ *      <td><p> API to retrieve a list of `Role` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +192,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Role object.
+   * API to retrieve a `Role` object.
    *
    * <p>Sample code:
    *
@@ -220,7 +220,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Role object.
+   * API to retrieve a `Role` object.
    *
    * <p>Sample code:
    *
@@ -247,7 +247,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Role object.
+   * API to retrieve a `Role` object.
    *
    * <p>Sample code:
    *
@@ -275,7 +275,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Role object.
+   * API to retrieve a `Role` object.
    *
    * <p>Sample code:
    *
@@ -302,7 +302,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of Role objects.
+   * API to retrieve a list of `Role` objects.
    *
    * <p>Sample code:
    *
@@ -332,7 +332,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of Role objects.
+   * API to retrieve a list of `Role` objects.
    *
    * <p>Sample code:
    *
@@ -361,7 +361,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of Role objects.
+   * API to retrieve a list of `Role` objects.
    *
    * <p>Sample code:
    *
@@ -396,7 +396,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of Role objects.
+   * API to retrieve a list of `Role` objects.
    *
    * <p>Sample code:
    *
@@ -430,7 +430,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of Role objects.
+   * API to retrieve a list of `Role` objects.
    *
    * <p>Sample code:
    *

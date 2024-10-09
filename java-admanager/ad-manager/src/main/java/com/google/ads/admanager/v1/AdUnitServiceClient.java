@@ -100,6 +100,26 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ListAdUnitSizes</td>
+ *      <td><p> API to retrieve a list of AdUnitSize objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAdUnitSizes(ListAdUnitSizesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAdUnitSizes(NetworkName parent)
+ *           <li><p> listAdUnitSizes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAdUnitSizesPagedCallable()
+ *           <li><p> listAdUnitSizesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -473,6 +493,181 @@ public class AdUnitServiceClient implements BackgroundResource {
     return stub.listAdUnitsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve a list of AdUnitSize objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   for (AdUnitSize element : adUnitServiceClient.listAdUnitSizes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdUnitSizes. Format:
+   *     `networks/{network_code}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdUnitSizesPagedResponse listAdUnitSizes(NetworkName parent) {
+    ListAdUnitSizesRequest request =
+        ListAdUnitSizesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAdUnitSizes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve a list of AdUnitSize objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   for (AdUnitSize element : adUnitServiceClient.listAdUnitSizes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdUnitSizes. Format:
+   *     `networks/{network_code}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdUnitSizesPagedResponse listAdUnitSizes(String parent) {
+    ListAdUnitSizesRequest request = ListAdUnitSizesRequest.newBuilder().setParent(parent).build();
+    return listAdUnitSizes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve a list of AdUnitSize objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
+   *   ListAdUnitSizesRequest request =
+   *       ListAdUnitSizesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setSkip(3532159)
+   *           .build();
+   *   for (AdUnitSize element : adUnitServiceClient.listAdUnitSizes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdUnitSizesPagedResponse listAdUnitSizes(ListAdUnitSizesRequest request) {
+    return listAdUnitSizesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve a list of AdUnitSize objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
+   *   ListAdUnitSizesRequest request =
+   *       ListAdUnitSizesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setSkip(3532159)
+   *           .build();
+   *   ApiFuture<AdUnitSize> future =
+   *       adUnitServiceClient.listAdUnitSizesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AdUnitSize element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesPagedCallable() {
+    return stub.listAdUnitSizesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve a list of AdUnitSize objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
+   *   ListAdUnitSizesRequest request =
+   *       ListAdUnitSizesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setSkip(3532159)
+   *           .build();
+   *   while (true) {
+   *     ListAdUnitSizesResponse response =
+   *         adUnitServiceClient.listAdUnitSizesCallable().call(request);
+   *     for (AdUnitSize element : response.getAdUnitSizesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse>
+      listAdUnitSizesCallable() {
+    return stub.listAdUnitSizesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -573,6 +768,83 @@ public class AdUnitServiceClient implements BackgroundResource {
     protected ListAdUnitsFixedSizeCollection createCollection(
         List<ListAdUnitsPage> pages, int collectionSize) {
       return new ListAdUnitsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAdUnitSizesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAdUnitSizesRequest,
+          ListAdUnitSizesResponse,
+          AdUnitSize,
+          ListAdUnitSizesPage,
+          ListAdUnitSizesFixedSizeCollection> {
+
+    public static ApiFuture<ListAdUnitSizesPagedResponse> createAsync(
+        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        ApiFuture<ListAdUnitSizesResponse> futureResponse) {
+      ApiFuture<ListAdUnitSizesPage> futurePage =
+          ListAdUnitSizesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAdUnitSizesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAdUnitSizesPagedResponse(ListAdUnitSizesPage page) {
+      super(page, ListAdUnitSizesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAdUnitSizesPage
+      extends AbstractPage<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize, ListAdUnitSizesPage> {
+
+    private ListAdUnitSizesPage(
+        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        ListAdUnitSizesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAdUnitSizesPage createEmptyPage() {
+      return new ListAdUnitSizesPage(null, null);
+    }
+
+    @Override
+    protected ListAdUnitSizesPage createPage(
+        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        ListAdUnitSizesResponse response) {
+      return new ListAdUnitSizesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAdUnitSizesPage> createPageAsync(
+        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        ApiFuture<ListAdUnitSizesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAdUnitSizesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAdUnitSizesRequest,
+          ListAdUnitSizesResponse,
+          AdUnitSize,
+          ListAdUnitSizesPage,
+          ListAdUnitSizesFixedSizeCollection> {
+
+    private ListAdUnitSizesFixedSizeCollection(
+        List<ListAdUnitSizesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAdUnitSizesFixedSizeCollection createEmptyCollection() {
+      return new ListAdUnitSizesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAdUnitSizesFixedSizeCollection createCollection(
+        List<ListAdUnitSizesPage> pages, int collectionSize) {
+      return new ListAdUnitSizesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

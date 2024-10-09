@@ -1781,6 +1781,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *       CheckCloudIdentityAccountsExistRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDomain("domain-1326197564")
+   *           .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
    *           .build();
    *   CheckCloudIdentityAccountsExistResponse response =
    *       cloudChannelServiceClient.checkCloudIdentityAccountsExist(request);
@@ -1830,6 +1831,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *       CheckCloudIdentityAccountsExistRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDomain("domain-1326197564")
+   *           .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
    *           .build();
    *   ApiFuture<CheckCloudIdentityAccountsExistResponse> future =
    *       cloudChannelServiceClient.checkCloudIdentityAccountsExistCallable().futureCall(request);

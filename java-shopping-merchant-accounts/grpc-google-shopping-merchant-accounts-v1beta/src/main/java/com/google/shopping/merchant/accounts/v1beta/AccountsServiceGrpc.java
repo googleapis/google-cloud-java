@@ -413,6 +413,9 @@ public final class AccountsServiceGrpc {
      * Deletes the specified account regardless of its type: standalone, MCA or
      * sub-account. Deleting an MCA leads to the deletion of all of its
      * sub-accounts. Executing this method requires admin access.
+     * The deletion succeeds only if the account does not provide services
+     * to any other account and has no processed offers. You can use the `force`
+     * parameter to override this.
      * </pre>
      */
     default void deleteAccount(
@@ -446,7 +449,8 @@ public final class AccountsServiceGrpc {
      * constraints of the request such as page size or filters.
      * This is not just listing the sub-accounts of an MCA, but all accounts the
      * calling user has access to including other MCAs, linked accounts,
-     * standalone accounts and so on.
+     * standalone accounts and so on. If no filter is provided, then it returns
+     * accounts the user is directly added to.
      * </pre>
      */
     default void listAccounts(
@@ -555,6 +559,9 @@ public final class AccountsServiceGrpc {
      * Deletes the specified account regardless of its type: standalone, MCA or
      * sub-account. Deleting an MCA leads to the deletion of all of its
      * sub-accounts. Executing this method requires admin access.
+     * The deletion succeeds only if the account does not provide services
+     * to any other account and has no processed offers. You can use the `force`
+     * parameter to override this.
      * </pre>
      */
     public void deleteAccount(
@@ -592,7 +599,8 @@ public final class AccountsServiceGrpc {
      * constraints of the request such as page size or filters.
      * This is not just listing the sub-accounts of an MCA, but all accounts the
      * calling user has access to including other MCAs, linked accounts,
-     * standalone accounts and so on.
+     * standalone accounts and so on. If no filter is provided, then it returns
+     * accounts the user is directly added to.
      * </pre>
      */
     public void listAccounts(
@@ -684,6 +692,9 @@ public final class AccountsServiceGrpc {
      * Deletes the specified account regardless of its type: standalone, MCA or
      * sub-account. Deleting an MCA leads to the deletion of all of its
      * sub-accounts. Executing this method requires admin access.
+     * The deletion succeeds only if the account does not provide services
+     * to any other account and has no processed offers. You can use the `force`
+     * parameter to override this.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
@@ -714,7 +725,8 @@ public final class AccountsServiceGrpc {
      * constraints of the request such as page size or filters.
      * This is not just listing the sub-accounts of an MCA, but all accounts the
      * calling user has access to including other MCAs, linked accounts,
-     * standalone accounts and so on.
+     * standalone accounts and so on. If no filter is provided, then it returns
+     * accounts the user is directly added to.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListAccountsResponse listAccounts(
@@ -799,6 +811,9 @@ public final class AccountsServiceGrpc {
      * Deletes the specified account regardless of its type: standalone, MCA or
      * sub-account. Deleting an MCA leads to the deletion of all of its
      * sub-accounts. Executing this method requires admin access.
+     * The deletion succeeds only if the account does not provide services
+     * to any other account and has no processed offers. You can use the `force`
+     * parameter to override this.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -830,7 +845,8 @@ public final class AccountsServiceGrpc {
      * constraints of the request such as page size or filters.
      * This is not just listing the sub-accounts of an MCA, but all accounts the
      * calling user has access to including other MCAs, linked accounts,
-     * standalone accounts and so on.
+     * standalone accounts and so on. If no filter is provided, then it returns
+     * accounts the user is directly added to.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

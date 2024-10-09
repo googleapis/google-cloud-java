@@ -41,7 +41,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.backupdr.v1.AbandonBackupRequest;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
@@ -56,19 +55,14 @@ import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenRequest;
-import com.google.cloud.backupdr.v1.FetchAccessTokenResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
-import com.google.cloud.backupdr.v1.FinalizeBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
 import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupRequest;
-import com.google.cloud.backupdr.v1.InitiateBackupResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -83,11 +77,8 @@ import com.google.cloud.backupdr.v1.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1.ListManagementServersResponse;
 import com.google.cloud.backupdr.v1.ManagementServer;
 import com.google.cloud.backupdr.v1.OperationMetadata;
-import com.google.cloud.backupdr.v1.RemoveDataSourceRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
-import com.google.cloud.backupdr.v1.SetInternalStatusRequest;
-import com.google.cloud.backupdr.v1.SetInternalStatusResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
@@ -131,7 +122,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
           .add(DataSource.getDescriptor())
           .add(BackupPlan.getDescriptor())
           .add(RestoreBackupResponse.getDescriptor())
-          .add(SetInternalStatusResponse.getDescriptor())
           .add(BackupPlanAssociation.getDescriptor())
           .build();
 
@@ -543,43 +533,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
-  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/TestIamPermissions")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{resource=projects/*/locations/*/backupVaults/*}:testIamPermissions",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
-                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesMethodDescriptor =
           ApiMethodDescriptor.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
@@ -695,240 +648,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .setOperationSnapshotFactory(
                   (UpdateDataSourceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<RemoveDataSourceRequest, Operation>
-      removeDataSourceMethodDescriptor =
-          ApiMethodDescriptor.<RemoveDataSourceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/RemoveDataSource")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<RemoveDataSourceRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*}:remove",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<RemoveDataSourceRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<RemoveDataSourceRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (RemoveDataSourceRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<SetInternalStatusRequest, Operation>
-      setInternalStatusMethodDescriptor =
-          ApiMethodDescriptor.<SetInternalStatusRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/SetInternalStatus")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<SetInternalStatusRequest>newBuilder()
-                      .setPath(
-                          "/v1/{dataSource=projects/*/locations/*/backupVaults/*/dataSources/*}:setInternalStatus",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<SetInternalStatusRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "dataSource", request.getDataSource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<SetInternalStatusRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearDataSource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (SetInternalStatusRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<InitiateBackupRequest, InitiateBackupResponse>
-      initiateBackupMethodDescriptor =
-          ApiMethodDescriptor.<InitiateBackupRequest, InitiateBackupResponse>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/InitiateBackup")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<InitiateBackupRequest>newBuilder()
-                      .setPath(
-                          "/v1/{dataSource=projects/*/locations/*/backupVaults/*/dataSources/*}:initiateBackup",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<InitiateBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "dataSource", request.getDataSource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<InitiateBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearDataSource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<InitiateBackupResponse>newBuilder()
-                      .setDefaultInstance(InitiateBackupResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<AbandonBackupRequest, Operation>
-      abandonBackupMethodDescriptor =
-          ApiMethodDescriptor.<AbandonBackupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/AbandonBackup")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<AbandonBackupRequest>newBuilder()
-                      .setPath(
-                          "/v1/{dataSource=projects/*/locations/*/backupVaults/*/dataSources/*}:abandonBackup",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<AbandonBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "dataSource", request.getDataSource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<AbandonBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearDataSource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (AbandonBackupRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<FinalizeBackupRequest, Operation>
-      finalizeBackupMethodDescriptor =
-          ApiMethodDescriptor.<FinalizeBackupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FinalizeBackup")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<FinalizeBackupRequest>newBuilder()
-                      .setPath(
-                          "/v1/{dataSource=projects/*/locations/*/backupVaults/*/dataSources/*}:finalizeBackup",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<FinalizeBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "dataSource", request.getDataSource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<FinalizeBackupRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearDataSource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (FinalizeBackupRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenMethodDescriptor =
-          ApiMethodDescriptor.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
-              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchAccessToken")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<FetchAccessTokenRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/backupVaults/*/dataSources/*}:fetchAccessToken",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<FetchAccessTokenRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<FetchAccessTokenRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<FetchAccessTokenResponse>newBuilder()
-                      .setDefaultInstance(FetchAccessTokenResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
               .build();
 
   private static final ApiMethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -1616,6 +1335,43 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/managementServers/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListManagementServersRequest, ListManagementServersResponse>
       listManagementServersCallable;
   private final UnaryCallable<ListManagementServersRequest, ListManagementServersPagedResponse>
@@ -1649,8 +1405,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable;
   private final OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
       deleteBackupVaultOperationCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
@@ -1659,22 +1413,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<UpdateDataSourceRequest, Operation> updateDataSourceCallable;
   private final OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
       updateDataSourceOperationCallable;
-  private final UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable;
-  private final OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable;
-  private final UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable;
-  private final OperationCallable<
-          SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable;
-  private final UnaryCallable<InitiateBackupRequest, InitiateBackupResponse> initiateBackupCallable;
-  private final UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable;
-  private final OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable;
-  private final UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable;
-  private final OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable;
-  private final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
@@ -1724,6 +1462,8 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1913,18 +1653,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("resource", String.valueOf(request.getResource()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
             HttpJsonCallSettings.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
@@ -1960,74 +1688,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<RemoveDataSourceRequest, Operation> removeDataSourceTransportSettings =
-        HttpJsonCallSettings.<RemoveDataSourceRequest, Operation>newBuilder()
-            .setMethodDescriptor(removeDataSourceMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<SetInternalStatusRequest, Operation> setInternalStatusTransportSettings =
-        HttpJsonCallSettings.<SetInternalStatusRequest, Operation>newBuilder()
-            .setMethodDescriptor(setInternalStatusMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<InitiateBackupRequest, InitiateBackupResponse>
-        initiateBackupTransportSettings =
-            HttpJsonCallSettings.<InitiateBackupRequest, InitiateBackupResponse>newBuilder()
-                .setMethodDescriptor(initiateBackupMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("data_source", String.valueOf(request.getDataSource()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<AbandonBackupRequest, Operation> abandonBackupTransportSettings =
-        HttpJsonCallSettings.<AbandonBackupRequest, Operation>newBuilder()
-            .setMethodDescriptor(abandonBackupMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<FinalizeBackupRequest, Operation> finalizeBackupTransportSettings =
-        HttpJsonCallSettings.<FinalizeBackupRequest, Operation>newBuilder()
-            .setMethodDescriptor(finalizeBackupMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("data_source", String.valueOf(request.getDataSource()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
-        fetchAccessTokenTransportSettings =
-            HttpJsonCallSettings.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
-                .setMethodDescriptor(fetchAccessTokenMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
             .setMethodDescriptor(listBackupsMethodDescriptor)
@@ -2234,6 +1894,18 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listManagementServersCallable =
         callableFactory.createUnaryCallable(
@@ -2324,11 +1996,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.deleteBackupVaultOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
     this.listDataSourcesCallable =
         callableFactory.createUnaryCallable(
             listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
@@ -2347,50 +2014,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.updateDataSourceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
-    this.removeDataSourceCallable =
-        callableFactory.createUnaryCallable(
-            removeDataSourceTransportSettings, settings.removeDataSourceSettings(), clientContext);
-    this.removeDataSourceOperationCallable =
-        callableFactory.createOperationCallable(
-            removeDataSourceTransportSettings,
-            settings.removeDataSourceOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.setInternalStatusCallable =
-        callableFactory.createUnaryCallable(
-            setInternalStatusTransportSettings,
-            settings.setInternalStatusSettings(),
-            clientContext);
-    this.setInternalStatusOperationCallable =
-        callableFactory.createOperationCallable(
-            setInternalStatusTransportSettings,
-            settings.setInternalStatusOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.initiateBackupCallable =
-        callableFactory.createUnaryCallable(
-            initiateBackupTransportSettings, settings.initiateBackupSettings(), clientContext);
-    this.abandonBackupCallable =
-        callableFactory.createUnaryCallable(
-            abandonBackupTransportSettings, settings.abandonBackupSettings(), clientContext);
-    this.abandonBackupOperationCallable =
-        callableFactory.createOperationCallable(
-            abandonBackupTransportSettings,
-            settings.abandonBackupOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.finalizeBackupCallable =
-        callableFactory.createUnaryCallable(
-            finalizeBackupTransportSettings, settings.finalizeBackupSettings(), clientContext);
-    this.finalizeBackupOperationCallable =
-        callableFactory.createOperationCallable(
-            finalizeBackupTransportSettings,
-            settings.finalizeBackupOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.fetchAccessTokenCallable =
-        callableFactory.createUnaryCallable(
-            fetchAccessTokenTransportSettings, settings.fetchAccessTokenSettings(), clientContext);
     this.listBackupsCallable =
         callableFactory.createUnaryCallable(
             listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
@@ -2515,6 +2138,11 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2533,16 +2161,9 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getBackupVaultMethodDescriptor);
     methodDescriptors.add(updateBackupVaultMethodDescriptor);
     methodDescriptors.add(deleteBackupVaultMethodDescriptor);
-    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(listDataSourcesMethodDescriptor);
     methodDescriptors.add(getDataSourceMethodDescriptor);
     methodDescriptors.add(updateDataSourceMethodDescriptor);
-    methodDescriptors.add(removeDataSourceMethodDescriptor);
-    methodDescriptors.add(setInternalStatusMethodDescriptor);
-    methodDescriptors.add(initiateBackupMethodDescriptor);
-    methodDescriptors.add(abandonBackupMethodDescriptor);
-    methodDescriptors.add(finalizeBackupMethodDescriptor);
-    methodDescriptors.add(fetchAccessTokenMethodDescriptor);
     methodDescriptors.add(listBackupsMethodDescriptor);
     methodDescriptors.add(getBackupMethodDescriptor);
     methodDescriptors.add(updateBackupMethodDescriptor);
@@ -2561,6 +2182,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2670,12 +2292,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   }
 
   @Override
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
-  }
-
-  @Override
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
     return listDataSourcesCallable;
   }
@@ -2700,61 +2316,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public OperationCallable<UpdateDataSourceRequest, DataSource, OperationMetadata>
       updateDataSourceOperationCallable() {
     return updateDataSourceOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<RemoveDataSourceRequest, Operation> removeDataSourceCallable() {
-    return removeDataSourceCallable;
-  }
-
-  @Override
-  public OperationCallable<RemoveDataSourceRequest, Empty, OperationMetadata>
-      removeDataSourceOperationCallable() {
-    return removeDataSourceOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<SetInternalStatusRequest, Operation> setInternalStatusCallable() {
-    return setInternalStatusCallable;
-  }
-
-  @Override
-  public OperationCallable<SetInternalStatusRequest, SetInternalStatusResponse, OperationMetadata>
-      setInternalStatusOperationCallable() {
-    return setInternalStatusOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<InitiateBackupRequest, InitiateBackupResponse> initiateBackupCallable() {
-    return initiateBackupCallable;
-  }
-
-  @Override
-  public UnaryCallable<AbandonBackupRequest, Operation> abandonBackupCallable() {
-    return abandonBackupCallable;
-  }
-
-  @Override
-  public OperationCallable<AbandonBackupRequest, Empty, OperationMetadata>
-      abandonBackupOperationCallable() {
-    return abandonBackupOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<FinalizeBackupRequest, Operation> finalizeBackupCallable() {
-    return finalizeBackupCallable;
-  }
-
-  @Override
-  public OperationCallable<FinalizeBackupRequest, Backup, OperationMetadata>
-      finalizeBackupOperationCallable() {
-    return finalizeBackupOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
-      fetchAccessTokenCallable() {
-    return fetchAccessTokenCallable;
   }
 
   @Override
@@ -2921,6 +2482,12 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

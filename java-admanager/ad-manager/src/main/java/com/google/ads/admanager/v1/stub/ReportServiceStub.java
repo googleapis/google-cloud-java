@@ -16,9 +16,20 @@
 
 package com.google.ads.admanager.v1.stub;
 
-import com.google.ads.admanager.v1.ExportSavedReportMetadata;
-import com.google.ads.admanager.v1.ExportSavedReportRequest;
-import com.google.ads.admanager.v1.ExportSavedReportResponse;
+import static com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsPagedResponse;
+import static com.google.ads.admanager.v1.ReportServiceClient.ListReportsPagedResponse;
+
+import com.google.ads.admanager.v1.CreateReportRequest;
+import com.google.ads.admanager.v1.FetchReportResultRowsRequest;
+import com.google.ads.admanager.v1.FetchReportResultRowsResponse;
+import com.google.ads.admanager.v1.GetReportRequest;
+import com.google.ads.admanager.v1.ListReportsRequest;
+import com.google.ads.admanager.v1.ListReportsResponse;
+import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.RunReportMetadata;
+import com.google.ads.admanager.v1.RunReportRequest;
+import com.google.ads.admanager.v1.RunReportResponse;
+import com.google.ads.admanager.v1.UpdateReportRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.OperationCallable;
@@ -39,15 +50,44 @@ public abstract class ReportServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
   }
 
-  public OperationCallable<
-          ExportSavedReportRequest, ExportSavedReportResponse, ExportSavedReportMetadata>
-      exportSavedReportOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: exportSavedReportOperationCallable()");
+  public UnaryCallable<GetReportRequest, Report> getReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: getReportCallable()");
   }
 
-  public UnaryCallable<ExportSavedReportRequest, Operation> exportSavedReportCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportSavedReportCallable()");
+  public UnaryCallable<ListReportsRequest, ListReportsPagedResponse> listReportsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReportsPagedCallable()");
+  }
+
+  public UnaryCallable<ListReportsRequest, ListReportsResponse> listReportsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReportsCallable()");
+  }
+
+  public UnaryCallable<CreateReportRequest, Report> createReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: createReportCallable()");
+  }
+
+  public UnaryCallable<UpdateReportRequest, Report> updateReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateReportCallable()");
+  }
+
+  public OperationCallable<RunReportRequest, RunReportResponse, RunReportMetadata>
+      runReportOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: runReportOperationCallable()");
+  }
+
+  public UnaryCallable<RunReportRequest, Operation> runReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: runReportCallable()");
+  }
+
+  public UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsPagedResponse>
+      fetchReportResultRowsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchReportResultRowsPagedCallable()");
+  }
+
+  public UnaryCallable<FetchReportResultRowsRequest, FetchReportResultRowsResponse>
+      fetchReportResultRowsCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchReportResultRowsCallable()");
   }
 
   @Override

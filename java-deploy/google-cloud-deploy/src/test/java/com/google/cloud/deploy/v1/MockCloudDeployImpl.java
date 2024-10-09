@@ -480,6 +480,112 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
   }
 
   @Override
+  public void createDeployPolicy(
+      CreateDeployPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDeployPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDeployPolicy(
+      UpdateDeployPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDeployPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDeployPolicy(
+      DeleteDeployPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDeployPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDeployPolicies(
+      ListDeployPoliciesRequest request,
+      StreamObserver<ListDeployPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDeployPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDeployPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeployPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDeployPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDeployPolicy(
+      GetDeployPolicyRequest request, StreamObserver<DeployPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DeployPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((DeployPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeployPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DeployPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void approveRollout(
       ApproveRolloutRequest request, StreamObserver<ApproveRolloutResponse> responseObserver) {
     Object response = responses.poll();

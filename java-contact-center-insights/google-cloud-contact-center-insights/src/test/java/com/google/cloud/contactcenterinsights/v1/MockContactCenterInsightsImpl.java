@@ -502,6 +502,48 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void exportIssueModel(
+      ExportIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importIssueModel(
+      ImportIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIssue(GetIssueRequest request, StreamObserver<Issue> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Issue) {
@@ -768,6 +810,48 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
                   "Unrecognized response type %s for method UpdateSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Settings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEncryptionSpec(
+      GetEncryptionSpecRequest request, StreamObserver<EncryptionSpec> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EncryptionSpec) {
+      requests.add(request);
+      responseObserver.onNext(((EncryptionSpec) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEncryptionSpec, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EncryptionSpec.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void initializeEncryptionSpec(
+      InitializeEncryptionSpecRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InitializeEncryptionSpec, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

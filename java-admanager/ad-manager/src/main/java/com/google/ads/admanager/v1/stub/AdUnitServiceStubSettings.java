@@ -16,10 +16,14 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse;
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.AdUnit;
+import com.google.ads.admanager.v1.AdUnitSize;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
+import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
 import com.google.api.core.ApiFunction;
@@ -111,6 +115,9 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
   private final UnaryCallSettings<GetAdUnitRequest, AdUnit> getAdUnitSettings;
   private final PagedCallSettings<ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
       listAdUnitsSettings;
+  private final PagedCallSettings<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesSettings;
 
   private static final PagedListDescriptor<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit>
       LIST_AD_UNITS_PAGE_STR_DESC =
@@ -146,6 +153,43 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize>
+      LIST_AD_UNIT_SIZES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdUnitSizesRequest injectToken(
+                ListAdUnitSizesRequest payload, String token) {
+              return ListAdUnitSizesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdUnitSizesRequest injectPageSize(
+                ListAdUnitSizesRequest payload, int pageSize) {
+              return ListAdUnitSizesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdUnitSizesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdUnitSizesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdUnitSize> extractResources(ListAdUnitSizesResponse payload) {
+              return payload.getAdUnitSizesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
       LIST_AD_UNITS_PAGE_STR_FACT =
@@ -163,6 +207,23 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+      LIST_AD_UNIT_SIZES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdUnitSizesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse> callable,
+                ListAdUnitSizesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdUnitSizesResponse> futureResponse) {
+              PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> pageContext =
+                  PageContext.create(callable, LIST_AD_UNIT_SIZES_PAGE_STR_DESC, request, context);
+              return ListAdUnitSizesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getAdUnit. */
   public UnaryCallSettings<GetAdUnitRequest, AdUnit> getAdUnitSettings() {
     return getAdUnitSettings;
@@ -172,6 +233,13 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
   public PagedCallSettings<ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
       listAdUnitsSettings() {
     return listAdUnitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdUnitSizes. */
+  public PagedCallSettings<
+          ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+      listAdUnitSizesSettings() {
+    return listAdUnitSizesSettings;
   }
 
   public AdUnitServiceStub createStub() throws IOException {
@@ -258,6 +326,7 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
 
     getAdUnitSettings = settingsBuilder.getAdUnitSettings().build();
     listAdUnitsSettings = settingsBuilder.listAdUnitsSettings().build();
+    listAdUnitSizesSettings = settingsBuilder.listAdUnitSizesSettings().build();
   }
 
   /** Builder for AdUnitServiceStubSettings. */
@@ -267,6 +336,9 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
     private final PagedCallSettings.Builder<
             ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
         listAdUnitsSettings;
+    private final PagedCallSettings.Builder<
+            ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+        listAdUnitSizesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -296,9 +368,11 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
 
       getAdUnitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAdUnitsSettings = PagedCallSettings.newBuilder(LIST_AD_UNITS_PAGE_STR_FACT);
+      listAdUnitSizesSettings = PagedCallSettings.newBuilder(LIST_AD_UNIT_SIZES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getAdUnitSettings, listAdUnitsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getAdUnitSettings, listAdUnitsSettings, listAdUnitSizesSettings);
       initDefaults(this);
     }
 
@@ -307,9 +381,11 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
 
       getAdUnitSettings = settings.getAdUnitSettings.toBuilder();
       listAdUnitsSettings = settings.listAdUnitsSettings.toBuilder();
+      listAdUnitSizesSettings = settings.listAdUnitSizesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getAdUnitSettings, listAdUnitsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getAdUnitSettings, listAdUnitsSettings, listAdUnitSizesSettings);
     }
 
     private static Builder createDefault() {
@@ -332,6 +408,11 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
 
       builder
           .listAdUnitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdUnitSizesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -363,6 +444,13 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
             ListAdUnitsRequest, ListAdUnitsResponse, ListAdUnitsPagedResponse>
         listAdUnitsSettings() {
       return listAdUnitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdUnitSizes. */
+    public PagedCallSettings.Builder<
+            ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
+        listAdUnitSizesSettings() {
+      return listAdUnitSizesSettings;
     }
 
     @Override

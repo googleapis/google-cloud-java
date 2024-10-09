@@ -10,9 +10,6 @@
         "grpc": {
           "libraryClient": "BackupDRClient",
           "rpcs": {
-            "AbandonBackup": {
-              "methods": ["abandonBackupAsync", "abandonBackupAsync", "abandonBackupAsync", "abandonBackupOperationCallable", "abandonBackupCallable"]
-            },
             "CreateBackupPlan": {
               "methods": ["createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanOperationCallable", "createBackupPlanCallable"]
             },
@@ -40,14 +37,8 @@
             "DeleteManagementServer": {
               "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
             },
-            "FetchAccessToken": {
-              "methods": ["fetchAccessToken", "fetchAccessToken", "fetchAccessToken", "fetchAccessTokenCallable"]
-            },
             "FetchUsableBackupVaults": {
               "methods": ["fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaultsPagedCallable", "fetchUsableBackupVaultsCallable"]
-            },
-            "FinalizeBackup": {
-              "methods": ["finalizeBackupAsync", "finalizeBackupAsync", "finalizeBackupAsync", "finalizeBackupOperationCallable", "finalizeBackupCallable"]
             },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
@@ -73,9 +64,6 @@
             "GetManagementServer": {
               "methods": ["getManagementServer", "getManagementServer", "getManagementServer", "getManagementServerCallable"]
             },
-            "InitiateBackup": {
-              "methods": ["initiateBackup", "initiateBackup", "initiateBackup", "initiateBackupCallable"]
-            },
             "ListBackupPlanAssociations": {
               "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
             },
@@ -97,20 +85,14 @@
             "ListManagementServers": {
               "methods": ["listManagementServers", "listManagementServers", "listManagementServers", "listManagementServersPagedCallable", "listManagementServersCallable"]
             },
-            "RemoveDataSource": {
-              "methods": ["removeDataSourceAsync", "removeDataSourceAsync", "removeDataSourceAsync", "removeDataSourceOperationCallable", "removeDataSourceCallable"]
-            },
             "RestoreBackup": {
               "methods": ["restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupOperationCallable", "restoreBackupCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
-            "SetInternalStatus": {
-              "methods": ["setInternalStatusAsync", "setInternalStatusAsync", "setInternalStatusAsync", "setInternalStatusOperationCallable", "setInternalStatusCallable"]
-            },
             "TestIamPermissions": {
-              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "TriggerBackup": {
               "methods": ["triggerBackupAsync", "triggerBackupAsync", "triggerBackupAsync", "triggerBackupOperationCallable", "triggerBackupCallable"]

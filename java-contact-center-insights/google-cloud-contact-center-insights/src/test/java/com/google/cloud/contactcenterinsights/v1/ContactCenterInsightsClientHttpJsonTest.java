@@ -100,6 +100,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -164,6 +165,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -228,6 +230,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -307,6 +310,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -329,6 +333,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -377,6 +382,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .setAgentId("agentId-1060987136")
               .putAllLabels(new HashMap<String, String>())
               .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+              .setMetadataJson("metadataJson1320266935")
               .setTranscript(Conversation.Transcript.newBuilder().build())
               .setDuration(Duration.newBuilder().build())
               .setTurnCount(428155597)
@@ -407,6 +413,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -467,6 +474,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setAgentId("agentId-1060987136")
             .putAllLabels(new HashMap<String, String>())
             .setQualityMetadata(Conversation.QualityMetadata.newBuilder().build())
+            .setMetadataJson("metadataJson1320266935")
             .setTranscript(Conversation.Transcript.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
@@ -2140,6 +2148,190 @@ public class ContactCenterInsightsClientHttpJsonTest {
   }
 
   @Test
+  public void exportIssueModelTest() throws Exception {
+    ExportIssueModelResponse expectedResponse = ExportIssueModelResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportIssueModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+
+    ExportIssueModelResponse actualResponse = client.exportIssueModelAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportIssueModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+      client.exportIssueModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportIssueModelTest2() throws Exception {
+    ExportIssueModelResponse expectedResponse = ExportIssueModelResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportIssueModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9415/locations/location-9415/issueModels/issueModel-9415";
+
+    ExportIssueModelResponse actualResponse = client.exportIssueModelAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportIssueModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9415/locations/location-9415/issueModels/issueModel-9415";
+      client.exportIssueModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importIssueModelTest() throws Exception {
+    ImportIssueModelResponse expectedResponse = ImportIssueModelResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importIssueModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ImportIssueModelResponse actualResponse = client.importIssueModelAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importIssueModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.importIssueModelAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importIssueModelTest2() throws Exception {
+    ImportIssueModelResponse expectedResponse = ImportIssueModelResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importIssueModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ImportIssueModelResponse actualResponse = client.importIssueModelAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importIssueModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.importIssueModelAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void getIssueTest() throws Exception {
     Issue expectedResponse =
         Issue.newBuilder()
@@ -2148,6 +2340,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllSampleUtterances(new ArrayList<String>())
+            .setDisplayDescription("displayDescription-872782374")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2196,6 +2389,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllSampleUtterances(new ArrayList<String>())
+            .setDisplayDescription("displayDescription-872782374")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2330,6 +2524,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllSampleUtterances(new ArrayList<String>())
+            .setDisplayDescription("displayDescription-872782374")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2340,6 +2535,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllSampleUtterances(new ArrayList<String>())
+            .setDisplayDescription("displayDescription-872782374")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2377,6 +2573,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .addAllSampleUtterances(new ArrayList<String>())
+              .setDisplayDescription("displayDescription-872782374")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIssue(issue, updateMask);
@@ -3307,6 +3504,152 @@ public class ContactCenterInsightsClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEncryptionSpecTest() throws Exception {
+    EncryptionSpec expectedResponse =
+        EncryptionSpec.newBuilder()
+            .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EncryptionSpecName name = EncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+
+    EncryptionSpec actualResponse = client.getEncryptionSpec(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEncryptionSpecExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EncryptionSpecName name = EncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+      client.getEncryptionSpec(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEncryptionSpecTest2() throws Exception {
+    EncryptionSpec expectedResponse =
+        EncryptionSpec.newBuilder()
+            .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-2979/locations/location-2979/encryptionSpec";
+
+    EncryptionSpec actualResponse = client.getEncryptionSpec(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEncryptionSpecExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-2979/locations/location-2979/encryptionSpec";
+      client.getEncryptionSpec(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void initializeEncryptionSpecTest() throws Exception {
+    InitializeEncryptionSpecResponse expectedResponse =
+        InitializeEncryptionSpecResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initializeEncryptionSpecTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EncryptionSpec encryptionSpec =
+        EncryptionSpec.newBuilder()
+            .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+
+    InitializeEncryptionSpecResponse actualResponse =
+        client.initializeEncryptionSpecAsync(encryptionSpec).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initializeEncryptionSpecExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EncryptionSpec encryptionSpec =
+          EncryptionSpec.newBuilder()
+              .setName(EncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+              .setKmsKey("kmsKey-1127483058")
+              .build();
+      client.initializeEncryptionSpecAsync(encryptionSpec).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

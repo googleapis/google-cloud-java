@@ -5,16 +5,46 @@
   "protoPackage": "google.cloud.commerce.consumer.procurement.v1",
   "libraryPackage": "com.google.cloud.commerce.consumer.procurement.v1",
   "services": {
+    "LicenseManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LicenseManagementServiceClient",
+          "rpcs": {
+            "Assign": {
+              "methods": ["assign", "assign", "assignCallable"]
+            },
+            "EnumerateLicensedUsers": {
+              "methods": ["enumerateLicensedUsers", "enumerateLicensedUsers", "enumerateLicensedUsersPagedCallable", "enumerateLicensedUsersCallable"]
+            },
+            "GetLicensePool": {
+              "methods": ["getLicensePool", "getLicensePool", "getLicensePoolCallable"]
+            },
+            "Unassign": {
+              "methods": ["unassign", "unassign", "unassignCallable"]
+            },
+            "UpdateLicensePool": {
+              "methods": ["updateLicensePool", "updateLicensePool", "updateLicensePoolCallable"]
+            }
+          }
+        }
+      }
+    },
     "ConsumerProcurementService": {
       "clients": {
         "grpc": {
           "libraryClient": "ConsumerProcurementServiceClient",
           "rpcs": {
+            "CancelOrder": {
+              "methods": ["cancelOrderAsync", "cancelOrderOperationCallable", "cancelOrderCallable"]
+            },
             "GetOrder": {
               "methods": ["getOrder", "getOrder", "getOrderCallable"]
             },
             "ListOrders": {
               "methods": ["listOrders", "listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
+            },
+            "ModifyOrder": {
+              "methods": ["modifyOrderAsync", "modifyOrderOperationCallable", "modifyOrderCallable"]
             },
             "PlaceOrder": {
               "methods": ["placeOrderAsync", "placeOrderOperationCallable", "placeOrderCallable"]

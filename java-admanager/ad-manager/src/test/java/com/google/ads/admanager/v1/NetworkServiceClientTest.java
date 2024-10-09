@@ -177,4 +177,46 @@ public class NetworkServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void listNetworksTest() throws Exception {
+    ListNetworksResponse expectedResponse =
+        ListNetworksResponse.newBuilder().addAllNetworks(new ArrayList<Network>()).build();
+    mockService.addResponse(expectedResponse);
+
+    ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+
+    ListNetworksResponse actualResponse = client.listNetworks(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNetworksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+      client.listNetworks(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

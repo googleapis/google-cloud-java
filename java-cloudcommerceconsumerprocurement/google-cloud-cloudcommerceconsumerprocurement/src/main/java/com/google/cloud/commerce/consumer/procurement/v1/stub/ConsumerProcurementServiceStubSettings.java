@@ -48,9 +48,13 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.GetOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderMetadata;
+import com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderRequest;
@@ -155,6 +159,12 @@ public class ConsumerProcurementServiceStubSettings
   private final UnaryCallSettings<GetOrderRequest, Order> getOrderSettings;
   private final PagedCallSettings<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
       listOrdersSettings;
+  private final UnaryCallSettings<ModifyOrderRequest, Operation> modifyOrderSettings;
+  private final OperationCallSettings<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationSettings;
+  private final UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings;
+  private final OperationCallSettings<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationSettings;
 
   private static final PagedListDescriptor<ListOrdersRequest, ListOrdersResponse, Order>
       LIST_ORDERS_PAGE_STR_DESC =
@@ -227,6 +237,28 @@ public class ConsumerProcurementServiceStubSettings
   public PagedCallSettings<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
       listOrdersSettings() {
     return listOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to modifyOrder. */
+  public UnaryCallSettings<ModifyOrderRequest, Operation> modifyOrderSettings() {
+    return modifyOrderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to modifyOrder. */
+  public OperationCallSettings<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationSettings() {
+    return modifyOrderOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings() {
+    return cancelOrderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public OperationCallSettings<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationSettings() {
+    return cancelOrderOperationSettings;
   }
 
   public ConsumerProcurementServiceStub createStub() throws IOException {
@@ -344,6 +376,10 @@ public class ConsumerProcurementServiceStubSettings
     placeOrderOperationSettings = settingsBuilder.placeOrderOperationSettings().build();
     getOrderSettings = settingsBuilder.getOrderSettings().build();
     listOrdersSettings = settingsBuilder.listOrdersSettings().build();
+    modifyOrderSettings = settingsBuilder.modifyOrderSettings().build();
+    modifyOrderOperationSettings = settingsBuilder.modifyOrderOperationSettings().build();
+    cancelOrderSettings = settingsBuilder.cancelOrderSettings().build();
+    cancelOrderOperationSettings = settingsBuilder.cancelOrderOperationSettings().build();
   }
 
   /** Builder for ConsumerProcurementServiceStubSettings. */
@@ -357,6 +393,12 @@ public class ConsumerProcurementServiceStubSettings
     private final PagedCallSettings.Builder<
             ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings;
+    private final UnaryCallSettings.Builder<ModifyOrderRequest, Operation> modifyOrderSettings;
+    private final OperationCallSettings.Builder<ModifyOrderRequest, Order, ModifyOrderMetadata>
+        modifyOrderOperationSettings;
+    private final UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings;
+    private final OperationCallSettings.Builder<CancelOrderRequest, Order, CancelOrderMetadata>
+        cancelOrderOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -368,6 +410,7 @@ public class ConsumerProcurementServiceStubSettings
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -395,6 +438,8 @@ public class ConsumerProcurementServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -409,10 +454,18 @@ public class ConsumerProcurementServiceStubSettings
       placeOrderOperationSettings = OperationCallSettings.newBuilder();
       getOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listOrdersSettings = PagedCallSettings.newBuilder(LIST_ORDERS_PAGE_STR_FACT);
+      modifyOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      modifyOrderOperationSettings = OperationCallSettings.newBuilder();
+      cancelOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelOrderOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              placeOrderSettings, getOrderSettings, listOrdersSettings);
+              placeOrderSettings,
+              getOrderSettings,
+              listOrdersSettings,
+              modifyOrderSettings,
+              cancelOrderSettings);
       initDefaults(this);
     }
 
@@ -423,10 +476,18 @@ public class ConsumerProcurementServiceStubSettings
       placeOrderOperationSettings = settings.placeOrderOperationSettings.toBuilder();
       getOrderSettings = settings.getOrderSettings.toBuilder();
       listOrdersSettings = settings.listOrdersSettings.toBuilder();
+      modifyOrderSettings = settings.modifyOrderSettings.toBuilder();
+      modifyOrderOperationSettings = settings.modifyOrderOperationSettings.toBuilder();
+      cancelOrderSettings = settings.cancelOrderSettings.toBuilder();
+      cancelOrderOperationSettings = settings.cancelOrderOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              placeOrderSettings, getOrderSettings, listOrdersSettings);
+              placeOrderSettings,
+              getOrderSettings,
+              listOrdersSettings,
+              modifyOrderSettings,
+              cancelOrderSettings);
     }
 
     private static Builder createDefault() {
@@ -470,6 +531,16 @@ public class ConsumerProcurementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .modifyOrderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelOrderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .placeOrderOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<PlaceOrderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -480,6 +551,52 @@ public class ConsumerProcurementServiceStubSettings
               ProtoOperationTransformers.ResponseTransformer.create(Order.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(PlaceOrderMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .modifyOrderOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ModifyOrderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Order.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ModifyOrderMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .cancelOrderOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CancelOrderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Order.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CancelOrderMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -530,6 +647,28 @@ public class ConsumerProcurementServiceStubSettings
     public PagedCallSettings.Builder<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings() {
       return listOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to modifyOrder. */
+    public UnaryCallSettings.Builder<ModifyOrderRequest, Operation> modifyOrderSettings() {
+      return modifyOrderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to modifyOrder. */
+    public OperationCallSettings.Builder<ModifyOrderRequest, Order, ModifyOrderMetadata>
+        modifyOrderOperationSettings() {
+      return modifyOrderOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings() {
+      return cancelOrderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public OperationCallSettings.Builder<CancelOrderRequest, Order, CancelOrderMetadata>
+        cancelOrderOperationSettings() {
+      return cancelOrderOperationSettings;
     }
 
     @Override

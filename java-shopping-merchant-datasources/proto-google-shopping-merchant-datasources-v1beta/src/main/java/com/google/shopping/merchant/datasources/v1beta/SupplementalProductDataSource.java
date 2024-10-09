@@ -23,7 +23,12 @@ package com.google.shopping.merchant.datasources.v1beta;
  *
  *
  * <pre>
- * The supplemental data source for local and online products.
+ * The supplemental data source for local and online products. Supplemental API
+ * data sources must not have `feedLabel` and `contentLanguage` fields set. You
+ * can only use supplemental data sources to update existing products. For
+ * information about creating a supplemental data source, see [Create a
+ * supplemental data source and link it to the primary data
+ * source](/merchant/api/guides/data-sources/overview#create-supplemental-data-source).
  * </pre>
  *
  * Protobuf type {@code google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource}
@@ -580,7 +585,12 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The supplemental data source for local and online products.
+   * The supplemental data source for local and online products. Supplemental API
+   * data sources must not have `feedLabel` and `contentLanguage` fields set. You
+   * can only use supplemental data sources to update existing products. For
+   * information about creating a supplemental data source, see [Create a
+   * supplemental data source and link it to the primary data
+   * source](/merchant/api/guides/data-sources/overview#create-supplemental-data-source).
    * </pre>
    *
    * Protobuf type {@code google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource}

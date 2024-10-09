@@ -107,6 +107,7 @@ public class RevisionsClientHttpJsonTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -116,6 +117,7 @@ public class RevisionsClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -181,6 +183,7 @@ public class RevisionsClientHttpJsonTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -190,6 +193,7 @@ public class RevisionsClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -357,6 +361,7 @@ public class RevisionsClientHttpJsonTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -366,6 +371,7 @@ public class RevisionsClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -436,6 +442,7 @@ public class RevisionsClientHttpJsonTest {
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
+            .setServiceMesh(ServiceMesh.newBuilder().build())
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
             .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
             .setReconciling(true)
@@ -445,6 +452,7 @@ public class RevisionsClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

@@ -18,17 +18,9 @@ package com.google.ads.admanager.v1;
 
 import com.google.ads.admanager.v1.stub.UserServiceStub;
 import com.google.ads.admanager.v1.stub.UserServiceStubSettings;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.paging.AbstractFixedSizeCollection;
-import com.google.api.gax.paging.AbstractPage;
-import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -63,7 +55,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetUser</td>
- *      <td><p> API to retrieve a User object.</td>
+ *      <td><p> API to retrieve a User object.
+ * <p>  To get the current user, the resource name `networks/{networkCode}/users/me` can be used.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -77,26 +70,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getUserCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> ListUsers</td>
- *      <td><p> API to retrieve a list of User objects.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> listUsers(ListUsersRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> listUsers(NetworkName parent)
- *           <li><p> listUsers(String parent)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> listUsersPagedCallable()
- *           <li><p> listUsersCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -194,6 +167,8 @@ public class UserServiceClient implements BackgroundResource {
   /**
    * API to retrieve a User object.
    *
+   * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -222,6 +197,8 @@ public class UserServiceClient implements BackgroundResource {
   /**
    * API to retrieve a User object.
    *
+   * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -248,6 +225,8 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * API to retrieve a User object.
+   *
+   * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
    *
    * <p>Sample code:
    *
@@ -277,6 +256,8 @@ public class UserServiceClient implements BackgroundResource {
   /**
    * API to retrieve a User object.
    *
+   * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -298,175 +279,6 @@ public class UserServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetUserRequest, User> getUserCallable() {
     return stub.getUserCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * API to retrieve a list of User objects.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
-   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
-   *   for (User element : userServiceClient.listUsers(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent, which owns this collection of Users. Format:
-   *     `networks/{network_code}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUsersPagedResponse listUsers(NetworkName parent) {
-    ListUsersRequest request =
-        ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
-    return listUsers(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * API to retrieve a list of User objects.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
-   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
-   *   for (User element : userServiceClient.listUsers(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent, which owns this collection of Users. Format:
-   *     `networks/{network_code}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUsersPagedResponse listUsers(String parent) {
-    ListUsersRequest request = ListUsersRequest.newBuilder().setParent(parent).build();
-    return listUsers(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * API to retrieve a list of User objects.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
-   *   ListUsersRequest request =
-   *       ListUsersRequest.newBuilder()
-   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .setSkip(3532159)
-   *           .build();
-   *   for (User element : userServiceClient.listUsers(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUsersPagedResponse listUsers(ListUsersRequest request) {
-    return listUsersPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * API to retrieve a list of User objects.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
-   *   ListUsersRequest request =
-   *       ListUsersRequest.newBuilder()
-   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .setSkip(3532159)
-   *           .build();
-   *   ApiFuture<User> future = userServiceClient.listUsersPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (User element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
-    return stub.listUsersPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * API to retrieve a list of User objects.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
-   *   ListUsersRequest request =
-   *       ListUsersRequest.newBuilder()
-   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .setSkip(3532159)
-   *           .build();
-   *   while (true) {
-   *     ListUsersResponse response = userServiceClient.listUsersCallable().call(request);
-   *     for (User element : response.getUsersList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
-    return stub.listUsersCallable();
   }
 
   @Override
@@ -497,70 +309,5 @@ public class UserServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
-  }
-
-  public static class ListUsersPagedResponse
-      extends AbstractPagedListResponse<
-          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
-
-    public static ApiFuture<ListUsersPagedResponse> createAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ApiFuture<ListUsersResponse> futureResponse) {
-      ApiFuture<ListUsersPage> futurePage =
-          ListUsersPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage, input -> new ListUsersPagedResponse(input), MoreExecutors.directExecutor());
-    }
-
-    private ListUsersPagedResponse(ListUsersPage page) {
-      super(page, ListUsersFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListUsersPage
-      extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
-
-    private ListUsersPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
-      super(context, response);
-    }
-
-    private static ListUsersPage createEmptyPage() {
-      return new ListUsersPage(null, null);
-    }
-
-    @Override
-    protected ListUsersPage createPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
-      return new ListUsersPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListUsersPage> createPageAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ApiFuture<ListUsersResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListUsersFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
-
-    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListUsersFixedSizeCollection createEmptyCollection() {
-      return new ListUsersFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListUsersFixedSizeCollection createCollection(
-        List<ListUsersPage> pages, int collectionSize) {
-      return new ListUsersFixedSizeCollection(pages, collectionSize);
-    }
   }
 }

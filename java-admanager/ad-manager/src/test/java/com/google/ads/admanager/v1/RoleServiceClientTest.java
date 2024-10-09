@@ -78,7 +78,13 @@ public class RoleServiceClientTest {
   @Test
   public void getRoleTest() throws Exception {
     Role expectedResponse =
-        Role.newBuilder().setName(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString()).build();
+        Role.newBuilder()
+            .setName(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setRoleId(1376884100)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setBuiltIn(true)
+            .build();
     mockService.addResponse(expectedResponse);
 
     RoleName name = RoleName.of("[NETWORK_CODE]", "[ROLE]");
@@ -120,7 +126,13 @@ public class RoleServiceClientTest {
   @Test
   public void getRoleTest2() throws Exception {
     Role expectedResponse =
-        Role.newBuilder().setName(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString()).build();
+        Role.newBuilder()
+            .setName(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setRoleId(1376884100)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setBuiltIn(true)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String name = "networks/network-644/roles/role-644";

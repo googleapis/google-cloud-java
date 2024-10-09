@@ -18,8 +18,6 @@ package com.google.cloud.backupdr.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.backupdr.v1.BackupDRGrpc.BackupDRImplBase;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
@@ -274,28 +272,6 @@ public class MockBackupDRImpl extends BackupDRImplBase {
   }
 
   @Override
-  public void testIamPermissions(
-      TestIamPermissionsRequest request,
-      StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof TestIamPermissionsResponse) {
-      requests.add(request);
-      responseObserver.onNext(((TestIamPermissionsResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  TestIamPermissionsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void listDataSources(
       ListDataSourcesRequest request, StreamObserver<ListDataSourcesResponse> responseObserver) {
     Object response = responses.poll();
@@ -354,132 +330,6 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                   "Unrecognized response type %s for method UpdateDataSource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void removeDataSource(
-      RemoveDataSourceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method RemoveDataSource, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void setInternalStatus(
-      SetInternalStatusRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method SetInternalStatus, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void initiateBackup(
-      InitiateBackupRequest request, StreamObserver<InitiateBackupResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof InitiateBackupResponse) {
-      requests.add(request);
-      responseObserver.onNext(((InitiateBackupResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method InitiateBackup, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  InitiateBackupResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void abandonBackup(
-      AbandonBackupRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method AbandonBackup, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void finalizeBackup(
-      FinalizeBackupRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method FinalizeBackup, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void fetchAccessToken(
-      FetchAccessTokenRequest request, StreamObserver<FetchAccessTokenResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof FetchAccessTokenResponse) {
-      requests.add(request);
-      responseObserver.onNext(((FetchAccessTokenResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method FetchAccessToken, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  FetchAccessTokenResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

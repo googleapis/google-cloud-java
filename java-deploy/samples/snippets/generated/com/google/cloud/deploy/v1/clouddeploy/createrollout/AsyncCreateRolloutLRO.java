@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.ReleaseName;
 import com.google.cloud.deploy.v1.Rollout;
+import java.util.ArrayList;
 
 public class AsyncCreateRolloutLRO {
 
@@ -46,6 +47,7 @@ public class AsyncCreateRolloutLRO {
               .setRollout(Rollout.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .setStartingPhaseId("startingPhaseId-326529130")
               .build();
       OperationFuture<Rollout, OperationMetadata> future =
