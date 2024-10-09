@@ -38,7 +38,9 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private MutationResult() {}
+  private MutationResult() {
+    transformResults_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -253,6 +255,87 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     return conflictDetected_;
   }
 
+  public static final int TRANSFORM_RESULTS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.datastore.v1.Value> transformResults_;
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.datastore.v1.Value> getTransformResultsList() {
+    return transformResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.datastore.v1.ValueOrBuilder>
+      getTransformResultsOrBuilderList() {
+    return transformResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  @java.lang.Override
+  public int getTransformResultsCount() {
+    return transformResults_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.Value getTransformResults(int index) {
+    return transformResults_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.ValueOrBuilder getTransformResultsOrBuilder(int index) {
+    return transformResults_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -282,6 +365,9 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getCreateTime());
     }
+    for (int i = 0; i < transformResults_.size(); i++) {
+      output.writeMessage(8, transformResults_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -305,6 +391,9 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
+    }
+    for (int i = 0; i < transformResults_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, transformResults_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -335,6 +424,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (getConflictDetected() != other.getConflictDetected()) return false;
+    if (!getTransformResultsList().equals(other.getTransformResultsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -362,6 +452,10 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CONFLICT_DETECTED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getConflictDetected());
+    if (getTransformResultsCount() > 0) {
+      hash = (37 * hash) + TRANSFORM_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTransformResultsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -505,6 +599,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
         getKeyFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getTransformResultsFieldBuilder();
       }
     }
 
@@ -529,6 +624,13 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       conflictDetected_ = false;
+      if (transformResultsBuilder_ == null) {
+        transformResults_ = java.util.Collections.emptyList();
+      } else {
+        transformResults_ = null;
+        transformResultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -556,11 +658,24 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.MutationResult buildPartial() {
       com.google.datastore.v1.MutationResult result =
           new com.google.datastore.v1.MutationResult(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.MutationResult result) {
+      if (transformResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          transformResults_ = java.util.Collections.unmodifiableList(transformResults_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.transformResults_ = transformResults_;
+      } else {
+        result.transformResults_ = transformResultsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.datastore.v1.MutationResult result) {
@@ -647,6 +762,33 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
       if (other.getConflictDetected() != false) {
         setConflictDetected(other.getConflictDetected());
       }
+      if (transformResultsBuilder_ == null) {
+        if (!other.transformResults_.isEmpty()) {
+          if (transformResults_.isEmpty()) {
+            transformResults_ = other.transformResults_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureTransformResultsIsMutable();
+            transformResults_.addAll(other.transformResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.transformResults_.isEmpty()) {
+          if (transformResultsBuilder_.isEmpty()) {
+            transformResultsBuilder_.dispose();
+            transformResultsBuilder_ = null;
+            transformResults_ = other.transformResults_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            transformResultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTransformResultsFieldBuilder()
+                    : null;
+          } else {
+            transformResultsBuilder_.addAllMessages(other.transformResults_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -703,6 +845,18 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.datastore.v1.Value m =
+                    input.readMessage(com.google.datastore.v1.Value.parser(), extensionRegistry);
+                if (transformResultsBuilder_ == null) {
+                  ensureTransformResultsIsMutable();
+                  transformResults_.add(m);
+                } else {
+                  transformResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1427,6 +1581,394 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
       conflictDetected_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.datastore.v1.Value> transformResults_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTransformResultsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        transformResults_ =
+            new java.util.ArrayList<com.google.datastore.v1.Value>(transformResults_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.datastore.v1.Value,
+            com.google.datastore.v1.Value.Builder,
+            com.google.datastore.v1.ValueOrBuilder>
+        transformResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public java.util.List<com.google.datastore.v1.Value> getTransformResultsList() {
+      if (transformResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(transformResults_);
+      } else {
+        return transformResultsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public int getTransformResultsCount() {
+      if (transformResultsBuilder_ == null) {
+        return transformResults_.size();
+      } else {
+        return transformResultsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public com.google.datastore.v1.Value getTransformResults(int index) {
+      if (transformResultsBuilder_ == null) {
+        return transformResults_.get(index);
+      } else {
+        return transformResultsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder setTransformResults(int index, com.google.datastore.v1.Value value) {
+      if (transformResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformResultsIsMutable();
+        transformResults_.set(index, value);
+        onChanged();
+      } else {
+        transformResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder setTransformResults(
+        int index, com.google.datastore.v1.Value.Builder builderForValue) {
+      if (transformResultsBuilder_ == null) {
+        ensureTransformResultsIsMutable();
+        transformResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        transformResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder addTransformResults(com.google.datastore.v1.Value value) {
+      if (transformResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformResultsIsMutable();
+        transformResults_.add(value);
+        onChanged();
+      } else {
+        transformResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder addTransformResults(int index, com.google.datastore.v1.Value value) {
+      if (transformResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformResultsIsMutable();
+        transformResults_.add(index, value);
+        onChanged();
+      } else {
+        transformResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder addTransformResults(com.google.datastore.v1.Value.Builder builderForValue) {
+      if (transformResultsBuilder_ == null) {
+        ensureTransformResultsIsMutable();
+        transformResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        transformResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder addTransformResults(
+        int index, com.google.datastore.v1.Value.Builder builderForValue) {
+      if (transformResultsBuilder_ == null) {
+        ensureTransformResultsIsMutable();
+        transformResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        transformResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder addAllTransformResults(
+        java.lang.Iterable<? extends com.google.datastore.v1.Value> values) {
+      if (transformResultsBuilder_ == null) {
+        ensureTransformResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, transformResults_);
+        onChanged();
+      } else {
+        transformResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder clearTransformResults() {
+      if (transformResultsBuilder_ == null) {
+        transformResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        transformResultsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public Builder removeTransformResults(int index) {
+      if (transformResultsBuilder_ == null) {
+        ensureTransformResultsIsMutable();
+        transformResults_.remove(index);
+        onChanged();
+      } else {
+        transformResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public com.google.datastore.v1.Value.Builder getTransformResultsBuilder(int index) {
+      return getTransformResultsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public com.google.datastore.v1.ValueOrBuilder getTransformResultsOrBuilder(int index) {
+      if (transformResultsBuilder_ == null) {
+        return transformResults_.get(index);
+      } else {
+        return transformResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public java.util.List<? extends com.google.datastore.v1.ValueOrBuilder>
+        getTransformResultsOrBuilderList() {
+      if (transformResultsBuilder_ != null) {
+        return transformResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(transformResults_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public com.google.datastore.v1.Value.Builder addTransformResultsBuilder() {
+      return getTransformResultsFieldBuilder()
+          .addBuilder(com.google.datastore.v1.Value.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public com.google.datastore.v1.Value.Builder addTransformResultsBuilder(int index) {
+      return getTransformResultsFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Value.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The results of applying each
+     * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+     * order of the request.
+     * </pre>
+     *
+     * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+     */
+    public java.util.List<com.google.datastore.v1.Value.Builder> getTransformResultsBuilderList() {
+      return getTransformResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.datastore.v1.Value,
+            com.google.datastore.v1.Value.Builder,
+            com.google.datastore.v1.ValueOrBuilder>
+        getTransformResultsFieldBuilder() {
+      if (transformResultsBuilder_ == null) {
+        transformResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Value,
+                com.google.datastore.v1.Value.Builder,
+                com.google.datastore.v1.ValueOrBuilder>(
+                transformResults_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        transformResults_ = null;
+      }
+      return transformResultsBuilder_;
     }
 
     @java.lang.Override

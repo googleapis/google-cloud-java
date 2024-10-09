@@ -250,6 +250,39 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
+   * The strategy to use when a conflict is detected. Defaults to
+   * `SERVER_VALUE`.
+   * If this is set, then `conflict_detection_strategy` must also be set.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for conflictResolutionStrategy.
+   */
+  int getConflictResolutionStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * The strategy to use when a conflict is detected. Defaults to
+   * `SERVER_VALUE`.
+   * If this is set, then `conflict_detection_strategy` must also be set.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+   * </code>
+   *
+   * @return The conflictResolutionStrategy.
+   */
+  com.google.datastore.v1.Mutation.ConflictResolutionStrategy getConflictResolutionStrategy();
+
+  /**
+   *
+   *
+   * <pre>
    * The properties to write in this mutation.
    * None of the properties in the mask may have a reserved name, except for
    * `__key__`.
@@ -301,6 +334,88 @@ public interface MutationOrBuilder
    * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
    */
   com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.datastore.v1.PropertyTransform> getPropertyTransformsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.datastore.v1.PropertyTransform getPropertyTransforms(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPropertyTransformsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.datastore.v1.PropertyTransformOrBuilder>
+      getPropertyTransformsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.datastore.v1.PropertyTransformOrBuilder getPropertyTransformsOrBuilder(int index);
 
   com.google.datastore.v1.Mutation.OperationCase getOperationCase();
 

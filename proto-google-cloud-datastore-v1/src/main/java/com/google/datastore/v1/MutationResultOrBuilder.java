@@ -171,4 +171,66 @@ public interface MutationResultOrBuilder
    * @return The conflictDetected.
    */
   boolean getConflictDetected();
+
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  java.util.List<com.google.datastore.v1.Value> getTransformResultsList();
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  com.google.datastore.v1.Value getTransformResults(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  int getTransformResultsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  java.util.List<? extends com.google.datastore.v1.ValueOrBuilder>
+      getTransformResultsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The results of applying each
+   * [PropertyTransform][google.datastore.v1.PropertyTransform], in the same
+   * order of the request.
+   * </pre>
+   *
+   * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
+   */
+  com.google.datastore.v1.ValueOrBuilder getTransformResultsOrBuilder(int index);
 }

@@ -38,7 +38,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Mutation() {}
+  private Mutation() {
+    conflictResolutionStrategy_ = 0;
+    propertyTransforms_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -58,6 +61,166 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_datastore_v1_Mutation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.datastore.v1.Mutation.class, com.google.datastore.v1.Mutation.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible ways to resolve a conflict detected in a mutation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.datastore.v1.Mutation.ConflictResolutionStrategy}
+   */
+  public enum ConflictResolutionStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. Defaults to `SERVER_VALUE`.
+     * </pre>
+     *
+     * <code>STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The server entity is kept.
+     * </pre>
+     *
+     * <code>SERVER_VALUE = 1;</code>
+     */
+    SERVER_VALUE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The whole commit request fails.
+     * </pre>
+     *
+     * <code>FAIL = 3;</code>
+     */
+    FAIL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. Defaults to `SERVER_VALUE`.
+     * </pre>
+     *
+     * <code>STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The server entity is kept.
+     * </pre>
+     *
+     * <code>SERVER_VALUE = 1;</code>
+     */
+    public static final int SERVER_VALUE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The whole commit request fails.
+     * </pre>
+     *
+     * <code>FAIL = 3;</code>
+     */
+    public static final int FAIL_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConflictResolutionStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConflictResolutionStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STRATEGY_UNSPECIFIED;
+        case 1:
+          return SERVER_VALUE;
+        case 3:
+          return FAIL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConflictResolutionStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConflictResolutionStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConflictResolutionStrategy>() {
+              public ConflictResolutionStrategy findValueByNumber(int number) {
+                return ConflictResolutionStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.datastore.v1.Mutation.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ConflictResolutionStrategy[] VALUES = values();
+
+    public static ConflictResolutionStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConflictResolutionStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.datastore.v1.Mutation.ConflictResolutionStrategy)
   }
 
   private int bitField0_;
@@ -477,6 +640,53 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
 
+  public static final int CONFLICT_RESOLUTION_STRATEGY_FIELD_NUMBER = 10;
+  private int conflictResolutionStrategy_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The strategy to use when a conflict is detected. Defaults to
+   * `SERVER_VALUE`.
+   * If this is set, then `conflict_detection_strategy` must also be set.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for conflictResolutionStrategy.
+   */
+  @java.lang.Override
+  public int getConflictResolutionStrategyValue() {
+    return conflictResolutionStrategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The strategy to use when a conflict is detected. Defaults to
+   * `SERVER_VALUE`.
+   * If this is set, then `conflict_detection_strategy` must also be set.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+   * </code>
+   *
+   * @return The conflictResolutionStrategy.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.Mutation.ConflictResolutionStrategy
+      getConflictResolutionStrategy() {
+    com.google.datastore.v1.Mutation.ConflictResolutionStrategy result =
+        com.google.datastore.v1.Mutation.ConflictResolutionStrategy.forNumber(
+            conflictResolutionStrategy_);
+    return result == null
+        ? com.google.datastore.v1.Mutation.ConflictResolutionStrategy.UNRECOGNIZED
+        : result;
+  }
+
   public static final int PROPERTY_MASK_FIELD_NUMBER = 9;
   private com.google.datastore.v1.PropertyMask propertyMask_;
   /**
@@ -548,6 +758,108 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         : propertyMask_;
   }
 
+  public static final int PROPERTY_TRANSFORMS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.datastore.v1.PropertyTransform> propertyTransforms_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.datastore.v1.PropertyTransform> getPropertyTransformsList() {
+    return propertyTransforms_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.datastore.v1.PropertyTransformOrBuilder>
+      getPropertyTransformsOrBuilderList() {
+    return propertyTransforms_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPropertyTransformsCount() {
+    return propertyTransforms_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyTransform getPropertyTransforms(int index) {
+    return propertyTransforms_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The transforms to perform on the entity.
+   *
+   * This field can be set only when the operation is `insert`, `update`,
+   * or `upsert`. If present, the transforms are be applied to the entity
+   * regardless of the property mask, in order, after the operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyTransformOrBuilder getPropertyTransformsOrBuilder(
+      int index) {
+    return propertyTransforms_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -580,8 +892,16 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getPropertyMask());
     }
+    if (conflictResolutionStrategy_
+        != com.google.datastore.v1.Mutation.ConflictResolutionStrategy.STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, conflictResolutionStrategy_);
+    }
     if (conflictDetectionStrategyCase_ == 11) {
       output.writeMessage(11, (com.google.protobuf.Timestamp) conflictDetectionStrategy_);
+    }
+    for (int i = 0; i < propertyTransforms_.size(); i++) {
+      output.writeMessage(12, propertyTransforms_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -620,10 +940,20 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPropertyMask());
     }
+    if (conflictResolutionStrategy_
+        != com.google.datastore.v1.Mutation.ConflictResolutionStrategy.STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(10, conflictResolutionStrategy_);
+    }
     if (conflictDetectionStrategyCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.protobuf.Timestamp) conflictDetectionStrategy_);
+    }
+    for (int i = 0; i < propertyTransforms_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, propertyTransforms_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -640,10 +970,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.datastore.v1.Mutation other = (com.google.datastore.v1.Mutation) obj;
 
+    if (conflictResolutionStrategy_ != other.conflictResolutionStrategy_) return false;
     if (hasPropertyMask() != other.hasPropertyMask()) return false;
     if (hasPropertyMask()) {
       if (!getPropertyMask().equals(other.getPropertyMask())) return false;
     }
+    if (!getPropertyTransformsList().equals(other.getPropertyTransformsList())) return false;
     if (!getOperationCase().equals(other.getOperationCase())) return false;
     switch (operationCase_) {
       case 4:
@@ -684,9 +1016,15 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CONFLICT_RESOLUTION_STRATEGY_FIELD_NUMBER;
+    hash = (53 * hash) + conflictResolutionStrategy_;
     if (hasPropertyMask()) {
       hash = (37 * hash) + PROPERTY_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getPropertyMask().hashCode();
+    }
+    if (getPropertyTransformsCount() > 0) {
+      hash = (37 * hash) + PROPERTY_TRANSFORMS_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyTransformsList().hashCode();
     }
     switch (operationCase_) {
       case 4:
@@ -860,6 +1198,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPropertyMaskFieldBuilder();
+        getPropertyTransformsFieldBuilder();
       }
     }
 
@@ -882,11 +1221,19 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.clear();
       }
+      conflictResolutionStrategy_ = 0;
       propertyMask_ = null;
       if (propertyMaskBuilder_ != null) {
         propertyMaskBuilder_.dispose();
         propertyMaskBuilder_ = null;
       }
+      if (propertyTransformsBuilder_ == null) {
+        propertyTransforms_ = java.util.Collections.emptyList();
+      } else {
+        propertyTransforms_ = null;
+        propertyTransformsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       operationCase_ = 0;
       operation_ = null;
       conflictDetectionStrategyCase_ = 0;
@@ -917,6 +1264,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.Mutation buildPartial() {
       com.google.datastore.v1.Mutation result = new com.google.datastore.v1.Mutation(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -925,10 +1273,25 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.datastore.v1.Mutation result) {
+      if (propertyTransformsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          propertyTransforms_ = java.util.Collections.unmodifiableList(propertyTransforms_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.propertyTransforms_ = propertyTransforms_;
+      } else {
+        result.propertyTransforms_ = propertyTransformsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(com.google.datastore.v1.Mutation result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.conflictResolutionStrategy_ = conflictResolutionStrategy_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.propertyMask_ =
             propertyMaskBuilder_ == null ? propertyMask_ : propertyMaskBuilder_.build();
         to_bitField0_ |= 0x00000001;
@@ -1003,8 +1366,38 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.datastore.v1.Mutation other) {
       if (other == com.google.datastore.v1.Mutation.getDefaultInstance()) return this;
+      if (other.conflictResolutionStrategy_ != 0) {
+        setConflictResolutionStrategyValue(other.getConflictResolutionStrategyValue());
+      }
       if (other.hasPropertyMask()) {
         mergePropertyMask(other.getPropertyMask());
+      }
+      if (propertyTransformsBuilder_ == null) {
+        if (!other.propertyTransforms_.isEmpty()) {
+          if (propertyTransforms_.isEmpty()) {
+            propertyTransforms_ = other.propertyTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensurePropertyTransformsIsMutable();
+            propertyTransforms_.addAll(other.propertyTransforms_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.propertyTransforms_.isEmpty()) {
+          if (propertyTransformsBuilder_.isEmpty()) {
+            propertyTransformsBuilder_.dispose();
+            propertyTransformsBuilder_ = null;
+            propertyTransforms_ = other.propertyTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            propertyTransformsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPropertyTransformsFieldBuilder()
+                    : null;
+          } else {
+            propertyTransformsBuilder_.addAllMessages(other.propertyTransforms_);
+          }
+        }
       }
       switch (other.getOperationCase()) {
         case INSERT:
@@ -1107,15 +1500,34 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getPropertyMaskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 80:
+              {
+                conflictResolutionStrategy_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 80
             case 90:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
                 conflictDetectionStrategyCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.datastore.v1.PropertyTransform m =
+                    input.readMessage(
+                        com.google.datastore.v1.PropertyTransform.parser(), extensionRegistry);
+                if (propertyTransformsBuilder_ == null) {
+                  ensurePropertyTransformsIsMutable();
+                  propertyTransforms_.add(m);
+                } else {
+                  propertyTransformsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2322,6 +2734,121 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
+    private int conflictResolutionStrategy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use when a conflict is detected. Defaults to
+     * `SERVER_VALUE`.
+     * If this is set, then `conflict_detection_strategy` must also be set.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for conflictResolutionStrategy.
+     */
+    @java.lang.Override
+    public int getConflictResolutionStrategyValue() {
+      return conflictResolutionStrategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use when a conflict is detected. Defaults to
+     * `SERVER_VALUE`.
+     * If this is set, then `conflict_detection_strategy` must also be set.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for conflictResolutionStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConflictResolutionStrategyValue(int value) {
+      conflictResolutionStrategy_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use when a conflict is detected. Defaults to
+     * `SERVER_VALUE`.
+     * If this is set, then `conflict_detection_strategy` must also be set.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+     * </code>
+     *
+     * @return The conflictResolutionStrategy.
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.Mutation.ConflictResolutionStrategy
+        getConflictResolutionStrategy() {
+      com.google.datastore.v1.Mutation.ConflictResolutionStrategy result =
+          com.google.datastore.v1.Mutation.ConflictResolutionStrategy.forNumber(
+              conflictResolutionStrategy_);
+      return result == null
+          ? com.google.datastore.v1.Mutation.ConflictResolutionStrategy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use when a conflict is detected. Defaults to
+     * `SERVER_VALUE`.
+     * If this is set, then `conflict_detection_strategy` must also be set.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+     * </code>
+     *
+     * @param value The conflictResolutionStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConflictResolutionStrategy(
+        com.google.datastore.v1.Mutation.ConflictResolutionStrategy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      conflictResolutionStrategy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use when a conflict is detected. Defaults to
+     * `SERVER_VALUE`.
+     * If this is set, then `conflict_detection_strategy` must also be set.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.Mutation.ConflictResolutionStrategy conflict_resolution_strategy = 10;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConflictResolutionStrategy() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      conflictResolutionStrategy_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.datastore.v1.PropertyMask propertyMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.PropertyMask,
@@ -2347,7 +2874,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the propertyMask field is set.
      */
     public boolean hasPropertyMask() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2401,7 +2928,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         propertyMaskBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2427,7 +2954,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         propertyMaskBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2449,7 +2976,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePropertyMask(com.google.datastore.v1.PropertyMask value) {
       if (propertyMaskBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && propertyMask_ != null
             && propertyMask_ != com.google.datastore.v1.PropertyMask.getDefaultInstance()) {
           getPropertyMaskBuilder().mergeFrom(value);
@@ -2460,7 +2987,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         propertyMaskBuilder_.mergeFrom(value);
       }
       if (propertyMask_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2482,7 +3009,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
      */
     public Builder clearPropertyMask() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       propertyMask_ = null;
       if (propertyMaskBuilder_ != null) {
         propertyMaskBuilder_.dispose();
@@ -2508,7 +3035,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
      */
     public com.google.datastore.v1.PropertyMask.Builder getPropertyMaskBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPropertyMaskFieldBuilder().getBuilder();
     }
@@ -2568,6 +3095,473 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         propertyMask_ = null;
       }
       return propertyMaskBuilder_;
+    }
+
+    private java.util.List<com.google.datastore.v1.PropertyTransform> propertyTransforms_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePropertyTransformsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        propertyTransforms_ =
+            new java.util.ArrayList<com.google.datastore.v1.PropertyTransform>(propertyTransforms_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.datastore.v1.PropertyTransform,
+            com.google.datastore.v1.PropertyTransform.Builder,
+            com.google.datastore.v1.PropertyTransformOrBuilder>
+        propertyTransformsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.datastore.v1.PropertyTransform> getPropertyTransformsList() {
+      if (propertyTransformsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(propertyTransforms_);
+      } else {
+        return propertyTransformsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPropertyTransformsCount() {
+      if (propertyTransformsBuilder_ == null) {
+        return propertyTransforms_.size();
+      } else {
+        return propertyTransformsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.PropertyTransform getPropertyTransforms(int index) {
+      if (propertyTransformsBuilder_ == null) {
+        return propertyTransforms_.get(index);
+      } else {
+        return propertyTransformsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPropertyTransforms(
+        int index, com.google.datastore.v1.PropertyTransform value) {
+      if (propertyTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.set(index, value);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPropertyTransforms(
+        int index, com.google.datastore.v1.PropertyTransform.Builder builderForValue) {
+      if (propertyTransformsBuilder_ == null) {
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyTransforms(com.google.datastore.v1.PropertyTransform value) {
+      if (propertyTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.add(value);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyTransforms(
+        int index, com.google.datastore.v1.PropertyTransform value) {
+      if (propertyTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.add(index, value);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyTransforms(
+        com.google.datastore.v1.PropertyTransform.Builder builderForValue) {
+      if (propertyTransformsBuilder_ == null) {
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.add(builderForValue.build());
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyTransforms(
+        int index, com.google.datastore.v1.PropertyTransform.Builder builderForValue) {
+      if (propertyTransformsBuilder_ == null) {
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPropertyTransforms(
+        java.lang.Iterable<? extends com.google.datastore.v1.PropertyTransform> values) {
+      if (propertyTransformsBuilder_ == null) {
+        ensurePropertyTransformsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, propertyTransforms_);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPropertyTransforms() {
+      if (propertyTransformsBuilder_ == null) {
+        propertyTransforms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePropertyTransforms(int index) {
+      if (propertyTransformsBuilder_ == null) {
+        ensurePropertyTransformsIsMutable();
+        propertyTransforms_.remove(index);
+        onChanged();
+      } else {
+        propertyTransformsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.PropertyTransform.Builder getPropertyTransformsBuilder(
+        int index) {
+      return getPropertyTransformsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.PropertyTransformOrBuilder getPropertyTransformsOrBuilder(
+        int index) {
+      if (propertyTransformsBuilder_ == null) {
+        return propertyTransforms_.get(index);
+      } else {
+        return propertyTransformsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.datastore.v1.PropertyTransformOrBuilder>
+        getPropertyTransformsOrBuilderList() {
+      if (propertyTransformsBuilder_ != null) {
+        return propertyTransformsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(propertyTransforms_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.PropertyTransform.Builder addPropertyTransformsBuilder() {
+      return getPropertyTransformsFieldBuilder()
+          .addBuilder(com.google.datastore.v1.PropertyTransform.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.PropertyTransform.Builder addPropertyTransformsBuilder(
+        int index) {
+      return getPropertyTransformsFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.PropertyTransform.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The transforms to perform on the entity.
+     *
+     * This field can be set only when the operation is `insert`, `update`,
+     * or `upsert`. If present, the transforms are be applied to the entity
+     * regardless of the property mask, in order, after the operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.datastore.v1.PropertyTransform property_transforms = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.datastore.v1.PropertyTransform.Builder>
+        getPropertyTransformsBuilderList() {
+      return getPropertyTransformsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.datastore.v1.PropertyTransform,
+            com.google.datastore.v1.PropertyTransform.Builder,
+            com.google.datastore.v1.PropertyTransformOrBuilder>
+        getPropertyTransformsFieldBuilder() {
+      if (propertyTransformsBuilder_ == null) {
+        propertyTransformsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.PropertyTransform,
+                com.google.datastore.v1.PropertyTransform.Builder,
+                com.google.datastore.v1.PropertyTransformOrBuilder>(
+                propertyTransforms_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        propertyTransforms_ = null;
+      }
+      return propertyTransformsBuilder_;
     }
 
     @java.lang.Override
