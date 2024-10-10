@@ -43,6 +43,8 @@ steps:
       [ "-i", "gcr.io/cloud-devrel-public-resources/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}", "--config", ".cloudbuild/graalvm-b.yaml", "-v" ]
     waitFor: [ "graalvm-b-build" ]
 
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 images:
   - gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}

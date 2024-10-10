@@ -31,3 +31,6 @@ steps:
     entrypoint: bash
     args: [ './.kokoro/presubmit/downstream-build.sh' ]
     waitFor: [ "graalvm-b-build" ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
