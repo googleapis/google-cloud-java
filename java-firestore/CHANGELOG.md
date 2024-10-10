@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.27.2](https://github.com/googleapis/java-firestore/compare/v3.27.1...v3.27.2) (2024-10-10)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.52.0 ([#1879](https://github.com/googleapis/java-firestore/issues/1879)) ([33cdd41](https://github.com/googleapis/java-firestore/commit/33cdd41949739d37c66830d9b85757d19dbbe31e))
+* Update dependency com.google.cloud:google-cloud-trace to v2.52.0 ([#1880](https://github.com/googleapis/java-firestore/issues/1880)) ([2827f77](https://github.com/googleapis/java-firestore/commit/2827f777bf08bdda3599f1a81193e6957533aa19))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.33.0 ([#1876](https://github.com/googleapis/java-firestore/issues/1876)) ([b3fba1f](https://github.com/googleapis/java-firestore/commit/b3fba1f58317e00573f37060bd082283ce9ec2ed))
+
 ## [3.27.1](https://github.com/googleapis/java-firestore/compare/v3.27.0...v3.27.1) (2024-10-07)
 
 
