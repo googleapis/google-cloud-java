@@ -487,6 +487,63 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
 
   private int enableTimePointingMemoizedSerializedSize;
 
+  public static final int ADVANCED_VOICE_OPTIONS_FIELD_NUMBER = 8;
+  private com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advancedVoiceOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return Whether the advancedVoiceOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedVoiceOptions() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return The advancedVoiceOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions getAdvancedVoiceOptions() {
+    return advancedVoiceOptions_ == null
+        ? com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.getDefaultInstance()
+        : advancedVoiceOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder
+      getAdvancedVoiceOptionsOrBuilder() {
+    return advancedVoiceOptions_ == null
+        ? com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.getDefaultInstance()
+        : advancedVoiceOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -517,6 +574,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     }
     for (int i = 0; i < enableTimePointing_.size(); i++) {
       output.writeEnumNoTag(enableTimePointing_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getAdvancedVoiceOptions());
     }
     getUnknownFields().writeTo(output);
   }
@@ -549,6 +609,10 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       }
       enableTimePointingMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getAdvancedVoiceOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -578,6 +642,10 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       if (!getAudioConfig().equals(other.getAudioConfig())) return false;
     }
     if (!enableTimePointing_.equals(other.enableTimePointing_)) return false;
+    if (hasAdvancedVoiceOptions() != other.hasAdvancedVoiceOptions()) return false;
+    if (hasAdvancedVoiceOptions()) {
+      if (!getAdvancedVoiceOptions().equals(other.getAdvancedVoiceOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -604,6 +672,10 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     if (getEnableTimePointingCount() > 0) {
       hash = (37 * hash) + ENABLE_TIME_POINTING_FIELD_NUMBER;
       hash = (53 * hash) + enableTimePointing_.hashCode();
+    }
+    if (hasAdvancedVoiceOptions()) {
+      hash = (37 * hash) + ADVANCED_VOICE_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedVoiceOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -749,6 +821,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         getInputFieldBuilder();
         getVoiceFieldBuilder();
         getAudioConfigFieldBuilder();
+        getAdvancedVoiceOptionsFieldBuilder();
       }
     }
 
@@ -773,6 +846,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       }
       enableTimePointing_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      advancedVoiceOptions_ = null;
+      if (advancedVoiceOptionsBuilder_ != null) {
+        advancedVoiceOptionsBuilder_.dispose();
+        advancedVoiceOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -834,6 +912,13 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         result.audioConfig_ =
             audioConfigBuilder_ == null ? audioConfig_ : audioConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.advancedVoiceOptions_ =
+            advancedVoiceOptionsBuilder_ == null
+                ? advancedVoiceOptions_
+                : advancedVoiceOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -904,6 +989,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         }
         onChanged();
       }
+      if (other.hasAdvancedVoiceOptions()) {
+        mergeAdvancedVoiceOptions(other.getAdvancedVoiceOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -967,6 +1055,13 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
                 input.popLimit(oldLimit);
                 break;
               } // case 34
+            case 66:
+              {
+                input.readMessage(
+                    getAdvancedVoiceOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1857,6 +1952,216 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advancedVoiceOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions,
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder,
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder>
+        advancedVoiceOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     *
+     * @return Whether the advancedVoiceOptions field is set.
+     */
+    public boolean hasAdvancedVoiceOptions() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     *
+     * @return The advancedVoiceOptions.
+     */
+    public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions getAdvancedVoiceOptions() {
+      if (advancedVoiceOptionsBuilder_ == null) {
+        return advancedVoiceOptions_ == null
+            ? com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.getDefaultInstance()
+            : advancedVoiceOptions_;
+      } else {
+        return advancedVoiceOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public Builder setAdvancedVoiceOptions(
+        com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions value) {
+      if (advancedVoiceOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedVoiceOptions_ = value;
+      } else {
+        advancedVoiceOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public Builder setAdvancedVoiceOptions(
+        com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder builderForValue) {
+      if (advancedVoiceOptionsBuilder_ == null) {
+        advancedVoiceOptions_ = builderForValue.build();
+      } else {
+        advancedVoiceOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public Builder mergeAdvancedVoiceOptions(
+        com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions value) {
+      if (advancedVoiceOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && advancedVoiceOptions_ != null
+            && advancedVoiceOptions_
+                != com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions
+                    .getDefaultInstance()) {
+          getAdvancedVoiceOptionsBuilder().mergeFrom(value);
+        } else {
+          advancedVoiceOptions_ = value;
+        }
+      } else {
+        advancedVoiceOptionsBuilder_.mergeFrom(value);
+      }
+      if (advancedVoiceOptions_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public Builder clearAdvancedVoiceOptions() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      advancedVoiceOptions_ = null;
+      if (advancedVoiceOptionsBuilder_ != null) {
+        advancedVoiceOptionsBuilder_.dispose();
+        advancedVoiceOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder
+        getAdvancedVoiceOptionsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getAdvancedVoiceOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder
+        getAdvancedVoiceOptionsOrBuilder() {
+      if (advancedVoiceOptionsBuilder_ != null) {
+        return advancedVoiceOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedVoiceOptions_ == null
+            ? com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.getDefaultInstance()
+            : advancedVoiceOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced voice options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions,
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder,
+            com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder>
+        getAdvancedVoiceOptionsFieldBuilder() {
+      if (advancedVoiceOptionsBuilder_ == null) {
+        advancedVoiceOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions,
+                com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder,
+                com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder>(
+                getAdvancedVoiceOptions(), getParentForChildren(), isClean());
+        advancedVoiceOptions_ = null;
+      }
+      return advancedVoiceOptionsBuilder_;
     }
 
     @java.lang.Override

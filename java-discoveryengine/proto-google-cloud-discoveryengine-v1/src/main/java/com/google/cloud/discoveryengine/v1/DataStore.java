@@ -120,6 +120,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_WEBSITE = 3;</code>
      */
     PUBLIC_WEBSITE(3),
+    /**
+     *
+     *
+     * <pre>
+     * The data store is used for workspace search. Details of workspace
+     * data store are specified in the
+     * [WorkspaceConfig][google.cloud.discoveryengine.v1.WorkspaceConfig].
+     * </pre>
+     *
+     * <code>GOOGLE_WORKSPACE = 4;</code>
+     */
+    GOOGLE_WORKSPACE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -165,6 +177,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_WEBSITE = 3;</code>
      */
     public static final int PUBLIC_WEBSITE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The data store is used for workspace search. Details of workspace
+     * data store are specified in the
+     * [WorkspaceConfig][google.cloud.discoveryengine.v1.WorkspaceConfig].
+     * </pre>
+     *
+     * <code>GOOGLE_WORKSPACE = 4;</code>
+     */
+    public static final int GOOGLE_WORKSPACE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -198,6 +222,8 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           return CONTENT_REQUIRED;
         case 3:
           return PUBLIC_WEBSITE;
+        case 4:
+          return GOOGLE_WORKSPACE;
         default:
           return null;
       }
@@ -249,6 +275,1710 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.DataStore.ContentConfig)
+  }
+
+  public interface BillingEstimationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Data size for structured data in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 structured_data_size = 1;</code>
+     *
+     * @return The structuredDataSize.
+     */
+    long getStructuredDataSize();
+
+    /**
+     *
+     *
+     * <pre>
+     * Data size for unstructured data in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 unstructured_data_size = 2;</code>
+     *
+     * @return The unstructuredDataSize.
+     */
+    long getUnstructuredDataSize();
+
+    /**
+     *
+     *
+     * <pre>
+     * Data size for websites in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 website_data_size = 3;</code>
+     *
+     * @return The websiteDataSize.
+     */
+    long getWebsiteDataSize();
+
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     *
+     * @return Whether the structuredDataUpdateTime field is set.
+     */
+    boolean hasStructuredDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     *
+     * @return The structuredDataUpdateTime.
+     */
+    com.google.protobuf.Timestamp getStructuredDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStructuredDataUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     *
+     * @return Whether the unstructuredDataUpdateTime field is set.
+     */
+    boolean hasUnstructuredDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     *
+     * @return The unstructuredDataUpdateTime.
+     */
+    com.google.protobuf.Timestamp getUnstructuredDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUnstructuredDataUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     *
+     * @return Whether the websiteDataUpdateTime field is set.
+     */
+    boolean hasWebsiteDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     *
+     * @return The websiteDataUpdateTime.
+     */
+    com.google.protobuf.Timestamp getWebsiteDataUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getWebsiteDataUpdateTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Estimation of data size per data store.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.DataStore.BillingEstimation}
+   */
+  public static final class BillingEstimation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
+      BillingEstimationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BillingEstimation.newBuilder() to construct.
+    private BillingEstimation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BillingEstimation() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BillingEstimation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.DataStoreProto
+          .internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.DataStoreProto
+          .internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.class,
+              com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int STRUCTURED_DATA_SIZE_FIELD_NUMBER = 1;
+    private long structuredDataSize_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Data size for structured data in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 structured_data_size = 1;</code>
+     *
+     * @return The structuredDataSize.
+     */
+    @java.lang.Override
+    public long getStructuredDataSize() {
+      return structuredDataSize_;
+    }
+
+    public static final int UNSTRUCTURED_DATA_SIZE_FIELD_NUMBER = 2;
+    private long unstructuredDataSize_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Data size for unstructured data in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 unstructured_data_size = 2;</code>
+     *
+     * @return The unstructuredDataSize.
+     */
+    @java.lang.Override
+    public long getUnstructuredDataSize() {
+      return unstructuredDataSize_;
+    }
+
+    public static final int WEBSITE_DATA_SIZE_FIELD_NUMBER = 3;
+    private long websiteDataSize_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Data size for websites in terms of bytes.
+     * </pre>
+     *
+     * <code>int64 website_data_size = 3;</code>
+     *
+     * @return The websiteDataSize.
+     */
+    @java.lang.Override
+    public long getWebsiteDataSize() {
+      return websiteDataSize_;
+    }
+
+    public static final int STRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp structuredDataUpdateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     *
+     * @return Whether the structuredDataUpdateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructuredDataUpdateTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     *
+     * @return The structuredDataUpdateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStructuredDataUpdateTime() {
+      return structuredDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : structuredDataUpdateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for structured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStructuredDataUpdateTimeOrBuilder() {
+      return structuredDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : structuredDataUpdateTime_;
+    }
+
+    public static final int UNSTRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp unstructuredDataUpdateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     *
+     * @return Whether the unstructuredDataUpdateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnstructuredDataUpdateTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     *
+     * @return The unstructuredDataUpdateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUnstructuredDataUpdateTime() {
+      return unstructuredDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : unstructuredDataUpdateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for unstructured data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUnstructuredDataUpdateTimeOrBuilder() {
+      return unstructuredDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : unstructuredDataUpdateTime_;
+    }
+
+    public static final int WEBSITE_DATA_UPDATE_TIME_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp websiteDataUpdateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     *
+     * @return Whether the websiteDataUpdateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasWebsiteDataUpdateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     *
+     * @return The websiteDataUpdateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getWebsiteDataUpdateTime() {
+      return websiteDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : websiteDataUpdateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last updated timestamp for websites.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getWebsiteDataUpdateTimeOrBuilder() {
+      return websiteDataUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : websiteDataUpdateTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (structuredDataSize_ != 0L) {
+        output.writeInt64(1, structuredDataSize_);
+      }
+      if (unstructuredDataSize_ != 0L) {
+        output.writeInt64(2, unstructuredDataSize_);
+      }
+      if (websiteDataSize_ != 0L) {
+        output.writeInt64(3, websiteDataSize_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getStructuredDataUpdateTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(5, getUnstructuredDataUpdateTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(6, getWebsiteDataUpdateTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (structuredDataSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, structuredDataSize_);
+      }
+      if (unstructuredDataSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, unstructuredDataSize_);
+      }
+      if (websiteDataSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, websiteDataSize_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, getStructuredDataUpdateTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getUnstructuredDataUpdateTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, getWebsiteDataUpdateTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation other =
+          (com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation) obj;
+
+      if (getStructuredDataSize() != other.getStructuredDataSize()) return false;
+      if (getUnstructuredDataSize() != other.getUnstructuredDataSize()) return false;
+      if (getWebsiteDataSize() != other.getWebsiteDataSize()) return false;
+      if (hasStructuredDataUpdateTime() != other.hasStructuredDataUpdateTime()) return false;
+      if (hasStructuredDataUpdateTime()) {
+        if (!getStructuredDataUpdateTime().equals(other.getStructuredDataUpdateTime()))
+          return false;
+      }
+      if (hasUnstructuredDataUpdateTime() != other.hasUnstructuredDataUpdateTime()) return false;
+      if (hasUnstructuredDataUpdateTime()) {
+        if (!getUnstructuredDataUpdateTime().equals(other.getUnstructuredDataUpdateTime()))
+          return false;
+      }
+      if (hasWebsiteDataUpdateTime() != other.hasWebsiteDataUpdateTime()) return false;
+      if (hasWebsiteDataUpdateTime()) {
+        if (!getWebsiteDataUpdateTime().equals(other.getWebsiteDataUpdateTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STRUCTURED_DATA_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStructuredDataSize());
+      hash = (37 * hash) + UNSTRUCTURED_DATA_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUnstructuredDataSize());
+      hash = (37 * hash) + WEBSITE_DATA_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getWebsiteDataSize());
+      if (hasStructuredDataUpdateTime()) {
+        hash = (37 * hash) + STRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStructuredDataUpdateTime().hashCode();
+      }
+      if (hasUnstructuredDataUpdateTime()) {
+        hash = (37 * hash) + UNSTRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUnstructuredDataUpdateTime().hashCode();
+      }
+      if (hasWebsiteDataUpdateTime()) {
+        hash = (37 * hash) + WEBSITE_DATA_UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getWebsiteDataUpdateTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Estimation of data size per data store.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.DataStore.BillingEstimation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.class,
+                com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStructuredDataUpdateTimeFieldBuilder();
+          getUnstructuredDataUpdateTimeFieldBuilder();
+          getWebsiteDataUpdateTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        structuredDataSize_ = 0L;
+        unstructuredDataSize_ = 0L;
+        websiteDataSize_ = 0L;
+        structuredDataUpdateTime_ = null;
+        if (structuredDataUpdateTimeBuilder_ != null) {
+          structuredDataUpdateTimeBuilder_.dispose();
+          structuredDataUpdateTimeBuilder_ = null;
+        }
+        unstructuredDataUpdateTime_ = null;
+        if (unstructuredDataUpdateTimeBuilder_ != null) {
+          unstructuredDataUpdateTimeBuilder_.dispose();
+          unstructuredDataUpdateTimeBuilder_ = null;
+        }
+        websiteDataUpdateTime_ = null;
+        if (websiteDataUpdateTimeBuilder_ != null) {
+          websiteDataUpdateTimeBuilder_.dispose();
+          websiteDataUpdateTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation build() {
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation buildPartial() {
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation result =
+            new com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.structuredDataSize_ = structuredDataSize_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unstructuredDataSize_ = unstructuredDataSize_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.websiteDataSize_ = websiteDataSize_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.structuredDataUpdateTime_ =
+              structuredDataUpdateTimeBuilder_ == null
+                  ? structuredDataUpdateTime_
+                  : structuredDataUpdateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unstructuredDataUpdateTime_ =
+              unstructuredDataUpdateTimeBuilder_ == null
+                  ? unstructuredDataUpdateTime_
+                  : unstructuredDataUpdateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.websiteDataUpdateTime_ =
+              websiteDataUpdateTimeBuilder_ == null
+                  ? websiteDataUpdateTime_
+                  : websiteDataUpdateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance())
+          return this;
+        if (other.getStructuredDataSize() != 0L) {
+          setStructuredDataSize(other.getStructuredDataSize());
+        }
+        if (other.getUnstructuredDataSize() != 0L) {
+          setUnstructuredDataSize(other.getUnstructuredDataSize());
+        }
+        if (other.getWebsiteDataSize() != 0L) {
+          setWebsiteDataSize(other.getWebsiteDataSize());
+        }
+        if (other.hasStructuredDataUpdateTime()) {
+          mergeStructuredDataUpdateTime(other.getStructuredDataUpdateTime());
+        }
+        if (other.hasUnstructuredDataUpdateTime()) {
+          mergeUnstructuredDataUpdateTime(other.getUnstructuredDataUpdateTime());
+        }
+        if (other.hasWebsiteDataUpdateTime()) {
+          mergeWebsiteDataUpdateTime(other.getWebsiteDataUpdateTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  structuredDataSize_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  unstructuredDataSize_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  websiteDataSize_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 34:
+                {
+                  input.readMessage(
+                      getStructuredDataUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getUnstructuredDataUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getWebsiteDataUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long structuredDataSize_;
+      /**
+       *
+       *
+       * <pre>
+       * Data size for structured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 structured_data_size = 1;</code>
+       *
+       * @return The structuredDataSize.
+       */
+      @java.lang.Override
+      public long getStructuredDataSize() {
+        return structuredDataSize_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for structured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 structured_data_size = 1;</code>
+       *
+       * @param value The structuredDataSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStructuredDataSize(long value) {
+
+        structuredDataSize_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for structured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 structured_data_size = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStructuredDataSize() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        structuredDataSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long unstructuredDataSize_;
+      /**
+       *
+       *
+       * <pre>
+       * Data size for unstructured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 unstructured_data_size = 2;</code>
+       *
+       * @return The unstructuredDataSize.
+       */
+      @java.lang.Override
+      public long getUnstructuredDataSize() {
+        return unstructuredDataSize_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for unstructured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 unstructured_data_size = 2;</code>
+       *
+       * @param value The unstructuredDataSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnstructuredDataSize(long value) {
+
+        unstructuredDataSize_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for unstructured data in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 unstructured_data_size = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnstructuredDataSize() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unstructuredDataSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long websiteDataSize_;
+      /**
+       *
+       *
+       * <pre>
+       * Data size for websites in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 website_data_size = 3;</code>
+       *
+       * @return The websiteDataSize.
+       */
+      @java.lang.Override
+      public long getWebsiteDataSize() {
+        return websiteDataSize_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for websites in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 website_data_size = 3;</code>
+       *
+       * @param value The websiteDataSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWebsiteDataSize(long value) {
+
+        websiteDataSize_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data size for websites in terms of bytes.
+       * </pre>
+       *
+       * <code>int64 website_data_size = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWebsiteDataSize() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        websiteDataSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp structuredDataUpdateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          structuredDataUpdateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       *
+       * @return Whether the structuredDataUpdateTime field is set.
+       */
+      public boolean hasStructuredDataUpdateTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       *
+       * @return The structuredDataUpdateTime.
+       */
+      public com.google.protobuf.Timestamp getStructuredDataUpdateTime() {
+        if (structuredDataUpdateTimeBuilder_ == null) {
+          return structuredDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : structuredDataUpdateTime_;
+        } else {
+          return structuredDataUpdateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public Builder setStructuredDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (structuredDataUpdateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          structuredDataUpdateTime_ = value;
+        } else {
+          structuredDataUpdateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public Builder setStructuredDataUpdateTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (structuredDataUpdateTimeBuilder_ == null) {
+          structuredDataUpdateTime_ = builderForValue.build();
+        } else {
+          structuredDataUpdateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public Builder mergeStructuredDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (structuredDataUpdateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && structuredDataUpdateTime_ != null
+              && structuredDataUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStructuredDataUpdateTimeBuilder().mergeFrom(value);
+          } else {
+            structuredDataUpdateTime_ = value;
+          }
+        } else {
+          structuredDataUpdateTimeBuilder_.mergeFrom(value);
+        }
+        if (structuredDataUpdateTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public Builder clearStructuredDataUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        structuredDataUpdateTime_ = null;
+        if (structuredDataUpdateTimeBuilder_ != null) {
+          structuredDataUpdateTimeBuilder_.dispose();
+          structuredDataUpdateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStructuredDataUpdateTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getStructuredDataUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStructuredDataUpdateTimeOrBuilder() {
+        if (structuredDataUpdateTimeBuilder_ != null) {
+          return structuredDataUpdateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return structuredDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : structuredDataUpdateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for structured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp structured_data_update_time = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getStructuredDataUpdateTimeFieldBuilder() {
+        if (structuredDataUpdateTimeBuilder_ == null) {
+          structuredDataUpdateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStructuredDataUpdateTime(), getParentForChildren(), isClean());
+          structuredDataUpdateTime_ = null;
+        }
+        return structuredDataUpdateTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp unstructuredDataUpdateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          unstructuredDataUpdateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       *
+       * @return Whether the unstructuredDataUpdateTime field is set.
+       */
+      public boolean hasUnstructuredDataUpdateTime() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       *
+       * @return The unstructuredDataUpdateTime.
+       */
+      public com.google.protobuf.Timestamp getUnstructuredDataUpdateTime() {
+        if (unstructuredDataUpdateTimeBuilder_ == null) {
+          return unstructuredDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : unstructuredDataUpdateTime_;
+        } else {
+          return unstructuredDataUpdateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public Builder setUnstructuredDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (unstructuredDataUpdateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          unstructuredDataUpdateTime_ = value;
+        } else {
+          unstructuredDataUpdateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public Builder setUnstructuredDataUpdateTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (unstructuredDataUpdateTimeBuilder_ == null) {
+          unstructuredDataUpdateTime_ = builderForValue.build();
+        } else {
+          unstructuredDataUpdateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public Builder mergeUnstructuredDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (unstructuredDataUpdateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && unstructuredDataUpdateTime_ != null
+              && unstructuredDataUpdateTime_
+                  != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUnstructuredDataUpdateTimeBuilder().mergeFrom(value);
+          } else {
+            unstructuredDataUpdateTime_ = value;
+          }
+        } else {
+          unstructuredDataUpdateTimeBuilder_.mergeFrom(value);
+        }
+        if (unstructuredDataUpdateTime_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public Builder clearUnstructuredDataUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        unstructuredDataUpdateTime_ = null;
+        if (unstructuredDataUpdateTimeBuilder_ != null) {
+          unstructuredDataUpdateTimeBuilder_.dispose();
+          unstructuredDataUpdateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUnstructuredDataUpdateTimeBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getUnstructuredDataUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUnstructuredDataUpdateTimeOrBuilder() {
+        if (unstructuredDataUpdateTimeBuilder_ != null) {
+          return unstructuredDataUpdateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return unstructuredDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : unstructuredDataUpdateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for unstructured data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp unstructured_data_update_time = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getUnstructuredDataUpdateTimeFieldBuilder() {
+        if (unstructuredDataUpdateTimeBuilder_ == null) {
+          unstructuredDataUpdateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getUnstructuredDataUpdateTime(), getParentForChildren(), isClean());
+          unstructuredDataUpdateTime_ = null;
+        }
+        return unstructuredDataUpdateTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp websiteDataUpdateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          websiteDataUpdateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       *
+       * @return Whether the websiteDataUpdateTime field is set.
+       */
+      public boolean hasWebsiteDataUpdateTime() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       *
+       * @return The websiteDataUpdateTime.
+       */
+      public com.google.protobuf.Timestamp getWebsiteDataUpdateTime() {
+        if (websiteDataUpdateTimeBuilder_ == null) {
+          return websiteDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : websiteDataUpdateTime_;
+        } else {
+          return websiteDataUpdateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public Builder setWebsiteDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (websiteDataUpdateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          websiteDataUpdateTime_ = value;
+        } else {
+          websiteDataUpdateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public Builder setWebsiteDataUpdateTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (websiteDataUpdateTimeBuilder_ == null) {
+          websiteDataUpdateTime_ = builderForValue.build();
+        } else {
+          websiteDataUpdateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public Builder mergeWebsiteDataUpdateTime(com.google.protobuf.Timestamp value) {
+        if (websiteDataUpdateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && websiteDataUpdateTime_ != null
+              && websiteDataUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getWebsiteDataUpdateTimeBuilder().mergeFrom(value);
+          } else {
+            websiteDataUpdateTime_ = value;
+          }
+        } else {
+          websiteDataUpdateTimeBuilder_.mergeFrom(value);
+        }
+        if (websiteDataUpdateTime_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public Builder clearWebsiteDataUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        websiteDataUpdateTime_ = null;
+        if (websiteDataUpdateTimeBuilder_ != null) {
+          websiteDataUpdateTimeBuilder_.dispose();
+          websiteDataUpdateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getWebsiteDataUpdateTimeBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getWebsiteDataUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getWebsiteDataUpdateTimeOrBuilder() {
+        if (websiteDataUpdateTimeBuilder_ != null) {
+          return websiteDataUpdateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return websiteDataUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : websiteDataUpdateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Last updated timestamp for websites.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp website_data_update_time = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getWebsiteDataUpdateTimeFieldBuilder() {
+        if (websiteDataUpdateTimeBuilder_ == null) {
+          websiteDataUpdateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getWebsiteDataUpdateTime(), getParentForChildren(), isClean());
+          websiteDataUpdateTime_ = null;
+        }
+        return websiteDataUpdateTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
+    private static final com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BillingEstimation> PARSER =
+        new com.google.protobuf.AbstractParser<BillingEstimation>() {
+          @java.lang.Override
+          public BillingEstimation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BillingEstimation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BillingEstimation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -689,6 +2419,126 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int BILLING_ESTIMATION_FIELD_NUMBER = 23;
+  private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the billingEstimation field is set.
+   */
+  @java.lang.Override
+  public boolean hasBillingEstimation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The billingEstimation.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation getBillingEstimation() {
+    return billingEstimation_ == null
+        ? com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance()
+        : billingEstimation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder
+      getBillingEstimationOrBuilder() {
+    return billingEstimation_ == null
+        ? com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance()
+        : billingEstimation_;
+  }
+
+  public static final int WORKSPACE_CONFIG_FIELD_NUMBER = 25;
+  private com.google.cloud.discoveryengine.v1.WorkspaceConfig workspaceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return Whether the workspaceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkspaceConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return The workspaceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.WorkspaceConfig getWorkspaceConfig() {
+    return workspaceConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()
+        : workspaceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder
+      getWorkspaceConfigOrBuilder() {
+    return workspaceConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()
+        : workspaceConfig_;
+  }
+
   public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig documentProcessingConfig_;
   /**
@@ -706,7 +2556,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -775,7 +2625,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -881,9 +2731,15 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
+      output.writeMessage(23, getBillingEstimation());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
@@ -931,11 +2787,17 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -963,6 +2825,14 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasBillingEstimation() != other.hasBillingEstimation()) return false;
+    if (hasBillingEstimation()) {
+      if (!getBillingEstimation().equals(other.getBillingEstimation())) return false;
+    }
+    if (hasWorkspaceConfig() != other.hasWorkspaceConfig()) return false;
+    if (hasWorkspaceConfig()) {
+      if (!getWorkspaceConfig().equals(other.getWorkspaceConfig())) return false;
     }
     if (hasDocumentProcessingConfig() != other.hasDocumentProcessingConfig()) return false;
     if (hasDocumentProcessingConfig()) {
@@ -1000,6 +2870,14 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasBillingEstimation()) {
+      hash = (37 * hash) + BILLING_ESTIMATION_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingEstimation().hashCode();
+    }
+    if (hasWorkspaceConfig()) {
+      hash = (37 * hash) + WORKSPACE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkspaceConfig().hashCode();
     }
     if (hasDocumentProcessingConfig()) {
       hash = (37 * hash) + DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER;
@@ -1150,6 +3028,8 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getBillingEstimationFieldBuilder();
+        getWorkspaceConfigFieldBuilder();
         getDocumentProcessingConfigFieldBuilder();
         getStartingSchemaFieldBuilder();
       }
@@ -1170,6 +3050,16 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      billingEstimation_ = null;
+      if (billingEstimationBuilder_ != null) {
+        billingEstimationBuilder_.dispose();
+        billingEstimationBuilder_ = null;
+      }
+      workspaceConfig_ = null;
+      if (workspaceConfigBuilder_ != null) {
+        workspaceConfigBuilder_.dispose();
+        workspaceConfigBuilder_ = null;
       }
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
@@ -1247,16 +3137,28 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.billingEstimation_ =
+            billingEstimationBuilder_ == null
+                ? billingEstimation_
+                : billingEstimationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.workspaceConfig_ =
+            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1339,6 +3241,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasBillingEstimation()) {
+        mergeBillingEstimation(other.getBillingEstimation());
+      }
+      if (other.hasWorkspaceConfig()) {
+        mergeWorkspaceConfig(other.getWorkspaceConfig());
       }
       if (other.hasDocumentProcessingConfig()) {
         mergeDocumentProcessingConfig(other.getDocumentProcessingConfig());
@@ -1427,17 +3335,30 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 186:
+              {
+                input.readMessage(
+                    getBillingEstimationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 186
+            case 202:
+              {
+                input.readMessage(getWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 202
             case 218:
               {
                 input.readMessage(
                     getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 226
             default:
@@ -2536,6 +4457,440 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation,
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder,
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder>
+        billingEstimationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the billingEstimation field is set.
+     */
+    public boolean hasBillingEstimation() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The billingEstimation.
+     */
+    public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation getBillingEstimation() {
+      if (billingEstimationBuilder_ == null) {
+        return billingEstimation_ == null
+            ? com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance()
+            : billingEstimation_;
+      } else {
+        return billingEstimationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBillingEstimation(
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation value) {
+      if (billingEstimationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingEstimation_ = value;
+      } else {
+        billingEstimationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBillingEstimation(
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder builderForValue) {
+      if (billingEstimationBuilder_ == null) {
+        billingEstimation_ = builderForValue.build();
+      } else {
+        billingEstimationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeBillingEstimation(
+        com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation value) {
+      if (billingEstimationBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && billingEstimation_ != null
+            && billingEstimation_
+                != com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
+                    .getDefaultInstance()) {
+          getBillingEstimationBuilder().mergeFrom(value);
+        } else {
+          billingEstimation_ = value;
+        }
+      } else {
+        billingEstimationBuilder_.mergeFrom(value);
+      }
+      if (billingEstimation_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBillingEstimation() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      billingEstimation_ = null;
+      if (billingEstimationBuilder_ != null) {
+        billingEstimationBuilder_.dispose();
+        billingEstimationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder
+        getBillingEstimationBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getBillingEstimationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder
+        getBillingEstimationOrBuilder() {
+      if (billingEstimationBuilder_ != null) {
+        return billingEstimationBuilder_.getMessageOrBuilder();
+      } else {
+        return billingEstimation_ == null
+            ? com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance()
+            : billingEstimation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data size estimation for billing.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation,
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder,
+            com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder>
+        getBillingEstimationFieldBuilder() {
+      if (billingEstimationBuilder_ == null) {
+        billingEstimationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation,
+                com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder,
+                com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder>(
+                getBillingEstimation(), getParentForChildren(), isClean());
+        billingEstimation_ = null;
+      }
+      return billingEstimationBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.WorkspaceConfig workspaceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.WorkspaceConfig,
+            com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder,
+            com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder>
+        workspaceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     *
+     * @return Whether the workspaceConfig field is set.
+     */
+    public boolean hasWorkspaceConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     *
+     * @return The workspaceConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.WorkspaceConfig getWorkspaceConfig() {
+      if (workspaceConfigBuilder_ == null) {
+        return workspaceConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()
+            : workspaceConfig_;
+      } else {
+        return workspaceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder setWorkspaceConfig(com.google.cloud.discoveryengine.v1.WorkspaceConfig value) {
+      if (workspaceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workspaceConfig_ = value;
+      } else {
+        workspaceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder setWorkspaceConfig(
+        com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder builderForValue) {
+      if (workspaceConfigBuilder_ == null) {
+        workspaceConfig_ = builderForValue.build();
+      } else {
+        workspaceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder mergeWorkspaceConfig(com.google.cloud.discoveryengine.v1.WorkspaceConfig value) {
+      if (workspaceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && workspaceConfig_ != null
+            && workspaceConfig_
+                != com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()) {
+          getWorkspaceConfigBuilder().mergeFrom(value);
+        } else {
+          workspaceConfig_ = value;
+        }
+      } else {
+        workspaceConfigBuilder_.mergeFrom(value);
+      }
+      if (workspaceConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public Builder clearWorkspaceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      workspaceConfig_ = null;
+      if (workspaceConfigBuilder_ != null) {
+        workspaceConfigBuilder_.dispose();
+        workspaceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder getWorkspaceConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getWorkspaceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder
+        getWorkspaceConfigOrBuilder() {
+      if (workspaceConfigBuilder_ != null) {
+        return workspaceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workspaceConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()
+            : workspaceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config to store data store type configuration for workspace data. This
+     * must be set when
+     * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+     * is set as
+     * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.WorkspaceConfig,
+            com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder,
+            com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder>
+        getWorkspaceConfigFieldBuilder() {
+      if (workspaceConfigBuilder_ == null) {
+        workspaceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.WorkspaceConfig,
+                com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder,
+                com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder>(
+                getWorkspaceConfig(), getParentForChildren(), isClean());
+        workspaceConfig_ = null;
+      }
+      return workspaceConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig documentProcessingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig,
@@ -2556,7 +4911,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2602,7 +4957,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2624,7 +4979,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2642,7 +4997,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
@@ -2655,7 +5010,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2672,7 +5027,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -2694,7 +5049,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -2778,7 +5133,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2844,7 +5199,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2877,7 +5232,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2905,7 +5260,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && startingSchema_ != null
             && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
           getStartingSchemaBuilder().mergeFrom(value);
@@ -2916,7 +5271,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -2944,7 +5299,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -2976,7 +5331,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }

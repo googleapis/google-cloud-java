@@ -25,6 +25,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.stub.GroundedGenerationServiceStubSettings;
@@ -50,7 +51,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of checkGrounding:
+ * of generateGroundedContent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -61,10 +62,10 @@ import javax.annotation.Generated;
  * GroundedGenerationServiceSettings.Builder groundedGenerationServiceSettingsBuilder =
  *     GroundedGenerationServiceSettings.newBuilder();
  * groundedGenerationServiceSettingsBuilder
- *     .checkGroundingSettings()
+ *     .generateGroundedContentSettings()
  *     .setRetrySettings(
  *         groundedGenerationServiceSettingsBuilder
- *             .checkGroundingSettings()
+ *             .generateGroundedContentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -87,6 +88,20 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class GroundedGenerationServiceSettings
     extends ClientSettings<GroundedGenerationServiceSettings> {
+
+  /** Returns the object with the settings used for calls to streamGenerateGroundedContent. */
+  public StreamingCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentSettings() {
+    return ((GroundedGenerationServiceStubSettings) getStubSettings())
+        .streamGenerateGroundedContentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateGroundedContent. */
+  public UnaryCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentSettings() {
+    return ((GroundedGenerationServiceStubSettings) getStubSettings())
+        .generateGroundedContentSettings();
+  }
 
   /** Returns the object with the settings used for calls to checkGrounding. */
   public UnaryCallSettings<CheckGroundingRequest, CheckGroundingResponse> checkGroundingSettings() {
@@ -204,6 +219,20 @@ public class GroundedGenerationServiceSettings
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateGroundedContent. */
+    public StreamingCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        streamGenerateGroundedContentSettings() {
+      return getStubSettingsBuilder().streamGenerateGroundedContentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateGroundedContent. */
+    public UnaryCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        generateGroundedContentSettings() {
+      return getStubSettingsBuilder().generateGroundedContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to checkGrounding. */

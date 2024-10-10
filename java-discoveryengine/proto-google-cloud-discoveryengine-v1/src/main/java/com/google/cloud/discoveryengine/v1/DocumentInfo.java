@@ -193,7 +193,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1.Document] resource full
    * name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -209,7 +209,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1.Document] resource full
    * name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -238,7 +238,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1.Document] resource full
    * name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1137,7 +1137,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1154,7 +1154,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1184,7 +1184,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1214,7 +1214,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1237,7 +1237,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1258,7 +1258,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The [Document][google.cloud.discoveryengine.v1.Document] resource full
      * name, of the form:
-     * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
      * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>

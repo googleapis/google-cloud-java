@@ -345,6 +345,7 @@ public class TextToSpeechClient implements BackgroundResource {
    *           .setVoice(VoiceSelectionParams.newBuilder().build())
    *           .setAudioConfig(AudioConfig.newBuilder().build())
    *           .addAllEnableTimePointing(new ArrayList<SynthesizeSpeechRequest.TimepointType>())
+   *           .setAdvancedVoiceOptions(AdvancedVoiceOptions.newBuilder().build())
    *           .build();
    *   SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(request);
    * }
@@ -376,6 +377,7 @@ public class TextToSpeechClient implements BackgroundResource {
    *           .setVoice(VoiceSelectionParams.newBuilder().build())
    *           .setAudioConfig(AudioConfig.newBuilder().build())
    *           .addAllEnableTimePointing(new ArrayList<SynthesizeSpeechRequest.TimepointType>())
+   *           .setAdvancedVoiceOptions(AdvancedVoiceOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<SynthesizeSpeechResponse> future =
    *       textToSpeechClient.synthesizeSpeechCallable().futureCall(request);

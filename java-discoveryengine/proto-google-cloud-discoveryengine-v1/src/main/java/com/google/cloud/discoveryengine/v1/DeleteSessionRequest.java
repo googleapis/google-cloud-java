@@ -72,7 +72,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the Session to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the Session to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the Session to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
      * </pre>
      *
      * <code>
@@ -494,7 +494,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the Session to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
      * </pre>
      *
      * <code>
@@ -519,7 +519,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the Session to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the Session to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
      * </pre>
      *
      * <code>
@@ -563,7 +563,7 @@ public final class DeleteSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the Session to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
      * </pre>
      *
      * <code>

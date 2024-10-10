@@ -1557,6 +1557,47 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return enableCiliumClusterwideNetworkPolicy_;
   }
 
+  public static final int DEFAULT_ENABLE_PRIVATE_NODES_FIELD_NUMBER = 22;
+  private boolean defaultEnablePrivateNodes_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Controls whether by default nodes have private IP addresses only.
+   * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+   * and this field at the same time.
+   * To update the default setting, use
+   * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool default_enable_private_nodes = 22;</code>
+   *
+   * @return Whether the defaultEnablePrivateNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultEnablePrivateNodes() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls whether by default nodes have private IP addresses only.
+   * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+   * and this field at the same time.
+   * To update the default setting, use
+   * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool default_enable_private_nodes = 22;</code>
+   *
+   * @return The defaultEnablePrivateNodes.
+   */
+  @java.lang.Override
+  public boolean getDefaultEnablePrivateNodes() {
+    return defaultEnablePrivateNodes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1618,6 +1659,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(21, enableCiliumClusterwideNetworkPolicy_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(22, defaultEnablePrivateNodes_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1682,6 +1726,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               21, enableCiliumClusterwideNetworkPolicy_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, defaultEnablePrivateNodes_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1737,6 +1784,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableCiliumClusterwideNetworkPolicy()) {
       if (getEnableCiliumClusterwideNetworkPolicy()
           != other.getEnableCiliumClusterwideNetworkPolicy()) return false;
+    }
+    if (hasDefaultEnablePrivateNodes() != other.hasDefaultEnablePrivateNodes()) return false;
+    if (hasDefaultEnablePrivateNodes()) {
+      if (getDefaultEnablePrivateNodes() != other.getDefaultEnablePrivateNodes()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1796,6 +1847,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getEnableCiliumClusterwideNetworkPolicy());
+    }
+    if (hasDefaultEnablePrivateNodes()) {
+      hash = (37 * hash) + DEFAULT_ENABLE_PRIVATE_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDefaultEnablePrivateNodes());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1983,6 +2038,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       enableFqdnNetworkPolicy_ = false;
       inTransitEncryptionConfig_ = 0;
       enableCiliumClusterwideNetworkPolicy_ = false;
+      defaultEnablePrivateNodes_ = false;
       return this;
     }
 
@@ -2083,6 +2139,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         result.enableCiliumClusterwideNetworkPolicy_ = enableCiliumClusterwideNetworkPolicy_;
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.defaultEnablePrivateNodes_ = defaultEnablePrivateNodes_;
+        to_bitField0_ |= 0x00000100;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2179,6 +2239,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEnableCiliumClusterwideNetworkPolicy()) {
         setEnableCiliumClusterwideNetworkPolicy(other.getEnableCiliumClusterwideNetworkPolicy());
+      }
+      if (other.hasDefaultEnablePrivateNodes()) {
+        setDefaultEnablePrivateNodes(other.getDefaultEnablePrivateNodes());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2300,6 +2363,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 168
+            case 176:
+              {
+                defaultEnablePrivateNodes_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4186,6 +4255,90 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableCiliumClusterwideNetworkPolicy() {
       bitField0_ = (bitField0_ & ~0x00004000);
       enableCiliumClusterwideNetworkPolicy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean defaultEnablePrivateNodes_;
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether by default nodes have private IP addresses only.
+     * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+     * and this field at the same time.
+     * To update the default setting, use
+     * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+     * </pre>
+     *
+     * <code>optional bool default_enable_private_nodes = 22;</code>
+     *
+     * @return Whether the defaultEnablePrivateNodes field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultEnablePrivateNodes() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether by default nodes have private IP addresses only.
+     * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+     * and this field at the same time.
+     * To update the default setting, use
+     * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+     * </pre>
+     *
+     * <code>optional bool default_enable_private_nodes = 22;</code>
+     *
+     * @return The defaultEnablePrivateNodes.
+     */
+    @java.lang.Override
+    public boolean getDefaultEnablePrivateNodes() {
+      return defaultEnablePrivateNodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether by default nodes have private IP addresses only.
+     * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+     * and this field at the same time.
+     * To update the default setting, use
+     * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+     * </pre>
+     *
+     * <code>optional bool default_enable_private_nodes = 22;</code>
+     *
+     * @param value The defaultEnablePrivateNodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultEnablePrivateNodes(boolean value) {
+
+      defaultEnablePrivateNodes_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether by default nodes have private IP addresses only.
+     * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+     * and this field at the same time.
+     * To update the default setting, use
+     * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1.ClusterUpdate.desired_default_enable_private_nodes]
+     * </pre>
+     *
+     * <code>optional bool default_enable_private_nodes = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultEnablePrivateNodes() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      defaultEnablePrivateNodes_ = false;
       onChanged();
       return this;
     }

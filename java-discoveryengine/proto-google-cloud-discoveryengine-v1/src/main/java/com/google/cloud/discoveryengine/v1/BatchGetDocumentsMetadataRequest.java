@@ -865,6 +865,873 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
     }
   }
 
+  public interface FhirMatcherOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the fhirResources.
+     */
+    java.util.List<java.lang.String> getFhirResourcesList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of fhirResources.
+     */
+    int getFhirResourcesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The fhirResources at the given index.
+     */
+    java.lang.String getFhirResources(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fhirResources at the given index.
+     */
+    com.google.protobuf.ByteString getFhirResourcesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matcher for the [Document][google.cloud.discoveryengine.v1.Document]s by
+   * FHIR resource names.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher}
+   */
+  public static final class FhirMatcher extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+      FhirMatcherOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FhirMatcher.newBuilder() to construct.
+    private FhirMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FhirMatcher() {
+      fhirResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FhirMatcher();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.DocumentServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.DocumentServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                  .class,
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                  .Builder.class);
+    }
+
+    public static final int FHIR_RESOURCES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList fhirResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the fhirResources.
+     */
+    public com.google.protobuf.ProtocolStringList getFhirResourcesList() {
+      return fhirResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of fhirResources.
+     */
+    public int getFhirResourcesCount() {
+      return fhirResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The fhirResources at the given index.
+     */
+    public java.lang.String getFhirResources(int index) {
+      return fhirResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The FHIR resources to match by.
+     * Format:
+     * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+     * </pre>
+     *
+     * <code>
+     * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fhirResources at the given index.
+     */
+    public com.google.protobuf.ByteString getFhirResourcesBytes(int index) {
+      return fhirResources_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < fhirResources_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fhirResources_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fhirResources_.size(); i++) {
+          dataSize += computeStringSizeNoTag(fhirResources_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFhirResourcesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher other =
+          (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher) obj;
+
+      if (!getFhirResourcesList().equals(other.getFhirResourcesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFhirResourcesCount() > 0) {
+        hash = (37 * hash) + FHIR_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getFhirResourcesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matcher for the [Document][google.cloud.discoveryengine.v1.Document]s by
+     * FHIR resource names.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+        com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcherOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.DocumentServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.DocumentServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                    .class,
+                com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        fhirResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.DocumentServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          build() {
+        com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher result =
+            new com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          fhirResources_.makeImmutable();
+          result.fhirResources_ = fhirResources_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                .getDefaultInstance()) return this;
+        if (!other.fhirResources_.isEmpty()) {
+          if (fhirResources_.isEmpty()) {
+            fhirResources_ = other.fhirResources_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureFhirResourcesIsMutable();
+            fhirResources_.addAll(other.fhirResources_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFhirResourcesIsMutable();
+                  fhirResources_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList fhirResources_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFhirResourcesIsMutable() {
+        if (!fhirResources_.isModifiable()) {
+          fhirResources_ = new com.google.protobuf.LazyStringArrayList(fhirResources_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the fhirResources.
+       */
+      public com.google.protobuf.ProtocolStringList getFhirResourcesList() {
+        fhirResources_.makeImmutable();
+        return fhirResources_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of fhirResources.
+       */
+      public int getFhirResourcesCount() {
+        return fhirResources_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The fhirResources at the given index.
+       */
+      public java.lang.String getFhirResources(int index) {
+        return fhirResources_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the fhirResources at the given index.
+       */
+      public com.google.protobuf.ByteString getFhirResourcesBytes(int index) {
+        return fhirResources_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The fhirResources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFhirResources(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFhirResourcesIsMutable();
+        fhirResources_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The fhirResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFhirResources(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFhirResourcesIsMutable();
+        fhirResources_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param values The fhirResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFhirResources(java.lang.Iterable<java.lang.String> values) {
+        ensureFhirResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fhirResources_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFhirResources() {
+        fhirResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The FHIR resources to match by.
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>
+       * repeated string fhir_resources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes of the fhirResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFhirResourcesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFhirResourcesIsMutable();
+        fhirResources_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+    private static final com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+            .FhirMatcher
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FhirMatcher> PARSER =
+        new com.google.protobuf.AbstractParser<FhirMatcher>() {
+          @java.lang.Override
+          public FhirMatcher parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FhirMatcher> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FhirMatcher> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface MatcherOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.Matcher)
@@ -912,6 +1779,49 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
      */
     com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.UrisMatcherOrBuilder
         getUrisMatcherOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     *
+     * @return Whether the fhirMatcher field is set.
+     */
+    boolean hasFhirMatcher();
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     *
+     * @return The fhirMatcher.
+     */
+    com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        getFhirMatcher();
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcherOrBuilder
+        getFhirMatcherOrBuilder();
 
     com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.Matcher.MatcherCase
         getMatcherCase();
@@ -970,6 +1880,7 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       URIS_MATCHER(1),
+      FHIR_MATCHER(2),
       MATCHER_NOT_SET(0);
       private final int value;
 
@@ -990,6 +1901,8 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         switch (value) {
           case 1:
             return URIS_MATCHER;
+          case 2:
+            return FHIR_MATCHER;
           case 0:
             return MATCHER_NOT_SET;
           default:
@@ -1069,6 +1982,69 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
           .getDefaultInstance();
     }
 
+    public static final int FHIR_MATCHER_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     *
+     * @return Whether the fhirMatcher field is set.
+     */
+    @java.lang.Override
+    public boolean hasFhirMatcher() {
+      return matcherCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     *
+     * @return The fhirMatcher.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+        getFhirMatcher() {
+      if (matcherCase_ == 2) {
+        return (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+            matcher_;
+      }
+      return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matcher by FHIR resource names.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcherOrBuilder
+        getFhirMatcherOrBuilder() {
+      if (matcherCase_ == 2) {
+        return (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+            matcher_;
+      }
+      return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1089,6 +2065,12 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.UrisMatcher)
                 matcher_);
       }
+      if (matcherCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+                matcher_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1103,6 +2085,13 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1,
                 (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.UrisMatcher)
+                    matcher_);
+      }
+      if (matcherCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
                     matcher_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -1128,6 +2117,9 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         case 1:
           if (!getUrisMatcher().equals(other.getUrisMatcher())) return false;
           break;
+        case 2:
+          if (!getFhirMatcher().equals(other.getFhirMatcher())) return false;
+          break;
         case 0:
         default:
       }
@@ -1146,6 +2138,10 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         case 1:
           hash = (37 * hash) + URIS_MATCHER_FIELD_NUMBER;
           hash = (53 * hash) + getUrisMatcher().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + FHIR_MATCHER_FIELD_NUMBER;
+          hash = (53 * hash) + getFhirMatcher().hashCode();
           break;
         case 0:
         default:
@@ -1305,6 +2301,9 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         if (urisMatcherBuilder_ != null) {
           urisMatcherBuilder_.clear();
         }
+        if (fhirMatcherBuilder_ != null) {
+          fhirMatcherBuilder_.clear();
+        }
         matcherCase_ = 0;
         matcher_ = null;
         return this;
@@ -1357,6 +2356,9 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         result.matcher_ = this.matcher_;
         if (matcherCase_ == 1 && urisMatcherBuilder_ != null) {
           result.matcher_ = urisMatcherBuilder_.build();
+        }
+        if (matcherCase_ == 2 && fhirMatcherBuilder_ != null) {
+          result.matcher_ = fhirMatcherBuilder_.build();
         }
       }
 
@@ -1419,6 +2421,11 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
               mergeUrisMatcher(other.getUrisMatcher());
               break;
             }
+          case FHIR_MATCHER:
+            {
+              mergeFhirMatcher(other.getFhirMatcher());
+              break;
+            }
           case MATCHER_NOT_SET:
             {
               break;
@@ -1456,6 +2463,12 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
                   matcherCase_ = 1;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(getFhirMatcherFieldBuilder().getBuilder(), extensionRegistry);
+                  matcherCase_ = 2;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1743,6 +2756,262 @@ public final class BatchGetDocumentsMetadataRequest extends com.google.protobuf.
         matcherCase_ = 1;
         onChanged();
         return urisMatcherBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher,
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                  .FhirMatcherOrBuilder>
+          fhirMatcherBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       *
+       * @return Whether the fhirMatcher field is set.
+       */
+      @java.lang.Override
+      public boolean hasFhirMatcher() {
+        return matcherCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       *
+       * @return The fhirMatcher.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+          getFhirMatcher() {
+        if (fhirMatcherBuilder_ == null) {
+          if (matcherCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                    .FhirMatcher)
+                matcher_;
+          }
+          return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+              .getDefaultInstance();
+        } else {
+          if (matcherCase_ == 2) {
+            return fhirMatcherBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      public Builder setFhirMatcher(
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher value) {
+        if (fhirMatcherBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          matcher_ = value;
+          onChanged();
+        } else {
+          fhirMatcherBuilder_.setMessage(value);
+        }
+        matcherCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      public Builder setFhirMatcher(
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher.Builder
+              builderForValue) {
+        if (fhirMatcherBuilder_ == null) {
+          matcher_ = builderForValue.build();
+          onChanged();
+        } else {
+          fhirMatcherBuilder_.setMessage(builderForValue.build());
+        }
+        matcherCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      public Builder mergeFhirMatcher(
+          com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher value) {
+        if (fhirMatcherBuilder_ == null) {
+          if (matcherCase_ == 2
+              && matcher_
+                  != com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                      .FhirMatcher.getDefaultInstance()) {
+            matcher_ =
+                com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                    .newBuilder(
+                        (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                                .FhirMatcher)
+                            matcher_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            matcher_ = value;
+          }
+          onChanged();
+        } else {
+          if (matcherCase_ == 2) {
+            fhirMatcherBuilder_.mergeFrom(value);
+          } else {
+            fhirMatcherBuilder_.setMessage(value);
+          }
+        }
+        matcherCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      public Builder clearFhirMatcher() {
+        if (fhirMatcherBuilder_ == null) {
+          if (matcherCase_ == 2) {
+            matcherCase_ = 0;
+            matcher_ = null;
+            onChanged();
+          }
+        } else {
+          if (matcherCase_ == 2) {
+            matcherCase_ = 0;
+            matcher_ = null;
+          }
+          fhirMatcherBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+              .Builder
+          getFhirMatcherBuilder() {
+        return getFhirMatcherFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+              .FhirMatcherOrBuilder
+          getFhirMatcherOrBuilder() {
+        if ((matcherCase_ == 2) && (fhirMatcherBuilder_ != null)) {
+          return fhirMatcherBuilder_.getMessageOrBuilder();
+        } else {
+          if (matcherCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                    .FhirMatcher)
+                matcher_;
+          }
+          return com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher by FHIR resource names.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher fhir_matcher = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher,
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                  .FhirMatcherOrBuilder>
+          getFhirMatcherFieldBuilder() {
+        if (fhirMatcherBuilder_ == null) {
+          if (!(matcherCase_ == 2)) {
+            matcher_ =
+                com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                    .getDefaultInstance();
+          }
+          fhirMatcherBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher,
+                  com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest
+                      .FhirMatcherOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest.FhirMatcher)
+                      matcher_,
+                  getParentForChildren(),
+                  isClean());
+          matcher_ = null;
+        }
+        matcherCase_ = 2;
+        onChanged();
+        return fhirMatcherBuilder_;
       }
 
       @java.lang.Override

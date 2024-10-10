@@ -118,7 +118,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1275
+   *     google/container/v1/cluster_service.proto;l=1309
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -138,7 +138,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1275
+   *     google/container/v1/cluster_service.proto;l=1309
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -503,6 +503,45 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return Whether the parallelstoreCsiDriverConfig field is set.
+   */
+  boolean hasParallelstoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return The parallelstoreCsiDriverConfig.
+   */
+  com.google.container.v1.ParallelstoreCsiDriverConfig getParallelstoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   */
+  com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder
+      getParallelstoreCsiDriverConfigOrBuilder();
 
   /**
    *

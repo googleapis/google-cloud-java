@@ -74,6 +74,72 @@ public class GroundedGenerationServiceClientHttpJsonTest {
   }
 
   @Test
+  public void streamGenerateGroundedContentUnsupportedMethodTest() throws Exception {
+    // The streamGenerateGroundedContent() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void generateGroundedContentTest() throws Exception {
+    GenerateGroundedContentResponse expectedResponse =
+        GenerateGroundedContentResponse.newBuilder()
+            .addAllCandidates(new ArrayList<GenerateGroundedContentResponse.Candidate>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerateGroundedContentRequest request =
+        GenerateGroundedContentRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+            .addAllContents(new ArrayList<GroundedGenerationContent>())
+            .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+            .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
+            .build();
+
+    GenerateGroundedContentResponse actualResponse = client.generateGroundedContent(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateGroundedContentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerateGroundedContentRequest request =
+          GenerateGroundedContentRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+              .addAllContents(new ArrayList<GroundedGenerationContent>())
+              .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+              .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
+              .build();
+      client.generateGroundedContent(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void checkGroundingTest() throws Exception {
     CheckGroundingResponse expectedResponse =
         CheckGroundingResponse.newBuilder()

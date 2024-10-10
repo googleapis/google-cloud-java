@@ -4332,6 +4332,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
+       * Google skips the summary if the query is chit chat.
        * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
@@ -4420,6 +4421,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
        */
       CUSTOMER_POLICY_VIOLATION(8),
+      /**
+       *
+       *
+       * <pre>
+       * The non-answer seeking query ignored case.
+       *
+       * Google skips the summary if the query doesn't have clear intent.
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_answer_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
+       */
+      NON_SUMMARY_SEEKING_QUERY_IGNORED_V2(9),
       UNRECOGNIZED(-1),
       ;
 
@@ -4453,6 +4469,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The non-summary seeking query ignored case.
        *
+       * Google skips the summary if the query is chit chat.
        * Only used when
        * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
        * is set to `true`.
@@ -4541,6 +4558,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>CUSTOMER_POLICY_VIOLATION = 8;</code>
        */
       public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 8;
+      /**
+       *
+       *
+       * <pre>
+       * The non-answer seeking query ignored case.
+       *
+       * Google skips the summary if the query doesn't have clear intent.
+       * Only used when
+       * [SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_answer_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
+       */
+      public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_V2_VALUE = 9;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -4584,6 +4616,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return JAIL_BREAKING_QUERY_IGNORED;
           case 8:
             return CUSTOMER_POLICY_VIOLATION;
+          case 9:
+            return NON_SUMMARY_SEEKING_QUERY_IGNORED_V2;
           default:
             return null;
         }

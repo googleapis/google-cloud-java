@@ -283,7 +283,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The non-answer seeking query ignored case.
+     * The non-answer seeking query ignored case
+     *
+     * Google skips the answer if the query is chit chat.
      * </pre>
      *
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED = 2;</code>
@@ -354,6 +356,18 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
      */
     CUSTOMER_POLICY_VIOLATION(7),
+    /**
+     *
+     *
+     * <pre>
+     * The non-answer seeking query ignored case.
+     *
+     * Google skips the answer if the query doesn't have clear intent.
+     * </pre>
+     *
+     * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
+     */
+    NON_ANSWER_SEEKING_QUERY_IGNORED_V2(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -381,7 +395,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The non-answer seeking query ignored case.
+     * The non-answer seeking query ignored case
+     *
+     * Google skips the answer if the query is chit chat.
      * </pre>
      *
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED = 2;</code>
@@ -452,6 +468,18 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
      */
     public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The non-answer seeking query ignored case.
+     *
+     * Google skips the answer if the query doesn't have clear intent.
+     * </pre>
+     *
+     * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
+     */
+    public static final int NON_ANSWER_SEEKING_QUERY_IGNORED_V2_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -493,6 +521,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return JAIL_BREAKING_QUERY_IGNORED;
         case 7:
           return CUSTOMER_POLICY_VIOLATION;
+        case 8:
+          return NON_ANSWER_SEEKING_QUERY_IGNORED_V2;
         default:
           return null;
       }
@@ -21344,7 +21374,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -21360,6 +21390,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         JAIL_BREAKING_QUERY(3),
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        NON_ANSWER_SEEKING_QUERY_V2(4),
         UNRECOGNIZED(-1),
         ;
 
@@ -21387,7 +21427,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -21403,6 +21443,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         public static final int JAIL_BREAKING_QUERY_VALUE = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        public static final int NON_ANSWER_SEEKING_QUERY_V2_VALUE = 4;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -21436,6 +21486,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               return NON_ANSWER_SEEKING_QUERY;
             case 3:
               return JAIL_BREAKING_QUERY;
+            case 4:
+              return NON_ANSWER_SEEKING_QUERY_V2;
             default:
               return null;
           }

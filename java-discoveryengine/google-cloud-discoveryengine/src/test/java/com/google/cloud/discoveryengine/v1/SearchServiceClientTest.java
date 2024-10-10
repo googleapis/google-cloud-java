@@ -109,6 +109,7 @@ public class SearchServiceClientTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
+            .setOneBoxPageSize(1988477988)
             .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
@@ -151,6 +152,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getOneBoxPageSize(), actualRequest.getOneBoxPageSize());
     Assert.assertEquals(request.getDataStoreSpecsList(), actualRequest.getDataStoreSpecsList());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
@@ -196,6 +198,7 @@ public class SearchServiceClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
