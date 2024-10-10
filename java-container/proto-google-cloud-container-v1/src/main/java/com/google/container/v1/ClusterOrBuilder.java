@@ -105,7 +105,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1775
+   *     google/container/v1/cluster_service.proto;l=1850
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1788
+   *     google/container/v1/cluster_service.proto;l=1863
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -156,7 +156,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1788
+   *     google/container/v1/cluster_service.proto;l=1863
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -814,40 +814,59 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1965
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasMasterAuthorizedNetworksConfig();
   /**
    *
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1965
    * @return The masterAuthorizedNetworksConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig();
   /**
    *
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
       getMasterAuthorizedNetworksConfigOrBuilder();
 
@@ -1553,7 +1572,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1959
+   *     google/container/v1/cluster_service.proto;l=2039
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1570,7 +1589,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1959
+   *     google/container/v1/cluster_service.proto;l=2039
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1701,7 +1720,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1994
+   *     google/container/v1/cluster_service.proto;l=2074
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1722,7 +1741,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1994
+   *     google/container/v1/cluster_service.proto;l=2074
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1798,7 +1817,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2087
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1817,7 +1836,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2087
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -1884,7 +1903,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2104
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1901,7 +1920,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2104
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1918,7 +1937,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2104
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -1936,7 +1955,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2104
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -1956,7 +1975,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2029
+   *     google/container/v1/cluster_service.proto;l=2109
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2425,6 +2444,45 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return Whether the controlPlaneEndpointsConfig field is set.
+   */
+  boolean hasControlPlaneEndpointsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return The controlPlaneEndpointsConfig.
+   */
+  com.google.container.v1.ControlPlaneEndpointsConfig getControlPlaneEndpointsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   */
+  com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder
+      getControlPlaneEndpointsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Beta APIs Config
    * </pre>
    *
@@ -2495,6 +2553,76 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return Whether the secretManagerConfig field is set.
+   */
+  boolean hasSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return The secretManagerConfig.
+   */
+  com.google.container.v1.SecretManagerConfig getSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   */
+  com.google.container.v1.SecretManagerConfigOrBuilder getSecretManagerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   *
+   * @return Whether the compliancePostureConfig field is set.
+   */
+  boolean hasCompliancePostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   *
+   * @return The compliancePostureConfig.
+   */
+  com.google.container.v1.CompliancePostureConfig getCompliancePostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   */
+  com.google.container.v1.CompliancePostureConfigOrBuilder getCompliancePostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *
@@ -2540,4 +2668,80 @@ public interface ClusterOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return Whether the userManagedKeysConfig field is set.
+   */
+  boolean hasUserManagedKeysConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return The userManagedKeysConfig.
+   */
+  com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   */
+  com.google.container.v1.UserManagedKeysConfigOrBuilder getUserManagedKeysConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return Whether the rbacBindingConfig field is set.
+   */
+  boolean hasRbacBindingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return The rbacBindingConfig.
+   */
+  com.google.container.v1.RBACBindingConfig getRbacBindingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   */
+  com.google.container.v1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder();
 }

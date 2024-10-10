@@ -32,11 +32,14 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.CheckGroundingRequest;
 import com.google.cloud.discoveryengine.v1.CheckGroundingResponse;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -64,7 +67,7 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of checkGrounding:
+ * of generateGroundedContent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -75,10 +78,10 @@ import org.threeten.bp.Duration;
  * GroundedGenerationServiceStubSettings.Builder groundedGenerationServiceSettingsBuilder =
  *     GroundedGenerationServiceStubSettings.newBuilder();
  * groundedGenerationServiceSettingsBuilder
- *     .checkGroundingSettings()
+ *     .generateGroundedContentSettings()
  *     .setRetrySettings(
  *         groundedGenerationServiceSettingsBuilder
- *             .checkGroundingSettings()
+ *             .generateGroundedContentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -105,8 +108,25 @@ public class GroundedGenerationServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final StreamingCallSettings<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentSettings;
+  private final UnaryCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentSettings;
   private final UnaryCallSettings<CheckGroundingRequest, CheckGroundingResponse>
       checkGroundingSettings;
+
+  /** Returns the object with the settings used for calls to streamGenerateGroundedContent. */
+  public StreamingCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentSettings() {
+    return streamGenerateGroundedContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateGroundedContent. */
+  public UnaryCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentSettings() {
+    return generateGroundedContentSettings;
+  }
 
   /** Returns the object with the settings used for calls to checkGrounding. */
   public UnaryCallSettings<CheckGroundingRequest, CheckGroundingResponse> checkGroundingSettings() {
@@ -224,6 +244,9 @@ public class GroundedGenerationServiceStubSettings
   protected GroundedGenerationServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    streamGenerateGroundedContentSettings =
+        settingsBuilder.streamGenerateGroundedContentSettings().build();
+    generateGroundedContentSettings = settingsBuilder.generateGroundedContentSettings().build();
     checkGroundingSettings = settingsBuilder.checkGroundingSettings().build();
   }
 
@@ -231,6 +254,12 @@ public class GroundedGenerationServiceStubSettings
   public static class Builder
       extends StubSettings.Builder<GroundedGenerationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final StreamingCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        streamGenerateGroundedContentSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        generateGroundedContentSettings;
     private final UnaryCallSettings.Builder<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -271,20 +300,27 @@ public class GroundedGenerationServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      streamGenerateGroundedContentSettings = StreamingCallSettings.newBuilder();
+      generateGroundedContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       checkGroundingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(checkGroundingSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              generateGroundedContentSettings, checkGroundingSettings);
       initDefaults(this);
     }
 
     protected Builder(GroundedGenerationServiceStubSettings settings) {
       super(settings);
 
+      streamGenerateGroundedContentSettings =
+          settings.streamGenerateGroundedContentSettings.toBuilder();
+      generateGroundedContentSettings = settings.generateGroundedContentSettings.toBuilder();
       checkGroundingSettings = settings.checkGroundingSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(checkGroundingSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              generateGroundedContentSettings, checkGroundingSettings);
     }
 
     private static Builder createDefault() {
@@ -313,6 +349,11 @@ public class GroundedGenerationServiceStubSettings
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .generateGroundedContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .checkGroundingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -333,6 +374,20 @@ public class GroundedGenerationServiceStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateGroundedContent. */
+    public StreamingCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        streamGenerateGroundedContentSettings() {
+      return streamGenerateGroundedContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateGroundedContent. */
+    public UnaryCallSettings.Builder<
+            GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        generateGroundedContentSettings() {
+      return generateGroundedContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to checkGrounding. */

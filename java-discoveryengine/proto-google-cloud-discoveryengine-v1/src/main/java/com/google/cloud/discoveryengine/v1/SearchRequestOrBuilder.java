@@ -240,6 +240,21 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The maximum number of results to return for OneBox.
+   * This applies to each OneBox type individually.
+   * Default number is 10.
+   * </pre>
+   *
+   * <code>int32 one_box_page_size = 47;</code>
+   *
+   * @return The oneBoxPageSize.
+   */
+  int getOneBoxPageSize();
+
+  /**
+   *
+   *
+   * <pre>
    * Specs defining dataStores to filter on in a search call and configurations
    * for those dataStores. This is only considered for engines with multiple
    * dataStores use case. For single dataStore within an engine, they should

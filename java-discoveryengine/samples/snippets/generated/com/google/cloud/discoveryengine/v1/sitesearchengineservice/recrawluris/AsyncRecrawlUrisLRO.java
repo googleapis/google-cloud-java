@@ -46,6 +46,7 @@ public class AsyncRecrawlUrisLRO {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       OperationFuture<RecrawlUrisResponse, RecrawlUrisMetadata> future =
           siteSearchEngineServiceClient.recrawlUrisOperationCallable().futureCall(request);

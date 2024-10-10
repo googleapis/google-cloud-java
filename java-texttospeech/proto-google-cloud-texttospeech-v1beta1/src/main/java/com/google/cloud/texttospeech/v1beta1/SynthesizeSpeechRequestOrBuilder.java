@@ -221,4 +221,46 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return The enum numeric value on the wire of enableTimePointing at the given index.
    */
   int getEnableTimePointingValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return Whether the advancedVoiceOptions field is set.
+   */
+  boolean hasAdvancedVoiceOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return The advancedVoiceOptions.
+   */
+  com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions getAdvancedVoiceOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder
+      getAdvancedVoiceOptionsOrBuilder();
 }

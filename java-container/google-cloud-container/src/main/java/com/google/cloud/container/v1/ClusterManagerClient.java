@@ -1428,6 +1428,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
    *           .setContainerdConfig(ContainerdConfig.newBuilder().build())
    *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+   *           .addAllStoragePools(new ArrayList<String>())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1486,6 +1487,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
    *           .setContainerdConfig(ContainerdConfig.newBuilder().build())
    *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+   *           .addAllStoragePools(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
