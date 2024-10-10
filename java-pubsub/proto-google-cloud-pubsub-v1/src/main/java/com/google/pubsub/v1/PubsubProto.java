@@ -65,6 +65,22 @@ public final class PubsubProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_pubsub_v1_PlatformLogsSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_pubsub_v1_IngestionFailureEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_pubsub_v1_IngestionFailureEvent_ApiViolationReason_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_pubsub_v1_IngestionFailureEvent_ApiViolationReason_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_pubsub_v1_IngestionFailureEvent_AvroFailureReason_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_pubsub_v1_IngestionFailureEvent_AvroFailureReason_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_pubsub_v1_IngestionFailureEvent_CloudStorageFailure_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_pubsub_v1_IngestionFailureEvent_CloudStorageFailure_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_pubsub_v1_Topic_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_pubsub_v1_Topic_fieldAccessorTable;
@@ -365,351 +381,365 @@ public final class PubsubProto {
           + ".v1.PlatformLogsSettings.SeverityB\003\340A\001\"_"
           + "\n\010Severity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010"
           + "DISABLED\020\001\022\t\n\005DEBUG\020\002\022\010\n\004INFO\020\003\022\013\n\007WARNI"
-          + "NG\020\004\022\t\n\005ERROR\020\005\"\272\005\n\005Topic\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\0228\n\006labels\030\002 \003(\0132#.google.pubsub.v1."
-          + "Topic.LabelsEntryB\003\340A\001\022K\n\026message_storag"
-          + "e_policy\030\003 \001(\0132&.google.pubsub.v1.Messag"
-          + "eStoragePolicyB\003\340A\001\022\031\n\014kms_key_name\030\005 \001("
-          + "\tB\003\340A\001\022>\n\017schema_settings\030\006 \001(\0132 .google"
-          + ".pubsub.v1.SchemaSettingsB\003\340A\001\022\032\n\rsatisf"
-          + "ies_pzs\030\007 \001(\010B\003\340A\001\022B\n\032message_retention_"
-          + "duration\030\010 \001(\0132\031.google.protobuf.Duratio"
-          + "nB\003\340A\001\0221\n\005state\030\t \001(\0162\035.google.pubsub.v1"
-          + ".Topic.StateB\003\340A\003\022Z\n\036ingestion_data_sour"
-          + "ce_settings\030\n \001(\0132-.google.pubsub.v1.Ing"
-          + "estionDataSourceSettingsB\003\340A\001\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"H\n\005"
-          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001"
-          + "\022\034\n\030INGESTION_RESOURCE_ERROR\020\002:T\352AQ\n\033pub"
-          + "sub.googleapis.com/Topic\022!projects/{proj"
-          + "ect}/topics/{topic}\022\017_deleted-topic_\"\200\002\n"
-          + "\rPubsubMessage\022\021\n\004data\030\001 \001(\014B\003\340A\001\022H\n\natt"
-          + "ributes\030\002 \003(\0132/.google.pubsub.v1.PubsubM"
-          + "essage.AttributesEntryB\003\340A\001\022\022\n\nmessage_i"
-          + "d\030\003 \001(\t\0220\n\014publish_time\030\004 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022\031\n\014ordering_key\030\005 \001(\tB"
-          + "\003\340A\001\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"E\n\017GetTopicRequest\0222\n\005to"
-          + "pic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.googleapis.com"
-          + "/Topic\"w\n\022UpdateTopicRequest\022+\n\005topic\030\001 "
-          + "\001(\0132\027.google.pubsub.v1.TopicB\003\340A\002\0224\n\013upd"
-          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-          + "skB\003\340A\002\"|\n\016PublishRequest\0222\n\005topic\030\001 \001(\t"
-          + "B#\340A\002\372A\035\n\033pubsub.googleapis.com/Topic\0226\n"
-          + "\010messages\030\002 \003(\0132\037.google.pubsub.v1.Pubsu"
-          + "bMessageB\003\340A\002\"+\n\017PublishResponse\022\030\n\013mess"
-          + "age_ids\030\001 \003(\tB\003\340A\001\"\212\001\n\021ListTopicsRequest"
-          + "\022D\n\007project\030\001 \001(\tB3\340A\002\372A-\n+cloudresource"
-          + "manager.googleapis.com/Project\022\026\n\tpage_s"
-          + "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\""
-          + "`\n\022ListTopicsResponse\022,\n\006topics\030\001 \003(\0132\027."
-          + "google.pubsub.v1.TopicB\003\340A\001\022\034\n\017next_page"
-          + "_token\030\002 \001(\tB\003\340A\001\"\204\001\n\035ListTopicSubscript"
-          + "ionsRequest\0222\n\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pubs"
-          + "ub.googleapis.com/Topic\022\026\n\tpage_size\030\002 \001"
-          + "(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"\201\001\n\036Lis"
-          + "tTopicSubscriptionsResponse\022A\n\rsubscript"
-          + "ions\030\001 \003(\tB*\340A\001\372A$\n\"pubsub.googleapis.co"
-          + "m/Subscription\022\034\n\017next_page_token\030\002 \001(\tB"
-          + "\003\340A\001\"\200\001\n\031ListTopicSnapshotsRequest\0222\n\005to"
-          + "pic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.googleapis.com"
-          + "/Topic\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_t"
-          + "oken\030\003 \001(\tB\003\340A\001\"R\n\032ListTopicSnapshotsRes"
-          + "ponse\022\026\n\tsnapshots\030\001 \003(\tB\003\340A\001\022\034\n\017next_pa"
-          + "ge_token\030\002 \001(\tB\003\340A\001\"H\n\022DeleteTopicReques"
-          + "t\0222\n\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.googlea"
-          + "pis.com/Topic\"]\n\031DetachSubscriptionReque"
+          + "NG\020\004\022\t\n\005ERROR\020\005\"\221\004\n\025IngestionFailureEven"
+          + "t\022\022\n\005topic\030\001 \001(\tB\003\340A\002\022\032\n\rerror_message\030\002"
+          + " \001(\tB\003\340A\002\022a\n\025cloud_storage_failure\030\003 \001(\013"
+          + "2;.google.pubsub.v1.IngestionFailureEven"
+          + "t.CloudStorageFailureB\003\340A\001H\000\032\024\n\022ApiViola"
+          + "tionReason\032\023\n\021AvroFailureReason\032\256\002\n\023Clou"
+          + "dStorageFailure\022\023\n\006bucket\030\001 \001(\tB\003\340A\001\022\030\n\013"
+          + "object_name\030\002 \001(\tB\003\340A\001\022\036\n\021object_generat"
+          + "ion\030\003 \001(\003B\003\340A\001\022]\n\023avro_failure_reason\030\005 "
+          + "\001(\01329.google.pubsub.v1.IngestionFailureE"
+          + "vent.AvroFailureReasonB\003\340A\001H\000\022_\n\024api_vio"
+          + "lation_reason\030\006 \001(\0132:.google.pubsub.v1.I"
+          + "ngestionFailureEvent.ApiViolationReasonB"
+          + "\003\340A\001H\000B\010\n\006reasonB\t\n\007failure\"\272\005\n\005Topic\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\0228\n\006labels\030\002 \003(\0132#.googl"
+          + "e.pubsub.v1.Topic.LabelsEntryB\003\340A\001\022K\n\026me"
+          + "ssage_storage_policy\030\003 \001(\0132&.google.pubs"
+          + "ub.v1.MessageStoragePolicyB\003\340A\001\022\031\n\014kms_k"
+          + "ey_name\030\005 \001(\tB\003\340A\001\022>\n\017schema_settings\030\006 "
+          + "\001(\0132 .google.pubsub.v1.SchemaSettingsB\003\340"
+          + "A\001\022\032\n\rsatisfies_pzs\030\007 \001(\010B\003\340A\001\022B\n\032messag"
+          + "e_retention_duration\030\010 \001(\0132\031.google.prot"
+          + "obuf.DurationB\003\340A\001\0221\n\005state\030\t \001(\0162\035.goog"
+          + "le.pubsub.v1.Topic.StateB\003\340A\003\022Z\n\036ingesti"
+          + "on_data_source_settings\030\n \001(\0132-.google.p"
+          + "ubsub.v1.IngestionDataSourceSettingsB\003\340A"
+          + "\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"H\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
+          + "\022\n\n\006ACTIVE\020\001\022\034\n\030INGESTION_RESOURCE_ERROR"
+          + "\020\002:T\352AQ\n\033pubsub.googleapis.com/Topic\022!pr"
+          + "ojects/{project}/topics/{topic}\022\017_delete"
+          + "d-topic_\"\200\002\n\rPubsubMessage\022\021\n\004data\030\001 \001(\014"
+          + "B\003\340A\001\022H\n\nattributes\030\002 \003(\0132/.google.pubsu"
+          + "b.v1.PubsubMessage.AttributesEntryB\003\340A\001\022"
+          + "\022\n\nmessage_id\030\003 \001(\t\0220\n\014publish_time\030\004 \001("
+          + "\0132\032.google.protobuf.Timestamp\022\031\n\014orderin"
+          + "g_key\030\005 \001(\tB\003\340A\001\0321\n\017AttributesEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n\017GetTopicR"
+          + "equest\0222\n\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.go"
+          + "ogleapis.com/Topic\"w\n\022UpdateTopicRequest"
+          + "\022+\n\005topic\030\001 \001(\0132\027.google.pubsub.v1.Topic"
+          + "B\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.prot"
+          + "obuf.FieldMaskB\003\340A\002\"|\n\016PublishRequest\0222\n"
+          + "\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.googleapis."
+          + "com/Topic\0226\n\010messages\030\002 \003(\0132\037.google.pub"
+          + "sub.v1.PubsubMessageB\003\340A\002\"+\n\017PublishResp"
+          + "onse\022\030\n\013message_ids\030\001 \003(\tB\003\340A\001\"\212\001\n\021ListT"
+          + "opicsRequest\022D\n\007project\030\001 \001(\tB3\340A\002\372A-\n+c"
+          + "loudresourcemanager.googleapis.com/Proje"
+          + "ct\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token"
+          + "\030\003 \001(\tB\003\340A\001\"`\n\022ListTopicsResponse\022,\n\006top"
+          + "ics\030\001 \003(\0132\027.google.pubsub.v1.TopicB\003\340A\001\022"
+          + "\034\n\017next_page_token\030\002 \001(\tB\003\340A\001\"\204\001\n\035ListTo"
+          + "picSubscriptionsRequest\0222\n\005topic\030\001 \001(\tB#"
+          + "\340A\002\372A\035\n\033pubsub.googleapis.com/Topic\022\026\n\tp"
+          + "age_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB"
+          + "\003\340A\001\"\201\001\n\036ListTopicSubscriptionsResponse\022"
+          + "A\n\rsubscriptions\030\001 \003(\tB*\340A\001\372A$\n\"pubsub.g"
+          + "oogleapis.com/Subscription\022\034\n\017next_page_"
+          + "token\030\002 \001(\tB\003\340A\001\"\200\001\n\031ListTopicSnapshotsR"
+          + "equest\0222\n\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pubsub.go"
+          + "ogleapis.com/Topic\022\026\n\tpage_size\030\002 \001(\005B\003\340"
+          + "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"R\n\032ListTopic"
+          + "SnapshotsResponse\022\026\n\tsnapshots\030\001 \003(\tB\003\340A"
+          + "\001\022\034\n\017next_page_token\030\002 \001(\tB\003\340A\001\"H\n\022Delet"
+          + "eTopicRequest\0222\n\005topic\030\001 \001(\tB#\340A\002\372A\035\n\033pu"
+          + "bsub.googleapis.com/Topic\"]\n\031DetachSubsc"
+          + "riptionRequest\022@\n\014subscription\030\001 \001(\tB*\340A"
+          + "\002\372A$\n\"pubsub.googleapis.com/Subscription"
+          + "\"\034\n\032DetachSubscriptionResponse\"\253\n\n\014Subsc"
+          + "ription\022\021\n\004name\030\001 \001(\tB\003\340A\002\0222\n\005topic\030\002 \001("
+          + "\tB#\340A\002\372A\035\n\033pubsub.googleapis.com/Topic\0226"
+          + "\n\013push_config\030\004 \001(\0132\034.google.pubsub.v1.P"
+          + "ushConfigB\003\340A\001\022>\n\017bigquery_config\030\022 \001(\0132"
+          + " .google.pubsub.v1.BigQueryConfigB\003\340A\001\022G"
+          + "\n\024cloud_storage_config\030\026 \001(\0132$.google.pu"
+          + "bsub.v1.CloudStorageConfigB\003\340A\001\022!\n\024ack_d"
+          + "eadline_seconds\030\005 \001(\005B\003\340A\001\022\"\n\025retain_ack"
+          + "ed_messages\030\007 \001(\010B\003\340A\001\022B\n\032message_retent"
+          + "ion_duration\030\010 \001(\0132\031.google.protobuf.Dur"
+          + "ationB\003\340A\001\022?\n\006labels\030\t \003(\0132*.google.pubs"
+          + "ub.v1.Subscription.LabelsEntryB\003\340A\001\022$\n\027e"
+          + "nable_message_ordering\030\n \001(\010B\003\340A\001\022B\n\021exp"
+          + "iration_policy\030\013 \001(\0132\".google.pubsub.v1."
+          + "ExpirationPolicyB\003\340A\001\022\023\n\006filter\030\014 \001(\tB\003\340"
+          + "A\001\022C\n\022dead_letter_policy\030\r \001(\0132\".google."
+          + "pubsub.v1.DeadLetterPolicyB\003\340A\001\0228\n\014retry"
+          + "_policy\030\016 \001(\0132\035.google.pubsub.v1.RetryPo"
+          + "licyB\003\340A\001\022\025\n\010detached\030\017 \001(\010B\003\340A\001\022)\n\034enab"
+          + "le_exactly_once_delivery\030\020 \001(\010B\003\340A\001\022H\n t"
+          + "opic_message_retention_duration\030\021 \001(\0132\031."
+          + "google.protobuf.DurationB\003\340A\003\0228\n\005state\030\023"
+          + " \001(\0162$.google.pubsub.v1.Subscription.Sta"
+          + "teB\003\340A\003\022i\n\037analytics_hub_subscription_in"
+          + "fo\030\027 \001(\0132;.google.pubsub.v1.Subscription"
+          + ".AnalyticsHubSubscriptionInfoB\003\340A\003\032O\n\034An"
+          + "alyticsHubSubscriptionInfo\022\024\n\007listing\030\001 "
+          + "\001(\tB\003\340A\001\022\031\n\014subscription\030\002 \001(\tB\003\340A\001\032-\n\013L"
+          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\">\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006AC"
+          + "TIVE\020\001\022\022\n\016RESOURCE_ERROR\020\002:X\352AU\n\"pubsub."
+          + "googleapis.com/Subscription\022/projects/{p"
+          + "roject}/subscriptions/{subscription}\"\177\n\013"
+          + "RetryPolicy\0227\n\017minimum_backoff\030\001 \001(\0132\031.g"
+          + "oogle.protobuf.DurationB\003\340A\001\0227\n\017maximum_"
+          + "backoff\030\002 \001(\0132\031.google.protobuf.Duration"
+          + "B\003\340A\001\"V\n\020DeadLetterPolicy\022\036\n\021dead_letter"
+          + "_topic\030\001 \001(\tB\003\340A\001\022\"\n\025max_delivery_attemp"
+          + "ts\030\002 \001(\005B\003\340A\001\"?\n\020ExpirationPolicy\022+\n\003ttl"
+          + "\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\"\232"
+          + "\004\n\nPushConfig\022\032\n\rpush_endpoint\030\001 \001(\tB\003\340A"
+          + "\001\022E\n\nattributes\030\002 \003(\0132,.google.pubsub.v1"
+          + ".PushConfig.AttributesEntryB\003\340A\001\022A\n\noidc"
+          + "_token\030\003 \001(\0132&.google.pubsub.v1.PushConf"
+          + "ig.OidcTokenB\003\340A\001H\000\022I\n\016pubsub_wrapper\030\004 "
+          + "\001(\0132*.google.pubsub.v1.PushConfig.Pubsub"
+          + "WrapperB\003\340A\001H\001\022A\n\nno_wrapper\030\005 \001(\0132&.goo"
+          + "gle.pubsub.v1.PushConfig.NoWrapperB\003\340A\001H"
+          + "\001\032F\n\tOidcToken\022\"\n\025service_account_email\030"
+          + "\001 \001(\tB\003\340A\001\022\025\n\010audience\030\002 \001(\tB\003\340A\001\032\017\n\rPub"
+          + "subWrapper\032(\n\tNoWrapper\022\033\n\016write_metadat"
+          + "a\030\001 \001(\010B\003\340A\001\0321\n\017AttributesEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\027\n\025authenticatio"
+          + "n_methodB\t\n\007wrapper\"\216\003\n\016BigQueryConfig\022\022"
+          + "\n\005table\030\001 \001(\tB\003\340A\001\022\035\n\020use_topic_schema\030\002"
+          + " \001(\010B\003\340A\001\022\033\n\016write_metadata\030\003 \001(\010B\003\340A\001\022 "
+          + "\n\023drop_unknown_fields\030\004 \001(\010B\003\340A\001\022:\n\005stat"
+          + "e\030\005 \001(\0162&.google.pubsub.v1.BigQueryConfi"
+          + "g.StateB\003\340A\003\022\035\n\020use_table_schema\030\006 \001(\010B\003"
+          + "\340A\001\022\"\n\025service_account_email\030\007 \001(\tB\003\340A\001\""
+          + "\212\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTI"
+          + "VE\020\001\022\025\n\021PERMISSION_DENIED\020\002\022\r\n\tNOT_FOUND"
+          + "\020\003\022\023\n\017SCHEMA_MISMATCH\020\004\022#\n\037IN_TRANSIT_LO"
+          + "CATION_RESTRICTION\020\005\"\351\005\n\022CloudStorageCon"
+          + "fig\022\023\n\006bucket\030\001 \001(\tB\003\340A\002\022\034\n\017filename_pre"
+          + "fix\030\002 \001(\tB\003\340A\001\022\034\n\017filename_suffix\030\003 \001(\tB"
+          + "\003\340A\001\022%\n\030filename_datetime_format\030\n \001(\tB\003"
+          + "\340A\001\022K\n\013text_config\030\004 \001(\0132/.google.pubsub"
+          + ".v1.CloudStorageConfig.TextConfigB\003\340A\001H\000"
+          + "\022K\n\013avro_config\030\005 \001(\0132/.google.pubsub.v1"
+          + ".CloudStorageConfig.AvroConfigB\003\340A\001H\000\0224\n"
+          + "\014max_duration\030\006 \001(\0132\031.google.protobuf.Du"
+          + "rationB\003\340A\001\022\026\n\tmax_bytes\030\007 \001(\003B\003\340A\001\022\031\n\014m"
+          + "ax_messages\030\010 \001(\003B\003\340A\001\022>\n\005state\030\t \001(\0162*."
+          + "google.pubsub.v1.CloudStorageConfig.Stat"
+          + "eB\003\340A\003\022\"\n\025service_account_email\030\013 \001(\tB\003\340"
+          + "A\001\032\014\n\nTextConfig\032H\n\nAvroConfig\022\033\n\016write_"
+          + "metadata\030\001 \001(\010B\003\340A\001\022\035\n\020use_topic_schema\030"
+          + "\002 \001(\010B\003\340A\001\"\212\001\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\n\n\006ACTIVE\020\001\022\025\n\021PERMISSION_DENIED\020\002\022\r"
+          + "\n\tNOT_FOUND\020\003\022#\n\037IN_TRANSIT_LOCATION_RES"
+          + "TRICTION\020\004\022\023\n\017SCHEMA_MISMATCH\020\005B\017\n\routpu"
+          + "t_format\"|\n\017ReceivedMessage\022\023\n\006ack_id\030\001 "
+          + "\001(\tB\003\340A\001\0225\n\007message\030\002 \001(\0132\037.google.pubsu"
+          + "b.v1.PubsubMessageB\003\340A\001\022\035\n\020delivery_atte"
+          + "mpt\030\003 \001(\005B\003\340A\001\"Z\n\026GetSubscriptionRequest"
+          + "\022@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.g"
+          + "oogleapis.com/Subscription\"\214\001\n\031UpdateSub"
+          + "scriptionRequest\0229\n\014subscription\030\001 \001(\0132\036"
+          + ".google.pubsub.v1.SubscriptionB\003\340A\002\0224\n\013u"
+          + "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\002\"\221\001\n\030ListSubscriptionsRequest\022D"
+          + "\n\007project\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcema"
+          + "nager.googleapis.com/Project\022\026\n\tpage_siz"
+          + "e\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"u\n"
+          + "\031ListSubscriptionsResponse\022:\n\rsubscripti"
+          + "ons\030\001 \003(\0132\036.google.pubsub.v1.Subscriptio"
+          + "nB\003\340A\001\022\034\n\017next_page_token\030\002 \001(\tB\003\340A\001\"]\n\031"
+          + "DeleteSubscriptionRequest\022@\n\014subscriptio"
+          + "n\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.googleapis.com/S"
+          + "ubscription\"\223\001\n\027ModifyPushConfigRequest\022"
+          + "@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.go"
+          + "ogleapis.com/Subscription\0226\n\013push_config"
+          + "\030\002 \001(\0132\034.google.pubsub.v1.PushConfigB\003\340A"
+          + "\002\"\215\001\n\013PullRequest\022@\n\014subscription\030\001 \001(\tB"
+          + "*\340A\002\372A$\n\"pubsub.googleapis.com/Subscript"
+          + "ion\022!\n\022return_immediately\030\002 \001(\010B\005\030\001\340A\001\022\031"
+          + "\n\014max_messages\030\003 \001(\005B\003\340A\002\"Q\n\014PullRespons"
+          + "e\022A\n\021received_messages\030\001 \003(\0132!.google.pu"
+          + "bsub.v1.ReceivedMessageB\003\340A\001\"\225\001\n\030ModifyA"
+          + "ckDeadlineRequest\022@\n\014subscription\030\001 \001(\tB"
+          + "*\340A\002\372A$\n\"pubsub.googleapis.com/Subscript"
+          + "ion\022\024\n\007ack_ids\030\004 \003(\tB\003\340A\002\022!\n\024ack_deadlin"
+          + "e_seconds\030\003 \001(\005B\003\340A\002\"l\n\022AcknowledgeReque"
           + "st\022@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pubsub"
-          + ".googleapis.com/Subscription\"\034\n\032DetachSu"
-          + "bscriptionResponse\"\253\n\n\014Subscription\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\002\0222\n\005topic\030\002 \001(\tB#\340A\002\372A\035\n\033p"
-          + "ubsub.googleapis.com/Topic\0226\n\013push_confi"
-          + "g\030\004 \001(\0132\034.google.pubsub.v1.PushConfigB\003\340"
-          + "A\001\022>\n\017bigquery_config\030\022 \001(\0132 .google.pub"
-          + "sub.v1.BigQueryConfigB\003\340A\001\022G\n\024cloud_stor"
-          + "age_config\030\026 \001(\0132$.google.pubsub.v1.Clou"
-          + "dStorageConfigB\003\340A\001\022!\n\024ack_deadline_seco"
-          + "nds\030\005 \001(\005B\003\340A\001\022\"\n\025retain_acked_messages\030"
-          + "\007 \001(\010B\003\340A\001\022B\n\032message_retention_duration"
-          + "\030\010 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022?"
-          + "\n\006labels\030\t \003(\0132*.google.pubsub.v1.Subscr"
-          + "iption.LabelsEntryB\003\340A\001\022$\n\027enable_messag"
-          + "e_ordering\030\n \001(\010B\003\340A\001\022B\n\021expiration_poli"
-          + "cy\030\013 \001(\0132\".google.pubsub.v1.ExpirationPo"
-          + "licyB\003\340A\001\022\023\n\006filter\030\014 \001(\tB\003\340A\001\022C\n\022dead_l"
-          + "etter_policy\030\r \001(\0132\".google.pubsub.v1.De"
-          + "adLetterPolicyB\003\340A\001\0228\n\014retry_policy\030\016 \001("
-          + "\0132\035.google.pubsub.v1.RetryPolicyB\003\340A\001\022\025\n"
-          + "\010detached\030\017 \001(\010B\003\340A\001\022)\n\034enable_exactly_o"
-          + "nce_delivery\030\020 \001(\010B\003\340A\001\022H\n topic_message"
-          + "_retention_duration\030\021 \001(\0132\031.google.proto"
-          + "buf.DurationB\003\340A\003\0228\n\005state\030\023 \001(\0162$.googl"
-          + "e.pubsub.v1.Subscription.StateB\003\340A\003\022i\n\037a"
-          + "nalytics_hub_subscription_info\030\027 \001(\0132;.g"
-          + "oogle.pubsub.v1.Subscription.AnalyticsHu"
-          + "bSubscriptionInfoB\003\340A\003\032O\n\034AnalyticsHubSu"
-          + "bscriptionInfo\022\024\n\007listing\030\001 \001(\tB\003\340A\001\022\031\n\014"
-          + "subscription\030\002 \001(\tB\003\340A\001\032-\n\013LabelsEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\">\n\005State\022"
-          + "\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\022\n\016RE"
-          + "SOURCE_ERROR\020\002:X\352AU\n\"pubsub.googleapis.c"
-          + "om/Subscription\022/projects/{project}/subs"
-          + "criptions/{subscription}\"\177\n\013RetryPolicy\022"
-          + "7\n\017minimum_backoff\030\001 \001(\0132\031.google.protob"
-          + "uf.DurationB\003\340A\001\0227\n\017maximum_backoff\030\002 \001("
-          + "\0132\031.google.protobuf.DurationB\003\340A\001\"V\n\020Dea"
-          + "dLetterPolicy\022\036\n\021dead_letter_topic\030\001 \001(\t"
-          + "B\003\340A\001\022\"\n\025max_delivery_attempts\030\002 \001(\005B\003\340A"
-          + "\001\"?\n\020ExpirationPolicy\022+\n\003ttl\030\001 \001(\0132\031.goo"
-          + "gle.protobuf.DurationB\003\340A\001\"\232\004\n\nPushConfi"
-          + "g\022\032\n\rpush_endpoint\030\001 \001(\tB\003\340A\001\022E\n\nattribu"
-          + "tes\030\002 \003(\0132,.google.pubsub.v1.PushConfig."
-          + "AttributesEntryB\003\340A\001\022A\n\noidc_token\030\003 \001(\013"
-          + "2&.google.pubsub.v1.PushConfig.OidcToken"
-          + "B\003\340A\001H\000\022I\n\016pubsub_wrapper\030\004 \001(\0132*.google"
-          + ".pubsub.v1.PushConfig.PubsubWrapperB\003\340A\001"
-          + "H\001\022A\n\nno_wrapper\030\005 \001(\0132&.google.pubsub.v"
-          + "1.PushConfig.NoWrapperB\003\340A\001H\001\032F\n\tOidcTok"
-          + "en\022\"\n\025service_account_email\030\001 \001(\tB\003\340A\001\022\025"
-          + "\n\010audience\030\002 \001(\tB\003\340A\001\032\017\n\rPubsubWrapper\032("
-          + "\n\tNoWrapper\022\033\n\016write_metadata\030\001 \001(\010B\003\340A\001"
-          + "\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001B\027\n\025authentication_methodB\t\n\007"
-          + "wrapper\"\216\003\n\016BigQueryConfig\022\022\n\005table\030\001 \001("
-          + "\tB\003\340A\001\022\035\n\020use_topic_schema\030\002 \001(\010B\003\340A\001\022\033\n"
-          + "\016write_metadata\030\003 \001(\010B\003\340A\001\022 \n\023drop_unkno"
-          + "wn_fields\030\004 \001(\010B\003\340A\001\022:\n\005state\030\005 \001(\0162&.go"
-          + "ogle.pubsub.v1.BigQueryConfig.StateB\003\340A\003"
-          + "\022\035\n\020use_table_schema\030\006 \001(\010B\003\340A\001\022\"\n\025servi"
-          + "ce_account_email\030\007 \001(\tB\003\340A\001\"\212\001\n\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\025\n\021PERM"
-          + "ISSION_DENIED\020\002\022\r\n\tNOT_FOUND\020\003\022\023\n\017SCHEMA"
-          + "_MISMATCH\020\004\022#\n\037IN_TRANSIT_LOCATION_RESTR"
-          + "ICTION\020\005\"\351\005\n\022CloudStorageConfig\022\023\n\006bucke"
-          + "t\030\001 \001(\tB\003\340A\002\022\034\n\017filename_prefix\030\002 \001(\tB\003\340"
-          + "A\001\022\034\n\017filename_suffix\030\003 \001(\tB\003\340A\001\022%\n\030file"
-          + "name_datetime_format\030\n \001(\tB\003\340A\001\022K\n\013text_"
-          + "config\030\004 \001(\0132/.google.pubsub.v1.CloudSto"
-          + "rageConfig.TextConfigB\003\340A\001H\000\022K\n\013avro_con"
-          + "fig\030\005 \001(\0132/.google.pubsub.v1.CloudStorag"
-          + "eConfig.AvroConfigB\003\340A\001H\000\0224\n\014max_duratio"
-          + "n\030\006 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022"
-          + "\026\n\tmax_bytes\030\007 \001(\003B\003\340A\001\022\031\n\014max_messages\030"
-          + "\010 \001(\003B\003\340A\001\022>\n\005state\030\t \001(\0162*.google.pubsu"
-          + "b.v1.CloudStorageConfig.StateB\003\340A\003\022\"\n\025se"
-          + "rvice_account_email\030\013 \001(\tB\003\340A\001\032\014\n\nTextCo"
-          + "nfig\032H\n\nAvroConfig\022\033\n\016write_metadata\030\001 \001"
-          + "(\010B\003\340A\001\022\035\n\020use_topic_schema\030\002 \001(\010B\003\340A\001\"\212"
-          + "\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIV"
-          + "E\020\001\022\025\n\021PERMISSION_DENIED\020\002\022\r\n\tNOT_FOUND\020"
-          + "\003\022#\n\037IN_TRANSIT_LOCATION_RESTRICTION\020\004\022\023"
-          + "\n\017SCHEMA_MISMATCH\020\005B\017\n\routput_format\"|\n\017"
-          + "ReceivedMessage\022\023\n\006ack_id\030\001 \001(\tB\003\340A\001\0225\n\007"
-          + "message\030\002 \001(\0132\037.google.pubsub.v1.PubsubM"
-          + "essageB\003\340A\001\022\035\n\020delivery_attempt\030\003 \001(\005B\003\340"
-          + "A\001\"Z\n\026GetSubscriptionRequest\022@\n\014subscrip"
-          + "tion\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.googleapis.co"
-          + "m/Subscription\"\214\001\n\031UpdateSubscriptionReq"
-          + "uest\0229\n\014subscription\030\001 \001(\0132\036.google.pubs"
-          + "ub.v1.SubscriptionB\003\340A\002\0224\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\221\001"
-          + "\n\030ListSubscriptionsRequest\022D\n\007project\030\001 "
-          + "\001(\tB3\340A\002\372A-\n+cloudresourcemanager.google"
-          + "apis.com/Project\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001"
-          + "\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"u\n\031ListSubscri"
-          + "ptionsResponse\022:\n\rsubscriptions\030\001 \003(\0132\036."
-          + "google.pubsub.v1.SubscriptionB\003\340A\001\022\034\n\017ne"
-          + "xt_page_token\030\002 \001(\tB\003\340A\001\"]\n\031DeleteSubscr"
-          + "iptionRequest\022@\n\014subscription\030\001 \001(\tB*\340A\002"
-          + "\372A$\n\"pubsub.googleapis.com/Subscription\""
-          + "\223\001\n\027ModifyPushConfigRequest\022@\n\014subscript"
-          + "ion\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.googleapis.com"
-          + "/Subscription\0226\n\013push_config\030\002 \001(\0132\034.goo"
-          + "gle.pubsub.v1.PushConfigB\003\340A\002\"\215\001\n\013PullRe"
-          + "quest\022@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pub"
-          + "sub.googleapis.com/Subscription\022!\n\022retur"
-          + "n_immediately\030\002 \001(\010B\005\030\001\340A\001\022\031\n\014max_messag"
-          + "es\030\003 \001(\005B\003\340A\002\"Q\n\014PullResponse\022A\n\021receive"
-          + "d_messages\030\001 \003(\0132!.google.pubsub.v1.Rece"
-          + "ivedMessageB\003\340A\001\"\225\001\n\030ModifyAckDeadlineRe"
-          + "quest\022@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pub"
-          + "sub.googleapis.com/Subscription\022\024\n\007ack_i"
-          + "ds\030\004 \003(\tB\003\340A\002\022!\n\024ack_deadline_seconds\030\003 "
-          + "\001(\005B\003\340A\002\"l\n\022AcknowledgeRequest\022@\n\014subscr"
-          + "iption\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.googleapis."
-          + "com/Subscription\022\024\n\007ack_ids\030\002 \003(\tB\003\340A\002\"\307"
-          + "\002\n\024StreamingPullRequest\022@\n\014subscription\030"
-          + "\001 \001(\tB*\340A\002\372A$\n\"pubsub.googleapis.com/Sub"
-          + "scription\022\024\n\007ack_ids\030\002 \003(\tB\003\340A\001\022$\n\027modif"
-          + "y_deadline_seconds\030\003 \003(\005B\003\340A\001\022$\n\027modify_"
-          + "deadline_ack_ids\030\004 \003(\tB\003\340A\001\022(\n\033stream_ac"
-          + "k_deadline_seconds\030\005 \001(\005B\003\340A\002\022\026\n\tclient_"
-          + "id\030\006 \001(\tB\003\340A\001\022%\n\030max_outstanding_message"
-          + "s\030\007 \001(\003B\003\340A\001\022\"\n\025max_outstanding_bytes\030\010 "
-          + "\001(\003B\003\340A\001\"\236\006\n\025StreamingPullResponse\022A\n\021re"
-          + "ceived_messages\030\001 \003(\0132!.google.pubsub.v1"
-          + ".ReceivedMessageB\003\340A\001\022f\n\030acknowledge_con"
-          + "firmation\030\005 \001(\0132?.google.pubsub.v1.Strea"
-          + "mingPullResponse.AcknowledgeConfirmation"
-          + "B\003\340A\001\022t\n modify_ack_deadline_confirmatio"
-          + "n\030\003 \001(\0132E.google.pubsub.v1.StreamingPull"
-          + "Response.ModifyAckDeadlineConfirmationB\003"
-          + "\340A\001\022d\n\027subscription_properties\030\004 \001(\0132>.g"
-          + "oogle.pubsub.v1.StreamingPullResponse.Su"
-          + "bscriptionPropertiesB\003\340A\001\032\224\001\n\027Acknowledg"
-          + "eConfirmation\022\024\n\007ack_ids\030\001 \003(\tB\003\340A\001\022\034\n\017i"
-          + "nvalid_ack_ids\030\002 \003(\tB\003\340A\001\022\036\n\021unordered_a"
-          + "ck_ids\030\003 \003(\tB\003\340A\001\022%\n\030temporary_failed_ac"
-          + "k_ids\030\004 \003(\tB\003\340A\001\032z\n\035ModifyAckDeadlineCon"
-          + "firmation\022\024\n\007ack_ids\030\001 \003(\tB\003\340A\001\022\034\n\017inval"
-          + "id_ack_ids\030\002 \003(\tB\003\340A\001\022%\n\030temporary_faile"
-          + "d_ack_ids\030\003 \003(\tB\003\340A\001\032k\n\026SubscriptionProp"
-          + "erties\022*\n\035exactly_once_delivery_enabled\030"
-          + "\001 \001(\010B\003\340A\001\022%\n\030message_ordering_enabled\030\002"
-          + " \001(\010B\003\340A\001\"\210\002\n\025CreateSnapshotRequest\0224\n\004n"
-          + "ame\030\001 \001(\tB&\340A\002\372A \n\036pubsub.googleapis.com"
-          + "/Snapshot\022@\n\014subscription\030\002 \001(\tB*\340A\002\372A$\n"
-          + "\"pubsub.googleapis.com/Subscription\022H\n\006l"
-          + "abels\030\003 \003(\01323.google.pubsub.v1.CreateSna"
-          + "pshotRequest.LabelsEntryB\003\340A\001\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n"
-          + "\025UpdateSnapshotRequest\0221\n\010snapshot\030\001 \001(\013"
-          + "2\032.google.pubsub.v1.SnapshotB\003\340A\002\0224\n\013upd"
-          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-          + "skB\003\340A\002\"\301\002\n\010Snapshot\022\021\n\004name\030\001 \001(\tB\003\340A\001\022"
-          + "2\n\005topic\030\002 \001(\tB#\340A\001\372A\035\n\033pubsub.googleapi"
-          + "s.com/Topic\0224\n\013expire_time\030\003 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\001\022;\n\006labels\030\004 \003("
-          + "\0132&.google.pubsub.v1.Snapshot.LabelsEntr"
-          + "yB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001:L\352AI\n\036pubsub.googleapis.co"
-          + "m/Snapshot\022\'projects/{project}/snapshots"
-          + "/{snapshot}\"N\n\022GetSnapshotRequest\0228\n\010sna"
-          + "pshot\030\001 \001(\tB&\340A\002\372A \n\036pubsub.googleapis.c"
-          + "om/Snapshot\"\215\001\n\024ListSnapshotsRequest\022D\n\007"
-          + "project\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemana"
-          + "ger.googleapis.com/Project\022\026\n\tpage_size\030"
-          + "\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"i\n\025L"
-          + "istSnapshotsResponse\0222\n\tsnapshots\030\001 \003(\0132"
-          + "\032.google.pubsub.v1.SnapshotB\003\340A\001\022\034\n\017next"
-          + "_page_token\030\002 \001(\tB\003\340A\001\"Q\n\025DeleteSnapshot"
-          + "Request\0228\n\010snapshot\030\001 \001(\tB&\340A\002\372A \n\036pubsu"
-          + "b.googleapis.com/Snapshot\"\306\001\n\013SeekReques"
-          + "t\022@\n\014subscription\030\001 \001(\tB*\340A\002\372A$\n\"pubsub."
-          + "googleapis.com/Subscription\022/\n\004time\030\002 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\001H\000\022:\n\010"
-          + "snapshot\030\003 \001(\tB&\340A\001\372A \n\036pubsub.googleapi"
-          + "s.com/SnapshotH\000B\010\n\006target\"\016\n\014SeekRespon"
-          + "se2\270\013\n\tPublisher\022q\n\013CreateTopic\022\027.google"
-          + ".pubsub.v1.Topic\032\027.google.pubsub.v1.Topi"
-          + "c\"0\332A\004name\202\323\344\223\002#\032\036/v1/{name=projects/*/t"
-          + "opics/*}:\001*\022\221\001\n\013UpdateTopic\022$.google.pub"
-          + "sub.v1.UpdateTopicRequest\032\027.google.pubsu"
-          + "b.v1.Topic\"C\332A\021topic,update_mask\202\323\344\223\002)2$"
-          + "/v1/{topic.name=projects/*/topics/*}:\001*\022"
-          + "\223\001\n\007Publish\022 .google.pubsub.v1.PublishRe"
-          + "quest\032!.google.pubsub.v1.PublishResponse"
-          + "\"C\332A\016topic,messages\202\323\344\223\002,\"\'/v1/{topic=pr"
-          + "ojects/*/topics/*}:publish:\001*\022w\n\010GetTopi"
-          + "c\022!.google.pubsub.v1.GetTopicRequest\032\027.g"
-          + "oogle.pubsub.v1.Topic\"/\332A\005topic\202\323\344\223\002!\022\037/"
-          + "v1/{topic=projects/*/topics/*}\022\212\001\n\nListT"
-          + "opics\022#.google.pubsub.v1.ListTopicsReque"
-          + "st\032$.google.pubsub.v1.ListTopicsResponse"
-          + "\"1\332A\007project\202\323\344\223\002!\022\037/v1/{project=project"
-          + "s/*}/topics\022\272\001\n\026ListTopicSubscriptions\022/"
-          + ".google.pubsub.v1.ListTopicSubscriptions"
-          + "Request\0320.google.pubsub.v1.ListTopicSubs"
-          + "criptionsResponse\"=\332A\005topic\202\323\344\223\002/\022-/v1/{"
-          + "topic=projects/*/topics/*}/subscriptions"
-          + "\022\252\001\n\022ListTopicSnapshots\022+.google.pubsub."
-          + "v1.ListTopicSnapshotsRequest\032,.google.pu"
-          + "bsub.v1.ListTopicSnapshotsResponse\"9\332A\005t"
-          + "opic\202\323\344\223\002+\022)/v1/{topic=projects/*/topics"
-          + "/*}/snapshots\022|\n\013DeleteTopic\022$.google.pu"
-          + "bsub.v1.DeleteTopicRequest\032\026.google.prot"
-          + "obuf.Empty\"/\332A\005topic\202\323\344\223\002!*\037/v1/{topic=p"
-          + "rojects/*/topics/*}\022\255\001\n\022DetachSubscripti"
-          + "on\022+.google.pubsub.v1.DetachSubscription"
-          + "Request\032,.google.pubsub.v1.DetachSubscri"
-          + "ptionResponse\"<\202\323\344\223\0026\"4/v1/{subscription"
-          + "=projects/*/subscriptions/*}:detach\032p\312A\025"
-          + "pubsub.googleapis.com\322AUhttps://www.goog"
-          + "leapis.com/auth/cloud-platform,https://w"
-          + "ww.googleapis.com/auth/pubsub2\322\025\n\nSubscr"
-          + "iber\022\264\001\n\022CreateSubscription\022\036.google.pub"
-          + "sub.v1.Subscription\032\036.google.pubsub.v1.S"
-          + "ubscription\"^\332A+name,topic,push_config,a"
-          + "ck_deadline_seconds\202\323\344\223\002*\032%/v1/{name=pro"
-          + "jects/*/subscriptions/*}:\001*\022\241\001\n\017GetSubsc"
-          + "ription\022(.google.pubsub.v1.GetSubscripti"
-          + "onRequest\032\036.google.pubsub.v1.Subscriptio"
-          + "n\"D\332A\014subscription\202\323\344\223\002/\022-/v1/{subscript"
-          + "ion=projects/*/subscriptions/*}\022\273\001\n\022Upda"
-          + "teSubscription\022+.google.pubsub.v1.Update"
-          + "SubscriptionRequest\032\036.google.pubsub.v1.S"
-          + "ubscription\"X\332A\030subscription,update_mask"
-          + "\202\323\344\223\002722/v1/{subscription.name=projects/"
-          + "*/subscriptions/*}:\001*\022\246\001\n\021ListSubscripti"
-          + "ons\022*.google.pubsub.v1.ListSubscriptions"
-          + "Request\032+.google.pubsub.v1.ListSubscript"
-          + "ionsResponse\"8\332A\007project\202\323\344\223\002(\022&/v1/{pro"
-          + "ject=projects/*}/subscriptions\022\237\001\n\022Delet"
-          + "eSubscription\022+.google.pubsub.v1.DeleteS"
-          + "ubscriptionRequest\032\026.google.protobuf.Emp"
-          + "ty\"D\332A\014subscription\202\323\344\223\002/*-/v1/{subscrip"
-          + "tion=projects/*/subscriptions/*}\022\317\001\n\021Mod"
-          + "ifyAckDeadline\022*.google.pubsub.v1.Modify"
-          + "AckDeadlineRequest\032\026.google.protobuf.Emp"
-          + "ty\"v\332A)subscription,ack_ids,ack_deadline"
-          + "_seconds\202\323\344\223\002D\"?/v1/{subscription=projec"
-          + "ts/*/subscriptions/*}:modifyAckDeadline:"
-          + "\001*\022\250\001\n\013Acknowledge\022$.google.pubsub.v1.Ac"
-          + "knowledgeRequest\032\026.google.protobuf.Empty"
-          + "\"[\332A\024subscription,ack_ids\202\323\344\223\002>\"9/v1/{su"
-          + "bscription=projects/*/subscriptions/*}:a"
-          + "cknowledge:\001*\022\320\001\n\004Pull\022\035.google.pubsub.v"
-          + "1.PullRequest\032\036.google.pubsub.v1.PullRes"
-          + "ponse\"\210\001\332A,subscription,return_immediate"
-          + "ly,max_messages\332A\031subscription,max_messa"
-          + "ges\202\323\344\223\0027\"2/v1/{subscription=projects/*/"
-          + "subscriptions/*}:pull:\001*\022f\n\rStreamingPul"
-          + "l\022&.google.pubsub.v1.StreamingPullReques"
-          + "t\032\'.google.pubsub.v1.StreamingPullRespon"
-          + "se\"\000(\0010\001\022\273\001\n\020ModifyPushConfig\022).google.p"
-          + "ubsub.v1.ModifyPushConfigRequest\032\026.googl"
-          + "e.protobuf.Empty\"d\332A\030subscription,push_c"
-          + "onfig\202\323\344\223\002C\">/v1/{subscription=projects/"
-          + "*/subscriptions/*}:modifyPushConfig:\001*\022\211"
-          + "\001\n\013GetSnapshot\022$.google.pubsub.v1.GetSna"
-          + "pshotRequest\032\032.google.pubsub.v1.Snapshot"
-          + "\"8\332A\010snapshot\202\323\344\223\002\'\022%/v1/{snapshot=proje"
-          + "cts/*/snapshots/*}\022\226\001\n\rListSnapshots\022&.g"
-          + "oogle.pubsub.v1.ListSnapshotsRequest\032\'.g"
-          + "oogle.pubsub.v1.ListSnapshotsResponse\"4\332"
-          + "A\007project\202\323\344\223\002$\022\"/v1/{project=projects/*"
-          + "}/snapshots\022\227\001\n\016CreateSnapshot\022\'.google."
-          + "pubsub.v1.CreateSnapshotRequest\032\032.google"
-          + ".pubsub.v1.Snapshot\"@\332A\021name,subscriptio"
-          + "n\202\323\344\223\002&\032!/v1/{name=projects/*/snapshots/"
-          + "*}:\001*\022\243\001\n\016UpdateSnapshot\022\'.google.pubsub"
-          + ".v1.UpdateSnapshotRequest\032\032.google.pubsu"
-          + "b.v1.Snapshot\"L\332A\024snapshot,update_mask\202\323"
-          + "\344\223\002/2*/v1/{snapshot.name=projects/*/snap"
-          + "shots/*}:\001*\022\213\001\n\016DeleteSnapshot\022\'.google."
-          + "pubsub.v1.DeleteSnapshotRequest\032\026.google"
-          + ".protobuf.Empty\"8\332A\010snapshot\202\323\344\223\002\'*%/v1/"
-          + "{snapshot=projects/*/snapshots/*}\022\204\001\n\004Se"
-          + "ek\022\035.google.pubsub.v1.SeekRequest\032\036.goog"
-          + "le.pubsub.v1.SeekResponse\"=\202\323\344\223\0027\"2/v1/{"
+          + ".googleapis.com/Subscription\022\024\n\007ack_ids\030"
+          + "\002 \003(\tB\003\340A\002\"\307\002\n\024StreamingPullRequest\022@\n\014s"
+          + "ubscription\030\001 \001(\tB*\340A\002\372A$\n\"pubsub.google"
+          + "apis.com/Subscription\022\024\n\007ack_ids\030\002 \003(\tB\003"
+          + "\340A\001\022$\n\027modify_deadline_seconds\030\003 \003(\005B\003\340A"
+          + "\001\022$\n\027modify_deadline_ack_ids\030\004 \003(\tB\003\340A\001\022"
+          + "(\n\033stream_ack_deadline_seconds\030\005 \001(\005B\003\340A"
+          + "\002\022\026\n\tclient_id\030\006 \001(\tB\003\340A\001\022%\n\030max_outstan"
+          + "ding_messages\030\007 \001(\003B\003\340A\001\022\"\n\025max_outstand"
+          + "ing_bytes\030\010 \001(\003B\003\340A\001\"\236\006\n\025StreamingPullRe"
+          + "sponse\022A\n\021received_messages\030\001 \003(\0132!.goog"
+          + "le.pubsub.v1.ReceivedMessageB\003\340A\001\022f\n\030ack"
+          + "nowledge_confirmation\030\005 \001(\0132?.google.pub"
+          + "sub.v1.StreamingPullResponse.Acknowledge"
+          + "ConfirmationB\003\340A\001\022t\n modify_ack_deadline"
+          + "_confirmation\030\003 \001(\0132E.google.pubsub.v1.S"
+          + "treamingPullResponse.ModifyAckDeadlineCo"
+          + "nfirmationB\003\340A\001\022d\n\027subscription_properti"
+          + "es\030\004 \001(\0132>.google.pubsub.v1.StreamingPul"
+          + "lResponse.SubscriptionPropertiesB\003\340A\001\032\224\001"
+          + "\n\027AcknowledgeConfirmation\022\024\n\007ack_ids\030\001 \003"
+          + "(\tB\003\340A\001\022\034\n\017invalid_ack_ids\030\002 \003(\tB\003\340A\001\022\036\n"
+          + "\021unordered_ack_ids\030\003 \003(\tB\003\340A\001\022%\n\030tempora"
+          + "ry_failed_ack_ids\030\004 \003(\tB\003\340A\001\032z\n\035ModifyAc"
+          + "kDeadlineConfirmation\022\024\n\007ack_ids\030\001 \003(\tB\003"
+          + "\340A\001\022\034\n\017invalid_ack_ids\030\002 \003(\tB\003\340A\001\022%\n\030tem"
+          + "porary_failed_ack_ids\030\003 \003(\tB\003\340A\001\032k\n\026Subs"
+          + "criptionProperties\022*\n\035exactly_once_deliv"
+          + "ery_enabled\030\001 \001(\010B\003\340A\001\022%\n\030message_orderi"
+          + "ng_enabled\030\002 \001(\010B\003\340A\001\"\210\002\n\025CreateSnapshot"
+          + "Request\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036pubsub.go"
+          + "ogleapis.com/Snapshot\022@\n\014subscription\030\002 "
+          + "\001(\tB*\340A\002\372A$\n\"pubsub.googleapis.com/Subsc"
+          + "ription\022H\n\006labels\030\003 \003(\01323.google.pubsub."
+          + "v1.CreateSnapshotRequest.LabelsEntryB\003\340A"
+          + "\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"\200\001\n\025UpdateSnapshotRequest\0221\n\010sn"
+          + "apshot\030\001 \001(\0132\032.google.pubsub.v1.Snapshot"
+          + "B\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.prot"
+          + "obuf.FieldMaskB\003\340A\002\"\301\002\n\010Snapshot\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\001\0222\n\005topic\030\002 \001(\tB#\340A\001\372A\035\n\033pubs"
+          + "ub.googleapis.com/Topic\0224\n\013expire_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022;\n"
+          + "\006labels\030\004 \003(\0132&.google.pubsub.v1.Snapsho"
+          + "t.LabelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:L\352AI\n\036pubsub.g"
+          + "oogleapis.com/Snapshot\022\'projects/{projec"
+          + "t}/snapshots/{snapshot}\"N\n\022GetSnapshotRe"
+          + "quest\0228\n\010snapshot\030\001 \001(\tB&\340A\002\372A \n\036pubsub."
+          + "googleapis.com/Snapshot\"\215\001\n\024ListSnapshot"
+          + "sRequest\022D\n\007project\030\001 \001(\tB3\340A\002\372A-\n+cloud"
+          + "resourcemanager.googleapis.com/Project\022\026"
+          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
+          + "(\tB\003\340A\001\"i\n\025ListSnapshotsResponse\0222\n\tsnap"
+          + "shots\030\001 \003(\0132\032.google.pubsub.v1.SnapshotB"
+          + "\003\340A\001\022\034\n\017next_page_token\030\002 \001(\tB\003\340A\001\"Q\n\025De"
+          + "leteSnapshotRequest\0228\n\010snapshot\030\001 \001(\tB&\340"
+          + "A\002\372A \n\036pubsub.googleapis.com/Snapshot\"\306\001"
+          + "\n\013SeekRequest\022@\n\014subscription\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"pubsub.googleapis.com/Subscription\022"
+          + "/\n\004time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\001H\000\022:\n\010snapshot\030\003 \001(\tB&\340A\001\372A \n\036pubs"
+          + "ub.googleapis.com/SnapshotH\000B\010\n\006target\"\016"
+          + "\n\014SeekResponse2\270\013\n\tPublisher\022q\n\013CreateTo"
+          + "pic\022\027.google.pubsub.v1.Topic\032\027.google.pu"
+          + "bsub.v1.Topic\"0\332A\004name\202\323\344\223\002#\032\036/v1/{name="
+          + "projects/*/topics/*}:\001*\022\221\001\n\013UpdateTopic\022"
+          + "$.google.pubsub.v1.UpdateTopicRequest\032\027."
+          + "google.pubsub.v1.Topic\"C\332A\021topic,update_"
+          + "mask\202\323\344\223\002)2$/v1/{topic.name=projects/*/t"
+          + "opics/*}:\001*\022\223\001\n\007Publish\022 .google.pubsub."
+          + "v1.PublishRequest\032!.google.pubsub.v1.Pub"
+          + "lishResponse\"C\332A\016topic,messages\202\323\344\223\002,\"\'/"
+          + "v1/{topic=projects/*/topics/*}:publish:\001"
+          + "*\022w\n\010GetTopic\022!.google.pubsub.v1.GetTopi"
+          + "cRequest\032\027.google.pubsub.v1.Topic\"/\332A\005to"
+          + "pic\202\323\344\223\002!\022\037/v1/{topic=projects/*/topics/"
+          + "*}\022\212\001\n\nListTopics\022#.google.pubsub.v1.Lis"
+          + "tTopicsRequest\032$.google.pubsub.v1.ListTo"
+          + "picsResponse\"1\332A\007project\202\323\344\223\002!\022\037/v1/{pro"
+          + "ject=projects/*}/topics\022\272\001\n\026ListTopicSub"
+          + "scriptions\022/.google.pubsub.v1.ListTopicS"
+          + "ubscriptionsRequest\0320.google.pubsub.v1.L"
+          + "istTopicSubscriptionsResponse\"=\332A\005topic\202"
+          + "\323\344\223\002/\022-/v1/{topic=projects/*/topics/*}/s"
+          + "ubscriptions\022\252\001\n\022ListTopicSnapshots\022+.go"
+          + "ogle.pubsub.v1.ListTopicSnapshotsRequest"
+          + "\032,.google.pubsub.v1.ListTopicSnapshotsRe"
+          + "sponse\"9\332A\005topic\202\323\344\223\002+\022)/v1/{topic=proje"
+          + "cts/*/topics/*}/snapshots\022|\n\013DeleteTopic"
+          + "\022$.google.pubsub.v1.DeleteTopicRequest\032\026"
+          + ".google.protobuf.Empty\"/\332A\005topic\202\323\344\223\002!*\037"
+          + "/v1/{topic=projects/*/topics/*}\022\255\001\n\022Deta"
+          + "chSubscription\022+.google.pubsub.v1.Detach"
+          + "SubscriptionRequest\032,.google.pubsub.v1.D"
+          + "etachSubscriptionResponse\"<\202\323\344\223\0026\"4/v1/{"
           + "subscription=projects/*/subscriptions/*}"
-          + ":seek:\001*\032p\312A\025pubsub.googleapis.com\322AUhtt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "orm,https://www.googleapis.com/auth/pubs"
-          + "ubB\252\001\n\024com.google.pubsub.v1B\013PubsubProto"
-          + "P\001Z2cloud.google.com/go/pubsub/apiv1/pub"
-          + "subpb;pubsubpb\370\001\001\252\002\026Google.Cloud.PubSub.",
-      "V1\312\002\026Google\\Cloud\\PubSub\\V1\352\002\031Google::Cl" + "oud::PubSub::V1b\006proto3"
+          + ":detach\032p\312A\025pubsub.googleapis.com\322AUhttp"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rm,https://www.googleapis.com/auth/pubsu"
+          + "b2\322\025\n\nSubscriber\022\264\001\n\022CreateSubscription\022"
+          + "\036.google.pubsub.v1.Subscription\032\036.google"
+          + ".pubsub.v1.Subscription\"^\332A+name,topic,p"
+          + "ush_config,ack_deadline_seconds\202\323\344\223\002*\032%/"
+          + "v1/{name=projects/*/subscriptions/*}:\001*\022"
+          + "\241\001\n\017GetSubscription\022(.google.pubsub.v1.G"
+          + "etSubscriptionRequest\032\036.google.pubsub.v1"
+          + ".Subscription\"D\332A\014subscription\202\323\344\223\002/\022-/v"
+          + "1/{subscription=projects/*/subscriptions"
+          + "/*}\022\273\001\n\022UpdateSubscription\022+.google.pubs"
+          + "ub.v1.UpdateSubscriptionRequest\032\036.google"
+          + ".pubsub.v1.Subscription\"X\332A\030subscription"
+          + ",update_mask\202\323\344\223\002722/v1/{subscription.na"
+          + "me=projects/*/subscriptions/*}:\001*\022\246\001\n\021Li"
+          + "stSubscriptions\022*.google.pubsub.v1.ListS"
+          + "ubscriptionsRequest\032+.google.pubsub.v1.L"
+          + "istSubscriptionsResponse\"8\332A\007project\202\323\344\223"
+          + "\002(\022&/v1/{project=projects/*}/subscriptio"
+          + "ns\022\237\001\n\022DeleteSubscription\022+.google.pubsu"
+          + "b.v1.DeleteSubscriptionRequest\032\026.google."
+          + "protobuf.Empty\"D\332A\014subscription\202\323\344\223\002/*-/"
+          + "v1/{subscription=projects/*/subscription"
+          + "s/*}\022\317\001\n\021ModifyAckDeadline\022*.google.pubs"
+          + "ub.v1.ModifyAckDeadlineRequest\032\026.google."
+          + "protobuf.Empty\"v\332A)subscription,ack_ids,"
+          + "ack_deadline_seconds\202\323\344\223\002D\"?/v1/{subscri"
+          + "ption=projects/*/subscriptions/*}:modify"
+          + "AckDeadline:\001*\022\250\001\n\013Acknowledge\022$.google."
+          + "pubsub.v1.AcknowledgeRequest\032\026.google.pr"
+          + "otobuf.Empty\"[\332A\024subscription,ack_ids\202\323\344"
+          + "\223\002>\"9/v1/{subscription=projects/*/subscr"
+          + "iptions/*}:acknowledge:\001*\022\320\001\n\004Pull\022\035.goo"
+          + "gle.pubsub.v1.PullRequest\032\036.google.pubsu"
+          + "b.v1.PullResponse\"\210\001\332A,subscription,retu"
+          + "rn_immediately,max_messages\332A\031subscripti"
+          + "on,max_messages\202\323\344\223\0027\"2/v1/{subscription"
+          + "=projects/*/subscriptions/*}:pull:\001*\022f\n\r"
+          + "StreamingPull\022&.google.pubsub.v1.Streami"
+          + "ngPullRequest\032\'.google.pubsub.v1.Streami"
+          + "ngPullResponse\"\000(\0010\001\022\273\001\n\020ModifyPushConfi"
+          + "g\022).google.pubsub.v1.ModifyPushConfigReq"
+          + "uest\032\026.google.protobuf.Empty\"d\332A\030subscri"
+          + "ption,push_config\202\323\344\223\002C\">/v1/{subscripti"
+          + "on=projects/*/subscriptions/*}:modifyPus"
+          + "hConfig:\001*\022\211\001\n\013GetSnapshot\022$.google.pubs"
+          + "ub.v1.GetSnapshotRequest\032\032.google.pubsub"
+          + ".v1.Snapshot\"8\332A\010snapshot\202\323\344\223\002\'\022%/v1/{sn"
+          + "apshot=projects/*/snapshots/*}\022\226\001\n\rListS"
+          + "napshots\022&.google.pubsub.v1.ListSnapshot"
+          + "sRequest\032\'.google.pubsub.v1.ListSnapshot"
+          + "sResponse\"4\332A\007project\202\323\344\223\002$\022\"/v1/{projec"
+          + "t=projects/*}/snapshots\022\227\001\n\016CreateSnapsh"
+          + "ot\022\'.google.pubsub.v1.CreateSnapshotRequ"
+          + "est\032\032.google.pubsub.v1.Snapshot\"@\332A\021name"
+          + ",subscription\202\323\344\223\002&\032!/v1/{name=projects/"
+          + "*/snapshots/*}:\001*\022\243\001\n\016UpdateSnapshot\022\'.g"
+          + "oogle.pubsub.v1.UpdateSnapshotRequest\032\032."
+          + "google.pubsub.v1.Snapshot\"L\332A\024snapshot,u"
+          + "pdate_mask\202\323\344\223\002/2*/v1/{snapshot.name=pro",
+      "jects/*/snapshots/*}:\001*\022\213\001\n\016DeleteSnapsh"
+          + "ot\022\'.google.pubsub.v1.DeleteSnapshotRequ"
+          + "est\032\026.google.protobuf.Empty\"8\332A\010snapshot"
+          + "\202\323\344\223\002\'*%/v1/{snapshot=projects/*/snapsho"
+          + "ts/*}\022\204\001\n\004Seek\022\035.google.pubsub.v1.SeekRe"
+          + "quest\032\036.google.pubsub.v1.SeekResponse\"=\202"
+          + "\323\344\223\0027\"2/v1/{subscription=projects/*/subs"
+          + "criptions/*}:seek:\001*\032p\312A\025pubsub.googleap"
+          + "is.com\322AUhttps://www.googleapis.com/auth"
+          + "/cloud-platform,https://www.googleapis.c"
+          + "om/auth/pubsubB\252\001\n\024com.google.pubsub.v1B"
+          + "\013PubsubProtoP\001Z2cloud.google.com/go/pubs"
+          + "ub/apiv1/pubsubpb;pubsubpb\370\001\001\252\002\026Google.C"
+          + "loud.PubSub.V1\312\002\026Google\\Cloud\\PubSub\\V1\352"
+          + "\002\031Google::Cloud::PubSub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -810,7 +840,40 @@ public final class PubsubProto {
             new java.lang.String[] {
               "Severity",
             });
-    internal_static_google_pubsub_v1_Topic_descriptor = getDescriptor().getMessageTypes().get(4);
+    internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_pubsub_v1_IngestionFailureEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor,
+            new java.lang.String[] {
+              "Topic", "ErrorMessage", "CloudStorageFailure", "Failure",
+            });
+    internal_static_google_pubsub_v1_IngestionFailureEvent_ApiViolationReason_descriptor =
+        internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor.getNestedTypes().get(0);
+    internal_static_google_pubsub_v1_IngestionFailureEvent_ApiViolationReason_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_pubsub_v1_IngestionFailureEvent_ApiViolationReason_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_pubsub_v1_IngestionFailureEvent_AvroFailureReason_descriptor =
+        internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor.getNestedTypes().get(1);
+    internal_static_google_pubsub_v1_IngestionFailureEvent_AvroFailureReason_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_pubsub_v1_IngestionFailureEvent_AvroFailureReason_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_pubsub_v1_IngestionFailureEvent_CloudStorageFailure_descriptor =
+        internal_static_google_pubsub_v1_IngestionFailureEvent_descriptor.getNestedTypes().get(2);
+    internal_static_google_pubsub_v1_IngestionFailureEvent_CloudStorageFailure_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_pubsub_v1_IngestionFailureEvent_CloudStorageFailure_descriptor,
+            new java.lang.String[] {
+              "Bucket",
+              "ObjectName",
+              "ObjectGeneration",
+              "AvroFailureReason",
+              "ApiViolationReason",
+              "Reason",
+            });
+    internal_static_google_pubsub_v1_Topic_descriptor = getDescriptor().getMessageTypes().get(5);
     internal_static_google_pubsub_v1_Topic_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_Topic_descriptor,
@@ -834,7 +897,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_PubsubMessage_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_pubsub_v1_PubsubMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PubsubMessage_descriptor,
@@ -850,7 +913,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_GetTopicRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_pubsub_v1_GetTopicRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_GetTopicRequest_descriptor,
@@ -858,7 +921,7 @@ public final class PubsubProto {
               "Topic",
             });
     internal_static_google_pubsub_v1_UpdateTopicRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_pubsub_v1_UpdateTopicRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_UpdateTopicRequest_descriptor,
@@ -866,7 +929,7 @@ public final class PubsubProto {
               "Topic", "UpdateMask",
             });
     internal_static_google_pubsub_v1_PublishRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_pubsub_v1_PublishRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PublishRequest_descriptor,
@@ -874,7 +937,7 @@ public final class PubsubProto {
               "Topic", "Messages",
             });
     internal_static_google_pubsub_v1_PublishResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_pubsub_v1_PublishResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PublishResponse_descriptor,
@@ -882,7 +945,7 @@ public final class PubsubProto {
               "MessageIds",
             });
     internal_static_google_pubsub_v1_ListTopicsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_pubsub_v1_ListTopicsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicsRequest_descriptor,
@@ -890,7 +953,7 @@ public final class PubsubProto {
               "Project", "PageSize", "PageToken",
             });
     internal_static_google_pubsub_v1_ListTopicsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_pubsub_v1_ListTopicsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicsResponse_descriptor,
@@ -898,7 +961,7 @@ public final class PubsubProto {
               "Topics", "NextPageToken",
             });
     internal_static_google_pubsub_v1_ListTopicSubscriptionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_pubsub_v1_ListTopicSubscriptionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicSubscriptionsRequest_descriptor,
@@ -906,7 +969,7 @@ public final class PubsubProto {
               "Topic", "PageSize", "PageToken",
             });
     internal_static_google_pubsub_v1_ListTopicSubscriptionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_pubsub_v1_ListTopicSubscriptionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicSubscriptionsResponse_descriptor,
@@ -914,7 +977,7 @@ public final class PubsubProto {
               "Subscriptions", "NextPageToken",
             });
     internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_descriptor,
@@ -922,7 +985,7 @@ public final class PubsubProto {
               "Topic", "PageSize", "PageToken",
             });
     internal_static_google_pubsub_v1_ListTopicSnapshotsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_pubsub_v1_ListTopicSnapshotsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListTopicSnapshotsResponse_descriptor,
@@ -930,7 +993,7 @@ public final class PubsubProto {
               "Snapshots", "NextPageToken",
             });
     internal_static_google_pubsub_v1_DeleteTopicRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_pubsub_v1_DeleteTopicRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DeleteTopicRequest_descriptor,
@@ -938,7 +1001,7 @@ public final class PubsubProto {
               "Topic",
             });
     internal_static_google_pubsub_v1_DetachSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_pubsub_v1_DetachSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DetachSubscriptionRequest_descriptor,
@@ -946,13 +1009,13 @@ public final class PubsubProto {
               "Subscription",
             });
     internal_static_google_pubsub_v1_DetachSubscriptionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_pubsub_v1_DetachSubscriptionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DetachSubscriptionResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_pubsub_v1_Subscription_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_pubsub_v1_Subscription_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_Subscription_descriptor,
@@ -994,7 +1057,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_RetryPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_pubsub_v1_RetryPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_RetryPolicy_descriptor,
@@ -1002,7 +1065,7 @@ public final class PubsubProto {
               "MinimumBackoff", "MaximumBackoff",
             });
     internal_static_google_pubsub_v1_DeadLetterPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_pubsub_v1_DeadLetterPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DeadLetterPolicy_descriptor,
@@ -1010,7 +1073,7 @@ public final class PubsubProto {
               "DeadLetterTopic", "MaxDeliveryAttempts",
             });
     internal_static_google_pubsub_v1_ExpirationPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_pubsub_v1_ExpirationPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ExpirationPolicy_descriptor,
@@ -1018,7 +1081,7 @@ public final class PubsubProto {
               "Ttl",
             });
     internal_static_google_pubsub_v1_PushConfig_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_pubsub_v1_PushConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PushConfig_descriptor,
@@ -1062,7 +1125,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_BigQueryConfig_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_pubsub_v1_BigQueryConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_BigQueryConfig_descriptor,
@@ -1076,7 +1139,7 @@ public final class PubsubProto {
               "ServiceAccountEmail",
             });
     internal_static_google_pubsub_v1_CloudStorageConfig_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_pubsub_v1_CloudStorageConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_CloudStorageConfig_descriptor,
@@ -1109,7 +1172,7 @@ public final class PubsubProto {
               "WriteMetadata", "UseTopicSchema",
             });
     internal_static_google_pubsub_v1_ReceivedMessage_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_pubsub_v1_ReceivedMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ReceivedMessage_descriptor,
@@ -1117,7 +1180,7 @@ public final class PubsubProto {
               "AckId", "Message", "DeliveryAttempt",
             });
     internal_static_google_pubsub_v1_GetSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_pubsub_v1_GetSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_GetSubscriptionRequest_descriptor,
@@ -1125,7 +1188,7 @@ public final class PubsubProto {
               "Subscription",
             });
     internal_static_google_pubsub_v1_UpdateSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_pubsub_v1_UpdateSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_UpdateSubscriptionRequest_descriptor,
@@ -1133,7 +1196,7 @@ public final class PubsubProto {
               "Subscription", "UpdateMask",
             });
     internal_static_google_pubsub_v1_ListSubscriptionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_pubsub_v1_ListSubscriptionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListSubscriptionsRequest_descriptor,
@@ -1141,7 +1204,7 @@ public final class PubsubProto {
               "Project", "PageSize", "PageToken",
             });
     internal_static_google_pubsub_v1_ListSubscriptionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_pubsub_v1_ListSubscriptionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListSubscriptionsResponse_descriptor,
@@ -1149,7 +1212,7 @@ public final class PubsubProto {
               "Subscriptions", "NextPageToken",
             });
     internal_static_google_pubsub_v1_DeleteSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_pubsub_v1_DeleteSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DeleteSubscriptionRequest_descriptor,
@@ -1157,7 +1220,7 @@ public final class PubsubProto {
               "Subscription",
             });
     internal_static_google_pubsub_v1_ModifyPushConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_pubsub_v1_ModifyPushConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ModifyPushConfigRequest_descriptor,
@@ -1165,7 +1228,7 @@ public final class PubsubProto {
               "Subscription", "PushConfig",
             });
     internal_static_google_pubsub_v1_PullRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_pubsub_v1_PullRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PullRequest_descriptor,
@@ -1173,7 +1236,7 @@ public final class PubsubProto {
               "Subscription", "ReturnImmediately", "MaxMessages",
             });
     internal_static_google_pubsub_v1_PullResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_pubsub_v1_PullResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_PullResponse_descriptor,
@@ -1181,7 +1244,7 @@ public final class PubsubProto {
               "ReceivedMessages",
             });
     internal_static_google_pubsub_v1_ModifyAckDeadlineRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_pubsub_v1_ModifyAckDeadlineRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ModifyAckDeadlineRequest_descriptor,
@@ -1189,7 +1252,7 @@ public final class PubsubProto {
               "Subscription", "AckIds", "AckDeadlineSeconds",
             });
     internal_static_google_pubsub_v1_AcknowledgeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_pubsub_v1_AcknowledgeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_AcknowledgeRequest_descriptor,
@@ -1197,7 +1260,7 @@ public final class PubsubProto {
               "Subscription", "AckIds",
             });
     internal_static_google_pubsub_v1_StreamingPullRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_pubsub_v1_StreamingPullRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_StreamingPullRequest_descriptor,
@@ -1212,7 +1275,7 @@ public final class PubsubProto {
               "MaxOutstandingBytes",
             });
     internal_static_google_pubsub_v1_StreamingPullResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_pubsub_v1_StreamingPullResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_StreamingPullResponse_descriptor,
@@ -1247,7 +1310,7 @@ public final class PubsubProto {
               "ExactlyOnceDeliveryEnabled", "MessageOrderingEnabled",
             });
     internal_static_google_pubsub_v1_CreateSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_pubsub_v1_CreateSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_CreateSnapshotRequest_descriptor,
@@ -1263,7 +1326,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_UpdateSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_pubsub_v1_UpdateSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_UpdateSnapshotRequest_descriptor,
@@ -1271,7 +1334,7 @@ public final class PubsubProto {
               "Snapshot", "UpdateMask",
             });
     internal_static_google_pubsub_v1_Snapshot_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_pubsub_v1_Snapshot_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_Snapshot_descriptor,
@@ -1287,7 +1350,7 @@ public final class PubsubProto {
               "Key", "Value",
             });
     internal_static_google_pubsub_v1_GetSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_pubsub_v1_GetSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_GetSnapshotRequest_descriptor,
@@ -1295,7 +1358,7 @@ public final class PubsubProto {
               "Snapshot",
             });
     internal_static_google_pubsub_v1_ListSnapshotsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_pubsub_v1_ListSnapshotsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListSnapshotsRequest_descriptor,
@@ -1303,7 +1366,7 @@ public final class PubsubProto {
               "Project", "PageSize", "PageToken",
             });
     internal_static_google_pubsub_v1_ListSnapshotsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_pubsub_v1_ListSnapshotsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_ListSnapshotsResponse_descriptor,
@@ -1311,7 +1374,7 @@ public final class PubsubProto {
               "Snapshots", "NextPageToken",
             });
     internal_static_google_pubsub_v1_DeleteSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_pubsub_v1_DeleteSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_DeleteSnapshotRequest_descriptor,
@@ -1319,7 +1382,7 @@ public final class PubsubProto {
               "Snapshot",
             });
     internal_static_google_pubsub_v1_SeekRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_pubsub_v1_SeekRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_SeekRequest_descriptor,
@@ -1327,7 +1390,7 @@ public final class PubsubProto {
               "Subscription", "Time", "Snapshot", "Target",
             });
     internal_static_google_pubsub_v1_SeekResponse_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_pubsub_v1_SeekResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_pubsub_v1_SeekResponse_descriptor, new java.lang.String[] {});
