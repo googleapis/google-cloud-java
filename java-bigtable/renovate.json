@@ -73,10 +73,11 @@
     },
     {
       "packagePatterns": [
+        "^com.google.api:gapic-generator-java",
         "^com.google.cloud:sdk-platform-java-config",
         "^com.google.cloud:gapic-libraries-bom"
       ],
-      "groupName": "shared dependencies"
+      "groupName": "sdk-platform-java dependencies"
     }
   ],
   "regexManagers": [
@@ -107,6 +108,16 @@
       ],
       "matchStrings": ["uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": [
+        ".github/workflows/hermetic_library_generation.yaml"
+      ],
+      "matchStrings": [
+        "uses: googleapis/sdk-platform-java/.github/scripts@v(?<currentValue>.+?)\\n"
+      ],
+      "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
     }
   ],
