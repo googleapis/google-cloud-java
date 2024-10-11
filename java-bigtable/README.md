@@ -36,7 +36,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-bigtable:released} -->
 
 ```xml
 <dependency>
@@ -50,7 +49,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.47.0')
+implementation platform('com.google.cloud:libraries-bom:26.48.0')
 
 implementation 'com.google.cloud:google-cloud-bigtable'
 ```
@@ -65,7 +64,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.45.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
