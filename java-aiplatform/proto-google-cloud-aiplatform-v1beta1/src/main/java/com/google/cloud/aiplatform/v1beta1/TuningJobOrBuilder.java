@@ -136,7 +136,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party Partner models.
+   * Tuning Spec for open sourced and third party partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
@@ -149,7 +149,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party Partner models.
+   * Tuning Spec for open sourced and third party partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
@@ -162,7 +162,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party Partner models.
+   * Tuning Spec for open sourced and third party partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
