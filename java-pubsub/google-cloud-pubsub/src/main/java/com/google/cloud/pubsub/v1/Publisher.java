@@ -46,6 +46,7 @@ import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.CodedOutputStream;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
@@ -99,6 +100,7 @@ public class Publisher implements PublisherInterface {
   private static final String OPEN_TELEMETRY_TRACER_NAME = "com.google.cloud.pubsub.v1";
 
   private final String topicName;
+  private final int topicNameSize;
 
   private final BatchingSettings batchingSettings;
   private final boolean enableMessageOrdering;
@@ -145,6 +147,8 @@ public class Publisher implements PublisherInterface {
 
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
+    topicNameSize =
+        CodedOutputStream.computeStringSize(PublishRequest.TOPIC_FIELD_NUMBER, this.topicName);
 
     this.batchingSettings = builder.batchingSettings;
     FlowControlSettings flowControl = this.batchingSettings.getFlowControlSettings();
@@ -309,7 +313,7 @@ public class Publisher implements PublisherInterface {
       }
       MessagesBatch messagesBatch = messagesBatches.get(orderingKey);
       if (messagesBatch == null) {
-        messagesBatch = new MessagesBatch(batchingSettings, orderingKey);
+        messagesBatch = new MessagesBatch(batchingSettings, topicNameSize, orderingKey);
         messagesBatches.put(orderingKey, messagesBatch);
       }
 
@@ -636,7 +640,9 @@ public class Publisher implements PublisherInterface {
     OutstandingPublish(PubsubMessageWrapper messageWrapper) {
       this.publishResult = SettableApiFuture.create();
       this.messageWrapper = messageWrapper;
-      this.messageSize = messageWrapper.getPubsubMessage().getSerializedSize();
+      this.messageSize =
+          CodedOutputStream.computeMessageSize(
+              PublishRequest.MESSAGES_FIELD_NUMBER, messageWrapper.getPubsubMessage());
     }
   }
 
@@ -1093,12 +1099,15 @@ public class Publisher implements PublisherInterface {
 
   private class MessagesBatch {
     private List<OutstandingPublish> messages;
+    private int initialBatchedBytes;
     private int batchedBytes;
     private String orderingKey;
     private final BatchingSettings batchingSettings;
 
-    private MessagesBatch(BatchingSettings batchingSettings, String orderingKey) {
+    private MessagesBatch(
+        BatchingSettings batchingSettings, int initialBatchedBytes, String orderingKey) {
       this.batchingSettings = batchingSettings;
+      this.initialBatchedBytes = initialBatchedBytes;
       this.orderingKey = orderingKey;
       reset();
     }
@@ -1111,7 +1120,7 @@ public class Publisher implements PublisherInterface {
 
     private void reset() {
       messages = new LinkedList<>();
-      batchedBytes = 0;
+      batchedBytes = initialBatchedBytes;
     }
 
     private boolean isEmpty() {
@@ -1150,7 +1159,9 @@ public class Publisher implements PublisherInterface {
       // immediately.
       // Alternatively if after adding the message we have reached the batch max messages then we
       // have a batch to send.
-      if ((hasBatchingBytes() && outstandingPublish.messageSize >= getMaxBatchBytes())
+      // Note that exceeding {@link Publisher#getApiMaxRequestBytes()} will result in failed
+      // publishes without compression and may yet fail if a request is not sufficiently compressed.
+      if ((hasBatchingBytes() && getBatchedBytes() >= getMaxBatchBytes())
           || getMessagesCount() == batchingSettings.getElementCountThreshold()) {
         batchesToSend.add(popOutstandingBatch());
       }

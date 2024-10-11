@@ -447,7 +447,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(10L)
-                    .setRequestByteThreshold(20L)
+                    .setRequestByteThreshold(64L)
                     .setDelayThreshold(Duration.ofSeconds(100))
                     .build())
             .setEnableMessageOrdering(true)
@@ -1150,7 +1150,7 @@ public class PublisherImplTest {
                             .setLimitExceededBehavior(
                                 FlowController.LimitExceededBehavior.ThrowException)
                             .setMaxOutstandingElementCount(1L)
-                            .setMaxOutstandingRequestBytes(10L)
+                            .setMaxOutstandingRequestBytes(13L)
                             .build())
                     .build())
             .build();
@@ -1192,7 +1192,7 @@ public class PublisherImplTest {
                             .setLimitExceededBehavior(
                                 FlowController.LimitExceededBehavior.ThrowException)
                             .setMaxOutstandingElementCount(1L)
-                            .setMaxOutstandingRequestBytes(10L)
+                            .setMaxOutstandingRequestBytes(13L)
                             .build())
                     .build())
             .setEnableMessageOrdering(true)
@@ -1238,7 +1238,7 @@ public class PublisherImplTest {
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
                             .setMaxOutstandingElementCount(2L)
-                            .setMaxOutstandingRequestBytes(10L)
+                            .setMaxOutstandingRequestBytes(13L)
                             .build())
                     .build())
             .build();
