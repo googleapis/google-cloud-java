@@ -120,11 +120,6 @@ public class EmulatorEnv extends AbstractTestEnv {
   }
 
   @Override
-  public BigtableDataClient getDataClientForInstance(String instanceId) throws IOException {
-    throw new UnsupportedOperationException("Could not create a data client for another instance.");
-  }
-
-  @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
   }

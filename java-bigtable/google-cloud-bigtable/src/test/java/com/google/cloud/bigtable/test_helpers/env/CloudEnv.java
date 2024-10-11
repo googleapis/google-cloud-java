@@ -27,7 +27,6 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
@@ -43,12 +42,11 @@ import io.grpc.Grpc;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -63,7 +61,7 @@ import javax.annotation.Nullable;
  *   <li>{@code bigtable.table}
  * </ul>
  */
-class CloudEnv extends AbstractTestEnv {
+public class CloudEnv extends AbstractTestEnv {
   private static final Predicate<InetSocketAddress> DIRECT_PATH_IPV6_MATCHER =
       new Predicate<InetSocketAddress>() {
         @Override
@@ -84,6 +82,7 @@ class CloudEnv extends AbstractTestEnv {
 
   private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static final String APP_PROFILE_PROPERTY_NAME = "bigtable.app_profile";
   private static final String TABLE_PROPERTY_NAME = "bigtable.table";
   private static final String CMEK_KMS_KEY_PROPERTY_NAME = "bigtable.kms_key_name";
 
@@ -92,12 +91,12 @@ class CloudEnv extends AbstractTestEnv {
   private final String projectId;
   private final String instanceId;
   private final String tableId;
-  private final String tracingCookie;
   private final String kmsKeyName;
 
   private final BigtableDataSettings.Builder dataSettings;
   private final BigtableTableAdminSettings.Builder tableAdminSettings;
   private final BigtableInstanceAdminSettings.Builder instanceAdminSettings;
+  @Nullable private final String appProfileId;
 
   private BigtableDataClient dataClient;
   private BigtableTableAdminClient tableAdminClient;
@@ -110,6 +109,7 @@ class CloudEnv extends AbstractTestEnv {
         getOptionalProperty(CMEK_KMS_KEY_PROPERTY_NAME, ""),
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
+        getOptionalProperty(APP_PROFILE_PROPERTY_NAME),
         getRequiredProperty(TABLE_PROPERTY_NAME),
         getOptionalProperty(TRACING_COOKIE_PROPERTY_NAME));
   }
@@ -120,18 +120,22 @@ class CloudEnv extends AbstractTestEnv {
       @Nullable String kmsKeyName,
       String projectId,
       String instanceId,
+      @Nullable String appProfileId,
       String tableId,
       @Nullable String tracingCookie) {
     this.projectId = projectId;
     this.instanceId = instanceId;
+    this.appProfileId = appProfileId;
     this.tableId = tableId;
-    this.tracingCookie = tracingCookie;
     this.kmsKeyName = kmsKeyName;
 
     this.dataSettings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
     if (!Strings.isNullOrEmpty(dataEndpoint)) {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
+    }
+    if (!Strings.isNullOrEmpty(appProfileId)) {
+      dataSettings.setAppProfileId(appProfileId);
     }
 
     configureConnection(dataSettings.stubSettings());
@@ -193,6 +197,9 @@ class CloudEnv extends AbstractTestEnv {
         throw new IllegalStateException("Unexpected ConnectionMode: " + getConnectionMode());
     }
 
+    final ClientInterceptor appProfileInterceptor =
+        appProfileId != null ? new AppProfileInterceptor() : null;
+
     // Inject the interceptor into the channel provider, taking care to preserve existing channel
     // configurator
     InstantiatingGrpcChannelProvider.Builder channelProvider =
@@ -211,7 +218,11 @@ class CloudEnv extends AbstractTestEnv {
             if (oldConfigurator != null) {
               builder = oldConfigurator.apply(builder);
             }
-            return builder.intercept(interceptor);
+            builder = builder.intercept(interceptor);
+            if (appProfileInterceptor != null) {
+              builder = builder.intercept(appProfileInterceptor);
+            }
+            return builder;
           }
         };
     channelProvider.setChannelConfigurator(newConfigurator);
@@ -255,25 +266,35 @@ class CloudEnv extends AbstractTestEnv {
     };
   }
 
-  private void configureUserAgent(EnhancedBigtableStubSettings.Builder stubSettings) {
-    List<String> parts = new ArrayList<>();
-    parts.add("java-bigtable-int-test");
-
-    switch (getConnectionMode()) {
-      case DEFAULT:
-        // nothing special
-        break;
-      case REQUIRE_CFE:
-        parts.add("bigtable-directpath-disable");
-        break;
-      case REQUIRE_DIRECT_PATH:
-      case REQUIRE_DIRECT_PATH_IPV4:
-        parts.add("bigtable-directpath-enable");
-        break;
-      default:
-        throw new IllegalStateException("Unexpected connectionMode: " + getConnectionMode());
+  private class AppProfileInterceptor implements ClientInterceptor {
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+      return new SimpleForwardingClientCall<ReqT, RespT>(
+          channel.newCall(methodDescriptor, callOptions)) {
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          String reqParams =
+              headers.get(
+                  Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
+          if (!reqParams.contains("app_profile_id=" + appProfileId)) {
+            responseListener.onClose(
+                Status.FAILED_PRECONDITION.withDescription(
+                    "Integration test was configured to run with app profile: "
+                        + appProfileId
+                        + ", but found a different app profile in the headers: "
+                        + reqParams),
+                new Metadata());
+            return;
+          }
+          super.start(responseListener, headers);
+        }
+      };
     }
-    String newUserAgent = Joiner.on(" ").join(parts);
+  }
+
+  private void configureUserAgent(EnhancedBigtableStubSettings.Builder stubSettings) {
+    String newUserAgent = "java-bigtable-int-test";
 
     // Use the existing user-agent to use as a prefix
     Map<String, String> existingHeaders =
@@ -307,19 +328,6 @@ class CloudEnv extends AbstractTestEnv {
   @Override
   public BigtableDataClient getDataClient() {
     return dataClient;
-  }
-
-  @Override
-  public BigtableDataClient getDataClientForInstance(String instanceId) throws IOException {
-    BigtableDataSettings.Builder settings =
-        BigtableDataSettings.newBuilder()
-            .setProjectId(dataSettings.getProjectId())
-            .setInstanceId(instanceId);
-    settings
-        .stubSettings()
-        .setEndpoint(dataSettings.stubSettings().getEndpoint())
-        .setTransportChannelProvider(dataSettings.stubSettings().getTransportChannelProvider());
-    return BigtableDataClient.create(settings.build());
   }
 
   @Override

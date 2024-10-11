@@ -38,7 +38,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsView;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
-import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
@@ -116,7 +116,16 @@ public class BuiltinMetricsIT {
     assume()
         .withMessage("Builtin metrics integration test is not supported by emulator")
         .that(testEnvRule.env())
-        .isNotInstanceOf(EmulatorEnv.class);
+        .isInstanceOf(CloudEnv.class);
+
+    String appProfileId = testEnvRule.env().getDataClientSettings().getAppProfileId();
+
+    assume()
+        .withMessage(
+            "Builtin metrics integration test needs to be able to use a custom app profile and the app profile is currently forced to "
+                + appProfileId)
+        .that(appProfileId)
+        .isEmpty();
 
     // Create a cloud monitoring client
     metricClient = MetricServiceClient.create();

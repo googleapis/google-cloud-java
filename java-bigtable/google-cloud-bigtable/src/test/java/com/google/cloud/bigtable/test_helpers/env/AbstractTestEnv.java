@@ -51,8 +51,6 @@ public abstract class AbstractTestEnv {
 
   public abstract BigtableDataClient getDataClient();
 
-  public abstract BigtableDataClient getDataClientForInstance(String instanceId) throws IOException;
-
   public abstract BigtableTableAdminClient getTableAdminClient();
 
   public abstract BigtableTableAdminClient getTableAdminClientForInstance(String instanceId)
