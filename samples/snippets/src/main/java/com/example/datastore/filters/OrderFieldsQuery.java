@@ -28,7 +28,6 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
-import com.google.cloud.datastore.StructuredQuery.Filter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
@@ -40,11 +39,11 @@ public class OrderFieldsQuery {
 
     // Build a query with order properties in the decreasing order of query constraint selectivity.
     Query<Entity> query =
-            Query.newEntityQueryBuilder()
-                    .setKind("employees")
-                    .setFilter(PropertyFilter.gt("salary", 100000))
-                    .setOrderBy(OrderBy.asc("salary"))
-                    .build();
+        Query.newEntityQueryBuilder()
+            .setKind("employees")
+            .setFilter(PropertyFilter.gt("salary", 100000))
+            .setOrderBy(OrderBy.asc("salary"))
+            .build();
 
     // Get the results back from Datastore
     QueryResults<Entity> results = datastore.run(query);

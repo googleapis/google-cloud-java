@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.23.0](https://github.com/googleapis/java-datastore/compare/v2.22.0...v2.23.0) (2024-10-14)
+
+
+### Features
+
+* Support for field update operators in the Datastore API and resolution strategies when there is a conflict at write time ([b299266](https://github.com/googleapis/java-datastore/commit/b299266e42037b731ee7bbba21dbded73a37323c))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.46.1 ([678eee2](https://github.com/googleapis/java-datastore/commit/678eee2dfb6d447a852edd436137f8ebfbe50d74))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.47.0 ([b299266](https://github.com/googleapis/java-datastore/commit/b299266e42037b731ee7bbba21dbded73a37323c))
+
+
+### Dependencies
+
+* Update sdk platform java dependencies ([#1617](https://github.com/googleapis/java-datastore/issues/1617)) ([6eaff23](https://github.com/googleapis/java-datastore/commit/6eaff23f9de25ae6ad2a4fea67c0b65a243c08fd))
+
 ## [2.22.0](https://github.com/googleapis/java-datastore/compare/v2.21.3...v2.22.0) (2024-09-26)
 
 

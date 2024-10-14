@@ -38,27 +38,29 @@ public class MultiIneqQuerySampleIT {
   private Key employeeKey2;
   private Key employeeKey3;
 
-  @Rule
-  public final SystemsOutRule systemsOutRule = new SystemsOutRule();
+  @Rule public final SystemsOutRule systemsOutRule = new SystemsOutRule();
 
   @Before
   public void setUp() {
     employeeKey1 = datastore.newKeyFactory().setKind("employees").newKey("employee1");
-    Entity employee1 = Entity.newBuilder(employeeKey1)
+    Entity employee1 =
+        Entity.newBuilder(employeeKey1)
             .set("name", "Alice")
             .set("salary", 100001)
             .set("experience", 10)
             .build();
 
     employeeKey2 = datastore.newKeyFactory().setKind("employees").newKey("employee2");
-    Entity employee2 = Entity.newBuilder(employeeKey2)
+    Entity employee2 =
+        Entity.newBuilder(employeeKey2)
             .set("name", "Bob")
             .set("salary", 90000)
             .set("experience", 5)
             .build();
 
     employeeKey3 = datastore.newKeyFactory().setKind("employees").newKey("employee3");
-    Entity employee3 = Entity.newBuilder(employeeKey3)
+    Entity employee3 =
+        Entity.newBuilder(employeeKey3)
             .set("name", "Jay")
             .set("salary", 120000)
             .set("experience", 15)

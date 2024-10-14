@@ -29,7 +29,6 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
-import com.google.cloud.datastore.StructuredQuery.Filter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
@@ -40,11 +39,12 @@ public class IndexingConsiderationQuery {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
     // Build a query with multi inequal filters and optimized index order of index properties.
-    Query<Entity> query = Query.newEntityQueryBuilder()
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
             .setKind("employees")
-            .setFilter(CompositeFilter.and(
-                    PropertyFilter.gt("salary", 100000),
-                    PropertyFilter.gt("experience", 0)))
+            .setFilter(
+                CompositeFilter.and(
+                    PropertyFilter.gt("salary", 100000), PropertyFilter.gt("experience", 0)))
             .setOrderBy(OrderBy.asc("salary"), OrderBy.asc("experience"))
             .build();
 
