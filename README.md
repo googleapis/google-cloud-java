@@ -104,6 +104,36 @@ See the [BigQuery Storage client library docs][javadocs] to learn how to
 use this BigQuery Storage Client Library.
 
 
+## OpenTelemetry support
+The client supports emitting metrics to OpenTelemetry. This is disabled by default. It can be enabled by calling
+```
+JsonStreamWriter.Builder.setEnableOpenTelemetry(true)
+```
+The following metric attributes are supported.
+| Key             | Value                                                                                                                              |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `error_code`    | Specifies error code in the event an append request fails, or a connection ends.                                                   |
+| `is_retry`      | Indicates this was a retry operation. This can be set for either ack’ed requests or connection retry attempts.                     |
+| `table_id`      | Holds fully qualified name of destination table                                                                                    |
+| `trace_field_1` | If a colon-separated traceId is provided, this holds the first portion. Must be non-empty. Currently populated only for Dataflow.  |
+| `trace_field_2` | If a colon-separated traceId is provided, this holds the second portion. Must be non-empty. Currently populated only for Dataflow. |
+| `trace_field_3` | If a colon-separated traceId is provided, this holds the third portion. Must be non-empty. Currently populated only for Dataflow.  |
+| `writer_id`     | Specifies writer instance id.                                                                                                      |
+The following metrics are supported.
+| Name                         | Kind                | Description                                                                                                      |
+|------------------------------|---------------------|------------------------------------------------------------------------------------------------------------------|
+| `active_connection_count`    | Asynchronous gauge  | Reports number of active connections                                                                             |
+| `append_requests_acked`      | Synchronous counter | Counts number of requests acked by the server                                                                    |
+| `append_request_bytes_acked` | Synchronous counter | Counts byte size of requests acked by the server                                                                 |
+| `append_rows_acked`          | Synchronous counter | Counts number of rows in requests acked by the server                                                            |
+| `connection_end_count`       | Synchronous counter | Counts number of connection end events. This is decorated with the error code.                                   |
+| `connection_start_count`     | Synchronous counter | Counts number of connection attempts made, regardless of whether these are initial or retry.                     |
+| `inflight_queue_length`      | Asynchronous gauge  | Reports length of inflight queue. This queue contains sent append requests waiting for response from the server. |
+| `network_response_latency`   | Histogram           | Reports time taken in milliseconds for a response to arrive once a message has been sent over the network.       |
+### Exporting OpenTelemetry metrics
+An exporter or collector must be installed by the application in order for [OpenTelemetry metrics to be captured](https://opentelemetry.io/docs/concepts/components/#exporters).
+The [sample application](https://github.com/googleapis/java-bigquerystorage/blob/main/samples/snippets/src/test/java/com/example/bigquerystorage/ExportOpenTelemetryIT.java) uses [Google Monitoring Metrics Exporter](https://github.com/GoogleCloudPlatform/opentelemetry-operations-java/tree/main/exporters/metrics) to export metrics to a Google Cloud project.
+
 
 
 
