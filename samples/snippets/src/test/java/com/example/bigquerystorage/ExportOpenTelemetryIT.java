@@ -70,12 +70,12 @@ public class ExportOpenTelemetryIT {
   private void setupGoogleCloudMonitoringOT() {
     MetricExporter metricExporter = GoogleCloudMetricExporter.createWithDefaultConfiguration();
     METER_PROVIDER =
-            SdkMeterProvider.builder()
-                    .registerMetricReader(
-                            PeriodicMetricReader.builder(metricExporter)
-                                    .setInterval(java.time.Duration.ofMillis(30000))
-                                    .build())
-                    .build();
+        SdkMeterProvider.builder()
+            .registerMetricReader(
+                PeriodicMetricReader.builder(metricExporter)
+                    .setInterval(java.time.Duration.ofMillis(30000))
+                    .build())
+            .build();
     OpenTelemetrySdk.builder().setMeterProvider(METER_PROVIDER).buildAndRegisterGlobal();
   }
 

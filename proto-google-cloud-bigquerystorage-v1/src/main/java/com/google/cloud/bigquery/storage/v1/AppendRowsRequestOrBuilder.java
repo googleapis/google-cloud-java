@@ -198,6 +198,44 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
+   * Rows in arrow format. This is an experimental feature only selected for
+   * allowlisted customers.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
+   *
+   * @return Whether the arrowRows field is set.
+   */
+  boolean hasArrowRows();
+  /**
+   *
+   *
+   * <pre>
+   * Rows in arrow format. This is an experimental feature only selected for
+   * allowlisted customers.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
+   *
+   * @return The arrowRows.
+   */
+  com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData getArrowRows();
+  /**
+   *
+   *
+   * <pre>
+   * Rows in arrow format. This is an experimental feature only selected for
+   * allowlisted customers.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
+   */
+  com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowDataOrBuilder getArrowRowsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Id set by client to annotate its identity. Only initial request setting is
    * respected.
    * </pre>
