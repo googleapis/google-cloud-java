@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.45.1](https://github.com/googleapis/java-bigtable/compare/v2.45.0...v2.45.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.47.0 ([cdc2cc7](https://github.com/googleapis/java-bigtable/commit/cdc2cc7e085af42a2078373098b5f8ef8c752ea7))
+
+
+### Dependencies
+
+* Update sdk-platform-java dependencies ([#2378](https://github.com/googleapis/java-bigtable/issues/2378)) ([2499a3c](https://github.com/googleapis/java-bigtable/commit/2499a3cd5e0d0404666c7f9cf0c74f9edb90d894))
+
 ## [2.45.0](https://github.com/googleapis/java-bigtable/compare/v2.44.1...v2.45.0) (2024-10-03)
 
 
