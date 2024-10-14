@@ -1,7 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.46.0:1.46.0
 google-cloud-asset:3.56.0:3.56.0
 grpc-google-cloud-asset-v1:3.56.0:3.56.0
 grpc-google-cloud-asset-v1p1beta1:0.156.0:0.156.0

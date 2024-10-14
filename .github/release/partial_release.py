@@ -1,5 +1,19 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# GitHub action job to test core java library features on
+# downstream client libraries before they are released.
 import re
-import tempfile
 from enum import Enum
 import click as click
 
@@ -50,30 +64,42 @@ def main(ctx):
 def bump_released_version(artifact_ids: str, version_type: str, versions: str) -> None:
     target_artifact_ids = set(artifact_ids.split(","))
     version_enum = _parse_type_or_raise(version_type)
-
-    with tempfile.TemporaryFile(mode="w", delete=False) as temp_file:
-        with open(versions) as versions_file:
-            for line in versions_file:
-                values = line.strip().split(":")
-                if len(values) != 3:
-                    continue
-                artifact_id = values[0]
-                released_version = values[1]
-                sanitized_artifact_id = _sanitize(artifact_id)
-                if sanitized_artifact_id not in target_artifact_ids:
-                    temp_file.write(f"{line}\n")
-                    continue
-                major, minor, patch = [
-                    int(ver_num) for ver_num in released_version.split(".")
-                ]
-                match version_enum:
-                    case VersionType.MAJOR:
-                        major += 1
-                    case VersionType.MINOR:
-                        minor += 1
-                    case VersionType.PATCH:
-                        patch += 1
-                temp_file.write(f"{artifact_id}:{major}:{minor}:{patch}\n")
+    newlines = []
+    with open(versions) as versions_file:
+        for num, line in enumerate(versions_file):
+            striped_line = line.strip()
+            # case 1: skip an empty line.
+            if striped_line == "":
+                newlines.append("")
+                continue
+            # case 2: keep a comment.
+            if striped_line.startswith("#"):
+                newlines.append(f"{striped_line}")
+                continue
+            values = striped_line.split(":")
+            artifact_id = values[0]
+            released_version = values[1]
+            sanitized_artifact_id = _sanitize(artifact_id)
+            # case 3: keep the line if the artifact id is not matched.
+            if sanitized_artifact_id not in target_artifact_ids:
+                newlines.append(f"{striped_line}")
+                continue
+            # case 4: bump version according to version type.
+            major, minor, patch = [
+                int(ver_num) for ver_num in released_version.split(".")
+            ]
+            match version_enum:
+                case VersionType.MAJOR:
+                    major += 1
+                case VersionType.MINOR:
+                    minor += 1
+                case VersionType.PATCH:
+                    patch += 1
+            newlines.append(
+                f"{artifact_id}:{major}.{minor}.{patch}:{major}.{minor}.{patch}"
+            )
+    with open(versions, "w") as versions_file:
+        versions_file.writelines("\n".join(newlines))
 
 
 def _parse_type_or_raise(version_type: str) -> VersionType:
