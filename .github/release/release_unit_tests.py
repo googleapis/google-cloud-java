@@ -9,12 +9,12 @@ from partial_release import bump_released_version
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 GOLDEN = os.path.join(SCRIPT_DIR, "testdata")
 FIXTURES = os.path.join(SCRIPT_DIR, "fixture")
+runner = CliRunner()
 
 
 class TestCase(unittest.TestCase):
-    def test_bump_version_success(self):
+    def test_bump_single_version_success(self):
         golden = f"{GOLDEN}/asset/versions-asset-golden.txt"
-        runner = CliRunner()
         with copied_fixtures_dir(f"{FIXTURES}/asset"):
             runner.invoke(
                 bump_released_version,
@@ -26,6 +26,22 @@ class TestCase(unittest.TestCase):
             with open(golden) as g:
                 expected = g.read()
             with open("./versions-asset.txt") as f:
+                actual = f.read()
+            self.assertEqual(expected, actual)
+
+    def test_bump_multiple_versions_success(self):
+        golden = f"{GOLDEN}/multiple_modules/versions-multiple-golden.txt"
+        with copied_fixtures_dir(f"{FIXTURES}/multiple_modules"):
+            runner.invoke(
+                bump_released_version,
+                [
+                    "--artifact_ids=google-cloud-bigqueryconnection,google-cloud-java",
+                    "--versions=versions-multiple.txt",
+                ],
+            )
+            with open(golden) as g:
+                expected = g.read()
+            with open("./versions-multiple.txt") as f:
                 actual = f.read()
             self.assertEqual(expected, actual)
 
