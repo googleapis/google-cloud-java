@@ -36,7 +36,7 @@ def main(ctx):
 
 @main.command()
 @click.option(
-    "--artifact_ids",
+    "--artifact-ids",
     required=True,
     type=str,
     help="""

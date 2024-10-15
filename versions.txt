@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.46.0:1.47.0-SNAPSHOT
+google-cloud-java:1.46.1:1.46.1
 google-cloud-accessapproval:2.53.0:2.54.0-SNAPSHOT
 grpc-google-cloud-accessapproval-v1:2.53.0:2.54.0-SNAPSHOT
 proto-google-cloud-accessapproval-v1:2.53.0:2.54.0-SNAPSHOT
@@ -439,13 +439,13 @@ proto-google-cloud-scheduler-v1:2.52.0:2.53.0-SNAPSHOT
 google-cloud-secretmanager:2.52.0:2.53.0-SNAPSHOT
 grpc-google-cloud-secretmanager-v1:2.52.0:2.53.0-SNAPSHOT
 proto-google-cloud-secretmanager-v1:2.52.0:2.53.0-SNAPSHOT
-google-cloud-securitycenter:2.60.0:2.61.0-SNAPSHOT
-grpc-google-cloud-securitycenter-v1:2.60.0:2.61.0-SNAPSHOT
-grpc-google-cloud-securitycenter-v1beta1:0.155.0:0.156.0-SNAPSHOT
-grpc-google-cloud-securitycenter-v1p1beta1:0.155.0:0.156.0-SNAPSHOT
-proto-google-cloud-securitycenter-v1:2.60.0:2.61.0-SNAPSHOT
-proto-google-cloud-securitycenter-v1beta1:0.155.0:0.156.0-SNAPSHOT
-proto-google-cloud-securitycenter-v1p1beta1:0.155.0:0.156.0-SNAPSHOT
+google-cloud-securitycenter:2.60.1:2.60.1
+grpc-google-cloud-securitycenter-v1:2.60.1:2.60.1
+grpc-google-cloud-securitycenter-v1beta1:0.155.1:0.155.1
+grpc-google-cloud-securitycenter-v1p1beta1:0.155.1:0.155.1
+proto-google-cloud-securitycenter-v1:2.60.1:2.60.1
+proto-google-cloud-securitycenter-v1beta1:0.155.1:0.155.1
+proto-google-cloud-securitycenter-v1p1beta1:0.155.1:0.155.1
 google-cloud-securitycenter-settings:0.55.0:0.56.0-SNAPSHOT
 grpc-google-cloud-securitycenter-settings-v1beta1:0.55.0:0.56.0-SNAPSHOT
 proto-google-cloud-securitycenter-settings-v1beta1:0.55.0:0.56.0-SNAPSHOT
@@ -475,13 +475,13 @@ proto-google-cloud-service-usage-v1beta1:0.56.0:0.57.0-SNAPSHOT
 google-cloud-shell:2.51.0:2.52.0-SNAPSHOT
 grpc-google-cloud-shell-v1:2.51.0:2.52.0-SNAPSHOT
 proto-google-cloud-shell-v1:2.51.0:2.52.0-SNAPSHOT
-google-cloud-speech:4.47.0:4.48.0-SNAPSHOT
-grpc-google-cloud-speech-v1:4.47.0:4.48.0-SNAPSHOT
-grpc-google-cloud-speech-v1p1beta1:2.47.0:2.48.0-SNAPSHOT
-proto-google-cloud-speech-v1:4.47.0:4.48.0-SNAPSHOT
-proto-google-cloud-speech-v1p1beta1:2.47.0:2.48.0-SNAPSHOT
-proto-google-cloud-speech-v2:4.47.0:4.48.0-SNAPSHOT
-grpc-google-cloud-speech-v2:4.47.0:4.48.0-SNAPSHOT
+google-cloud-speech:4.47.1:4.47.1
+grpc-google-cloud-speech-v1:4.47.1:4.47.1
+grpc-google-cloud-speech-v1p1beta1:2.47.1:2.47.1
+proto-google-cloud-speech-v1:4.47.1:4.47.1
+proto-google-cloud-speech-v1p1beta1:2.47.1:2.47.1
+proto-google-cloud-speech-v2:4.47.1:4.47.1
+grpc-google-cloud-speech-v2:4.47.1:4.47.1
 google-cloud-storage-transfer:1.52.0:1.53.0-SNAPSHOT
 grpc-google-cloud-storage-transfer-v1:1.52.0:1.53.0-SNAPSHOT
 proto-google-cloud-storage-transfer-v1:1.52.0:1.53.0-SNAPSHOT
@@ -724,8 +724,8 @@ grpc-google-cloud-meet-v2:0.19.0:0.20.0-SNAPSHOT
 google-cloud-securityposture:0.17.0:0.18.0-SNAPSHOT
 proto-google-cloud-securityposture-v1:0.17.0:0.18.0-SNAPSHOT
 grpc-google-cloud-securityposture-v1:0.17.0:0.18.0-SNAPSHOT
-proto-google-cloud-securitycenter-v2:2.60.0:2.61.0-SNAPSHOT
-grpc-google-cloud-securitycenter-v2:2.60.0:2.61.0-SNAPSHOT
+proto-google-cloud-securitycenter-v2:2.60.1:2.60.1
+grpc-google-cloud-securitycenter-v2:2.60.1:2.60.1
 google-cloud-cloudcontrolspartner:0.16.0:0.17.0-SNAPSHOT
 proto-google-cloud-cloudcontrolspartner-v1beta:0.16.0:0.17.0-SNAPSHOT
 proto-google-cloud-cloudcontrolspartner-v1:0.16.0:0.17.0-SNAPSHOT
