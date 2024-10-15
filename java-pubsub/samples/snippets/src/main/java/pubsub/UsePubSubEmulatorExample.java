@@ -39,7 +39,6 @@ import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
 
 public class UsePubSubEmulatorExample {
   public static void main(String... args) throws Exception {

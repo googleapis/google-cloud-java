@@ -47,7 +47,8 @@ public class OpenTelemetrySubscriberExample {
 
   public static void openTelemetrySubscriberExample(String projectId, String subscriptionId) {
     Resource resource =
-        Resource.getDefault().toBuilder()
+        Resource.getDefault()
+            .toBuilder()
             .put(ResourceAttributes.SERVICE_NAME, "subscriber-example")
             .build();
 
