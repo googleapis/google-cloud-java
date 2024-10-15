@@ -24,6 +24,15 @@ package com.google.datastore.v1;
  *
  * <pre>
  * A query for entities.
+ *
+ * The query stages are executed in the following order:
+ * 1. kind
+ * 2. filter
+ * 3. projection
+ * 4. order + start_cursor + end_cursor
+ * 5. offset
+ * 6. limit
+ * 7. find_nearest
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.Query}
@@ -553,6 +562,74 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
 
+  public static final int FIND_NEAREST_FIELD_NUMBER = 13;
+  private com.google.datastore.v1.FindNearest findNearest_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the findNearest field is set.
+   */
+  @java.lang.Override
+  public boolean hasFindNearest() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The findNearest.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.FindNearest getFindNearest() {
+    return findNearest_ == null
+        ? com.google.datastore.v1.FindNearest.getDefaultInstance()
+        : findNearest_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.FindNearestOrBuilder getFindNearestOrBuilder() {
+    return findNearest_ == null
+        ? com.google.datastore.v1.FindNearest.getDefaultInstance()
+        : findNearest_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -594,6 +671,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(12, getLimit());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(13, getFindNearest());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -630,6 +710,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLimit());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFindNearest());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -659,6 +742,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     if (hasLimit() != other.hasLimit()) return false;
     if (hasLimit()) {
       if (!getLimit().equals(other.getLimit())) return false;
+    }
+    if (hasFindNearest() != other.hasFindNearest()) return false;
+    if (hasFindNearest()) {
+      if (!getFindNearest().equals(other.getFindNearest())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -700,6 +787,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     if (hasLimit()) {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit().hashCode();
+    }
+    if (hasFindNearest()) {
+      hash = (37 * hash) + FIND_NEAREST_FIELD_NUMBER;
+      hash = (53 * hash) + getFindNearest().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -805,6 +896,15 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A query for entities.
+   *
+   * The query stages are executed in the following order:
+   * 1. kind
+   * 2. filter
+   * 3. projection
+   * 4. order + start_cursor + end_cursor
+   * 5. offset
+   * 6. limit
+   * 7. find_nearest
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.Query}
@@ -845,6 +945,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         getOrderFieldBuilder();
         getDistinctOnFieldBuilder();
         getLimitFieldBuilder();
+        getFindNearestFieldBuilder();
       }
     }
 
@@ -892,6 +993,11 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       if (limitBuilder_ != null) {
         limitBuilder_.dispose();
         limitBuilder_ = null;
+      }
+      findNearest_ = null;
+      if (findNearestBuilder_ != null) {
+        findNearestBuilder_.dispose();
+        findNearestBuilder_ = null;
       }
       return this;
     }
@@ -985,6 +1091,11 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.limit_ = limitBuilder_ == null ? limit_ : limitBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.findNearest_ =
+            findNearestBuilder_ == null ? findNearest_ : findNearestBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1157,6 +1268,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLimit()) {
         mergeLimit(other.getLimit());
       }
+      if (other.hasFindNearest()) {
+        mergeFindNearest(other.getFindNearest());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1265,6 +1379,12 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getFindNearestFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3394,6 +3514,245 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         limit_ = null;
       }
       return limitBuilder_;
+    }
+
+    private com.google.datastore.v1.FindNearest findNearest_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.FindNearest,
+            com.google.datastore.v1.FindNearest.Builder,
+            com.google.datastore.v1.FindNearestOrBuilder>
+        findNearestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the findNearest field is set.
+     */
+    public boolean hasFindNearest() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The findNearest.
+     */
+    public com.google.datastore.v1.FindNearest getFindNearest() {
+      if (findNearestBuilder_ == null) {
+        return findNearest_ == null
+            ? com.google.datastore.v1.FindNearest.getDefaultInstance()
+            : findNearest_;
+      } else {
+        return findNearestBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFindNearest(com.google.datastore.v1.FindNearest value) {
+      if (findNearestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        findNearest_ = value;
+      } else {
+        findNearestBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFindNearest(com.google.datastore.v1.FindNearest.Builder builderForValue) {
+      if (findNearestBuilder_ == null) {
+        findNearest_ = builderForValue.build();
+      } else {
+        findNearestBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFindNearest(com.google.datastore.v1.FindNearest value) {
+      if (findNearestBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && findNearest_ != null
+            && findNearest_ != com.google.datastore.v1.FindNearest.getDefaultInstance()) {
+          getFindNearestBuilder().mergeFrom(value);
+        } else {
+          findNearest_ = value;
+        }
+      } else {
+        findNearestBuilder_.mergeFrom(value);
+      }
+      if (findNearest_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFindNearest() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      findNearest_ = null;
+      if (findNearestBuilder_ != null) {
+        findNearestBuilder_.dispose();
+        findNearestBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.FindNearest.Builder getFindNearestBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getFindNearestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.FindNearestOrBuilder getFindNearestOrBuilder() {
+      if (findNearestBuilder_ != null) {
+        return findNearestBuilder_.getMessageOrBuilder();
+      } else {
+        return findNearest_ == null
+            ? com.google.datastore.v1.FindNearest.getDefaultInstance()
+            : findNearest_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A potential Nearest Neighbors Search.
+     *
+     * Applies after all other filters and ordering.
+     *
+     * Finds the closest vector embeddings to the given query vector.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.FindNearest,
+            com.google.datastore.v1.FindNearest.Builder,
+            com.google.datastore.v1.FindNearestOrBuilder>
+        getFindNearestFieldBuilder() {
+      if (findNearestBuilder_ == null) {
+        findNearestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.FindNearest,
+                com.google.datastore.v1.FindNearest.Builder,
+                com.google.datastore.v1.FindNearestOrBuilder>(
+                getFindNearest(), getParentForChildren(), isClean());
+        findNearest_ = null;
+      }
+      return findNearestBuilder_;
     }
 
     @java.lang.Override

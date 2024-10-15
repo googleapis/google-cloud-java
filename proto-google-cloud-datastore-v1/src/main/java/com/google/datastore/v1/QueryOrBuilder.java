@@ -394,4 +394,57 @@ public interface QueryOrBuilder
    * <code>.google.protobuf.Int32Value limit = 12;</code>
    */
   com.google.protobuf.Int32ValueOrBuilder getLimitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the findNearest field is set.
+   */
+  boolean hasFindNearest();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The findNearest.
+   */
+  com.google.datastore.v1.FindNearest getFindNearest();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A potential Nearest Neighbors Search.
+   *
+   * Applies after all other filters and ordering.
+   *
+   * Finds the closest vector embeddings to the given query vector.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.FindNearest find_nearest = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.datastore.v1.FindNearestOrBuilder getFindNearestOrBuilder();
 }
