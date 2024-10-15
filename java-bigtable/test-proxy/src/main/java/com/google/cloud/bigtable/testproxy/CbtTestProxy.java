@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.testproxy.CloudBigtableV2TestProxyGrpc.CloudBigtableV2TestProxyImplBase;
 import com.google.common.base.Preconditions;
@@ -50,6 +51,7 @@ import com.google.rpc.Code;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusException;
+import io.grpc.StatusRuntimeException;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
@@ -65,6 +67,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -159,6 +162,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         settingsBuilder.stubSettings().readModifyWriteRowSettings().retrySettings(), newTimeout);
     updateTimeout(
         settingsBuilder.stubSettings().sampleRowKeysSettings().retrySettings(), newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().executeQuerySettings().retrySettings(), newTimeout);
 
     return settingsBuilder;
   }
@@ -696,6 +701,64 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
           RowResult.newBuilder().setStatus(com.google.rpc.Status.getDefaultInstance()).build());
     }
     responseObserver.onCompleted();
+  }
+
+  @Override
+  public void executeQuery(
+      ExecuteQueryRequest request, StreamObserver<ExecuteQueryResult> responseObserver) {
+    CbtClient client;
+    try {
+      client = getClient(request.getClientId());
+    } catch (StatusException e) {
+      responseObserver.onError(e);
+      return;
+    }
+    try (ResultSet resultSet =
+        client.dataClient().executeQuery(StatementDeserializer.toStatement(request))) {
+      responseObserver.onNext(ResultSetSerializer.toExecuteQueryResult(resultSet));
+    } catch (InterruptedException e) {
+      responseObserver.onError(e);
+      return;
+    } catch (ExecutionException e) {
+      responseObserver.onError(e);
+      return;
+    } catch (ApiException e) {
+      responseObserver.onNext(
+          ExecuteQueryResult.newBuilder()
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(e.getStatusCode().getCode().ordinal())
+                      .setMessage(e.getMessage())
+                      .build())
+              .build());
+      responseObserver.onCompleted();
+      return;
+    } catch (StatusRuntimeException e) {
+      responseObserver.onNext(
+          ExecuteQueryResult.newBuilder()
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(e.getStatus().getCode().value())
+                      .setMessage(e.getStatus().getDescription())
+                      .build())
+              .build());
+      responseObserver.onCompleted();
+      return;
+    } catch (RuntimeException e) {
+      // If client encounters problem, don't return any results.
+      responseObserver.onNext(
+          ExecuteQueryResult.newBuilder()
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(Code.INTERNAL.getNumber())
+                      .setMessage(e.getMessage())
+                      .build())
+              .build());
+      responseObserver.onCompleted();
+      return;
+    }
+    responseObserver.onCompleted();
+    return;
   }
 
   @Override
