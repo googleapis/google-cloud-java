@@ -83,7 +83,14 @@ public class BigtableTracer extends BaseApiTracer {
     // noop
   }
 
+  @Deprecated
+  /** @deprecated {@link #grpcMessageSent()} is called instead. */
   public void grpcChannelQueuedLatencies(long queuedTimeMs) {
+    // noop
+  }
+
+  /** Called when the message is sent on a grpc channel. */
+  public void grpcMessageSent() {
     // noop
   }
 }

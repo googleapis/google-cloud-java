@@ -70,15 +70,11 @@ import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
-import io.grpc.CallOptions;
-import io.grpc.Channel;
-import io.grpc.ClientCall;
-import io.grpc.ClientInterceptor;
-import io.grpc.ForwardingClientCall;
 import io.grpc.ForwardingServerCall;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
-import io.grpc.MethodDescriptor;
+import io.grpc.ProxiedSocketAddress;
+import io.grpc.ProxyDetector;
 import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
@@ -95,6 +91,8 @@ import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.View;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.io.IOException;
+import java.net.SocketAddress;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,6 +102,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -130,7 +129,7 @@ public class BuiltinMetricsTracerTest {
   private static final long SLEEP_VARIABILITY = 15;
   private static final String CLIENT_NAME = "java-bigtable/" + Version.VERSION;
 
-  private static final long CHANNEL_BLOCKING_LATENCY = 75;
+  private static final long CHANNEL_BLOCKING_LATENCY = 200;
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
@@ -196,28 +195,6 @@ public class BuiltinMetricsTracerTest {
           }
         };
 
-    ClientInterceptor clientInterceptor =
-        new ClientInterceptor() {
-          @Override
-          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
-              MethodDescriptor<ReqT, RespT> methodDescriptor,
-              CallOptions callOptions,
-              Channel channel) {
-            return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
-                channel.newCall(methodDescriptor, callOptions)) {
-              @Override
-              public void sendMessage(ReqT message) {
-                try {
-                  Thread.sleep(CHANNEL_BLOCKING_LATENCY);
-                } catch (InterruptedException e) {
-                  throw new RuntimeException(e);
-                }
-                super.sendMessage(message);
-              }
-            };
-          }
-        };
-
     server = FakeServiceBuilder.create(fakeService).intercept(trailersInterceptor).start();
 
     BigtableDataSettings settings =
@@ -225,6 +202,7 @@ public class BuiltinMetricsTracerTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
+            .setRefreshingChannel(false)
             .build();
     EnhancedBigtableStubSettings.Builder stubSettingsBuilder =
         settings.getStubSettings().toBuilder();
@@ -264,7 +242,7 @@ public class BuiltinMetricsTracerTest {
           if (oldConfigurator != null) {
             builder = oldConfigurator.apply(builder);
           }
-          return builder.intercept(clientInterceptor);
+          return builder.proxyDetector(new DelayProxyDetector());
         });
     stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
 
@@ -692,9 +670,8 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
 
-    long expected = CHANNEL_BLOCKING_LATENCY * 2 / 3;
     long actual = getAggregatedValue(clientLatency, attributes);
-    assertThat(actual).isAtLeast(expected);
+    assertThat(actual).isAtLeast(CHANNEL_BLOCKING_LATENCY);
   }
 
   @Test
@@ -836,6 +813,20 @@ public class BuiltinMetricsTracerTest {
 
     public AtomicInteger getResponseCounter() {
       return responseCounter;
+    }
+  }
+
+  class DelayProxyDetector implements ProxyDetector {
+
+    @Nullable
+    @Override
+    public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) throws IOException {
+      try {
+        Thread.sleep(CHANNEL_BLOCKING_LATENCY);
+      } catch (InterruptedException e) {
+
+      }
+      return null;
     }
   }
 }

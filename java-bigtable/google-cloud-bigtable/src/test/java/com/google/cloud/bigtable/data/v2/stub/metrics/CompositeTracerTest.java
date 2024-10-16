@@ -258,4 +258,11 @@ public class CompositeTracerTest {
     verify(child3, times(1)).grpcChannelQueuedLatencies(5L);
     verify(child4, times(1)).grpcChannelQueuedLatencies(5L);
   }
+
+  @Test
+  public void testGrpcMessageSent() {
+    compositeTracer.grpcMessageSent();
+    verify(child3, times(1)).grpcMessageSent();
+    verify(child4, times(1)).grpcMessageSent();
+  }
 }
