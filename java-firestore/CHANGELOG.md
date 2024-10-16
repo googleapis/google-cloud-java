@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.27.3](https://github.com/googleapis/java-firestore/compare/v3.27.2...v3.27.3) (2024-10-16)
+
+
+### Dependencies
+
+* Update opentelemetry.version to v1.43.0 ([#1884](https://github.com/googleapis/java-firestore/issues/1884)) ([f07ac99](https://github.com/googleapis/java-firestore/commit/f07ac990fece6d59d898419d1cca0b2a91a64248))
+
 ## [3.27.2](https://github.com/googleapis/java-firestore/compare/v3.27.1...v3.27.2) (2024-10-10)
 
 
