@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_ReachabilityService_DeleteConnectivityTest_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 import com.google.longrunning.Operation;
@@ -36,7 +37,9 @@ public class AsyncDeleteConnectivityTest {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       DeleteConnectivityTestRequest request =
-          DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          DeleteConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       ApiFuture<Operation> future =
           reachabilityServiceClient.deleteConnectivityTestCallable().futureCall(request);
       // Do something.

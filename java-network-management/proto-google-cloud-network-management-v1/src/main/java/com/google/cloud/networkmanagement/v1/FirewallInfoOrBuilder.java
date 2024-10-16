@@ -28,8 +28,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The display name of the VPC firewall rule. This field is not applicable
-   * to hierarchical firewall policy rules.
+   * The display name of the firewall rule. This field might be empty for
+   * firewall policy rules.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -41,8 +41,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The display name of the VPC firewall rule. This field is not applicable
-   * to hierarchical firewall policy rules.
+   * The display name of the firewall rule. This field might be empty for
+   * firewall policy rules.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -55,8 +55,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the VPC firewall rule. This field is not applicable to
-   * implied firewall rules or hierarchical firewall policy rules.
+   * The URI of the firewall rule. This field is not applicable to implied
+   * VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -68,8 +68,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the VPC firewall rule. This field is not applicable to
-   * implied firewall rules or hierarchical firewall policy rules.
+   * The URI of the firewall rule. This field is not applicable to implied
+   * VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -173,7 +173,7 @@ public interface FirewallInfoOrBuilder
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -186,7 +186,7 @@ public interface FirewallInfoOrBuilder
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -199,7 +199,7 @@ public interface FirewallInfoOrBuilder
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -213,7 +213,7 @@ public interface FirewallInfoOrBuilder
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -278,8 +278,9 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The hierarchical firewall policy that this rule is associated with.
-   * This field is not applicable to VPC firewall rules.
+   * The name of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
    * </pre>
    *
    * <code>string policy = 9;</code>
@@ -291,8 +292,9 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The hierarchical firewall policy that this rule is associated with.
-   * This field is not applicable to VPC firewall rules.
+   * The name of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
    * </pre>
    *
    * <code>string policy = 9;</code>
@@ -300,6 +302,35 @@ public interface FirewallInfoOrBuilder
    * @return The bytes for policy.
    */
   com.google.protobuf.ByteString getPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>string policy_uri = 11;</code>
+   *
+   * @return The policyUri.
+   */
+  java.lang.String getPolicyUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>string policy_uri = 11;</code>
+   *
+   * @return The bytes for policyUri.
+   */
+  com.google.protobuf.ByteString getPolicyUriBytes();
 
   /**
    *

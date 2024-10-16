@@ -309,6 +309,60 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The redisInstance.
+   */
+  java.lang.String getRedisInstance();
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The bytes for redisInstance.
+   */
+  com.google.protobuf.ByteString getRedisInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The redisCluster.
+   */
+  java.lang.String getRedisCluster();
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The bytes for redisCluster.
+   */
+  com.google.protobuf.ByteString getRedisClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A [Cloud Function](https://cloud.google.com/functions).
    * </pre>
    *

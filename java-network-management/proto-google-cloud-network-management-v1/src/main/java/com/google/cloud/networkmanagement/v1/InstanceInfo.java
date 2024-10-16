@@ -47,6 +47,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     externalIp_ = "";
     networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
+    pscNetworkAttachmentUri_ = "";
   }
 
   @java.lang.Override
@@ -454,7 +455,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=299
+   *     google/cloud/networkmanagement/v1/trace.proto;l=322
    * @return The serviceAccount.
    */
   @java.lang.Override
@@ -480,7 +481,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=299
+   *     google/cloud/networkmanagement/v1/trace.proto;l=322
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
@@ -491,6 +492,57 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_NETWORK_ATTACHMENT_URI_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscNetworkAttachmentUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The pscNetworkAttachmentUri.
+   */
+  @java.lang.Override
+  public java.lang.String getPscNetworkAttachmentUri() {
+    java.lang.Object ref = pscNetworkAttachmentUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscNetworkAttachmentUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The bytes for pscNetworkAttachmentUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscNetworkAttachmentUriBytes() {
+    java.lang.Object ref = pscNetworkAttachmentUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscNetworkAttachmentUri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -535,6 +587,9 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, serviceAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscNetworkAttachmentUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pscNetworkAttachmentUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -573,6 +628,9 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serviceAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscNetworkAttachmentUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pscNetworkAttachmentUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -597,6 +655,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getExternalIp().equals(other.getExternalIp())) return false;
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getPscNetworkAttachmentUri().equals(other.getPscNetworkAttachmentUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -626,6 +685,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + PSC_NETWORK_ATTACHMENT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getPscNetworkAttachmentUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -773,6 +834,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       externalIp_ = "";
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAccount_ = "";
+      pscNetworkAttachmentUri_ = "";
       return this;
     }
 
@@ -833,6 +895,9 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pscNetworkAttachmentUri_ = pscNetworkAttachmentUri_;
       }
     }
 
@@ -927,6 +992,11 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.getPscNetworkAttachmentUri().isEmpty()) {
+        pscNetworkAttachmentUri_ = other.pscNetworkAttachmentUri_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1002,6 +1072,12 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                pscNetworkAttachmentUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1842,7 +1918,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=299
+     *     google/cloud/networkmanagement/v1/trace.proto;l=322
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -1867,7 +1943,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=299
+     *     google/cloud/networkmanagement/v1/trace.proto;l=322
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -1892,7 +1968,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=299
+     *     google/cloud/networkmanagement/v1/trace.proto;l=322
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -1916,7 +1992,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=299
+     *     google/cloud/networkmanagement/v1/trace.proto;l=322
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1936,7 +2012,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=299
+     *     google/cloud/networkmanagement/v1/trace.proto;l=322
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -1948,6 +2024,112 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pscNetworkAttachmentUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC network attachment the NIC is attached to (if relevant).
+     * </pre>
+     *
+     * <code>string psc_network_attachment_uri = 9;</code>
+     *
+     * @return The pscNetworkAttachmentUri.
+     */
+    public java.lang.String getPscNetworkAttachmentUri() {
+      java.lang.Object ref = pscNetworkAttachmentUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscNetworkAttachmentUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC network attachment the NIC is attached to (if relevant).
+     * </pre>
+     *
+     * <code>string psc_network_attachment_uri = 9;</code>
+     *
+     * @return The bytes for pscNetworkAttachmentUri.
+     */
+    public com.google.protobuf.ByteString getPscNetworkAttachmentUriBytes() {
+      java.lang.Object ref = pscNetworkAttachmentUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscNetworkAttachmentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC network attachment the NIC is attached to (if relevant).
+     * </pre>
+     *
+     * <code>string psc_network_attachment_uri = 9;</code>
+     *
+     * @param value The pscNetworkAttachmentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscNetworkAttachmentUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pscNetworkAttachmentUri_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC network attachment the NIC is attached to (if relevant).
+     * </pre>
+     *
+     * <code>string psc_network_attachment_uri = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscNetworkAttachmentUri() {
+      pscNetworkAttachmentUri_ = getDefaultInstance().getPscNetworkAttachmentUri();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC network attachment the NIC is attached to (if relevant).
+     * </pre>
+     *
+     * <code>string psc_network_attachment_uri = 9;</code>
+     *
+     * @param value The bytes for pscNetworkAttachmentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscNetworkAttachmentUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pscNetworkAttachmentUri_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

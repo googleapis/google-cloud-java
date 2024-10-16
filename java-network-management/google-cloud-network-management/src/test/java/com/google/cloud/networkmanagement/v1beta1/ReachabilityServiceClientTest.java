@@ -118,7 +118,7 @@ public class ReachabilityServiceClientTest {
 
     ListConnectivityTestsRequest request =
         ListConnectivityTestsRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setFilter("filter-1274492040")
@@ -156,7 +156,7 @@ public class ReachabilityServiceClientTest {
     try {
       ListConnectivityTestsRequest request =
           ListConnectivityTestsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
@@ -173,7 +173,7 @@ public class ReachabilityServiceClientTest {
   public void getConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -190,7 +190,9 @@ public class ReachabilityServiceClientTest {
     mockReachabilityService.addResponse(expectedResponse);
 
     GetConnectivityTestRequest request =
-        GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+        GetConnectivityTestRequest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .build();
 
     ConnectivityTest actualResponse = client.getConnectivityTest(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -213,7 +215,9 @@ public class ReachabilityServiceClientTest {
 
     try {
       GetConnectivityTestRequest request =
-          GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          GetConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       client.getConnectivityTest(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -225,7 +229,7 @@ public class ReachabilityServiceClientTest {
   public void createConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -249,7 +253,7 @@ public class ReachabilityServiceClientTest {
 
     CreateConnectivityTestRequest request =
         CreateConnectivityTestRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setTestId("testId-877170355")
             .setResource(ConnectivityTest.newBuilder().build())
             .build();
@@ -279,7 +283,7 @@ public class ReachabilityServiceClientTest {
     try {
       CreateConnectivityTestRequest request =
           CreateConnectivityTestRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setTestId("testId-877170355")
               .setResource(ConnectivityTest.newBuilder().build())
               .build();
@@ -296,7 +300,7 @@ public class ReachabilityServiceClientTest {
   public void updateConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -364,7 +368,7 @@ public class ReachabilityServiceClientTest {
   public void rerunConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -387,7 +391,9 @@ public class ReachabilityServiceClientTest {
     mockReachabilityService.addResponse(resultOperation);
 
     RerunConnectivityTestRequest request =
-        RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+        RerunConnectivityTestRequest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .build();
 
     ConnectivityTest actualResponse = client.rerunConnectivityTestAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -411,7 +417,9 @@ public class ReachabilityServiceClientTest {
 
     try {
       RerunConnectivityTestRequest request =
-          RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          RerunConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       client.rerunConnectivityTestAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -433,7 +441,9 @@ public class ReachabilityServiceClientTest {
     mockReachabilityService.addResponse(resultOperation);
 
     DeleteConnectivityTestRequest request =
-        DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+        DeleteConnectivityTestRequest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .build();
 
     client.deleteConnectivityTestAsync(request).get();
 
@@ -456,7 +466,9 @@ public class ReachabilityServiceClientTest {
 
     try {
       DeleteConnectivityTestRequest request =
-          DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          DeleteConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       client.deleteConnectivityTestAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -580,7 +592,7 @@ public class ReachabilityServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource("SetIamPolicyRequest1223629066".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -609,7 +621,7 @@ public class ReachabilityServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -633,7 +645,7 @@ public class ReachabilityServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource("GetIamPolicyRequest-1527610370".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -660,7 +672,7 @@ public class ReachabilityServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -678,7 +690,7 @@ public class ReachabilityServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource("TestIamPermissionsRequest942398222".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -705,7 +717,7 @@ public class ReachabilityServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

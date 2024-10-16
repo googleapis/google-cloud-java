@@ -1710,6 +1710,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy$ProvisioningModelMix",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy$ProvisioningModelMix$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

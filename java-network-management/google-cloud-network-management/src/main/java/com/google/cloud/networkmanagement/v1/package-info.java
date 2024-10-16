@@ -39,7 +39,7 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
- *   String name = "name3373707";
+ *   ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
  *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(name);
  * }
  * }</pre>

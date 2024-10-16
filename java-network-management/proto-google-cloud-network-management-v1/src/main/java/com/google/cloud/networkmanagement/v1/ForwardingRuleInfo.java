@@ -46,6 +46,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     vip_ = "";
     target_ = "";
     networkUri_ = "";
+    region_ = "";
+    loadBalancerName_ = "";
+    pscServiceAttachmentUri_ = "";
+    pscGoogleApiTarget_ = "";
   }
 
   @java.lang.Override
@@ -77,7 +81,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Name of a Compute Engine forwarding rule.
+   * Name of the forwarding rule.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -100,7 +104,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Name of a Compute Engine forwarding rule.
+   * Name of the forwarding rule.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -128,7 +132,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * URI of a Compute Engine forwarding rule.
+   * URI of the forwarding rule.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -151,7 +155,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * URI of a Compute Engine forwarding rule.
+   * URI of the forwarding rule.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -179,7 +183,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Protocol defined in the forwarding rule that matches the test.
+   * Protocol defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_protocol = 3;</code>
@@ -202,7 +206,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Protocol defined in the forwarding rule that matches the test.
+   * Protocol defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_protocol = 3;</code>
@@ -230,7 +234,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Port range defined in the forwarding rule that matches the test.
+   * Port range defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_port_range = 6;</code>
@@ -253,7 +257,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Port range defined in the forwarding rule that matches the test.
+   * Port range defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_port_range = 6;</code>
@@ -383,7 +387,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Network URI. Only valid for Internal Load Balancer.
+   * Network URI.
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -406,7 +410,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Network URI. Only valid for Internal Load Balancer.
+   * Network URI.
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -420,6 +424,214 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       networkUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Region of the forwarding rule. Set only for regional forwarding rules.
+   * </pre>
+   *
+   * <code>string region = 8;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region of the forwarding rule. Set only for regional forwarding rules.
+   * </pre>
+   *
+   * <code>string region = 8;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOAD_BALANCER_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loadBalancerName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the load balancer the forwarding rule belongs to. Empty for
+   * forwarding rules not related to load balancers (like PSC forwarding rules).
+   * </pre>
+   *
+   * <code>string load_balancer_name = 9;</code>
+   *
+   * @return The loadBalancerName.
+   */
+  @java.lang.Override
+  public java.lang.String getLoadBalancerName() {
+    java.lang.Object ref = loadBalancerName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancerName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the load balancer the forwarding rule belongs to. Empty for
+   * forwarding rules not related to load balancers (like PSC forwarding rules).
+   * </pre>
+   *
+   * <code>string load_balancer_name = 9;</code>
+   *
+   * @return The bytes for loadBalancerName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoadBalancerNameBytes() {
+    java.lang.Object ref = loadBalancerName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loadBalancerName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_SERVICE_ATTACHMENT_URI_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscServiceAttachmentUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC service attachment this forwarding rule targets (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string psc_service_attachment_uri = 10;</code>
+   *
+   * @return The pscServiceAttachmentUri.
+   */
+  @java.lang.Override
+  public java.lang.String getPscServiceAttachmentUri() {
+    java.lang.Object ref = pscServiceAttachmentUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscServiceAttachmentUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC service attachment this forwarding rule targets (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string psc_service_attachment_uri = 10;</code>
+   *
+   * @return The bytes for pscServiceAttachmentUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscServiceAttachmentUriBytes() {
+    java.lang.Object ref = pscServiceAttachmentUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscServiceAttachmentUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_GOOGLE_API_TARGET_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscGoogleApiTarget_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target this forwarding rule targets (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 11;</code>
+   *
+   * @return The pscGoogleApiTarget.
+   */
+  @java.lang.Override
+  public java.lang.String getPscGoogleApiTarget() {
+    java.lang.Object ref = pscGoogleApiTarget_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscGoogleApiTarget_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target this forwarding rule targets (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 11;</code>
+   *
+   * @return The bytes for pscGoogleApiTarget.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscGoogleApiTargetBytes() {
+    java.lang.Object ref = pscGoogleApiTarget_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscGoogleApiTarget_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -461,6 +673,18 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, networkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loadBalancerName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, loadBalancerName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscServiceAttachmentUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pscServiceAttachmentUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, pscGoogleApiTarget_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -491,6 +715,19 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, networkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loadBalancerName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, loadBalancerName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscServiceAttachmentUri_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pscServiceAttachmentUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, pscGoogleApiTarget_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -514,6 +751,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     if (!getVip().equals(other.getVip())) return false;
     if (!getTarget().equals(other.getTarget())) return false;
     if (!getNetworkUri().equals(other.getNetworkUri())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
+    if (!getLoadBalancerName().equals(other.getLoadBalancerName())) return false;
+    if (!getPscServiceAttachmentUri().equals(other.getPscServiceAttachmentUri())) return false;
+    if (!getPscGoogleApiTarget().equals(other.getPscGoogleApiTarget())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -539,6 +780,14 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getTarget().hashCode();
     hash = (37 * hash) + NETWORK_URI_FIELD_NUMBER;
     hash = (53 * hash) + getNetworkUri().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
+    hash = (37 * hash) + LOAD_BALANCER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLoadBalancerName().hashCode();
+    hash = (37 * hash) + PSC_SERVICE_ATTACHMENT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getPscServiceAttachmentUri().hashCode();
+    hash = (37 * hash) + PSC_GOOGLE_API_TARGET_FIELD_NUMBER;
+    hash = (53 * hash) + getPscGoogleApiTarget().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -686,6 +935,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       vip_ = "";
       target_ = "";
       networkUri_ = "";
+      region_ = "";
+      loadBalancerName_ = "";
+      pscServiceAttachmentUri_ = "";
+      pscGoogleApiTarget_ = "";
       return this;
     }
 
@@ -742,6 +995,18 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.networkUri_ = networkUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.loadBalancerName_ = loadBalancerName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pscServiceAttachmentUri_ = pscServiceAttachmentUri_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pscGoogleApiTarget_ = pscGoogleApiTarget_;
       }
     }
 
@@ -826,6 +1091,26 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getLoadBalancerName().isEmpty()) {
+        loadBalancerName_ = other.loadBalancerName_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getPscServiceAttachmentUri().isEmpty()) {
+        pscServiceAttachmentUri_ = other.pscServiceAttachmentUri_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getPscGoogleApiTarget().isEmpty()) {
+        pscGoogleApiTarget_ = other.pscGoogleApiTarget_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -894,6 +1179,30 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                loadBalancerName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                pscServiceAttachmentUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                pscGoogleApiTarget_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -918,7 +1227,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Name of a Compute Engine forwarding rule.
+     * Name of the forwarding rule.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -940,7 +1249,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Name of a Compute Engine forwarding rule.
+     * Name of the forwarding rule.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -962,7 +1271,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Name of a Compute Engine forwarding rule.
+     * Name of the forwarding rule.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -983,7 +1292,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Name of a Compute Engine forwarding rule.
+     * Name of the forwarding rule.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1000,7 +1309,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Name of a Compute Engine forwarding rule.
+     * Name of the forwarding rule.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1024,7 +1333,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of a Compute Engine forwarding rule.
+     * URI of the forwarding rule.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1046,7 +1355,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of a Compute Engine forwarding rule.
+     * URI of the forwarding rule.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1068,7 +1377,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of a Compute Engine forwarding rule.
+     * URI of the forwarding rule.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1089,7 +1398,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of a Compute Engine forwarding rule.
+     * URI of the forwarding rule.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1106,7 +1415,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of a Compute Engine forwarding rule.
+     * URI of the forwarding rule.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1130,7 +1439,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Protocol defined in the forwarding rule that matches the test.
+     * Protocol defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_protocol = 3;</code>
@@ -1152,7 +1461,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Protocol defined in the forwarding rule that matches the test.
+     * Protocol defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_protocol = 3;</code>
@@ -1174,7 +1483,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Protocol defined in the forwarding rule that matches the test.
+     * Protocol defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_protocol = 3;</code>
@@ -1195,7 +1504,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Protocol defined in the forwarding rule that matches the test.
+     * Protocol defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_protocol = 3;</code>
@@ -1212,7 +1521,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Protocol defined in the forwarding rule that matches the test.
+     * Protocol defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_protocol = 3;</code>
@@ -1236,7 +1545,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Port range defined in the forwarding rule that matches the test.
+     * Port range defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_port_range = 6;</code>
@@ -1258,7 +1567,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Port range defined in the forwarding rule that matches the test.
+     * Port range defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_port_range = 6;</code>
@@ -1280,7 +1589,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Port range defined in the forwarding rule that matches the test.
+     * Port range defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_port_range = 6;</code>
@@ -1301,7 +1610,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Port range defined in the forwarding rule that matches the test.
+     * Port range defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_port_range = 6;</code>
@@ -1318,7 +1627,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Port range defined in the forwarding rule that matches the test.
+     * Port range defined in the forwarding rule that matches the packet.
      * </pre>
      *
      * <code>string matched_port_range = 6;</code>
@@ -1554,7 +1863,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI. Only valid for Internal Load Balancer.
+     * Network URI.
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1576,7 +1885,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI. Only valid for Internal Load Balancer.
+     * Network URI.
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1598,7 +1907,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI. Only valid for Internal Load Balancer.
+     * Network URI.
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1619,7 +1928,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI. Only valid for Internal Load Balancer.
+     * Network URI.
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1636,7 +1945,7 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI. Only valid for Internal Load Balancer.
+     * Network URI.
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1651,6 +1960,440 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       networkUri_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Region of the forwarding rule. Set only for regional forwarding rules.
+     * </pre>
+     *
+     * <code>string region = 8;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the forwarding rule. Set only for regional forwarding rules.
+     * </pre>
+     *
+     * <code>string region = 8;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the forwarding rule. Set only for regional forwarding rules.
+     * </pre>
+     *
+     * <code>string region = 8;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the forwarding rule. Set only for regional forwarding rules.
+     * </pre>
+     *
+     * <code>string region = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the forwarding rule. Set only for regional forwarding rules.
+     * </pre>
+     *
+     * <code>string region = 8;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object loadBalancerName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the load balancer the forwarding rule belongs to. Empty for
+     * forwarding rules not related to load balancers (like PSC forwarding rules).
+     * </pre>
+     *
+     * <code>string load_balancer_name = 9;</code>
+     *
+     * @return The loadBalancerName.
+     */
+    public java.lang.String getLoadBalancerName() {
+      java.lang.Object ref = loadBalancerName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancerName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the load balancer the forwarding rule belongs to. Empty for
+     * forwarding rules not related to load balancers (like PSC forwarding rules).
+     * </pre>
+     *
+     * <code>string load_balancer_name = 9;</code>
+     *
+     * @return The bytes for loadBalancerName.
+     */
+    public com.google.protobuf.ByteString getLoadBalancerNameBytes() {
+      java.lang.Object ref = loadBalancerName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loadBalancerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the load balancer the forwarding rule belongs to. Empty for
+     * forwarding rules not related to load balancers (like PSC forwarding rules).
+     * </pre>
+     *
+     * <code>string load_balancer_name = 9;</code>
+     *
+     * @param value The loadBalancerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loadBalancerName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the load balancer the forwarding rule belongs to. Empty for
+     * forwarding rules not related to load balancers (like PSC forwarding rules).
+     * </pre>
+     *
+     * <code>string load_balancer_name = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancerName() {
+      loadBalancerName_ = getDefaultInstance().getLoadBalancerName();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the load balancer the forwarding rule belongs to. Empty for
+     * forwarding rules not related to load balancers (like PSC forwarding rules).
+     * </pre>
+     *
+     * <code>string load_balancer_name = 9;</code>
+     *
+     * @param value The bytes for loadBalancerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loadBalancerName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pscServiceAttachmentUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC service attachment this forwarding rule targets (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string psc_service_attachment_uri = 10;</code>
+     *
+     * @return The pscServiceAttachmentUri.
+     */
+    public java.lang.String getPscServiceAttachmentUri() {
+      java.lang.Object ref = pscServiceAttachmentUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscServiceAttachmentUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC service attachment this forwarding rule targets (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string psc_service_attachment_uri = 10;</code>
+     *
+     * @return The bytes for pscServiceAttachmentUri.
+     */
+    public com.google.protobuf.ByteString getPscServiceAttachmentUriBytes() {
+      java.lang.Object ref = pscServiceAttachmentUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscServiceAttachmentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC service attachment this forwarding rule targets (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string psc_service_attachment_uri = 10;</code>
+     *
+     * @param value The pscServiceAttachmentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscServiceAttachmentUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pscServiceAttachmentUri_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC service attachment this forwarding rule targets (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string psc_service_attachment_uri = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscServiceAttachmentUri() {
+      pscServiceAttachmentUri_ = getDefaultInstance().getPscServiceAttachmentUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the PSC service attachment this forwarding rule targets (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string psc_service_attachment_uri = 10;</code>
+     *
+     * @param value The bytes for pscServiceAttachmentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscServiceAttachmentUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pscServiceAttachmentUri_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pscGoogleApiTarget_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target this forwarding rule targets (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 11;</code>
+     *
+     * @return The pscGoogleApiTarget.
+     */
+    public java.lang.String getPscGoogleApiTarget() {
+      java.lang.Object ref = pscGoogleApiTarget_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscGoogleApiTarget_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target this forwarding rule targets (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 11;</code>
+     *
+     * @return The bytes for pscGoogleApiTarget.
+     */
+    public com.google.protobuf.ByteString getPscGoogleApiTargetBytes() {
+      java.lang.Object ref = pscGoogleApiTarget_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscGoogleApiTarget_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target this forwarding rule targets (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 11;</code>
+     *
+     * @param value The pscGoogleApiTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscGoogleApiTarget(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pscGoogleApiTarget_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target this forwarding rule targets (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscGoogleApiTarget() {
+      pscGoogleApiTarget_ = getDefaultInstance().getPscGoogleApiTarget();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target this forwarding rule targets (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 11;</code>
+     *
+     * @param value The bytes for pscGoogleApiTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscGoogleApiTargetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pscGoogleApiTarget_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
