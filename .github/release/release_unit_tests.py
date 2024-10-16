@@ -19,7 +19,7 @@ class TestCase(unittest.TestCase):
             runner.invoke(
                 bump_released_version,
                 [
-                    "--artifact_ids=google-cloud-asset",
+                    "--artifact-ids=google-cloud-asset",
                     "--versions=versions-asset.txt",
                 ],
             )
@@ -35,7 +35,7 @@ class TestCase(unittest.TestCase):
             runner.invoke(
                 bump_released_version,
                 [
-                    "--artifact_ids=google-cloud-bigqueryconnection,google-cloud-java",
+                    "--artifact-ids=google-cloud-bigqueryconnection,google-cloud-java",
                     "--versions=versions-multiple.txt",
                 ],
             )
