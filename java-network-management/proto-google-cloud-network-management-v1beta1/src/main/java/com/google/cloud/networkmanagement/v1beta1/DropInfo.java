@@ -381,6 +381,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet sent from or to a Redis Instance that is not in running state.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NOT_RUNNING = 68;</code>
+     */
+    REDIS_INSTANCE_NOT_RUNNING(68),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a Redis Cluster that is not in running state.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_NOT_RUNNING = 69;</code>
+     */
+    REDIS_CLUSTER_NOT_RUNNING(69),
+    /**
+     *
+     *
+     * <pre>
      * The type of traffic is blocked and the user cannot configure a firewall
      * rule to enable it. See [Always blocked
      * traffic](https://cloud.google.com/vpc/docs/firewalls#blockedtraffic) for
@@ -551,6 +571,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet was dropped because the Cloud SQL instance requires all
+     * connections to use Cloud SQL connectors and to target the Cloud SQL proxy
+     * port (3307).
+     * </pre>
+     *
+     * <code>CLOUD_SQL_CONNECTOR_REQUIRED = 63;</code>
+     */
+    CLOUD_SQL_CONNECTOR_REQUIRED(63),
+    /**
+     *
+     *
+     * <pre>
      * Packet could be dropped because the Cloud Function is not in an active
      * status.
      * </pre>
@@ -579,6 +611,28 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
      */
     VPC_CONNECTOR_NOT_RUNNING(24),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the traffic from the serverless service
+     * to the VPC connector is not allowed.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_SERVERLESS_TRAFFIC_BLOCKED = 60;</code>
+     */
+    VPC_CONNECTOR_SERVERLESS_TRAFFIC_BLOCKED(60),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the health check traffic to the VPC
+     * connector is not allowed.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_HEALTH_CHECK_TRAFFIC_BLOCKED = 61;</code>
+     */
+    VPC_CONNECTOR_HEALTH_CHECK_TRAFFIC_BLOCKED(61),
     /**
      *
      *
@@ -663,6 +717,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * PSC endpoint is accessed via NCC, but PSC transitivity configuration is
+     * not yet propagated.
+     * </pre>
+     *
+     * <code>PSC_TRANSITIVITY_NOT_PROPAGATED = 64;</code>
+     */
+    PSC_TRANSITIVITY_NOT_PROPAGATED(64),
+    /**
+     *
+     *
+     * <pre>
      * The packet sent from the hybrid NEG proxy matches a non-dynamic route,
      * but such a configuration is not supported.
      * </pre>
@@ -733,6 +798,194 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTING_LOOP = 59;</code>
      */
     ROUTING_LOOP(59),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped inside a Google-managed service due to being delivered
+     * in return trace to an endpoint that doesn't match the endpoint the packet
+     * was sent from in forward trace. Used only for return traces.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_GOOGLE_MANAGED_SERVICE = 62;</code>
+     */
+    DROPPED_INSIDE_GOOGLE_MANAGED_SERVICE(62),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a load balancer backend instance not having a
+     * network interface in the network expected by the load balancer.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_BACKEND_INVALID_NETWORK = 65;</code>
+     */
+    LOAD_BALANCER_BACKEND_INVALID_NETWORK(65),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a backend service named port not being defined
+     * on the instance group level.
+     * </pre>
+     *
+     * <code>BACKEND_SERVICE_NAMED_PORT_NOT_DEFINED = 66;</code>
+     */
+    BACKEND_SERVICE_NAMED_PORT_NOT_DEFINED(66),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a destination IP range being part of a Private
+     * NAT IP range.
+     * </pre>
+     *
+     * <code>DESTINATION_IS_PRIVATE_NAT_IP_RANGE = 67;</code>
+     */
+    DESTINATION_IS_PRIVATE_NAT_IP_RANGE(67),
+    /**
+     *
+     *
+     * <pre>
+     * Generic drop cause for a packet being dropped inside a Redis Instance
+     * service project.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_REDIS_INSTANCE_SERVICE = 70;</code>
+     */
+    DROPPED_INSIDE_REDIS_INSTANCE_SERVICE(70),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported port being used to connect to a
+     * Redis Instance. Port 6379 should be used to connect to a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_UNSUPPORTED_PORT = 71;</code>
+     */
+    REDIS_INSTANCE_UNSUPPORTED_PORT(71),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to connecting from PUPI address to a PSA based
+     * Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_CONNECTING_FROM_PUPI_ADDRESS = 72;</code>
+     */
+    REDIS_INSTANCE_CONNECTING_FROM_PUPI_ADDRESS(72),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to no route to the destination network.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NO_ROUTE_TO_DESTINATION_NETWORK = 73;</code>
+     */
+    REDIS_INSTANCE_NO_ROUTE_TO_DESTINATION_NETWORK(73),
+    /**
+     *
+     *
+     * <pre>
+     * Redis Instance does not have an external IP address.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NO_EXTERNAL_IP = 74;</code>
+     */
+    REDIS_INSTANCE_NO_EXTERNAL_IP(74),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported protocol being used to connect to
+     * a Redis Instance. Only TCP connections are accepted by a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_UNSUPPORTED_PROTOCOL = 78;</code>
+     */
+    REDIS_INSTANCE_UNSUPPORTED_PROTOCOL(78),
+    /**
+     *
+     *
+     * <pre>
+     * Generic drop cause for a packet being dropped inside a Redis Cluster
+     * service project.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_REDIS_CLUSTER_SERVICE = 75;</code>
+     */
+    DROPPED_INSIDE_REDIS_CLUSTER_SERVICE(75),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported port being used to connect to a
+     * Redis Cluster. Ports 6379 and 11000 to 13047 should be used to connect to
+     * a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_UNSUPPORTED_PORT = 76;</code>
+     */
+    REDIS_CLUSTER_UNSUPPORTED_PORT(76),
+    /**
+     *
+     *
+     * <pre>
+     * Redis Cluster does not have an external IP address.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_NO_EXTERNAL_IP = 77;</code>
+     */
+    REDIS_CLUSTER_NO_EXTERNAL_IP(77),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported protocol being used to connect to
+     * a Redis Cluster. Only TCP connections are accepted by a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_UNSUPPORTED_PROTOCOL = 79;</code>
+     */
+    REDIS_CLUSTER_UNSUPPORTED_PROTOCOL(79),
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the non-GCP (on-prem) or unknown GCP network is dropped due
+     * to the destination IP address not belonging to any IP prefix advertised
+     * via BGP by the Cloud Router.
+     * </pre>
+     *
+     * <code>NO_ADVERTISED_ROUTE_TO_GCP_DESTINATION = 80;</code>
+     */
+    NO_ADVERTISED_ROUTE_TO_GCP_DESTINATION(80),
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the non-GCP (on-prem) or unknown GCP network is dropped due
+     * to the destination IP address not belonging to any IP prefix included to
+     * the local traffic selector of the VPN tunnel.
+     * </pre>
+     *
+     * <code>NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION = 81;</code>
+     */
+    NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION(81),
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the unknown peered network is dropped due to no known route
+     * from the source network to the destination IP address.
+     * </pre>
+     *
+     * <code>NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION = 82;</code>
+     */
+    NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION(82),
     UNRECOGNIZED(-1),
     ;
 
@@ -1040,6 +1293,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet sent from or to a Redis Instance that is not in running state.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NOT_RUNNING = 68;</code>
+     */
+    public static final int REDIS_INSTANCE_NOT_RUNNING_VALUE = 68;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a Redis Cluster that is not in running state.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_NOT_RUNNING = 69;</code>
+     */
+    public static final int REDIS_CLUSTER_NOT_RUNNING_VALUE = 69;
+    /**
+     *
+     *
+     * <pre>
      * The type of traffic is blocked and the user cannot configure a firewall
      * rule to enable it. See [Always blocked
      * traffic](https://cloud.google.com/vpc/docs/firewalls#blockedtraffic) for
@@ -1210,6 +1483,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet was dropped because the Cloud SQL instance requires all
+     * connections to use Cloud SQL connectors and to target the Cloud SQL proxy
+     * port (3307).
+     * </pre>
+     *
+     * <code>CLOUD_SQL_CONNECTOR_REQUIRED = 63;</code>
+     */
+    public static final int CLOUD_SQL_CONNECTOR_REQUIRED_VALUE = 63;
+    /**
+     *
+     *
+     * <pre>
      * Packet could be dropped because the Cloud Function is not in an active
      * status.
      * </pre>
@@ -1238,6 +1523,28 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
      */
     public static final int VPC_CONNECTOR_NOT_RUNNING_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the traffic from the serverless service
+     * to the VPC connector is not allowed.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_SERVERLESS_TRAFFIC_BLOCKED = 60;</code>
+     */
+    public static final int VPC_CONNECTOR_SERVERLESS_TRAFFIC_BLOCKED_VALUE = 60;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the health check traffic to the VPC
+     * connector is not allowed.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_HEALTH_CHECK_TRAFFIC_BLOCKED = 61;</code>
+     */
+    public static final int VPC_CONNECTOR_HEALTH_CHECK_TRAFFIC_BLOCKED_VALUE = 61;
     /**
      *
      *
@@ -1322,6 +1629,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * PSC endpoint is accessed via NCC, but PSC transitivity configuration is
+     * not yet propagated.
+     * </pre>
+     *
+     * <code>PSC_TRANSITIVITY_NOT_PROPAGATED = 64;</code>
+     */
+    public static final int PSC_TRANSITIVITY_NOT_PROPAGATED_VALUE = 64;
+    /**
+     *
+     *
+     * <pre>
      * The packet sent from the hybrid NEG proxy matches a non-dynamic route,
      * but such a configuration is not supported.
      * </pre>
@@ -1392,6 +1710,194 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTING_LOOP = 59;</code>
      */
     public static final int ROUTING_LOOP_VALUE = 59;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped inside a Google-managed service due to being delivered
+     * in return trace to an endpoint that doesn't match the endpoint the packet
+     * was sent from in forward trace. Used only for return traces.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_GOOGLE_MANAGED_SERVICE = 62;</code>
+     */
+    public static final int DROPPED_INSIDE_GOOGLE_MANAGED_SERVICE_VALUE = 62;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a load balancer backend instance not having a
+     * network interface in the network expected by the load balancer.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_BACKEND_INVALID_NETWORK = 65;</code>
+     */
+    public static final int LOAD_BALANCER_BACKEND_INVALID_NETWORK_VALUE = 65;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a backend service named port not being defined
+     * on the instance group level.
+     * </pre>
+     *
+     * <code>BACKEND_SERVICE_NAMED_PORT_NOT_DEFINED = 66;</code>
+     */
+    public static final int BACKEND_SERVICE_NAMED_PORT_NOT_DEFINED_VALUE = 66;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to a destination IP range being part of a Private
+     * NAT IP range.
+     * </pre>
+     *
+     * <code>DESTINATION_IS_PRIVATE_NAT_IP_RANGE = 67;</code>
+     */
+    public static final int DESTINATION_IS_PRIVATE_NAT_IP_RANGE_VALUE = 67;
+    /**
+     *
+     *
+     * <pre>
+     * Generic drop cause for a packet being dropped inside a Redis Instance
+     * service project.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_REDIS_INSTANCE_SERVICE = 70;</code>
+     */
+    public static final int DROPPED_INSIDE_REDIS_INSTANCE_SERVICE_VALUE = 70;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported port being used to connect to a
+     * Redis Instance. Port 6379 should be used to connect to a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_UNSUPPORTED_PORT = 71;</code>
+     */
+    public static final int REDIS_INSTANCE_UNSUPPORTED_PORT_VALUE = 71;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to connecting from PUPI address to a PSA based
+     * Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_CONNECTING_FROM_PUPI_ADDRESS = 72;</code>
+     */
+    public static final int REDIS_INSTANCE_CONNECTING_FROM_PUPI_ADDRESS_VALUE = 72;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to no route to the destination network.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NO_ROUTE_TO_DESTINATION_NETWORK = 73;</code>
+     */
+    public static final int REDIS_INSTANCE_NO_ROUTE_TO_DESTINATION_NETWORK_VALUE = 73;
+    /**
+     *
+     *
+     * <pre>
+     * Redis Instance does not have an external IP address.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_NO_EXTERNAL_IP = 74;</code>
+     */
+    public static final int REDIS_INSTANCE_NO_EXTERNAL_IP_VALUE = 74;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported protocol being used to connect to
+     * a Redis Instance. Only TCP connections are accepted by a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE_UNSUPPORTED_PROTOCOL = 78;</code>
+     */
+    public static final int REDIS_INSTANCE_UNSUPPORTED_PROTOCOL_VALUE = 78;
+    /**
+     *
+     *
+     * <pre>
+     * Generic drop cause for a packet being dropped inside a Redis Cluster
+     * service project.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_REDIS_CLUSTER_SERVICE = 75;</code>
+     */
+    public static final int DROPPED_INSIDE_REDIS_CLUSTER_SERVICE_VALUE = 75;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported port being used to connect to a
+     * Redis Cluster. Ports 6379 and 11000 to 13047 should be used to connect to
+     * a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_UNSUPPORTED_PORT = 76;</code>
+     */
+    public static final int REDIS_CLUSTER_UNSUPPORTED_PORT_VALUE = 76;
+    /**
+     *
+     *
+     * <pre>
+     * Redis Cluster does not have an external IP address.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_NO_EXTERNAL_IP = 77;</code>
+     */
+    public static final int REDIS_CLUSTER_NO_EXTERNAL_IP_VALUE = 77;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to an unsupported protocol being used to connect to
+     * a Redis Cluster. Only TCP connections are accepted by a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER_UNSUPPORTED_PROTOCOL = 79;</code>
+     */
+    public static final int REDIS_CLUSTER_UNSUPPORTED_PROTOCOL_VALUE = 79;
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the non-GCP (on-prem) or unknown GCP network is dropped due
+     * to the destination IP address not belonging to any IP prefix advertised
+     * via BGP by the Cloud Router.
+     * </pre>
+     *
+     * <code>NO_ADVERTISED_ROUTE_TO_GCP_DESTINATION = 80;</code>
+     */
+    public static final int NO_ADVERTISED_ROUTE_TO_GCP_DESTINATION_VALUE = 80;
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the non-GCP (on-prem) or unknown GCP network is dropped due
+     * to the destination IP address not belonging to any IP prefix included to
+     * the local traffic selector of the VPN tunnel.
+     * </pre>
+     *
+     * <code>NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION = 81;</code>
+     */
+    public static final int NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION_VALUE = 81;
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the unknown peered network is dropped due to no known route
+     * from the source network to the destination IP address.
+     * </pre>
+     *
+     * <code>NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION = 82;</code>
+     */
+    public static final int NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION_VALUE = 82;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1473,6 +1979,10 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return GKE_CLUSTER_NOT_RUNNING;
         case 28:
           return CLOUD_SQL_INSTANCE_NOT_RUNNING;
+        case 68:
+          return REDIS_INSTANCE_NOT_RUNNING;
+        case 69:
+          return REDIS_CLUSTER_NOT_RUNNING;
         case 15:
           return TRAFFIC_TYPE_BLOCKED;
         case 16:
@@ -1503,12 +2013,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION;
         case 35:
           return CLOUD_SQL_INSTANCE_NO_ROUTE;
+        case 63:
+          return CLOUD_SQL_CONNECTOR_REQUIRED;
         case 22:
           return CLOUD_FUNCTION_NOT_ACTIVE;
         case 23:
           return VPC_CONNECTOR_NOT_SET;
         case 24:
           return VPC_CONNECTOR_NOT_RUNNING;
+        case 60:
+          return VPC_CONNECTOR_SERVERLESS_TRAFFIC_BLOCKED;
+        case 61:
+          return VPC_CONNECTOR_HEALTH_CHECK_TRAFFIC_BLOCKED;
         case 25:
           return FORWARDING_RULE_REGION_MISMATCH;
         case 26:
@@ -1523,6 +2039,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_SQL_PSC_NEG_UNSUPPORTED;
         case 57:
           return NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT;
+        case 64:
+          return PSC_TRANSITIVITY_NOT_PROPAGATED;
         case 55:
           return HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED;
         case 56:
@@ -1537,6 +2055,40 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_NAT_NO_ADDRESSES;
         case 59:
           return ROUTING_LOOP;
+        case 62:
+          return DROPPED_INSIDE_GOOGLE_MANAGED_SERVICE;
+        case 65:
+          return LOAD_BALANCER_BACKEND_INVALID_NETWORK;
+        case 66:
+          return BACKEND_SERVICE_NAMED_PORT_NOT_DEFINED;
+        case 67:
+          return DESTINATION_IS_PRIVATE_NAT_IP_RANGE;
+        case 70:
+          return DROPPED_INSIDE_REDIS_INSTANCE_SERVICE;
+        case 71:
+          return REDIS_INSTANCE_UNSUPPORTED_PORT;
+        case 72:
+          return REDIS_INSTANCE_CONNECTING_FROM_PUPI_ADDRESS;
+        case 73:
+          return REDIS_INSTANCE_NO_ROUTE_TO_DESTINATION_NETWORK;
+        case 74:
+          return REDIS_INSTANCE_NO_EXTERNAL_IP;
+        case 78:
+          return REDIS_INSTANCE_UNSUPPORTED_PROTOCOL;
+        case 75:
+          return DROPPED_INSIDE_REDIS_CLUSTER_SERVICE;
+        case 76:
+          return REDIS_CLUSTER_UNSUPPORTED_PORT;
+        case 77:
+          return REDIS_CLUSTER_NO_EXTERNAL_IP;
+        case 79:
+          return REDIS_CLUSTER_UNSUPPORTED_PROTOCOL;
+        case 80:
+          return NO_ADVERTISED_ROUTE_TO_GCP_DESTINATION;
+        case 81:
+          return NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION;
+        case 82:
+          return NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION;
         default:
           return null;
       }

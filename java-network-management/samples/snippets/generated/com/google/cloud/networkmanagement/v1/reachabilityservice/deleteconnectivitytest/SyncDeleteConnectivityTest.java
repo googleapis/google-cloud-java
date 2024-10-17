@@ -17,6 +17,7 @@
 package com.google.cloud.networkmanagement.v1.samples;
 
 // [START networkmanagement_v1_generated_ReachabilityService_DeleteConnectivityTest_sync]
+import com.google.cloud.networkmanagement.v1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 import com.google.protobuf.Empty;
@@ -35,7 +36,9 @@ public class SyncDeleteConnectivityTest {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       DeleteConnectivityTestRequest request =
-          DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          DeleteConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       reachabilityServiceClient.deleteConnectivityTestAsync(request).get();
     }
   }

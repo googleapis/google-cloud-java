@@ -75,7 +75,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -766,7 +766,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -791,7 +791,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -816,7 +816,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -840,7 +840,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -860,7 +860,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>

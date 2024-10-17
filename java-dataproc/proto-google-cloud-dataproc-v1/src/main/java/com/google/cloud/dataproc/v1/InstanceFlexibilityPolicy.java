@@ -65,6 +65,901 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder.class);
   }
 
+  public interface ProvisioningModelMixOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The base capacity that will always use Standard VMs to avoid
+     * risk of more preemption than the minimum capacity you need. Dataproc will
+     * create only standard VMs until it reaches standard_capacity_base, then it
+     * will start using standard_capacity_percent_above_base to mix Spot with
+     * Standard VMs. eg. If 15 instances are requested and
+     * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+     * start mixing spot and standard VMs for remaining 10 instances.
+     * </pre>
+     *
+     * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardCapacityBase field is set.
+     */
+    boolean hasStandardCapacityBase();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The base capacity that will always use Standard VMs to avoid
+     * risk of more preemption than the minimum capacity you need. Dataproc will
+     * create only standard VMs until it reaches standard_capacity_base, then it
+     * will start using standard_capacity_percent_above_base to mix Spot with
+     * Standard VMs. eg. If 15 instances are requested and
+     * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+     * start mixing spot and standard VMs for remaining 10 instances.
+     * </pre>
+     *
+     * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The standardCapacityBase.
+     */
+    int getStandardCapacityBase();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of target capacity that should use Standard VM.
+     * The remaining percentage will use Spot VMs. The percentage applies only
+     * to the capacity above standard_capacity_base. eg. If 15 instances are
+     * requested and standard_capacity_base is 5 and
+     * standard_capacity_percent_above_base is 30, Dataproc will create 5
+     * standard VMs and then start mixing spot and standard VMs for remaining 10
+     * instances. The mix will be 30% standard and 70% spot.
+     * </pre>
+     *
+     * <code>
+     * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardCapacityPercentAboveBase field is set.
+     */
+    boolean hasStandardCapacityPercentAboveBase();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of target capacity that should use Standard VM.
+     * The remaining percentage will use Spot VMs. The percentage applies only
+     * to the capacity above standard_capacity_base. eg. If 15 instances are
+     * requested and standard_capacity_base is 5 and
+     * standard_capacity_percent_above_base is 30, Dataproc will create 5
+     * standard VMs and then start mixing spot and standard VMs for remaining 10
+     * instances. The mix will be 30% standard and 70% spot.
+     * </pre>
+     *
+     * <code>
+     * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The standardCapacityPercentAboveBase.
+     */
+    int getStandardCapacityPercentAboveBase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines how Dataproc should create VMs with a mixture of provisioning
+   * models.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix}
+   */
+  public static final class ProvisioningModelMix extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
+      ProvisioningModelMixOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ProvisioningModelMix.newBuilder() to construct.
+    private ProvisioningModelMix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ProvisioningModelMix() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ProvisioningModelMix();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_ProvisioningModelMix_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_ProvisioningModelMix_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.class,
+              com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int STANDARD_CAPACITY_BASE_FIELD_NUMBER = 1;
+    private int standardCapacityBase_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The base capacity that will always use Standard VMs to avoid
+     * risk of more preemption than the minimum capacity you need. Dataproc will
+     * create only standard VMs until it reaches standard_capacity_base, then it
+     * will start using standard_capacity_percent_above_base to mix Spot with
+     * Standard VMs. eg. If 15 instances are requested and
+     * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+     * start mixing spot and standard VMs for remaining 10 instances.
+     * </pre>
+     *
+     * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardCapacityBase field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardCapacityBase() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The base capacity that will always use Standard VMs to avoid
+     * risk of more preemption than the minimum capacity you need. Dataproc will
+     * create only standard VMs until it reaches standard_capacity_base, then it
+     * will start using standard_capacity_percent_above_base to mix Spot with
+     * Standard VMs. eg. If 15 instances are requested and
+     * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+     * start mixing spot and standard VMs for remaining 10 instances.
+     * </pre>
+     *
+     * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The standardCapacityBase.
+     */
+    @java.lang.Override
+    public int getStandardCapacityBase() {
+      return standardCapacityBase_;
+    }
+
+    public static final int STANDARD_CAPACITY_PERCENT_ABOVE_BASE_FIELD_NUMBER = 2;
+    private int standardCapacityPercentAboveBase_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of target capacity that should use Standard VM.
+     * The remaining percentage will use Spot VMs. The percentage applies only
+     * to the capacity above standard_capacity_base. eg. If 15 instances are
+     * requested and standard_capacity_base is 5 and
+     * standard_capacity_percent_above_base is 30, Dataproc will create 5
+     * standard VMs and then start mixing spot and standard VMs for remaining 10
+     * instances. The mix will be 30% standard and 70% spot.
+     * </pre>
+     *
+     * <code>
+     * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardCapacityPercentAboveBase field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardCapacityPercentAboveBase() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of target capacity that should use Standard VM.
+     * The remaining percentage will use Spot VMs. The percentage applies only
+     * to the capacity above standard_capacity_base. eg. If 15 instances are
+     * requested and standard_capacity_base is 5 and
+     * standard_capacity_percent_above_base is 30, Dataproc will create 5
+     * standard VMs and then start mixing spot and standard VMs for remaining 10
+     * instances. The mix will be 30% standard and 70% spot.
+     * </pre>
+     *
+     * <code>
+     * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The standardCapacityPercentAboveBase.
+     */
+    @java.lang.Override
+    public int getStandardCapacityPercentAboveBase() {
+      return standardCapacityPercentAboveBase_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(1, standardCapacityBase_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, standardCapacityPercentAboveBase_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, standardCapacityBase_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                2, standardCapacityPercentAboveBase_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix other =
+          (com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix) obj;
+
+      if (hasStandardCapacityBase() != other.hasStandardCapacityBase()) return false;
+      if (hasStandardCapacityBase()) {
+        if (getStandardCapacityBase() != other.getStandardCapacityBase()) return false;
+      }
+      if (hasStandardCapacityPercentAboveBase() != other.hasStandardCapacityPercentAboveBase())
+        return false;
+      if (hasStandardCapacityPercentAboveBase()) {
+        if (getStandardCapacityPercentAboveBase() != other.getStandardCapacityPercentAboveBase())
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStandardCapacityBase()) {
+        hash = (37 * hash) + STANDARD_CAPACITY_BASE_FIELD_NUMBER;
+        hash = (53 * hash) + getStandardCapacityBase();
+      }
+      if (hasStandardCapacityPercentAboveBase()) {
+        hash = (37 * hash) + STANDARD_CAPACITY_PERCENT_ABOVE_BASE_FIELD_NUMBER;
+        hash = (53 * hash) + getStandardCapacityPercentAboveBase();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines how Dataproc should create VMs with a mixture of provisioning
+     * models.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataproc.v1.ClustersProto
+            .internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_ProvisioningModelMix_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataproc.v1.ClustersProto
+            .internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_ProvisioningModelMix_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.class,
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        standardCapacityBase_ = 0;
+        standardCapacityPercentAboveBase_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataproc.v1.ClustersProto
+            .internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_ProvisioningModelMix_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix build() {
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+          buildPartial() {
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix result =
+            new com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.standardCapacityBase_ = standardCapacityBase_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.standardCapacityPercentAboveBase_ = standardCapacityPercentAboveBase_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix) {
+          return mergeFrom(
+              (com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix other) {
+        if (other
+            == com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+                .getDefaultInstance()) return this;
+        if (other.hasStandardCapacityBase()) {
+          setStandardCapacityBase(other.getStandardCapacityBase());
+        }
+        if (other.hasStandardCapacityPercentAboveBase()) {
+          setStandardCapacityPercentAboveBase(other.getStandardCapacityPercentAboveBase());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  standardCapacityBase_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  standardCapacityPercentAboveBase_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int standardCapacityBase_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The base capacity that will always use Standard VMs to avoid
+       * risk of more preemption than the minimum capacity you need. Dataproc will
+       * create only standard VMs until it reaches standard_capacity_base, then it
+       * will start using standard_capacity_percent_above_base to mix Spot with
+       * Standard VMs. eg. If 15 instances are requested and
+       * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+       * start mixing spot and standard VMs for remaining 10 instances.
+       * </pre>
+       *
+       * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the standardCapacityBase field is set.
+       */
+      @java.lang.Override
+      public boolean hasStandardCapacityBase() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The base capacity that will always use Standard VMs to avoid
+       * risk of more preemption than the minimum capacity you need. Dataproc will
+       * create only standard VMs until it reaches standard_capacity_base, then it
+       * will start using standard_capacity_percent_above_base to mix Spot with
+       * Standard VMs. eg. If 15 instances are requested and
+       * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+       * start mixing spot and standard VMs for remaining 10 instances.
+       * </pre>
+       *
+       * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The standardCapacityBase.
+       */
+      @java.lang.Override
+      public int getStandardCapacityBase() {
+        return standardCapacityBase_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The base capacity that will always use Standard VMs to avoid
+       * risk of more preemption than the minimum capacity you need. Dataproc will
+       * create only standard VMs until it reaches standard_capacity_base, then it
+       * will start using standard_capacity_percent_above_base to mix Spot with
+       * Standard VMs. eg. If 15 instances are requested and
+       * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+       * start mixing spot and standard VMs for remaining 10 instances.
+       * </pre>
+       *
+       * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The standardCapacityBase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStandardCapacityBase(int value) {
+
+        standardCapacityBase_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The base capacity that will always use Standard VMs to avoid
+       * risk of more preemption than the minimum capacity you need. Dataproc will
+       * create only standard VMs until it reaches standard_capacity_base, then it
+       * will start using standard_capacity_percent_above_base to mix Spot with
+       * Standard VMs. eg. If 15 instances are requested and
+       * standard_capacity_base is 5, Dataproc will create 5 standard VMs and then
+       * start mixing spot and standard VMs for remaining 10 instances.
+       * </pre>
+       *
+       * <code>optional int32 standard_capacity_base = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStandardCapacityBase() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        standardCapacityBase_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int standardCapacityPercentAboveBase_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of target capacity that should use Standard VM.
+       * The remaining percentage will use Spot VMs. The percentage applies only
+       * to the capacity above standard_capacity_base. eg. If 15 instances are
+       * requested and standard_capacity_base is 5 and
+       * standard_capacity_percent_above_base is 30, Dataproc will create 5
+       * standard VMs and then start mixing spot and standard VMs for remaining 10
+       * instances. The mix will be 30% standard and 70% spot.
+       * </pre>
+       *
+       * <code>
+       * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the standardCapacityPercentAboveBase field is set.
+       */
+      @java.lang.Override
+      public boolean hasStandardCapacityPercentAboveBase() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of target capacity that should use Standard VM.
+       * The remaining percentage will use Spot VMs. The percentage applies only
+       * to the capacity above standard_capacity_base. eg. If 15 instances are
+       * requested and standard_capacity_base is 5 and
+       * standard_capacity_percent_above_base is 30, Dataproc will create 5
+       * standard VMs and then start mixing spot and standard VMs for remaining 10
+       * instances. The mix will be 30% standard and 70% spot.
+       * </pre>
+       *
+       * <code>
+       * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The standardCapacityPercentAboveBase.
+       */
+      @java.lang.Override
+      public int getStandardCapacityPercentAboveBase() {
+        return standardCapacityPercentAboveBase_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of target capacity that should use Standard VM.
+       * The remaining percentage will use Spot VMs. The percentage applies only
+       * to the capacity above standard_capacity_base. eg. If 15 instances are
+       * requested and standard_capacity_base is 5 and
+       * standard_capacity_percent_above_base is 30, Dataproc will create 5
+       * standard VMs and then start mixing spot and standard VMs for remaining 10
+       * instances. The mix will be 30% standard and 70% spot.
+       * </pre>
+       *
+       * <code>
+       * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The standardCapacityPercentAboveBase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStandardCapacityPercentAboveBase(int value) {
+
+        standardCapacityPercentAboveBase_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of target capacity that should use Standard VM.
+       * The remaining percentage will use Spot VMs. The percentage applies only
+       * to the capacity above standard_capacity_base. eg. If 15 instances are
+       * requested and standard_capacity_base is 5 and
+       * standard_capacity_percent_above_base is 30, Dataproc will create 5
+       * standard VMs and then start mixing spot and standard VMs for remaining 10
+       * instances. The mix will be 30% standard and 70% spot.
+       * </pre>
+       *
+       * <code>
+       * optional int32 standard_capacity_percent_above_base = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStandardCapacityPercentAboveBase() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        standardCapacityPercentAboveBase_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
+    private static final com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix();
+    }
+
+    public static com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProvisioningModelMix> PARSER =
+        new com.google.protobuf.AbstractParser<ProvisioningModelMix>() {
+          @java.lang.Override
+          public ProvisioningModelMix parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ProvisioningModelMix> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProvisioningModelMix> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface InstanceSelectionOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection)
@@ -1857,6 +2752,71 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     }
   }
 
+  private int bitField0_;
+  public static final int PROVISIONING_MODEL_MIX_FIELD_NUMBER = 1;
+  private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+      provisioningModelMix_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the provisioningModelMix field is set.
+   */
+  @java.lang.Override
+  public boolean hasProvisioningModelMix() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisioningModelMix.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+      getProvisioningModelMix() {
+    return provisioningModelMix_ == null
+        ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+            .getDefaultInstance()
+        : provisioningModelMix_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder
+      getProvisioningModelMixOrBuilder() {
+    return provisioningModelMix_ == null
+        ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+            .getDefaultInstance()
+        : provisioningModelMix_;
+  }
+
   public static final int INSTANCE_SELECTION_LIST_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -2053,6 +3013,9 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getProvisioningModelMix());
+    }
     for (int i = 0; i < instanceSelectionList_.size(); i++) {
       output.writeMessage(2, instanceSelectionList_.get(i));
     }
@@ -2068,6 +3031,10 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProvisioningModelMix());
+    }
     for (int i = 0; i < instanceSelectionList_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2094,6 +3061,10 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy other =
         (com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy) obj;
 
+    if (hasProvisioningModelMix() != other.hasProvisioningModelMix()) return false;
+    if (hasProvisioningModelMix()) {
+      if (!getProvisioningModelMix().equals(other.getProvisioningModelMix())) return false;
+    }
     if (!getInstanceSelectionListList().equals(other.getInstanceSelectionListList())) return false;
     if (!getInstanceSelectionResultsList().equals(other.getInstanceSelectionResultsList()))
       return false;
@@ -2108,6 +3079,10 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasProvisioningModelMix()) {
+      hash = (37 * hash) + PROVISIONING_MODEL_MIX_FIELD_NUMBER;
+      hash = (53 * hash) + getProvisioningModelMix().hashCode();
+    }
     if (getInstanceSelectionListCount() > 0) {
       hash = (37 * hash) + INSTANCE_SELECTION_LIST_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceSelectionListList().hashCode();
@@ -2247,30 +3222,46 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getProvisioningModelMixFieldBuilder();
+        getInstanceSelectionListFieldBuilder();
+        getInstanceSelectionResultsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      provisioningModelMix_ = null;
+      if (provisioningModelMixBuilder_ != null) {
+        provisioningModelMixBuilder_.dispose();
+        provisioningModelMixBuilder_ = null;
+      }
       if (instanceSelectionListBuilder_ == null) {
         instanceSelectionList_ = java.util.Collections.emptyList();
       } else {
         instanceSelectionList_ = null;
         instanceSelectionListBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (instanceSelectionResultsBuilder_ == null) {
         instanceSelectionResults_ = java.util.Collections.emptyList();
       } else {
         instanceSelectionResults_ = null;
         instanceSelectionResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -2309,19 +3300,19 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     private void buildPartialRepeatedFields(
         com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy result) {
       if (instanceSelectionListBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           instanceSelectionList_ = java.util.Collections.unmodifiableList(instanceSelectionList_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.instanceSelectionList_ = instanceSelectionList_;
       } else {
         result.instanceSelectionList_ = instanceSelectionListBuilder_.build();
       }
       if (instanceSelectionResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           instanceSelectionResults_ =
               java.util.Collections.unmodifiableList(instanceSelectionResults_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.instanceSelectionResults_ = instanceSelectionResults_;
       } else {
@@ -2331,6 +3322,15 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     private void buildPartial0(com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.provisioningModelMix_ =
+            provisioningModelMixBuilder_ == null
+                ? provisioningModelMix_
+                : provisioningModelMixBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2379,11 +3379,14 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy other) {
       if (other == com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance())
         return this;
+      if (other.hasProvisioningModelMix()) {
+        mergeProvisioningModelMix(other.getProvisioningModelMix());
+      }
       if (instanceSelectionListBuilder_ == null) {
         if (!other.instanceSelectionList_.isEmpty()) {
           if (instanceSelectionList_.isEmpty()) {
             instanceSelectionList_ = other.instanceSelectionList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureInstanceSelectionListIsMutable();
             instanceSelectionList_.addAll(other.instanceSelectionList_);
@@ -2396,7 +3399,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             instanceSelectionListBuilder_.dispose();
             instanceSelectionListBuilder_ = null;
             instanceSelectionList_ = other.instanceSelectionList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             instanceSelectionListBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInstanceSelectionListFieldBuilder()
@@ -2410,7 +3413,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         if (!other.instanceSelectionResults_.isEmpty()) {
           if (instanceSelectionResults_.isEmpty()) {
             instanceSelectionResults_ = other.instanceSelectionResults_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureInstanceSelectionResultsIsMutable();
             instanceSelectionResults_.addAll(other.instanceSelectionResults_);
@@ -2423,7 +3426,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             instanceSelectionResultsBuilder_.dispose();
             instanceSelectionResultsBuilder_ = null;
             instanceSelectionResults_ = other.instanceSelectionResults_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             instanceSelectionResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInstanceSelectionResultsFieldBuilder()
@@ -2459,6 +3462,13 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    getProvisioningModelMixFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection m =
@@ -2508,16 +3518,241 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     private int bitField0_;
 
+    private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        provisioningModelMix_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder>
+        provisioningModelMixBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the provisioningModelMix field is set.
+     */
+    public boolean hasProvisioningModelMix() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provisioningModelMix.
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+        getProvisioningModelMix() {
+      if (provisioningModelMixBuilder_ == null) {
+        return provisioningModelMix_ == null
+            ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+                .getDefaultInstance()
+            : provisioningModelMix_;
+      } else {
+        return provisioningModelMixBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProvisioningModelMix(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix value) {
+      if (provisioningModelMixBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        provisioningModelMix_ = value;
+      } else {
+        provisioningModelMixBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProvisioningModelMix(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder
+            builderForValue) {
+      if (provisioningModelMixBuilder_ == null) {
+        provisioningModelMix_ = builderForValue.build();
+      } else {
+        provisioningModelMixBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProvisioningModelMix(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix value) {
+      if (provisioningModelMixBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && provisioningModelMix_ != null
+            && provisioningModelMix_
+                != com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+                    .getDefaultInstance()) {
+          getProvisioningModelMixBuilder().mergeFrom(value);
+        } else {
+          provisioningModelMix_ = value;
+        }
+      } else {
+        provisioningModelMixBuilder_.mergeFrom(value);
+      }
+      if (provisioningModelMix_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProvisioningModelMix() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      provisioningModelMix_ = null;
+      if (provisioningModelMixBuilder_ != null) {
+        provisioningModelMixBuilder_.dispose();
+        provisioningModelMixBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder
+        getProvisioningModelMixBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getProvisioningModelMixFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder
+        getProvisioningModelMixOrBuilder() {
+      if (provisioningModelMixBuilder_ != null) {
+        return provisioningModelMixBuilder_.getMessageOrBuilder();
+      } else {
+        return provisioningModelMix_ == null
+            ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+                .getDefaultInstance()
+            : provisioningModelMix_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines how the Group selects the provisioning model to ensure
+     * required reliability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder>
+        getProvisioningModelMixFieldBuilder() {
+      if (provisioningModelMixBuilder_ == null) {
+        provisioningModelMixBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix,
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder,
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy
+                    .ProvisioningModelMixOrBuilder>(
+                getProvisioningModelMix(), getParentForChildren(), isClean());
+        provisioningModelMix_ = null;
+      }
+      return provisioningModelMixBuilder_;
+    }
+
     private java.util.List<com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection>
         instanceSelectionList_ = java.util.Collections.emptyList();
 
     private void ensureInstanceSelectionListIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instanceSelectionList_ =
             new java.util.ArrayList<
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection>(
                 instanceSelectionList_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2778,7 +4013,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public Builder clearInstanceSelectionList() {
       if (instanceSelectionListBuilder_ == null) {
         instanceSelectionList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         instanceSelectionListBuilder_.clear();
@@ -2934,7 +4169,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection.Builder,
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionOrBuilder>(
                 instanceSelectionList_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         instanceSelectionList_ = null;
@@ -2947,12 +4182,12 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         instanceSelectionResults_ = java.util.Collections.emptyList();
 
     private void ensureInstanceSelectionResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         instanceSelectionResults_ =
             new java.util.ArrayList<
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult>(
                 instanceSelectionResults_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3206,7 +4441,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public Builder clearInstanceSelectionResults() {
       if (instanceSelectionResultsBuilder_ == null) {
         instanceSelectionResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         instanceSelectionResultsBuilder_.clear();
@@ -3358,7 +4593,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
                 com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy
                     .InstanceSelectionResultOrBuilder>(
                 instanceSelectionResults_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         instanceSelectionResults_ = null;

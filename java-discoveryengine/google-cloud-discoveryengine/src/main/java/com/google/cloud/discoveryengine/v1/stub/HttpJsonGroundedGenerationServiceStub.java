@@ -25,11 +25,14 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.CheckGroundingRequest;
 import com.google.cloud.discoveryengine.v1.CheckGroundingResponse;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +51,46 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.GroundedGenerationService/GenerateGroundedContent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateGroundedContentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{location=projects/*/locations/*}:generateGroundedContent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateGroundedContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateGroundedContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearLocation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateGroundedContentResponse>newBuilder()
+                      .setDefaultInstance(GenerateGroundedContentResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<CheckGroundingRequest, CheckGroundingResponse>
       checkGroundingMethodDescriptor =
@@ -91,6 +134,8 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
                       .build())
               .build();
 
+  private final UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable;
   private final UnaryCallable<CheckGroundingRequest, CheckGroundingResponse> checkGroundingCallable;
 
   private final BackgroundResource backgroundResources;
@@ -138,6 +183,19 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        generateGroundedContentTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+                .setMethodDescriptor(generateGroundedContentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingTransportSettings =
             HttpJsonCallSettings.<CheckGroundingRequest, CheckGroundingResponse>newBuilder()
@@ -151,6 +209,11 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
                     })
                 .build();
 
+    this.generateGroundedContentCallable =
+        callableFactory.createUnaryCallable(
+            generateGroundedContentTransportSettings,
+            settings.generateGroundedContentSettings(),
+            clientContext);
     this.checkGroundingCallable =
         callableFactory.createUnaryCallable(
             checkGroundingTransportSettings, settings.checkGroundingSettings(), clientContext);
@@ -162,13 +225,27 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(generateGroundedContentMethodDescriptor);
     methodDescriptors.add(checkGroundingMethodDescriptor);
     return methodDescriptors;
   }
 
   @Override
+  public UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable() {
+    return generateGroundedContentCallable;
+  }
+
+  @Override
   public UnaryCallable<CheckGroundingRequest, CheckGroundingResponse> checkGroundingCallable() {
     return checkGroundingCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamGenerateGroundedContentCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

@@ -235,7 +235,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=303
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=326
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -250,9 +250,34 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=303
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=326
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The pscNetworkAttachmentUri.
+   */
+  java.lang.String getPscNetworkAttachmentUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The bytes for pscNetworkAttachmentUri.
+   */
+  com.google.protobuf.ByteString getPscNetworkAttachmentUriBytes();
 }

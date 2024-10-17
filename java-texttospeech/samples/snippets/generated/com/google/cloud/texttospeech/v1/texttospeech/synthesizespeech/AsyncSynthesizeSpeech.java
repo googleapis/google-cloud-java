@@ -18,6 +18,7 @@ package com.google.cloud.texttospeech.v1.samples;
 
 // [START texttospeech_v1_generated_TextToSpeech_SynthesizeSpeech_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.texttospeech.v1.AdvancedVoiceOptions;
 import com.google.cloud.texttospeech.v1.AudioConfig;
 import com.google.cloud.texttospeech.v1.SynthesisInput;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest;
@@ -43,6 +44,7 @@ public class AsyncSynthesizeSpeech {
               .setInput(SynthesisInput.newBuilder().build())
               .setVoice(VoiceSelectionParams.newBuilder().build())
               .setAudioConfig(AudioConfig.newBuilder().build())
+              .setAdvancedVoiceOptions(AdvancedVoiceOptions.newBuilder().build())
               .build();
       ApiFuture<SynthesizeSpeechResponse> future =
           textToSpeechClient.synthesizeSpeechCallable().futureCall(request);

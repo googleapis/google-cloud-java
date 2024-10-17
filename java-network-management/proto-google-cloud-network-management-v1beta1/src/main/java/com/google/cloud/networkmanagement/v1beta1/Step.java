@@ -159,6 +159,28 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Redis instance.
+     * A RedisInstanceInfo is populated with starting instance information.
+     * </pre>
+     *
+     * <code>START_FROM_REDIS_INSTANCE = 32;</code>
+     */
+    START_FROM_REDIS_INSTANCE(32),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Redis Cluster.
+     * A RedisClusterInfo is populated with starting Cluster information.
+     * </pre>
+     *
+     * <code>START_FROM_REDIS_CLUSTER = 33;</code>
+     */
+    START_FROM_REDIS_CLUSTER(33),
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a Cloud Function.
      * A CloudFunctionInfo is populated with starting function information.
      * </pre>
@@ -211,6 +233,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
      */
     START_FROM_PSC_PUBLISHED_SERVICE(30),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a serverless network endpoint
+     * group backend. Used only for return traces.
+     * The serverless_neg information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_SERVERLESS_NEG = 31;</code>
+     */
+    START_FROM_SERVERLESS_NEG(31),
     /**
      *
      *
@@ -496,6 +530,28 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Redis instance.
+     * A RedisInstanceInfo is populated with starting instance information.
+     * </pre>
+     *
+     * <code>START_FROM_REDIS_INSTANCE = 32;</code>
+     */
+    public static final int START_FROM_REDIS_INSTANCE_VALUE = 32;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Redis Cluster.
+     * A RedisClusterInfo is populated with starting Cluster information.
+     * </pre>
+     *
+     * <code>START_FROM_REDIS_CLUSTER = 33;</code>
+     */
+    public static final int START_FROM_REDIS_CLUSTER_VALUE = 33;
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a Cloud Function.
      * A CloudFunctionInfo is populated with starting function information.
      * </pre>
@@ -548,6 +604,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
      */
     public static final int START_FROM_PSC_PUBLISHED_SERVICE_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a serverless network endpoint
+     * group backend. Used only for return traces.
+     * The serverless_neg information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_SERVERLESS_NEG = 31;</code>
+     */
+    public static final int START_FROM_SERVERLESS_NEG_VALUE = 31;
     /**
      *
      *
@@ -785,6 +853,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_GKE_MASTER;
         case 22:
           return START_FROM_CLOUD_SQL_INSTANCE;
+        case 32:
+          return START_FROM_REDIS_INSTANCE;
+        case 33:
+          return START_FROM_REDIS_CLUSTER;
         case 23:
           return START_FROM_CLOUD_FUNCTION;
         case 25:
@@ -795,6 +867,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_STORAGE_BUCKET;
         case 30:
           return START_FROM_PSC_PUBLISHED_SERVICE;
+        case 31:
+          return START_FROM_SERVERLESS_NEG;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -913,6 +987,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     NETWORK(17),
     GKE_MASTER(18),
     CLOUD_SQL_INSTANCE(19),
+    REDIS_INSTANCE(30),
+    REDIS_CLUSTER(31),
     CLOUD_FUNCTION(20),
     APP_ENGINE_VERSION(22),
     CLOUD_RUN_REVISION(23),
@@ -920,6 +996,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     PROXY_CONNECTION(26),
     LOAD_BALANCER_BACKEND_INFO(27),
     STORAGE_BUCKET(28),
+    SERVERLESS_NEG(29),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -972,6 +1049,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return GKE_MASTER;
         case 19:
           return CLOUD_SQL_INSTANCE;
+        case 30:
+          return REDIS_INSTANCE;
+        case 31:
+          return REDIS_CLUSTER;
         case 20:
           return CLOUD_FUNCTION;
         case 22:
@@ -986,6 +1067,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return LOAD_BALANCER_BACKEND_INFO;
         case 28:
           return STORAGE_BUCKET;
+        case 29:
+          return SERVERLESS_NEG;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -1849,7 +1932,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -1870,7 +1953,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -2058,6 +2141,110 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo) stepInfo_;
     }
     return com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo.getDefaultInstance();
+  }
+
+  public static final int REDIS_INSTANCE_FIELD_NUMBER = 30;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+   *
+   * @return Whether the redisInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedisInstance() {
+    return stepInfoCase_ == 30;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+   *
+   * @return The redisInstance.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo getRedisInstance() {
+    if (stepInfoCase_ == 30) {
+      return (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfoOrBuilder
+      getRedisInstanceOrBuilder() {
+    if (stepInfoCase_ == 30) {
+      return (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+  }
+
+  public static final int REDIS_CLUSTER_FIELD_NUMBER = 31;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+   *
+   * @return Whether the redisCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedisCluster() {
+    return stepInfoCase_ == 31;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+   *
+   * @return The redisCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo getRedisCluster() {
+    if (stepInfoCase_ == 31) {
+      return (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.RedisClusterInfoOrBuilder
+      getRedisClusterOrBuilder() {
+    if (stepInfoCase_ == 31) {
+      return (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
   }
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 20;
@@ -2436,6 +2623,61 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
   }
 
+  public static final int SERVERLESS_NEG_FIELD_NUMBER = 29;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+   *
+   * @return Whether the serverlessNeg field is set.
+   */
+  @java.lang.Override
+  public boolean hasServerlessNeg() {
+    return stepInfoCase_ == 29;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+   *
+   * @return The serverlessNeg.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo getServerlessNeg() {
+    if (stepInfoCase_ == 29) {
+      return (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder
+      getServerlessNegOrBuilder() {
+    if (stepInfoCase_ == 29) {
+      return (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2546,6 +2788,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (stepInfoCase_ == 28) {
       output.writeMessage(
           28, (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 29) {
+      output.writeMessage(
+          29, (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 30) {
+      output.writeMessage(
+          30, (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 31) {
+      output.writeMessage(
+          31, (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2689,6 +2943,21 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 30) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2762,6 +3031,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 19:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
         break;
+      case 30:
+        if (!getRedisInstance().equals(other.getRedisInstance())) return false;
+        break;
+      case 31:
+        if (!getRedisCluster().equals(other.getRedisCluster())) return false;
+        break;
       case 20:
         if (!getCloudFunction().equals(other.getCloudFunction())) return false;
         break;
@@ -2782,6 +3057,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 28:
         if (!getStorageBucket().equals(other.getStorageBucket())) return false;
+        break;
+      case 29:
+        if (!getServerlessNeg().equals(other.getServerlessNeg())) return false;
         break;
       case 0:
       default:
@@ -2874,6 +3152,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstance().hashCode();
         break;
+      case 30:
+        hash = (37 * hash) + REDIS_INSTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getRedisInstance().hashCode();
+        break;
+      case 31:
+        hash = (37 * hash) + REDIS_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getRedisCluster().hashCode();
+        break;
       case 20:
         hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
         hash = (53 * hash) + getCloudFunction().hashCode();
@@ -2901,6 +3187,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 28:
         hash = (37 * hash) + STORAGE_BUCKET_FIELD_NUMBER;
         hash = (53 * hash) + getStorageBucket().hashCode();
+        break;
+      case 29:
+        hash = (37 * hash) + SERVERLESS_NEG_FIELD_NUMBER;
+        hash = (53 * hash) + getServerlessNeg().hashCode();
         break;
       case 0:
       default:
@@ -3100,6 +3390,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (cloudSqlInstanceBuilder_ != null) {
         cloudSqlInstanceBuilder_.clear();
       }
+      if (redisInstanceBuilder_ != null) {
+        redisInstanceBuilder_.clear();
+      }
+      if (redisClusterBuilder_ != null) {
+        redisClusterBuilder_.clear();
+      }
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.clear();
       }
@@ -3120,6 +3416,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (storageBucketBuilder_ != null) {
         storageBucketBuilder_.clear();
+      }
+      if (serverlessNegBuilder_ != null) {
+        serverlessNegBuilder_.clear();
       }
       stepInfoCase_ = 0;
       stepInfo_ = null;
@@ -3228,6 +3527,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (stepInfoCase_ == 19 && cloudSqlInstanceBuilder_ != null) {
         result.stepInfo_ = cloudSqlInstanceBuilder_.build();
       }
+      if (stepInfoCase_ == 30 && redisInstanceBuilder_ != null) {
+        result.stepInfo_ = redisInstanceBuilder_.build();
+      }
+      if (stepInfoCase_ == 31 && redisClusterBuilder_ != null) {
+        result.stepInfo_ = redisClusterBuilder_.build();
+      }
       if (stepInfoCase_ == 20 && cloudFunctionBuilder_ != null) {
         result.stepInfo_ = cloudFunctionBuilder_.build();
       }
@@ -3248,6 +3553,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 28 && storageBucketBuilder_ != null) {
         result.stepInfo_ = storageBucketBuilder_.build();
+      }
+      if (stepInfoCase_ == 29 && serverlessNegBuilder_ != null) {
+        result.stepInfo_ = serverlessNegBuilder_.build();
       }
     }
 
@@ -3399,6 +3707,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             mergeCloudSqlInstance(other.getCloudSqlInstance());
             break;
           }
+        case REDIS_INSTANCE:
+          {
+            mergeRedisInstance(other.getRedisInstance());
+            break;
+          }
+        case REDIS_CLUSTER:
+          {
+            mergeRedisCluster(other.getRedisCluster());
+            break;
+          }
         case CLOUD_FUNCTION:
           {
             mergeCloudFunction(other.getCloudFunction());
@@ -3432,6 +3750,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case STORAGE_BUCKET:
           {
             mergeStorageBucket(other.getStorageBucket());
+            break;
+          }
+        case SERVERLESS_NEG:
+          {
+            mergeServerlessNeg(other.getServerlessNeg());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -3637,6 +3960,24 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 28;
                 break;
               } // case 226
+            case 234:
+              {
+                input.readMessage(getServerlessNegFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 29;
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(getRedisInstanceFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 30;
+                break;
+              } // case 242
+            case 250:
+              {
+                input.readMessage(getRedisClusterFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 31;
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6825,7 +7166,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -6846,7 +7187,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -7706,6 +8047,438 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 19;
       onChanged();
       return cloudSqlInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo,
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfoOrBuilder>
+        redisInstanceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     *
+     * @return Whether the redisInstance field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedisInstance() {
+      return stepInfoCase_ == 30;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     *
+     * @return The redisInstance.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo getRedisInstance() {
+      if (redisInstanceBuilder_ == null) {
+        if (stepInfoCase_ == 30) {
+          return (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 30) {
+          return redisInstanceBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    public Builder setRedisInstance(
+        com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo value) {
+      if (redisInstanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        redisInstanceBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    public Builder setRedisInstance(
+        com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.Builder builderForValue) {
+      if (redisInstanceBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        redisInstanceBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    public Builder mergeRedisInstance(
+        com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo value) {
+      if (redisInstanceBuilder_ == null) {
+        if (stepInfoCase_ == 30
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 30) {
+          redisInstanceBuilder_.mergeFrom(value);
+        } else {
+          redisInstanceBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    public Builder clearRedisInstance() {
+      if (redisInstanceBuilder_ == null) {
+        if (stepInfoCase_ == 30) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 30) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        redisInstanceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.Builder
+        getRedisInstanceBuilder() {
+      return getRedisInstanceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfoOrBuilder
+        getRedisInstanceOrBuilder() {
+      if ((stepInfoCase_ == 30) && (redisInstanceBuilder_ != null)) {
+        return redisInstanceBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 30) {
+          return (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Instance.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo redis_instance = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo,
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfoOrBuilder>
+        getRedisInstanceFieldBuilder() {
+      if (redisInstanceBuilder_ == null) {
+        if (!(stepInfoCase_ == 30)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.getDefaultInstance();
+        }
+        redisInstanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo,
+                com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 30;
+      onChanged();
+      return redisInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo,
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfoOrBuilder>
+        redisClusterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     *
+     * @return Whether the redisCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedisCluster() {
+      return stepInfoCase_ == 31;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     *
+     * @return The redisCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo getRedisCluster() {
+      if (redisClusterBuilder_ == null) {
+        if (stepInfoCase_ == 31) {
+          return (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 31) {
+          return redisClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    public Builder setRedisCluster(
+        com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo value) {
+      if (redisClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        redisClusterBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    public Builder setRedisCluster(
+        com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.Builder builderForValue) {
+      if (redisClusterBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        redisClusterBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    public Builder mergeRedisCluster(
+        com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo value) {
+      if (redisClusterBuilder_ == null) {
+        if (stepInfoCase_ == 31
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 31) {
+          redisClusterBuilder_.mergeFrom(value);
+        } else {
+          redisClusterBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    public Builder clearRedisCluster() {
+      if (redisClusterBuilder_ == null) {
+        if (stepInfoCase_ == 31) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 31) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        redisClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.Builder
+        getRedisClusterBuilder() {
+      return getRedisClusterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.RedisClusterInfoOrBuilder
+        getRedisClusterOrBuilder() {
+      if ((stepInfoCase_ == 31) && (redisClusterBuilder_ != null)) {
+        return redisClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 31) {
+          return (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Redis Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.RedisClusterInfo redis_cluster = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo,
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.RedisClusterInfoOrBuilder>
+        getRedisClusterFieldBuilder() {
+      if (redisClusterBuilder_ == null) {
+        if (!(stepInfoCase_ == 31)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.getDefaultInstance();
+        }
+        redisClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo,
+                com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.RedisClusterInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 31;
+      onChanged();
+      return redisClusterBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9264,6 +10037,231 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 28;
       onChanged();
       return storageBucketBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder>
+        serverlessNegBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     *
+     * @return Whether the serverlessNeg field is set.
+     */
+    @java.lang.Override
+    public boolean hasServerlessNeg() {
+      return stepInfoCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     *
+     * @return The serverlessNeg.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo getServerlessNeg() {
+      if (serverlessNegBuilder_ == null) {
+        if (stepInfoCase_ == 29) {
+          return (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 29) {
+          return serverlessNegBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    public Builder setServerlessNeg(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo value) {
+      if (serverlessNegBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        serverlessNegBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    public Builder setServerlessNeg(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.Builder builderForValue) {
+      if (serverlessNegBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        serverlessNegBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    public Builder mergeServerlessNeg(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo value) {
+      if (serverlessNegBuilder_ == null) {
+        if (stepInfoCase_ == 29
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 29) {
+          serverlessNegBuilder_.mergeFrom(value);
+        } else {
+          serverlessNegBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    public Builder clearServerlessNeg() {
+      if (serverlessNegBuilder_ == null) {
+        if (stepInfoCase_ == 29) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 29) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        serverlessNegBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.Builder
+        getServerlessNegBuilder() {
+      return getServerlessNegFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder
+        getServerlessNegOrBuilder() {
+      if ((stepInfoCase_ == 29) && (serverlessNegBuilder_ != null)) {
+        return serverlessNegBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 29) {
+          return (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Serverless network endpoint group backend. Used
+     * only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder>
+        getServerlessNegFieldBuilder() {
+      if (serverlessNegBuilder_ == null) {
+        if (!(stepInfoCase_ == 29)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
+        }
+        serverlessNegBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo,
+                com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 29;
+      onChanged();
+      return serverlessNegBuilder_;
     }
 
     @java.lang.Override

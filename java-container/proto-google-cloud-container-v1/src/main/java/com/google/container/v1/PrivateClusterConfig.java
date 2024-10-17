@@ -77,13 +77,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Whether nodes have internal IP addresses only. If enabled, all nodes are
    * given only RFC 1918 private addresses and communicate with the master via
    * private networking.
+   *
+   * Deprecated: Use
+   * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+   * instead.
    * </pre>
    *
-   * <code>bool enable_private_nodes = 1;</code>
+   * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1405
    * @return The enablePrivateNodes.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnablePrivateNodes() {
     return enablePrivateNodes_;
   }
@@ -95,13 +102,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Whether the master's internal IP address is used as the cluster endpoint.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint]
+   * instead. Note that the value of enable_public_endpoint is reversed: if
+   * enable_private_endpoint is false, then enable_public_endpoint will be true.
    * </pre>
    *
-   * <code>bool enable_private_endpoint = 2;</code>
+   * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1413
    * @return The enablePrivateEndpoint.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnablePrivateEndpoint() {
     return enablePrivateEndpoint_;
   }
@@ -172,13 +187,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+   * instead.
    * </pre>
    *
-   * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1426
    * @return The privateEndpoint.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPrivateEndpoint() {
     java.lang.Object ref = privateEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -195,13 +219,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+   * instead.
    * </pre>
    *
-   * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1426
    * @return The bytes for privateEndpoint.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPrivateEndpointBytes() {
     java.lang.Object ref = privateEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -223,13 +256,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
+   *
+   * Deprecated:Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+   * instead.
    * </pre>
    *
-   * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1434
    * @return The publicEndpoint.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPublicEndpoint() {
     java.lang.Object ref = publicEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -246,13 +288,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
+   *
+   * Deprecated:Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+   * instead.
    * </pre>
    *
-   * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1434
    * @return The bytes for publicEndpoint.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPublicEndpointBytes() {
     java.lang.Object ref = publicEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -323,15 +374,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Controls master global access settings.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=1445
    * @return Whether the masterGlobalAccessConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasMasterGlobalAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -340,15 +398,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Controls master global access settings.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=1445
    * @return The masterGlobalAccessConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig
       getMasterGlobalAccessConfig() {
     return masterGlobalAccessConfig_ == null
@@ -360,13 +425,18 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Controls master global access settings.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder
       getMasterGlobalAccessConfigOrBuilder() {
     return masterGlobalAccessConfig_ == null
@@ -384,13 +454,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Subnet to provision the master's private endpoint during cluster creation.
    * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+   * instead.
    * </pre>
    *
-   * <code>string private_endpoint_subnetwork = 10;</code>
+   * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=1454
    * @return The privateEndpointSubnetwork.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPrivateEndpointSubnetwork() {
     java.lang.Object ref = privateEndpointSubnetwork_;
     if (ref instanceof java.lang.String) {
@@ -408,13 +485,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Subnet to provision the master's private endpoint during cluster creation.
    * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+   * instead.
    * </pre>
    *
-   * <code>string private_endpoint_subnetwork = 10;</code>
+   * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=1454
    * @return The bytes for privateEndpointSubnetwork.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPrivateEndpointSubnetworkBytes() {
     java.lang.Object ref = privateEndpointSubnetwork_;
     if (ref instanceof java.lang.String) {
@@ -966,13 +1050,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
      * private networking.
+     *
+     * Deprecated: Use
+     * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_private_nodes = 1;</code>
+     * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1405
      * @return The enablePrivateNodes.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnablePrivateNodes() {
       return enablePrivateNodes_;
     }
@@ -983,13 +1074,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
      * private networking.
+     *
+     * Deprecated: Use
+     * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_private_nodes = 1;</code>
+     * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1405
      * @param value The enablePrivateNodes to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnablePrivateNodes(boolean value) {
 
       enablePrivateNodes_ = value;
@@ -1004,12 +1102,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
      * private networking.
+     *
+     * Deprecated: Use
+     * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_private_nodes = 1;</code>
+     * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1405
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnablePrivateNodes() {
       bitField0_ = (bitField0_ & ~0x00000001);
       enablePrivateNodes_ = false;
@@ -1023,13 +1128,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint]
+     * instead. Note that the value of enable_public_endpoint is reversed: if
+     * enable_private_endpoint is false, then enable_public_endpoint will be true.
      * </pre>
      *
-     * <code>bool enable_private_endpoint = 2;</code>
+     * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=1413
      * @return The enablePrivateEndpoint.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnablePrivateEndpoint() {
       return enablePrivateEndpoint_;
     }
@@ -1038,13 +1151,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint]
+     * instead. Note that the value of enable_public_endpoint is reversed: if
+     * enable_private_endpoint is false, then enable_public_endpoint will be true.
      * </pre>
      *
-     * <code>bool enable_private_endpoint = 2;</code>
+     * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=1413
      * @param value The enablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnablePrivateEndpoint(boolean value) {
 
       enablePrivateEndpoint_ = value;
@@ -1057,12 +1178,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint]
+     * instead. Note that the value of enable_public_endpoint is reversed: if
+     * enable_private_endpoint is false, then enable_public_endpoint will be true.
      * </pre>
      *
-     * <code>bool enable_private_endpoint = 2;</code>
+     * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=1413
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnablePrivateEndpoint() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enablePrivateEndpoint_ = false;
@@ -1197,12 +1326,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return The privateEndpoint.
      */
+    @java.lang.Deprecated
     public java.lang.String getPrivateEndpoint() {
       java.lang.Object ref = privateEndpoint_;
       if (!(ref instanceof java.lang.String)) {
@@ -1219,12 +1357,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return The bytes for privateEndpoint.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPrivateEndpointBytes() {
       java.lang.Object ref = privateEndpoint_;
       if (ref instanceof String) {
@@ -1241,13 +1388,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1426
      * @param value The privateEndpoint to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateEndpoint(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1262,12 +1418,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPrivateEndpoint() {
       privateEndpoint_ = getDefaultInstance().getPrivateEndpoint();
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1279,13 +1444,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string private_endpoint = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1426
      * @param value The bytes for privateEndpoint to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1303,12 +1477,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
+     *
+     * Deprecated:Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1434
      * @return The publicEndpoint.
      */
+    @java.lang.Deprecated
     public java.lang.String getPublicEndpoint() {
       java.lang.Object ref = publicEndpoint_;
       if (!(ref instanceof java.lang.String)) {
@@ -1325,12 +1508,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
+     *
+     * Deprecated:Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1434
      * @return The bytes for publicEndpoint.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPublicEndpointBytes() {
       java.lang.Object ref = publicEndpoint_;
       if (ref instanceof String) {
@@ -1347,13 +1539,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
+     *
+     * Deprecated:Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1434
      * @param value The publicEndpoint to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPublicEndpoint(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1368,12 +1569,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
+     *
+     * Deprecated:Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1434
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPublicEndpoint() {
       publicEndpoint_ = getDefaultInstance().getPublicEndpoint();
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1385,13 +1595,22 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
+     *
+     * Deprecated:Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint]
+     * instead.
      * </pre>
      *
-     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_endpoint = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1434
      * @param value The bytes for publicEndpoint to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPublicEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1521,14 +1740,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1445
      * @return Whether the masterGlobalAccessConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasMasterGlobalAccessConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
@@ -1537,14 +1763,21 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1445
      * @return The masterGlobalAccessConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig
         getMasterGlobalAccessConfig() {
       if (masterGlobalAccessConfigBuilder_ == null) {
@@ -1560,12 +1793,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMasterGlobalAccessConfig(
         com.google.container.v1.PrivateClusterMasterGlobalAccessConfig value) {
       if (masterGlobalAccessConfigBuilder_ == null) {
@@ -1585,12 +1823,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMasterGlobalAccessConfig(
         com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder builderForValue) {
       if (masterGlobalAccessConfigBuilder_ == null) {
@@ -1607,12 +1850,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeMasterGlobalAccessConfig(
         com.google.container.v1.PrivateClusterMasterGlobalAccessConfig value) {
       if (masterGlobalAccessConfigBuilder_ == null) {
@@ -1639,12 +1887,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearMasterGlobalAccessConfig() {
       bitField0_ = (bitField0_ & ~0x00000040);
       masterGlobalAccessConfig_ = null;
@@ -1660,12 +1913,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder
         getMasterGlobalAccessConfigBuilder() {
       bitField0_ |= 0x00000040;
@@ -1677,12 +1935,17 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder
         getMasterGlobalAccessConfigOrBuilder() {
       if (masterGlobalAccessConfigBuilder_ != null) {
@@ -1698,10 +1961,14 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Controls master global access settings.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access][]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1728,12 +1995,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Subnet to provision the master's private endpoint during cluster creation.
      * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint_subnetwork = 10;</code>
+     * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
      * @return The privateEndpointSubnetwork.
      */
+    @java.lang.Deprecated
     public java.lang.String getPrivateEndpointSubnetwork() {
       java.lang.Object ref = privateEndpointSubnetwork_;
       if (!(ref instanceof java.lang.String)) {
@@ -1751,12 +2025,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Subnet to provision the master's private endpoint during cluster creation.
      * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint_subnetwork = 10;</code>
+     * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
      * @return The bytes for privateEndpointSubnetwork.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPrivateEndpointSubnetworkBytes() {
       java.lang.Object ref = privateEndpointSubnetwork_;
       if (ref instanceof String) {
@@ -1774,13 +2055,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Subnet to provision the master's private endpoint during cluster creation.
      * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint_subnetwork = 10;</code>
+     * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
      * @param value The privateEndpointSubnetwork to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateEndpointSubnetwork(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1796,12 +2084,19 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Subnet to provision the master's private endpoint during cluster creation.
      * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint_subnetwork = 10;</code>
+     * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPrivateEndpointSubnetwork() {
       privateEndpointSubnetwork_ = getDefaultInstance().getPrivateEndpointSubnetwork();
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1814,13 +2109,20 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Subnet to provision the master's private endpoint during cluster creation.
      * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork]
+     * instead.
      * </pre>
      *
-     * <code>string private_endpoint_subnetwork = 10;</code>
+     * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
      * @param value The bytes for privateEndpointSubnetwork to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateEndpointSubnetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

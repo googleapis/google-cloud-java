@@ -59,6 +59,65 @@ public class MockGroundedGenerationServiceImpl extends GroundedGenerationService
   }
 
   @Override
+  public StreamObserver<GenerateGroundedContentRequest> streamGenerateGroundedContent(
+      final StreamObserver<GenerateGroundedContentResponse> responseObserver) {
+    StreamObserver<GenerateGroundedContentRequest> requestObserver =
+        new StreamObserver<GenerateGroundedContentRequest>() {
+          @Override
+          public void onNext(GenerateGroundedContentRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof GenerateGroundedContentResponse) {
+              responseObserver.onNext(((GenerateGroundedContentResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamGenerateGroundedContent, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          GenerateGroundedContentResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
+  public void generateGroundedContent(
+      GenerateGroundedContentRequest request,
+      StreamObserver<GenerateGroundedContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateGroundedContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateGroundedContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateGroundedContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateGroundedContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void checkGrounding(
       CheckGroundingRequest request, StreamObserver<CheckGroundingResponse> responseObserver) {
     Object response = responses.poll();

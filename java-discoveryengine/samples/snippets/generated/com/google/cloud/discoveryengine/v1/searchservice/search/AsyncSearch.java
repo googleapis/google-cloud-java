@@ -57,6 +57,7 @@ public class AsyncSearch {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")

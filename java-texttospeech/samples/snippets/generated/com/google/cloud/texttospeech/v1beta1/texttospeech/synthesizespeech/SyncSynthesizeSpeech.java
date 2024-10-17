@@ -17,6 +17,7 @@
 package com.google.cloud.texttospeech.v1beta1.samples;
 
 // [START texttospeech_v1beta1_generated_TextToSpeech_SynthesizeSpeech_sync]
+import com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions;
 import com.google.cloud.texttospeech.v1beta1.AudioConfig;
 import com.google.cloud.texttospeech.v1beta1.SynthesisInput;
 import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest;
@@ -44,6 +45,7 @@ public class SyncSynthesizeSpeech {
               .setVoice(VoiceSelectionParams.newBuilder().build())
               .setAudioConfig(AudioConfig.newBuilder().build())
               .addAllEnableTimePointing(new ArrayList<SynthesizeSpeechRequest.TimepointType>())
+              .setAdvancedVoiceOptions(AdvancedVoiceOptions.newBuilder().build())
               .build();
       SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(request);
     }

@@ -21,6 +21,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.networkmanagement.v1beta1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1beta1.ProjectName;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 
 public class AsyncCreateConnectivityTestLRO {
@@ -38,7 +39,7 @@ public class AsyncCreateConnectivityTestLRO {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       CreateConnectivityTestRequest request =
           CreateConnectivityTestRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setTestId("testId-877170355")
               .setResource(ConnectivityTest.newBuilder().build())
               .build();

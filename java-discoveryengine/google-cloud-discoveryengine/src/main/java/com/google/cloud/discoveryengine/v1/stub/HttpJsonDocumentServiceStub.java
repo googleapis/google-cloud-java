@@ -542,7 +542,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -619,7 +619,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

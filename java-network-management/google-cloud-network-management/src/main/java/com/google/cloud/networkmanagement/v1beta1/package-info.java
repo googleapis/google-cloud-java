@@ -40,7 +40,9 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
  *   GetConnectivityTestRequest request =
- *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+ *       GetConnectivityTestRequest.newBuilder()
+ *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+ *           .build();
  *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
  * }
  * }</pre>

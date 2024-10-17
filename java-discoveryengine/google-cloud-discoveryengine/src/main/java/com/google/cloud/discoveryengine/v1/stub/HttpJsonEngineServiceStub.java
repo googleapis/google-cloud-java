@@ -400,7 +400,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -477,7 +477,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
