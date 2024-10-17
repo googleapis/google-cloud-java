@@ -35,6 +35,13 @@ public class FirestoreOpenTelemetryOptions {
     this.openTelemetry = builder.openTelemetry;
   }
 
+  /**
+   * @deprecated This method will be removed in the next minor version update. Please use a no-op
+   *     TracerProvider or set the environment variable `FIRESTORE_ENABLE_TRACING=OFF` to disable
+   *     tracing. If the GlobalOpenTelemetry or the OpenTelemetry instance passed to Firestore
+   *     contain a valid TracerProvider, the Firestore client will generate spans by utilizing it.
+   */
+  @Deprecated
   public boolean isTracingEnabled() {
     return tracingEnabled;
   }
@@ -78,7 +85,13 @@ public class FirestoreOpenTelemetryOptions {
      * Sets whether tracing should be enabled.
      *
      * @param tracingEnabled Whether tracing should be enabled.
+     * @deprecated This method will be removed in the next minor version update. Please use a no-op
+     *     TracerProvider or set the environment variable `FIRESTORE_ENABLE_TRACING=OFF` to disable
+     *     tracing. If the GlobalOpenTelemetry or the OpenTelemetry instance passed to Firestore
+     *     contains a valid TracerProvider, the Firestore client will generate spans by utilizing
+     *     it.
      */
+    @Deprecated
     @Nonnull
     public FirestoreOpenTelemetryOptions.Builder setTracingEnabled(boolean tracingEnabled) {
       this.tracingEnabled = tracingEnabled;
