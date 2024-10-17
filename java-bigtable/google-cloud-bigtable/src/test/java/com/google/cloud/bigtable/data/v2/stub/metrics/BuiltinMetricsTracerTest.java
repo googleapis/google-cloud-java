@@ -21,6 +21,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.FIRST_RESPONSE_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OPERATION_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.RETRY_COUNT_NAME;
@@ -121,6 +122,7 @@ public class BuiltinMetricsTracerTest {
   private static final String TABLE = "fake-table";
 
   private static final String BAD_TABLE_ID = "non-exist-table";
+  private static final String FIRST_RESPONSE_TABLE_ID = "first-response";
   private static final String ZONE = "us-west-1";
   private static final String CLUSTER = "cluster-0";
   private static final long FAKE_SERVER_TIMING = 50;
@@ -303,6 +305,52 @@ public class BuiltinMetricsTracerTest {
     MetricData metricData = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
     long value = getAggregatedValue(metricData, expectedAttributes);
     assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
+  }
+
+  @Test
+  public void testFirstResponseLatencies() {
+    Stopwatch firstResponseTimer = Stopwatch.createStarted();
+    stub.readRowsCallable()
+        .call(
+            Query.create(FIRST_RESPONSE_TABLE_ID),
+            new ResponseObserver<Row>() {
+              @Override
+              public void onStart(StreamController controller) {}
+
+              @Override
+              public void onResponse(Row response) {
+                // Server sends back 2 responses for this test
+                if (firstResponseTimer.isRunning()) {
+                  firstResponseTimer.stop();
+                }
+                try {
+                  Thread.sleep(100);
+                } catch (InterruptedException e) {
+                }
+              }
+
+              @Override
+              public void onError(Throwable t) {}
+
+              @Override
+              public void onComplete() {}
+            });
+
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, FIRST_RESPONSE_TABLE_ID)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+
+    MetricData metricData = getMetricData(metricReader, FIRST_RESPONSE_LATENCIES_NAME);
+
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isAtMost(firstResponseTimer.elapsed(TimeUnit.MILLISECONDS));
   }
 
   @Test
@@ -732,6 +780,12 @@ public class BuiltinMetricsTracerTest {
     @Override
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      if (request.getTableName().contains(FIRST_RESPONSE_TABLE_ID)) {
+        responseObserver.onNext(source.next());
+        responseObserver.onNext(source.next());
+        responseObserver.onCompleted();
+        return;
+      }
       if (request.getTableName().contains(BAD_TABLE_ID)) {
         responseObserver.onError(new StatusRuntimeException(Status.NOT_FOUND));
         return;

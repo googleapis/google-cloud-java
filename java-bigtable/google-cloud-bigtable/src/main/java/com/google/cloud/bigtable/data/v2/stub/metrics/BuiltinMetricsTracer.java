@@ -208,6 +208,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void responseReceived() {
+    if (firstResponsePerOpTimer.isRunning()) {
+      firstResponsePerOpTimer.stop();
+    }
     // When auto flow control is enabled, server latency is measured between afterResponse and
     // responseReceived.
     // When auto flow control is disabled, server latency is measured between onRequest and
