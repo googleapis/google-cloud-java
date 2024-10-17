@@ -1196,6 +1196,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   for (Repository element : secureSourceManagerClient.listRepositories(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1231,6 +1232,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   ApiFuture<Repository> future =
    *       secureSourceManagerClient.listRepositoriesPagedCallable().futureCall(request);
@@ -1267,6 +1269,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   while (true) {
    *     ListRepositoriesResponse response =
