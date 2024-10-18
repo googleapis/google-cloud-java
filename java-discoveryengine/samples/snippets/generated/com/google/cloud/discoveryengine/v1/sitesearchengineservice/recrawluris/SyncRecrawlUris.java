@@ -44,6 +44,7 @@ public class SyncRecrawlUris {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       RecrawlUrisResponse response = siteSearchEngineServiceClient.recrawlUrisAsync(request).get();
     }

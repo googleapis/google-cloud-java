@@ -226,9 +226,9 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
-   * locations.
+   * BigQuery locations.
    * </pre>
    *
    * <code>string dataset_location = 20;</code>
@@ -240,9 +240,9 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
-   * locations.
+   * BigQuery locations.
    * </pre>
    *
    * <code>string dataset_location = 20;</code>
@@ -255,7 +255,7 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * The BigQuery dataset ID, if the resource profiled is a BigQuery table.
    * </pre>
    *
    * <code>string dataset_id = 21;</code>
@@ -267,7 +267,7 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * The BigQuery dataset ID, if the resource profiled is a BigQuery table.
    * </pre>
    *
    * <code>string dataset_id = 21;</code>
@@ -280,7 +280,7 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * The table ID.
    * </pre>
    *
    * <code>string table_id = 22;</code>
@@ -292,7 +292,7 @@ public interface ColumnDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * The table ID.
    * </pre>
    *
    * <code>string table_id = 22;</code>

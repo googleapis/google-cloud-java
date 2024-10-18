@@ -18,6 +18,7 @@ package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_ListRepositories_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.securesourcemanager.v1.InstanceName;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest;
 import com.google.cloud.securesourcemanager.v1.LocationName;
 import com.google.cloud.securesourcemanager.v1.Repository;
@@ -42,6 +43,7 @@ public class AsyncListRepositories {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .build();
       ApiFuture<Repository> future =
           secureSourceManagerClient.listRepositoriesPagedCallable().futureCall(request);

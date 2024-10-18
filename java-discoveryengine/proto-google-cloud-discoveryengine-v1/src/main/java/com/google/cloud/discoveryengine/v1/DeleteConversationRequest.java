@@ -72,7 +72,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the Conversation to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the Conversation to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>
@@ -472,7 +472,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Conversation to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -497,7 +497,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Conversation to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -522,7 +522,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Conversation to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -546,7 +546,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Conversation to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -566,7 +566,7 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Conversation to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>

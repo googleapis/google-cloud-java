@@ -95,6 +95,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -156,6 +157,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -309,6 +311,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -323,6 +326,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -363,6 +367,7 @@ public class EngineServiceClientHttpJsonTest {
               .setSolutionType(SolutionType.forNumber(0))
               .setIndustryVertical(IndustryVertical.forNumber(0))
               .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+              .setDisableAnalytics(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEngine(engine, updateMask);
@@ -385,6 +390,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -437,6 +443,7 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockService.addResponse(expectedResponse);
 

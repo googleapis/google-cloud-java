@@ -436,6 +436,58 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
         getInputArtifactsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the defaultRuntime field is set.
+     */
+    boolean hasDefaultRuntime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultRuntime.
+     */
+    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+        getDefaultRuntime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder
+        getDefaultRuntimeOrBuilder();
   }
   /**
    *
@@ -1365,6 +1417,2235 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface PersistentResourceRuntimeDetailOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+       * </pre>
+       *
+       * <code>string persistent_resource_name = 1;</code>
+       *
+       * @return The persistentResourceName.
+       */
+      java.lang.String getPersistentResourceName();
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+       * </pre>
+       *
+       * <code>string persistent_resource_name = 1;</code>
+       *
+       * @return The bytes for persistentResourceName.
+       */
+      com.google.protobuf.ByteString getPersistentResourceNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The max time a pipeline task waits for the required CPU, memory, or
+       * accelerator resource to become available from the specified persistent
+       * resource. Default wait time is 0.
+       * </pre>
+       *
+       * <code>int64 task_resource_unavailable_wait_time_ms = 2;</code>
+       *
+       * @return The taskResourceUnavailableWaitTimeMs.
+       */
+      long getTaskResourceUnavailableWaitTimeMs();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the behavior to take if the timeout is reached.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for taskResourceUnavailableTimeoutBehavior.
+       */
+      int getTaskResourceUnavailableTimeoutBehaviorValue();
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the behavior to take if the timeout is reached.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+       * </code>
+       *
+       * @return The taskResourceUnavailableTimeoutBehavior.
+       */
+      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail
+              .TaskResourceUnavailableTimeoutBehavior
+          getTaskResourceUnavailableTimeoutBehavior();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent resource based runtime detail. For more information, refer to
+     * https://cloud.google.com/vertex-ai/docs/training/persistent-resource-overview
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail}
+     */
+    public static final class PersistentResourceRuntimeDetail
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail)
+        PersistentResourceRuntimeDetailOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use PersistentResourceRuntimeDetail.newBuilder() to construct.
+      private PersistentResourceRuntimeDetail(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private PersistentResourceRuntimeDetail() {
+        persistentResourceName_ = "";
+        taskResourceUnavailableTimeoutBehavior_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new PersistentResourceRuntimeDetail();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_PersistentResourceRuntimeDetail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_PersistentResourceRuntimeDetail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.class,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An enum that specifies the behavior to take if the timeout is reached.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior}
+       */
+      public enum TaskResourceUnavailableTimeoutBehavior
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified. Behavior is same as `FAIL`.
+         * </pre>
+         *
+         * <code>TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED = 0;</code>
+         */
+        TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Fail the task if the timeout is reached.
+         * </pre>
+         *
+         * <code>FAIL = 1;</code>
+         */
+        FAIL(1),
+        /**
+         *
+         *
+         * <pre>
+         * Fall back to on-demand execution if the timeout is reached.
+         * </pre>
+         *
+         * <code>FALL_BACK_TO_ON_DEMAND = 2;</code>
+         */
+        FALL_BACK_TO_ON_DEMAND(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified. Behavior is same as `FAIL`.
+         * </pre>
+         *
+         * <code>TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED = 0;</code>
+         */
+        public static final int TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Fail the task if the timeout is reached.
+         * </pre>
+         *
+         * <code>FAIL = 1;</code>
+         */
+        public static final int FAIL_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Fall back to on-demand execution if the timeout is reached.
+         * </pre>
+         *
+         * <code>FALL_BACK_TO_ON_DEMAND = 2;</code>
+         */
+        public static final int FALL_BACK_TO_ON_DEMAND_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TaskResourceUnavailableTimeoutBehavior valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static TaskResourceUnavailableTimeoutBehavior forNumber(int value) {
+          switch (value) {
+            case 0:
+              return TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED;
+            case 1:
+              return FAIL;
+            case 2:
+              return FALL_BACK_TO_ON_DEMAND;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<
+                TaskResourceUnavailableTimeoutBehavior>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                TaskResourceUnavailableTimeoutBehavior>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<
+                    TaskResourceUnavailableTimeoutBehavior>() {
+                  public TaskResourceUnavailableTimeoutBehavior findValueByNumber(int number) {
+                    return TaskResourceUnavailableTimeoutBehavior.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final TaskResourceUnavailableTimeoutBehavior[] VALUES = values();
+
+        public static TaskResourceUnavailableTimeoutBehavior valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private TaskResourceUnavailableTimeoutBehavior(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior)
+      }
+
+      public static final int PERSISTENT_RESOURCE_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object persistentResourceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+       * </pre>
+       *
+       * <code>string persistent_resource_name = 1;</code>
+       *
+       * @return The persistentResourceName.
+       */
+      @java.lang.Override
+      public java.lang.String getPersistentResourceName() {
+        java.lang.Object ref = persistentResourceName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          persistentResourceName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+       * </pre>
+       *
+       * <code>string persistent_resource_name = 1;</code>
+       *
+       * @return The bytes for persistentResourceName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getPersistentResourceNameBytes() {
+        java.lang.Object ref = persistentResourceName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          persistentResourceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TASK_RESOURCE_UNAVAILABLE_WAIT_TIME_MS_FIELD_NUMBER = 2;
+      private long taskResourceUnavailableWaitTimeMs_ = 0L;
+      /**
+       *
+       *
+       * <pre>
+       * The max time a pipeline task waits for the required CPU, memory, or
+       * accelerator resource to become available from the specified persistent
+       * resource. Default wait time is 0.
+       * </pre>
+       *
+       * <code>int64 task_resource_unavailable_wait_time_ms = 2;</code>
+       *
+       * @return The taskResourceUnavailableWaitTimeMs.
+       */
+      @java.lang.Override
+      public long getTaskResourceUnavailableWaitTimeMs() {
+        return taskResourceUnavailableWaitTimeMs_;
+      }
+
+      public static final int TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_FIELD_NUMBER = 3;
+      private int taskResourceUnavailableTimeoutBehavior_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the behavior to take if the timeout is reached.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for taskResourceUnavailableTimeoutBehavior.
+       */
+      @java.lang.Override
+      public int getTaskResourceUnavailableTimeoutBehaviorValue() {
+        return taskResourceUnavailableTimeoutBehavior_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the behavior to take if the timeout is reached.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+       * </code>
+       *
+       * @return The taskResourceUnavailableTimeoutBehavior.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+          getTaskResourceUnavailableTimeoutBehavior() {
+        com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+            result =
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                    .forNumber(taskResourceUnavailableTimeoutBehavior_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(persistentResourceName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, persistentResourceName_);
+        }
+        if (taskResourceUnavailableWaitTimeMs_ != 0L) {
+          output.writeInt64(2, taskResourceUnavailableWaitTimeMs_);
+        }
+        if (taskResourceUnavailableTimeoutBehavior_
+            != com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                .TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(3, taskResourceUnavailableTimeoutBehavior_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(persistentResourceName_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(1, persistentResourceName_);
+        }
+        if (taskResourceUnavailableWaitTimeMs_ != 0L) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt64Size(
+                  2, taskResourceUnavailableWaitTimeMs_);
+        }
+        if (taskResourceUnavailableTimeoutBehavior_
+            != com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                .TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_UNSPECIFIED
+                .getNumber()) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(
+                  3, taskResourceUnavailableTimeoutBehavior_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail
+            other =
+                (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetail)
+                    obj;
+
+        if (!getPersistentResourceName().equals(other.getPersistentResourceName())) return false;
+        if (getTaskResourceUnavailableWaitTimeMs() != other.getTaskResourceUnavailableWaitTimeMs())
+          return false;
+        if (taskResourceUnavailableTimeoutBehavior_
+            != other.taskResourceUnavailableTimeoutBehavior_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PERSISTENT_RESOURCE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getPersistentResourceName().hashCode();
+        hash = (37 * hash) + TASK_RESOURCE_UNAVAILABLE_WAIT_TIME_MS_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(getTaskResourceUnavailableWaitTimeMs());
+        hash = (37 * hash) + TASK_RESOURCE_UNAVAILABLE_TIMEOUT_BEHAVIOR_FIELD_NUMBER;
+        hash = (53 * hash) + taskResourceUnavailableTimeoutBehavior_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail. For more information, refer to
+       * https://cloud.google.com/vertex-ai/docs/training/persistent-resource-overview
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail)
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetailOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_PersistentResourceRuntimeDetail_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_PersistentResourceRuntimeDetail_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail.class,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          persistentResourceName_ = "";
+          taskResourceUnavailableWaitTimeMs_ = 0L;
+          taskResourceUnavailableTimeoutBehavior_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_PersistentResourceRuntimeDetail_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail
+            build() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.persistentResourceName_ = persistentResourceName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.taskResourceUnavailableWaitTimeMs_ = taskResourceUnavailableWaitTimeMs_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.taskResourceUnavailableTimeoutBehavior_ =
+                taskResourceUnavailableTimeoutBehavior_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetail)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail.getDefaultInstance()) return this;
+          if (!other.getPersistentResourceName().isEmpty()) {
+            persistentResourceName_ = other.persistentResourceName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.getTaskResourceUnavailableWaitTimeMs() != 0L) {
+            setTaskResourceUnavailableWaitTimeMs(other.getTaskResourceUnavailableWaitTimeMs());
+          }
+          if (other.taskResourceUnavailableTimeoutBehavior_ != 0) {
+            setTaskResourceUnavailableTimeoutBehaviorValue(
+                other.getTaskResourceUnavailableTimeoutBehaviorValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    persistentResourceName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    taskResourceUnavailableWaitTimeMs_ = input.readInt64();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    taskResourceUnavailableTimeoutBehavior_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object persistentResourceName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource name.
+         * Format:
+         * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+         * </pre>
+         *
+         * <code>string persistent_resource_name = 1;</code>
+         *
+         * @return The persistentResourceName.
+         */
+        public java.lang.String getPersistentResourceName() {
+          java.lang.Object ref = persistentResourceName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            persistentResourceName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource name.
+         * Format:
+         * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+         * </pre>
+         *
+         * <code>string persistent_resource_name = 1;</code>
+         *
+         * @return The bytes for persistentResourceName.
+         */
+        public com.google.protobuf.ByteString getPersistentResourceNameBytes() {
+          java.lang.Object ref = persistentResourceName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            persistentResourceName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource name.
+         * Format:
+         * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+         * </pre>
+         *
+         * <code>string persistent_resource_name = 1;</code>
+         *
+         * @param value The persistentResourceName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPersistentResourceName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          persistentResourceName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource name.
+         * Format:
+         * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+         * </pre>
+         *
+         * <code>string persistent_resource_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPersistentResourceName() {
+          persistentResourceName_ = getDefaultInstance().getPersistentResourceName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource name.
+         * Format:
+         * `projects/{project}/locations/{location}/persistentResources/{persistent_resource}`
+         * </pre>
+         *
+         * <code>string persistent_resource_name = 1;</code>
+         *
+         * @param value The bytes for persistentResourceName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPersistentResourceNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          persistentResourceName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private long taskResourceUnavailableWaitTimeMs_;
+        /**
+         *
+         *
+         * <pre>
+         * The max time a pipeline task waits for the required CPU, memory, or
+         * accelerator resource to become available from the specified persistent
+         * resource. Default wait time is 0.
+         * </pre>
+         *
+         * <code>int64 task_resource_unavailable_wait_time_ms = 2;</code>
+         *
+         * @return The taskResourceUnavailableWaitTimeMs.
+         */
+        @java.lang.Override
+        public long getTaskResourceUnavailableWaitTimeMs() {
+          return taskResourceUnavailableWaitTimeMs_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max time a pipeline task waits for the required CPU, memory, or
+         * accelerator resource to become available from the specified persistent
+         * resource. Default wait time is 0.
+         * </pre>
+         *
+         * <code>int64 task_resource_unavailable_wait_time_ms = 2;</code>
+         *
+         * @param value The taskResourceUnavailableWaitTimeMs to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTaskResourceUnavailableWaitTimeMs(long value) {
+
+          taskResourceUnavailableWaitTimeMs_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The max time a pipeline task waits for the required CPU, memory, or
+         * accelerator resource to become available from the specified persistent
+         * resource. Default wait time is 0.
+         * </pre>
+         *
+         * <code>int64 task_resource_unavailable_wait_time_ms = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTaskResourceUnavailableWaitTimeMs() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          taskResourceUnavailableWaitTimeMs_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int taskResourceUnavailableTimeoutBehavior_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the behavior to take if the timeout is reached.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for taskResourceUnavailableTimeoutBehavior.
+         */
+        @java.lang.Override
+        public int getTaskResourceUnavailableTimeoutBehaviorValue() {
+          return taskResourceUnavailableTimeoutBehavior_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the behavior to take if the timeout is reached.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for
+         *     taskResourceUnavailableTimeoutBehavior to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTaskResourceUnavailableTimeoutBehaviorValue(int value) {
+          taskResourceUnavailableTimeoutBehavior_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the behavior to take if the timeout is reached.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+         * </code>
+         *
+         * @return The taskResourceUnavailableTimeoutBehavior.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+            getTaskResourceUnavailableTimeoutBehavior() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+              result =
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                      .forNumber(taskResourceUnavailableTimeoutBehavior_);
+          return result == null
+              ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the behavior to take if the timeout is reached.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+         * </code>
+         *
+         * @param value The taskResourceUnavailableTimeoutBehavior to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTaskResourceUnavailableTimeoutBehavior(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          taskResourceUnavailableTimeoutBehavior_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the behavior to take if the timeout is reached.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail.TaskResourceUnavailableTimeoutBehavior task_resource_unavailable_timeout_behavior = 3;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTaskResourceUnavailableTimeoutBehavior() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          taskResourceUnavailableTimeoutBehavior_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail)
+      private static final com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PersistentResourceRuntimeDetail> PARSER =
+          new com.google.protobuf.AbstractParser<PersistentResourceRuntimeDetail>() {
+            @java.lang.Override
+            public PersistentResourceRuntimeDetail parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<PersistentResourceRuntimeDetail> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PersistentResourceRuntimeDetail> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface DefaultRuntimeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       *
+       * @return Whether the persistentResourceRuntimeDetail field is set.
+       */
+      boolean hasPersistentResourceRuntimeDetail();
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       *
+       * @return The persistentResourceRuntimeDetail.
+       */
+      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail
+          getPersistentResourceRuntimeDetail();
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetailOrBuilder
+          getPersistentResourceRuntimeDetailOrBuilder();
+
+      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.RuntimeDetailCase
+          getRuntimeDetailCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default runtime for the PipelineJob.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime}
+     */
+    public static final class DefaultRuntime extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+        DefaultRuntimeOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use DefaultRuntime.newBuilder() to construct.
+      private DefaultRuntime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DefaultRuntime() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DefaultRuntime();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_DefaultRuntime_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_DefaultRuntime_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.class,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.Builder
+                    .class);
+      }
+
+      private int runtimeDetailCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object runtimeDetail_;
+
+      public enum RuntimeDetailCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        PERSISTENT_RESOURCE_RUNTIME_DETAIL(1),
+        RUNTIMEDETAIL_NOT_SET(0);
+        private final int value;
+
+        private RuntimeDetailCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static RuntimeDetailCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static RuntimeDetailCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return PERSISTENT_RESOURCE_RUNTIME_DETAIL;
+            case 0:
+              return RUNTIMEDETAIL_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public RuntimeDetailCase getRuntimeDetailCase() {
+        return RuntimeDetailCase.forNumber(runtimeDetailCase_);
+      }
+
+      public static final int PERSISTENT_RESOURCE_RUNTIME_DETAIL_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       *
+       * @return Whether the persistentResourceRuntimeDetail field is set.
+       */
+      @java.lang.Override
+      public boolean hasPersistentResourceRuntimeDetail() {
+        return runtimeDetailCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       *
+       * @return The persistentResourceRuntimeDetail.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetail
+          getPersistentResourceRuntimeDetail() {
+        if (runtimeDetailCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail)
+              runtimeDetail_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+            .PersistentResourceRuntimeDetail.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Persistent resource based runtime detail.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .PersistentResourceRuntimeDetailOrBuilder
+          getPersistentResourceRuntimeDetailOrBuilder() {
+        if (runtimeDetailCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                  .PersistentResourceRuntimeDetail)
+              runtimeDetail_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+            .PersistentResourceRuntimeDetail.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (runtimeDetailCase_ == 1) {
+          output.writeMessage(
+              1,
+              (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail)
+                  runtimeDetail_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (runtimeDetailCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1,
+                  (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                          .PersistentResourceRuntimeDetail)
+                      runtimeDetail_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime other =
+            (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime) obj;
+
+        if (!getRuntimeDetailCase().equals(other.getRuntimeDetailCase())) return false;
+        switch (runtimeDetailCase_) {
+          case 1:
+            if (!getPersistentResourceRuntimeDetail()
+                .equals(other.getPersistentResourceRuntimeDetail())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (runtimeDetailCase_) {
+          case 1:
+            hash = (37 * hash) + PERSISTENT_RESOURCE_RUNTIME_DETAIL_FIELD_NUMBER;
+            hash = (53 * hash) + getPersistentResourceRuntimeDetail().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The default runtime for the PipelineJob.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_DefaultRuntime_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_DefaultRuntime_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                      .class,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (persistentResourceRuntimeDetailBuilder_ != null) {
+            persistentResourceRuntimeDetailBuilder_.clear();
+          }
+          runtimeDetailCase_ = 0;
+          runtimeDetail_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_DefaultRuntime_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+            build() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime result =
+              new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime result) {
+          result.runtimeDetailCase_ = runtimeDetailCase_;
+          result.runtimeDetail_ = this.runtimeDetail_;
+          if (runtimeDetailCase_ == 1 && persistentResourceRuntimeDetailBuilder_ != null) {
+            result.runtimeDetail_ = persistentResourceRuntimeDetailBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                  .getDefaultInstance()) return this;
+          switch (other.getRuntimeDetailCase()) {
+            case PERSISTENT_RESOURCE_RUNTIME_DETAIL:
+              {
+                mergePersistentResourceRuntimeDetail(other.getPersistentResourceRuntimeDetail());
+                break;
+              }
+            case RUNTIMEDETAIL_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getPersistentResourceRuntimeDetailFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    runtimeDetailCase_ = 1;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int runtimeDetailCase_ = 0;
+        private java.lang.Object runtimeDetail_;
+
+        public RuntimeDetailCase getRuntimeDetailCase() {
+          return RuntimeDetailCase.forNumber(runtimeDetailCase_);
+        }
+
+        public Builder clearRuntimeDetail() {
+          runtimeDetailCase_ = 0;
+          runtimeDetail_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.Builder,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetailOrBuilder>
+            persistentResourceRuntimeDetailBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         *
+         * @return Whether the persistentResourceRuntimeDetail field is set.
+         */
+        @java.lang.Override
+        public boolean hasPersistentResourceRuntimeDetail() {
+          return runtimeDetailCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         *
+         * @return The persistentResourceRuntimeDetail.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail
+            getPersistentResourceRuntimeDetail() {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            if (runtimeDetailCase_ == 1) {
+              return (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail)
+                  runtimeDetail_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.getDefaultInstance();
+          } else {
+            if (runtimeDetailCase_ == 1) {
+              return persistentResourceRuntimeDetailBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        public Builder setPersistentResourceRuntimeDetail(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail
+                value) {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            runtimeDetail_ = value;
+            onChanged();
+          } else {
+            persistentResourceRuntimeDetailBuilder_.setMessage(value);
+          }
+          runtimeDetailCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        public Builder setPersistentResourceRuntimeDetail(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.Builder
+                builderForValue) {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            runtimeDetail_ = builderForValue.build();
+            onChanged();
+          } else {
+            persistentResourceRuntimeDetailBuilder_.setMessage(builderForValue.build());
+          }
+          runtimeDetailCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        public Builder mergePersistentResourceRuntimeDetail(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail
+                value) {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            if (runtimeDetailCase_ == 1
+                && runtimeDetail_
+                    != com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetail.getDefaultInstance()) {
+              runtimeDetail_ =
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                                  .PersistentResourceRuntimeDetail)
+                              runtimeDetail_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              runtimeDetail_ = value;
+            }
+            onChanged();
+          } else {
+            if (runtimeDetailCase_ == 1) {
+              persistentResourceRuntimeDetailBuilder_.mergeFrom(value);
+            } else {
+              persistentResourceRuntimeDetailBuilder_.setMessage(value);
+            }
+          }
+          runtimeDetailCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        public Builder clearPersistentResourceRuntimeDetail() {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            if (runtimeDetailCase_ == 1) {
+              runtimeDetailCase_ = 0;
+              runtimeDetail_ = null;
+              onChanged();
+            }
+          } else {
+            if (runtimeDetailCase_ == 1) {
+              runtimeDetailCase_ = 0;
+              runtimeDetail_ = null;
+            }
+            persistentResourceRuntimeDetailBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.Builder
+            getPersistentResourceRuntimeDetailBuilder() {
+          return getPersistentResourceRuntimeDetailFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetailOrBuilder
+            getPersistentResourceRuntimeDetailOrBuilder() {
+          if ((runtimeDetailCase_ == 1) && (persistentResourceRuntimeDetailBuilder_ != null)) {
+            return persistentResourceRuntimeDetailBuilder_.getMessageOrBuilder();
+          } else {
+            if (runtimeDetailCase_ == 1) {
+              return (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail)
+                  runtimeDetail_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                .PersistentResourceRuntimeDetail.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Persistent resource based runtime detail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.PersistentResourceRuntimeDetail persistent_resource_runtime_detail = 1;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetail.Builder,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                    .PersistentResourceRuntimeDetailOrBuilder>
+            getPersistentResourceRuntimeDetailFieldBuilder() {
+          if (persistentResourceRuntimeDetailBuilder_ == null) {
+            if (!(runtimeDetailCase_ == 1)) {
+              runtimeDetail_ =
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .PersistentResourceRuntimeDetail.getDefaultInstance();
+            }
+            persistentResourceRuntimeDetailBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetail,
+                    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetail.Builder,
+                    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                        .PersistentResourceRuntimeDetailOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                            .PersistentResourceRuntimeDetail)
+                        runtimeDetail_,
+                    getParentForChildren(),
+                    isClean());
+            runtimeDetail_ = null;
+          }
+          runtimeDetailCase_ = 1;
+          onChanged();
+          return persistentResourceRuntimeDetailBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime)
+      private static final com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .DefaultRuntime
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DefaultRuntime> PARSER =
+          new com.google.protobuf.AbstractParser<DefaultRuntime>() {
+            @java.lang.Override
+            public DefaultRuntime parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DefaultRuntime> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DefaultRuntime> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int PARAMETERS_FIELD_NUMBER = 1;
 
     private static final class ParametersDefaultEntryHolder {
@@ -1907,6 +4188,76 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int DEFAULT_RUNTIME_FIELD_NUMBER = 6;
+    private com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+        defaultRuntime_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the defaultRuntime field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultRuntime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultRuntime.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+        getDefaultRuntime() {
+      return defaultRuntime_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+              .getDefaultInstance()
+          : defaultRuntime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default runtime for the PipelineJob. If not provided,
+     * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+     * Job, please refer to
+     * https://cloud.google.com/vertex-ai/docs/training/overview.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder
+        getDefaultRuntimeOrBuilder() {
+      return defaultRuntime_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+              .getDefaultInstance()
+          : defaultRuntime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1936,6 +4287,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetInputArtifacts(), InputArtifactsDefaultEntryHolder.defaultEntry, 5);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getDefaultRuntime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1991,6 +4345,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, inputArtifacts__);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDefaultRuntime());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2012,6 +4369,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetParameterValues().equals(other.internalGetParameterValues())) return false;
       if (failurePolicy_ != other.failurePolicy_) return false;
       if (!internalGetInputArtifacts().equals(other.internalGetInputArtifacts())) return false;
+      if (hasDefaultRuntime() != other.hasDefaultRuntime()) return false;
+      if (hasDefaultRuntime()) {
+        if (!getDefaultRuntime().equals(other.getDefaultRuntime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2038,6 +4399,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetInputArtifacts().getMap().isEmpty()) {
         hash = (37 * hash) + INPUT_ARTIFACTS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetInputArtifacts().hashCode();
+      }
+      if (hasDefaultRuntime()) {
+        hash = (37 * hash) + DEFAULT_RUNTIME_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultRuntime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2201,10 +4566,19 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getDefaultRuntimeFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2216,6 +4590,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableParameterValues().clear();
         failurePolicy_ = 0;
         internalGetMutableInputArtifacts().clear();
+        defaultRuntime_ = null;
+        if (defaultRuntimeBuilder_ != null) {
+          defaultRuntimeBuilder_.dispose();
+          defaultRuntimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -2272,6 +4651,13 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           result.inputArtifacts_ =
               internalGetInputArtifacts().build(InputArtifactsDefaultEntryHolder.defaultEntry);
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.defaultRuntime_ =
+              defaultRuntimeBuilder_ == null ? defaultRuntime_ : defaultRuntimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2338,6 +4724,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         }
         internalGetMutableInputArtifacts().mergeFrom(other.internalGetInputArtifacts());
         bitField0_ |= 0x00000010;
+        if (other.hasDefaultRuntime()) {
+          mergeDefaultRuntime(other.getDefaultRuntime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2419,6 +4808,13 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getDefaultRuntimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3587,6 +5983,250 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         }
         return (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.Builder)
             entry;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          defaultRuntime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.Builder,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder>
+          defaultRuntimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the defaultRuntime field is set.
+       */
+      public boolean hasDefaultRuntime() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The defaultRuntime.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+          getDefaultRuntime() {
+        if (defaultRuntimeBuilder_ == null) {
+          return defaultRuntime_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                  .getDefaultInstance()
+              : defaultRuntime_;
+        } else {
+          return defaultRuntimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDefaultRuntime(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime value) {
+        if (defaultRuntimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaultRuntime_ = value;
+        } else {
+          defaultRuntimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDefaultRuntime(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.Builder
+              builderForValue) {
+        if (defaultRuntimeBuilder_ == null) {
+          defaultRuntime_ = builderForValue.build();
+        } else {
+          defaultRuntimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDefaultRuntime(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime value) {
+        if (defaultRuntimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && defaultRuntime_ != null
+              && defaultRuntime_
+                  != com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                      .getDefaultInstance()) {
+            getDefaultRuntimeBuilder().mergeFrom(value);
+          } else {
+            defaultRuntime_ = value;
+          }
+        } else {
+          defaultRuntimeBuilder_.mergeFrom(value);
+        }
+        if (defaultRuntime_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDefaultRuntime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        defaultRuntime_ = null;
+        if (defaultRuntimeBuilder_ != null) {
+          defaultRuntimeBuilder_.dispose();
+          defaultRuntimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.Builder
+          getDefaultRuntimeBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getDefaultRuntimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder
+          getDefaultRuntimeOrBuilder() {
+        if (defaultRuntimeBuilder_ != null) {
+          return defaultRuntimeBuilder_.getMessageOrBuilder();
+        } else {
+          return defaultRuntime_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                  .getDefaultInstance()
+              : defaultRuntime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default runtime for the PipelineJob. If not provided,
+       * Vertex Custom Job(on demand) is used as the runtime. For Vertex Custom
+       * Job, please refer to
+       * https://cloud.google.com/vertex-ai/docs/training/overview.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime default_runtime = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime.Builder,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntimeOrBuilder>
+          getDefaultRuntimeFieldBuilder() {
+        if (defaultRuntimeBuilder_ == null) {
+          defaultRuntimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.DefaultRuntime
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                      .DefaultRuntimeOrBuilder>(
+                  getDefaultRuntime(), getParentForChildren(), isClean());
+          defaultRuntime_ = null;
+        }
+        return defaultRuntimeBuilder_;
       }
 
       @java.lang.Override

@@ -516,7 +516,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the resource is BigQuery, the  dataset ID.
+   * If the resource is BigQuery, the dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -539,7 +539,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the resource is BigQuery, the  dataset ID.
+   * If the resource is BigQuery, the dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -567,7 +567,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the resource is BigQuery, the BigQuery table ID.
+   * The table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -590,7 +590,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the resource is BigQuery, the BigQuery table ID.
+   * The table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -618,7 +618,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the resource profiled.
+   * The Cloud Asset Inventory resource that was profiled in order to generate
+   * this TableDataProfile.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *
@@ -642,7 +643,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the resource profiled.
+   * The Cloud Asset Inventory resource that was profiled in order to generate
+   * this TableDataProfile.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *
@@ -3278,7 +3280,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the  dataset ID.
+     * If the resource is BigQuery, the dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3300,7 +3302,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the  dataset ID.
+     * If the resource is BigQuery, the dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3322,7 +3324,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the  dataset ID.
+     * If the resource is BigQuery, the dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3343,7 +3345,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the  dataset ID.
+     * If the resource is BigQuery, the dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3360,7 +3362,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the  dataset ID.
+     * If the resource is BigQuery, the dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3384,7 +3386,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the BigQuery table ID.
+     * The table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3406,7 +3408,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the BigQuery table ID.
+     * The table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3428,7 +3430,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the BigQuery table ID.
+     * The table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3449,7 +3451,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the BigQuery table ID.
+     * The table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3466,7 +3468,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the resource is BigQuery, the BigQuery table ID.
+     * The table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3490,7 +3492,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the resource profiled.
+     * The Cloud Asset Inventory resource that was profiled in order to generate
+     * this TableDataProfile.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3513,7 +3516,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the resource profiled.
+     * The Cloud Asset Inventory resource that was profiled in order to generate
+     * this TableDataProfile.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3536,7 +3540,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the resource profiled.
+     * The Cloud Asset Inventory resource that was profiled in order to generate
+     * this TableDataProfile.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3558,7 +3563,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the resource profiled.
+     * The Cloud Asset Inventory resource that was profiled in order to generate
+     * this TableDataProfile.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3576,7 +3582,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the resource profiled.
+     * The Cloud Asset Inventory resource that was profiled in order to generate
+     * this TableDataProfile.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *

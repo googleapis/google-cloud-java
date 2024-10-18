@@ -24,7 +24,7 @@ package com.google.cloud.networkmanagement.v1;
  *
  * <pre>
  * For display only. Metadata associated with a VPC firewall rule, an implied
- * VPC firewall rule, or a hierarchical firewall policy rule.
+ * VPC firewall rule, or a firewall policy rule.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkmanagement.v1.FirewallInfo}
@@ -48,6 +48,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     targetTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     policy_ = "";
+    policyUri_ = "";
     firewallRuleType_ = 0;
   }
 
@@ -411,8 +412,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The display name of the VPC firewall rule. This field is not applicable
-   * to hierarchical firewall policy rules.
+   * The display name of the firewall rule. This field might be empty for
+   * firewall policy rules.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -435,8 +436,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The display name of the VPC firewall rule. This field is not applicable
-   * to hierarchical firewall policy rules.
+   * The display name of the firewall rule. This field might be empty for
+   * firewall policy rules.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -464,8 +465,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI of the VPC firewall rule. This field is not applicable to
-   * implied firewall rules or hierarchical firewall policy rules.
+   * The URI of the firewall rule. This field is not applicable to implied
+   * VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -488,8 +489,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI of the VPC firewall rule. This field is not applicable to
-   * implied firewall rules or hierarchical firewall policy rules.
+   * The URI of the firewall rule. This field is not applicable to implied
+   * VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -692,7 +693,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -707,7 +708,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -722,7 +723,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -738,7 +739,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to hierarchical firewall policy rules.
+   * applicable to firewall policy rules.
    * </pre>
    *
    * <code>repeated string target_tags = 7;</code>
@@ -822,8 +823,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The hierarchical firewall policy that this rule is associated with.
-   * This field is not applicable to VPC firewall rules.
+   * The name of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
    * </pre>
    *
    * <code>string policy = 9;</code>
@@ -846,8 +848,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The hierarchical firewall policy that this rule is associated with.
-   * This field is not applicable to VPC firewall rules.
+   * The name of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
    * </pre>
    *
    * <code>string policy = 9;</code>
@@ -861,6 +864,61 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       policy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int POLICY_URI_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>string policy_uri = 11;</code>
+   *
+   * @return The policyUri.
+   */
+  @java.lang.Override
+  public java.lang.String getPolicyUri() {
+    java.lang.Object ref = policyUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policyUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>string policy_uri = 11;</code>
+   *
+   * @return The bytes for policyUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPolicyUriBytes() {
+    java.lang.Object ref = policyUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      policyUri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -955,6 +1013,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(10, firewallRuleType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, policyUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1007,6 +1068,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, firewallRuleType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, policyUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1032,6 +1096,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getTargetTagsList().equals(other.getTargetTagsList())) return false;
     if (!getTargetServiceAccountsList().equals(other.getTargetServiceAccountsList())) return false;
     if (!getPolicy().equals(other.getPolicy())) return false;
+    if (!getPolicyUri().equals(other.getPolicyUri())) return false;
     if (firewallRuleType_ != other.firewallRuleType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1066,6 +1131,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + POLICY_FIELD_NUMBER;
     hash = (53 * hash) + getPolicy().hashCode();
+    hash = (37 * hash) + POLICY_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicyUri().hashCode();
     hash = (37 * hash) + FIREWALL_RULE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + firewallRuleType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1173,7 +1240,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For display only. Metadata associated with a VPC firewall rule, an implied
-   * VPC firewall rule, or a hierarchical firewall policy rule.
+   * VPC firewall rule, or a firewall policy rule.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkmanagement.v1.FirewallInfo}
@@ -1217,6 +1284,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       targetTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       policy_ = "";
+      policyUri_ = "";
       firewallRuleType_ = 0;
       return this;
     }
@@ -1284,6 +1352,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
         result.policy_ = policy_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.policyUri_ = policyUri_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.firewallRuleType_ = firewallRuleType_;
       }
     }
@@ -1387,6 +1458,11 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getPolicyUri().isEmpty()) {
+        policyUri_ = other.policyUri_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       if (other.firewallRuleType_ != 0) {
         setFirewallRuleTypeValue(other.getFirewallRuleTypeValue());
       }
@@ -1475,9 +1551,15 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 firewallRuleType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
+            case 90:
+              {
+                policyUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1502,8 +1584,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name of the VPC firewall rule. This field is not applicable
-     * to hierarchical firewall policy rules.
+     * The display name of the firewall rule. This field might be empty for
+     * firewall policy rules.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1525,8 +1607,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name of the VPC firewall rule. This field is not applicable
-     * to hierarchical firewall policy rules.
+     * The display name of the firewall rule. This field might be empty for
+     * firewall policy rules.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1548,8 +1630,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name of the VPC firewall rule. This field is not applicable
-     * to hierarchical firewall policy rules.
+     * The display name of the firewall rule. This field might be empty for
+     * firewall policy rules.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1570,8 +1652,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name of the VPC firewall rule. This field is not applicable
-     * to hierarchical firewall policy rules.
+     * The display name of the firewall rule. This field might be empty for
+     * firewall policy rules.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1588,8 +1670,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name of the VPC firewall rule. This field is not applicable
-     * to hierarchical firewall policy rules.
+     * The display name of the firewall rule. This field might be empty for
+     * firewall policy rules.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1613,8 +1695,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of the VPC firewall rule. This field is not applicable to
-     * implied firewall rules or hierarchical firewall policy rules.
+     * The URI of the firewall rule. This field is not applicable to implied
+     * VPC firewall rules.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1636,8 +1718,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of the VPC firewall rule. This field is not applicable to
-     * implied firewall rules or hierarchical firewall policy rules.
+     * The URI of the firewall rule. This field is not applicable to implied
+     * VPC firewall rules.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1659,8 +1741,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of the VPC firewall rule. This field is not applicable to
-     * implied firewall rules or hierarchical firewall policy rules.
+     * The URI of the firewall rule. This field is not applicable to implied
+     * VPC firewall rules.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1681,8 +1763,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of the VPC firewall rule. This field is not applicable to
-     * implied firewall rules or hierarchical firewall policy rules.
+     * The URI of the firewall rule. This field is not applicable to implied
+     * VPC firewall rules.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1699,8 +1781,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI of the VPC firewall rule. This field is not applicable to
-     * implied firewall rules or hierarchical firewall policy rules.
+     * The URI of the firewall rule. This field is not applicable to implied
+     * VPC firewall rules.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2109,7 +2191,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2125,7 +2207,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2140,7 +2222,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2156,7 +2238,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2172,7 +2254,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2196,7 +2278,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2219,7 +2301,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2239,7 +2321,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2258,7 +2340,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The target tags defined by the VPC firewall rule. This field is not
-     * applicable to hierarchical firewall policy rules.
+     * applicable to firewall policy rules.
      * </pre>
      *
      * <code>repeated string target_tags = 7;</code>
@@ -2458,8 +2540,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hierarchical firewall policy that this rule is associated with.
-     * This field is not applicable to VPC firewall rules.
+     * The name of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
      * </pre>
      *
      * <code>string policy = 9;</code>
@@ -2481,8 +2564,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hierarchical firewall policy that this rule is associated with.
-     * This field is not applicable to VPC firewall rules.
+     * The name of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
      * </pre>
      *
      * <code>string policy = 9;</code>
@@ -2504,8 +2588,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hierarchical firewall policy that this rule is associated with.
-     * This field is not applicable to VPC firewall rules.
+     * The name of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
      * </pre>
      *
      * <code>string policy = 9;</code>
@@ -2526,8 +2611,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hierarchical firewall policy that this rule is associated with.
-     * This field is not applicable to VPC firewall rules.
+     * The name of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
      * </pre>
      *
      * <code>string policy = 9;</code>
@@ -2544,8 +2630,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hierarchical firewall policy that this rule is associated with.
-     * This field is not applicable to VPC firewall rules.
+     * The name of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
      * </pre>
      *
      * <code>string policy = 9;</code>
@@ -2560,6 +2647,122 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       policy_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object policyUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>string policy_uri = 11;</code>
+     *
+     * @return The policyUri.
+     */
+    public java.lang.String getPolicyUri() {
+      java.lang.Object ref = policyUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>string policy_uri = 11;</code>
+     *
+     * @return The bytes for policyUri.
+     */
+    public com.google.protobuf.ByteString getPolicyUriBytes() {
+      java.lang.Object ref = policyUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>string policy_uri = 11;</code>
+     *
+     * @param value The policyUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      policyUri_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>string policy_uri = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyUri() {
+      policyUri_ = getDefaultInstance().getPolicyUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>string policy_uri = 11;</code>
+     *
+     * @param value The bytes for policyUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      policyUri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2598,7 +2801,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setFirewallRuleTypeValue(int value) {
       firewallRuleType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2644,7 +2847,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       firewallRuleType_ = value.getNumber();
       onChanged();
       return this;
@@ -2663,7 +2866,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirewallRuleType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       firewallRuleType_ = 0;
       onChanged();
       return this;

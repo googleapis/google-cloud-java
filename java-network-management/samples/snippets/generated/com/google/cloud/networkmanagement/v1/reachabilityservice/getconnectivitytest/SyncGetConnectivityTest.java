@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1.samples;
 
 // [START networkmanagement_v1_generated_ReachabilityService_GetConnectivityTest_sync]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
+import com.google.cloud.networkmanagement.v1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1.GetConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 
@@ -35,7 +36,9 @@ public class SyncGetConnectivityTest {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       GetConnectivityTestRequest request =
-          GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          GetConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
     }
   }
