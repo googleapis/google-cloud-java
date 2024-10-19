@@ -1093,7 +1093,9 @@ public class DocumentProcessorServiceStubSettings
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.UNAVAILABLE,
+                  StatusCode.Code.RESOURCE_EXHAUSTED)));
       definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
@@ -1110,9 +1112,9 @@ public class DocumentProcessorServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(9.0)
+              .setMaxRetryDelay(Duration.ofMillis(90000L))
               .setInitialRpcTimeout(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(300000L))
@@ -1121,8 +1123,8 @@ public class DocumentProcessorServiceStubSettings
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.5)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(120000L))
               .setRpcTimeoutMultiplier(1.0)

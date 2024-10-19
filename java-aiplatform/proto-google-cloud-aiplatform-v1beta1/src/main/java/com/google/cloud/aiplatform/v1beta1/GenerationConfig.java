@@ -3711,6 +3711,41 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : routingConfig_;
   }
 
+  public static final int AUDIO_TIMESTAMP_FIELD_NUMBER = 20;
+  private boolean audioTimestamp_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the audioTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioTimestamp() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The audioTimestamp.
+   */
+  @java.lang.Override
+  public boolean getAudioTimestamp() {
+    return audioTimestamp_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3767,6 +3802,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(18, responseLogprobs_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(20, audioTimestamp_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3822,6 +3860,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, responseLogprobs_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, audioTimestamp_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3894,6 +3935,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig()) {
       if (!getRoutingConfig().equals(other.getRoutingConfig())) return false;
     }
+    if (hasAudioTimestamp() != other.hasAudioTimestamp()) return false;
+    if (hasAudioTimestamp()) {
+      if (getAudioTimestamp() != other.getAudioTimestamp()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3958,6 +4003,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig()) {
       hash = (37 * hash) + ROUTING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingConfig().hashCode();
+    }
+    if (hasAudioTimestamp()) {
+      hash = (37 * hash) + AUDIO_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAudioTimestamp());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4130,6 +4179,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigBuilder_.dispose();
         routingConfigBuilder_ = null;
       }
+      audioTimestamp_ = false;
       return this;
     }
 
@@ -4223,6 +4273,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         result.routingConfig_ =
             routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.audioTimestamp_ = audioTimestamp_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4323,6 +4377,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRoutingConfig()) {
         mergeRoutingConfig(other.getRoutingConfig());
+      }
+      if (other.hasAudioTimestamp()) {
+        setAudioTimestamp(other.getAudioTimestamp());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4435,6 +4492,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 144
+            case 160:
+              {
+                audioTimestamp_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5913,6 +5976,78 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfig_ = null;
       }
       return routingConfigBuilder_;
+    }
+
+    private boolean audioTimestamp_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamp will be included in the request to
+     * the model.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the audioTimestamp field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioTimestamp() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamp will be included in the request to
+     * the model.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The audioTimestamp.
+     */
+    @java.lang.Override
+    public boolean getAudioTimestamp() {
+      return audioTimestamp_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamp will be included in the request to
+     * the model.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The audioTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAudioTimestamp(boolean value) {
+
+      audioTimestamp_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamp will be included in the request to
+     * the model.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAudioTimestamp() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      audioTimestamp_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
