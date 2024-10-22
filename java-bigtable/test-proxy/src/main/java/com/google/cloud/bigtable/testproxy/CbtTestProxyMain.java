@@ -32,19 +32,7 @@ public final class CbtTestProxyMain {
       throw new IllegalArgumentException(String.format("Port %d is not > 0.", port));
     }
 
-    CbtTestProxy cbtTestProxy;
-
-    // If encryption is specified
-    boolean encrypted = Boolean.getBoolean("encrypted");
-    if (encrypted) {
-      String rootCertsPemPath = System.getProperty("root.certs.pem.path");
-      String sslTarget = System.getProperty("ssl.target");
-      String credentialJsonPath = System.getProperty("credential.json.path");
-      cbtTestProxy = CbtTestProxy.createEncrypted(rootCertsPemPath, sslTarget, credentialJsonPath);
-    } else {
-      cbtTestProxy = CbtTestProxy.createUnencrypted();
-    }
-
+    CbtTestProxy cbtTestProxy = CbtTestProxy.create();
     logger.info(String.format("Test proxy starting on %d", port));
     ServerBuilder.forPort(port).addService(cbtTestProxy).build().start().awaitTermination();
   }

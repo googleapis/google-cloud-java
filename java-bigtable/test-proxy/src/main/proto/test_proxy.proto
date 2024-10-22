@@ -38,6 +38,27 @@ enum OptionalFeatureConfig {
 
 // Request to test proxy service to create a client object.
 message CreateClientRequest {
+  message SecurityOptions {
+    // Access token to use for client credentials. If empty, the client will not
+    // use any call credentials. Certain implementations may require `use_ssl`
+    // to be set when using this.
+    string access_token = 1;
+
+    // Whether to use SSL channel credentials when connecting to the data
+    // endpoint.
+    bool use_ssl = 2;
+
+    // If using SSL channel credentials, override the SSL endpoint to match the
+    // host that is specified in the backend's certificate. Also sets the
+    // client's authority header value.
+    string ssl_endpoint_override = 3;
+
+    // PEM encoding of the server root certificates. If not set, the default
+    // root certs will be used instead. The default can be overridden via the
+    // GRPC_DEFAULT_SSL_ROOTS_FILE_PATH env var.
+    string ssl_root_certs_pem = 4;
+  }
+
   // A unique ID associated with the client object to be created.
   string client_id = 1;
 
@@ -66,6 +87,17 @@ message CreateClientRequest {
   // Optional config that dictates how the optional features should be enabled
   // during the client creation. Please check the enum type's docstring above.
   OptionalFeatureConfig optional_feature_config = 7;
+
+  // Options to allow connecting to backends with channel and/or call
+  // credentials. This is needed internally by Cloud Bigtable's own testing
+  // frameworks.It is not necessary to support these fields for client
+  // conformance testing.
+  //
+  // WARNING: this allows the proxy to connect to a real production
+  // CBT backend with the right options, however, the proxy itself is insecure
+  // so it is not recommended to use it with real credentials or outside testing
+  // contexts.
+  SecurityOptions security_options = 8;
 }
 
 // Response from test proxy service for CreateClientRequest.
