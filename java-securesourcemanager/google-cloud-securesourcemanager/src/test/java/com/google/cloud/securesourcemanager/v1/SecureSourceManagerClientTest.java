@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -1103,6 +1104,493 @@ public class SecureSourceManagerClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecureSourceManager.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    BranchRule branchRule = BranchRule.newBuilder().build();
+    String branchRuleId = "branchRuleId-1052663431";
+
+    BranchRule actualResponse =
+        client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBranchRuleRequest actualRequest = ((CreateBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(branchRule, actualRequest.getBranchRule());
+    Assert.assertEquals(branchRuleId, actualRequest.getBranchRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBranchRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      BranchRule branchRule = BranchRule.newBuilder().build();
+      String branchRuleId = "branchRuleId-1052663431";
+      client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createBranchRuleTest2() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecureSourceManager.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    BranchRule branchRule = BranchRule.newBuilder().build();
+    String branchRuleId = "branchRuleId-1052663431";
+
+    BranchRule actualResponse =
+        client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBranchRuleRequest actualRequest = ((CreateBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(branchRule, actualRequest.getBranchRule());
+    Assert.assertEquals(branchRuleId, actualRequest.getBranchRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBranchRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      BranchRule branchRule = BranchRule.newBuilder().build();
+      String branchRuleId = "branchRuleId-1052663431";
+      client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listBranchRulesTest() throws Exception {
+    BranchRule responsesElement = BranchRule.newBuilder().build();
+    ListBranchRulesResponse expectedResponse =
+        ListBranchRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranchRules(Arrays.asList(responsesElement))
+            .build();
+    mockSecureSourceManager.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListBranchRulesPagedResponse pagedListResponse = client.listBranchRules(parent);
+
+    List<BranchRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBranchRulesRequest actualRequest = ((ListBranchRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBranchRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listBranchRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBranchRulesTest2() throws Exception {
+    BranchRule responsesElement = BranchRule.newBuilder().build();
+    ListBranchRulesResponse expectedResponse =
+        ListBranchRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranchRules(Arrays.asList(responsesElement))
+            .build();
+    mockSecureSourceManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBranchRulesPagedResponse pagedListResponse = client.listBranchRules(parent);
+
+    List<BranchRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBranchRulesRequest actualRequest = ((ListBranchRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBranchRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBranchRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    mockSecureSourceManager.addResponse(expectedResponse);
+
+    BranchRuleName name =
+        BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+
+    BranchRule actualResponse = client.getBranchRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBranchRuleRequest actualRequest = ((GetBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBranchRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      BranchRuleName name =
+          BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+      client.getBranchRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBranchRuleTest2() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    mockSecureSourceManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BranchRule actualResponse = client.getBranchRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBranchRuleRequest actualRequest = ((GetBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBranchRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBranchRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecureSourceManager.addResponse(resultOperation);
+
+    BranchRule branchRule = BranchRule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BranchRule actualResponse = client.updateBranchRuleAsync(branchRule, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateBranchRuleRequest actualRequest = ((UpdateBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(branchRule, actualRequest.getBranchRule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateBranchRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      BranchRule branchRule = BranchRule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBranchRuleAsync(branchRule, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBranchRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecureSourceManager.addResponse(resultOperation);
+
+    BranchRuleName name =
+        BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+
+    client.deleteBranchRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBranchRuleRequest actualRequest = ((DeleteBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBranchRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      BranchRuleName name =
+          BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+      client.deleteBranchRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBranchRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSecureSourceManager.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteBranchRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBranchRuleRequest actualRequest = ((DeleteBranchRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBranchRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteBranchRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

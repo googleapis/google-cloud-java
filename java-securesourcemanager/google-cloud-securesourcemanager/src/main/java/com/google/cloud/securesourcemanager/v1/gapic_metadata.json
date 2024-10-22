@@ -10,17 +10,26 @@
         "grpc": {
           "libraryClient": "SecureSourceManagerClient",
           "rpcs": {
+            "CreateBranchRule": {
+              "methods": ["createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleOperationCallable", "createBranchRuleCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },
             "CreateRepository": {
               "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
             },
+            "DeleteBranchRule": {
+              "methods": ["deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleOperationCallable", "deleteBranchRuleCallable"]
+            },
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
             },
             "DeleteRepository": {
               "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
+            },
+            "GetBranchRule": {
+              "methods": ["getBranchRule", "getBranchRule", "getBranchRule", "getBranchRuleCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -36,6 +45,9 @@
             },
             "GetRepository": {
               "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
+            },
+            "ListBranchRules": {
+              "methods": ["listBranchRules", "listBranchRules", "listBranchRules", "listBranchRulesPagedCallable", "listBranchRulesCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
@@ -57,6 +69,9 @@
             },
             "TestIamPermissionsRepo": {
               "methods": ["testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepoCallable"]
+            },
+            "UpdateBranchRule": {
+              "methods": ["updateBranchRuleAsync", "updateBranchRuleAsync", "updateBranchRuleOperationCallable", "updateBranchRuleCallable"]
             }
           }
         }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -1197,6 +1198,569 @@ public class SecureSourceManagerClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    BranchRule branchRule = BranchRule.newBuilder().build();
+    String branchRuleId = "branchRuleId-1052663431";
+
+    BranchRule actualResponse =
+        client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBranchRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      BranchRule branchRule = BranchRule.newBuilder().build();
+      String branchRuleId = "branchRuleId-1052663431";
+      client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createBranchRuleTest2() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+    BranchRule branchRule = BranchRule.newBuilder().build();
+    String branchRuleId = "branchRuleId-1052663431";
+
+    BranchRule actualResponse =
+        client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBranchRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+      BranchRule branchRule = BranchRule.newBuilder().build();
+      String branchRuleId = "branchRuleId-1052663431";
+      client.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBranchRulesTest() throws Exception {
+    BranchRule responsesElement = BranchRule.newBuilder().build();
+    ListBranchRulesResponse expectedResponse =
+        ListBranchRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranchRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListBranchRulesPagedResponse pagedListResponse = client.listBranchRules(parent);
+
+    List<BranchRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBranchRulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listBranchRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBranchRulesTest2() throws Exception {
+    BranchRule responsesElement = BranchRule.newBuilder().build();
+    ListBranchRulesResponse expectedResponse =
+        ListBranchRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranchRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+
+    ListBranchRulesPagedResponse pagedListResponse = client.listBranchRules(parent);
+
+    List<BranchRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBranchRulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+      client.listBranchRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BranchRuleName name =
+        BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+
+    BranchRule actualResponse = client.getBranchRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBranchRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BranchRuleName name =
+          BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+      client.getBranchRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBranchRuleTest2() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9449/locations/location-9449/repositories/repositorie-9449/branchRules/branchRule-9449";
+
+    BranchRule actualResponse = client.getBranchRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBranchRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9449/locations/location-9449/repositories/repositorie-9449/branchRules/branchRule-9449";
+      client.getBranchRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBranchRuleTest() throws Exception {
+    BranchRule expectedResponse =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BranchRule branchRule =
+        BranchRule.newBuilder()
+            .setName(
+                BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setIncludePattern("includePattern-1431887416")
+            .setDisabled(true)
+            .setRequirePullRequest(true)
+            .setMinimumReviewsCount(672799098)
+            .setMinimumApprovalsCount(-579210129)
+            .setRequireCommentsResolved(true)
+            .setAllowStaleReviews(true)
+            .setRequireLinearHistory(true)
+            .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BranchRule actualResponse = client.updateBranchRuleAsync(branchRule, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBranchRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BranchRule branchRule =
+          BranchRule.newBuilder()
+              .setName(
+                  BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+                      .toString())
+              .setUid("uid115792")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setEtag("etag3123477")
+              .setIncludePattern("includePattern-1431887416")
+              .setDisabled(true)
+              .setRequirePullRequest(true)
+              .setMinimumReviewsCount(672799098)
+              .setMinimumApprovalsCount(-579210129)
+              .setRequireCommentsResolved(true)
+              .setAllowStaleReviews(true)
+              .setRequireLinearHistory(true)
+              .addAllRequiredStatusChecks(new ArrayList<BranchRule.Check>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBranchRuleAsync(branchRule, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteBranchRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BranchRuleName name =
+        BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+
+    client.deleteBranchRuleAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBranchRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BranchRuleName name =
+          BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+      client.deleteBranchRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteBranchRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBranchRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9449/locations/location-9449/repositories/repositorie-9449/branchRules/branchRule-9449";
+
+    client.deleteBranchRuleAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBranchRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9449/locations/location-9449/repositories/repositorie-9449/branchRules/branchRule-9449";
+      client.deleteBranchRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

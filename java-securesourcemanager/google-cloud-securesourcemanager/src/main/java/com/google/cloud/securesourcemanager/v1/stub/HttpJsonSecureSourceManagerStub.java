@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -40,19 +41,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.securesourcemanager.v1.BranchRule;
+import com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.CreateInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.GetInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.GetRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.Instance;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse;
 import com.google.cloud.securesourcemanager.v1.ListInstancesRequest;
 import com.google.cloud.securesourcemanager.v1.ListInstancesResponse;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse;
 import com.google.cloud.securesourcemanager.v1.OperationMetadata;
 import com.google.cloud.securesourcemanager.v1.Repository;
+import com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -80,6 +88,7 @@ import javax.annotation.Generated;
 public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(BranchRule.getDescriptor())
           .add(Empty.getDescriptor())
           .add(Instance.getDescriptor())
           .add(Repository.getDescriptor())
@@ -511,6 +520,206 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateBranchRuleRequest, Operation>
+      createBranchRuleMethodDescriptor =
+          ApiMethodDescriptor.<CreateBranchRuleRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/CreateBranchRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBranchRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/branchRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "branchRuleId", request.getBranchRuleId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("branchRule", request.getBranchRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBranchRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListBranchRulesRequest, ListBranchRulesResponse>
+      listBranchRulesMethodDescriptor =
+          ApiMethodDescriptor.<ListBranchRulesRequest, ListBranchRulesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/ListBranchRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBranchRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/branchRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBranchRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBranchRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBranchRulesResponse>newBuilder()
+                      .setDefaultInstance(ListBranchRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBranchRuleRequest, BranchRule>
+      getBranchRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetBranchRuleRequest, BranchRule>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/GetBranchRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBranchRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/branchRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BranchRule>newBuilder()
+                      .setDefaultInstance(BranchRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBranchRuleRequest, Operation>
+      updateBranchRuleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBranchRuleRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/UpdateBranchRule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBranchRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{branchRule.name=projects/*/locations/*/repositories/*/branchRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "branchRule.name", request.getBranchRule().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("branchRule", request.getBranchRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBranchRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBranchRuleRequest, Operation>
+      deleteBranchRuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBranchRuleRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/DeleteBranchRule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBranchRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/branchRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBranchRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBranchRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -712,6 +921,20 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyRepoCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoCallable;
+  private final UnaryCallable<CreateBranchRuleRequest, Operation> createBranchRuleCallable;
+  private final OperationCallable<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationCallable;
+  private final UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse>
+      listBranchRulesCallable;
+  private final UnaryCallable<ListBranchRulesRequest, ListBranchRulesPagedResponse>
+      listBranchRulesPagedCallable;
+  private final UnaryCallable<GetBranchRuleRequest, BranchRule> getBranchRuleCallable;
+  private final UnaryCallable<UpdateBranchRuleRequest, Operation> updateBranchRuleCallable;
+  private final OperationCallable<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationCallable;
+  private final UnaryCallable<DeleteBranchRuleRequest, Operation> deleteBranchRuleCallable;
+  private final OperationCallable<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -917,6 +1140,63 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleTransportSettings =
+        HttpJsonCallSettings.<CreateBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBranchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListBranchRulesRequest, ListBranchRulesResponse>
+        listBranchRulesTransportSettings =
+            HttpJsonCallSettings.<ListBranchRulesRequest, ListBranchRulesResponse>newBuilder()
+                .setMethodDescriptor(listBranchRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleTransportSettings =
+        HttpJsonCallSettings.<GetBranchRuleRequest, BranchRule>newBuilder()
+            .setMethodDescriptor(getBranchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleTransportSettings =
+        HttpJsonCallSettings.<UpdateBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBranchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "branch_rule.name", String.valueOf(request.getBranchRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBranchRuleRequest, Operation> deleteBranchRuleTransportSettings =
+        HttpJsonCallSettings.<DeleteBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBranchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1040,6 +1320,42 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
             testIamPermissionsRepoTransportSettings,
             settings.testIamPermissionsRepoSettings(),
             clientContext);
+    this.createBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            createBranchRuleTransportSettings, settings.createBranchRuleSettings(), clientContext);
+    this.createBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createBranchRuleTransportSettings,
+            settings.createBranchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBranchRulesCallable =
+        callableFactory.createUnaryCallable(
+            listBranchRulesTransportSettings, settings.listBranchRulesSettings(), clientContext);
+    this.listBranchRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listBranchRulesTransportSettings, settings.listBranchRulesSettings(), clientContext);
+    this.getBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            getBranchRuleTransportSettings, settings.getBranchRuleSettings(), clientContext);
+    this.updateBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateBranchRuleTransportSettings, settings.updateBranchRuleSettings(), clientContext);
+    this.updateBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBranchRuleTransportSettings,
+            settings.updateBranchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteBranchRuleTransportSettings, settings.deleteBranchRuleSettings(), clientContext);
+    this.deleteBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBranchRuleTransportSettings,
+            settings.deleteBranchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1079,6 +1395,11 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
     methodDescriptors.add(getIamPolicyRepoMethodDescriptor);
     methodDescriptors.add(setIamPolicyRepoMethodDescriptor);
     methodDescriptors.add(testIamPermissionsRepoMethodDescriptor);
+    methodDescriptors.add(createBranchRuleMethodDescriptor);
+    methodDescriptors.add(listBranchRulesMethodDescriptor);
+    methodDescriptors.add(getBranchRuleMethodDescriptor);
+    methodDescriptors.add(updateBranchRuleMethodDescriptor);
+    methodDescriptors.add(deleteBranchRuleMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1182,6 +1503,55 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoCallable() {
     return testIamPermissionsRepoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBranchRuleRequest, Operation> createBranchRuleCallable() {
+    return createBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationCallable() {
+    return createBranchRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse> listBranchRulesCallable() {
+    return listBranchRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBranchRulesRequest, ListBranchRulesPagedResponse>
+      listBranchRulesPagedCallable() {
+    return listBranchRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBranchRuleRequest, BranchRule> getBranchRuleCallable() {
+    return getBranchRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBranchRuleRequest, Operation> updateBranchRuleCallable() {
+    return updateBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationCallable() {
+    return updateBranchRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBranchRuleRequest, Operation> deleteBranchRuleCallable() {
+    return deleteBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationCallable() {
+    return deleteBranchRuleOperationCallable;
   }
 
   @Override
