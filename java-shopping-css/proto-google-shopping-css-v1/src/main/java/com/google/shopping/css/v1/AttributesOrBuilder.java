@@ -1948,4 +1948,85 @@ public interface AttributesOrBuilder
    * @return The bytes for customLabel4.
    */
   com.google.protobuf.ByteString getCustomLabel4Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return Whether the headlineOfferInstallment field is set.
+   */
+  boolean hasHeadlineOfferInstallment();
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return The headlineOfferInstallment.
+   */
+  com.google.shopping.css.v1.HeadlineOfferInstallment getHeadlineOfferInstallment();
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   */
+  com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder
+      getHeadlineOfferInstallmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return Whether the headlineOfferSubscriptionCost field is set.
+   */
+  boolean hasHeadlineOfferSubscriptionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return The headlineOfferSubscriptionCost.
+   */
+  com.google.shopping.css.v1.HeadlineOfferSubscriptionCost getHeadlineOfferSubscriptionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   */
+  com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder
+      getHeadlineOfferSubscriptionCostOrBuilder();
 }
