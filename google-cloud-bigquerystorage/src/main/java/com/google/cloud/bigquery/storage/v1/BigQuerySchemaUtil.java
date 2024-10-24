@@ -15,7 +15,9 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import com.google.protobuf.DescriptorProtos.FieldOptions;
 import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.protobuf.ExtensionLite;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
@@ -74,8 +76,12 @@ public class BigQuerySchemaUtil {
    * @return columnName annotation if present, otherwise return the field name.
    */
   public static String getFieldName(FieldDescriptor fieldDescriptor) {
-    return fieldDescriptor.getOptions().hasExtension(AnnotationsProto.columnName)
-        ? fieldDescriptor.getOptions().getExtension(AnnotationsProto.columnName)
+    return fieldDescriptor
+            .getOptions()
+            .hasExtension((ExtensionLite<FieldOptions, String>) AnnotationsProto.columnName)
+        ? fieldDescriptor
+            .getOptions()
+            .getExtension((ExtensionLite<FieldOptions, String>) AnnotationsProto.columnName)
         : fieldDescriptor.getName();
   }
 }
