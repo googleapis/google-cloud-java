@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.134.0](https://github.com/googleapis/java-pubsub/compare/v1.133.1...v1.134.0) (2024-10-23)
+
+
+### Features
+
+* Add IngestionFailureEvent to the external proto ([6c67798](https://github.com/googleapis/java-pubsub/commit/6c67798c6b7442d77eb30fbba874344f32a926b4))
+* Track batch size using serialized size of PublishRequest ([#2113](https://github.com/googleapis/java-pubsub/issues/2113)) ([be78e64](https://github.com/googleapis/java-pubsub/commit/be78e64f9fdfc9ddf0790189311fac673754e219))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.43.1 ([#2202](https://github.com/googleapis/java-pubsub/issues/2202)) ([acaf5f2](https://github.com/googleapis/java-pubsub/commit/acaf5f2e3686a939d4b972c73a4d039142f753df))
+* Update dependency com.google.cloud:google-cloud-core to v2.46.0 ([#2238](https://github.com/googleapis/java-pubsub/issues/2238)) ([dc06d54](https://github.com/googleapis/java-pubsub/commit/dc06d5456ab6fe8d94b7b845ca9159391949517f))
+* Update dependency com.google.cloud:google-cloud-storage to v2.43.2 ([#2226](https://github.com/googleapis/java-pubsub/issues/2226)) ([eb87c04](https://github.com/googleapis/java-pubsub/commit/eb87c04619f7bdaf59ce2b562a96b8c25d3c8196))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.33.0 ([#2225](https://github.com/googleapis/java-pubsub/issues/2225)) ([cc1b072](https://github.com/googleapis/java-pubsub/commit/cc1b0726009524ddee3c2ce7f1446608dd3bc752))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.28.3 ([#2237](https://github.com/googleapis/java-pubsub/issues/2237)) ([75abe83](https://github.com/googleapis/java-pubsub/commit/75abe83a9b14c2e5cc3f136ff97b5340bfa904db))
+* Update dependency org.apache.avro:avro to v1.11.4 [security] ([#2223](https://github.com/googleapis/java-pubsub/issues/2223)) ([31f276b](https://github.com/googleapis/java-pubsub/commit/31f276b10a96c53ecbd828972a9e3457c0c7c700))
+* Update sdk platform java dependencies ([#2239](https://github.com/googleapis/java-pubsub/issues/2239)) ([8f4f855](https://github.com/googleapis/java-pubsub/commit/8f4f8556414aaef731a7226dcbffe59d91819775))
+
+
+### Documentation
+
+* Add OpenTelemetry samples ([#2208](https://github.com/googleapis/java-pubsub/issues/2208)) ([c447fe5](https://github.com/googleapis/java-pubsub/commit/c447fe500ba48ba4fde27d97f10ef7664d09363b))
+
 ## [1.133.1](https://github.com/googleapis/java-pubsub/compare/v1.133.0...v1.133.1) (2024-10-07)
 
 
