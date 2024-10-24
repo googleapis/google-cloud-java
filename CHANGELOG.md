@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.10.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.9.3...v3.10.0) (2024-10-23)
+
+
+### Features
+
+* Add experimental ArrowData type and arrow_data field within AppendRowsRequest ([18faebd](https://github.com/googleapis/java-bigquerystorage/commit/18faebd3eccf317a67306ebaebc987367fca3627))
+
+
+### Bug Fixes
+
+* Add stream name to every request when connection is created during multiplexing ([#2699](https://github.com/googleapis/java-bigquerystorage/issues/2699)) ([c53a77c](https://github.com/googleapis/java-bigquerystorage/commit/c53a77c6e0d2d1a639033db98bacccedb3a226f7))
+
+
+### Dependencies
+
+* Update actions/checkout digest to eef6144 ([#2687](https://github.com/googleapis/java-bigquerystorage/issues/2687)) ([f3c5a7a](https://github.com/googleapis/java-bigquerystorage/commit/f3c5a7af4316ca5b3656aaa7c65bce12c5932503))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.43.1 ([#2701](https://github.com/googleapis/java-bigquerystorage/issues/2701)) ([6ebed6d](https://github.com/googleapis/java-bigquerystorage/commit/6ebed6d7b450879ff61e4c3222c24709e2809cf9))
+* Update dependency com.google.cloud.opentelemetry:exporter-metrics to v0.33.0 ([#2696](https://github.com/googleapis/java-bigquerystorage/issues/2696)) ([19398db](https://github.com/googleapis/java-bigquerystorage/commit/19398db70f07ed7b2fe52e7aed221e481bee089d))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.43.0 ([#2711](https://github.com/googleapis/java-bigquerystorage/issues/2711)) ([46e3cb0](https://github.com/googleapis/java-bigquerystorage/commit/46e3cb022142bdae8223028549b6d08050895f3c))
+* Update dependency io.opentelemetry:opentelemetry-exporter-logging to v1.43.0 ([#2712](https://github.com/googleapis/java-bigquerystorage/issues/2712)) ([b466e28](https://github.com/googleapis/java-bigquerystorage/commit/b466e287caa61a92fe6d70a9c115c0b596f436b4))
+* Update dependency org.apache.avro:avro to v1.11.4 [security] ([#2694](https://github.com/googleapis/java-bigquerystorage/issues/2694)) ([b0498ba](https://github.com/googleapis/java-bigquerystorage/commit/b0498ba15ef87a703801f4c56867ab744f7c3902))
+* Update sdk-platform-java dependencies ([#2727](https://github.com/googleapis/java-bigquerystorage/issues/2727)) ([dfa7555](https://github.com/googleapis/java-bigquerystorage/commit/dfa75555a52506804debb06b442a6d13dcffc6f2))
+
 ## [3.9.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.9.2...v3.9.3) (2024-10-07)
 
 
