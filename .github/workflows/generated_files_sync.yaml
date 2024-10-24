@@ -36,7 +36,7 @@ jobs:
           -v "$(pwd):/workspace" \
           --entrypoint python \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          /src/cli/generate_monorepo_root_pom.py \
+          /src/library_generation/cli/generate_monorepo_root_pom.py \
           generate \
           --repository-path=/workspace
     - name: Fail if there's any difference
@@ -56,7 +56,7 @@ jobs:
           -v "$(pwd):/workspace" \
           --entrypoint python \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          /src/cli/generate_monorepo_gapic_bom.py \
+          /src/library_generation/cli/generate_monorepo_gapic_bom.py \
           generate \
           --repository-path=/workspace \
           --versions-file=/workspace/versions.txt
