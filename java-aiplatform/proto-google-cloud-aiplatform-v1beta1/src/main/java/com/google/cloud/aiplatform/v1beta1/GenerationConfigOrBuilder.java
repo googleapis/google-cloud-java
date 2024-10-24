@@ -462,4 +462,31 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfigOrBuilder
       getRoutingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the audioTimestamp field is set.
+   */
+  boolean hasAudioTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The audioTimestamp.
+   */
+  boolean getAudioTimestamp();
 }

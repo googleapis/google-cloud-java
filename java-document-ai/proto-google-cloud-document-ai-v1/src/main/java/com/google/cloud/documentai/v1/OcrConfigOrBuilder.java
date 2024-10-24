@@ -189,7 +189,7 @@ public interface OcrConfigOrBuilder
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1/document_io.proto;l=165
+   *     google/cloud/documentai/v1/document_io.proto;l=166
    * @return The computeStyleInfo.
    */
   @java.lang.Deprecated

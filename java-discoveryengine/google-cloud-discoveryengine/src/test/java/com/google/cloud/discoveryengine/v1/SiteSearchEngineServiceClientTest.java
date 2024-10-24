@@ -834,6 +834,7 @@ public class SiteSearchEngineServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .addAllUris(new ArrayList<String>())
+            .setSiteCredential("siteCredential-751929602")
             .build();
 
     RecrawlUrisResponse actualResponse = client.recrawlUrisAsync(request).get();
@@ -845,6 +846,7 @@ public class SiteSearchEngineServiceClientTest {
 
     Assert.assertEquals(request.getSiteSearchEngine(), actualRequest.getSiteSearchEngine());
     Assert.assertEquals(request.getUrisList(), actualRequest.getUrisList());
+    Assert.assertEquals(request.getSiteCredential(), actualRequest.getSiteCredential());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -864,6 +866,7 @@ public class SiteSearchEngineServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       client.recrawlUrisAsync(request).get();
       Assert.fail("No exception raised");

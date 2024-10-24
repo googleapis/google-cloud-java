@@ -43,6 +43,9 @@
             "DeleteUser": {
               "methods": ["deleteUser", "deleteUser", "deleteUser", "deleteUserCallable"]
             },
+            "ExecuteSql": {
+              "methods": ["executeSql", "executeSql", "executeSql", "executeSqlCallable"]
+            },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
             },
@@ -76,6 +79,9 @@
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
             },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
@@ -96,6 +102,9 @@
             },
             "RestoreCluster": {
               "methods": ["restoreClusterAsync", "restoreClusterOperationCallable", "restoreClusterCallable"]
+            },
+            "SwitchoverCluster": {
+              "methods": ["switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterOperationCallable", "switchoverClusterCallable"]
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]

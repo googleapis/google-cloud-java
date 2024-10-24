@@ -190,7 +190,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1275
+   *     google/container/v1/cluster_service.proto;l=1309
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1275
+   *     google/container/v1/cluster_service.proto;l=1309
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -728,6 +728,60 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : statefulHaConfig_;
   }
 
+  public static final int PARALLELSTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER = 19;
+  private com.google.container.v1.ParallelstoreCsiDriverConfig parallelstoreCsiDriverConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return Whether the parallelstoreCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasParallelstoreCsiDriverConfig() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return The parallelstoreCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ParallelstoreCsiDriverConfig getParallelstoreCsiDriverConfig() {
+    return parallelstoreCsiDriverConfig_ == null
+        ? com.google.container.v1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+        : parallelstoreCsiDriverConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder
+      getParallelstoreCsiDriverConfigOrBuilder() {
+    return parallelstoreCsiDriverConfig_ == null
+        ? com.google.container.v1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+        : parallelstoreCsiDriverConfig_;
+  }
+
   public static final int RAY_OPERATOR_CONFIG_FIELD_NUMBER = 21;
   private com.google.container.v1.RayOperatorConfig rayOperatorConfig_;
   /**
@@ -745,7 +799,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRayOperatorConfig() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -835,6 +889,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(18, getStatefulHaConfig());
     }
     if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(19, getParallelstoreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(21, getRayOperatorConfig());
     }
     getUnknownFields().writeTo(output);
@@ -892,6 +949,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getStatefulHaConfig());
     }
     if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getParallelstoreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getRayOperatorConfig());
     }
     size += getUnknownFields().getSerializedSize();
@@ -960,6 +1022,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasStatefulHaConfig()) {
       if (!getStatefulHaConfig().equals(other.getStatefulHaConfig())) return false;
     }
+    if (hasParallelstoreCsiDriverConfig() != other.hasParallelstoreCsiDriverConfig()) return false;
+    if (hasParallelstoreCsiDriverConfig()) {
+      if (!getParallelstoreCsiDriverConfig().equals(other.getParallelstoreCsiDriverConfig()))
+        return false;
+    }
     if (hasRayOperatorConfig() != other.hasRayOperatorConfig()) return false;
     if (hasRayOperatorConfig()) {
       if (!getRayOperatorConfig().equals(other.getRayOperatorConfig())) return false;
@@ -1022,6 +1089,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasStatefulHaConfig()) {
       hash = (37 * hash) + STATEFUL_HA_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStatefulHaConfig().hashCode();
+    }
+    if (hasParallelstoreCsiDriverConfig()) {
+      hash = (37 * hash) + PARALLELSTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getParallelstoreCsiDriverConfig().hashCode();
     }
     if (hasRayOperatorConfig()) {
       hash = (37 * hash) + RAY_OPERATOR_CONFIG_FIELD_NUMBER;
@@ -1179,6 +1250,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getGkeBackupAgentConfigFieldBuilder();
         getGcsFuseCsiDriverConfigFieldBuilder();
         getStatefulHaConfigFieldBuilder();
+        getParallelstoreCsiDriverConfigFieldBuilder();
         getRayOperatorConfigFieldBuilder();
       }
     }
@@ -1246,6 +1318,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (statefulHaConfigBuilder_ != null) {
         statefulHaConfigBuilder_.dispose();
         statefulHaConfigBuilder_ = null;
+      }
+      parallelstoreCsiDriverConfig_ = null;
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        parallelstoreCsiDriverConfigBuilder_.dispose();
+        parallelstoreCsiDriverConfigBuilder_ = null;
       }
       rayOperatorConfig_ = null;
       if (rayOperatorConfigBuilder_ != null) {
@@ -1367,11 +1444,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.parallelstoreCsiDriverConfig_ =
+            parallelstoreCsiDriverConfigBuilder_ == null
+                ? parallelstoreCsiDriverConfig_
+                : parallelstoreCsiDriverConfigBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.rayOperatorConfig_ =
             rayOperatorConfigBuilder_ == null
                 ? rayOperatorConfig_
                 : rayOperatorConfigBuilder_.build();
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1456,6 +1540,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatefulHaConfig()) {
         mergeStatefulHaConfig(other.getStatefulHaConfig());
+      }
+      if (other.hasParallelstoreCsiDriverConfig()) {
+        mergeParallelstoreCsiDriverConfig(other.getParallelstoreCsiDriverConfig());
       }
       if (other.hasRayOperatorConfig()) {
         mergeRayOperatorConfig(other.getRayOperatorConfig());
@@ -1569,11 +1656,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getParallelstoreCsiDriverConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 154
             case 170:
               {
                 input.readMessage(
                     getRayOperatorConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 170
             default:
@@ -2021,7 +2115,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1275
+     *     google/container/v1/cluster_service.proto;l=1309
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2043,7 +2137,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1275
+     *     google/container/v1/cluster_service.proto;l=1309
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -4020,6 +4114,206 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return statefulHaConfigBuilder_;
     }
 
+    private com.google.container.v1.ParallelstoreCsiDriverConfig parallelstoreCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ParallelstoreCsiDriverConfig,
+            com.google.container.v1.ParallelstoreCsiDriverConfig.Builder,
+            com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder>
+        parallelstoreCsiDriverConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     *
+     * @return Whether the parallelstoreCsiDriverConfig field is set.
+     */
+    public boolean hasParallelstoreCsiDriverConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     *
+     * @return The parallelstoreCsiDriverConfig.
+     */
+    public com.google.container.v1.ParallelstoreCsiDriverConfig getParallelstoreCsiDriverConfig() {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        return parallelstoreCsiDriverConfig_ == null
+            ? com.google.container.v1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+            : parallelstoreCsiDriverConfig_;
+      } else {
+        return parallelstoreCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder setParallelstoreCsiDriverConfig(
+        com.google.container.v1.ParallelstoreCsiDriverConfig value) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parallelstoreCsiDriverConfig_ = value;
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder setParallelstoreCsiDriverConfig(
+        com.google.container.v1.ParallelstoreCsiDriverConfig.Builder builderForValue) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        parallelstoreCsiDriverConfig_ = builderForValue.build();
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder mergeParallelstoreCsiDriverConfig(
+        com.google.container.v1.ParallelstoreCsiDriverConfig value) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && parallelstoreCsiDriverConfig_ != null
+            && parallelstoreCsiDriverConfig_
+                != com.google.container.v1.ParallelstoreCsiDriverConfig.getDefaultInstance()) {
+          getParallelstoreCsiDriverConfigBuilder().mergeFrom(value);
+        } else {
+          parallelstoreCsiDriverConfig_ = value;
+        }
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+      if (parallelstoreCsiDriverConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder clearParallelstoreCsiDriverConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      parallelstoreCsiDriverConfig_ = null;
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        parallelstoreCsiDriverConfigBuilder_.dispose();
+        parallelstoreCsiDriverConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public com.google.container.v1.ParallelstoreCsiDriverConfig.Builder
+        getParallelstoreCsiDriverConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getParallelstoreCsiDriverConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder
+        getParallelstoreCsiDriverConfigOrBuilder() {
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        return parallelstoreCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return parallelstoreCsiDriverConfig_ == null
+            ? com.google.container.v1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+            : parallelstoreCsiDriverConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ParallelstoreCsiDriverConfig,
+            com.google.container.v1.ParallelstoreCsiDriverConfig.Builder,
+            com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder>
+        getParallelstoreCsiDriverConfigFieldBuilder() {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        parallelstoreCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ParallelstoreCsiDriverConfig,
+                com.google.container.v1.ParallelstoreCsiDriverConfig.Builder,
+                com.google.container.v1.ParallelstoreCsiDriverConfigOrBuilder>(
+                getParallelstoreCsiDriverConfig(), getParentForChildren(), isClean());
+        parallelstoreCsiDriverConfig_ = null;
+      }
+      return parallelstoreCsiDriverConfigBuilder_;
+    }
+
     private com.google.container.v1.RayOperatorConfig rayOperatorConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.RayOperatorConfig,
@@ -4040,7 +4334,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rayOperatorConfig field is set.
      */
     public boolean hasRayOperatorConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4084,7 +4378,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayOperatorConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4106,7 +4400,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayOperatorConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4123,7 +4417,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRayOperatorConfig(com.google.container.v1.RayOperatorConfig value) {
       if (rayOperatorConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && rayOperatorConfig_ != null
             && rayOperatorConfig_
                 != com.google.container.v1.RayOperatorConfig.getDefaultInstance()) {
@@ -4135,7 +4429,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         rayOperatorConfigBuilder_.mergeFrom(value);
       }
       if (rayOperatorConfig_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -4152,7 +4446,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRayOperatorConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       rayOperatorConfig_ = null;
       if (rayOperatorConfigBuilder_ != null) {
         rayOperatorConfigBuilder_.dispose();
@@ -4173,7 +4467,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.container.v1.RayOperatorConfig.Builder getRayOperatorConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRayOperatorConfigFieldBuilder().getBuilder();
     }

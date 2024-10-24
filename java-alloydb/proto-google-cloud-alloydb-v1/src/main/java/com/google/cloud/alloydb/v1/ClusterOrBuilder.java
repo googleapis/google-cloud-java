@@ -494,7 +494,7 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -503,7 +503,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=543
+   *     google/cloud/alloydb/v1/resources.proto;l=616
    * @return The network.
    */
   @java.lang.Deprecated
@@ -515,7 +515,7 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -524,7 +524,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=543
+   *     google/cloud/alloydb/v1/resources.proto;l=616
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -747,7 +747,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=578
+   *     google/cloud/alloydb/v1/resources.proto;l=651
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -762,7 +762,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=578
+   *     google/cloud/alloydb/v1/resources.proto;l=651
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1030,6 +1030,315 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1.Cluster.PrimaryConfigOrBuilder getPrimaryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscConfig field is set.
+   */
+  boolean hasPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscConfig.
+   */
+  com.google.cloud.alloydb.v1.Cluster.PscConfig getPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Cluster.PscConfigOrBuilder getPscConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceUpdatePolicy field is set.
+   */
+  boolean hasMaintenanceUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceUpdatePolicy.
+   */
+  com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy getMaintenanceUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.MaintenanceUpdatePolicyOrBuilder
+      getMaintenanceUpdatePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.alloydb.v1.MaintenanceSchedule getMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for subscriptionType.
+   */
+  int getSubscriptionTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The subscriptionType.
+   */
+  com.google.cloud.alloydb.v1.SubscriptionType getSubscriptionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the trialMetadata field is set.
+   */
+  boolean hasTrialMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The trialMetadata.
+   */
+  com.google.cloud.alloydb.v1.Cluster.TrialMetadata getTrialMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Cluster.TrialMetadataOrBuilder getTrialMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 
   com.google.cloud.alloydb.v1.Cluster.SourceCase getSourceCase();
 }

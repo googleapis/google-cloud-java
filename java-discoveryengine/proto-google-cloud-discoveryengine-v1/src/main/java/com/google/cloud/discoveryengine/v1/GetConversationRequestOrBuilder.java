@@ -29,7 +29,7 @@ public interface GetConversationRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Conversation to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetConversationRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Conversation to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>

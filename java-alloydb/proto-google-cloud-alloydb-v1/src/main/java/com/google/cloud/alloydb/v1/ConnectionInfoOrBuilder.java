@@ -86,6 +86,39 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The publicIpAddress.
+   */
+  java.lang.String getPublicIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  com.google.protobuf.ByteString getPublicIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The unique ID of the Instance.
    * </pre>
    *

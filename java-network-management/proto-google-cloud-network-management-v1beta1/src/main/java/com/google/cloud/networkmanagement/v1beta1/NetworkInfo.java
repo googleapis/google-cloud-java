@@ -24,6 +24,7 @@ package com.google.cloud.networkmanagement.v1beta1;
  *
  * <pre>
  * For display only. Metadata associated with a Compute Engine network.
+ * Next ID: 7
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkmanagement.v1beta1.NetworkInfo}
@@ -41,7 +42,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
   private NetworkInfo() {
     displayName_ = "";
     uri_ = "";
+    matchedSubnetUri_ = "";
     matchedIpRange_ = "";
+    region_ = "";
   }
 
   @java.lang.Override
@@ -167,6 +170,57 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MATCHED_SUBNET_URI_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchedSubnetUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string matched_subnet_uri = 5;</code>
+   *
+   * @return The matchedSubnetUri.
+   */
+  @java.lang.Override
+  public java.lang.String getMatchedSubnetUri() {
+    java.lang.Object ref = matchedSubnetUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      matchedSubnetUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string matched_subnet_uri = 5;</code>
+   *
+   * @return The bytes for matchedSubnetUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMatchedSubnetUriBytes() {
+    java.lang.Object ref = matchedSubnetUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      matchedSubnetUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MATCHED_IP_RANGE_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -175,7 +229,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP range that matches the test.
+   * The IP range of the subnet matching the source IP address of the test.
    * </pre>
    *
    * <code>string matched_ip_range = 4;</code>
@@ -198,7 +252,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP range that matches the test.
+   * The IP range of the subnet matching the source IP address of the test.
    * </pre>
    *
    * <code>string matched_ip_range = 4;</code>
@@ -212,6 +266,57 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       matchedIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The region of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The region of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -241,6 +346,12 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchedIpRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, matchedIpRange_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchedSubnetUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, matchedSubnetUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, region_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -258,6 +369,12 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchedIpRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, matchedIpRange_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchedSubnetUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, matchedSubnetUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, region_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,7 +394,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUri().equals(other.getUri())) return false;
+    if (!getMatchedSubnetUri().equals(other.getMatchedSubnetUri())) return false;
     if (!getMatchedIpRange().equals(other.getMatchedIpRange())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,8 +412,12 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + MATCHED_SUBNET_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getMatchedSubnetUri().hashCode();
     hash = (37 * hash) + MATCHED_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getMatchedIpRange().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +524,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For display only. Metadata associated with a Compute Engine network.
+   * Next ID: 7
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkmanagement.v1beta1.NetworkInfo}
@@ -437,7 +561,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       displayName_ = "";
       uri_ = "";
+      matchedSubnetUri_ = "";
       matchedIpRange_ = "";
+      region_ = "";
       return this;
     }
 
@@ -481,7 +607,13 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         result.uri_ = uri_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.matchedSubnetUri_ = matchedSubnetUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.matchedIpRange_ = matchedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.region_ = region_;
       }
     }
 
@@ -541,9 +673,19 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getMatchedSubnetUri().isEmpty()) {
+        matchedSubnetUri_ = other.matchedSubnetUri_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getMatchedIpRange().isEmpty()) {
         matchedIpRange_ = other.matchedIpRange_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -587,9 +729,21 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 matchedIpRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                matchedSubnetUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+            case 50:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -821,12 +975,118 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object matchedSubnetUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string matched_subnet_uri = 5;</code>
+     *
+     * @return The matchedSubnetUri.
+     */
+    public java.lang.String getMatchedSubnetUri() {
+      java.lang.Object ref = matchedSubnetUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchedSubnetUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string matched_subnet_uri = 5;</code>
+     *
+     * @return The bytes for matchedSubnetUri.
+     */
+    public com.google.protobuf.ByteString getMatchedSubnetUriBytes() {
+      java.lang.Object ref = matchedSubnetUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        matchedSubnetUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string matched_subnet_uri = 5;</code>
+     *
+     * @param value The matchedSubnetUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchedSubnetUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      matchedSubnetUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string matched_subnet_uri = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMatchedSubnetUri() {
+      matchedSubnetUri_ = getDefaultInstance().getMatchedSubnetUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string matched_subnet_uri = 5;</code>
+     *
+     * @param value The bytes for matchedSubnetUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchedSubnetUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      matchedSubnetUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object matchedIpRange_ = "";
     /**
      *
      *
      * <pre>
-     * The IP range that matches the test.
+     * The IP range of the subnet matching the source IP address of the test.
      * </pre>
      *
      * <code>string matched_ip_range = 4;</code>
@@ -848,7 +1108,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP range that matches the test.
+     * The IP range of the subnet matching the source IP address of the test.
      * </pre>
      *
      * <code>string matched_ip_range = 4;</code>
@@ -870,7 +1130,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP range that matches the test.
+     * The IP range of the subnet matching the source IP address of the test.
      * </pre>
      *
      * <code>string matched_ip_range = 4;</code>
@@ -883,7 +1143,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       matchedIpRange_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -891,7 +1151,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP range that matches the test.
+     * The IP range of the subnet matching the source IP address of the test.
      * </pre>
      *
      * <code>string matched_ip_range = 4;</code>
@@ -900,7 +1160,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMatchedIpRange() {
       matchedIpRange_ = getDefaultInstance().getMatchedIpRange();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -908,7 +1168,7 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP range that matches the test.
+     * The IP range of the subnet matching the source IP address of the test.
      * </pre>
      *
      * <code>string matched_ip_range = 4;</code>
@@ -922,7 +1182,113 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       matchedIpRange_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The region of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The region of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The region of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The region of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The region of the subnet matching the source IP address of the test.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

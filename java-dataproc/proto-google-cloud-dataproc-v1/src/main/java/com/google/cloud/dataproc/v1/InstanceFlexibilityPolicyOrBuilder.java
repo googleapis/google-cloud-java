@@ -28,6 +28,52 @@ public interface InstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the provisioningModelMix field is set.
+   */
+  boolean hasProvisioningModelMix();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisioningModelMix.
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+      getProvisioningModelMix();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder
+      getProvisioningModelMixOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. List of instance selection options that the group will use when
    * creating new VMs.
    * </pre>

@@ -549,6 +549,241 @@ public final class SecureSourceManagerGrpc {
     return getTestIamPermissionsRepoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getCreateBranchRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBranchRule",
+      requestType = com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getCreateBranchRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest,
+            com.google.longrunning.Operation>
+        getCreateBranchRuleMethod;
+    if ((getCreateBranchRuleMethod = SecureSourceManagerGrpc.getCreateBranchRuleMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreateBranchRuleMethod = SecureSourceManagerGrpc.getCreateBranchRuleMethod)
+            == null) {
+          SecureSourceManagerGrpc.getCreateBranchRuleMethod =
+              getCreateBranchRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBranchRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CreateBranchRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBranchRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest,
+          com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+      getListBranchRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBranchRules",
+      requestType = com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest,
+          com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+      getListBranchRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest,
+            com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+        getListBranchRulesMethod;
+    if ((getListBranchRulesMethod = SecureSourceManagerGrpc.getListBranchRulesMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListBranchRulesMethod = SecureSourceManagerGrpc.getListBranchRulesMethod) == null) {
+          SecureSourceManagerGrpc.getListBranchRulesMethod =
+              getListBranchRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest,
+                          com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBranchRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ListBranchRules"))
+                      .build();
+        }
+      }
+    }
+    return getListBranchRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest,
+          com.google.cloud.securesourcemanager.v1.BranchRule>
+      getGetBranchRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBranchRule",
+      requestType = com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.BranchRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest,
+          com.google.cloud.securesourcemanager.v1.BranchRule>
+      getGetBranchRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest,
+            com.google.cloud.securesourcemanager.v1.BranchRule>
+        getGetBranchRuleMethod;
+    if ((getGetBranchRuleMethod = SecureSourceManagerGrpc.getGetBranchRuleMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetBranchRuleMethod = SecureSourceManagerGrpc.getGetBranchRuleMethod) == null) {
+          SecureSourceManagerGrpc.getGetBranchRuleMethod =
+              getGetBranchRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest,
+                          com.google.cloud.securesourcemanager.v1.BranchRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBranchRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.BranchRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetBranchRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetBranchRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getUpdateBranchRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBranchRule",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getUpdateBranchRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest,
+            com.google.longrunning.Operation>
+        getUpdateBranchRuleMethod;
+    if ((getUpdateBranchRuleMethod = SecureSourceManagerGrpc.getUpdateBranchRuleMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdateBranchRuleMethod = SecureSourceManagerGrpc.getUpdateBranchRuleMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUpdateBranchRuleMethod =
+              getUpdateBranchRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBranchRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdateBranchRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBranchRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getDeleteBranchRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBranchRule",
+      requestType = com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
+          com.google.longrunning.Operation>
+      getDeleteBranchRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
+            com.google.longrunning.Operation>
+        getDeleteBranchRuleMethod;
+    if ((getDeleteBranchRuleMethod = SecureSourceManagerGrpc.getDeleteBranchRuleMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getDeleteBranchRuleMethod = SecureSourceManagerGrpc.getDeleteBranchRuleMethod)
+            == null) {
+          SecureSourceManagerGrpc.getDeleteBranchRuleMethod =
+              getDeleteBranchRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBranchRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("DeleteBranchRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBranchRuleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecureSourceManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecureSourceManagerStub> factory =
@@ -773,6 +1008,78 @@ public final class SecureSourceManagerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsRepoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateBranchRule creates a branch rule in a given repository.
+     * </pre>
+     */
+    default void createBranchRule(
+        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBranchRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListBranchRules lists branch rules in a given repository.
+     * </pre>
+     */
+    default void listBranchRules(
+        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBranchRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GetBranchRule gets a branch rule.
+     * </pre>
+     */
+    default void getBranchRule(
+        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.BranchRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBranchRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateBranchRule updates a branch rule.
+     * </pre>
+     */
+    default void updateBranchRule(
+        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBranchRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DeleteBranchRule deletes a branch rule.
+     * </pre>
+     */
+    default void deleteBranchRule(
+        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBranchRuleMethod(), responseObserver);
     }
   }
 
@@ -1019,6 +1326,88 @@ public final class SecureSourceManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateBranchRule creates a branch rule in a given repository.
+     * </pre>
+     */
+    public void createBranchRule(
+        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBranchRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListBranchRules lists branch rules in a given repository.
+     * </pre>
+     */
+    public void listBranchRules(
+        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBranchRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GetBranchRule gets a branch rule.
+     * </pre>
+     */
+    public void getBranchRule(
+        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.BranchRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBranchRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateBranchRule updates a branch rule.
+     * </pre>
+     */
+    public void updateBranchRule(
+        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBranchRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DeleteBranchRule deletes a branch rule.
+     * </pre>
+     */
+    public void deleteBranchRule(
+        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBranchRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1198,6 +1587,71 @@ public final class SecureSourceManagerGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsRepoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateBranchRule creates a branch rule in a given repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBranchRule(
+        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListBranchRules lists branch rules in a given repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse listBranchRules(
+        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBranchRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GetBranchRule gets a branch rule.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.BranchRule getBranchRule(
+        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateBranchRule updates a branch rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBranchRule(
+        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DeleteBranchRule deletes a branch rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBranchRule(
+        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBranchRuleMethod(), getCallOptions(), request);
     }
   }
 
@@ -1384,6 +1838,73 @@ public final class SecureSourceManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsRepoMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateBranchRule creates a branch rule in a given repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBranchRule(com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBranchRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListBranchRules lists branch rules in a given repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>
+        listBranchRules(com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBranchRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GetBranchRule gets a branch rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.BranchRule>
+        getBranchRule(com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBranchRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateBranchRule updates a branch rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBranchRule(com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBranchRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DeleteBranchRule deletes a branch rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBranchRule(com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBranchRuleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -1397,6 +1918,11 @@ public final class SecureSourceManagerGrpc {
   private static final int METHODID_GET_IAM_POLICY_REPO = 8;
   private static final int METHODID_SET_IAM_POLICY_REPO = 9;
   private static final int METHODID_TEST_IAM_PERMISSIONS_REPO = 10;
+  private static final int METHODID_CREATE_BRANCH_RULE = 11;
+  private static final int METHODID_LIST_BRANCH_RULES = 12;
+  private static final int METHODID_GET_BRANCH_RULE = 13;
+  private static final int METHODID_UPDATE_BRANCH_RULE = 14;
+  private static final int METHODID_DELETE_BRANCH_RULE = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1476,6 +2002,34 @@ public final class SecureSourceManagerGrpc {
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_BRANCH_RULE:
+          serviceImpl.createBranchRule(
+              (com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BRANCH_RULES:
+          serviceImpl.listBranchRules(
+              (com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BRANCH_RULE:
+          serviceImpl.getBranchRule(
+              (com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.BranchRule>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BRANCH_RULE:
+          serviceImpl.updateBranchRule(
+              (com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_BRANCH_RULE:
+          serviceImpl.deleteBranchRule(
+              (com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1564,6 +2118,38 @@ public final class SecureSourceManagerGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS_REPO)))
+        .addMethod(
+            getCreateBranchRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BRANCH_RULE)))
+        .addMethod(
+            getListBranchRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest,
+                    com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse>(
+                    service, METHODID_LIST_BRANCH_RULES)))
+        .addMethod(
+            getGetBranchRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest,
+                    com.google.cloud.securesourcemanager.v1.BranchRule>(
+                    service, METHODID_GET_BRANCH_RULE)))
+        .addMethod(
+            getUpdateBranchRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BRANCH_RULE)))
+        .addMethod(
+            getDeleteBranchRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BRANCH_RULE)))
         .build();
   }
 
@@ -1626,6 +2212,11 @@ public final class SecureSourceManagerGrpc {
                       .addMethod(getGetIamPolicyRepoMethod())
                       .addMethod(getSetIamPolicyRepoMethod())
                       .addMethod(getTestIamPermissionsRepoMethod())
+                      .addMethod(getCreateBranchRuleMethod())
+                      .addMethod(getListBranchRulesMethod())
+                      .addMethod(getGetBranchRuleMethod())
+                      .addMethod(getUpdateBranchRuleMethod())
+                      .addMethod(getDeleteBranchRuleMethod())
                       .build();
         }
       }

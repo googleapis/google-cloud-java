@@ -78,13 +78,13 @@ public final class TextToSpeechLongAudioSynthesisProto {
           + "\223\002<\"7/v1/{parent=projects/*/locations/*}"
           + ":synthesizeLongAudio:\001*\032O\312A\033texttospeech"
           + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\362\001\n com.google."
+          + ".com/auth/cloud-platformB\357\001\n com.google."
           + "cloud.texttospeech.v1B#TextToSpeechLongA"
           + "udioSynthesisProtoP\001ZDcloud.google.com/g"
           + "o/texttospeech/apiv1/texttospeechpb;text"
-          + "tospeechpb\370\001\001\252\002\034Google.Cloud.TextToSpeec"
-          + "h.V1\312\002\034Google\\Cloud\\TextToSpeech\\V1\352\002\037Go"
-          + "ogle::Cloud::TextToSpeech::V1b\006proto3"
+          + "tospeechpb\252\002\034Google.Cloud.TextToSpeech.V"
+          + "1\312\002\034Google\\Cloud\\TextToSpeech\\V1\352\002\037Googl"
+          + "e::Cloud::TextToSpeech::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

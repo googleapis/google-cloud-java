@@ -106,7 +106,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      *
      * <pre>
      * Instance is pending creation and has not yet been picked up for
-     * processsing in the backend.
+     * processing in the backend.
      * </pre>
      *
      * <code>PENDING_CREATE = 1;</code>
@@ -182,7 +182,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
      *
      * <pre>
      * Instance is pending creation and has not yet been picked up for
-     * processsing in the backend.
+     * processing in the backend.
      * </pre>
      *
      * <code>PENDING_CREATE = 1;</code>

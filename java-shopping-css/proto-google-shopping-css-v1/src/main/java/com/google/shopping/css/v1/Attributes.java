@@ -3082,6 +3082,118 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int HEADLINE_OFFER_INSTALLMENT_FIELD_NUMBER = 51;
+  private com.google.shopping.css.v1.HeadlineOfferInstallment headlineOfferInstallment_;
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return Whether the headlineOfferInstallment field is set.
+   */
+  @java.lang.Override
+  public boolean hasHeadlineOfferInstallment() {
+    return ((bitField1_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return The headlineOfferInstallment.
+   */
+  @java.lang.Override
+  public com.google.shopping.css.v1.HeadlineOfferInstallment getHeadlineOfferInstallment() {
+    return headlineOfferInstallment_ == null
+        ? com.google.shopping.css.v1.HeadlineOfferInstallment.getDefaultInstance()
+        : headlineOfferInstallment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder
+      getHeadlineOfferInstallmentOrBuilder() {
+    return headlineOfferInstallment_ == null
+        ? com.google.shopping.css.v1.HeadlineOfferInstallment.getDefaultInstance()
+        : headlineOfferInstallment_;
+  }
+
+  public static final int HEADLINE_OFFER_SUBSCRIPTION_COST_FIELD_NUMBER = 52;
+  private com.google.shopping.css.v1.HeadlineOfferSubscriptionCost headlineOfferSubscriptionCost_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return Whether the headlineOfferSubscriptionCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasHeadlineOfferSubscriptionCost() {
+    return ((bitField1_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return The headlineOfferSubscriptionCost.
+   */
+  @java.lang.Override
+  public com.google.shopping.css.v1.HeadlineOfferSubscriptionCost
+      getHeadlineOfferSubscriptionCost() {
+    return headlineOfferSubscriptionCost_ == null
+        ? com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.getDefaultInstance()
+        : headlineOfferSubscriptionCost_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder
+      getHeadlineOfferSubscriptionCostOrBuilder() {
+    return headlineOfferSubscriptionCost_ == null
+        ? com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.getDefaultInstance()
+        : headlineOfferSubscriptionCost_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3242,6 +3354,12 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50, customLabel4_);
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeMessage(51, getHeadlineOfferInstallment());
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      output.writeMessage(52, getHeadlineOfferSubscriptionCost());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3428,6 +3546,16 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     if (((bitField1_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50, customLabel4_);
     }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              51, getHeadlineOfferInstallment());
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              52, getHeadlineOfferSubscriptionCost());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3611,6 +3739,16 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     if (hasCustomLabel4() != other.hasCustomLabel4()) return false;
     if (hasCustomLabel4()) {
       if (!getCustomLabel4().equals(other.getCustomLabel4())) return false;
+    }
+    if (hasHeadlineOfferInstallment() != other.hasHeadlineOfferInstallment()) return false;
+    if (hasHeadlineOfferInstallment()) {
+      if (!getHeadlineOfferInstallment().equals(other.getHeadlineOfferInstallment())) return false;
+    }
+    if (hasHeadlineOfferSubscriptionCost() != other.hasHeadlineOfferSubscriptionCost())
+      return false;
+    if (hasHeadlineOfferSubscriptionCost()) {
+      if (!getHeadlineOfferSubscriptionCost().equals(other.getHeadlineOfferSubscriptionCost()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3815,6 +3953,14 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CUSTOM_LABEL_4_FIELD_NUMBER;
       hash = (53 * hash) + getCustomLabel4().hashCode();
     }
+    if (hasHeadlineOfferInstallment()) {
+      hash = (37 * hash) + HEADLINE_OFFER_INSTALLMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadlineOfferInstallment().hashCode();
+    }
+    if (hasHeadlineOfferSubscriptionCost()) {
+      hash = (37 * hash) + HEADLINE_OFFER_SUBSCRIPTION_COST_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadlineOfferSubscriptionCost().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3965,6 +4111,8 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         getProductHeightFieldBuilder();
         getCertificationsFieldBuilder();
         getExpirationDateFieldBuilder();
+        getHeadlineOfferInstallmentFieldBuilder();
+        getHeadlineOfferSubscriptionCostFieldBuilder();
       }
     }
 
@@ -4069,6 +4217,16 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       customLabel2_ = "";
       customLabel3_ = "";
       customLabel4_ = "";
+      headlineOfferInstallment_ = null;
+      if (headlineOfferInstallmentBuilder_ != null) {
+        headlineOfferInstallmentBuilder_.dispose();
+        headlineOfferInstallmentBuilder_ = null;
+      }
+      headlineOfferSubscriptionCost_ = null;
+      if (headlineOfferSubscriptionCostBuilder_ != null) {
+        headlineOfferSubscriptionCostBuilder_.dispose();
+        headlineOfferSubscriptionCostBuilder_ = null;
+      }
       return this;
     }
 
@@ -4332,6 +4490,20 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00008000) != 0)) {
         result.customLabel4_ = customLabel4_;
         to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00010000) != 0)) {
+        result.headlineOfferInstallment_ =
+            headlineOfferInstallmentBuilder_ == null
+                ? headlineOfferInstallment_
+                : headlineOfferInstallmentBuilder_.build();
+        to_bitField1_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00020000) != 0)) {
+        result.headlineOfferSubscriptionCost_ =
+            headlineOfferSubscriptionCostBuilder_ == null
+                ? headlineOfferSubscriptionCost_
+                : headlineOfferSubscriptionCostBuilder_.build();
+        to_bitField1_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4670,6 +4842,12 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         bitField1_ |= 0x00008000;
         onChanged();
       }
+      if (other.hasHeadlineOfferInstallment()) {
+        mergeHeadlineOfferInstallment(other.getHeadlineOfferInstallment());
+      }
+      if (other.hasHeadlineOfferSubscriptionCost()) {
+        mergeHeadlineOfferSubscriptionCost(other.getHeadlineOfferSubscriptionCost());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5006,6 +5184,20 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00008000;
                 break;
               } // case 402
+            case 410:
+              {
+                input.readMessage(
+                    getHeadlineOfferInstallmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00010000;
+                break;
+              } // case 410
+            case 418:
+              {
+                input.readMessage(
+                    getHeadlineOfferSubscriptionCostFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00020000;
+                break;
+              } // case 418
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12198,6 +12390,425 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       bitField1_ |= 0x00008000;
       onChanged();
       return this;
+    }
+
+    private com.google.shopping.css.v1.HeadlineOfferInstallment headlineOfferInstallment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.css.v1.HeadlineOfferInstallment,
+            com.google.shopping.css.v1.HeadlineOfferInstallment.Builder,
+            com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder>
+        headlineOfferInstallmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     *
+     * @return Whether the headlineOfferInstallment field is set.
+     */
+    public boolean hasHeadlineOfferInstallment() {
+      return ((bitField1_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     *
+     * @return The headlineOfferInstallment.
+     */
+    public com.google.shopping.css.v1.HeadlineOfferInstallment getHeadlineOfferInstallment() {
+      if (headlineOfferInstallmentBuilder_ == null) {
+        return headlineOfferInstallment_ == null
+            ? com.google.shopping.css.v1.HeadlineOfferInstallment.getDefaultInstance()
+            : headlineOfferInstallment_;
+      } else {
+        return headlineOfferInstallmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public Builder setHeadlineOfferInstallment(
+        com.google.shopping.css.v1.HeadlineOfferInstallment value) {
+      if (headlineOfferInstallmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        headlineOfferInstallment_ = value;
+      } else {
+        headlineOfferInstallmentBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public Builder setHeadlineOfferInstallment(
+        com.google.shopping.css.v1.HeadlineOfferInstallment.Builder builderForValue) {
+      if (headlineOfferInstallmentBuilder_ == null) {
+        headlineOfferInstallment_ = builderForValue.build();
+      } else {
+        headlineOfferInstallmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public Builder mergeHeadlineOfferInstallment(
+        com.google.shopping.css.v1.HeadlineOfferInstallment value) {
+      if (headlineOfferInstallmentBuilder_ == null) {
+        if (((bitField1_ & 0x00010000) != 0)
+            && headlineOfferInstallment_ != null
+            && headlineOfferInstallment_
+                != com.google.shopping.css.v1.HeadlineOfferInstallment.getDefaultInstance()) {
+          getHeadlineOfferInstallmentBuilder().mergeFrom(value);
+        } else {
+          headlineOfferInstallment_ = value;
+        }
+      } else {
+        headlineOfferInstallmentBuilder_.mergeFrom(value);
+      }
+      if (headlineOfferInstallment_ != null) {
+        bitField1_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public Builder clearHeadlineOfferInstallment() {
+      bitField1_ = (bitField1_ & ~0x00010000);
+      headlineOfferInstallment_ = null;
+      if (headlineOfferInstallmentBuilder_ != null) {
+        headlineOfferInstallmentBuilder_.dispose();
+        headlineOfferInstallmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public com.google.shopping.css.v1.HeadlineOfferInstallment.Builder
+        getHeadlineOfferInstallmentBuilder() {
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return getHeadlineOfferInstallmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    public com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder
+        getHeadlineOfferInstallmentOrBuilder() {
+      if (headlineOfferInstallmentBuilder_ != null) {
+        return headlineOfferInstallmentBuilder_.getMessageOrBuilder();
+      } else {
+        return headlineOfferInstallment_ == null
+            ? com.google.shopping.css.v1.HeadlineOfferInstallment.getDefaultInstance()
+            : headlineOfferInstallment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number and amount of installments to pay for an item.
+     * </pre>
+     *
+     * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.css.v1.HeadlineOfferInstallment,
+            com.google.shopping.css.v1.HeadlineOfferInstallment.Builder,
+            com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder>
+        getHeadlineOfferInstallmentFieldBuilder() {
+      if (headlineOfferInstallmentBuilder_ == null) {
+        headlineOfferInstallmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.css.v1.HeadlineOfferInstallment,
+                com.google.shopping.css.v1.HeadlineOfferInstallment.Builder,
+                com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder>(
+                getHeadlineOfferInstallment(), getParentForChildren(), isClean());
+        headlineOfferInstallment_ = null;
+      }
+      return headlineOfferInstallmentBuilder_;
+    }
+
+    private com.google.shopping.css.v1.HeadlineOfferSubscriptionCost headlineOfferSubscriptionCost_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCost,
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.Builder,
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder>
+        headlineOfferSubscriptionCostBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     *
+     * @return Whether the headlineOfferSubscriptionCost field is set.
+     */
+    public boolean hasHeadlineOfferSubscriptionCost() {
+      return ((bitField1_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     *
+     * @return The headlineOfferSubscriptionCost.
+     */
+    public com.google.shopping.css.v1.HeadlineOfferSubscriptionCost
+        getHeadlineOfferSubscriptionCost() {
+      if (headlineOfferSubscriptionCostBuilder_ == null) {
+        return headlineOfferSubscriptionCost_ == null
+            ? com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.getDefaultInstance()
+            : headlineOfferSubscriptionCost_;
+      } else {
+        return headlineOfferSubscriptionCostBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public Builder setHeadlineOfferSubscriptionCost(
+        com.google.shopping.css.v1.HeadlineOfferSubscriptionCost value) {
+      if (headlineOfferSubscriptionCostBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        headlineOfferSubscriptionCost_ = value;
+      } else {
+        headlineOfferSubscriptionCostBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public Builder setHeadlineOfferSubscriptionCost(
+        com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.Builder builderForValue) {
+      if (headlineOfferSubscriptionCostBuilder_ == null) {
+        headlineOfferSubscriptionCost_ = builderForValue.build();
+      } else {
+        headlineOfferSubscriptionCostBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public Builder mergeHeadlineOfferSubscriptionCost(
+        com.google.shopping.css.v1.HeadlineOfferSubscriptionCost value) {
+      if (headlineOfferSubscriptionCostBuilder_ == null) {
+        if (((bitField1_ & 0x00020000) != 0)
+            && headlineOfferSubscriptionCost_ != null
+            && headlineOfferSubscriptionCost_
+                != com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.getDefaultInstance()) {
+          getHeadlineOfferSubscriptionCostBuilder().mergeFrom(value);
+        } else {
+          headlineOfferSubscriptionCost_ = value;
+        }
+      } else {
+        headlineOfferSubscriptionCostBuilder_.mergeFrom(value);
+      }
+      if (headlineOfferSubscriptionCost_ != null) {
+        bitField1_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public Builder clearHeadlineOfferSubscriptionCost() {
+      bitField1_ = (bitField1_ & ~0x00020000);
+      headlineOfferSubscriptionCost_ = null;
+      if (headlineOfferSubscriptionCostBuilder_ != null) {
+        headlineOfferSubscriptionCostBuilder_.dispose();
+        headlineOfferSubscriptionCostBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.Builder
+        getHeadlineOfferSubscriptionCostBuilder() {
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return getHeadlineOfferSubscriptionCostFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    public com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder
+        getHeadlineOfferSubscriptionCostOrBuilder() {
+      if (headlineOfferSubscriptionCostBuilder_ != null) {
+        return headlineOfferSubscriptionCostBuilder_.getMessageOrBuilder();
+      } else {
+        return headlineOfferSubscriptionCost_ == null
+            ? com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.getDefaultInstance()
+            : headlineOfferSubscriptionCost_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of periods (months or years) and amount of payment per period
+     * for an item with an associated subscription contract.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCost,
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.Builder,
+            com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder>
+        getHeadlineOfferSubscriptionCostFieldBuilder() {
+      if (headlineOfferSubscriptionCostBuilder_ == null) {
+        headlineOfferSubscriptionCostBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.css.v1.HeadlineOfferSubscriptionCost,
+                com.google.shopping.css.v1.HeadlineOfferSubscriptionCost.Builder,
+                com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder>(
+                getHeadlineOfferSubscriptionCost(), getParentForChildren(), isClean());
+        headlineOfferSubscriptionCost_ = null;
+      }
+      return headlineOfferSubscriptionCostBuilder_;
     }
 
     @java.lang.Override

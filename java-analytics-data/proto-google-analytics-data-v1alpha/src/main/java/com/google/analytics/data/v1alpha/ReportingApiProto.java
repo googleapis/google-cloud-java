@@ -678,11 +678,13 @@ public final class ReportingApiProto {
           + "E_FEET\020\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013TYPE_METERS\020"
           + "\014\022\023\n\017TYPE_KILOMETERS\020\r*_\n\024RestrictedMetr"
           + "icType\022&\n\"RESTRICTED_METRIC_TYPE_UNSPECI"
-          + "FIED\020\000\022\r\n\tCOST_DATA\020\001\022\020\n\014REVENUE_DATA\020\002B"
-          + "{\n!com.google.analytics.data.v1alphaB\021Re"
-          + "portingApiProtoP\001ZAgoogle.golang.org/gen"
-          + "proto/googleapis/analytics/data/v1alpha;"
-          + "datab\006proto3"
+          + "FIED\020\000\022\r\n\tCOST_DATA\020\001\022\020\n\014REVENUE_DATA\020\002*"
+          + "S\n\rSamplingLevel\022\036\n\032SAMPLING_LEVEL_UNSPE"
+          + "CIFIED\020\000\022\007\n\003LOW\020\001\022\n\n\006MEDIUM\020\002\022\r\n\tUNSAMPL"
+          + "ED\020\003B{\n!com.google.analytics.data.v1alph"
+          + "aB\021ReportingApiProtoP\001ZAgoogle.golang.or"
+          + "g/genproto/googleapis/analytics/data/v1a"
+          + "lpha;datab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -29,7 +29,7 @@ public interface GetControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * </pre>
    *
    * <code>

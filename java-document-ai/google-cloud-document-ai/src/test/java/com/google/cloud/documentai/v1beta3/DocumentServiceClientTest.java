@@ -440,6 +440,8 @@ public class DocumentServiceClientTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -479,6 +481,8 @@ public class DocumentServiceClientTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -518,6 +522,8 @@ public class DocumentServiceClientTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
