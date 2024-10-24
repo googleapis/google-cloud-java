@@ -297,8 +297,17 @@ public class ConceptsTest {
   public void testUpdate() {
     datastore.put(testEntity);
     // [START datastore_update]
-    Entity task = Entity.newBuilder(datastore.get(taskKey)).set("priority", 5).build();
-    datastore.update(task);
+    Entity task;
+    Transaction txn = datastore.newTransaction();
+    try {
+      task = Entity.newBuilder(txn.get(taskKey)).set("priority", 5).build();
+      txn.put(task);
+      txn.commit();
+    } finally {
+      if (txn.isActive()) {
+        txn.rollback();
+      }
+    }
     // [END datastore_update]
     assertEquals(task, datastore.get(taskKey));
   }
