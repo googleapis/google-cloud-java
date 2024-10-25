@@ -1612,6 +1612,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/parallelstore/v1beta
+  - proto_path: google/cloud/parallelstore/v1
   requires_billing: true
 - api_shortname: phishingprotection
   name_pretty: Phishing Protection
