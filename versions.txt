@@ -811,3 +811,5 @@ proto-admin-v1alpha:0.1.0:0.2.0-SNAPSHOT
 grpc-admin-v1alpha:0.1.0:0.2.0-SNAPSHOT
 google-cloud-oracledatabase:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-oracledatabase-v1:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-parallelstore-v1:0.15.0:0.16.0-SNAPSHOT
+grpc-google-cloud-parallelstore-v1:0.15.0:0.16.0-SNAPSHOT
