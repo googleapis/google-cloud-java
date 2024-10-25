@@ -511,11 +511,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A URL to the Google Maps address location of the site.
+   * Optional. A URL to the Google Maps address location of the site.
    * An example value is `https://goo.gl/maps/xxxxxxxxx`.
    * </pre>
    *
-   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The googleMapsPinUri.
    */
@@ -535,11 +535,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A URL to the Google Maps address location of the site.
+   * Optional. A URL to the Google Maps address location of the site.
    * An example value is `https://goo.gl/maps/xxxxxxxxx`.
    * </pre>
    *
-   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for googleMapsPinUri.
    */
@@ -2621,11 +2621,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URL to the Google Maps address location of the site.
+     * Optional. A URL to the Google Maps address location of the site.
      * An example value is `https://goo.gl/maps/xxxxxxxxx`.
      * </pre>
      *
-     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The googleMapsPinUri.
      */
@@ -2644,11 +2644,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URL to the Google Maps address location of the site.
+     * Optional. A URL to the Google Maps address location of the site.
      * An example value is `https://goo.gl/maps/xxxxxxxxx`.
      * </pre>
      *
-     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for googleMapsPinUri.
      */
@@ -2667,11 +2667,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URL to the Google Maps address location of the site.
+     * Optional. A URL to the Google Maps address location of the site.
      * An example value is `https://goo.gl/maps/xxxxxxxxx`.
      * </pre>
      *
-     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The googleMapsPinUri to set.
      * @return This builder for chaining.
@@ -2689,11 +2689,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URL to the Google Maps address location of the site.
+     * Optional. A URL to the Google Maps address location of the site.
      * An example value is `https://goo.gl/maps/xxxxxxxxx`.
      * </pre>
      *
-     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2707,11 +2707,11 @@ public final class Site extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URL to the Google Maps address location of the site.
+     * Optional. A URL to the Google Maps address location of the site.
      * An example value is `https://goo.gl/maps/xxxxxxxxx`.
      * </pre>
      *
-     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for googleMapsPinUri to set.
      * @return This builder for chaining.

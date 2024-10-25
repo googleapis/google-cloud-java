@@ -46,6 +46,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareGroupRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteOrderRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetChangeLogEntryRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest;
@@ -197,6 +198,15 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
           .setFullMethodName(
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/UpdateSite")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSiteRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteSiteRequest, Operation> deleteSiteMethodDescriptor =
+      MethodDescriptor.<DeleteSiteRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/DeleteSite")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSiteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
@@ -493,6 +503,9 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   private final UnaryCallable<UpdateSiteRequest, Operation> updateSiteCallable;
   private final OperationCallable<UpdateSiteRequest, Site, OperationMetadata>
       updateSiteOperationCallable;
+  private final UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable;
+  private final OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable;
   private final UnaryCallable<ListHardwareGroupsRequest, ListHardwareGroupsResponse>
       listHardwareGroupsCallable;
   private final UnaryCallable<ListHardwareGroupsRequest, ListHardwareGroupsPagedResponse>
@@ -697,6 +710,16 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("site.name", String.valueOf(request.getSite().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSiteRequest, Operation> deleteSiteTransportSettings =
+        GrpcCallSettings.<DeleteSiteRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSiteMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -1036,6 +1059,15 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
             settings.updateSiteOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteSiteCallable =
+        callableFactory.createUnaryCallable(
+            deleteSiteTransportSettings, settings.deleteSiteSettings(), clientContext);
+    this.deleteSiteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSiteTransportSettings,
+            settings.deleteSiteOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listHardwareGroupsCallable =
         callableFactory.createUnaryCallable(
             listHardwareGroupsTransportSettings,
@@ -1322,6 +1354,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   public OperationCallable<UpdateSiteRequest, Site, OperationMetadata>
       updateSiteOperationCallable() {
     return updateSiteOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable() {
+    return deleteSiteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable() {
+    return deleteSiteOperationCallable;
   }
 
   @Override

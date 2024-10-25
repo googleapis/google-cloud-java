@@ -114,6 +114,45 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return Whether the multiSpeakerMarkup field is set.
+   */
+  boolean hasMultiSpeakerMarkup();
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return The multiSpeakerMarkup.
+   */
+  com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup getMultiSpeakerMarkup();
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkupOrBuilder
+      getMultiSpeakerMarkupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The pronunciation customizations to be applied to the input. If
    * this is set, the input will be synthesized using the given pronunciation
    * customizations.

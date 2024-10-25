@@ -76,6 +76,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The project and location to list zones in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list zones across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>
@@ -102,6 +106,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The project and location to list zones in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list zones across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>
@@ -743,6 +751,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The project and location to list zones in.
      * Format: `projects/{project}/locations/{location}`
+     *
+     * To list zones across all locations, substitute `-` (the hyphen or
+     * dash character) for the location and check the unreachable field in
+     * the response message.
      * </pre>
      *
      * <code>
@@ -768,6 +780,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The project and location to list zones in.
      * Format: `projects/{project}/locations/{location}`
+     *
+     * To list zones across all locations, substitute `-` (the hyphen or
+     * dash character) for the location and check the unreachable field in
+     * the response message.
      * </pre>
      *
      * <code>
@@ -793,6 +809,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The project and location to list zones in.
      * Format: `projects/{project}/locations/{location}`
+     *
+     * To list zones across all locations, substitute `-` (the hyphen or
+     * dash character) for the location and check the unreachable field in
+     * the response message.
      * </pre>
      *
      * <code>
@@ -817,6 +837,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The project and location to list zones in.
      * Format: `projects/{project}/locations/{location}`
+     *
+     * To list zones across all locations, substitute `-` (the hyphen or
+     * dash character) for the location and check the unreachable field in
+     * the response message.
      * </pre>
      *
      * <code>
@@ -837,6 +861,10 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The project and location to list zones in.
      * Format: `projects/{project}/locations/{location}`
+     *
+     * To list zones across all locations, substitute `-` (the hyphen or
+     * dash character) for the location and check the unreachable field in
+     * the response message.
      * </pre>
      *
      * <code>

@@ -501,6 +501,52 @@ public final class GDCHardwareManagementGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest,
+          com.google.longrunning.Operation>
+      getDeleteSiteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSite",
+      requestType = com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest,
+          com.google.longrunning.Operation>
+      getDeleteSiteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest,
+            com.google.longrunning.Operation>
+        getDeleteSiteMethod;
+    if ((getDeleteSiteMethod = GDCHardwareManagementGrpc.getDeleteSiteMethod) == null) {
+      synchronized (GDCHardwareManagementGrpc.class) {
+        if ((getDeleteSiteMethod = GDCHardwareManagementGrpc.getDeleteSiteMethod) == null) {
+          GDCHardwareManagementGrpc.getDeleteSiteMethod =
+              getDeleteSiteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSite"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GDCHardwareManagementMethodDescriptorSupplier("DeleteSite"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSiteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsRequest,
           com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsResponse>
       getListHardwareGroupsMethod;
@@ -1840,6 +1886,19 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Deletes a site.
+     * </pre>
+     */
+    default void deleteSite(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSiteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists hardware groups in a given order.
      * </pre>
      */
@@ -2373,6 +2432,20 @@ public final class GDCHardwareManagementGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSiteMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a site.
+     * </pre>
+     */
+    public void deleteSite(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSiteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2919,6 +2992,19 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Deletes a site.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSite(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists hardware groups in a given order.
      * </pre>
      */
@@ -3392,6 +3478,19 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Deletes a site.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSite(com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSiteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists hardware groups in a given order.
      * </pre>
      */
@@ -3739,30 +3838,31 @@ public final class GDCHardwareManagementGrpc {
   private static final int METHODID_GET_SITE = 7;
   private static final int METHODID_CREATE_SITE = 8;
   private static final int METHODID_UPDATE_SITE = 9;
-  private static final int METHODID_LIST_HARDWARE_GROUPS = 10;
-  private static final int METHODID_GET_HARDWARE_GROUP = 11;
-  private static final int METHODID_CREATE_HARDWARE_GROUP = 12;
-  private static final int METHODID_UPDATE_HARDWARE_GROUP = 13;
-  private static final int METHODID_DELETE_HARDWARE_GROUP = 14;
-  private static final int METHODID_LIST_HARDWARE = 15;
-  private static final int METHODID_GET_HARDWARE = 16;
-  private static final int METHODID_CREATE_HARDWARE = 17;
-  private static final int METHODID_UPDATE_HARDWARE = 18;
-  private static final int METHODID_DELETE_HARDWARE = 19;
-  private static final int METHODID_LIST_COMMENTS = 20;
-  private static final int METHODID_GET_COMMENT = 21;
-  private static final int METHODID_CREATE_COMMENT = 22;
-  private static final int METHODID_RECORD_ACTION_ON_COMMENT = 23;
-  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 24;
-  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 25;
-  private static final int METHODID_LIST_SKUS = 26;
-  private static final int METHODID_GET_SKU = 27;
-  private static final int METHODID_LIST_ZONES = 28;
-  private static final int METHODID_GET_ZONE = 29;
-  private static final int METHODID_CREATE_ZONE = 30;
-  private static final int METHODID_UPDATE_ZONE = 31;
-  private static final int METHODID_DELETE_ZONE = 32;
-  private static final int METHODID_SIGNAL_ZONE_STATE = 33;
+  private static final int METHODID_DELETE_SITE = 10;
+  private static final int METHODID_LIST_HARDWARE_GROUPS = 11;
+  private static final int METHODID_GET_HARDWARE_GROUP = 12;
+  private static final int METHODID_CREATE_HARDWARE_GROUP = 13;
+  private static final int METHODID_UPDATE_HARDWARE_GROUP = 14;
+  private static final int METHODID_DELETE_HARDWARE_GROUP = 15;
+  private static final int METHODID_LIST_HARDWARE = 16;
+  private static final int METHODID_GET_HARDWARE = 17;
+  private static final int METHODID_CREATE_HARDWARE = 18;
+  private static final int METHODID_UPDATE_HARDWARE = 19;
+  private static final int METHODID_DELETE_HARDWARE = 20;
+  private static final int METHODID_LIST_COMMENTS = 21;
+  private static final int METHODID_GET_COMMENT = 22;
+  private static final int METHODID_CREATE_COMMENT = 23;
+  private static final int METHODID_RECORD_ACTION_ON_COMMENT = 24;
+  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 25;
+  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 26;
+  private static final int METHODID_LIST_SKUS = 27;
+  private static final int METHODID_GET_SKU = 28;
+  private static final int METHODID_LIST_ZONES = 29;
+  private static final int METHODID_GET_ZONE = 30;
+  private static final int METHODID_CREATE_ZONE = 31;
+  private static final int METHODID_UPDATE_ZONE = 32;
+  private static final int METHODID_DELETE_ZONE = 33;
+  private static final int METHODID_SIGNAL_ZONE_STATE = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3835,6 +3935,11 @@ public final class GDCHardwareManagementGrpc {
         case METHODID_UPDATE_SITE:
           serviceImpl.updateSite(
               (com.google.cloud.gdchardwaremanagement.v1alpha.UpdateSiteRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SITE:
+          serviceImpl.deleteSite(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_HARDWARE_GROUPS:
@@ -4061,6 +4166,12 @@ public final class GDCHardwareManagementGrpc {
                     com.google.cloud.gdchardwaremanagement.v1alpha.UpdateSiteRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_SITE)))
         .addMethod(
+            getDeleteSiteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SITE)))
+        .addMethod(
             getListHardwareGroupsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4277,6 +4388,7 @@ public final class GDCHardwareManagementGrpc {
                       .addMethod(getGetSiteMethod())
                       .addMethod(getCreateSiteMethod())
                       .addMethod(getUpdateSiteMethod())
+                      .addMethod(getDeleteSiteMethod())
                       .addMethod(getListHardwareGroupsMethod())
                       .addMethod(getGetHardwareGroupMethod())
                       .addMethod(getCreateHardwareGroupMethod())

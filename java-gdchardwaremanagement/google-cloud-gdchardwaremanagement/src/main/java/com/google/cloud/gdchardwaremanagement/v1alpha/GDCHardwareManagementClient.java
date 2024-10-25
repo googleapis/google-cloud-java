@@ -271,6 +271,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteSite</td>
+ *      <td><p> Deletes a site.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSiteAsync(DeleteSiteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSiteAsync(SiteName name)
+ *           <li><p> deleteSiteAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSiteOperationCallable()
+ *           <li><p> deleteSiteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListHardwareGroups</td>
  *      <td><p> Lists hardware groups in a given order.</td>
  *      <td>
@@ -926,6 +946,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list orders in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list orders across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrdersPagedResponse listOrders(LocationName parent) {
@@ -957,6 +979,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list orders in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list orders across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrdersPagedResponse listOrders(String parent) {
@@ -1823,6 +1847,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list sites in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list sites across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSitesPagedResponse listSites(LocationName parent) {
@@ -1854,6 +1880,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list sites in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list sites across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSitesPagedResponse listSites(String parent) {
@@ -2389,6 +2417,155 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateSiteRequest, Operation> updateSiteCallable() {
     return stub.updateSiteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a site.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   SiteName name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]");
+   *   gDCHardwareManagementClient.deleteSiteAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the site. Format:
+   *     `projects/{project}/locations/{location}/sites/{site}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSiteAsync(SiteName name) {
+    DeleteSiteRequest request =
+        DeleteSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSiteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a site.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   String name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]").toString();
+   *   gDCHardwareManagementClient.deleteSiteAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the site. Format:
+   *     `projects/{project}/locations/{location}/sites/{site}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSiteAsync(String name) {
+    DeleteSiteRequest request = DeleteSiteRequest.newBuilder().setName(name).build();
+    return deleteSiteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a site.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   DeleteSiteRequest request =
+   *       DeleteSiteRequest.newBuilder()
+   *           .setName(SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   gDCHardwareManagementClient.deleteSiteAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSiteAsync(
+      DeleteSiteRequest request) {
+    return deleteSiteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a site.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   DeleteSiteRequest request =
+   *       DeleteSiteRequest.newBuilder()
+   *           .setName(SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       gDCHardwareManagementClient.deleteSiteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable() {
+    return stub.deleteSiteOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a site.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   DeleteSiteRequest request =
+   *       DeleteSiteRequest.newBuilder()
+   *           .setName(SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gDCHardwareManagementClient.deleteSiteCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable() {
+    return stub.deleteSiteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3201,6 +3378,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list hardware in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list hardware across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListHardwarePagedResponse listHardware(LocationName parent) {
@@ -3234,6 +3413,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list hardware in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list hardware across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListHardwarePagedResponse listHardware(String parent) {
@@ -4873,6 +5054,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list SKUs in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list SKUs across all locations, substitute `-` (the hyphen or dash character) for the
+   *     location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSkusPagedResponse listSkus(LocationName parent) {
@@ -4904,6 +5087,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list SKUs in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list SKUs across all locations, substitute `-` (the hyphen or dash character) for the
+   *     location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSkusPagedResponse listSkus(String parent) {
@@ -5159,6 +5344,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list zones in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list zones across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListZonesPagedResponse listZones(LocationName parent) {
@@ -5190,6 +5377,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param parent Required. The project and location to list zones in. Format:
    *     `projects/{project}/locations/{location}`
+   *     <p>To list zones across all locations, substitute `-` (the hyphen or dash character) for
+   *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListZonesPagedResponse listZones(String parent) {

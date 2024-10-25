@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1;
 
+import static com.google.cloud.discoveryengine.v1.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -197,6 +198,131 @@ public class SearchServiceClientHttpJsonTest {
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .build();
       client.search(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchLiteTest() throws Exception {
+    SearchResponse.SearchResult responsesElement = SearchResponse.SearchResult.newBuilder().build();
+    SearchResponse expectedResponse =
+        SearchResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchRequest request =
+        SearchRequest.newBuilder()
+            .setServingConfig(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setBranch(
+                BranchName.ofProjectLocationDataStoreBranchName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                    .toString())
+            .setQuery("query107944136")
+            .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setOffset(-1019779949)
+            .setOneBoxPageSize(1988477988)
+            .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+            .setFilter("filter-1274492040")
+            .setCanonicalFilter("canonicalFilter-722283124")
+            .setOrderBy("orderBy-1207110587")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+            .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+            .putAllParams(new HashMap<String, Value>())
+            .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+            .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+            .setSafeSearch(true)
+            .putAllUserLabels(new HashMap<String, String>())
+            .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .build();
+
+    SearchLitePagedResponse pagedListResponse = client.searchLite(request);
+
+    List<SearchResponse.SearchResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchLiteExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchRequest request =
+          SearchRequest.newBuilder()
+              .setServingConfig(
+                  ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                      .toString())
+              .setBranch(
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
+              .setQuery("query107944136")
+              .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setFilter("filter-1274492040")
+              .setCanonicalFilter("canonicalFilter-722283124")
+              .setOrderBy("orderBy-1207110587")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+              .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+              .putAllParams(new HashMap<String, Value>())
+              .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+              .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setSafeSearch(true)
+              .putAllUserLabels(new HashMap<String, String>())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .build();
+      client.searchLite(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

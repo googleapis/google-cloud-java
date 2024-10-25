@@ -342,6 +342,47 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  boolean hasPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder getPscInterfaceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * the baseOutputDirectory of

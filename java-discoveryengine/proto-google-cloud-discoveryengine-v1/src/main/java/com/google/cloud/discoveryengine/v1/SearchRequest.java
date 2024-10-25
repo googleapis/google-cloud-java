@@ -14690,7 +14690,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=411
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=439
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -14708,7 +14708,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=415
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=443
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -14789,7 +14789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=411
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=439
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -14812,7 +14812,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=415
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=443
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -15273,7 +15273,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=411
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=439
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -15294,7 +15294,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=411
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=439
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -15319,7 +15319,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=411
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=439
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -15343,7 +15343,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=415
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=443
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -15363,7 +15363,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=415
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=443
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -15387,7 +15387,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=415
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=443
          * @return This builder for chaining.
          */
         @java.lang.Deprecated

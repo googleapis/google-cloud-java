@@ -368,6 +368,19 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
      */
     NON_ANSWER_SEEKING_QUERY_IGNORED_V2(8),
+    /**
+     *
+     *
+     * <pre>
+     * The low-grounded answer case.
+     *
+     * Google skips the answer if a well grounded answer was unable to be
+     * generated.
+     * </pre>
+     *
+     * <code>LOW_GROUNDED_ANSWER = 9;</code>
+     */
+    LOW_GROUNDED_ANSWER(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -480,6 +493,19 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
      */
     public static final int NON_ANSWER_SEEKING_QUERY_IGNORED_V2_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The low-grounded answer case.
+     *
+     * Google skips the answer if a well grounded answer was unable to be
+     * generated.
+     * </pre>
+     *
+     * <code>LOW_GROUNDED_ANSWER = 9;</code>
+     */
+    public static final int LOW_GROUNDED_ANSWER_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -523,6 +549,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return CUSTOMER_POLICY_VIOLATION;
         case 8:
           return NON_ANSWER_SEEKING_QUERY_IGNORED_V2;
+        case 9:
+          return LOW_GROUNDED_ANSWER;
         default:
           return null;
       }

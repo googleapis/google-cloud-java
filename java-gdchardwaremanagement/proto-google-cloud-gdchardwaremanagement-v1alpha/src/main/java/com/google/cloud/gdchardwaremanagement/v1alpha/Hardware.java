@@ -47,6 +47,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     ciqUri_ = "";
     zone_ = "";
+    machineInfos_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -327,6 +328,4768 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.State)
+  }
+
+  public interface MacAddressOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString getAddressBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address type for this MAC address.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address type for this MAC address.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType getType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Message to describe the MAC address of a machine.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress}
+   */
+  public static final class MacAddress extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)
+      MacAddressOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MacAddress.newBuilder() to construct.
+    private MacAddress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MacAddress() {
+      address_ = "";
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MacAddress();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MacAddress_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MacAddress_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.class,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum for the different types of MAC address.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType}
+     */
+    public enum AddressType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified address type.
+       * </pre>
+       *
+       * <code>ADDRESS_TYPE_UNSPECIFIED = 0;</code>
+       */
+      ADDRESS_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Address of a network interface card.
+       * </pre>
+       *
+       * <code>NIC = 1;</code>
+       */
+      NIC(1),
+      /**
+       *
+       *
+       * <pre>
+       * Address of a baseboard management controller.
+       * </pre>
+       *
+       * <code>BMC = 2;</code>
+       */
+      BMC(2),
+      /**
+       *
+       *
+       * <pre>
+       * Address of a virtual interface.
+       * </pre>
+       *
+       * <code>VIRTUAL = 3;</code>
+       */
+      VIRTUAL(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified address type.
+       * </pre>
+       *
+       * <code>ADDRESS_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ADDRESS_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Address of a network interface card.
+       * </pre>
+       *
+       * <code>NIC = 1;</code>
+       */
+      public static final int NIC_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Address of a baseboard management controller.
+       * </pre>
+       *
+       * <code>BMC = 2;</code>
+       */
+      public static final int BMC_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Address of a virtual interface.
+       * </pre>
+       *
+       * <code>VIRTUAL = 3;</code>
+       */
+      public static final int VIRTUAL_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AddressType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AddressType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ADDRESS_TYPE_UNSPECIFIED;
+          case 1:
+            return NIC;
+          case 2:
+            return BMC;
+          case 3:
+            return VIRTUAL;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AddressType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<AddressType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AddressType>() {
+            public AddressType findValueByNumber(int number) {
+              return AddressType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final AddressType[] VALUES = values();
+
+      public static AddressType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AddressType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType)
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object address_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address type for this MAC address.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Address type for this MAC address.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+        getType() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType result =
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType.forNumber(
+              type_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      if (type_
+          != com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+              .ADDRESS_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      if (type_
+          != com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+              .ADDRESS_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress other =
+          (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress) obj;
+
+      if (!getAddress().equals(other.getAddress())) return false;
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message to describe the MAC address of a machine.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MacAddress_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MacAddress_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.class,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        address_ = "";
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MacAddress_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+          getDefaultInstanceForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress build() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress buildPartial() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress result =
+            new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.address_ = address_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress) {
+          return mergeFrom(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress other) {
+        if (other
+            == com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+                .getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  address_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object address_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        address_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        address_ = getDefaultInstance().getAddress();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        address_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address type for this MAC address.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address type for this MAC address.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address type for this MAC address.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+          getType() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType result =
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+                .forNumber(type_);
+        return result == null
+            ? com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address type for this MAC address.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Address type for this MAC address.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress)
+    private static final com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress();
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MacAddress> PARSER =
+        new com.google.protobuf.AbstractParser<MacAddress>() {
+          @java.lang.Override
+          public MacAddress parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MacAddress> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MacAddress> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DiskInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk manufacturer.
+     * </pre>
+     *
+     * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The manufacturer.
+     */
+    java.lang.String getManufacturer();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk manufacturer.
+     * </pre>
+     *
+     * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for manufacturer.
+     */
+    com.google.protobuf.ByteString getManufacturerBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk slot number.
+     * </pre>
+     *
+     * <code>int32 slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The slot.
+     */
+    int getSlot();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk serial number.
+     * </pre>
+     *
+     * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serialNumber.
+     */
+    java.lang.String getSerialNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk serial number.
+     * </pre>
+     *
+     * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serialNumber.
+     */
+    com.google.protobuf.ByteString getSerialNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk PSID.
+     * </pre>
+     *
+     * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The psid.
+     */
+    java.lang.String getPsid();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk PSID.
+     * </pre>
+     *
+     * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for psid.
+     */
+    com.google.protobuf.ByteString getPsidBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk part number.
+     * </pre>
+     *
+     * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The partNumber.
+     */
+    java.lang.String getPartNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk part number.
+     * </pre>
+     *
+     * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for partNumber.
+     */
+    com.google.protobuf.ByteString getPartNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk model number.
+     * </pre>
+     *
+     * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelNumber.
+     */
+    java.lang.String getModelNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk model number.
+     * </pre>
+     *
+     * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelNumber.
+     */
+    com.google.protobuf.ByteString getModelNumberBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about individual disks on a machine.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo}
+   */
+  public static final class DiskInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)
+      DiskInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DiskInfo.newBuilder() to construct.
+    private DiskInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DiskInfo() {
+      manufacturer_ = "";
+      serialNumber_ = "";
+      psid_ = "";
+      partNumber_ = "";
+      modelNumber_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DiskInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_DiskInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_DiskInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.class,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder.class);
+    }
+
+    public static final int MANUFACTURER_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object manufacturer_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk manufacturer.
+     * </pre>
+     *
+     * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The manufacturer.
+     */
+    @java.lang.Override
+    public java.lang.String getManufacturer() {
+      java.lang.Object ref = manufacturer_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        manufacturer_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk manufacturer.
+     * </pre>
+     *
+     * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for manufacturer.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getManufacturerBytes() {
+      java.lang.Object ref = manufacturer_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        manufacturer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SLOT_FIELD_NUMBER = 2;
+    private int slot_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk slot number.
+     * </pre>
+     *
+     * <code>int32 slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The slot.
+     */
+    @java.lang.Override
+    public int getSlot() {
+      return slot_;
+    }
+
+    public static final int SERIAL_NUMBER_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serialNumber_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk serial number.
+     * </pre>
+     *
+     * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serialNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getSerialNumber() {
+      java.lang.Object ref = serialNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serialNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk serial number.
+     * </pre>
+     *
+     * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serialNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSerialNumberBytes() {
+      java.lang.Object ref = serialNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serialNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PSID_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object psid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk PSID.
+     * </pre>
+     *
+     * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The psid.
+     */
+    @java.lang.Override
+    public java.lang.String getPsid() {
+      java.lang.Object ref = psid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        psid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk PSID.
+     * </pre>
+     *
+     * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for psid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPsidBytes() {
+      java.lang.Object ref = psid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        psid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PART_NUMBER_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object partNumber_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk part number.
+     * </pre>
+     *
+     * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The partNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getPartNumber() {
+      java.lang.Object ref = partNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk part number.
+     * </pre>
+     *
+     * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for partNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPartNumberBytes() {
+      java.lang.Object ref = partNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODEL_NUMBER_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelNumber_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk model number.
+     * </pre>
+     *
+     * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getModelNumber() {
+      java.lang.Object ref = modelNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk model number.
+     * </pre>
+     *
+     * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelNumberBytes() {
+      java.lang.Object ref = modelNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manufacturer_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, manufacturer_);
+      }
+      if (slot_ != 0) {
+        output.writeInt32(2, slot_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serialNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, psid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partNumber_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, partNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelNumber_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manufacturer_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, manufacturer_);
+      }
+      if (slot_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, slot_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serialNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, psid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partNumber_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, partNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelNumber_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo other =
+          (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo) obj;
+
+      if (!getManufacturer().equals(other.getManufacturer())) return false;
+      if (getSlot() != other.getSlot()) return false;
+      if (!getSerialNumber().equals(other.getSerialNumber())) return false;
+      if (!getPsid().equals(other.getPsid())) return false;
+      if (!getPartNumber().equals(other.getPartNumber())) return false;
+      if (!getModelNumber().equals(other.getModelNumber())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MANUFACTURER_FIELD_NUMBER;
+      hash = (53 * hash) + getManufacturer().hashCode();
+      hash = (37 * hash) + SLOT_FIELD_NUMBER;
+      hash = (53 * hash) + getSlot();
+      hash = (37 * hash) + SERIAL_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getSerialNumber().hashCode();
+      hash = (37 * hash) + PSID_FIELD_NUMBER;
+      hash = (53 * hash) + getPsid().hashCode();
+      hash = (37 * hash) + PART_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPartNumber().hashCode();
+      hash = (37 * hash) + MODEL_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getModelNumber().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about individual disks on a machine.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_DiskInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_DiskInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.class,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        manufacturer_ = "";
+        slot_ = 0;
+        serialNumber_ = "";
+        psid_ = "";
+        partNumber_ = "";
+        modelNumber_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_DiskInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo build() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo buildPartial() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo result =
+            new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.manufacturer_ = manufacturer_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.slot_ = slot_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.serialNumber_ = serialNumber_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.psid_ = psid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.partNumber_ = partNumber_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.modelNumber_ = modelNumber_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo) {
+          return mergeFrom(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo other) {
+        if (other
+            == com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+                .getDefaultInstance()) return this;
+        if (!other.getManufacturer().isEmpty()) {
+          manufacturer_ = other.manufacturer_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getSlot() != 0) {
+          setSlot(other.getSlot());
+        }
+        if (!other.getSerialNumber().isEmpty()) {
+          serialNumber_ = other.serialNumber_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getPsid().isEmpty()) {
+          psid_ = other.psid_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getPartNumber().isEmpty()) {
+          partNumber_ = other.partNumber_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getModelNumber().isEmpty()) {
+          modelNumber_ = other.modelNumber_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  manufacturer_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  slot_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  serialNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  psid_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  partNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  modelNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object manufacturer_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk manufacturer.
+       * </pre>
+       *
+       * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The manufacturer.
+       */
+      public java.lang.String getManufacturer() {
+        java.lang.Object ref = manufacturer_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          manufacturer_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk manufacturer.
+       * </pre>
+       *
+       * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for manufacturer.
+       */
+      public com.google.protobuf.ByteString getManufacturerBytes() {
+        java.lang.Object ref = manufacturer_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          manufacturer_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk manufacturer.
+       * </pre>
+       *
+       * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The manufacturer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManufacturer(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        manufacturer_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk manufacturer.
+       * </pre>
+       *
+       * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearManufacturer() {
+        manufacturer_ = getDefaultInstance().getManufacturer();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk manufacturer.
+       * </pre>
+       *
+       * <code>string manufacturer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for manufacturer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManufacturerBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        manufacturer_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int slot_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk slot number.
+       * </pre>
+       *
+       * <code>int32 slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The slot.
+       */
+      @java.lang.Override
+      public int getSlot() {
+        return slot_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk slot number.
+       * </pre>
+       *
+       * <code>int32 slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The slot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlot(int value) {
+
+        slot_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk slot number.
+       * </pre>
+       *
+       * <code>int32 slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSlot() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        slot_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serialNumber_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk serial number.
+       * </pre>
+       *
+       * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serialNumber.
+       */
+      public java.lang.String getSerialNumber() {
+        java.lang.Object ref = serialNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serialNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk serial number.
+       * </pre>
+       *
+       * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serialNumber.
+       */
+      public com.google.protobuf.ByteString getSerialNumberBytes() {
+        java.lang.Object ref = serialNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serialNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk serial number.
+       * </pre>
+       *
+       * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serialNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSerialNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serialNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk serial number.
+       * </pre>
+       *
+       * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSerialNumber() {
+        serialNumber_ = getDefaultInstance().getSerialNumber();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk serial number.
+       * </pre>
+       *
+       * <code>string serial_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serialNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSerialNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serialNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object psid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk PSID.
+       * </pre>
+       *
+       * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The psid.
+       */
+      public java.lang.String getPsid() {
+        java.lang.Object ref = psid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          psid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk PSID.
+       * </pre>
+       *
+       * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for psid.
+       */
+      public com.google.protobuf.ByteString getPsidBytes() {
+        java.lang.Object ref = psid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          psid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk PSID.
+       * </pre>
+       *
+       * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The psid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPsid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        psid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk PSID.
+       * </pre>
+       *
+       * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPsid() {
+        psid_ = getDefaultInstance().getPsid();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk PSID.
+       * </pre>
+       *
+       * <code>string psid = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for psid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPsidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        psid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object partNumber_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk part number.
+       * </pre>
+       *
+       * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The partNumber.
+       */
+      public java.lang.String getPartNumber() {
+        java.lang.Object ref = partNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk part number.
+       * </pre>
+       *
+       * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for partNumber.
+       */
+      public com.google.protobuf.ByteString getPartNumberBytes() {
+        java.lang.Object ref = partNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          partNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk part number.
+       * </pre>
+       *
+       * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The partNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partNumber_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk part number.
+       * </pre>
+       *
+       * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartNumber() {
+        partNumber_ = getDefaultInstance().getPartNumber();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk part number.
+       * </pre>
+       *
+       * <code>string part_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for partNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        partNumber_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object modelNumber_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk model number.
+       * </pre>
+       *
+       * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The modelNumber.
+       */
+      public java.lang.String getModelNumber() {
+        java.lang.Object ref = modelNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk model number.
+       * </pre>
+       *
+       * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for modelNumber.
+       */
+      public com.google.protobuf.ByteString getModelNumberBytes() {
+        java.lang.Object ref = modelNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk model number.
+       * </pre>
+       *
+       * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The modelNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelNumber_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk model number.
+       * </pre>
+       *
+       * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelNumber() {
+        modelNumber_ = getDefaultInstance().getModelNumber();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Disk model number.
+       * </pre>
+       *
+       * <code>string model_number = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for modelNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelNumber_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo)
+    private static final com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo();
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DiskInfo> PARSER =
+        new com.google.protobuf.AbstractParser<DiskInfo>() {
+          @java.lang.Override
+          public DiskInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DiskInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DiskInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface MachineInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine service tag.
+     * </pre>
+     *
+     * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceTag.
+     */
+    java.lang.String getServiceTag();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine service tag.
+     * </pre>
+     *
+     * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceTag.
+     */
+    com.google.protobuf.ByteString getServiceTagBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+        getMacAddressesList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress getMacAddresses(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getMacAddressesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>
+        getMacAddressesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder
+        getMacAddressesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine name.
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine name.
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+        getDiskInfosList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo getDiskInfos(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getDiskInfosCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>
+        getDiskInfosOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder getDiskInfosOrBuilder(
+        int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about individual machines vendors will provide during turnup.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo}
+   */
+  public static final class MachineInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)
+      MachineInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MachineInfo.newBuilder() to construct.
+    private MachineInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MachineInfo() {
+      serviceTag_ = "";
+      macAddresses_ = java.util.Collections.emptyList();
+      name_ = "";
+      diskInfos_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MachineInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MachineInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MachineInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.class,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder.class);
+    }
+
+    public static final int SERVICE_TAG_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceTag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine service tag.
+     * </pre>
+     *
+     * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceTag.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceTag() {
+      java.lang.Object ref = serviceTag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceTag_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine service tag.
+     * </pre>
+     *
+     * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceTag.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceTagBytes() {
+      java.lang.Object ref = serviceTag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceTag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAC_ADDRESSES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+        macAddresses_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+        getMacAddressesList() {
+      return macAddresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>
+        getMacAddressesOrBuilderList() {
+      return macAddresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getMacAddressesCount() {
+      return macAddresses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress getMacAddresses(
+        int index) {
+      return macAddresses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Each associated MAC address.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder
+        getMacAddressesOrBuilder(int index) {
+      return macAddresses_.get(index);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine name.
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Machine name.
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISK_INFOS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+        diskInfos_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+        getDiskInfosList() {
+      return diskInfos_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>
+        getDiskInfosOrBuilderList() {
+      return diskInfos_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getDiskInfosCount() {
+      return diskInfos_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo getDiskInfos(
+        int index) {
+      return diskInfos_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information for each disk installed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder
+        getDiskInfosOrBuilder(int index) {
+      return diskInfos_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceTag_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceTag_);
+      }
+      for (int i = 0; i < macAddresses_.size(); i++) {
+        output.writeMessage(2, macAddresses_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      for (int i = 0; i < diskInfos_.size(); i++) {
+        output.writeMessage(4, diskInfos_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceTag_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceTag_);
+      }
+      for (int i = 0; i < macAddresses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, macAddresses_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      for (int i = 0; i < diskInfos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, diskInfos_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo other =
+          (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo) obj;
+
+      if (!getServiceTag().equals(other.getServiceTag())) return false;
+      if (!getMacAddressesList().equals(other.getMacAddressesList())) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (!getDiskInfosList().equals(other.getDiskInfosList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceTag().hashCode();
+      if (getMacAddressesCount() > 0) {
+        hash = (37 * hash) + MAC_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getMacAddressesList().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (getDiskInfosCount() > 0) {
+        hash = (37 * hash) + DISK_INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskInfosList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about individual machines vendors will provide during turnup.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MachineInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MachineInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.class,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        serviceTag_ = "";
+        if (macAddressesBuilder_ == null) {
+          macAddresses_ = java.util.Collections.emptyList();
+        } else {
+          macAddresses_ = null;
+          macAddressesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = "";
+        if (diskInfosBuilder_ == null) {
+          diskInfos_ = java.util.Collections.emptyList();
+        } else {
+          diskInfos_ = null;
+          diskInfosBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Hardware_MachineInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo build() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo buildPartial() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo result =
+            new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo result) {
+        if (macAddressesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            macAddresses_ = java.util.Collections.unmodifiableList(macAddresses_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.macAddresses_ = macAddresses_;
+        } else {
+          result.macAddresses_ = macAddressesBuilder_.build();
+        }
+        if (diskInfosBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            diskInfos_ = java.util.Collections.unmodifiableList(diskInfos_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.diskInfos_ = diskInfos_;
+        } else {
+          result.diskInfos_ = diskInfosBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceTag_ = serviceTag_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo) {
+          return mergeFrom(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo other) {
+        if (other
+            == com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+                .getDefaultInstance()) return this;
+        if (!other.getServiceTag().isEmpty()) {
+          serviceTag_ = other.serviceTag_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (macAddressesBuilder_ == null) {
+          if (!other.macAddresses_.isEmpty()) {
+            if (macAddresses_.isEmpty()) {
+              macAddresses_ = other.macAddresses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMacAddressesIsMutable();
+              macAddresses_.addAll(other.macAddresses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.macAddresses_.isEmpty()) {
+            if (macAddressesBuilder_.isEmpty()) {
+              macAddressesBuilder_.dispose();
+              macAddressesBuilder_ = null;
+              macAddresses_ = other.macAddresses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              macAddressesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getMacAddressesFieldBuilder()
+                      : null;
+            } else {
+              macAddressesBuilder_.addAllMessages(other.macAddresses_);
+            }
+          }
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (diskInfosBuilder_ == null) {
+          if (!other.diskInfos_.isEmpty()) {
+            if (diskInfos_.isEmpty()) {
+              diskInfos_ = other.diskInfos_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureDiskInfosIsMutable();
+              diskInfos_.addAll(other.diskInfos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.diskInfos_.isEmpty()) {
+            if (diskInfosBuilder_.isEmpty()) {
+              diskInfosBuilder_.dispose();
+              diskInfosBuilder_ = null;
+              diskInfos_ = other.diskInfos_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              diskInfosBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getDiskInfosFieldBuilder()
+                      : null;
+            } else {
+              diskInfosBuilder_.addAllMessages(other.diskInfos_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceTag_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress m =
+                      input.readMessage(
+                          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+                              .parser(),
+                          extensionRegistry);
+                  if (macAddressesBuilder_ == null) {
+                    ensureMacAddressesIsMutable();
+                    macAddresses_.add(m);
+                  } else {
+                    macAddressesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo m =
+                      input.readMessage(
+                          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.parser(),
+                          extensionRegistry);
+                  if (diskInfosBuilder_ == null) {
+                    ensureDiskInfosIsMutable();
+                    diskInfos_.add(m);
+                  } else {
+                    diskInfosBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object serviceTag_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine service tag.
+       * </pre>
+       *
+       * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serviceTag.
+       */
+      public java.lang.String getServiceTag() {
+        java.lang.Object ref = serviceTag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceTag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine service tag.
+       * </pre>
+       *
+       * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serviceTag.
+       */
+      public com.google.protobuf.ByteString getServiceTagBytes() {
+        java.lang.Object ref = serviceTag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceTag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine service tag.
+       * </pre>
+       *
+       * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serviceTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceTag(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceTag_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine service tag.
+       * </pre>
+       *
+       * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceTag() {
+        serviceTag_ = getDefaultInstance().getServiceTag();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine service tag.
+       * </pre>
+       *
+       * <code>string service_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serviceTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceTagBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceTag_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+          macAddresses_ = java.util.Collections.emptyList();
+
+      private void ensureMacAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          macAddresses_ =
+              new java.util.ArrayList<
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>(
+                  macAddresses_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>
+          macAddressesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+          getMacAddressesList() {
+        if (macAddressesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(macAddresses_);
+        } else {
+          return macAddressesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getMacAddressesCount() {
+        if (macAddressesBuilder_ == null) {
+          return macAddresses_.size();
+        } else {
+          return macAddressesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress getMacAddresses(
+          int index) {
+        if (macAddressesBuilder_ == null) {
+          return macAddresses_.get(index);
+        } else {
+          return macAddressesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMacAddresses(
+          int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress value) {
+        if (macAddressesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMacAddressesIsMutable();
+          macAddresses_.set(index, value);
+          onChanged();
+        } else {
+          macAddressesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMacAddresses(
+          int index,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+              builderForValue) {
+        if (macAddressesBuilder_ == null) {
+          ensureMacAddressesIsMutable();
+          macAddresses_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          macAddressesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addMacAddresses(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress value) {
+        if (macAddressesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMacAddressesIsMutable();
+          macAddresses_.add(value);
+          onChanged();
+        } else {
+          macAddressesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addMacAddresses(
+          int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress value) {
+        if (macAddressesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMacAddressesIsMutable();
+          macAddresses_.add(index, value);
+          onChanged();
+        } else {
+          macAddressesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addMacAddresses(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+              builderForValue) {
+        if (macAddressesBuilder_ == null) {
+          ensureMacAddressesIsMutable();
+          macAddresses_.add(builderForValue.build());
+          onChanged();
+        } else {
+          macAddressesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addMacAddresses(
+          int index,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+              builderForValue) {
+        if (macAddressesBuilder_ == null) {
+          ensureMacAddressesIsMutable();
+          macAddresses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          macAddressesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllMacAddresses(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress>
+              values) {
+        if (macAddressesBuilder_ == null) {
+          ensureMacAddressesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, macAddresses_);
+          onChanged();
+        } else {
+          macAddressesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearMacAddresses() {
+        if (macAddressesBuilder_ == null) {
+          macAddresses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          macAddressesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeMacAddresses(int index) {
+        if (macAddressesBuilder_ == null) {
+          ensureMacAddressesIsMutable();
+          macAddresses_.remove(index);
+          onChanged();
+        } else {
+          macAddressesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+          getMacAddressesBuilder(int index) {
+        return getMacAddressesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder
+          getMacAddressesOrBuilder(int index) {
+        if (macAddressesBuilder_ == null) {
+          return macAddresses_.get(index);
+        } else {
+          return macAddressesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>
+          getMacAddressesOrBuilderList() {
+        if (macAddressesBuilder_ != null) {
+          return macAddressesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(macAddresses_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+          addMacAddressesBuilder() {
+        return getMacAddressesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder
+          addMacAddressesBuilder(int index) {
+        return getMacAddressesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Each associated MAC address.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress mac_addresses = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder>
+          getMacAddressesBuilderList() {
+        return getMacAddressesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>
+          getMacAddressesFieldBuilder() {
+        if (macAddressesBuilder_ == null) {
+          macAddressesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress,
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.Builder,
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddressOrBuilder>(
+                  macAddresses_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          macAddresses_ = null;
+        }
+        return macAddressesBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine name.
+       * </pre>
+       *
+       * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine name.
+       * </pre>
+       *
+       * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine name.
+       * </pre>
+       *
+       * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine name.
+       * </pre>
+       *
+       * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Machine name.
+       * </pre>
+       *
+       * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+          diskInfos_ = java.util.Collections.emptyList();
+
+      private void ensureDiskInfosIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          diskInfos_ =
+              new java.util.ArrayList<
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>(diskInfos_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>
+          diskInfosBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+          getDiskInfosList() {
+        if (diskInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(diskInfos_);
+        } else {
+          return diskInfosBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getDiskInfosCount() {
+        if (diskInfosBuilder_ == null) {
+          return diskInfos_.size();
+        } else {
+          return diskInfosBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo getDiskInfos(
+          int index) {
+        if (diskInfosBuilder_ == null) {
+          return diskInfos_.get(index);
+        } else {
+          return diskInfosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setDiskInfos(
+          int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo value) {
+        if (diskInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiskInfosIsMutable();
+          diskInfos_.set(index, value);
+          onChanged();
+        } else {
+          diskInfosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setDiskInfos(
+          int index,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+              builderForValue) {
+        if (diskInfosBuilder_ == null) {
+          ensureDiskInfosIsMutable();
+          diskInfos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          diskInfosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addDiskInfos(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo value) {
+        if (diskInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiskInfosIsMutable();
+          diskInfos_.add(value);
+          onChanged();
+        } else {
+          diskInfosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addDiskInfos(
+          int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo value) {
+        if (diskInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiskInfosIsMutable();
+          diskInfos_.add(index, value);
+          onChanged();
+        } else {
+          diskInfosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addDiskInfos(
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+              builderForValue) {
+        if (diskInfosBuilder_ == null) {
+          ensureDiskInfosIsMutable();
+          diskInfos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          diskInfosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addDiskInfos(
+          int index,
+          com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+              builderForValue) {
+        if (diskInfosBuilder_ == null) {
+          ensureDiskInfosIsMutable();
+          diskInfos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          diskInfosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllDiskInfos(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo>
+              values) {
+        if (diskInfosBuilder_ == null) {
+          ensureDiskInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, diskInfos_);
+          onChanged();
+        } else {
+          diskInfosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearDiskInfos() {
+        if (diskInfosBuilder_ == null) {
+          diskInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          diskInfosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeDiskInfos(int index) {
+        if (diskInfosBuilder_ == null) {
+          ensureDiskInfosIsMutable();
+          diskInfos_.remove(index);
+          onChanged();
+        } else {
+          diskInfosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+          getDiskInfosBuilder(int index) {
+        return getDiskInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder
+          getDiskInfosOrBuilder(int index) {
+        if (diskInfosBuilder_ == null) {
+          return diskInfos_.get(index);
+        } else {
+          return diskInfosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>
+          getDiskInfosOrBuilderList() {
+        if (diskInfosBuilder_ != null) {
+          return diskInfosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(diskInfos_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+          addDiskInfosBuilder() {
+        return getDiskInfosFieldBuilder()
+            .addBuilder(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder
+          addDiskInfosBuilder(int index) {
+        return getDiskInfosFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Information for each disk installed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo disk_infos = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder>
+          getDiskInfosBuilderList() {
+        return getDiskInfosFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>
+          getDiskInfosFieldBuilder() {
+        if (diskInfosBuilder_ == null) {
+          diskInfosBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo,
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfo.Builder,
+                  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.DiskInfoOrBuilder>(
+                  diskInfos_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+          diskInfos_ = null;
+        }
+        return diskInfosBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo)
+    private static final com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo();
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MachineInfo> PARSER =
+        new com.google.protobuf.AbstractParser<MachineInfo>() {
+          @java.lang.Override
+          public MachineInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MachineInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MachineInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -1202,9 +5965,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -1221,9 +5984,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -1242,9 +6005,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -1317,6 +6080,92 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         : actualInstallationDate_;
   }
 
+  public static final int MACHINE_INFOS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+      machineInfos_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+      getMachineInfosList() {
+    return machineInfos_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
+      getMachineInfosOrBuilderList() {
+    return machineInfos_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMachineInfosCount() {
+    return machineInfos_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo getMachineInfos(
+      int index) {
+    return machineInfos_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder
+      getMachineInfosOrBuilder(int index) {
+    return machineInfos_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1382,6 +6231,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(17, getActualInstallationDate());
+    }
+    for (int i = 0; i < machineInfos_.size(); i++) {
+      output.writeMessage(20, machineInfos_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1457,6 +6309,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17, getActualInstallationDate());
     }
+    for (int i = 0; i < machineInfos_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, machineInfos_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1516,6 +6371,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     if (hasActualInstallationDate()) {
       if (!getActualInstallationDate().equals(other.getActualInstallationDate())) return false;
     }
+    if (!getMachineInfosList().equals(other.getMachineInfosList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1578,6 +6434,10 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     if (hasActualInstallationDate()) {
       hash = (37 * hash) + ACTUAL_INSTALLATION_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getActualInstallationDate().hashCode();
+    }
+    if (getMachineInfosCount() > 0) {
+      hash = (37 * hash) + MACHINE_INFOS_FIELD_NUMBER;
+      hash = (53 * hash) + getMachineInfosList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1750,6 +6610,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         getInstallationInfoFieldBuilder();
         getRequestedInstallationDateFieldBuilder();
         getActualInstallationDateFieldBuilder();
+        getMachineInfosFieldBuilder();
       }
     }
 
@@ -1806,6 +6667,13 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         actualInstallationDateBuilder_.dispose();
         actualInstallationDateBuilder_ = null;
       }
+      if (machineInfosBuilder_ == null) {
+        machineInfos_ = java.util.Collections.emptyList();
+      } else {
+        machineInfos_ = null;
+        machineInfosBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -1833,11 +6701,25 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware buildPartial() {
       com.google.cloud.gdchardwaremanagement.v1alpha.Hardware result =
           new com.google.cloud.gdchardwaremanagement.v1alpha.Hardware(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware result) {
+      if (machineInfosBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)) {
+          machineInfos_ = java.util.Collections.unmodifiableList(machineInfos_);
+          bitField0_ = (bitField0_ & ~0x00020000);
+        }
+        result.machineInfos_ = machineInfos_;
+      } else {
+        result.machineInfos_ = machineInfosBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.gdchardwaremanagement.v1alpha.Hardware result) {
@@ -2027,6 +6909,33 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
       if (other.hasActualInstallationDate()) {
         mergeActualInstallationDate(other.getActualInstallationDate());
       }
+      if (machineInfosBuilder_ == null) {
+        if (!other.machineInfos_.isEmpty()) {
+          if (machineInfos_.isEmpty()) {
+            machineInfos_ = other.machineInfos_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+          } else {
+            ensureMachineInfosIsMutable();
+            machineInfos_.addAll(other.machineInfos_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.machineInfos_.isEmpty()) {
+          if (machineInfosBuilder_.isEmpty()) {
+            machineInfosBuilder_.dispose();
+            machineInfosBuilder_ = null;
+            machineInfos_ = other.machineInfos_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+            machineInfosBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMachineInfosFieldBuilder()
+                    : null;
+          } else {
+            machineInfosBuilder_.addAllMessages(other.machineInfos_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2165,6 +7074,21 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+            case 162:
+              {
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo m =
+                    input.readMessage(
+                        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+                            .parser(),
+                        extensionRegistry);
+                if (machineInfosBuilder_ == null) {
+                  ensureMachineInfosIsMutable();
+                  machineInfos_.add(m);
+                } else {
+                  machineInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4528,9 +9452,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4546,9 +9470,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4570,9 +9494,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4596,9 +9520,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4619,9 +9543,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4650,9 +9574,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4673,9 +9597,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4691,9 +9615,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4713,9 +9637,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for this hardware. This is
-     * auto-populated when the order is accepted, if the hardware's HardwareGroup
-     * specifies this. It can also be filled in by the customer.
+     * Optional. Requested installation date for this hardware. If not specified,
+     * this is auto-populated from the order's fulfillment_time upon submission or
+     * from the HardwareGroup's requested_installation_date upon order acceptance.
      * </pre>
      *
      * <code>
@@ -4939,6 +9863,417 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         actualInstallationDate_ = null;
       }
       return actualInstallationDateBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+        machineInfos_ = java.util.Collections.emptyList();
+
+    private void ensureMachineInfosIsMutable() {
+      if (!((bitField0_ & 0x00020000) != 0)) {
+        machineInfos_ =
+            new java.util.ArrayList<
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>(machineInfos_);
+        bitField0_ |= 0x00020000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
+        machineInfosBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+        getMachineInfosList() {
+      if (machineInfosBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(machineInfos_);
+      } else {
+        return machineInfosBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getMachineInfosCount() {
+      if (machineInfosBuilder_ == null) {
+        return machineInfos_.size();
+      } else {
+        return machineInfosBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo getMachineInfos(
+        int index) {
+      if (machineInfosBuilder_ == null) {
+        return machineInfos_.get(index);
+      } else {
+        return machineInfosBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMachineInfos(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo value) {
+      if (machineInfosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMachineInfosIsMutable();
+        machineInfos_.set(index, value);
+        onChanged();
+      } else {
+        machineInfosBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMachineInfos(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+            builderForValue) {
+      if (machineInfosBuilder_ == null) {
+        ensureMachineInfosIsMutable();
+        machineInfos_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        machineInfosBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMachineInfos(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo value) {
+      if (machineInfosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMachineInfosIsMutable();
+        machineInfos_.add(value);
+        onChanged();
+      } else {
+        machineInfosBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMachineInfos(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo value) {
+      if (machineInfosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMachineInfosIsMutable();
+        machineInfos_.add(index, value);
+        onChanged();
+      } else {
+        machineInfosBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMachineInfos(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+            builderForValue) {
+      if (machineInfosBuilder_ == null) {
+        ensureMachineInfosIsMutable();
+        machineInfos_.add(builderForValue.build());
+        onChanged();
+      } else {
+        machineInfosBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMachineInfos(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+            builderForValue) {
+      if (machineInfosBuilder_ == null) {
+        ensureMachineInfosIsMutable();
+        machineInfos_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        machineInfosBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllMachineInfos(
+        java.lang.Iterable<
+                ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+            values) {
+      if (machineInfosBuilder_ == null) {
+        ensureMachineInfosIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, machineInfos_);
+        onChanged();
+      } else {
+        machineInfosBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMachineInfos() {
+      if (machineInfosBuilder_ == null) {
+        machineInfos_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+      } else {
+        machineInfosBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeMachineInfos(int index) {
+      if (machineInfosBuilder_ == null) {
+        ensureMachineInfosIsMutable();
+        machineInfos_.remove(index);
+        onChanged();
+      } else {
+        machineInfosBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+        getMachineInfosBuilder(int index) {
+      return getMachineInfosFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder
+        getMachineInfosOrBuilder(int index) {
+      if (machineInfosBuilder_ == null) {
+        return machineInfos_.get(index);
+      } else {
+        return machineInfosBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
+        getMachineInfosOrBuilderList() {
+      if (machineInfosBuilder_ != null) {
+        return machineInfosBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(machineInfos_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+        addMachineInfosBuilder() {
+      return getMachineInfosFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder
+        addMachineInfosBuilder(int index) {
+      return getMachineInfosFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Per machine asset information needed for turnup.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder>
+        getMachineInfosBuilderList() {
+      return getMachineInfosFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
+        getMachineInfosFieldBuilder() {
+      if (machineInfosBuilder_ == null) {
+        machineInfosBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo.Builder,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>(
+                machineInfos_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+        machineInfos_ = null;
+      }
+      return machineInfosBuilder_;
     }
 
     @java.lang.Override

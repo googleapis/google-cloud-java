@@ -105,7 +105,8 @@ public interface ListSkusResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -117,7 +118,8 @@ public interface ListSkusResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -129,7 +131,8 @@ public interface ListSkusResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -142,7 +145,8 @@ public interface ListSkusResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
