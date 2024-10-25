@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.24.0](https://github.com/googleapis/java-datastore/compare/v2.23.0...v2.24.0) (2024-10-24)
+
+
+### Features
+
+* Add FindNearest API to the stable branch ([3512ba2](https://github.com/googleapis/java-datastore/commit/3512ba2f1bcd358e3c39c36944e05873b3f25f51))
+
+
+### Bug Fixes
+
+* **sample:** Change update entity sample to use transaction ([#1633](https://github.com/googleapis/java-datastore/issues/1633)) ([c44f17a](https://github.com/googleapis/java-datastore/commit/c44f17a7bb93d688367611ee2533c59c940ae61f))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.38.0 ([#1632](https://github.com/googleapis/java-datastore/issues/1632)) ([6453f1e](https://github.com/googleapis/java-datastore/commit/6453f1e44f370a13434ef68295ae5638612032c8))
+* Update googleapis/sdk-platform-java action to v2.48.0 ([#1628](https://github.com/googleapis/java-datastore/issues/1628)) ([d3bce79](https://github.com/googleapis/java-datastore/commit/d3bce79467254b3128a8f16d5754e91d29ece525))
+
 ## [2.23.0](https://github.com/googleapis/java-datastore/compare/v2.22.0...v2.23.0) (2024-10-14)
 
 
