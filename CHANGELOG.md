@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.20.6](https://github.com/googleapis/java-logging/compare/v3.20.5...v3.20.6) (2024-10-26)
+
+
+### Dependencies
+
+* Update sdk platform java dependencies ([#1717](https://github.com/googleapis/java-logging/issues/1717)) ([ee9ef91](https://github.com/googleapis/java-logging/commit/ee9ef91a9ebaed9faa5870a29be40b0c1531a226))
+
 ## [3.20.5](https://github.com/googleapis/java-logging/compare/v3.20.4...v3.20.5) (2024-10-23)
 
 
