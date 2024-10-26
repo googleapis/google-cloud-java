@@ -55,12 +55,13 @@ public final class CustomTargetingValueEnumsProto {
           + "gValueMatchType\0221\n-CUSTOM_TARGETING_VALU"
           + "E_MATCH_TYPE_UNSPECIFIED\020\000\022\t\n\005EXACT\020\001\022\t\n"
           + "\005BROAD\020\002\022\n\n\006PREFIX\020\003\022\020\n\014BROAD_PREFIX\020\004\022\n"
-          + "\n\006SUFFIX\020\005\022\014\n\010CONTAINS\020\006B\265\001\n\033com.google."
+          + "\n\006SUFFIX\020\005\022\014\n\010CONTAINS\020\006B\322\001\n\033com.google."
           + "ads.admanager.v1B\036CustomTargetingValueEn"
           + "umsProtoP\001Z@google.golang.org/genproto/g"
           + "oogleapis/ads/admanager/v1;admanager\252\002\027G"
           + "oogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMa"
-          + "nager\\V1b\006proto3"
+          + "nager\\V1\352\002\032Google::Ads::AdManager::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

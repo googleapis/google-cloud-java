@@ -53,11 +53,12 @@ public final class UserMessagesProto {
           + "\031orders_ui_local_time_zone\030\t \001(\tB\003\340A\001:U\352"
           + "AR\n\035admanager.googleapis.com/User\022$netwo"
           + "rks/{network_code}/users/{user}*\005users2\004"
-          + "userB\250\001\n\033com.google.ads.admanager.v1B\021Us"
+          + "userB\305\001\n\033com.google.ads.admanager.v1B\021Us"
           + "erMessagesProtoP\001Z@google.golang.org/gen"
           + "proto/googleapis/ads/admanager/v1;admana"
           + "ger\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\A"
-          + "ds\\AdManager\\V1b\006proto3"
+          + "ds\\AdManager\\V1\352\002\032Google::Ads::AdManager"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

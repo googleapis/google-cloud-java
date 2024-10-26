@@ -67,11 +67,12 @@ public final class NetworkServiceProto {
           + "r.v1.ListNetworksRequest\032-.google.ads.ad"
           + "manager.v1.ListNetworksResponse\"\024\202\323\344\223\002\016\022"
           + "\014/v1/networks\032\033\312A\030admanager.googleapis.c"
-          + "omB\252\001\n\033com.google.ads.admanager.v1B\023Netw"
+          + "omB\307\001\n\033com.google.ads.admanager.v1B\023Netw"
           + "orkServiceProtoP\001Z@google.golang.org/gen"
           + "proto/googleapis/ads/admanager/v1;admana"
           + "ger\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\A"
-          + "ds\\AdManager\\V1b\006proto3"
+          + "ds\\AdManager\\V1\352\002\032Google::Ads::AdManager"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

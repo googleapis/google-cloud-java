@@ -33,6 +33,10 @@ public final class VersionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_Version_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_ListVersionsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_ListVersionsRequest_fieldAccessorTable;
@@ -56,6 +60,10 @@ public final class VersionProto {
       internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_UpdateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_UpdateVersionRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,44 +77,52 @@ public final class VersionProto {
           + "rsion.proto\022#google.devtools.artifactreg"
           + "istry.v1\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032-google/dev"
-          + "tools/artifactregistry/v1/tag.proto\032\034goo"
-          + "gle/protobuf/struct.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\227\003\n\007Version\022\014\n\004name\030\001"
-          + " \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013create_time"
-          + "\030\005 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
-          + "date_time\030\006 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022>\n\014related_tags\030\007 \003(\0132(.google.devto"
-          + "ols.artifactregistry.v1.Tag\022.\n\010metadata\030"
-          + "\010 \001(\0132\027.google.protobuf.StructB\003\340A\003:\226\001\352A"
-          + "\222\001\n\'artifactregistry.googleapis.com/Vers"
-          + "ion\022gprojects/{project}/locations/{locat"
-          + "ion}/repositories/{repository}/packages/"
-          + "{package}/versions/{version}\"\243\001\n\023ListVer"
-          + "sionsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022>\n\004view\030\004 \001("
-          + "\01620.google.devtools.artifactregistry.v1."
-          + "VersionView\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"o\n\024Li"
-          + "stVersionsResponse\022>\n\010versions\030\001 \003(\0132,.g"
-          + "oogle.devtools.artifactregistry.v1.Versi"
-          + "on\022\027\n\017next_page_token\030\002 \001(\t\"a\n\021GetVersio"
-          + "nRequest\022\014\n\004name\030\001 \001(\t\022>\n\004view\030\002 \001(\01620.g"
-          + "oogle.devtools.artifactregistry.v1.Versi"
-          + "onView\"3\n\024DeleteVersionRequest\022\014\n\004name\030\001"
-          + " \001(\t\022\r\n\005force\030\002 \001(\010\"\261\001\n\032BatchDeleteVersi"
-          + "onsRequest\022<\n\006parent\030\001 \001(\tB,\372A)\022\'artifac"
-          + "tregistry.googleapis.com/Version\022>\n\005name"
-          + "s\030\002 \003(\tB/\340A\002\372A)\n\'artifactregistry.google"
-          + "apis.com/Version\022\025\n\rvalidate_only\030\003 \001(\010\""
-          + "6\n\033BatchDeleteVersionsMetadata\022\027\n\017failed"
-          + "_versions\030\002 \003(\t*@\n\013VersionView\022\034\n\030VERSIO"
-          + "N_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020"
-          + "\002B\367\001\n\'com.google.devtools.artifactregist"
-          + "ry.v1B\014VersionProtoP\001ZPcloud.google.com/"
-          + "go/artifactregistry/apiv1/artifactregist"
-          + "rypb;artifactregistrypb\252\002 Google.Cloud.A"
-          + "rtifactRegistry.V1\312\002 Google\\Cloud\\Artifa"
-          + "ctRegistry\\V1\352\002#Google::Cloud::ArtifactR"
-          + "egistry::V1b\006proto3"
+          + "tools/artifactregistry/v1/tag.proto\032 goo"
+          + "gle/protobuf/field_mask.proto\032\034google/pr"
+          + "otobuf/struct.proto\032\037google/protobuf/tim"
+          + "estamp.proto\"\244\004\n\007Version\022\014\n\004name\030\001 \001(\t\022\023"
+          + "\n\013description\030\003 \001(\t\022/\n\013create_time\030\005 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
+          + "ime\030\006 \001(\0132\032.google.protobuf.Timestamp\022>\n"
+          + "\014related_tags\030\007 \003(\0132(.google.devtools.ar"
+          + "tifactregistry.v1.Tag\022.\n\010metadata\030\010 \001(\0132"
+          + "\027.google.protobuf.StructB\003\340A\003\022W\n\013annotat"
+          + "ions\030\t \003(\0132=.google.devtools.artifactreg"
+          + "istry.v1.Version.AnnotationsEntryB\003\340A\001\0322"
+          + "\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001:\226\001\352A\222\001\n\'artifactregistry.goog"
+          + "leapis.com/Version\022gprojects/{project}/l"
+          + "ocations/{location}/repositories/{reposi"
+          + "tory}/packages/{package}/versions/{versi"
+          + "on}\"\270\001\n\023ListVersionsRequest\022\016\n\006parent\030\001 "
+          + "\001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+          + "(\t\022>\n\004view\030\004 \001(\01620.google.devtools.artif"
+          + "actregistry.v1.VersionView\022\025\n\010order_by\030\005"
+          + " \001(\tB\003\340A\001\022\023\n\006filter\030\006 \001(\tB\003\340A\001\"o\n\024ListVe"
+          + "rsionsResponse\022>\n\010versions\030\001 \003(\0132,.googl"
+          + "e.devtools.artifactregistry.v1.Version\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"a\n\021GetVersionReq"
+          + "uest\022\014\n\004name\030\001 \001(\t\022>\n\004view\030\002 \001(\01620.googl"
+          + "e.devtools.artifactregistry.v1.VersionVi"
+          + "ew\"3\n\024DeleteVersionRequest\022\014\n\004name\030\001 \001(\t"
+          + "\022\r\n\005force\030\002 \001(\010\"\261\001\n\032BatchDeleteVersionsR"
+          + "equest\022<\n\006parent\030\001 \001(\tB,\372A)\022\'artifactreg"
+          + "istry.googleapis.com/Version\022>\n\005names\030\002 "
+          + "\003(\tB/\340A\002\372A)\n\'artifactregistry.googleapis"
+          + ".com/Version\022\025\n\rvalidate_only\030\003 \001(\010\"6\n\033B"
+          + "atchDeleteVersionsMetadata\022\027\n\017failed_ver"
+          + "sions\030\002 \003(\t\"\213\001\n\024UpdateVersionRequest\022B\n\007"
+          + "version\030\001 \001(\0132,.google.devtools.artifact"
+          + "registry.v1.VersionB\003\340A\002\022/\n\013update_mask\030"
+          + "\002 \001(\0132\032.google.protobuf.FieldMask*@\n\013Ver"
+          + "sionView\022\034\n\030VERSION_VIEW_UNSPECIFIED\020\000\022\t"
+          + "\n\005BASIC\020\001\022\010\n\004FULL\020\002B\367\001\n\'com.google.devto"
+          + "ols.artifactregistry.v1B\014VersionProtoP\001Z"
+          + "Pcloud.google.com/go/artifactregistry/ap"
+          + "iv1/artifactregistrypb;artifactregistryp"
+          + "b\252\002 Google.Cloud.ArtifactRegistry.V1\312\002 G"
+          + "oogle\\Cloud\\ArtifactRegistry\\V1\352\002#Google"
+          + "::Cloud::ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -115,6 +131,7 @@ public final class VersionProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.devtools.artifactregistry.v1.TagProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -124,7 +141,23 @@ public final class VersionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_Version_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "CreateTime", "UpdateTime", "RelatedTags", "Metadata",
+              "Name",
+              "Description",
+              "CreateTime",
+              "UpdateTime",
+              "RelatedTags",
+              "Metadata",
+              "Annotations",
+            });
+    internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_Version_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_devtools_artifactregistry_v1_ListVersionsRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -132,7 +165,7 @@ public final class VersionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListVersionsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "View", "OrderBy",
+              "Parent", "PageSize", "PageToken", "View", "OrderBy", "Filter",
             });
     internal_static_google_devtools_artifactregistry_v1_ListVersionsResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -174,6 +207,14 @@ public final class VersionProto {
             new java.lang.String[] {
               "FailedVersions",
             });
+    internal_static_google_devtools_artifactregistry_v1_UpdateVersionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_devtools_artifactregistry_v1_UpdateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_UpdateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Version", "UpdateMask",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -184,6 +225,7 @@ public final class VersionProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.devtools.artifactregistry.v1.TagProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -72,11 +72,12 @@ public final class RoleServiceProto {
           + "quest\032*.google.ads.admanager.v1.ListRole"
           + "sResponse\".\332A\006parent\202\323\344\223\002\037\022\035/v1/{parent="
           + "networks/*}/roles\032\033\312A\030admanager.googleap"
-          + "is.comB\247\001\n\033com.google.ads.admanager.v1B\020"
+          + "is.comB\304\001\n\033com.google.ads.admanager.v1B\020"
           + "RoleServiceProtoP\001Z@google.golang.org/ge"
           + "nproto/googleapis/ads/admanager/v1;adman"
           + "ager\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\"
-          + "Ads\\AdManager\\V1b\006proto3"
+          + "Ads\\AdManager\\V1\352\002\032Google::Ads::AdManage"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

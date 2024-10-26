@@ -73,12 +73,12 @@ public final class CompanyServiceProto {
           + "tCompaniesRequest\032..google.ads.admanager"
           + ".v1.ListCompaniesResponse\"2\332A\006parent\202\323\344\223"
           + "\002#\022!/v1/{parent=networks/*}/companies\032\033\312"
-          + "A\030admanager.googleapis.comB\252\001\n\033com.googl"
+          + "A\030admanager.googleapis.comB\307\001\n\033com.googl"
           + "e.ads.admanager.v1B\023CompanyServiceProtoP"
           + "\001Z@google.golang.org/genproto/googleapis"
           + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1b"
-          + "\006proto3"
+          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
+          + "\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

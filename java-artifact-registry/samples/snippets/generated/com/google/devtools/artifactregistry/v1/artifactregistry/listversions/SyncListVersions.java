@@ -42,6 +42,7 @@ public class SyncListVersions {
               .setPageToken("pageToken873572522")
               .setView(VersionView.forNumber(0))
               .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
               .build();
       for (Version element : artifactRegistryClient.listVersions(request).iterateAll()) {
         // doThingsWith(element);

@@ -68,12 +68,13 @@ public final class CompanyMessagesProto {
           + "third_party_company_id\030\020 \001(\003B\003\340A\001:f\352Ac\n "
           + "admanager.googleapis.com/Company\022+networ"
           + "ks/{network_code}/companies/{company}*\tc"
-          + "ompanies2\007companyB\022\n\020_primary_contactB\253\001"
+          + "ompanies2\007companyB\022\n\020_primary_contactB\310\001"
           + "\n\033com.google.ads.admanager.v1B\024CompanyMe"
           + "ssagesProtoP\001Z@google.golang.org/genprot"
           + "o/googleapis/ads/admanager/v1;admanager\252"
           + "\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\A"
-          + "dManager\\V1b\006proto3"
+          + "dManager\\V1\352\002\032Google::Ads::AdManager::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

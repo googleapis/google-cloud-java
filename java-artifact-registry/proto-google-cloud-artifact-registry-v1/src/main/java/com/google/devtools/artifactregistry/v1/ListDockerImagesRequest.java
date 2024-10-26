@@ -124,7 +124,7 @@ public final class ListDockerImagesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The maximum number of artifacts to return.
+   * The maximum number of artifacts to return. Maximum page size is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -771,7 +771,7 @@ public final class ListDockerImagesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of artifacts to return.
+     * The maximum number of artifacts to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -786,7 +786,7 @@ public final class ListDockerImagesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of artifacts to return.
+     * The maximum number of artifacts to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -805,7 +805,7 @@ public final class ListDockerImagesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of artifacts to return.
+     * The maximum number of artifacts to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

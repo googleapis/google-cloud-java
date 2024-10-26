@@ -75,11 +75,12 @@ public final class CustomFieldServiceProto {
           + "ogle.ads.admanager.v1.ListCustomFieldsRe"
           + "sponse\"5\332A\006parent\202\323\344\223\002&\022$/v1/{parent=net"
           + "works/*}/customFields\032\033\312A\030admanager.goog"
-          + "leapis.comB\256\001\n\033com.google.ads.admanager."
+          + "leapis.comB\313\001\n\033com.google.ads.admanager."
           + "v1B\027CustomFieldServiceProtoP\001Z@google.go"
           + "lang.org/genproto/googleapis/ads/admanag"
           + "er/v1;admanager\252\002\027Google.Ads.AdManager.V"
-          + "1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ad"
+          + "s::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

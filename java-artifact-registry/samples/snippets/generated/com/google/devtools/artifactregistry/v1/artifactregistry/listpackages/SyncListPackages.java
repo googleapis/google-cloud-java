@@ -40,6 +40,8 @@ public class SyncListPackages {
               .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .setOrderBy("orderBy-1207110587")
               .build();
       for (Package element : artifactRegistryClient.listPackages(request).iterateAll()) {
         // doThingsWith(element);

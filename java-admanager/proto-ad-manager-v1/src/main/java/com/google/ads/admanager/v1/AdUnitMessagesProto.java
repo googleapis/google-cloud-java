@@ -114,11 +114,12 @@ public final class AdUnitMessagesProto {
           + "\n\021LabelFrequencyCap\0225\n\005label\030\001 \001(\tB&\340A\002\372"
           + "A \n\036admanager.googleapis.com/Label\022<\n\rfr"
           + "equency_cap\030\002 \001(\0132%.google.ads.admanager"
-          + ".v1.FrequencyCapB\252\001\n\033com.google.ads.adma"
+          + ".v1.FrequencyCapB\307\001\n\033com.google.ads.adma"
           + "nager.v1B\023AdUnitMessagesProtoP\001Z@google."
           + "golang.org/genproto/googleapis/ads/adman"
           + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
-          + ".V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

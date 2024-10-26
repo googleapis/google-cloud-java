@@ -45,12 +45,12 @@ public final class EnvironmentTypeEnumProto {
           + "pe_enum.proto\022\027google.ads.admanager.v1\"i"
           + "\n\023EnvironmentTypeEnum\"R\n\017EnvironmentType"
           + "\022 \n\034ENVIRONMENT_TYPE_UNSPECIFIED\020\000\022\013\n\007BR"
-          + "OWSER\020\001\022\020\n\014VIDEO_PLAYER\020\002B\257\001\n\033com.google"
+          + "OWSER\020\001\022\020\n\014VIDEO_PLAYER\020\002B\314\001\n\033com.google"
           + ".ads.admanager.v1B\030EnvironmentTypeEnumPr"
           + "otoP\001Z@google.golang.org/genproto/google"
           + "apis/ads/admanager/v1;admanager\252\002\027Google"
           + ".Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager"
-          + "\\V1b\006proto3"
+          + "\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

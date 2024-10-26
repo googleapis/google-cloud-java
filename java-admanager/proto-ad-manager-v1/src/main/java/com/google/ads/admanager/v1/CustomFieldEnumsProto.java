@@ -69,11 +69,12 @@ public final class CustomFieldEnumsProto {
           + "sibilityEnum\"i\n\025CustomFieldVisibility\022\'\n"
           + "#CUSTOM_FIELD_VISIBILITY_UNSPECIFIED\020\000\022\n"
           + "\n\006HIDDEN\020\001\022\r\n\tREAD_ONLY\020\002\022\014\n\010EDITABLE\020\003B"
-          + "\254\001\n\033com.google.ads.admanager.v1B\025CustomF"
+          + "\311\001\n\033com.google.ads.admanager.v1B\025CustomF"
           + "ieldEnumsProtoP\001Z@google.golang.org/genp"
           + "roto/googleapis/ads/admanager/v1;admanag"
           + "er\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ad"
-          + "s\\AdManager\\V1b\006proto3"
+          + "s\\AdManager\\V1\352\002\032Google::Ads::AdManager:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

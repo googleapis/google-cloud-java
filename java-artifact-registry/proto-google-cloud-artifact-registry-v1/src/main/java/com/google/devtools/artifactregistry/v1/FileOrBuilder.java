@@ -29,7 +29,7 @@ public interface FileOrBuilder
    *
    * <pre>
    * The name of the file, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt".
+   * `projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt`.
    * If the file ID part contains slashes, they are escaped.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface FileOrBuilder
    *
    * <pre>
    * The name of the file, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt".
+   * `projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt`.
    * If the file ID part contains slashes, they are escaped.
    * </pre>
    *
@@ -259,4 +259,67 @@ public interface FileOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getFetchTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
 }

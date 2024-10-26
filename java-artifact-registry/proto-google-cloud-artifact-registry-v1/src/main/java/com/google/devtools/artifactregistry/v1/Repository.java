@@ -181,6 +181,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>GO = 10;</code>
      */
     GO(10),
+    /**
+     *
+     *
+     * <pre>
+     * Generic package format.
+     * </pre>
+     *
+     * <code>GENERIC = 11;</code>
+     */
+    GENERIC(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -274,6 +284,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>GO = 10;</code>
      */
     public static final int GO_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Generic package format.
+     * </pre>
+     *
+     * <code>GENERIC = 11;</code>
+     */
+    public static final int GENERIC_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -317,6 +337,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return KFP;
         case 10:
           return GO;
+        case 11:
+          return GENERIC;
         default:
           return null;
       }
@@ -2083,6 +2105,1838 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface VulnerabilityScanningConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for whether this repository has vulnerability scanning
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enablementConfig.
+     */
+    int getEnablementConfigValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for whether this repository has vulnerability scanning
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enablementConfig.
+     */
+    com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig
+        getEnablementConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastEnableTime field is set.
+     */
+    boolean hasLastEnableTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastEnableTime.
+     */
+    com.google.protobuf.Timestamp getLastEnableTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLastEnableTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of feature enablement, combining repository enablement
+     * config and API enablement state.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enablementState.
+     */
+    int getEnablementStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of feature enablement, combining repository enablement
+     * config and API enablement state.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enablementState.
+     */
+    com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState
+        getEnablementState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reason for the repository state.
+     * </pre>
+     *
+     * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enablementStateReason.
+     */
+    java.lang.String getEnablementStateReason();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reason for the repository state.
+     * </pre>
+     *
+     * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for enablementStateReason.
+     */
+    com.google.protobuf.ByteString getEnablementStateReasonBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config on whether to perform vulnerability scanning for resources in this
+   * repository, as well as output fields describing current state.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig}
+   */
+  public static final class VulnerabilityScanningConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+      VulnerabilityScanningConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VulnerabilityScanningConfig.newBuilder() to construct.
+    private VulnerabilityScanningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VulnerabilityScanningConfig() {
+      enablementConfig_ = 0;
+      enablementState_ = 0;
+      enablementStateReason_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VulnerabilityScanningConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.class,
+              com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Config for vulnerability scanning of resources in this repository.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig}
+     */
+    public enum EnablementConfig implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Not set. This will be treated as INHERITED.
+       * </pre>
+       *
+       * <code>ENABLEMENT_CONFIG_UNSPECIFIED = 0;</code>
+       */
+      ENABLEMENT_CONFIG_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Scanning is Enabled, but dependent on API enablement.
+       * </pre>
+       *
+       * <code>INHERITED = 1;</code>
+       */
+      INHERITED(1),
+      /**
+       *
+       *
+       * <pre>
+       * No automatic vulnerability scanning will be performed for this
+       * repository.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      DISABLED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Not set. This will be treated as INHERITED.
+       * </pre>
+       *
+       * <code>ENABLEMENT_CONFIG_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENABLEMENT_CONFIG_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Scanning is Enabled, but dependent on API enablement.
+       * </pre>
+       *
+       * <code>INHERITED = 1;</code>
+       */
+      public static final int INHERITED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * No automatic vulnerability scanning will be performed for this
+       * repository.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      public static final int DISABLED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EnablementConfig valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EnablementConfig forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENABLEMENT_CONFIG_UNSPECIFIED;
+          case 1:
+            return INHERITED;
+          case 2:
+            return DISABLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EnablementConfig>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EnablementConfig>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EnablementConfig>() {
+                public EnablementConfig findValueByNumber(int number) {
+                  return EnablementConfig.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final EnablementConfig[] VALUES = values();
+
+      public static EnablementConfig valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EnablementConfig(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes the state of vulnerability scanning in this repository,
+     * including both repository enablement and API enablement.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState}
+     */
+    public enum EnablementState implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Enablement state is unclear.
+       * </pre>
+       *
+       * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
+       */
+      ENABLEMENT_STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Repository does not support vulnerability scanning.
+       * </pre>
+       *
+       * <code>SCANNING_UNSUPPORTED = 1;</code>
+       */
+      SCANNING_UNSUPPORTED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Vulnerability scanning is disabled for this repository.
+       * </pre>
+       *
+       * <code>SCANNING_DISABLED = 2;</code>
+       */
+      SCANNING_DISABLED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Vulnerability scanning is active for this repository.
+       * </pre>
+       *
+       * <code>SCANNING_ACTIVE = 3;</code>
+       */
+      SCANNING_ACTIVE(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Enablement state is unclear.
+       * </pre>
+       *
+       * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Repository does not support vulnerability scanning.
+       * </pre>
+       *
+       * <code>SCANNING_UNSUPPORTED = 1;</code>
+       */
+      public static final int SCANNING_UNSUPPORTED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Vulnerability scanning is disabled for this repository.
+       * </pre>
+       *
+       * <code>SCANNING_DISABLED = 2;</code>
+       */
+      public static final int SCANNING_DISABLED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Vulnerability scanning is active for this repository.
+       * </pre>
+       *
+       * <code>SCANNING_ACTIVE = 3;</code>
+       */
+      public static final int SCANNING_ACTIVE_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EnablementState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EnablementState forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENABLEMENT_STATE_UNSPECIFIED;
+          case 1:
+            return SCANNING_UNSUPPORTED;
+          case 2:
+            return SCANNING_DISABLED;
+          case 3:
+            return SCANNING_ACTIVE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EnablementState>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EnablementState>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EnablementState>() {
+                public EnablementState findValueByNumber(int number) {
+                  return EnablementState.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final EnablementState[] VALUES = values();
+
+      public static EnablementState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EnablementState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState)
+    }
+
+    private int bitField0_;
+    public static final int ENABLEMENT_CONFIG_FIELD_NUMBER = 1;
+    private int enablementConfig_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for whether this repository has vulnerability scanning
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enablementConfig.
+     */
+    @java.lang.Override
+    public int getEnablementConfigValue() {
+      return enablementConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for whether this repository has vulnerability scanning
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enablementConfig.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .EnablementConfig
+        getEnablementConfig() {
+      com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementConfig
+          result =
+              com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                  .EnablementConfig.forNumber(enablementConfig_);
+      return result == null
+          ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementConfig.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int LAST_ENABLE_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp lastEnableTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastEnableTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastEnableTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastEnableTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLastEnableTime() {
+      return lastEnableTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastEnableTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time this repository config was enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLastEnableTimeOrBuilder() {
+      return lastEnableTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastEnableTime_;
+    }
+
+    public static final int ENABLEMENT_STATE_FIELD_NUMBER = 3;
+    private int enablementState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of feature enablement, combining repository enablement
+     * config and API enablement state.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enablementState.
+     */
+    @java.lang.Override
+    public int getEnablementStateValue() {
+      return enablementState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of feature enablement, combining repository enablement
+     * config and API enablement state.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enablementState.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .EnablementState
+        getEnablementState() {
+      com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState
+          result =
+              com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                  .EnablementState.forNumber(enablementState_);
+      return result == null
+          ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementState.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ENABLEMENT_STATE_REASON_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object enablementStateReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reason for the repository state.
+     * </pre>
+     *
+     * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enablementStateReason.
+     */
+    @java.lang.Override
+    public java.lang.String getEnablementStateReason() {
+      java.lang.Object ref = enablementStateReason_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enablementStateReason_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reason for the repository state.
+     * </pre>
+     *
+     * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for enablementStateReason.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEnablementStateReasonBytes() {
+      java.lang.Object ref = enablementStateReason_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        enablementStateReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enablementConfig_
+          != com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementConfig.ENABLEMENT_CONFIG_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, enablementConfig_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getLastEnableTime());
+      }
+      if (enablementState_
+          != com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementState.ENABLEMENT_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, enablementState_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enablementStateReason_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, enablementStateReason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enablementConfig_
+          != com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementConfig.ENABLEMENT_CONFIG_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, enablementConfig_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLastEnableTime());
+      }
+      if (enablementState_
+          != com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementState.ENABLEMENT_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, enablementState_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enablementStateReason_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, enablementStateReason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)) {
+        return super.equals(obj);
+      }
+      com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig other =
+          (com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig) obj;
+
+      if (enablementConfig_ != other.enablementConfig_) return false;
+      if (hasLastEnableTime() != other.hasLastEnableTime()) return false;
+      if (hasLastEnableTime()) {
+        if (!getLastEnableTime().equals(other.getLastEnableTime())) return false;
+      }
+      if (enablementState_ != other.enablementState_) return false;
+      if (!getEnablementStateReason().equals(other.getEnablementStateReason())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLEMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + enablementConfig_;
+      if (hasLastEnableTime()) {
+        hash = (37 * hash) + LAST_ENABLE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastEnableTime().hashCode();
+      }
+      hash = (37 * hash) + ENABLEMENT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + enablementState_;
+      hash = (37 * hash) + ENABLEMENT_STATE_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getEnablementStateReason().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config on whether to perform vulnerability scanning for resources in this
+     * repository, as well as output fields describing current state.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .class,
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getLastEnableTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enablementConfig_ = 0;
+        lastEnableTime_ = null;
+        if (lastEnableTimeBuilder_ != null) {
+          lastEnableTimeBuilder_.dispose();
+          lastEnableTimeBuilder_ = null;
+        }
+        enablementState_ = 0;
+        enablementStateReason_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+          getDefaultInstanceForType() {
+        return com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+          build() {
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+          buildPartial() {
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig result =
+            new com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enablementConfig_ = enablementConfig_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastEnableTime_ =
+              lastEnableTimeBuilder_ == null ? lastEnableTime_ : lastEnableTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enablementState_ = enablementState_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enablementStateReason_ = enablementStateReason_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig) {
+          return mergeFrom(
+              (com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig other) {
+        if (other
+            == com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .getDefaultInstance()) return this;
+        if (other.enablementConfig_ != 0) {
+          setEnablementConfigValue(other.getEnablementConfigValue());
+        }
+        if (other.hasLastEnableTime()) {
+          mergeLastEnableTime(other.getLastEnableTime());
+        }
+        if (other.enablementState_ != 0) {
+          setEnablementStateValue(other.getEnablementStateValue());
+        }
+        if (!other.getEnablementStateReason().isEmpty()) {
+          enablementStateReason_ = other.enablementStateReason_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enablementConfig_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getLastEnableTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  enablementState_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 34:
+                {
+                  enablementStateReason_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int enablementConfig_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for whether this repository has vulnerability scanning
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for enablementConfig.
+       */
+      @java.lang.Override
+      public int getEnablementConfigValue() {
+        return enablementConfig_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for whether this repository has vulnerability scanning
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for enablementConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementConfigValue(int value) {
+        enablementConfig_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for whether this repository has vulnerability scanning
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enablementConfig.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementConfig
+          getEnablementConfig() {
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .EnablementConfig
+            result =
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .EnablementConfig.forNumber(enablementConfig_);
+        return result == null
+            ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .EnablementConfig.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for whether this repository has vulnerability scanning
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enablementConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementConfig(
+          com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                  .EnablementConfig
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        enablementConfig_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for whether this repository has vulnerability scanning
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementConfig enablement_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablementConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enablementConfig_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp lastEnableTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          lastEnableTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the lastEnableTime field is set.
+       */
+      public boolean hasLastEnableTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The lastEnableTime.
+       */
+      public com.google.protobuf.Timestamp getLastEnableTime() {
+        if (lastEnableTimeBuilder_ == null) {
+          return lastEnableTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastEnableTime_;
+        } else {
+          return lastEnableTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastEnableTime(com.google.protobuf.Timestamp value) {
+        if (lastEnableTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastEnableTime_ = value;
+        } else {
+          lastEnableTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastEnableTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (lastEnableTimeBuilder_ == null) {
+          lastEnableTime_ = builderForValue.build();
+        } else {
+          lastEnableTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLastEnableTime(com.google.protobuf.Timestamp value) {
+        if (lastEnableTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && lastEnableTime_ != null
+              && lastEnableTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastEnableTimeBuilder().mergeFrom(value);
+          } else {
+            lastEnableTime_ = value;
+          }
+        } else {
+          lastEnableTimeBuilder_.mergeFrom(value);
+        }
+        if (lastEnableTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLastEnableTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lastEnableTime_ = null;
+        if (lastEnableTimeBuilder_ != null) {
+          lastEnableTimeBuilder_.dispose();
+          lastEnableTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLastEnableTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getLastEnableTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLastEnableTimeOrBuilder() {
+        if (lastEnableTimeBuilder_ != null) {
+          return lastEnableTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return lastEnableTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastEnableTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last time this repository config was enabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_enable_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLastEnableTimeFieldBuilder() {
+        if (lastEnableTimeBuilder_ == null) {
+          lastEnableTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLastEnableTime(), getParentForChildren(), isClean());
+          lastEnableTime_ = null;
+        }
+        return lastEnableTimeBuilder_;
+      }
+
+      private int enablementState_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. State of feature enablement, combining repository enablement
+       * config and API enablement state.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for enablementState.
+       */
+      @java.lang.Override
+      public int getEnablementStateValue() {
+        return enablementState_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. State of feature enablement, combining repository enablement
+       * config and API enablement state.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for enablementState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementStateValue(int value) {
+        enablementState_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. State of feature enablement, combining repository enablement
+       * config and API enablement state.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enablementState.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+              .EnablementState
+          getEnablementState() {
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .EnablementState
+            result =
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .EnablementState.forNumber(enablementState_);
+        return result == null
+            ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .EnablementState.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. State of feature enablement, combining repository enablement
+       * config and API enablement state.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enablementState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementState(
+          com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                  .EnablementState
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        enablementState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. State of feature enablement, combining repository enablement
+       * config and API enablement state.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.EnablementState enablement_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablementState() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enablementState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enablementStateReason_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Reason for the repository state.
+       * </pre>
+       *
+       * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enablementStateReason.
+       */
+      public java.lang.String getEnablementStateReason() {
+        java.lang.Object ref = enablementStateReason_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enablementStateReason_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Reason for the repository state.
+       * </pre>
+       *
+       * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for enablementStateReason.
+       */
+      public com.google.protobuf.ByteString getEnablementStateReasonBytes() {
+        java.lang.Object ref = enablementStateReason_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          enablementStateReason_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Reason for the repository state.
+       * </pre>
+       *
+       * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enablementStateReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementStateReason(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enablementStateReason_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Reason for the repository state.
+       * </pre>
+       *
+       * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablementStateReason() {
+        enablementStateReason_ = getDefaultInstance().getEnablementStateReason();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Reason for the repository state.
+       * </pre>
+       *
+       * <code>string enablement_state_reason = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for enablementStateReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablementStateReasonBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        enablementStateReason_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
+    private static final com.google.devtools.artifactregistry.v1.Repository
+            .VulnerabilityScanningConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig();
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VulnerabilityScanningConfig> PARSER =
+        new com.google.protobuf.AbstractParser<VulnerabilityScanningConfig>() {
+          @java.lang.Override
+          public VulnerabilityScanningConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VulnerabilityScanningConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VulnerabilityScanningConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int formatConfigCase_ = 0;
 
@@ -2437,7 +4291,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the repository, for example:
-   * `projects/p1/locations/us-central1/repositories/repo1`.
+   * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+   * in a project, repository names must be unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2461,7 +4316,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the repository, for example:
-   * `projects/p1/locations/us-central1/repositories/repo1`.
+   * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+   * in a project, repository names must be unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3081,6 +4937,107 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     return cleanupPolicyDryRun_;
   }
 
+  public static final int VULNERABILITY_SCANNING_CONFIG_FIELD_NUMBER = 19;
+  private com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+      vulnerabilityScanningConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vulnerabilityScanningConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVulnerabilityScanningConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vulnerabilityScanningConfig.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+      getVulnerabilityScanningConfig() {
+    return vulnerabilityScanningConfig_ == null
+        ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .getDefaultInstance()
+        : vulnerabilityScanningConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder
+      getVulnerabilityScanningConfigOrBuilder() {
+    return vulnerabilityScanningConfig_ == null
+        ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+            .getDefaultInstance()
+        : vulnerabilityScanningConfig_;
+  }
+
+  public static final int DISALLOW_UNSPECIFIED_MODE_FIELD_NUMBER = 21;
+  private boolean disallowUnspecifiedMode_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this is true, an unspecified repo type will be treated as
+   * error rather than defaulting to standard.
+   * </pre>
+   *
+   * <code>bool disallow_unspecified_mode = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disallowUnspecifiedMode.
+   */
+  @java.lang.Override
+  public boolean getDisallowUnspecifiedMode() {
+    return disallowUnspecifiedMode_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 22;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the repository satisfies physical zone isolation.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3150,6 +5107,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     if (cleanupPolicyDryRun_ != false) {
       output.writeBool(18, cleanupPolicyDryRun_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(19, getVulnerabilityScanningConfig());
+    }
+    if (disallowUnspecifiedMode_ != false) {
+      output.writeBool(21, disallowUnspecifiedMode_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(22, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3240,6 +5206,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (cleanupPolicyDryRun_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, cleanupPolicyDryRun_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getVulnerabilityScanningConfig());
+    }
+    if (disallowUnspecifiedMode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, disallowUnspecifiedMode_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3274,6 +5251,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (getSizeBytes() != other.getSizeBytes()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getCleanupPolicyDryRun() != other.getCleanupPolicyDryRun()) return false;
+    if (hasVulnerabilityScanningConfig() != other.hasVulnerabilityScanningConfig()) return false;
+    if (hasVulnerabilityScanningConfig()) {
+      if (!getVulnerabilityScanningConfig().equals(other.getVulnerabilityScanningConfig()))
+        return false;
+    }
+    if (getDisallowUnspecifiedMode() != other.getDisallowUnspecifiedMode()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getFormatConfigCase().equals(other.getFormatConfigCase())) return false;
     switch (formatConfigCase_) {
       case 9:
@@ -3339,6 +5323,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + CLEANUP_POLICY_DRY_RUN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCleanupPolicyDryRun());
+    if (hasVulnerabilityScanningConfig()) {
+      hash = (37 * hash) + VULNERABILITY_SCANNING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getVulnerabilityScanningConfig().hashCode();
+    }
+    hash = (37 * hash) + DISALLOW_UNSPECIFIED_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisallowUnspecifiedMode());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     switch (formatConfigCase_) {
       case 9:
         hash = (37 * hash) + MAVEN_CONFIG_FIELD_NUMBER;
@@ -3531,6 +5523,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getVulnerabilityScanningConfigFieldBuilder();
       }
     }
 
@@ -3570,6 +5563,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       sizeBytes_ = 0L;
       satisfiesPzs_ = false;
       cleanupPolicyDryRun_ = false;
+      vulnerabilityScanningConfig_ = null;
+      if (vulnerabilityScanningConfigBuilder_ != null) {
+        vulnerabilityScanningConfigBuilder_.dispose();
+        vulnerabilityScanningConfigBuilder_ = null;
+      }
+      disallowUnspecifiedMode_ = false;
+      satisfiesPzi_ = false;
       formatConfigCase_ = 0;
       formatConfig_ = null;
       modeConfigCase_ = 0;
@@ -3651,6 +5651,19 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.cleanupPolicyDryRun_ = cleanupPolicyDryRun_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.vulnerabilityScanningConfig_ =
+            vulnerabilityScanningConfigBuilder_ == null
+                ? vulnerabilityScanningConfig_
+                : vulnerabilityScanningConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.disallowUnspecifiedMode_ = disallowUnspecifiedMode_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3759,6 +5772,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getCleanupPolicyDryRun() != false) {
         setCleanupPolicyDryRun(other.getCleanupPolicyDryRun());
+      }
+      if (other.hasVulnerabilityScanningConfig()) {
+        mergeVulnerabilityScanningConfig(other.getVulnerabilityScanningConfig());
+      }
+      if (other.getDisallowUnspecifiedMode() != false) {
+        setDisallowUnspecifiedMode(other.getDisallowUnspecifiedMode());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       switch (other.getFormatConfigCase()) {
         case MAVEN_CONFIG:
@@ -3930,6 +5952,25 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 144
+            case 154:
+              {
+                input.readMessage(
+                    getVulnerabilityScanningConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 154
+            case 168:
+              {
+                disallowUnspecifiedMode_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 168
+            case 176:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4950,7 +6991,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * `projects/p1/locations/us-central1/repositories/repo1`.
+     * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+     * in a project, repository names must be unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4973,7 +7015,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * `projects/p1/locations/us-central1/repositories/repo1`.
+     * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+     * in a project, repository names must be unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4996,7 +7039,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * `projects/p1/locations/us-central1/repositories/repo1`.
+     * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+     * in a project, repository names must be unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -5018,7 +7062,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * `projects/p1/locations/us-central1/repositories/repo1`.
+     * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+     * in a project, repository names must be unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -5036,7 +7081,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * `projects/p1/locations/us-central1/repositories/repo1`.
+     * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+     * in a project, repository names must be unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6530,6 +8576,341 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCleanupPolicyDryRun() {
       bitField0_ = (bitField0_ & ~0x00008000);
       cleanupPolicyDryRun_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        vulnerabilityScanningConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig,
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder>
+        vulnerabilityScanningConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vulnerabilityScanningConfig field is set.
+     */
+    public boolean hasVulnerabilityScanningConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vulnerabilityScanningConfig.
+     */
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+        getVulnerabilityScanningConfig() {
+      if (vulnerabilityScanningConfigBuilder_ == null) {
+        return vulnerabilityScanningConfig_ == null
+            ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .getDefaultInstance()
+            : vulnerabilityScanningConfig_;
+      } else {
+        return vulnerabilityScanningConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVulnerabilityScanningConfig(
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig value) {
+      if (vulnerabilityScanningConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vulnerabilityScanningConfig_ = value;
+      } else {
+        vulnerabilityScanningConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVulnerabilityScanningConfig(
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder
+            builderForValue) {
+      if (vulnerabilityScanningConfigBuilder_ == null) {
+        vulnerabilityScanningConfig_ = builderForValue.build();
+      } else {
+        vulnerabilityScanningConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVulnerabilityScanningConfig(
+        com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig value) {
+      if (vulnerabilityScanningConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && vulnerabilityScanningConfig_ != null
+            && vulnerabilityScanningConfig_
+                != com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .getDefaultInstance()) {
+          getVulnerabilityScanningConfigBuilder().mergeFrom(value);
+        } else {
+          vulnerabilityScanningConfig_ = value;
+        }
+      } else {
+        vulnerabilityScanningConfigBuilder_.mergeFrom(value);
+      }
+      if (vulnerabilityScanningConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVulnerabilityScanningConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      vulnerabilityScanningConfig_ = null;
+      if (vulnerabilityScanningConfigBuilder_ != null) {
+        vulnerabilityScanningConfigBuilder_.dispose();
+        vulnerabilityScanningConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder
+        getVulnerabilityScanningConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getVulnerabilityScanningConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder
+        getVulnerabilityScanningConfigOrBuilder() {
+      if (vulnerabilityScanningConfigBuilder_ != null) {
+        return vulnerabilityScanningConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return vulnerabilityScanningConfig_ == null
+            ? com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                .getDefaultInstance()
+            : vulnerabilityScanningConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config and state for vulnerability scanning of resources within
+     * this Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig,
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder>
+        getVulnerabilityScanningConfigFieldBuilder() {
+      if (vulnerabilityScanningConfigBuilder_ == null) {
+        vulnerabilityScanningConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig,
+                com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+                    .Builder,
+                com.google.devtools.artifactregistry.v1.Repository
+                    .VulnerabilityScanningConfigOrBuilder>(
+                getVulnerabilityScanningConfig(), getParentForChildren(), isClean());
+        vulnerabilityScanningConfig_ = null;
+      }
+      return vulnerabilityScanningConfigBuilder_;
+    }
+
+    private boolean disallowUnspecifiedMode_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this is true, an unspecified repo type will be treated as
+     * error rather than defaulting to standard.
+     * </pre>
+     *
+     * <code>bool disallow_unspecified_mode = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disallowUnspecifiedMode.
+     */
+    @java.lang.Override
+    public boolean getDisallowUnspecifiedMode() {
+      return disallowUnspecifiedMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this is true, an unspecified repo type will be treated as
+     * error rather than defaulting to standard.
+     * </pre>
+     *
+     * <code>bool disallow_unspecified_mode = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disallowUnspecifiedMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisallowUnspecifiedMode(boolean value) {
+
+      disallowUnspecifiedMode_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this is true, an unspecified repo type will be treated as
+     * error rather than defaulting to standard.
+     * </pre>
+     *
+     * <code>bool disallow_unspecified_mode = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisallowUnspecifiedMode() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      disallowUnspecifiedMode_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone isolation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone isolation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone isolation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }

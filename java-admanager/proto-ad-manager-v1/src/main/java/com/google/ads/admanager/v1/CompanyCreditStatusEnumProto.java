@@ -46,12 +46,13 @@ public final class CompanyCreditStatusEnumProto {
           + ".v1\"\225\001\n\027CompanyCreditStatusEnum\"z\n\023Compa"
           + "nyCreditStatus\022%\n!COMPANY_CREDIT_STATUS_"
           + "UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022"
-          + "\013\n\007ON_HOLD\020\003\022\010\n\004STOP\020\004\022\013\n\007BLOCKED\020\005B\263\001\n\033"
+          + "\013\n\007ON_HOLD\020\003\022\010\n\004STOP\020\004\022\013\n\007BLOCKED\020\005B\320\001\n\033"
           + "com.google.ads.admanager.v1B\034CompanyCred"
           + "itStatusEnumProtoP\001Z@google.golang.org/g"
           + "enproto/googleapis/ads/admanager/v1;adma"
           + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
-          + "\\Ads\\AdManager\\V1b\006proto3"
+          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManag"
+          + "er::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

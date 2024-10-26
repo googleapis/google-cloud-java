@@ -54,12 +54,12 @@ public final class NetworkMessagesProto {
           + "com/AdUnit\022\031\n\014test_network\030\n \001(\010B\003\340A\003\022\027\n"
           + "\nnetwork_id\030\013 \001(\003B\003\340A\003:Q\352AN\n admanager.g"
           + "oogleapis.com/Network\022\027networks/{network"
-          + "_code}*\010networks2\007networkB\253\001\n\033com.google"
+          + "_code}*\010networks2\007networkB\310\001\n\033com.google"
           + ".ads.admanager.v1B\024NetworkMessagesProtoP"
           + "\001Z@google.golang.org/genproto/googleapis"
           + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1b"
-          + "\006proto3"
+          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
+          + "\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

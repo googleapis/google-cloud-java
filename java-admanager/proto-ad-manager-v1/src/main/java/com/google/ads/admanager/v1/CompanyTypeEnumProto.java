@@ -46,12 +46,12 @@ public final class CompanyTypeEnumProto {
           + "ompanyTypeEnum\"\177\n\013CompanyType\022\034\n\030COMPANY"
           + "_TYPE_UNSPECIFIED\020\000\022\016\n\nADVERTISER\020\001\022\024\n\020H"
           + "OUSE_ADVERTISER\020\002\022\n\n\006AGENCY\020\003\022\020\n\014HOUSE_A"
-          + "GENCY\020\004\022\016\n\nAD_NETWORK\020\005B\253\001\n\033com.google.a"
+          + "GENCY\020\004\022\016\n\nAD_NETWORK\020\005B\310\001\n\033com.google.a"
           + "ds.admanager.v1B\024CompanyTypeEnumProtoP\001Z"
           + "@google.golang.org/genproto/googleapis/a"
           + "ds/admanager/v1;admanager\252\002\027Google.Ads.A"
-          + "dManager.V1\312\002\027Google\\Ads\\AdManager\\V1b\006p"
-          + "roto3"
+          + "dManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032"
+          + "Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

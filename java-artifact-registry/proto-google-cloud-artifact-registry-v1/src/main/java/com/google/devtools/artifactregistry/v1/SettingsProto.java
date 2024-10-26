@@ -53,15 +53,18 @@ public final class SettingsProto {
           + "ttings.proto\022#google.devtools.artifactre"
           + "gistry.v1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032 google/pr"
-          + "otobuf/field_mask.proto\"\220\003\n\017ProjectSetti"
+          + "otobuf/field_mask.proto\"\210\004\n\017ProjectSetti"
           + "ngs\022\014\n\004name\030\001 \001(\t\022g\n\030legacy_redirection_"
           + "state\030\002 \001(\0162E.google.devtools.artifactre"
           + "gistry.v1.ProjectSettings.RedirectionSta"
-          + "te\"\253\001\n\020RedirectionState\022!\n\035REDIRECTION_S"
-          + "TATE_UNSPECIFIED\020\000\022$\n REDIRECTION_FROM_G"
-          + "CR_IO_DISABLED\020\001\022#\n\037REDIRECTION_FROM_GCR"
-          + "_IO_ENABLED\020\002\022)\n!REDIRECTION_FROM_GCR_IO"
-          + "_FINALIZED\020\003\032\002\010\001:X\352AU\n/artifactregistry."
+          + "te\022\024\n\014pull_percent\030\003 \001(\005\"\215\002\n\020Redirection"
+          + "State\022!\n\035REDIRECTION_STATE_UNSPECIFIED\020\000"
+          + "\022$\n REDIRECTION_FROM_GCR_IO_DISABLED\020\001\022#"
+          + "\n\037REDIRECTION_FROM_GCR_IO_ENABLED\020\002\022)\n!R"
+          + "EDIRECTION_FROM_GCR_IO_FINALIZED\020\003\032\002\010\001\022/"
+          + "\n+REDIRECTION_FROM_GCR_IO_ENABLED_AND_CO"
+          + "PYING\020\005\022/\n+REDIRECTION_FROM_GCR_IO_PARTI"
+          + "AL_AND_COPYING\020\006:X\352AU\n/artifactregistry."
           + "googleapis.com/ProjectSettings\022\"projects"
           + "/{project}/projectSettings\"b\n\031GetProject"
           + "SettingsRequest\022E\n\004name\030\001 \001(\tB7\340A\002\372A1\n/a"
@@ -92,7 +95,7 @@ public final class SettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ProjectSettings_descriptor,
             new java.lang.String[] {
-              "Name", "LegacyRedirectionState",
+              "Name", "LegacyRedirectionState", "PullPercent",
             });
     internal_static_google_devtools_artifactregistry_v1_GetProjectSettingsRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);

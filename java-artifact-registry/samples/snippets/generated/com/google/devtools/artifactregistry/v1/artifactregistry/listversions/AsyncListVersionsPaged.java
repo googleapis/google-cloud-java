@@ -44,6 +44,7 @@ public class AsyncListVersionsPaged {
               .setPageToken("pageToken873572522")
               .setView(VersionView.forNumber(0))
               .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
               .build();
       while (true) {
         ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);

@@ -47,12 +47,12 @@ public final class TeamMessagesProto {
           + "urce.proto\"\206\001\n\004Team\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024"
           + "\n\007team_id\030\002 \001(\003B\003\340A\003:U\352AR\n\035admanager.goo"
           + "gleapis.com/Team\022$networks/{network_code"
-          + "}/teams/{team}*\005teams2\004teamB\250\001\n\033com.goog"
+          + "}/teams/{team}*\005teams2\004teamB\305\001\n\033com.goog"
           + "le.ads.admanager.v1B\021TeamMessagesProtoP\001"
           + "Z@google.golang.org/genproto/googleapis/"
           + "ads/admanager/v1;admanager\252\002\027Google.Ads."
-          + "AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1b\006"
-          + "proto3"
+          + "AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002"
+          + "\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

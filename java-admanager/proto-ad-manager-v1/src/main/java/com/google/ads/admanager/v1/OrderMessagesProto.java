@@ -87,11 +87,12 @@ public final class OrderMessagesProto {
           + "oogle.ads.admanager.v1.CustomFieldValueB"
           + "\003\340A\001:Z\352AW\n\036admanager.googleapis.com/Orde"
           + "r\022&networks/{network_code}/orders/{order"
-          + "}*\006orders2\005orderB\251\001\n\033com.google.ads.adma"
+          + "}*\006orders2\005orderB\306\001\n\033com.google.ads.adma"
           + "nager.v1B\022OrderMessagesProtoP\001Z@google.g"
           + "olang.org/genproto/googleapis/ads/admana"
           + "ger/v1;admanager\252\002\027Google.Ads.AdManager."
-          + "V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::A"
+          + "ds::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -115,6 +115,26 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Deprecated
     REDIRECTION_FROM_GCR_IO_FINALIZED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Redirection is enabled and missing images are copied from GCR
+     * </pre>
+     *
+     * <code>REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING = 5;</code>
+     */
+    REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING(5),
+    /**
+     *
+     *
+     * <pre>
+     * Redirection is partially enabled and missing images are copied from GCR
+     * </pre>
+     *
+     * <code>REDIRECTION_FROM_GCR_IO_PARTIAL_AND_COPYING = 6;</code>
+     */
+    REDIRECTION_FROM_GCR_IO_PARTIAL_AND_COPYING(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +178,26 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int REDIRECTION_FROM_GCR_IO_FINALIZED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Redirection is enabled and missing images are copied from GCR
+     * </pre>
+     *
+     * <code>REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING = 5;</code>
+     */
+    public static final int REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Redirection is partially enabled and missing images are copied from GCR
+     * </pre>
+     *
+     * <code>REDIRECTION_FROM_GCR_IO_PARTIAL_AND_COPYING = 6;</code>
+     */
+    public static final int REDIRECTION_FROM_GCR_IO_PARTIAL_AND_COPYING_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,6 +231,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
           return REDIRECTION_FROM_GCR_IO_ENABLED;
         case 3:
           return REDIRECTION_FROM_GCR_IO_FINALIZED;
+        case 5:
+          return REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING;
+        case 6:
+          return REDIRECTION_FROM_GCR_IO_PARTIAL_AND_COPYING;
         default:
           return null;
       }
@@ -354,6 +398,25 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int PULL_PERCENT_FIELD_NUMBER = 3;
+  private int pullPercent_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of pull traffic to redirect from GCR to AR when using
+   * partial redirection.
+   * </pre>
+   *
+   * <code>int32 pull_percent = 3;</code>
+   *
+   * @return The pullPercent.
+   */
+  @java.lang.Override
+  public int getPullPercent() {
+    return pullPercent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -377,6 +440,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(2, legacyRedirectionState_);
     }
+    if (pullPercent_ != 0) {
+      output.writeInt32(3, pullPercent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -394,6 +460,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
             .REDIRECTION_STATE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, legacyRedirectionState_);
+    }
+    if (pullPercent_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pullPercent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -413,6 +482,7 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
 
     if (!getName().equals(other.getName())) return false;
     if (legacyRedirectionState_ != other.legacyRedirectionState_) return false;
+    if (getPullPercent() != other.getPullPercent()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -428,6 +498,8 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + LEGACY_REDIRECTION_STATE_FIELD_NUMBER;
     hash = (53 * hash) + legacyRedirectionState_;
+    hash = (37 * hash) + PULL_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getPullPercent();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -570,6 +642,7 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       name_ = "";
       legacyRedirectionState_ = 0;
+      pullPercent_ = 0;
       return this;
     }
 
@@ -611,6 +684,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.legacyRedirectionState_ = legacyRedirectionState_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pullPercent_ = pullPercent_;
       }
     }
 
@@ -668,6 +744,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       if (other.legacyRedirectionState_ != 0) {
         setLegacyRedirectionStateValue(other.getLegacyRedirectionStateValue());
       }
+      if (other.getPullPercent() != 0) {
+        setPullPercent(other.getPullPercent());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -706,6 +785,12 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                pullPercent_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -962,6 +1047,62 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     public Builder clearLegacyRedirectionState() {
       bitField0_ = (bitField0_ & ~0x00000002);
       legacyRedirectionState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pullPercent_;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of pull traffic to redirect from GCR to AR when using
+     * partial redirection.
+     * </pre>
+     *
+     * <code>int32 pull_percent = 3;</code>
+     *
+     * @return The pullPercent.
+     */
+    @java.lang.Override
+    public int getPullPercent() {
+      return pullPercent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of pull traffic to redirect from GCR to AR when using
+     * partial redirection.
+     * </pre>
+     *
+     * <code>int32 pull_percent = 3;</code>
+     *
+     * @param value The pullPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPullPercent(int value) {
+
+      pullPercent_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of pull traffic to redirect from GCR to AR when using
+     * partial redirection.
+     * </pre>
+     *
+     * <code>int32 pull_percent = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPullPercent() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pullPercent_ = 0;
       onChanged();
       return this;
     }

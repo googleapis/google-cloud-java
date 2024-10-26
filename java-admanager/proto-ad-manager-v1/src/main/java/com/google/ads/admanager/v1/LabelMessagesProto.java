@@ -47,11 +47,12 @@ public final class LabelMessagesProto {
           + "ource.proto\"v\n\005Label\022\021\n\004name\030\001 \001(\tB\003\340A\010:"
           + "Z\352AW\n\036admanager.googleapis.com/Label\022&ne"
           + "tworks/{network_code}/labels/{label}*\006la"
-          + "bels2\005labelB\251\001\n\033com.google.ads.admanager"
+          + "bels2\005labelB\306\001\n\033com.google.ads.admanager"
           + ".v1B\022LabelMessagesProtoP\001Z@google.golang"
           + ".org/genproto/googleapis/ads/admanager/v"
           + "1;admanager\252\002\027Google.Ads.AdManager.V1\312\002\027"
-          + "Google\\Ads\\AdManager\\V1b\006proto3"
+          + "Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::A"
+          + "dManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

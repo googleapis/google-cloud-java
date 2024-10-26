@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
@@ -56,6 +58,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
+import com.google.type.Expr;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -997,6 +1000,10 @@ public class ArtifactRegistryClientTest {
             .setSizeBytes(-1796325715)
             .setSatisfiesPzs(true)
             .setCleanupPolicyDryRun(true)
+            .setVulnerabilityScanningConfig(
+                Repository.VulnerabilityScanningConfig.newBuilder().build())
+            .setDisallowUnspecifiedMode(true)
+            .setSatisfiesPzi(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1044,6 +1051,10 @@ public class ArtifactRegistryClientTest {
             .setSizeBytes(-1796325715)
             .setSatisfiesPzs(true)
             .setCleanupPolicyDryRun(true)
+            .setVulnerabilityScanningConfig(
+                Repository.VulnerabilityScanningConfig.newBuilder().build())
+            .setDisallowUnspecifiedMode(true)
+            .setSatisfiesPzi(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1091,6 +1102,10 @@ public class ArtifactRegistryClientTest {
             .setSizeBytes(-1796325715)
             .setSatisfiesPzs(true)
             .setCleanupPolicyDryRun(true)
+            .setVulnerabilityScanningConfig(
+                Repository.VulnerabilityScanningConfig.newBuilder().build())
+            .setDisallowUnspecifiedMode(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1153,6 +1168,10 @@ public class ArtifactRegistryClientTest {
             .setSizeBytes(-1796325715)
             .setSatisfiesPzs(true)
             .setCleanupPolicyDryRun(true)
+            .setVulnerabilityScanningConfig(
+                Repository.VulnerabilityScanningConfig.newBuilder().build())
+            .setDisallowUnspecifiedMode(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1215,6 +1234,10 @@ public class ArtifactRegistryClientTest {
             .setSizeBytes(-1796325715)
             .setSatisfiesPzs(true)
             .setCleanupPolicyDryRun(true)
+            .setVulnerabilityScanningConfig(
+                Repository.VulnerabilityScanningConfig.newBuilder().build())
+            .setDisallowUnspecifiedMode(true)
+            .setSatisfiesPzi(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1432,6 +1455,7 @@ public class ArtifactRegistryClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1474,6 +1498,7 @@ public class ArtifactRegistryClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1647,6 +1672,7 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1813,6 +1839,55 @@ public class ArtifactRegistryClientTest {
   }
 
   @Test
+  public void updateVersionTest() throws Exception {
+    Version expectedResponse =
+        Version.newBuilder()
+            .setName(
+                VersionName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[VERSION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedTags(new ArrayList<Tag>())
+            .setMetadata(Struct.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    Version version = Version.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Version actualResponse = client.updateVersion(version, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateVersionRequest actualRequest = ((UpdateVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(version, actualRequest.getVersion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      Version version = Version.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateVersion(version, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listFilesTest() throws Exception {
     File responsesElement = File.newBuilder().build();
     ListFilesResponse expectedResponse =
@@ -1911,6 +1986,7 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOwner("owner106164915")
             .setFetchTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1955,6 +2031,7 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOwner("owner106164915")
             .setFetchTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1982,6 +2059,138 @@ public class ArtifactRegistryClientTest {
     try {
       String name = "name3373707";
       client.getFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFileTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    FileName name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]");
+
+    client.deleteFileAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileRequest actualRequest = ((DeleteFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      FileName name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]");
+      client.deleteFileAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteFileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFileTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteFileAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileRequest actualRequest = ((DeleteFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFileAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateFileTest() throws Exception {
+    File expectedResponse =
+        File.newBuilder()
+            .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+            .setSizeBytes(-1796325715)
+            .addAllHashes(new ArrayList<Hash>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setOwner("owner106164915")
+            .setFetchTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    File file = File.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    File actualResponse = client.updateFile(file, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFileRequest actualRequest = ((UpdateFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(file, actualRequest.getFile());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      File file = File.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFile(file, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2184,6 +2393,377 @@ public class ArtifactRegistryClientTest {
   }
 
   @Test
+  public void createRuleTest() throws Exception {
+    Rule expectedResponse =
+        Rule.newBuilder()
+            .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+            .setCondition(Expr.newBuilder().build())
+            .setPackageId("packageId1802060801")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    Rule rule = Rule.newBuilder().build();
+    String ruleId = "ruleId-919875273";
+
+    Rule actualResponse = client.createRule(parent, rule, ruleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRuleRequest actualRequest = ((CreateRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(rule, actualRequest.getRule());
+    Assert.assertEquals(ruleId, actualRequest.getRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      Rule rule = Rule.newBuilder().build();
+      String ruleId = "ruleId-919875273";
+      client.createRule(parent, rule, ruleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRuleTest2() throws Exception {
+    Rule expectedResponse =
+        Rule.newBuilder()
+            .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+            .setCondition(Expr.newBuilder().build())
+            .setPackageId("packageId1802060801")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Rule rule = Rule.newBuilder().build();
+    String ruleId = "ruleId-919875273";
+
+    Rule actualResponse = client.createRule(parent, rule, ruleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRuleRequest actualRequest = ((CreateRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(rule, actualRequest.getRule());
+    Assert.assertEquals(ruleId, actualRequest.getRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Rule rule = Rule.newBuilder().build();
+      String ruleId = "ruleId-919875273";
+      client.createRule(parent, rule, ruleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRulesTest() throws Exception {
+    Rule responsesElement = Rule.newBuilder().build();
+    ListRulesResponse expectedResponse =
+        ListRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRules(Arrays.asList(responsesElement))
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListRulesPagedResponse pagedListResponse = client.listRules(parent);
+
+    List<Rule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRulesRequest actualRequest = ((ListRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRulesTest2() throws Exception {
+    Rule responsesElement = Rule.newBuilder().build();
+    ListRulesResponse expectedResponse =
+        ListRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRules(Arrays.asList(responsesElement))
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRulesPagedResponse pagedListResponse = client.listRules(parent);
+
+    List<Rule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRulesRequest actualRequest = ((ListRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRuleTest() throws Exception {
+    Rule expectedResponse =
+        Rule.newBuilder()
+            .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+            .setCondition(Expr.newBuilder().build())
+            .setPackageId("packageId1802060801")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+
+    Rule actualResponse = client.getRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRuleRequest actualRequest = ((GetRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+      client.getRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRuleTest2() throws Exception {
+    Rule expectedResponse =
+        Rule.newBuilder()
+            .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+            .setCondition(Expr.newBuilder().build())
+            .setPackageId("packageId1802060801")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Rule actualResponse = client.getRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRuleRequest actualRequest = ((GetRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRuleTest() throws Exception {
+    Rule expectedResponse =
+        Rule.newBuilder()
+            .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+            .setCondition(Expr.newBuilder().build())
+            .setPackageId("packageId1802060801")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    Rule rule = Rule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Rule actualResponse = client.updateRule(rule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRuleRequest actualRequest = ((UpdateRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(rule, actualRequest.getRule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      Rule rule = Rule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRule(rule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+
+    client.deleteRule(name);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRuleRequest actualRequest = ((DeleteRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+      client.deleteRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteRule(name);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRuleRequest actualRequest = ((DeleteRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
@@ -2336,6 +2916,7 @@ public class ArtifactRegistryClientTest {
     ProjectSettings expectedResponse =
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
+            .setPullPercent(1781572683)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -2374,6 +2955,7 @@ public class ArtifactRegistryClientTest {
     ProjectSettings expectedResponse =
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
+            .setPullPercent(1781572683)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -2412,6 +2994,7 @@ public class ArtifactRegistryClientTest {
     ProjectSettings expectedResponse =
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
+            .setPullPercent(1781572683)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -2563,6 +3146,450 @@ public class ArtifactRegistryClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePackageTest() throws Exception {
+    Package expectedResponse =
+        Package.newBuilder()
+            .setName(
+                PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    Package package_ = Package.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Package actualResponse = client.updatePackage(package_, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePackageRequest actualRequest = ((UpdatePackageRequest) actualRequests.get(0));
+
+    Assert.assertEquals(package_, actualRequest.getPackage());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePackageExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      Package package_ = Package.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePackage(package_, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttachmentsTest() throws Exception {
+    Attachment responsesElement = Attachment.newBuilder().build();
+    ListAttachmentsResponse expectedResponse =
+        ListAttachmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttachments(Arrays.asList(responsesElement))
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListAttachmentsPagedResponse pagedListResponse = client.listAttachments(parent);
+
+    List<Attachment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttachmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAttachmentsRequest actualRequest = ((ListAttachmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAttachmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listAttachments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttachmentsTest2() throws Exception {
+    Attachment responsesElement = Attachment.newBuilder().build();
+    ListAttachmentsResponse expectedResponse =
+        ListAttachmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttachments(Arrays.asList(responsesElement))
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAttachmentsPagedResponse pagedListResponse = client.listAttachments(parent);
+
+    List<Attachment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttachmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAttachmentsRequest actualRequest = ((ListAttachmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAttachmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAttachments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+                    .toString())
+            .setTarget("target-880905839")
+            .setType("type3575610")
+            .setAttachmentNamespace("attachmentNamespace-1956859016")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFiles(new ArrayList<String>())
+            .setOciVersionName("ociVersionName-533968082")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    AttachmentName name =
+        AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttachmentRequest actualRequest = ((GetAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttachmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      AttachmentName name =
+          AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+      client.getAttachment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest2() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+                    .toString())
+            .setTarget("target-880905839")
+            .setType("type3575610")
+            .setAttachmentNamespace("attachmentNamespace-1956859016")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFiles(new ArrayList<String>())
+            .setOciVersionName("ociVersionName-533968082")
+            .build();
+    mockArtifactRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttachmentRequest actualRequest = ((GetAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttachmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAttachment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAttachmentTest() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+                    .toString())
+            .setTarget("target-880905839")
+            .setType("type3575610")
+            .setAttachmentNamespace("attachmentNamespace-1956859016")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFiles(new ArrayList<String>())
+            .setOciVersionName("ociVersionName-533968082")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAttachmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    Attachment attachment = Attachment.newBuilder().build();
+    String attachmentId = "attachmentId-1434081890";
+
+    Attachment actualResponse =
+        client.createAttachmentAsync(parent, attachment, attachmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAttachmentRequest actualRequest = ((CreateAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(attachment, actualRequest.getAttachment());
+    Assert.assertEquals(attachmentId, actualRequest.getAttachmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAttachmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      Attachment attachment = Attachment.newBuilder().build();
+      String attachmentId = "attachmentId-1434081890";
+      client.createAttachmentAsync(parent, attachment, attachmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAttachmentTest2() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+                    .toString())
+            .setTarget("target-880905839")
+            .setType("type3575610")
+            .setAttachmentNamespace("attachmentNamespace-1956859016")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFiles(new ArrayList<String>())
+            .setOciVersionName("ociVersionName-533968082")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAttachmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Attachment attachment = Attachment.newBuilder().build();
+    String attachmentId = "attachmentId-1434081890";
+
+    Attachment actualResponse =
+        client.createAttachmentAsync(parent, attachment, attachmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAttachmentRequest actualRequest = ((CreateAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(attachment, actualRequest.getAttachment());
+    Assert.assertEquals(attachmentId, actualRequest.getAttachmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAttachmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Attachment attachment = Attachment.newBuilder().build();
+      String attachmentId = "attachmentId-1434081890";
+      client.createAttachmentAsync(parent, attachment, attachmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAttachmentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAttachmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    AttachmentName name =
+        AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+
+    client.deleteAttachmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAttachmentRequest actualRequest = ((DeleteAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAttachmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      AttachmentName name =
+          AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+      client.deleteAttachmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAttachmentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAttachmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAttachmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAttachmentRequest actualRequest = ((DeleteAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAttachmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAttachmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
