@@ -98,6 +98,7 @@ public class ReachabilityServiceClientHttpJsonTest {
     mockService.reset();
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void listConnectivityTestsTest() throws Exception {
     ConnectivityTest responsesElement = ConnectivityTest.newBuilder().build();
@@ -224,6 +225,7 @@ public class ReachabilityServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void createConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
