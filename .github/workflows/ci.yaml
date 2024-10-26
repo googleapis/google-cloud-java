@@ -112,7 +112,7 @@ jobs:
       run: |
         mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
     - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.48.0
+      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.49.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:
@@ -130,7 +130,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           /src/cli/entry_point.py validate-generation-config
       env:
-        library_generation_image_tag: 2.47.0
+        library_generation_image_tag: 2.49.0
         workspace_name: /workspace
 
 # TODO: Uncomment the needed Github Actions

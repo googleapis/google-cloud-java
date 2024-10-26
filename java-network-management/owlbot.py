@@ -62,6 +62,16 @@ for library in s.get_staging_dirs():
         '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void testIamPermissionsTest() throws Exception {'
     )
     s.replace(
+        v1beta1_file_name,
+        r'\s+@Test\n\s+public void listConnectivityTestsTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listConnectivityTestsTest() throws Exception {'
+    )
+    s.replace(
+        v1beta1_file_name,
+        r'\s+@Test\n\s+public void createConnectivityTestTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createConnectivityTestTest() throws Exception {'
+    )
+    s.replace(
         v1beta1_vpcflowlogs_file_name,
         r'^import org.junit.Test;',
         'import org.junit.Ignore;\nimport org.junit.Test;'
