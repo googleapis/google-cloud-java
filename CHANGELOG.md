@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.10.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.0...v3.10.1) (2024-10-26)
+
+
+### Bug Fixes
+
+* Update BigQuerySchemaUtil to use non-deprecated hasExtension ([#2732](https://github.com/googleapis/java-bigquerystorage/issues/2732)) ([b97b234](https://github.com/googleapis/java-bigquerystorage/commit/b97b23423408b1c96941a507cf27ddce84c1be38))
+
+
+### Dependencies
+
+* Update actions/checkout digest to 11bd719 ([#2726](https://github.com/googleapis/java-bigquerystorage/issues/2726)) ([01a3a23](https://github.com/googleapis/java-bigquerystorage/commit/01a3a239c2cf3ee0146bea64ffa4ff93515b7ae7))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.3 ([#2721](https://github.com/googleapis/java-bigquerystorage/issues/2721)) ([0bc725c](https://github.com/googleapis/java-bigquerystorage/commit/0bc725cce59582706f2abb41804ee58796afb637))
+* Update googleapis/sdk-platform-java action to v2.49.0 ([#2737](https://github.com/googleapis/java-bigquerystorage/issues/2737)) ([46e302f](https://github.com/googleapis/java-bigquerystorage/commit/46e302fcb2345370c5f7fd91e0c9d550c8c05f23))
+* Update sdk-platform-java dependencies ([#2738](https://github.com/googleapis/java-bigquerystorage/issues/2738)) ([9556cfe](https://github.com/googleapis/java-bigquerystorage/commit/9556cfedaf321b49ee21083a376540ea57550519))
+
 ## [3.10.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.9.3...v3.10.0) (2024-10-23)
 
 
