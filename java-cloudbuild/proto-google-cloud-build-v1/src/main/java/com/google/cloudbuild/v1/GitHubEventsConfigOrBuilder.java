@@ -34,7 +34,7 @@ public interface GitHubEventsConfigOrBuilder
    * <code>int64 installation_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1880
    * @return The installationId.
    */
   @java.lang.Deprecated

@@ -1440,6 +1440,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloudbuild.v1.PrivatePoolV1Config$PrivateServiceConnect",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloudbuild.v1.PrivatePoolV1Config$PrivateServiceConnect$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloudbuild.v1.PrivatePoolV1Config$WorkerConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
