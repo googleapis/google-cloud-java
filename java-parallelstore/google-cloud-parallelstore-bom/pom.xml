@@ -35,8 +35,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-parallelstore-v1</artifactId>
+        <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-parallelstore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-parallelstore-v1beta</artifactId>
         <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-parallelstore-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-parallelstore-v1</artifactId>
+        <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-parallelstore-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
