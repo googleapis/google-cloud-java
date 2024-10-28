@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.10.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.1...v3.10.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* BQTableSchemaToProtoDescriptor setting of FieldOption. ([#2743](https://github.com/googleapis/java-bigquerystorage/issues/2743)) ([fb57909](https://github.com/googleapis/java-bigquerystorage/commit/fb57909e75c31a1c3f924b8b41c8a9d5f7c73207))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.49.0 ([882a657](https://github.com/googleapis/java-bigquerystorage/commit/882a6576ebab12d5bdd95261d231f49bc24f52ac))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.43.2 ([#2744](https://github.com/googleapis/java-bigquerystorage/issues/2744)) ([1b12580](https://github.com/googleapis/java-bigquerystorage/commit/1b12580ff7de454876870cc08e78b81f3b7b572c))
+
 ## [3.10.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.0...v3.10.1) (2024-10-26)
 
 
