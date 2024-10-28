@@ -32,6 +32,7 @@ jobs:
       run: |
         docker run \
           --rm \
+          --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
@@ -52,6 +53,7 @@ jobs:
       run: |
         docker run \
           --rm \
+          --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
