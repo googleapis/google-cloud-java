@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.23.0 (2024-10-28)
+
+### Features
+
+* Add branch rule APIs ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* Add field `instance` to message `.google.cloud.securesourcemanager.v1.ListRepositoriesRequest` ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 0.22.0 (2024-10-09)
 
 * No change

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.54.0 (2024-10-28)
+
+### Features
+
+* Add brand voice lite ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* add brand voice lite, which lets you clone a voice with just 10 seconds of audio ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* Add low latency journey option to proto ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* Add low latency journey option to proto ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* add multi-speaker markup, which allows generating dialogue between multiple speakers ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 2.53.0 (2024-10-09)
 
 * No change

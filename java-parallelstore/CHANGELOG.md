@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.16.0 (2024-10-28)
+
+### Features
+
+* Generate libraries for Parallelstore V1 API ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* new module for parallelstore v1 ([#11272](https://github.com/googleapis/google-cloud-java/issues/11272)) ([ea1ab21](https://github.com/googleapis/google-cloud-java/commit/ea1ab21a35ccbe0564ce6a183d4c39a2225c52e6))
+
+
+
 ## 0.15.0 (2024-10-09)
 
 ### Bug Fixes

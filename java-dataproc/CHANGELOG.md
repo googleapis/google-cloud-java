@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.50.0 (2024-10-28)
+
+### Features
+
+* Add `ProvisioningModelMix` to support mixing of spot and standard instances for secondary workers ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 4.49.0 (2024-10-09)
 
 * No change
