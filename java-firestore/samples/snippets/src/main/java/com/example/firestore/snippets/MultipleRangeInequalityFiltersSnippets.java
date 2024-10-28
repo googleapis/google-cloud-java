@@ -16,29 +16,16 @@
 
 package com.example.firestore.snippets;
 
-import com.example.firestore.snippets.model.City;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.CollectionReference;
-import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.Query;
-import com.google.cloud.firestore.Query.Direction;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-/**
- * Snippets to support firestore querying data documentation.
- */
+/** Snippets to support firestore querying data documentation. */
 class MultipleRangeInequalityFiltersSnippets {
 
   private final Firestore db;
@@ -47,9 +34,7 @@ class MultipleRangeInequalityFiltersSnippets {
     this.db = db;
   }
 
-  /**
-   * Creates cities collection and add sample documents to test queries.
-   */
+  /** Creates cities collection and add sample documents to test queries. */
   void prepareExamples() throws Exception {
     // Data for each city
     Map<String, Object> sfData = new HashMap<>();
@@ -109,8 +94,8 @@ class MultipleRangeInequalityFiltersSnippets {
     System.out.println("Data added successfully!");
   }
 
-  private static void addCityDocument(CollectionReference citiesRef, String documentId,
-      Map<String, Object> data) {
+  private static void addCityDocument(
+      CollectionReference citiesRef, String documentId, Map<String, Object> data) {
     ApiFuture<WriteResult> future = citiesRef.document(documentId).set(data);
     try {
       WriteResult result = future.get();
@@ -123,9 +108,10 @@ class MultipleRangeInequalityFiltersSnippets {
   /* Example of Query with range and inequality filters. */
   Query compoundMultiInequalities() {
     // [START firestore_query_filter_compound_multi_ineq]
-    Query query = db.collection("cities")
-        .whereGreaterThan("population", 1000000)
-        .whereLessThan("density", 10000);
+    Query query =
+        db.collection("cities")
+            .whereGreaterThan("population", 1000000)
+            .whereLessThan("density", 10000);
     // [END firestore_query_filter_compound_multi_ineq]
     return query;
   }
@@ -141,9 +127,7 @@ class MultipleRangeInequalityFiltersSnippets {
     // [END firestore_query_indexing_considerations]
   }
 
-  /**
-   * Closes the gRPC channels associated with this instance and frees up their resources.
-   */
+  /** Closes the gRPC channels associated with this instance and frees up their resources. */
   void close() throws Exception {
     db.close();
   }
