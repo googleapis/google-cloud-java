@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>gapic-libraries-bom</artifactId>
   <packaging>pom</packaging>
-  <version>1.46.0</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.46.2</version><!-- {x-version-update:google-cloud-java:current} -->
   <name>Google Cloud Java BOM</name>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
@@ -15,7 +15,7 @@
   <parent>
     <artifactId>google-cloud-pom-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>1.46.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.46.2</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -514,7 +514,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp-bom</artifactId>
-        <version>3.56.0</version><!-- {x-version-update:google-cloud-dlp:current} -->
+        <version>3.56.1</version><!-- {x-version-update:google-cloud-dlp:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -631,7 +631,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gkehub-bom</artifactId>
-        <version>1.52.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+        <version>1.52.1</version><!-- {x-version-update:google-cloud-gkehub:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

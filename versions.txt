@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.46.0:1.46.0
+google-cloud-java:1.46.2:1.46.2
 google-cloud-accessapproval:2.53.0:2.53.0
 grpc-google-cloud-accessapproval-v1:2.53.0:2.53.0
 proto-google-cloud-accessapproval-v1:2.53.0:2.53.0
@@ -224,9 +224,9 @@ grpc-google-cloud-discoveryengine-v1beta:0.48.0:0.48.0
 google-cloud-distributedcloudedge:0.49.0:0.49.0
 proto-google-cloud-distributedcloudedge-v1:0.49.0:0.49.0
 grpc-google-cloud-distributedcloudedge-v1:0.49.0:0.49.0
-google-cloud-dlp:3.56.0:3.56.0
-grpc-google-cloud-dlp-v2:3.56.0:3.56.0
-proto-google-cloud-dlp-v2:3.56.0:3.56.0
+google-cloud-dlp:3.56.1:3.56.1
+grpc-google-cloud-dlp-v2:3.56.1:3.56.1
+proto-google-cloud-dlp-v2:3.56.1:3.56.1
 google-cloud-dms:2.51.0:2.51.0
 grpc-google-cloud-dms-v1:2.51.0:2.51.0
 proto-google-cloud-dms-v1:2.51.0:2.51.0
@@ -282,15 +282,15 @@ grpc-google-cloud-gke-backup-v1:0.51.0:0.51.0
 google-cloud-gke-connect-gateway:0.53.0:0.53.0
 grpc-google-cloud-gke-connect-gateway-v1beta1:0.53.0:0.53.0
 proto-google-cloud-gke-connect-gateway-v1beta1:0.53.0:0.53.0
-google-cloud-gkehub:1.52.0:1.52.0
-grpc-google-cloud-gkehub-v1beta1:0.58.0:0.58.0
-grpc-google-cloud-gkehub-v1:1.52.0:1.52.0
-grpc-google-cloud-gkehub-v1alpha:0.58.0:0.58.0
-grpc-google-cloud-gkehub-v1beta:0.58.0:0.58.0
-proto-google-cloud-gkehub-v1beta1:0.58.0:0.58.0
-proto-google-cloud-gkehub-v1:1.52.0:1.52.0
-proto-google-cloud-gkehub-v1alpha:0.58.0:0.58.0
-proto-google-cloud-gkehub-v1beta:0.58.0:0.58.0
+google-cloud-gkehub:1.52.1:1.52.1
+grpc-google-cloud-gkehub-v1beta1:0.58.1:0.58.1
+grpc-google-cloud-gkehub-v1:1.52.1:1.52.1
+grpc-google-cloud-gkehub-v1alpha:0.58.1:0.58.1
+grpc-google-cloud-gkehub-v1beta:0.58.1:0.58.1
+proto-google-cloud-gkehub-v1beta1:0.58.1:0.58.1
+proto-google-cloud-gkehub-v1:1.52.1:1.52.1
+proto-google-cloud-gkehub-v1alpha:0.58.1:0.58.1
+proto-google-cloud-gkehub-v1beta:0.58.1:0.58.1
 google-cloud-gke-multi-cloud:0.51.0:0.51.0
 proto-google-cloud-gke-multi-cloud-v1:0.51.0:0.51.0
 grpc-google-cloud-gke-multi-cloud-v1:0.51.0:0.51.0
