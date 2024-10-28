@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.49.0 (2024-10-28)
+
+### ⚠ BREAKING CHANGES
+
+* fix the location type annotation
+
+### Features
+
+* Add GroundedGenerationService API ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* add lite search API to allow public website search with API key ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+### Bug Fixes
+
+* fix the location type annotation ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 0.48.0 (2024-10-09)
 
 * No change

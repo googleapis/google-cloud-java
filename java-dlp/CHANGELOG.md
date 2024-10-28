@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.57.0 (2024-10-28)
+
+### Features
+
+* discovery of BigQuery snapshots ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 3.56.0 (2024-10-09)
 
 * No change

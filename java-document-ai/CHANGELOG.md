@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.57.0 (2024-10-28)
+
+* No change
+
+
 ## 2.56.0 (2024-10-09)
 
 ### ⚠ BREAKING CHANGES

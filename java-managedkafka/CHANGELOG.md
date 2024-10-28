@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 (2024-10-28)
+
+### Bug Fixes
+
+* update proto reference documentation uri ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 0.8.0 (2024-10-09)
 
 * No change
