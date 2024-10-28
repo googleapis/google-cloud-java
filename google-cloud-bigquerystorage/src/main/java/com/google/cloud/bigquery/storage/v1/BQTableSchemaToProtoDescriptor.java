@@ -26,7 +26,7 @@ import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FileDescriptor;
-import com.google.protobuf.ExtensionLite;
+import com.google.protobuf.Message;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -217,13 +217,13 @@ public class BQTableSchemaToProtoDescriptor {
     // Sets columnName annotation when field name is not proto comptaible.
     if (!BigQuerySchemaUtil.isProtoCompatible(fieldName)) {
       fieldDescriptor.setName(BigQuerySchemaUtil.generatePlaceholderFieldName(fieldName));
-      fieldDescriptor.setOptions(
-          FieldOptions.newBuilder()
-              .setExtension(
-                  (ExtensionLite<FieldOptions, String>) AnnotationsProto.columnName,
-                  // Remove ExtensionLite after protobuf linkage error is resolved.
-                  fieldName)
-              .build());
+
+      // The following work around (instead of setting FieldOptions directly) for when
+      // FieldOptions.Builder changes from GeneratedMessageV3 in 3.25 to GeneratedMessage in 4.28 as
+      // it no longer depends on FieldOptions.
+      Message.Builder fieldOptionBuilder = FieldOptions.newBuilder();
+      fieldOptionBuilder.setField(AnnotationsProto.columnName.getDescriptor(), fieldName);
+      fieldDescriptor.setOptions((FieldOptions) fieldOptionBuilder.build());
     }
     return fieldDescriptor.build();
   }
