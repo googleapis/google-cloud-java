@@ -30,6 +30,10 @@ public interface ListSkusRequestOrBuilder
    * <pre>
    * Required. The project and location to list SKUs in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list SKUs across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>
@@ -45,6 +49,10 @@ public interface ListSkusRequestOrBuilder
    * <pre>
    * Required. The project and location to list SKUs in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list SKUs across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>

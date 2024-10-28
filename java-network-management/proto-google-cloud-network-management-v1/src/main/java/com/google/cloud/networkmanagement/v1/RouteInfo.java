@@ -44,6 +44,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     routeScope_ = 0;
     displayName_ = "";
     uri_ = "";
+    region_ = "";
     destIpRange_ = "";
     nextHop_ = "";
     networkUri_ = "";
@@ -54,6 +55,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nccHubUri_ = "";
     nccSpokeUri_ = "";
+    advertisedRouteSourceRouterUri_ = "";
+    advertisedRouteNextHopUri_ = "";
   }
 
   @java.lang.Override
@@ -168,6 +171,17 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_BASED = 7;</code>
      */
     POLICY_BASED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Advertised route. Synthetic route which is used to transition from the
+     * StartFromPrivateNetwork state in Connectivity tests.
+     * </pre>
+     *
+     * <code>ADVERTISED = 101;</code>
+     */
+    ADVERTISED(101),
     UNRECOGNIZED(-1),
     ;
 
@@ -252,6 +266,17 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_BASED = 7;</code>
      */
     public static final int POLICY_BASED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Advertised route. Synthetic route which is used to transition from the
+     * StartFromPrivateNetwork state in Connectivity tests.
+     * </pre>
+     *
+     * <code>ADVERTISED = 101;</code>
+     */
+    public static final int ADVERTISED_VALUE = 101;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -293,6 +318,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           return PEERING_DYNAMIC;
         case 7:
           return POLICY_BASED;
+        case 101:
+          return ADVERTISED;
         default:
           return null;
       }
@@ -1063,10 +1090,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a route.
-   * Dynamic, peering static and peering dynamic routes do not have an URI.
-   * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have an URI.
+   * URI of a route (if applicable).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1089,10 +1113,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a route.
-   * Dynamic, peering static and peering dynamic routes do not have an URI.
-   * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have an URI.
+   * URI of a route (if applicable).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1106,6 +1127,57 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Region of the route (if applicable).
+   * </pre>
+   *
+   * <code>string region = 19;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region of the route (if applicable).
+   * </pre>
+   *
+   * <code>string region = 19;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1722,6 +1794,150 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ADVERTISED_ROUTE_SOURCE_ROUTER_URI_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertisedRouteSourceRouterUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return Whether the advertisedRouteSourceRouterUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertisedRouteSourceRouterUri() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return The advertisedRouteSourceRouterUri.
+   */
+  @java.lang.Override
+  public java.lang.String getAdvertisedRouteSourceRouterUri() {
+    java.lang.Object ref = advertisedRouteSourceRouterUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertisedRouteSourceRouterUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return The bytes for advertisedRouteSourceRouterUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdvertisedRouteSourceRouterUriBytes() {
+    java.lang.Object ref = advertisedRouteSourceRouterUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      advertisedRouteSourceRouterUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ADVERTISED_ROUTE_NEXT_HOP_URI_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertisedRouteNextHopUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return Whether the advertisedRouteNextHopUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertisedRouteNextHopUri() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return The advertisedRouteNextHopUri.
+   */
+  @java.lang.Override
+  public java.lang.String getAdvertisedRouteNextHopUri() {
+    java.lang.Object ref = advertisedRouteNextHopUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertisedRouteNextHopUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return The bytes for advertisedRouteNextHopUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes() {
+    java.lang.Object ref = advertisedRouteNextHopUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      advertisedRouteNextHopUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1789,6 +2005,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, nccSpokeUri_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 17, advertisedRouteSourceRouterUri_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, advertisedRouteNextHopUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, region_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1873,6 +2099,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, nccSpokeUri_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              17, advertisedRouteSourceRouterUri_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(18, advertisedRouteNextHopUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, region_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1894,6 +2132,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (routeScope_ != other.routeScope_) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUri().equals(other.getUri())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
     if (!getDestIpRange().equals(other.getDestIpRange())) return false;
     if (!getNextHop().equals(other.getNextHop())) return false;
     if (!getNetworkUri().equals(other.getNetworkUri())) return false;
@@ -1910,6 +2149,17 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (hasNccSpokeUri() != other.hasNccSpokeUri()) return false;
     if (hasNccSpokeUri()) {
       if (!getNccSpokeUri().equals(other.getNccSpokeUri())) return false;
+    }
+    if (hasAdvertisedRouteSourceRouterUri() != other.hasAdvertisedRouteSourceRouterUri())
+      return false;
+    if (hasAdvertisedRouteSourceRouterUri()) {
+      if (!getAdvertisedRouteSourceRouterUri().equals(other.getAdvertisedRouteSourceRouterUri()))
+        return false;
+    }
+    if (hasAdvertisedRouteNextHopUri() != other.hasAdvertisedRouteNextHopUri()) return false;
+    if (hasAdvertisedRouteNextHopUri()) {
+      if (!getAdvertisedRouteNextHopUri().equals(other.getAdvertisedRouteNextHopUri()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1932,6 +2182,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + DEST_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getDestIpRange().hashCode();
     hash = (37 * hash) + NEXT_HOP_FIELD_NUMBER;
@@ -1965,6 +2217,14 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (hasNccSpokeUri()) {
       hash = (37 * hash) + NCC_SPOKE_URI_FIELD_NUMBER;
       hash = (53 * hash) + getNccSpokeUri().hashCode();
+    }
+    if (hasAdvertisedRouteSourceRouterUri()) {
+      hash = (37 * hash) + ADVERTISED_ROUTE_SOURCE_ROUTER_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertisedRouteSourceRouterUri().hashCode();
+    }
+    if (hasAdvertisedRouteNextHopUri()) {
+      hash = (37 * hash) + ADVERTISED_ROUTE_NEXT_HOP_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertisedRouteNextHopUri().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2110,6 +2370,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       routeScope_ = 0;
       displayName_ = "";
       uri_ = "";
+      region_ = "";
       destIpRange_ = "";
       nextHop_ = "";
       networkUri_ = "";
@@ -2121,6 +2382,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nccHubUri_ = "";
       nccSpokeUri_ = "";
+      advertisedRouteSourceRouterUri_ = "";
+      advertisedRouteNextHopUri_ = "";
       return this;
     }
 
@@ -2173,44 +2436,55 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         result.uri_ = uri_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.destIpRange_ = destIpRange_;
+        result.region_ = region_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.nextHop_ = nextHop_;
+        result.destIpRange_ = destIpRange_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.networkUri_ = networkUri_;
+        result.nextHop_ = nextHop_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.priority_ = priority_;
+        result.networkUri_ = networkUri_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         instanceTags_.makeImmutable();
         result.instanceTags_ = instanceTags_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.srcIpRange_ = srcIpRange_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         destPortRanges_.makeImmutable();
         result.destPortRanges_ = destPortRanges_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         srcPortRanges_.makeImmutable();
         result.srcPortRanges_ = srcPortRanges_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         protocols_.makeImmutable();
         result.protocols_ = protocols_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.nccHubUri_ = nccHubUri_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.nccSpokeUri_ = nccSpokeUri_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.advertisedRouteSourceRouterUri_ = advertisedRouteSourceRouterUri_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.advertisedRouteNextHopUri_ = advertisedRouteNextHopUri_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2280,19 +2554,24 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (!other.getDestIpRange().isEmpty()) {
         destIpRange_ = other.destIpRange_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getNextHop().isEmpty()) {
         nextHop_ = other.nextHop_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getNetworkUri().isEmpty()) {
         networkUri_ = other.networkUri_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getPriority() != 0) {
@@ -2301,7 +2580,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceTags_.isEmpty()) {
         if (instanceTags_.isEmpty()) {
           instanceTags_ = other.instanceTags_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
         } else {
           ensureInstanceTagsIsMutable();
           instanceTags_.addAll(other.instanceTags_);
@@ -2310,13 +2589,13 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSrcIpRange().isEmpty()) {
         srcIpRange_ = other.srcIpRange_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.destPortRanges_.isEmpty()) {
         if (destPortRanges_.isEmpty()) {
           destPortRanges_ = other.destPortRanges_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
         } else {
           ensureDestPortRangesIsMutable();
           destPortRanges_.addAll(other.destPortRanges_);
@@ -2326,7 +2605,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.srcPortRanges_.isEmpty()) {
         if (srcPortRanges_.isEmpty()) {
           srcPortRanges_ = other.srcPortRanges_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureSrcPortRangesIsMutable();
           srcPortRanges_.addAll(other.srcPortRanges_);
@@ -2336,7 +2615,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.protocols_.isEmpty()) {
         if (protocols_.isEmpty()) {
           protocols_ = other.protocols_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureProtocolsIsMutable();
           protocols_.addAll(other.protocols_);
@@ -2345,12 +2624,22 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasNccHubUri()) {
         nccHubUri_ = other.nccHubUri_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasNccSpokeUri()) {
         nccSpokeUri_ = other.nccSpokeUri_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (other.hasAdvertisedRouteSourceRouterUri()) {
+        advertisedRouteSourceRouterUri_ = other.advertisedRouteSourceRouterUri_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      if (other.hasAdvertisedRouteNextHopUri()) {
+        advertisedRouteNextHopUri_ = other.advertisedRouteNextHopUri_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2394,25 +2683,25 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 destIpRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
               {
                 nextHop_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 42:
               {
                 networkUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 42
             case 48:
               {
                 priority_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 58:
@@ -2437,7 +2726,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 srcIpRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
@@ -2470,15 +2759,33 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 nccHubUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 nccSpokeUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
+            case 138:
+              {
+                advertisedRouteSourceRouterUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 138
+            case 146:
+              {
+                advertisedRouteNextHopUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 146
+            case 154:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2886,10 +3193,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route.
-     * Dynamic, peering static and peering dynamic routes do not have an URI.
-     * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have an URI.
+     * URI of a route (if applicable).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2911,10 +3215,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route.
-     * Dynamic, peering static and peering dynamic routes do not have an URI.
-     * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have an URI.
+     * URI of a route (if applicable).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2936,10 +3237,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route.
-     * Dynamic, peering static and peering dynamic routes do not have an URI.
-     * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have an URI.
+     * URI of a route (if applicable).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2960,10 +3258,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route.
-     * Dynamic, peering static and peering dynamic routes do not have an URI.
-     * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have an URI.
+     * URI of a route (if applicable).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2980,10 +3275,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route.
-     * Dynamic, peering static and peering dynamic routes do not have an URI.
-     * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have an URI.
+     * URI of a route (if applicable).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2998,6 +3290,112 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       uri_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Region of the route (if applicable).
+     * </pre>
+     *
+     * <code>string region = 19;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the route (if applicable).
+     * </pre>
+     *
+     * <code>string region = 19;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the route (if applicable).
+     * </pre>
+     *
+     * <code>string region = 19;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the route (if applicable).
+     * </pre>
+     *
+     * <code>string region = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the route (if applicable).
+     * </pre>
+     *
+     * <code>string region = 19;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3064,7 +3462,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       destIpRange_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3081,7 +3479,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDestIpRange() {
       destIpRange_ = getDefaultInstance().getDestIpRange();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3103,7 +3501,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       destIpRange_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3170,7 +3568,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHop_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3187,7 +3585,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHop() {
       nextHop_ = getDefaultInstance().getNextHop();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3209,7 +3607,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHop_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3276,7 +3674,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       networkUri_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3293,7 +3691,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetworkUri() {
       networkUri_ = getDefaultInstance().getNetworkUri();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3315,7 +3713,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       networkUri_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3351,7 +3749,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriority(int value) {
 
       priority_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3367,7 +3765,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       priority_ = 0;
       onChanged();
       return this;
@@ -3380,7 +3778,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!instanceTags_.isModifiable()) {
         instanceTags_ = new com.google.protobuf.LazyStringArrayList(instanceTags_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -3460,7 +3858,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceTagsIsMutable();
       instanceTags_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3482,7 +3880,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceTagsIsMutable();
       instanceTags_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3501,7 +3899,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceTags(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceTags_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3518,7 +3916,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceTags() {
       instanceTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -3542,7 +3940,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceTagsIsMutable();
       instanceTags_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3609,7 +4007,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       srcIpRange_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3626,7 +4024,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSrcIpRange() {
       srcIpRange_ = getDefaultInstance().getSrcIpRange();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3648,7 +4046,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       srcIpRange_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3660,7 +4058,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!destPortRanges_.isModifiable()) {
         destPortRanges_ = new com.google.protobuf.LazyStringArrayList(destPortRanges_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -3740,7 +4138,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDestPortRangesIsMutable();
       destPortRanges_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3762,7 +4160,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDestPortRangesIsMutable();
       destPortRanges_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3781,7 +4179,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDestPortRanges(java.lang.Iterable<java.lang.String> values) {
       ensureDestPortRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destPortRanges_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3798,7 +4196,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDestPortRanges() {
       destPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -3822,7 +4220,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDestPortRangesIsMutable();
       destPortRanges_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3834,7 +4232,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!srcPortRanges_.isModifiable()) {
         srcPortRanges_ = new com.google.protobuf.LazyStringArrayList(srcPortRanges_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -3914,7 +4312,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSrcPortRangesIsMutable();
       srcPortRanges_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3936,7 +4334,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSrcPortRangesIsMutable();
       srcPortRanges_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3955,7 +4353,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSrcPortRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSrcPortRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcPortRanges_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3972,7 +4370,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSrcPortRanges() {
       srcPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -3996,7 +4394,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSrcPortRangesIsMutable();
       srcPortRanges_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4008,7 +4406,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!protocols_.isModifiable()) {
         protocols_ = new com.google.protobuf.LazyStringArrayList(protocols_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
     /**
      *
@@ -4088,7 +4486,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProtocolsIsMutable();
       protocols_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4110,7 +4508,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProtocolsIsMutable();
       protocols_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4129,7 +4527,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProtocols(java.lang.Iterable<java.lang.String> values) {
       ensureProtocolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, protocols_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4146,7 +4544,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProtocols() {
       protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -4170,7 +4568,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProtocolsIsMutable();
       protocols_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4188,7 +4586,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nccHubUri field is set.
      */
     public boolean hasNccHubUri() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4251,7 +4649,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nccHubUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4268,7 +4666,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNccHubUri() {
       nccHubUri_ = getDefaultInstance().getNccHubUri();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4290,7 +4688,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nccHubUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4308,7 +4706,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nccSpokeUri field is set.
      */
     public boolean hasNccSpokeUri() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4371,7 +4769,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nccSpokeUri_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4388,7 +4786,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNccSpokeUri() {
       nccSpokeUri_ = getDefaultInstance().getNccSpokeUri();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4410,7 +4808,271 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nccSpokeUri_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object advertisedRouteSourceRouterUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @return Whether the advertisedRouteSourceRouterUri field is set.
+     */
+    public boolean hasAdvertisedRouteSourceRouterUri() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @return The advertisedRouteSourceRouterUri.
+     */
+    public java.lang.String getAdvertisedRouteSourceRouterUri() {
+      java.lang.Object ref = advertisedRouteSourceRouterUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertisedRouteSourceRouterUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @return The bytes for advertisedRouteSourceRouterUri.
+     */
+    public com.google.protobuf.ByteString getAdvertisedRouteSourceRouterUriBytes() {
+      java.lang.Object ref = advertisedRouteSourceRouterUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        advertisedRouteSourceRouterUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @param value The advertisedRouteSourceRouterUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertisedRouteSourceRouterUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      advertisedRouteSourceRouterUri_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertisedRouteSourceRouterUri() {
+      advertisedRouteSourceRouterUri_ = getDefaultInstance().getAdvertisedRouteSourceRouterUri();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * the corresponding IP prefix.
+     * </pre>
+     *
+     * <code>optional string advertised_route_source_router_uri = 17;</code>
+     *
+     * @param value The bytes for advertisedRouteSourceRouterUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertisedRouteSourceRouterUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      advertisedRouteSourceRouterUri_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object advertisedRouteNextHopUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @return Whether the advertisedRouteNextHopUri field is set.
+     */
+    public boolean hasAdvertisedRouteNextHopUri() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @return The advertisedRouteNextHopUri.
+     */
+    public java.lang.String getAdvertisedRouteNextHopUri() {
+      java.lang.Object ref = advertisedRouteNextHopUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertisedRouteNextHopUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @return The bytes for advertisedRouteNextHopUri.
+     */
+    public com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes() {
+      java.lang.Object ref = advertisedRouteNextHopUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        advertisedRouteNextHopUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @param value The advertisedRouteNextHopUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertisedRouteNextHopUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      advertisedRouteNextHopUri_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertisedRouteNextHopUri() {
+      advertisedRouteNextHopUri_ = getDefaultInstance().getAdvertisedRouteNextHopUri();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+     * the advertised prefix is advertised through, or URI of the source peered
+     * network.
+     * </pre>
+     *
+     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     *
+     * @param value The bytes for advertisedRouteNextHopUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertisedRouteNextHopUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      advertisedRouteNextHopUri_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

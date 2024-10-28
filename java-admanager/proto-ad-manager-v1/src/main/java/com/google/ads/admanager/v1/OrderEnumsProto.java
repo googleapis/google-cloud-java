@@ -46,12 +46,13 @@ public final class OrderEnumsProto {
           + "atusEnum\"\222\001\n\013OrderStatus\022\034\n\030ORDER_STATUS"
           + "_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\002\022\024\n\020PENDING_APP"
           + "ROVAL\020\003\022\014\n\010APPROVED\020\004\022\017\n\013DISAPPROVED\020\005\022\n"
-          + "\n\006PAUSED\020\006\022\014\n\010CANCELED\020\007\022\013\n\007DELETED\020\010B\246\001"
+          + "\n\006PAUSED\020\006\022\014\n\010CANCELED\020\007\022\013\n\007DELETED\020\010B\303\001"
           + "\n\033com.google.ads.admanager.v1B\017OrderEnum"
           + "sProtoP\001Z@google.golang.org/genproto/goo"
           + "gleapis/ads/admanager/v1;admanager\252\002\027Goo"
           + "gle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMana"
-          + "ger\\V1b\006proto3"
+          + "ger\\V1\352\002\032Google::Ads::AdManager::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -57,12 +57,13 @@ public final class TaxonomyCategoryMessagesProto {
           + "\340A\003:\225\001\352A\221\001\n)admanager.googleapis.com/Tax"
           + "onomyCategory\022>networks/{network_code}/t"
           + "axonomyCategories/{taxonomy_category}*\022t"
-          + "axonomyCategories2\020taxonomyCategoryB\264\001\n\033"
+          + "axonomyCategories2\020taxonomyCategoryB\321\001\n\033"
           + "com.google.ads.admanager.v1B\035TaxonomyCat"
           + "egoryMessagesProtoP\001Z@google.golang.org/"
           + "genproto/googleapis/ads/admanager/v1;adm"
           + "anager\252\002\027Google.Ads.AdManager.V1\312\002\027Googl"
-          + "e\\Ads\\AdManager\\V1b\006proto3"
+          + "e\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdMana"
+          + "ger::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

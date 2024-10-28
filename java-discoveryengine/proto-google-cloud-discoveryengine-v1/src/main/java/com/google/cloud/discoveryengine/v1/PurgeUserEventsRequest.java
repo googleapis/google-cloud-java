@@ -74,7 +74,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
    * </pre>
    *
    * <code>
@@ -641,7 +641,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -667,7 +667,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -693,7 +693,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -718,7 +718,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -739,7 +739,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>

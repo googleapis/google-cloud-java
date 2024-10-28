@@ -30,6 +30,9 @@ public interface ConditionOrBuilder
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -43,6 +46,9 @@ public interface ConditionOrBuilder
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -56,6 +62,9 @@ public interface ConditionOrBuilder
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -69,6 +78,9 @@ public interface ConditionOrBuilder
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -83,6 +95,9 @@ public interface ConditionOrBuilder
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -159,4 +174,35 @@ public interface ConditionOrBuilder
    */
   com.google.cloud.discoveryengine.v1.Condition.TimeRangeOrBuilder getActiveTimeRangeOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Query regex to match the whole search query.
+   * Cannot be set when
+   * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+   * is set. This is currently supporting promotion use case.
+   * </pre>
+   *
+   * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queryRegex.
+   */
+  java.lang.String getQueryRegex();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Query regex to match the whole search query.
+   * Cannot be set when
+   * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+   * is set. This is currently supporting promotion use case.
+   * </pre>
+   *
+   * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for queryRegex.
+   */
+  com.google.protobuf.ByteString getQueryRegexBytes();
 }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -39,6 +40,14 @@ public abstract class SearchServiceStub implements BackgroundResource {
 
   public UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
     throw new UnsupportedOperationException("Not implemented: searchCallable()");
+  }
+
+  public UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchLitePagedCallable()");
+  }
+
+  public UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchLiteCallable()");
   }
 
   @Override

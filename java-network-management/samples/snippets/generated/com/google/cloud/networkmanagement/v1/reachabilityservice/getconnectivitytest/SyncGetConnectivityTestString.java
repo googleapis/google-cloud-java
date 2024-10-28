@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1.samples;
 
 // [START networkmanagement_v1_generated_ReachabilityService_GetConnectivityTest_String_sync]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
+import com.google.cloud.networkmanagement.v1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 
 public class SyncGetConnectivityTestString {
@@ -33,7 +34,7 @@ public class SyncGetConnectivityTestString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
-      String name = "name3373707";
+      String name = ConnectivityTestName.of("[PROJECT]", "[TEST]").toString();
       ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(name);
     }
   }

@@ -51,6 +51,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     accelerators_ = java.util.Collections.emptyList();
     machineType_ = "";
     diskType_ = "";
+    storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -91,7 +92,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2785
+   *     google/container/v1/cluster_service.proto;l=3020
    * @return The projectId.
    */
   @java.lang.Override
@@ -119,7 +120,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2785
+   *     google/container/v1/cluster_service.proto;l=3020
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -153,7 +154,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2791
+   *     google/container/v1/cluster_service.proto;l=3026
    * @return The zone.
    */
   @java.lang.Override
@@ -182,7 +183,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2791
+   *     google/container/v1/cluster_service.proto;l=3026
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -214,7 +215,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2795
+   *     google/container/v1/cluster_service.proto;l=3030
    * @return The clusterId.
    */
   @java.lang.Override
@@ -241,7 +242,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2795
+   *     google/container/v1/cluster_service.proto;l=3030
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -273,7 +274,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2799
+   *     google/container/v1/cluster_service.proto;l=3034
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -300,7 +301,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2799
+   *     google/container/v1/cluster_service.proto;l=3034
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1771,6 +1772,74 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : queuedProvisioning_;
   }
 
+  public static final int STORAGE_POOLS_FIELD_NUMBER = 43;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList storagePools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return A list containing the storagePools.
+   */
+  public com.google.protobuf.ProtocolStringList getStoragePoolsList() {
+    return storagePools_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return The count of storagePools.
+   */
+  public int getStoragePoolsCount() {
+    return storagePools_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  public java.lang.String getStoragePools(int index) {
+    return storagePools_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  public com.google.protobuf.ByteString getStoragePoolsBytes(int index) {
+    return storagePools_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1877,6 +1946,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(42, getQueuedProvisioning());
+    }
+    for (int i = 0; i < storagePools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, storagePools_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1987,6 +2059,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getQueuedProvisioning());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < storagePools_.size(); i++) {
+        dataSize += computeStringSizeNoTag(storagePools_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getStoragePoolsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2088,6 +2168,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasQueuedProvisioning()) {
       if (!getQueuedProvisioning().equals(other.getQueuedProvisioning())) return false;
     }
+    if (!getStoragePoolsList().equals(other.getStoragePoolsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2200,6 +2281,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasQueuedProvisioning()) {
       hash = (37 * hash) + QUEUED_PROVISIONING_FIELD_NUMBER;
       hash = (53 * hash) + getQueuedProvisioning().hashCode();
+    }
+    if (getStoragePoolsCount() > 0) {
+      hash = (37 * hash) + STORAGE_POOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePoolsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2476,6 +2561,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         queuedProvisioningBuilder_.dispose();
         queuedProvisioningBuilder_ = null;
       }
+      storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2658,6 +2744,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 ? queuedProvisioning_
                 : queuedProvisioningBuilder_.build();
         to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        storagePools_.makeImmutable();
+        result.storagePools_ = storagePools_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2850,6 +2940,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasQueuedProvisioning()) {
         mergeQueuedProvisioning(other.getQueuedProvisioning());
+      }
+      if (!other.storagePools_.isEmpty()) {
+        if (storagePools_.isEmpty()) {
+          storagePools_ = other.storagePools_;
+          bitField0_ |= 0x80000000;
+        } else {
+          ensureStoragePoolsIsMutable();
+          storagePools_.addAll(other.storagePools_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3078,6 +3178,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x40000000;
                 break;
               } // case 338
+            case 346:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStoragePoolsIsMutable();
+                storagePools_.add(s);
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3110,7 +3217,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2785
+     *     google/container/v1/cluster_service.proto;l=3020
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -3137,7 +3244,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2785
+     *     google/container/v1/cluster_service.proto;l=3020
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -3164,7 +3271,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2785
+     *     google/container/v1/cluster_service.proto;l=3020
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -3190,7 +3297,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2785
+     *     google/container/v1/cluster_service.proto;l=3020
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3212,7 +3319,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2785
+     *     google/container/v1/cluster_service.proto;l=3020
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -3242,7 +3349,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2791
+     *     google/container/v1/cluster_service.proto;l=3026
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3270,7 +3377,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2791
+     *     google/container/v1/cluster_service.proto;l=3026
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3298,7 +3405,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2791
+     *     google/container/v1/cluster_service.proto;l=3026
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3325,7 +3432,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2791
+     *     google/container/v1/cluster_service.proto;l=3026
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3348,7 +3455,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2791
+     *     google/container/v1/cluster_service.proto;l=3026
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3376,7 +3483,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2795
+     *     google/container/v1/cluster_service.proto;l=3030
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -3402,7 +3509,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2795
+     *     google/container/v1/cluster_service.proto;l=3030
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -3428,7 +3535,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2795
+     *     google/container/v1/cluster_service.proto;l=3030
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -3453,7 +3560,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2795
+     *     google/container/v1/cluster_service.proto;l=3030
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3474,7 +3581,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2795
+     *     google/container/v1/cluster_service.proto;l=3030
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -3502,7 +3609,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2799
+     *     google/container/v1/cluster_service.proto;l=3034
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -3528,7 +3635,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2799
+     *     google/container/v1/cluster_service.proto;l=3034
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -3554,7 +3661,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2799
+     *     google/container/v1/cluster_service.proto;l=3034
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3579,7 +3686,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2799
+     *     google/container/v1/cluster_service.proto;l=3034
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3600,7 +3707,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2799
+     *     google/container/v1/cluster_service.proto;l=3034
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -8468,6 +8575,189 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         queuedProvisioning_ = null;
       }
       return queuedProvisioningBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList storagePools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureStoragePoolsIsMutable() {
+      if (!storagePools_.isModifiable()) {
+        storagePools_ = new com.google.protobuf.LazyStringArrayList(storagePools_);
+      }
+      bitField0_ |= 0x80000000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @return A list containing the storagePools.
+     */
+    public com.google.protobuf.ProtocolStringList getStoragePoolsList() {
+      storagePools_.makeImmutable();
+      return storagePools_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @return The count of storagePools.
+     */
+    public int getStoragePoolsCount() {
+      return storagePools_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The storagePools at the given index.
+     */
+    public java.lang.String getStoragePools(int index) {
+      return storagePools_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the storagePools at the given index.
+     */
+    public com.google.protobuf.ByteString getStoragePoolsBytes(int index) {
+      return storagePools_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The storagePools to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePools(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStoragePoolsIsMutable();
+      storagePools_.set(index, value);
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param value The storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStoragePools(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStoragePoolsIsMutable();
+      storagePools_.add(value);
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param values The storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllStoragePools(java.lang.Iterable<java.lang.String> values) {
+      ensureStoragePoolsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storagePools_);
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoragePools() {
+      storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x80000000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * Existing Storage Pools will be replaced with storage-pools.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 43;</code>
+     *
+     * @param value The bytes of the storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStoragePoolsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureStoragePoolsIsMutable();
+      storagePools_.add(value);
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -28,7 +28,7 @@ public interface VertexAISearchOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+   * Required. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
@@ -42,7 +42,7 @@ public interface VertexAISearchOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+   * Required. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>

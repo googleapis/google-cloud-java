@@ -20,6 +20,7 @@ package com.google.cloud.networkmanagement.v1.samples;
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest;
 import com.google.cloud.networkmanagement.v1.ListConnectivityTestsResponse;
+import com.google.cloud.networkmanagement.v1.ProjectName;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 import com.google.common.base.Strings;
 
@@ -38,7 +39,7 @@ public class AsyncListConnectivityTestsPaged {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       ListConnectivityTestsRequest request =
           ListConnectivityTestsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

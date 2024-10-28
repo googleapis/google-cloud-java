@@ -123,4 +123,70 @@ public interface DiskConfigOrBuilder
    * @return The bytes for localSsdInterface.
    */
   com.google.protobuf.ByteString getLocalSsdInterfaceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how many IOPS to provision for the disk. This sets the
+   * number of I/O operations per second that the disk can handle. Note: This
+   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskProvisionedIops field is set.
+   */
+  boolean hasBootDiskProvisionedIops();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how many IOPS to provision for the disk. This sets the
+   * number of I/O operations per second that the disk can handle. Note: This
+   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskProvisionedIops.
+   */
+  long getBootDiskProvisionedIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how much throughput to provision for the disk. This
+   * sets the number of throughput mb per second that the disk can handle.
+   * Values must be greater than or equal to 1. Note: This field is only
+   * supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>
+   * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskProvisionedThroughput field is set.
+   */
+  boolean hasBootDiskProvisionedThroughput();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how much throughput to provision for the disk. This
+   * sets the number of throughput mb per second that the disk can handle.
+   * Values must be greater than or equal to 1. Note: This field is only
+   * supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>
+   * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskProvisionedThroughput.
+   */
+  long getBootDiskProvisionedThroughput();
 }

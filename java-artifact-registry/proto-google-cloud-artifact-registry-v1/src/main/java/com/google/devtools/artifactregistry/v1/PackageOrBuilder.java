@@ -150,4 +150,67 @@ public interface PackageOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
 }

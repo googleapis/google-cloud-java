@@ -262,7 +262,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2288
    * @return The workerPool.
    */
   @java.lang.Deprecated
@@ -277,7 +277,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2288
    * @return The bytes for workerPool.
    */
   @java.lang.Deprecated

@@ -42,6 +42,7 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     parent_ = "";
     pageToken_ = "";
     filter_ = "";
+    instance_ = "";
   }
 
   @java.lang.Override
@@ -241,6 +242,73 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int INSTANCE_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the instance in which the repository is hosted,
+   * formatted as
+   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+   * When listing repositories via
+   * securesourcemanager.googleapis.com (Control Plane API), this field is
+   * required. When listing repositories via *.sourcemanager.dev (Data Plane
+   * API), this field is ignored.
+   * </pre>
+   *
+   * <code>
+   * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The instance.
+   */
+  @java.lang.Override
+  public java.lang.String getInstance() {
+    java.lang.Object ref = instance_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instance_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the instance in which the repository is hosted,
+   * formatted as
+   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+   * When listing repositories via
+   * securesourcemanager.googleapis.com (Control Plane API), this field is
+   * required. When listing repositories via *.sourcemanager.dev (Data Plane
+   * API), this field is ignored.
+   * </pre>
+   *
+   * <code>
+   * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for instance.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInstanceBytes() {
+    java.lang.Object ref = instance_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -267,6 +335,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, instance_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -288,6 +359,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, instance_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -308,6 +382,7 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getInstance().equals(other.getInstance())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -327,6 +402,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + getInstance().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -471,6 +548,7 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
+      instance_ = "";
       return this;
     }
 
@@ -520,6 +598,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.instance_ = instance_;
       }
     }
 
@@ -589,6 +670,11 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getInstance().isEmpty()) {
+        instance_ = other.instance_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -639,6 +725,12 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                instance_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1038,6 +1130,152 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the instance in which the repository is hosted,
+     * formatted as
+     * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+     * When listing repositories via
+     * securesourcemanager.googleapis.com (Control Plane API), this field is
+     * required. When listing repositories via *.sourcemanager.dev (Data Plane
+     * API), this field is ignored.
+     * </pre>
+     *
+     * <code>
+     * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The instance.
+     */
+    public java.lang.String getInstance() {
+      java.lang.Object ref = instance_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instance_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the instance in which the repository is hosted,
+     * formatted as
+     * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+     * When listing repositories via
+     * securesourcemanager.googleapis.com (Control Plane API), this field is
+     * required. When listing repositories via *.sourcemanager.dev (Data Plane
+     * API), this field is ignored.
+     * </pre>
+     *
+     * <code>
+     * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for instance.
+     */
+    public com.google.protobuf.ByteString getInstanceBytes() {
+      java.lang.Object ref = instance_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the instance in which the repository is hosted,
+     * formatted as
+     * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+     * When listing repositories via
+     * securesourcemanager.googleapis.com (Control Plane API), this field is
+     * required. When listing repositories via *.sourcemanager.dev (Data Plane
+     * API), this field is ignored.
+     * </pre>
+     *
+     * <code>
+     * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The instance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstance(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      instance_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the instance in which the repository is hosted,
+     * formatted as
+     * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+     * When listing repositories via
+     * securesourcemanager.googleapis.com (Control Plane API), this field is
+     * required. When listing repositories via *.sourcemanager.dev (Data Plane
+     * API), this field is ignored.
+     * </pre>
+     *
+     * <code>
+     * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstance() {
+      instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the instance in which the repository is hosted,
+     * formatted as
+     * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+     * When listing repositories via
+     * securesourcemanager.googleapis.com (Control Plane API), this field is
+     * required. When listing repositories via *.sourcemanager.dev (Data Plane
+     * API), this field is ignored.
+     * </pre>
+     *
+     * <code>
+     * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for instance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      instance_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

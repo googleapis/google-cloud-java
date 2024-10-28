@@ -28,11 +28,11 @@ public interface ConnectivityTestOrBuilder
    *
    *
    * <pre>
-   * Required. Unique name of the resource using the form:
+   * Identifier. Unique name of the resource using the form:
    *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -41,11 +41,11 @@ public interface ConnectivityTestOrBuilder
    *
    *
    * <pre>
-   * Required. Unique name of the resource using the form:
+   * Identifier. Unique name of the resource using the form:
    *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
@@ -303,6 +305,11 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
         .batchDeleteVersionsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateVersion. */
+  public UnaryCallSettings<UpdateVersionRequest, Version> updateVersionSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updateVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to listFiles. */
   public PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings() {
@@ -312,6 +319,22 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   /** Returns the object with the settings used for calls to getFile. */
   public UnaryCallSettings<GetFileRequest, File> getFileSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).getFileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFile. */
+  public UnaryCallSettings<DeleteFileRequest, Operation> deleteFileSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).deleteFileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFile. */
+  public OperationCallSettings<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).deleteFileOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFile. */
+  public UnaryCallSettings<UpdateFileRequest, File> updateFileSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updateFileSettings();
   }
 
   /** Returns the object with the settings used for calls to listTags. */
@@ -338,6 +361,32 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   /** Returns the object with the settings used for calls to deleteTag. */
   public UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).deleteTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRule. */
+  public UnaryCallSettings<CreateRuleRequest, Rule> createRuleSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).createRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRules. */
+  public PagedCallSettings<ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+      listRulesSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRule. */
+  public UnaryCallSettings<GetRuleRequest, Rule> getRuleSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRule. */
+  public UnaryCallSettings<UpdateRuleRequest, Rule> updateRuleSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updateRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRule. */
+  public UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).deleteRuleSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -376,6 +425,45 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   /** Returns the object with the settings used for calls to updateVPCSCConfig. */
   public UnaryCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).updateVPCSCConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePackage. */
+  public UnaryCallSettings<UpdatePackageRequest, Package> updatePackageSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updatePackageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAttachments. */
+  public PagedCallSettings<
+          ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+      listAttachmentsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listAttachmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAttachment. */
+  public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getAttachmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAttachment. */
+  public UnaryCallSettings<CreateAttachmentRequest, Operation> createAttachmentSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).createAttachmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAttachment. */
+  public OperationCallSettings<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).createAttachmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAttachment. */
+  public UnaryCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).deleteAttachmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAttachment. */
+  public OperationCallSettings<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).deleteAttachmentOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -678,6 +766,11 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
       return getStubSettingsBuilder().batchDeleteVersionsOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateVersion. */
+    public UnaryCallSettings.Builder<UpdateVersionRequest, Version> updateVersionSettings() {
+      return getStubSettingsBuilder().updateVersionSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listFiles. */
     public PagedCallSettings.Builder<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
         listFilesSettings() {
@@ -687,6 +780,22 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     /** Returns the builder for the settings used for calls to getFile. */
     public UnaryCallSettings.Builder<GetFileRequest, File> getFileSettings() {
       return getStubSettingsBuilder().getFileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFile. */
+    public UnaryCallSettings.Builder<DeleteFileRequest, Operation> deleteFileSettings() {
+      return getStubSettingsBuilder().deleteFileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFile. */
+    public OperationCallSettings.Builder<DeleteFileRequest, Empty, OperationMetadata>
+        deleteFileOperationSettings() {
+      return getStubSettingsBuilder().deleteFileOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFile. */
+    public UnaryCallSettings.Builder<UpdateFileRequest, File> updateFileSettings() {
+      return getStubSettingsBuilder().updateFileSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTags. */
@@ -713,6 +822,32 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     /** Returns the builder for the settings used for calls to deleteTag. */
     public UnaryCallSettings.Builder<DeleteTagRequest, Empty> deleteTagSettings() {
       return getStubSettingsBuilder().deleteTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRule. */
+    public UnaryCallSettings.Builder<CreateRuleRequest, Rule> createRuleSettings() {
+      return getStubSettingsBuilder().createRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRules. */
+    public PagedCallSettings.Builder<ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+        listRulesSettings() {
+      return getStubSettingsBuilder().listRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRule. */
+    public UnaryCallSettings.Builder<GetRuleRequest, Rule> getRuleSettings() {
+      return getStubSettingsBuilder().getRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRule. */
+    public UnaryCallSettings.Builder<UpdateRuleRequest, Rule> updateRuleSettings() {
+      return getStubSettingsBuilder().updateRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRule. */
+    public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
+      return getStubSettingsBuilder().deleteRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -752,6 +887,47 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
         updateVPCSCConfigSettings() {
       return getStubSettingsBuilder().updateVPCSCConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePackage. */
+    public UnaryCallSettings.Builder<UpdatePackageRequest, Package> updatePackageSettings() {
+      return getStubSettingsBuilder().updatePackageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAttachments. */
+    public PagedCallSettings.Builder<
+            ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+        listAttachmentsSettings() {
+      return getStubSettingsBuilder().listAttachmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAttachment. */
+    public UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+      return getStubSettingsBuilder().getAttachmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAttachment. */
+    public UnaryCallSettings.Builder<CreateAttachmentRequest, Operation>
+        createAttachmentSettings() {
+      return getStubSettingsBuilder().createAttachmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAttachment. */
+    public OperationCallSettings.Builder<CreateAttachmentRequest, Attachment, OperationMetadata>
+        createAttachmentOperationSettings() {
+      return getStubSettingsBuilder().createAttachmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAttachment. */
+    public UnaryCallSettings.Builder<DeleteAttachmentRequest, Operation>
+        deleteAttachmentSettings() {
+      return getStubSettingsBuilder().deleteAttachmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAttachment. */
+    public OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
+        deleteAttachmentOperationSettings() {
+      return getStubSettingsBuilder().deleteAttachmentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

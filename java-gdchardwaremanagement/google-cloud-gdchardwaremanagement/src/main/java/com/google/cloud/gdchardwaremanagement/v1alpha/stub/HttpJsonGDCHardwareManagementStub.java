@@ -54,6 +54,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareGroupRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteOrderRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetChangeLogEntryRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest;
@@ -527,6 +528,45 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       .build())
               .setOperationSnapshotFactory(
                   (UpdateSiteRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSiteRequest, Operation>
+      deleteSiteMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSiteRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/DeleteSite")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSiteRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/sites/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSiteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSiteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSiteRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1563,6 +1603,9 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   private final UnaryCallable<UpdateSiteRequest, Operation> updateSiteCallable;
   private final OperationCallable<UpdateSiteRequest, Site, OperationMetadata>
       updateSiteOperationCallable;
+  private final UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable;
+  private final OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable;
   private final UnaryCallable<ListHardwareGroupsRequest, ListHardwareGroupsResponse>
       listHardwareGroupsCallable;
   private final UnaryCallable<ListHardwareGroupsRequest, ListHardwareGroupsPagedResponse>
@@ -1805,6 +1848,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("site.name", String.valueOf(request.getSite().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteSiteRequest, Operation> deleteSiteTransportSettings =
+        HttpJsonCallSettings.<DeleteSiteRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSiteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -2178,6 +2232,15 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
             settings.updateSiteOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteSiteCallable =
+        callableFactory.createUnaryCallable(
+            deleteSiteTransportSettings, settings.deleteSiteSettings(), clientContext);
+    this.deleteSiteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSiteTransportSettings,
+            settings.deleteSiteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listHardwareGroupsCallable =
         callableFactory.createUnaryCallable(
             listHardwareGroupsTransportSettings,
@@ -2379,6 +2442,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
     methodDescriptors.add(getSiteMethodDescriptor);
     methodDescriptors.add(createSiteMethodDescriptor);
     methodDescriptors.add(updateSiteMethodDescriptor);
+    methodDescriptors.add(deleteSiteMethodDescriptor);
     methodDescriptors.add(listHardwareGroupsMethodDescriptor);
     methodDescriptors.add(getHardwareGroupMethodDescriptor);
     methodDescriptors.add(createHardwareGroupMethodDescriptor);
@@ -2506,6 +2570,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   public OperationCallable<UpdateSiteRequest, Site, OperationMetadata>
       updateSiteOperationCallable() {
     return updateSiteOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable() {
+    return deleteSiteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable() {
+    return deleteSiteOperationCallable;
   }
 
   @Override

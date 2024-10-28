@@ -291,11 +291,11 @@ public interface SiteOrBuilder
    *
    *
    * <pre>
-   * Required. A URL to the Google Maps address location of the site.
+   * Optional. A URL to the Google Maps address location of the site.
    * An example value is `https://goo.gl/maps/xxxxxxxxx`.
    * </pre>
    *
-   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The googleMapsPinUri.
    */
@@ -304,11 +304,11 @@ public interface SiteOrBuilder
    *
    *
    * <pre>
-   * Required. A URL to the Google Maps address location of the site.
+   * Optional. A URL to the Google Maps address location of the site.
    * An example value is `https://goo.gl/maps/xxxxxxxxx`.
    * </pre>
    *
-   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string google_maps_pin_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for googleMapsPinUri.
    */

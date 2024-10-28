@@ -220,6 +220,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     return ((GDCHardwareManagementStubSettings) getStubSettings()).updateSiteOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteSite. */
+  public UnaryCallSettings<DeleteSiteRequest, Operation> deleteSiteSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).deleteSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSite. */
+  public OperationCallSettings<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).deleteSiteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listHardwareGroups. */
   public PagedCallSettings<
           ListHardwareGroupsRequest, ListHardwareGroupsResponse, ListHardwareGroupsPagedResponse>
@@ -633,6 +644,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<UpdateSiteRequest, Site, OperationMetadata>
         updateSiteOperationSettings() {
       return getStubSettingsBuilder().updateSiteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSite. */
+    public UnaryCallSettings.Builder<DeleteSiteRequest, Operation> deleteSiteSettings() {
+      return getStubSettingsBuilder().deleteSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSite. */
+    public OperationCallSettings.Builder<DeleteSiteRequest, Empty, OperationMetadata>
+        deleteSiteOperationSettings() {
+      return getStubSettingsBuilder().deleteSiteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listHardwareGroups. */

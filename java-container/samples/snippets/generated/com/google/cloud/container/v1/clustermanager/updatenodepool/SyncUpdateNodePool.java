@@ -86,6 +86,7 @@ public class SyncUpdateNodePool {
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+              .addAllStoragePools(new ArrayList<String>())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

@@ -133,6 +133,26 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     CONTROLLER_MANAGER(5),
+    /**
+     *
+     *
+     * <pre>
+     * kcp-sshd
+     * </pre>
+     *
+     * <code>KCP_SSHD = 7;</code>
+     */
+    KCP_SSHD(7),
+    /**
+     *
+     *
+     * <pre>
+     * kcp connection logs
+     * </pre>
+     *
+     * <code>KCP_CONNECTION = 8;</code>
+     */
+    KCP_CONNECTION(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -196,6 +216,26 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     public static final int CONTROLLER_MANAGER_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * kcp-sshd
+     * </pre>
+     *
+     * <code>KCP_SSHD = 7;</code>
+     */
+    public static final int KCP_SSHD_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * kcp connection logs
+     * </pre>
+     *
+     * <code>KCP_CONNECTION = 8;</code>
+     */
+    public static final int KCP_CONNECTION_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -233,6 +273,10 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
           return SCHEDULER;
         case 5:
           return CONTROLLER_MANAGER;
+        case 7:
+          return KCP_SSHD;
+        case 8:
+          return KCP_CONNECTION;
         default:
           return null;
       }

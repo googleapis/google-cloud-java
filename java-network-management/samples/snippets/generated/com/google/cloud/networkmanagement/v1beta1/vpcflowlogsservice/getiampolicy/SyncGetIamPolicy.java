@@ -17,6 +17,7 @@
 package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_VpcFlowLogsService_GetIamPolicy_sync]
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -37,7 +38,7 @@ public class SyncGetIamPolicy {
     try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = vpcFlowLogsServiceClient.getIamPolicy(request);

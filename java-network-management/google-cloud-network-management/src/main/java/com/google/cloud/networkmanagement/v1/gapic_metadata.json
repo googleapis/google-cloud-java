@@ -11,13 +11,13 @@
           "libraryClient": "ReachabilityServiceClient",
           "rpcs": {
             "CreateConnectivityTest": {
-              "methods": ["createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
+              "methods": ["createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
             },
             "DeleteConnectivityTest": {
-              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
+              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
             },
             "GetConnectivityTest": {
-              "methods": ["getConnectivityTest", "getConnectivityTest", "getConnectivityTestCallable"]
+              "methods": ["getConnectivityTest", "getConnectivityTest", "getConnectivityTest", "getConnectivityTestCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -26,7 +26,7 @@
               "methods": ["getLocation", "getLocationCallable"]
             },
             "ListConnectivityTests": {
-              "methods": ["listConnectivityTests", "listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
+              "methods": ["listConnectivityTests", "listConnectivityTests", "listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]

@@ -69,7 +69,9 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
  *   GetConnectivityTestRequest request =
- *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+ *       GetConnectivityTestRequest.newBuilder()
+ *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+ *           .build();
  *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
  * }
  * }</pre>
@@ -135,7 +137,7 @@ import javax.annotation.Generated;
  *      <td><p> UpdateConnectivityTest</td>
  *      <td><p> Updates the configuration of an existing `ConnectivityTest`. After you update a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes. The Reachability state in the test resource is updated with the new result.
  * <p>  If the endpoint specifications in `ConnectivityTest` are invalid (for example, they contain non-existent resources in the network, or the user does not have read permissions to the network configurations of listed projects), then the reachability result returns a value of &lt;code&gt;UNKNOWN&lt;/code&gt;.
- * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more details.</td>
+ * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -402,7 +404,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -438,7 +440,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -473,7 +475,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -514,7 +516,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetConnectivityTestRequest request =
-   *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       GetConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
    * }
    * }</pre>
@@ -540,7 +544,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetConnectivityTestRequest request =
-   *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       GetConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<ConnectivityTest> future =
    *       reachabilityServiceClient.getConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -577,7 +583,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -618,7 +624,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -658,7 +664,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -687,8 +693,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -730,8 +735,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -772,8 +776,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -824,7 +827,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ConnectivityTest response =
    *       reachabilityServiceClient.rerunConnectivityTestAsync(request).get();
    * }
@@ -861,7 +866,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   OperationFuture<ConnectivityTest, OperationMetadata> future =
    *       reachabilityServiceClient.rerunConnectivityTestOperationCallable().futureCall(request);
    *   // Do something.
@@ -897,7 +904,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       reachabilityServiceClient.rerunConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -924,7 +933,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   reachabilityServiceClient.deleteConnectivityTestAsync(request).get();
    * }
    * }</pre>
@@ -951,7 +962,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       reachabilityServiceClient.deleteConnectivityTestOperationCallable().futureCall(request);
    *   // Do something.
@@ -978,7 +991,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       reachabilityServiceClient.deleteConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -1165,7 +1180,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1197,7 +1212,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1228,7 +1243,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = reachabilityServiceClient.getIamPolicy(request);
@@ -1258,7 +1273,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1292,7 +1307,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = reachabilityServiceClient.testIamPermissions(request);
@@ -1326,7 +1341,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

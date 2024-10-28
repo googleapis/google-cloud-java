@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_ReachabilityService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -38,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

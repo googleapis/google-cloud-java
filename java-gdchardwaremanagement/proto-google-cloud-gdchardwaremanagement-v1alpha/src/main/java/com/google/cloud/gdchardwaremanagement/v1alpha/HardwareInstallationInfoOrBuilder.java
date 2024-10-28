@@ -28,11 +28,11 @@ public interface HardwareInstallationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The rackLocation.
    */
@@ -41,11 +41,11 @@ public interface HardwareInstallationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for rackLocation.
    */

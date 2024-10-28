@@ -62,7 +62,7 @@ public interface TagOrBuilder
    *
    * <pre>
    * The name of the version the tag refers to, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/sha256:5243811"
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/sha256:5243811`
    * If the package or version ID parts contain slashes, the slashes are
    * escaped.
    * </pre>
@@ -77,7 +77,7 @@ public interface TagOrBuilder
    *
    * <pre>
    * The name of the version the tag refers to, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/sha256:5243811"
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/sha256:5243811`
    * If the package or version ID parts contain slashes, the slashes are
    * escaped.
    * </pre>

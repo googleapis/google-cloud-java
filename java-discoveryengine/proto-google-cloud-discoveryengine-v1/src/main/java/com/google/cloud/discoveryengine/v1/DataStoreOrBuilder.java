@@ -314,6 +314,95 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the billingEstimation field is set.
+   */
+  boolean hasBillingEstimation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The billingEstimation.
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation getBillingEstimation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder
+      getBillingEstimationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return Whether the workspaceConfig field is set.
+   */
+  boolean hasWorkspaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return The workspaceConfig.
+   */
+  com.google.cloud.discoveryengine.v1.WorkspaceConfig getWorkspaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
+   */
+  com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder getWorkspaceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for Document understanding and enrichment.
    * </pre>
    *

@@ -549,40 +549,59 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.authorized_networks_config
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredMasterAuthorizedNetworksConfig();
   /**
    *
    *
    * <pre>
    * The desired configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.authorized_networks_config
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1.MasterAuthorizedNetworksConfig getDesiredMasterAuthorizedNetworksConfig();
   /**
    *
    *
    * <pre>
    * The desired configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.authorized_networks_config
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
       getDesiredMasterAuthorizedNetworksConfigOrBuilder();
 
@@ -786,12 +805,21 @@ public interface ClusterUpdateOrBuilder
    * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
    * for modifying other fields within
    * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.global_access
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   * <code>
+   * .google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2506
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredPrivateClusterConfig();
   /**
    *
@@ -803,12 +831,21 @@ public interface ClusterUpdateOrBuilder
    * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
    * for modifying other fields within
    * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.global_access
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   * <code>
+   * .google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2506
    * @return The desiredPrivateClusterConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1.PrivateClusterConfig getDesiredPrivateClusterConfig();
   /**
    *
@@ -820,10 +857,17 @@ public interface ClusterUpdateOrBuilder
    * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
    * for modifying other fields within
    * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.global_access
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   * <code>
+   * .google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.PrivateClusterConfigOrBuilder getDesiredPrivateClusterConfigOrBuilder();
 
   /**
@@ -1248,25 +1292,118 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * Enable/Disable private endpoint for the cluster's master.
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.enable_public_endpoint
+   * instead. Note that the value of enable_public_endpoint is reversed: if
+   * enable_private_endpoint is false, then enable_public_endpoint will be true.
    * </pre>
    *
-   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=2551
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredEnablePrivateEndpoint();
   /**
    *
    *
    * <pre>
    * Enable/Disable private endpoint for the cluster's master.
+   *
+   * Deprecated: Use
+   * desired_control_plane_endpoints_config.ip_endpoints_config.enable_public_endpoint
+   * instead. Note that the value of enable_public_endpoint is reversed: if
+   * enable_private_endpoint is false, then enable_public_endpoint will be true.
    * </pre>
    *
-   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=2551
    * @return The desiredEnablePrivateEndpoint.
    */
+  @java.lang.Deprecated
   boolean getDesiredEnablePrivateEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Override the default setting of whether future created
+   * nodes have private IP addresses only, namely
+   * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool desired_default_enable_private_nodes = 72;</code>
+   *
+   * @return Whether the desiredDefaultEnablePrivateNodes field is set.
+   */
+  boolean hasDesiredDefaultEnablePrivateNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Override the default setting of whether future created
+   * nodes have private IP addresses only, namely
+   * [NetworkConfig.default_enable_private_nodes][google.container.v1.NetworkConfig.default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool desired_default_enable_private_nodes = 72;</code>
+   *
+   * @return The desiredDefaultEnablePrivateNodes.
+   */
+  boolean getDesiredDefaultEnablePrivateNodes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Control plane
+   * endpoints][google.container.v1.Cluster.control_plane_endpoints_config]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ControlPlaneEndpointsConfig desired_control_plane_endpoints_config = 73;
+   * </code>
+   *
+   * @return Whether the desiredControlPlaneEndpointsConfig field is set.
+   */
+  boolean hasDesiredControlPlaneEndpointsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [Control plane
+   * endpoints][google.container.v1.Cluster.control_plane_endpoints_config]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ControlPlaneEndpointsConfig desired_control_plane_endpoints_config = 73;
+   * </code>
+   *
+   * @return The desiredControlPlaneEndpointsConfig.
+   */
+  com.google.container.v1.ControlPlaneEndpointsConfig getDesiredControlPlaneEndpointsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [Control plane
+   * endpoints][google.container.v1.Cluster.control_plane_endpoints_config]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ControlPlaneEndpointsConfig desired_control_plane_endpoints_config = 73;
+   * </code>
+   */
+  com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder
+      getDesiredControlPlaneEndpointsConfigOrBuilder();
 
   /**
    *
@@ -2023,6 +2160,86 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return Whether the desiredSecretManagerConfig field is set.
+   */
+  boolean hasDesiredSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return The desiredSecretManagerConfig.
+   */
+  com.google.container.v1.SecretManagerConfig getDesiredSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   */
+  com.google.container.v1.SecretManagerConfigOrBuilder getDesiredSecretManagerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * </code>
+   *
+   * @return Whether the desiredCompliancePostureConfig field is set.
+   */
+  boolean hasDesiredCompliancePostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * </code>
+   *
+   * @return The desiredCompliancePostureConfig.
+   */
+  com.google.container.v1.CompliancePostureConfig getDesiredCompliancePostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * </code>
+   */
+  com.google.container.v1.CompliancePostureConfigOrBuilder
+      getDesiredCompliancePostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired node kubelet config for the cluster.
    * </pre>
    *
@@ -2098,4 +2315,77 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1.NodeKubeletConfigOrBuilder
       getDesiredNodePoolAutoConfigKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   *
+   * @return Whether the userManagedKeysConfig field is set.
+   */
+  boolean hasUserManagedKeysConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   *
+   * @return The userManagedKeysConfig.
+   */
+  com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   */
+  com.google.container.v1.UserManagedKeysConfigOrBuilder getUserManagedKeysConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig desired_rbac_binding_config = 144;</code>
+   *
+   * @return Whether the desiredRbacBindingConfig field is set.
+   */
+  boolean hasDesiredRbacBindingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig desired_rbac_binding_config = 144;</code>
+   *
+   * @return The desiredRbacBindingConfig.
+   */
+  com.google.container.v1.RBACBindingConfig getDesiredRbacBindingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig desired_rbac_binding_config = 144;</code>
+   */
+  com.google.container.v1.RBACBindingConfigOrBuilder getDesiredRbacBindingConfigOrBuilder();
 }

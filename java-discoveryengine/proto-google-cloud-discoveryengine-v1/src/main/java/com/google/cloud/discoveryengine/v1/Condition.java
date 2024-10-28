@@ -41,6 +41,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   private Condition() {
     queryTerms_ = java.util.Collections.emptyList();
     activeTimeRange_ = java.util.Collections.emptyList();
+    queryRegex_ = "";
   }
 
   @java.lang.Override
@@ -1981,6 +1982,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -1998,6 +2002,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -2015,6 +2022,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -2031,6 +2041,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -2047,6 +2060,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Search only
    * A list of terms to match the query on.
+   * Cannot be set when
+   * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+   * is set.
    *
    * Maximum of 10 query terms.
    * </pre>
@@ -2147,6 +2163,63 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     return activeTimeRange_.get(index);
   }
 
+  public static final int QUERY_REGEX_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryRegex_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Query regex to match the whole search query.
+   * Cannot be set when
+   * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+   * is set. This is currently supporting promotion use case.
+   * </pre>
+   *
+   * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queryRegex.
+   */
+  @java.lang.Override
+  public java.lang.String getQueryRegex() {
+    java.lang.Object ref = queryRegex_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queryRegex_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Query regex to match the whole search query.
+   * Cannot be set when
+   * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+   * is set. This is currently supporting promotion use case.
+   * </pre>
+   *
+   * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for queryRegex.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQueryRegexBytes() {
+    java.lang.Object ref = queryRegex_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      queryRegex_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2167,6 +2240,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < activeTimeRange_.size(); i++) {
       output.writeMessage(3, activeTimeRange_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRegex_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, queryRegex_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2181,6 +2257,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < activeTimeRange_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, activeTimeRange_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryRegex_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, queryRegex_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2200,6 +2279,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     if (!getQueryTermsList().equals(other.getQueryTermsList())) return false;
     if (!getActiveTimeRangeList().equals(other.getActiveTimeRangeList())) return false;
+    if (!getQueryRegex().equals(other.getQueryRegex())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2219,6 +2299,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ACTIVE_TIME_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getActiveTimeRangeList().hashCode();
     }
+    hash = (37 * hash) + QUERY_REGEX_FIELD_NUMBER;
+    hash = (53 * hash) + getQueryRegex().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2372,6 +2454,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         activeTimeRangeBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      queryRegex_ = "";
       return this;
     }
 
@@ -2430,6 +2513,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.Condition result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.queryRegex_ = queryRegex_;
+      }
     }
 
     @java.lang.Override
@@ -2531,6 +2617,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getQueryRegex().isEmpty()) {
+        queryRegex_ = other.queryRegex_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2585,6 +2676,12 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                queryRegex_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2628,6 +2725,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2648,6 +2748,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2667,6 +2770,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2686,6 +2792,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2712,6 +2821,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2736,6 +2848,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2761,6 +2876,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2787,6 +2905,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2810,6 +2931,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2834,6 +2958,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2858,6 +2985,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2880,6 +3010,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2902,6 +3035,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2918,6 +3054,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2938,6 +3077,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2959,6 +3101,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2975,6 +3120,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -2993,6 +3141,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Search only
      * A list of terms to match the query on.
+     * Cannot be set when
+     * [Condition.query_regex][google.cloud.discoveryengine.v1.Condition.query_regex]
+     * is set.
      *
      * Maximum of 10 query terms.
      * </pre>
@@ -3441,6 +3592,127 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         activeTimeRange_ = null;
       }
       return activeTimeRangeBuilder_;
+    }
+
+    private java.lang.Object queryRegex_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Query regex to match the whole search query.
+     * Cannot be set when
+     * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+     * is set. This is currently supporting promotion use case.
+     * </pre>
+     *
+     * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The queryRegex.
+     */
+    public java.lang.String getQueryRegex() {
+      java.lang.Object ref = queryRegex_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryRegex_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Query regex to match the whole search query.
+     * Cannot be set when
+     * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+     * is set. This is currently supporting promotion use case.
+     * </pre>
+     *
+     * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for queryRegex.
+     */
+    public com.google.protobuf.ByteString getQueryRegexBytes() {
+      java.lang.Object ref = queryRegex_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryRegex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Query regex to match the whole search query.
+     * Cannot be set when
+     * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+     * is set. This is currently supporting promotion use case.
+     * </pre>
+     *
+     * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The queryRegex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryRegex(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryRegex_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Query regex to match the whole search query.
+     * Cannot be set when
+     * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+     * is set. This is currently supporting promotion use case.
+     * </pre>
+     *
+     * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryRegex() {
+      queryRegex_ = getDefaultInstance().getQueryRegex();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Query regex to match the whole search query.
+     * Cannot be set when
+     * [Condition.query_terms][google.cloud.discoveryengine.v1.Condition.query_terms]
+     * is set. This is currently supporting promotion use case.
+     * </pre>
+     *
+     * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for queryRegex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryRegexBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryRegex_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

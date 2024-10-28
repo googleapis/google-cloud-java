@@ -116,6 +116,51 @@ public class ReachabilityServiceClientTest {
             .build();
     mockReachabilityService.addResponse(expectedResponse);
 
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListConnectivityTestsPagedResponse pagedListResponse = client.listConnectivityTests(parent);
+
+    List<ConnectivityTest> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockReachabilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectivityTestsRequest actualRequest =
+        ((ListConnectivityTestsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectivityTestsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReachabilityService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listConnectivityTests(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectivityTestsTest2() throws Exception {
+    ConnectivityTest responsesElement = ConnectivityTest.newBuilder().build();
+    ListConnectivityTestsResponse expectedResponse =
+        ListConnectivityTestsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockReachabilityService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListConnectivityTestsPagedResponse pagedListResponse = client.listConnectivityTests(parent);
@@ -138,7 +183,7 @@ public class ReachabilityServiceClientTest {
   }
 
   @Test
-  public void listConnectivityTestsExceptionTest() throws Exception {
+  public void listConnectivityTestsExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockReachabilityService.addException(exception);
 
@@ -155,7 +200,57 @@ public class ReachabilityServiceClientTest {
   public void getConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setDescription("description-1724546052")
+            .setSource(Endpoint.newBuilder().build())
+            .setDestination(Endpoint.newBuilder().build())
+            .setProtocol("protocol-989163880")
+            .addAllRelatedProjects(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
+            .build();
+    mockReachabilityService.addResponse(expectedResponse);
+
+    ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+
+    ConnectivityTest actualResponse = client.getConnectivityTest(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReachabilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConnectivityTestRequest actualRequest = ((GetConnectivityTestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConnectivityTestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReachabilityService.addException(exception);
+
+    try {
+      ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+      client.getConnectivityTest(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectivityTestTest2() throws Exception {
+    ConnectivityTest expectedResponse =
+        ConnectivityTest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -188,7 +283,7 @@ public class ReachabilityServiceClientTest {
   }
 
   @Test
-  public void getConnectivityTestExceptionTest() throws Exception {
+  public void getConnectivityTestExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockReachabilityService.addException(exception);
 
@@ -205,7 +300,73 @@ public class ReachabilityServiceClientTest {
   public void createConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setDescription("description-1724546052")
+            .setSource(Endpoint.newBuilder().build())
+            .setDestination(Endpoint.newBuilder().build())
+            .setProtocol("protocol-989163880")
+            .addAllRelatedProjects(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createConnectivityTestTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockReachabilityService.addResponse(resultOperation);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String testId = "testId-877170355";
+    ConnectivityTest resource = ConnectivityTest.newBuilder().build();
+
+    ConnectivityTest actualResponse =
+        client.createConnectivityTestAsync(parent, testId, resource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReachabilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectivityTestRequest actualRequest =
+        ((CreateConnectivityTestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(testId, actualRequest.getTestId());
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectivityTestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReachabilityService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String testId = "testId-877170355";
+      ConnectivityTest resource = ConnectivityTest.newBuilder().build();
+      client.createConnectivityTestAsync(parent, testId, resource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createConnectivityTestTest2() throws Exception {
+    ConnectivityTest expectedResponse =
+        ConnectivityTest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -250,7 +411,7 @@ public class ReachabilityServiceClientTest {
   }
 
   @Test
-  public void createConnectivityTestExceptionTest() throws Exception {
+  public void createConnectivityTestExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockReachabilityService.addException(exception);
 
@@ -271,7 +432,7 @@ public class ReachabilityServiceClientTest {
   public void updateConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -334,7 +495,7 @@ public class ReachabilityServiceClientTest {
   public void rerunConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -357,7 +518,9 @@ public class ReachabilityServiceClientTest {
     mockReachabilityService.addResponse(resultOperation);
 
     RerunConnectivityTestRequest request =
-        RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+        RerunConnectivityTestRequest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .build();
 
     ConnectivityTest actualResponse = client.rerunConnectivityTestAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -381,7 +544,9 @@ public class ReachabilityServiceClientTest {
 
     try {
       RerunConnectivityTestRequest request =
-          RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          RerunConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       client.rerunConnectivityTestAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -393,6 +558,49 @@ public class ReachabilityServiceClientTest {
 
   @Test
   public void deleteConnectivityTestTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteConnectivityTestTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockReachabilityService.addResponse(resultOperation);
+
+    ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+
+    client.deleteConnectivityTestAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockReachabilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConnectivityTestRequest actualRequest =
+        ((DeleteConnectivityTestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConnectivityTestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReachabilityService.addException(exception);
+
+    try {
+      ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+      client.deleteConnectivityTestAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteConnectivityTestTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -419,7 +627,7 @@ public class ReachabilityServiceClientTest {
   }
 
   @Test
-  public void deleteConnectivityTestExceptionTest() throws Exception {
+  public void deleteConnectivityTestExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockReachabilityService.addException(exception);
 
@@ -548,7 +756,7 @@ public class ReachabilityServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource("SetIamPolicyRequest1223629066".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -577,7 +785,7 @@ public class ReachabilityServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -601,7 +809,7 @@ public class ReachabilityServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource("GetIamPolicyRequest-1527610370".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -628,7 +836,7 @@ public class ReachabilityServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -646,7 +854,7 @@ public class ReachabilityServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource("TestIamPermissionsRequest942398222".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -673,7 +881,7 @@ public class ReachabilityServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

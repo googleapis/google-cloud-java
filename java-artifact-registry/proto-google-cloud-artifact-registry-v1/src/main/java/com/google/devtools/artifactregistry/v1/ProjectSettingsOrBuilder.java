@@ -90,4 +90,18 @@ public interface ProjectSettingsOrBuilder
    */
   com.google.devtools.artifactregistry.v1.ProjectSettings.RedirectionState
       getLegacyRedirectionState();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of pull traffic to redirect from GCR to AR when using
+   * partial redirection.
+   * </pre>
+   *
+   * <code>int32 pull_percent = 3;</code>
+   *
+   * @return The pullPercent.
+   */
+  int getPullPercent();
 }

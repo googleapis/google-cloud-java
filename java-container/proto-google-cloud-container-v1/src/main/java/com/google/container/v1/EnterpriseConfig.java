@@ -226,7 +226,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -243,7 +243,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -608,7 +608,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -625,7 +625,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -645,7 +645,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -666,7 +666,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -689,7 +689,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>

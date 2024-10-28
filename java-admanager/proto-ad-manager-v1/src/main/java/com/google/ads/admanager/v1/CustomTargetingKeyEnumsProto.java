@@ -61,12 +61,13 @@ public final class CustomTargetingKeyEnumsProto {
           + "tingKeyReportableTypeEnum\"\177\n CustomTarge"
           + "tingKeyReportableType\0224\n0CUSTOM_TARGETIN"
           + "G_KEY_REPORTABLE_TYPE_UNSPECIFIED\020\000\022\007\n\003O"
-          + "FF\020\001\022\006\n\002ON\020\002\022\024\n\020CUSTOM_DIMENSION\020\003B\263\001\n\033c"
+          + "FF\020\001\022\006\n\002ON\020\002\022\024\n\020CUSTOM_DIMENSION\020\003B\320\001\n\033c"
           + "om.google.ads.admanager.v1B\034CustomTarget"
           + "ingKeyEnumsProtoP\001Z@google.golang.org/ge"
           + "nproto/googleapis/ads/admanager/v1;adman"
           + "ager\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\"
-          + "Ads\\AdManager\\V1b\006proto3"
+          + "Ads\\AdManager\\V1\352\002\032Google::Ads::AdManage"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

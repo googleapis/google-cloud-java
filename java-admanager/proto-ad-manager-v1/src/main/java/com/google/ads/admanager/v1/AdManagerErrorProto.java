@@ -47,11 +47,12 @@ public final class AdManagerErrorProto {
           + "\n\nerror_code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\022\n\nf"
           + "ield_path\030\003 \001(\t\022\017\n\007trigger\030\004 \001(\t\022\023\n\013stac"
           + "k_trace\030\005 \001(\t\022%\n\007details\030\006 \003(\0132\024.google."
-          + "protobuf.AnyB\252\001\n\033com.google.ads.admanage"
+          + "protobuf.AnyB\307\001\n\033com.google.ads.admanage"
           + "r.v1B\023AdManagerErrorProtoP\001Z@google.gola"
           + "ng.org/genproto/googleapis/ads/admanager"
           + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads:"
+          + ":AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

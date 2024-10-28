@@ -57,12 +57,13 @@ public final class PlacementMessagesProto {
           + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
           + "A\003:n\352Ak\n\"admanager.googleapis.com/Placem"
           + "ent\022.networks/{network_code}/placements/"
-          + "{placement}*\nplacements2\tplacementB\255\001\n\033c"
+          + "{placement}*\nplacements2\tplacementB\312\001\n\033c"
           + "om.google.ads.admanager.v1B\026PlacementMes"
           + "sagesProtoP\001Z@google.golang.org/genproto"
           + "/googleapis/ads/admanager/v1;admanager\252\002"
           + "\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\Ad"
-          + "Manager\\V1b\006proto3"
+          + "Manager\\V1\352\002\032Google::Ads::AdManager::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

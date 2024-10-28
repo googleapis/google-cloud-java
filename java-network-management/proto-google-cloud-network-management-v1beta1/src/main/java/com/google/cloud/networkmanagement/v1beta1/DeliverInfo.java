@@ -42,6 +42,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     target_ = 0;
     resourceUri_ = "";
     ipAddress_ = "";
+    storageBucket_ = "";
+    pscGoogleApiTarget_ = "";
   }
 
   @java.lang.Override
@@ -150,7 +152,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is all Google APIs that use [Private Service
+     * Target is Google APIs that use [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
@@ -228,6 +230,36 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_RUN_REVISION = 14;</code>
      */
     CLOUD_RUN_REVISION(14),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Google-managed service. Used only for return traces.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE = 15;</code>
+     */
+    GOOGLE_MANAGED_SERVICE(15),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE = 16;</code>
+     */
+    REDIS_INSTANCE(16),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER = 17;</code>
+     */
+    REDIS_CLUSTER(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -306,7 +338,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is all Google APIs that use [Private Service
+     * Target is Google APIs that use [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
@@ -384,6 +416,36 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_RUN_REVISION = 14;</code>
      */
     public static final int CLOUD_RUN_REVISION_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Google-managed service. Used only for return traces.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE = 15;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Redis Instance.
+     * </pre>
+     *
+     * <code>REDIS_INSTANCE = 16;</code>
+     */
+    public static final int REDIS_INSTANCE_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Redis Cluster.
+     * </pre>
+     *
+     * <code>REDIS_CLUSTER = 17;</code>
+     */
+    public static final int REDIS_CLUSTER_VALUE = 17;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -439,6 +501,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           return APP_ENGINE_VERSION;
         case 14:
           return CLOUD_RUN_REVISION;
+        case 15:
+          return GOOGLE_MANAGED_SERVICE;
+        case 16:
+          return REDIS_INSTANCE;
+        case 17:
+          return REDIS_CLUSTER;
         default:
           return null;
       }
@@ -633,6 +701,110 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STORAGE_BUCKET_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storageBucket_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Storage Bucket the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string storage_bucket = 4;</code>
+   *
+   * @return The storageBucket.
+   */
+  @java.lang.Override
+  public java.lang.String getStorageBucket() {
+    java.lang.Object ref = storageBucket_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storageBucket_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Storage Bucket the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string storage_bucket = 4;</code>
+   *
+   * @return The bytes for storageBucket.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStorageBucketBytes() {
+    java.lang.Object ref = storageBucket_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storageBucket_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_GOOGLE_API_TARGET_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscGoogleApiTarget_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target the packet is delivered to (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 5;</code>
+   *
+   * @return The pscGoogleApiTarget.
+   */
+  @java.lang.Override
+  public java.lang.String getPscGoogleApiTarget() {
+    java.lang.Object ref = pscGoogleApiTarget_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscGoogleApiTarget_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target the packet is delivered to (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 5;</code>
+   *
+   * @return The bytes for pscGoogleApiTarget.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscGoogleApiTargetBytes() {
+    java.lang.Object ref = pscGoogleApiTarget_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscGoogleApiTarget_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -658,6 +830,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipAddress_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageBucket_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, storageBucket_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pscGoogleApiTarget_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -678,6 +856,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipAddress_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageBucket_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, storageBucket_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, pscGoogleApiTarget_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -697,6 +881,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (target_ != other.target_) return false;
     if (!getResourceUri().equals(other.getResourceUri())) return false;
     if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (!getStorageBucket().equals(other.getStorageBucket())) return false;
+    if (!getPscGoogleApiTarget().equals(other.getPscGoogleApiTarget())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -714,6 +900,10 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getResourceUri().hashCode();
     hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getIpAddress().hashCode();
+    hash = (37 * hash) + STORAGE_BUCKET_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageBucket().hashCode();
+    hash = (37 * hash) + PSC_GOOGLE_API_TARGET_FIELD_NUMBER;
+    hash = (53 * hash) + getPscGoogleApiTarget().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -857,6 +1047,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       target_ = 0;
       resourceUri_ = "";
       ipAddress_ = "";
+      storageBucket_ = "";
+      pscGoogleApiTarget_ = "";
       return this;
     }
 
@@ -901,6 +1093,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.storageBucket_ = storageBucket_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pscGoogleApiTarget_ = pscGoogleApiTarget_;
       }
     }
 
@@ -963,6 +1161,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getStorageBucket().isEmpty()) {
+        storageBucket_ = other.storageBucket_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getPscGoogleApiTarget().isEmpty()) {
+        pscGoogleApiTarget_ = other.pscGoogleApiTarget_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1007,6 +1215,18 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                storageBucket_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                pscGoogleApiTarget_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1326,6 +1546,223 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object storageBucket_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Storage Bucket the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string storage_bucket = 4;</code>
+     *
+     * @return The storageBucket.
+     */
+    public java.lang.String getStorageBucket() {
+      java.lang.Object ref = storageBucket_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storageBucket_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Storage Bucket the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string storage_bucket = 4;</code>
+     *
+     * @return The bytes for storageBucket.
+     */
+    public com.google.protobuf.ByteString getStorageBucketBytes() {
+      java.lang.Object ref = storageBucket_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storageBucket_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Storage Bucket the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string storage_bucket = 4;</code>
+     *
+     * @param value The storageBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageBucket(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storageBucket_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Storage Bucket the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string storage_bucket = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageBucket() {
+      storageBucket_ = getDefaultInstance().getStorageBucket();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the Cloud Storage Bucket the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>string storage_bucket = 4;</code>
+     *
+     * @param value The bytes for storageBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageBucketBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      storageBucket_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pscGoogleApiTarget_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target the packet is delivered to (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 5;</code>
+     *
+     * @return The pscGoogleApiTarget.
+     */
+    public java.lang.String getPscGoogleApiTarget() {
+      java.lang.Object ref = pscGoogleApiTarget_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscGoogleApiTarget_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target the packet is delivered to (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 5;</code>
+     *
+     * @return The bytes for pscGoogleApiTarget.
+     */
+    public com.google.protobuf.ByteString getPscGoogleApiTargetBytes() {
+      java.lang.Object ref = pscGoogleApiTarget_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscGoogleApiTarget_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target the packet is delivered to (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 5;</code>
+     *
+     * @param value The pscGoogleApiTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscGoogleApiTarget(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pscGoogleApiTarget_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target the packet is delivered to (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscGoogleApiTarget() {
+      pscGoogleApiTarget_ = getDefaultInstance().getPscGoogleApiTarget();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PSC Google API target the packet is delivered to (if applicable).
+     * </pre>
+     *
+     * <code>string psc_google_api_target = 5;</code>
+     *
+     * @param value The bytes for pscGoogleApiTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscGoogleApiTargetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pscGoogleApiTarget_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

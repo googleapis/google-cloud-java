@@ -37,6 +37,112 @@ public final class GroundedGenerationServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+      getStreamGenerateGroundedContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamGenerateGroundedContent",
+      requestType = com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+      getStreamGenerateGroundedContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+        getStreamGenerateGroundedContentMethod;
+    if ((getStreamGenerateGroundedContentMethod =
+            GroundedGenerationServiceGrpc.getStreamGenerateGroundedContentMethod)
+        == null) {
+      synchronized (GroundedGenerationServiceGrpc.class) {
+        if ((getStreamGenerateGroundedContentMethod =
+                GroundedGenerationServiceGrpc.getStreamGenerateGroundedContentMethod)
+            == null) {
+          GroundedGenerationServiceGrpc.getStreamGenerateGroundedContentMethod =
+              getStreamGenerateGroundedContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+                          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamGenerateGroundedContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GroundedGenerationServiceMethodDescriptorSupplier(
+                              "StreamGenerateGroundedContent"))
+                      .build();
+        }
+      }
+    }
+    return getStreamGenerateGroundedContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+      getGenerateGroundedContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateGroundedContent",
+      requestType = com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+      getGenerateGroundedContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+        getGenerateGroundedContentMethod;
+    if ((getGenerateGroundedContentMethod =
+            GroundedGenerationServiceGrpc.getGenerateGroundedContentMethod)
+        == null) {
+      synchronized (GroundedGenerationServiceGrpc.class) {
+        if ((getGenerateGroundedContentMethod =
+                GroundedGenerationServiceGrpc.getGenerateGroundedContentMethod)
+            == null) {
+          GroundedGenerationServiceGrpc.getGenerateGroundedContentMethod =
+              getGenerateGroundedContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+                          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateGroundedContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GroundedGenerationServiceMethodDescriptorSupplier(
+                              "GenerateGroundedContent"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateGroundedContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1.CheckGroundingRequest,
           com.google.cloud.discoveryengine.v1.CheckGroundingResponse>
       getCheckGroundingMethod;
@@ -138,6 +244,39 @@ public final class GroundedGenerationServiceGrpc {
      *
      *
      * <pre>
+     * Generates grounded content in a streaming fashion.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest>
+        streamGenerateGroundedContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamGenerateGroundedContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates grounded content.
+     * </pre>
+     */
+    default void generateGroundedContent(
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateGroundedContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a grounding check.
      * </pre>
      */
@@ -190,6 +329,42 @@ public final class GroundedGenerationServiceGrpc {
      *
      *
      * <pre>
+     * Generates grounded content in a streaming fashion.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest>
+        streamGenerateGroundedContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamGenerateGroundedContentMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates grounded content.
+     * </pre>
+     */
+    public void generateGroundedContent(
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateGroundedContentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a grounding check.
      * </pre>
      */
@@ -222,6 +397,20 @@ public final class GroundedGenerationServiceGrpc {
     protected GroundedGenerationServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new GroundedGenerationServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates grounded content.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+        generateGroundedContent(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateGroundedContentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -263,6 +452,21 @@ public final class GroundedGenerationServiceGrpc {
      *
      *
      * <pre>
+     * Generates grounded content.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>
+        generateGroundedContent(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateGroundedContentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a grounding check.
      * </pre>
      */
@@ -274,7 +478,9 @@ public final class GroundedGenerationServiceGrpc {
     }
   }
 
-  private static final int METHODID_CHECK_GROUNDING = 0;
+  private static final int METHODID_GENERATE_GROUNDED_CONTENT = 0;
+  private static final int METHODID_CHECK_GROUNDING = 1;
+  private static final int METHODID_STREAM_GENERATE_GROUNDED_CONTENT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -293,6 +499,13 @@ public final class GroundedGenerationServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GENERATE_GROUNDED_CONTENT:
+          serviceImpl.generateGroundedContent(
+              (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>)
+                  responseObserver);
+          break;
         case METHODID_CHECK_GROUNDING:
           serviceImpl.checkGrounding(
               (com.google.cloud.discoveryengine.v1.CheckGroundingRequest) request,
@@ -310,6 +523,12 @@ public final class GroundedGenerationServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAM_GENERATE_GROUNDED_CONTENT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamGenerateGroundedContent(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -318,6 +537,20 @@ public final class GroundedGenerationServiceGrpc {
 
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getStreamGenerateGroundedContentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>(
+                    service, METHODID_STREAM_GENERATE_GROUNDED_CONTENT)))
+        .addMethod(
+            getGenerateGroundedContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse>(
+                    service, METHODID_GENERATE_GROUNDED_CONTENT)))
         .addMethod(
             getCheckGroundingMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -376,6 +609,8 @@ public final class GroundedGenerationServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new GroundedGenerationServiceFileDescriptorSupplier())
+                      .addMethod(getStreamGenerateGroundedContentMethod())
+                      .addMethod(getGenerateGroundedContentMethod())
                       .addMethod(getCheckGroundingMethod())
                       .build();
         }

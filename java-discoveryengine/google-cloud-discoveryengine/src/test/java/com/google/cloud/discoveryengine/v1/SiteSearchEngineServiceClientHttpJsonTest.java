@@ -917,6 +917,7 @@ public class SiteSearchEngineServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .addAllUris(new ArrayList<String>())
+            .setSiteCredential("siteCredential-751929602")
             .build();
 
     RecrawlUrisResponse actualResponse = client.recrawlUrisAsync(request).get();
@@ -952,6 +953,7 @@ public class SiteSearchEngineServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       client.recrawlUrisAsync(request).get();
       Assert.fail("No exception raised");

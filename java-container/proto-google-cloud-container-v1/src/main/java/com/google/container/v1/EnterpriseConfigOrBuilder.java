@@ -28,7 +28,7 @@ public interface EnterpriseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface EnterpriseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>

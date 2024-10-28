@@ -61,12 +61,13 @@ public final class CustomTargetingKeyMessagesProto {
           + "ogleapis.com/CustomTargetingKey\022Bnetwork"
           + "s/{network_code}/customTargetingKeys/{cu"
           + "stom_targeting_key}*\023customTargetingKeys"
-          + "2\022customTargetingKeyB\266\001\n\033com.google.ads."
+          + "2\022customTargetingKeyB\323\001\n\033com.google.ads."
           + "admanager.v1B\037CustomTargetingKeyMessages"
           + "ProtoP\001Z@google.golang.org/genproto/goog"
           + "leapis/ads/admanager/v1;admanager\252\002\027Goog"
           + "le.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManag"
-          + "er\\V1b\006proto3"
+          + "er\\V1\352\002\032Google::Ads::AdManager::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

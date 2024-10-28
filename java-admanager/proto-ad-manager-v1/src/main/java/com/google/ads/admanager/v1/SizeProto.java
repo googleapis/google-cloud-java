@@ -47,11 +47,12 @@ public final class SizeProto {
           + "field_behavior.proto\"w\n\004Size\022\022\n\005width\030\001 "
           + "\001(\005B\003\340A\002\022\023\n\006height\030\002 \001(\005B\003\340A\002\022F\n\tsize_ty"
           + "pe\030\003 \001(\0162..google.ads.admanager.v1.SizeT"
-          + "ypeEnum.SizeTypeB\003\340A\002B\240\001\n\033com.google.ads"
+          + "ypeEnum.SizeTypeB\003\340A\002B\275\001\n\033com.google.ads"
           + ".admanager.v1B\tSizeProtoP\001Z@google.golan"
           + "g.org/genproto/googleapis/ads/admanager/"
           + "v1;admanager\252\002\027Google.Ads.AdManager.V1\312\002"
-          + "\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::"
+          + "AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

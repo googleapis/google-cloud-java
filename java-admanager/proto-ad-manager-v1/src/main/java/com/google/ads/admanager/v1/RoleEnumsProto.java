@@ -44,12 +44,12 @@ public final class RoleEnumsProto {
       "\n(google/ads/admanager/v1/role_enums.pro"
           + "to\022\027google.ads.admanager.v1\"U\n\016RoleStatu"
           + "sEnum\"C\n\nRoleStatus\022\033\n\027ROLE_STATUS_UNSPE"
-          + "CIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002B\245\001\n\033c"
+          + "CIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002B\302\001\n\033c"
           + "om.google.ads.admanager.v1B\016RoleEnumsPro"
           + "toP\001Z@google.golang.org/genproto/googlea"
           + "pis/ads/admanager/v1;admanager\252\002\027Google."
           + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1b\006proto3"
+          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
