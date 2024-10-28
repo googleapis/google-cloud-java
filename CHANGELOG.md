@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.43.2](https://github.com/googleapis/java-bigquery/compare/v2.43.1...v2.43.2) (2024-10-27)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4.2.2 ([#3541](https://github.com/googleapis/java-bigquery/issues/3541)) ([c36c123](https://github.com/googleapis/java-bigquery/commit/c36c123f5cd298b1481c9073ac9f5e634b0e1e68))
+* Update actions/upload-artifact action to v4.4.2 ([#3524](https://github.com/googleapis/java-bigquery/issues/3524)) ([776a554](https://github.com/googleapis/java-bigquery/commit/776a5541cc94e8ffb1f5e5c6969ae06585571b45))
+* Update actions/upload-artifact action to v4.4.3 ([#3530](https://github.com/googleapis/java-bigquery/issues/3530)) ([2f87fd9](https://github.com/googleapis/java-bigquery/commit/2f87fd9d777175cb5a8e5b0dc55f07546351e504))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.54.0 ([#3532](https://github.com/googleapis/java-bigquery/issues/3532)) ([25be311](https://github.com/googleapis/java-bigquery/commit/25be311c1477db0993a5825a2b839a295170790f))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20241013-2.0.0 ([#3544](https://github.com/googleapis/java-bigquery/issues/3544)) ([0c42092](https://github.com/googleapis/java-bigquery/commit/0c42092e34912d21a4d13f041577056faadf914a))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v3.10.0 ([0bd3c86](https://github.com/googleapis/java-bigquery/commit/0bd3c862636271c5a851fcd229b4cf6878a8c5d4))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v3.10.1 ([c03a63a](https://github.com/googleapis/java-bigquery/commit/c03a63a0da4f4915e9761dc1ca7429c46748688c))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.58.0 ([#3533](https://github.com/googleapis/java-bigquery/issues/3533)) ([cad2643](https://github.com/googleapis/java-bigquery/commit/cad26430f21a37eec2b87ea417f0cf67dcf9c97a))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.38.0 ([#3542](https://github.com/googleapis/java-bigquery/issues/3542)) ([16448ee](https://github.com/googleapis/java-bigquery/commit/16448eec7c7f00a113c923a0fcde463c8ac91f9b))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.39.0 ([#3548](https://github.com/googleapis/java-bigquery/issues/3548)) ([616b2f6](https://github.com/googleapis/java-bigquery/commit/616b2f611f313994bf0ec2889daea3b569a84baf))
+* Update github/codeql-action action to v2.26.13 ([#3536](https://github.com/googleapis/java-bigquery/issues/3536)) ([844744f](https://github.com/googleapis/java-bigquery/commit/844744f3dea804a31abc806592f557a26cffbab4))
+* Update github/codeql-action action to v2.27.0 ([#3540](https://github.com/googleapis/java-bigquery/issues/3540)) ([1616a0f](https://github.com/googleapis/java-bigquery/commit/1616a0f6057916e21f3b4a6d418d1431d8d1fa16))
+
+
+### Documentation
+
+* Reformat javadoc ([#3545](https://github.com/googleapis/java-bigquery/issues/3545)) ([4763f73](https://github.com/googleapis/java-bigquery/commit/4763f73ad854ca4bfdddbbdc0bb43fe639238665))
+* Update SimpleApp to explicitly set project id ([#3534](https://github.com/googleapis/java-bigquery/issues/3534)) ([903a0f7](https://github.com/googleapis/java-bigquery/commit/903a0f7db0926f3d166eebada1710413056fb4a2))
+
 ## [2.43.1](https://github.com/googleapis/java-bigquery/compare/v2.43.0...v2.43.1) (2024-10-09)
 
 
