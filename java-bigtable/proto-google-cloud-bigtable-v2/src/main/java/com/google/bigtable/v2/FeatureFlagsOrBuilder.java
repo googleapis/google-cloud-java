@@ -122,4 +122,30 @@ public interface FeatureFlagsOrBuilder
    * @return The clientSideMetricsEnabled.
    */
   boolean getClientSideMetricsEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client using Traffic Director endpoint.
+   * </pre>
+   *
+   * <code>bool traffic_director_enabled = 9;</code>
+   *
+   * @return The trafficDirectorEnabled.
+   */
+  boolean getTrafficDirectorEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client explicitly opted in for Direct Access.
+   * </pre>
+   *
+   * <code>bool direct_access_requested = 10;</code>
+   *
+   * @return The directAccessRequested.
+   */
+  boolean getDirectAccessRequested();
 }

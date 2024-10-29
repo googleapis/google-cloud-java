@@ -202,6 +202,42 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     return clientSideMetricsEnabled_;
   }
 
+  public static final int TRAFFIC_DIRECTOR_ENABLED_FIELD_NUMBER = 9;
+  private boolean trafficDirectorEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client using Traffic Director endpoint.
+   * </pre>
+   *
+   * <code>bool traffic_director_enabled = 9;</code>
+   *
+   * @return The trafficDirectorEnabled.
+   */
+  @java.lang.Override
+  public boolean getTrafficDirectorEnabled() {
+    return trafficDirectorEnabled_;
+  }
+
+  public static final int DIRECT_ACCESS_REQUESTED_FIELD_NUMBER = 10;
+  private boolean directAccessRequested_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client explicitly opted in for Direct Access.
+   * </pre>
+   *
+   * <code>bool direct_access_requested = 10;</code>
+   *
+   * @return The directAccessRequested.
+   */
+  @java.lang.Override
+  public boolean getDirectAccessRequested() {
+    return directAccessRequested_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -237,6 +273,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (clientSideMetricsEnabled_ != false) {
       output.writeBool(8, clientSideMetricsEnabled_);
     }
+    if (trafficDirectorEnabled_ != false) {
+      output.writeBool(9, trafficDirectorEnabled_);
+    }
+    if (directAccessRequested_ != false) {
+      output.writeBool(10, directAccessRequested_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -267,6 +309,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (clientSideMetricsEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, clientSideMetricsEnabled_);
     }
+    if (trafficDirectorEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, trafficDirectorEnabled_);
+    }
+    if (directAccessRequested_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, directAccessRequested_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -289,6 +337,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (getRoutingCookie() != other.getRoutingCookie()) return false;
     if (getRetryInfo() != other.getRetryInfo()) return false;
     if (getClientSideMetricsEnabled() != other.getClientSideMetricsEnabled()) return false;
+    if (getTrafficDirectorEnabled() != other.getTrafficDirectorEnabled()) return false;
+    if (getDirectAccessRequested() != other.getDirectAccessRequested()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,6 +364,10 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRetryInfo());
     hash = (37 * hash) + CLIENT_SIDE_METRICS_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClientSideMetricsEnabled());
+    hash = (37 * hash) + TRAFFIC_DIRECTOR_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrafficDirectorEnabled());
+    hash = (37 * hash) + DIRECT_ACCESS_REQUESTED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDirectAccessRequested());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -466,6 +520,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       routingCookie_ = false;
       retryInfo_ = false;
       clientSideMetricsEnabled_ = false;
+      trafficDirectorEnabled_ = false;
+      directAccessRequested_ = false;
       return this;
     }
 
@@ -521,6 +577,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.clientSideMetricsEnabled_ = clientSideMetricsEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.trafficDirectorEnabled_ = trafficDirectorEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.directAccessRequested_ = directAccessRequested_;
       }
     }
 
@@ -590,6 +652,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       if (other.getClientSideMetricsEnabled() != false) {
         setClientSideMetricsEnabled(other.getClientSideMetricsEnabled());
       }
+      if (other.getTrafficDirectorEnabled() != false) {
+        setTrafficDirectorEnabled(other.getTrafficDirectorEnabled());
+      }
+      if (other.getDirectAccessRequested() != false) {
+        setDirectAccessRequested(other.getDirectAccessRequested());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -658,6 +726,18 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 64
+            case 72:
+              {
+                trafficDirectorEnabled_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+            case 80:
+              {
+                directAccessRequested_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1068,6 +1148,112 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder clearClientSideMetricsEnabled() {
       bitField0_ = (bitField0_ & ~0x00000040);
       clientSideMetricsEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean trafficDirectorEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client using Traffic Director endpoint.
+     * </pre>
+     *
+     * <code>bool traffic_director_enabled = 9;</code>
+     *
+     * @return The trafficDirectorEnabled.
+     */
+    @java.lang.Override
+    public boolean getTrafficDirectorEnabled() {
+      return trafficDirectorEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client using Traffic Director endpoint.
+     * </pre>
+     *
+     * <code>bool traffic_director_enabled = 9;</code>
+     *
+     * @param value The trafficDirectorEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficDirectorEnabled(boolean value) {
+
+      trafficDirectorEnabled_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client using Traffic Director endpoint.
+     * </pre>
+     *
+     * <code>bool traffic_director_enabled = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficDirectorEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      trafficDirectorEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean directAccessRequested_;
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client explicitly opted in for Direct Access.
+     * </pre>
+     *
+     * <code>bool direct_access_requested = 10;</code>
+     *
+     * @return The directAccessRequested.
+     */
+    @java.lang.Override
+    public boolean getDirectAccessRequested() {
+      return directAccessRequested_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client explicitly opted in for Direct Access.
+     * </pre>
+     *
+     * <code>bool direct_access_requested = 10;</code>
+     *
+     * @param value The directAccessRequested to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectAccessRequested(boolean value) {
+
+      directAccessRequested_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client explicitly opted in for Direct Access.
+     * </pre>
+     *
+     * <code>bool direct_access_requested = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDirectAccessRequested() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      directAccessRequested_ = false;
       onChanged();
       return this;
     }

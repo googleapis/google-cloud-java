@@ -42,17 +42,19 @@ public final class FeatureFlagsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/bigtable/v2/feature_flags.proto"
-          + "\022\022google.bigtable.v2\"\333\001\n\014FeatureFlags\022\025\n"
+          + "\022\022google.bigtable.v2\"\236\002\n\014FeatureFlags\022\025\n"
           + "\rreverse_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate"
           + "_limit\030\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030"
           + "\005 \001(\010\022\"\n\032last_scanned_row_responses\030\004 \001("
           + "\010\022\026\n\016routing_cookie\030\006 \001(\010\022\022\n\nretry_info\030"
           + "\007 \001(\010\022#\n\033client_side_metrics_enabled\030\010 \001"
-          + "(\010B\273\001\n\026com.google.bigtable.v2B\021FeatureFl"
-          + "agsProtoP\001Z8cloud.google.com/go/bigtable"
-          + "/apiv2/bigtablepb;bigtablepb\252\002\030Google.Cl"
-          + "oud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtable\\"
-          + "V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
+          + "(\010\022 \n\030traffic_director_enabled\030\t \001(\010\022\037\n\027"
+          + "direct_access_requested\030\n \001(\010B\273\001\n\026com.go"
+          + "ogle.bigtable.v2B\021FeatureFlagsProtoP\001Z8c"
+          + "loud.google.com/go/bigtable/apiv2/bigtab"
+          + "lepb;bigtablepb\252\002\030Google.Cloud.Bigtable."
+          + "V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Google::"
+          + "Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -70,6 +72,8 @@ public final class FeatureFlagsProto {
               "RoutingCookie",
               "RetryInfo",
               "ClientSideMetricsEnabled",
+              "TrafficDirectorEnabled",
+              "DirectAccessRequested",
             });
   }
 
