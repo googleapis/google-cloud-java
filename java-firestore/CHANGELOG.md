@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.28.0](https://github.com/googleapis/java-firestore/compare/v3.27.4...v3.28.0) (2024-10-29)
+
+
+### Features
+
+* Improve Logging ([#1892](https://github.com/googleapis/java-firestore/issues/1892)) ([e74457a](https://github.com/googleapis/java-firestore/commit/e74457a1448189978e791fb3efe76d5fe8370ff7))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.53.0 ([#1913](https://github.com/googleapis/java-firestore/issues/1913)) ([cbaa7a7](https://github.com/googleapis/java-firestore/commit/cbaa7a7c44c82a173194e3c36289bc6b867b93b7))
+* Update dependency com.google.cloud:google-cloud-trace to v2.53.0 ([#1914](https://github.com/googleapis/java-firestore/issues/1914)) ([d3834e1](https://github.com/googleapis/java-firestore/commit/d3834e10b509b3d5c0e1a55318001f9eb80e7f45))
+
 ## [3.27.4](https://github.com/googleapis/java-firestore/compare/v3.27.3...v3.27.4) (2024-10-28)
 
 
