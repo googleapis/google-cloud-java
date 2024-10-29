@@ -148,6 +148,13 @@ public class VectorQueryOptions {
         && Objects.equals(distanceThreshold, otherOptions.distanceThreshold);
   }
 
+  @Override
+  public String toString() {
+    return String.format(
+        "VectorQueryOptions{distanceResultField=%s, distanceThreshold=%s}",
+        distanceResultField, distanceThreshold);
+  }
+
   /** Default VectorQueryOptions instance. */
   private static VectorQueryOptions DEFAULT = newBuilder().build();
 

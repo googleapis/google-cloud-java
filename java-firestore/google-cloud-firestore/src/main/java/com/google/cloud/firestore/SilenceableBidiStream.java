@@ -45,11 +45,11 @@ import java.util.logging.Logger;
  */
 final class SilenceableBidiStream<RequestT, ResponseT>
     implements BidiStreamObserver<RequestT, ResponseT> {
+  private static final Logger LOGGER = Logger.getLogger(SilenceableBidiStream.class.getName());
 
   private final ClientStream<RequestT> stream;
   private final BidiStreamObserver<RequestT, ResponseT> delegate;
   private boolean silence = false;
-  private static final Logger LOGGER = Logger.getLogger(Watch.class.getName());
 
   SilenceableBidiStream(
       BidiStreamObserver<RequestT, ResponseT> responseObserverT,
@@ -63,17 +63,17 @@ final class SilenceableBidiStream<RequestT, ResponseT>
   }
 
   public void send(RequestT request) {
-    LOGGER.info(stream.toString());
+    LOGGER.fine(stream.toString());
     stream.send(request);
   }
 
   public void closeSend() {
-    LOGGER.info(stream::toString);
+    LOGGER.fine(stream::toString);
     stream.closeSend();
   }
 
   public void closeSendAndSilence() {
-    LOGGER.info(stream::toString);
+    LOGGER.fine(stream::toString);
     silence = true;
     stream.closeSend();
   }

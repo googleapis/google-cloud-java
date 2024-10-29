@@ -171,6 +171,14 @@ public final class VectorQuery extends StreamableQuery<VectorQuerySnapshot> {
     return VectorQuerySnapshot.withDocuments(this, readTime, documents);
   }
 
+  @SuppressWarnings("MethodDoesntCallSuperMethod")
+  @Override
+  public String toString() {
+    return String.format(
+        "VectorQuery{query=%s, vectorField=%s, queryVector=%s, limit=%d, distanceMeasure=%s, options=%s, options=%s}",
+        query, vectorField, queryVector, limit, distanceMeasure, options, options);
+  }
+
   /**
    * The distance measure to use when comparing vectors in a {@link VectorQuery}.
    *

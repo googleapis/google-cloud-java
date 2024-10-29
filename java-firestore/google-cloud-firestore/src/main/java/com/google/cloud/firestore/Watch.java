@@ -60,6 +60,8 @@ import javax.annotation.Nullable;
  * synchronization.
  */
 final class Watch implements BidiStreamObserver<ListenRequest, ListenResponse> {
+  private static final Logger LOGGER = Logger.getLogger(Watch.class.getName());
+
   /**
    * Target ID used by watch. Watch uses a fixed target id since we only support one target per
    * stream. The actual target ID we use is arbitrary.
@@ -114,8 +116,6 @@ final class Watch implements BidiStreamObserver<ListenRequest, ListenResponse> {
     List<QueryDocumentSnapshot> adds = new ArrayList<>();
     List<QueryDocumentSnapshot> updates = new ArrayList<>();
   }
-
-  private static final Logger LOGGER = Logger.getLogger(Watch.class.getName());
 
   /**
    * @param firestore The Firestore Database client.
@@ -474,7 +474,7 @@ final class Watch implements BidiStreamObserver<ListenRequest, ListenResponse> {
     if (!hasPushed || !changes.isEmpty()) {
       final QuerySnapshot querySnapshot =
           QuerySnapshot.withChanges(query, readTime, documentSet, changes);
-      LOGGER.info(querySnapshot.toString());
+      LOGGER.fine(querySnapshot.toString());
       userCallbackExecutor.execute(() -> listener.onEvent(querySnapshot, null));
       hasPushed = true;
     }

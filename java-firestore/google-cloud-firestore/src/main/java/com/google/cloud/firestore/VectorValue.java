@@ -76,4 +76,9 @@ public final class VectorValue implements Serializable {
   int size() {
     return this.values.length;
   }
+
+  @Override
+  public String toString() {
+    return String.format("VectorValue{values=%s}", Arrays.toString(values));
+  }
 }

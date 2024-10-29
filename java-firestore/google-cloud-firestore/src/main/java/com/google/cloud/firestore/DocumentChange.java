@@ -114,4 +114,11 @@ public class DocumentChange {
   public int hashCode() {
     return Objects.hash(type, document, oldIndex, newIndex);
   }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "DocumentChange{type=%s, document=%s, oldIndex=%d, newIndex=%d}",
+        type, document, oldIndex, newIndex);
+  }
 }
