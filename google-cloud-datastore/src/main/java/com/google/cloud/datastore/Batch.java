@@ -53,9 +53,13 @@ public interface Batch extends DatastoreBatchWriter {
   /**
    * {@inheritDoc}
    *
-   * <p>If an entity for {@code entity.getKey()} does not exists, {@code entity} is inserted.
+   * <p>If an entity for {@code entity.getKey()} does not exist, {@code entity} is inserted.
    * Otherwise, {@link #submit()} will throw a {@link DatastoreException} with {@link
    * DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}.
+   *
+   * @param entity the entity to be added to the datastore
+   * @return The entity that was added
+   * @throws DatastoreException if there was any failure
    */
   @Override
   Entity add(FullEntity<?> entity);
@@ -67,6 +71,10 @@ public interface Batch extends DatastoreBatchWriter {
    * exists, {@link #submit()} will throw a {@link DatastoreException} with {@link
    * DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}. All entities in {@code
    * entities} whose key did not exist are inserted.
+   *
+   * @param entities entities to be added to the datastore
+   * @return A list of entities that have been added
+   * @throws DatastoreException if there was any failure
    */
   @Override
   List<Entity> add(FullEntity<?>... entities);
@@ -74,10 +82,15 @@ public interface Batch extends DatastoreBatchWriter {
   /**
    * Submit the batch to the Datastore.
    *
-   * @throws DatastoreException if there was any failure or if batch is not longer active
+   * @return Response of the batch submit operation.
+   * @throws DatastoreException if there was any failure or if batch is no longer active
    */
   Response submit();
 
-  /** Returns the batch associated {@link Datastore}. */
+  /**
+   * Returns the batch associated {@link Datastore}.
+   *
+   * @return The batch associated datastore
+   */
   Datastore getDatastore();
 }
