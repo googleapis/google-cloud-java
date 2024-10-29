@@ -217,6 +217,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -282,6 +283,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -347,6 +349,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -421,6 +424,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -495,6 +499,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -528,6 +533,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -581,6 +587,7 @@ public class EdgeContainerClientHttpJsonTest {
               .setTargetVersion("targetVersion-1639412217")
               .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
               .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+              .setConnectionState(Cluster.ConnectionState.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -615,6 +622,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -689,6 +697,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -258,6 +258,26 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int DISABLE_ROLLBACK_IF_ROLLOUT_PENDING_FIELD_NUMBER = 5;
+  private boolean disableRollbackIfRolloutPending_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If active rollout exists on the target, abort this rollback.
+   * </pre>
+   *
+   * <code>
+   * bool disable_rollback_if_rollout_pending = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The disableRollbackIfRolloutPending.
+   */
+  @java.lang.Override
+  public boolean getDisableRollbackIfRolloutPending() {
+    return disableRollbackIfRolloutPending_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -284,6 +304,9 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDesc_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stateDesc_);
     }
+    if (disableRollbackIfRolloutPending_ != false) {
+      output.writeBool(5, disableRollbackIfRolloutPending_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -305,6 +328,11 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDesc_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stateDesc_);
     }
+    if (disableRollbackIfRolloutPending_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              5, disableRollbackIfRolloutPending_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -325,6 +353,8 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     if (!getRolloutId().equals(other.getRolloutId())) return false;
     if (state_ != other.state_) return false;
     if (!getStateDesc().equals(other.getStateDesc())) return false;
+    if (getDisableRollbackIfRolloutPending() != other.getDisableRollbackIfRolloutPending())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -344,6 +374,10 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + state_;
     hash = (37 * hash) + STATE_DESC_FIELD_NUMBER;
     hash = (53 * hash) + getStateDesc().hashCode();
+    hash = (37 * hash) + DISABLE_ROLLBACK_IF_ROLLOUT_PENDING_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getDisableRollbackIfRolloutPending());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -487,6 +521,7 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       rolloutId_ = "";
       state_ = 0;
       stateDesc_ = "";
+      disableRollbackIfRolloutPending_ = false;
       return this;
     }
 
@@ -534,6 +569,9 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.stateDesc_ = stateDesc_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disableRollbackIfRolloutPending_ = disableRollbackIfRolloutPending_;
       }
     }
 
@@ -600,6 +638,9 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getDisableRollbackIfRolloutPending() != false) {
+        setDisableRollbackIfRolloutPending(other.getDisableRollbackIfRolloutPending());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -650,6 +691,12 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                disableRollbackIfRolloutPending_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1083,6 +1130,65 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       stateDesc_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableRollbackIfRolloutPending_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If active rollout exists on the target, abort this rollback.
+     * </pre>
+     *
+     * <code>
+     * bool disable_rollback_if_rollout_pending = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The disableRollbackIfRolloutPending.
+     */
+    @java.lang.Override
+    public boolean getDisableRollbackIfRolloutPending() {
+      return disableRollbackIfRolloutPending_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If active rollout exists on the target, abort this rollback.
+     * </pre>
+     *
+     * <code>
+     * bool disable_rollback_if_rollout_pending = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The disableRollbackIfRolloutPending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableRollbackIfRolloutPending(boolean value) {
+
+      disableRollbackIfRolloutPending_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If active rollout exists on the target, abort this rollback.
+     * </pre>
+     *
+     * <code>
+     * bool disable_rollback_if_rollout_pending = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableRollbackIfRolloutPending() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      disableRollbackIfRolloutPending_ = false;
       onChanged();
       return this;
     }

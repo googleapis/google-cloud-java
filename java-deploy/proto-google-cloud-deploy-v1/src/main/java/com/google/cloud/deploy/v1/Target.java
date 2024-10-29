@@ -70,6 +70,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return internalGetAnnotations();
       case 6:
         return internalGetLabels();
+      case 23:
+        return internalGetAssociatedEntities();
       case 20:
         return internalGetDeployParameters();
       default:
@@ -1013,6 +1015,159 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
   }
 
+  public static final int ASSOCIATED_ENTITIES_FIELD_NUMBER = 23;
+
+  private static final class AssociatedEntitiesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+                    newDefaultInstance(
+                        com.google.cloud.deploy.v1.CloudDeployProto
+                            .internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.deploy.v1.AssociatedEntities.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      associatedEntities_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      internalGetAssociatedEntities() {
+    if (associatedEntities_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AssociatedEntitiesDefaultEntryHolder.defaultEntry);
+    }
+    return associatedEntities_;
+  }
+
+  public int getAssociatedEntitiesCount() {
+    return internalGetAssociatedEntities().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAssociatedEntities(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAssociatedEntities().getMap().containsKey(key);
+  }
+  /** Use {@link #getAssociatedEntitiesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      getAssociatedEntities() {
+    return getAssociatedEntitiesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      getAssociatedEntitiesMap() {
+    return internalGetAssociatedEntities().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.deploy.v1.AssociatedEntities
+      getAssociatedEntitiesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.deploy.v1.AssociatedEntities defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities> map =
+        internalGetAssociatedEntities().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AssociatedEntities getAssociatedEntitiesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities> map =
+        internalGetAssociatedEntities().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int ETAG_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -1344,6 +1499,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (deploymentTargetCase_ == 21) {
       output.writeMessage(21, (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetAssociatedEntities(),
+        AssociatedEntitiesDefaultEntryHolder.defaultEntry,
+        23);
     getUnknownFields().writeTo(output);
   }
 
@@ -1436,6 +1596,17 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+        entry : internalGetAssociatedEntities().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+          associatedEntities__ =
+              AssociatedEntitiesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, associatedEntities__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1466,6 +1637,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!internalGetAssociatedEntities().equals(other.internalGetAssociatedEntities()))
+      return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getExecutionConfigsList().equals(other.getExecutionConfigsList())) return false;
     if (!internalGetDeployParameters().equals(other.internalGetDeployParameters())) return false;
@@ -1525,6 +1698,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (!internalGetAssociatedEntities().getMap().isEmpty()) {
+      hash = (37 * hash) + ASSOCIATED_ENTITIES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAssociatedEntities().hashCode();
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
@@ -1688,6 +1865,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return internalGetAnnotations();
         case 6:
           return internalGetLabels();
+        case 23:
+          return internalGetAssociatedEntities();
         case 20:
           return internalGetDeployParameters();
         default:
@@ -1703,6 +1882,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableAnnotations();
         case 6:
           return internalGetMutableLabels();
+        case 23:
+          return internalGetMutableAssociatedEntities();
         case 20:
           return internalGetMutableDeployParameters();
         default:
@@ -1774,6 +1955,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (customTargetBuilder_ != null) {
         customTargetBuilder_.clear();
       }
+      internalGetMutableAssociatedEntities().clear();
       etag_ = "";
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
@@ -1781,7 +1963,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         executionConfigs_ = null;
         executionConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableDeployParameters().clear();
       deploymentTargetCase_ = 0;
       deploymentTarget_ = null;
@@ -1822,9 +2004,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Target result) {
       if (executionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           executionConfigs_ = java.util.Collections.unmodifiableList(executionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.executionConfigs_ = executionConfigs_;
       } else {
@@ -1867,9 +2049,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.associatedEntities_ =
+            internalGetAssociatedEntities()
+                .build(AssociatedEntitiesDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.deployParameters_ = internalGetDeployParameters();
         result.deployParameters_.makeImmutable();
       }
@@ -1974,16 +2161,18 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      internalGetMutableAssociatedEntities().mergeFrom(other.internalGetAssociatedEntities());
+      bitField0_ |= 0x00004000;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (executionConfigsBuilder_ == null) {
         if (!other.executionConfigs_.isEmpty()) {
           if (executionConfigs_.isEmpty()) {
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureExecutionConfigsIsMutable();
             executionConfigs_.addAll(other.executionConfigs_);
@@ -1996,7 +2185,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             executionConfigsBuilder_.dispose();
             executionConfigsBuilder_ = null;
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             executionConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExecutionConfigsFieldBuilder()
@@ -2007,7 +2196,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       switch (other.getDeploymentTargetCase()) {
         case GKE:
           {
@@ -2128,7 +2317,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 98
             case 104:
@@ -2184,7 +2373,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDeployParameters()
                     .getMutableMap()
                     .put(deployParameters__.getKey(), deployParameters__.getValue());
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 162
             case 170:
@@ -2193,6 +2382,20 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 deploymentTargetCase_ = 21;
                 break;
               } // case 170
+            case 186:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+                    associatedEntities__ =
+                        input.readMessage(
+                            AssociatedEntitiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAssociatedEntities()
+                    .ensureBuilderMap()
+                    .put(associatedEntities__.getKey(), associatedEntities__.getValue());
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4670,6 +4873,317 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       return customTargetBuilder_;
     }
 
+    private static final class AssociatedEntitiesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder,
+            com.google.cloud.deploy.v1.AssociatedEntities> {
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.AssociatedEntities build(
+          com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder val) {
+        if (val instanceof com.google.cloud.deploy.v1.AssociatedEntities) {
+          return (com.google.cloud.deploy.v1.AssociatedEntities) val;
+        }
+        return ((com.google.cloud.deploy.v1.AssociatedEntities.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+          defaultEntry() {
+        return AssociatedEntitiesDefaultEntryHolder.defaultEntry;
+      }
+    };
+
+    private static final AssociatedEntitiesConverter associatedEntitiesConverter =
+        new AssociatedEntitiesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder,
+            com.google.cloud.deploy.v1.AssociatedEntities,
+            com.google.cloud.deploy.v1.AssociatedEntities.Builder>
+        associatedEntities_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder,
+            com.google.cloud.deploy.v1.AssociatedEntities,
+            com.google.cloud.deploy.v1.AssociatedEntities.Builder>
+        internalGetAssociatedEntities() {
+      if (associatedEntities_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(associatedEntitiesConverter);
+      }
+      return associatedEntities_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder,
+            com.google.cloud.deploy.v1.AssociatedEntities,
+            com.google.cloud.deploy.v1.AssociatedEntities.Builder>
+        internalGetMutableAssociatedEntities() {
+      if (associatedEntities_ == null) {
+        associatedEntities_ =
+            new com.google.protobuf.MapFieldBuilder<>(associatedEntitiesConverter);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return associatedEntities_;
+    }
+
+    public int getAssociatedEntitiesCount() {
+      return internalGetAssociatedEntities().ensureBuilderMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAssociatedEntities(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAssociatedEntities().ensureBuilderMap().containsKey(key);
+    }
+    /** Use {@link #getAssociatedEntitiesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+        getAssociatedEntities() {
+      return getAssociatedEntitiesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+        getAssociatedEntitiesMap() {
+      return internalGetAssociatedEntities().getImmutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.deploy.v1.AssociatedEntities
+        getAssociatedEntitiesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.deploy.v1.AssociatedEntities defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder> map =
+          internalGetMutableAssociatedEntities().ensureBuilderMap();
+      return map.containsKey(key) ? associatedEntitiesConverter.build(map.get(key)) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AssociatedEntities getAssociatedEntitiesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder> map =
+          internalGetMutableAssociatedEntities().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return associatedEntitiesConverter.build(map.get(key));
+    }
+
+    public Builder clearAssociatedEntities() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutableAssociatedEntities().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAssociatedEntities(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAssociatedEntities().ensureBuilderMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+        getMutableAssociatedEntities() {
+      bitField0_ |= 0x00004000;
+      return internalGetMutableAssociatedEntities().ensureMessageMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAssociatedEntities(
+        java.lang.String key, com.google.cloud.deploy.v1.AssociatedEntities value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAssociatedEntities().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAssociatedEntities(
+        java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableAssociatedEntities().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of entity IDs to their associated entities. Associated
+     * entities allows specifying places other than the deployment target for
+     * specific features. For example, the Gateway API canary can be configured to
+     * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+     * using associated entities. An entity ID must consist of lower-case letters,
+     * numbers, and hyphens, start with a letter and end with a letter or a
+     * number, and have a max length of 63 characters. In other words, it must
+     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.AssociatedEntities.Builder
+        putAssociatedEntitiesBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder>
+          builderMap = internalGetMutableAssociatedEntities().ensureBuilderMap();
+      com.google.cloud.deploy.v1.AssociatedEntitiesOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.deploy.v1.AssociatedEntities.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.deploy.v1.AssociatedEntities) {
+        entry = ((com.google.cloud.deploy.v1.AssociatedEntities) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.deploy.v1.AssociatedEntities.Builder) entry;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -4738,7 +5252,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4757,7 +5271,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4781,7 +5295,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4790,10 +5304,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExecutionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         executionConfigs_ =
             new java.util.ArrayList<com.google.cloud.deploy.v1.ExecutionConfig>(executionConfigs_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -5077,7 +5591,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExecutionConfigs() {
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         executionConfigsBuilder_.clear();
@@ -5245,7 +5759,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.ExecutionConfig.Builder,
                 com.google.cloud.deploy.v1.ExecutionConfigOrBuilder>(
                 executionConfigs_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00010000) != 0),
                 getParentForChildren(),
                 isClean());
         executionConfigs_ = null;
@@ -5274,7 +5788,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (!deployParameters_.isMutable()) {
         deployParameters_ = deployParameters_.copy();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return deployParameters_;
     }
@@ -5369,7 +5883,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDeployParameters() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableDeployParameters().getMutableMap().clear();
       return this;
     }
@@ -5394,7 +5908,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableDeployParameters().getMutableMap();
     }
     /**
@@ -5416,7 +5930,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDeployParameters().getMutableMap().put(key, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
     /**
@@ -5433,7 +5947,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDeployParameters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDeployParameters().getMutableMap().putAll(values);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 

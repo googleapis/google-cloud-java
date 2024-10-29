@@ -212,6 +212,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     mockEdgeContainer.addResponse(expectedResponse);
 
@@ -271,6 +272,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     mockEdgeContainer.addResponse(expectedResponse);
 
@@ -330,6 +332,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +406,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -476,6 +480,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -546,6 +551,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -619,6 +625,7 @@ public class EdgeContainerClientTest {
             .setTargetVersion("targetVersion-1639412217")
             .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
             .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .setConnectionState(Cluster.ConnectionState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

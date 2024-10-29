@@ -38,7 +38,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     super(builder);
   }
 
-  private MaintenancePolicy() {}
+  private MaintenancePolicy() {
+    maintenanceExclusions_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -112,6 +114,107 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         : window_;
   }
 
+  public static final int MAINTENANCE_EXCLUSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+      maintenanceExclusions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+      getMaintenanceExclusionsList() {
+    return maintenanceExclusions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
+      getMaintenanceExclusionsOrBuilderList() {
+    return maintenanceExclusions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMaintenanceExclusionsCount() {
+    return maintenanceExclusions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow getMaintenanceExclusions(
+      int index) {
+    return maintenanceExclusions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder
+      getMaintenanceExclusionsOrBuilder(int index) {
+    return maintenanceExclusions_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -129,6 +232,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getWindow());
     }
+    for (int i = 0; i < maintenanceExclusions_.size(); i++) {
+      output.writeMessage(2, maintenanceExclusions_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -140,6 +246,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
+    }
+    for (int i = 0; i < maintenanceExclusions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, maintenanceExclusions_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -161,6 +272,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (hasWindow()) {
       if (!getWindow().equals(other.getWindow())) return false;
     }
+    if (!getMaintenanceExclusionsList().equals(other.getMaintenanceExclusionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -175,6 +287,10 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (hasWindow()) {
       hash = (37 * hash) + WINDOW_FIELD_NUMBER;
       hash = (53 * hash) + getWindow().hashCode();
+    }
+    if (getMaintenanceExclusionsCount() > 0) {
+      hash = (37 * hash) + MAINTENANCE_EXCLUSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceExclusionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -317,6 +433,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWindowFieldBuilder();
+        getMaintenanceExclusionsFieldBuilder();
       }
     }
 
@@ -329,6 +446,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         windowBuilder_.dispose();
         windowBuilder_ = null;
       }
+      if (maintenanceExclusionsBuilder_ == null) {
+        maintenanceExclusions_ = java.util.Collections.emptyList();
+      } else {
+        maintenanceExclusions_ = null;
+        maintenanceExclusionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -356,11 +480,25 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.edgecontainer.v1.MaintenancePolicy buildPartial() {
       com.google.cloud.edgecontainer.v1.MaintenancePolicy result =
           new com.google.cloud.edgecontainer.v1.MaintenancePolicy(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.edgecontainer.v1.MaintenancePolicy result) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          maintenanceExclusions_ = java.util.Collections.unmodifiableList(maintenanceExclusions_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.maintenanceExclusions_ = maintenanceExclusions_;
+      } else {
+        result.maintenanceExclusions_ = maintenanceExclusionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.edgecontainer.v1.MaintenancePolicy result) {
@@ -422,6 +560,33 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       if (other.hasWindow()) {
         mergeWindow(other.getWindow());
       }
+      if (maintenanceExclusionsBuilder_ == null) {
+        if (!other.maintenanceExclusions_.isEmpty()) {
+          if (maintenanceExclusions_.isEmpty()) {
+            maintenanceExclusions_ = other.maintenanceExclusions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureMaintenanceExclusionsIsMutable();
+            maintenanceExclusions_.addAll(other.maintenanceExclusions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.maintenanceExclusions_.isEmpty()) {
+          if (maintenanceExclusionsBuilder_.isEmpty()) {
+            maintenanceExclusionsBuilder_.dispose();
+            maintenanceExclusionsBuilder_ = null;
+            maintenanceExclusions_ = other.maintenanceExclusions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            maintenanceExclusionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMaintenanceExclusionsFieldBuilder()
+                    : null;
+          } else {
+            maintenanceExclusionsBuilder_.addAllMessages(other.maintenanceExclusions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -454,6 +619,20 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow m =
+                    input.readMessage(
+                        com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.parser(),
+                        extensionRegistry);
+                if (maintenanceExclusionsBuilder_ == null) {
+                  ensureMaintenanceExclusionsIsMutable();
+                  maintenanceExclusions_.add(m);
+                } else {
+                  maintenanceExclusionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -658,6 +837,467 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         window_ = null;
       }
       return windowBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+        maintenanceExclusions_ = java.util.Collections.emptyList();
+
+    private void ensureMaintenanceExclusionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        maintenanceExclusions_ =
+            new java.util.ArrayList<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>(
+                maintenanceExclusions_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow,
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder,
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
+        maintenanceExclusionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+        getMaintenanceExclusionsList() {
+      if (maintenanceExclusionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(maintenanceExclusions_);
+      } else {
+        return maintenanceExclusionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getMaintenanceExclusionsCount() {
+      if (maintenanceExclusionsBuilder_ == null) {
+        return maintenanceExclusions_.size();
+      } else {
+        return maintenanceExclusionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow getMaintenanceExclusions(
+        int index) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        return maintenanceExclusions_.get(index);
+      } else {
+        return maintenanceExclusionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceExclusions(
+        int index, com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow value) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.set(index, value);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceExclusions(
+        int index,
+        com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder builderForValue) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMaintenanceExclusions(
+        com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow value) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.add(value);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMaintenanceExclusions(
+        int index, com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow value) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.add(index, value);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMaintenanceExclusions(
+        com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder builderForValue) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMaintenanceExclusions(
+        int index,
+        com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder builderForValue) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllMaintenanceExclusions(
+        java.lang.Iterable<? extends com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+            values) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        ensureMaintenanceExclusionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, maintenanceExclusions_);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenanceExclusions() {
+      if (maintenanceExclusionsBuilder_ == null) {
+        maintenanceExclusions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMaintenanceExclusions(int index) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        ensureMaintenanceExclusionsIsMutable();
+        maintenanceExclusions_.remove(index);
+        onChanged();
+      } else {
+        maintenanceExclusionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder
+        getMaintenanceExclusionsBuilder(int index) {
+      return getMaintenanceExclusionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder
+        getMaintenanceExclusionsOrBuilder(int index) {
+      if (maintenanceExclusionsBuilder_ == null) {
+        return maintenanceExclusions_.get(index);
+      } else {
+        return maintenanceExclusionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
+        getMaintenanceExclusionsOrBuilderList() {
+      if (maintenanceExclusionsBuilder_ != null) {
+        return maintenanceExclusionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(maintenanceExclusions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder
+        addMaintenanceExclusionsBuilder() {
+      return getMaintenanceExclusionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder
+        addMaintenanceExclusionsBuilder(int index) {
+      return getMaintenanceExclusionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+     * should not occur in these windows. Each exclusion has a unique name and may
+     * be active or expired. The max number of maintenance exclusions allowed at a
+     * given time is 3.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder>
+        getMaintenanceExclusionsBuilderList() {
+      return getMaintenanceExclusionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow,
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder,
+            com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
+        getMaintenanceExclusionsFieldBuilder() {
+      if (maintenanceExclusionsBuilder_ == null) {
+        maintenanceExclusionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow,
+                com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow.Builder,
+                com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>(
+                maintenanceExclusions_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        maintenanceExclusions_ = null;
+      }
+      return maintenanceExclusionsBuilder_;
     }
 
     @java.lang.Override

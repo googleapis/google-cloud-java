@@ -117,6 +117,110 @@ public final class EventarcProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_GetGoogleChannelConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GetMessageBusRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GetMessageBusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListMessageBusesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListMessageBusesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListMessageBusesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListMessageBusesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_CreateMessageBusRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_CreateMessageBusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_UpdateMessageBusRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_UpdateMessageBusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_DeleteMessageBusRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_DeleteMessageBusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GetEnrollmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GetEnrollmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListEnrollmentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListEnrollmentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListEnrollmentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListEnrollmentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_CreateEnrollmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_CreateEnrollmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_UpdateEnrollmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_UpdateEnrollmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_DeleteEnrollmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_DeleteEnrollmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GetPipelineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GetPipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListPipelinesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListPipelinesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListPipelinesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListPipelinesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_CreatePipelineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_CreatePipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_UpdatePipelineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_UpdatePipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_DeletePipelineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_DeletePipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GetGoogleApiSourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GetGoogleApiSourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_CreateGoogleApiSourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_CreateGoogleApiSourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_UpdateGoogleApiSourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_UpdateGoogleApiSourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_DeleteGoogleApiSourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_DeleteGoogleApiSourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_eventarc_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_OperationMetadata_fieldAccessorTable;
@@ -136,193 +240,415 @@ public final class EventarcProto {
           + "gle/api/resource.proto\032&google/cloud/eve"
           + "ntarc/v1/channel.proto\0321google/cloud/eve"
           + "ntarc/v1/channel_connection.proto\032(googl"
-          + "e/cloud/eventarc/v1/discovery.proto\0324goo"
-          + "gle/cloud/eventarc/v1/google_channel_con"
-          + "fig.proto\032&google/cloud/eventarc/v1/trig"
-          + "ger.proto\032#google/longrunning/operations"
-          + ".proto\032 google/protobuf/field_mask.proto"
-          + "\032\037google/protobuf/timestamp.proto\"J\n\021Get"
-          + "TriggerRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037ev"
-          + "entarc.googleapis.com/Trigger\"\227\001\n\023ListTr"
-          + "iggersRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037e"
-          + "ventarc.googleapis.com/Trigger\022\021\n\tpage_s"
-          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010order_b"
-          + "y\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"y\n\024ListTriggersR"
-          + "esponse\0223\n\010triggers\030\001 \003(\0132!.google.cloud"
-          + ".eventarc.v1.Trigger\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\275\001\n\024CreateTri"
-          + "ggerRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037eve"
-          + "ntarc.googleapis.com/Trigger\0227\n\007trigger\030"
-          + "\002 \001(\0132!.google.cloud.eventarc.v1.Trigger"
-          + "B\003\340A\002\022\027\n\ntrigger_id\030\003 \001(\tB\003\340A\002\022\032\n\rvalida"
-          + "te_only\030\004 \001(\010B\003\340A\002\"\256\001\n\024UpdateTriggerRequ"
-          + "est\0222\n\007trigger\030\001 \001(\0132!.google.cloud.even"
-          + "tarc.v1.Trigger\022/\n\013update_mask\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMask\022\025\n\rallow_missin"
-          + "g\030\003 \001(\010\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\002\"\216\001\n\024"
-          + "DeleteTriggerRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372"
-          + "A!\n\037eventarc.googleapis.com/Trigger\022\014\n\004e"
-          + "tag\030\002 \001(\t\022\025\n\rallow_missing\030\003 \001(\010\022\032\n\rvali"
-          + "date_only\030\004 \001(\010B\003\340A\002\"J\n\021GetChannelReques"
-          + "t\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037eventarc.google"
-          + "apis.com/Channel\"\207\001\n\023ListChannelsRequest"
+          + "e/cloud/eventarc/v1/discovery.proto\032)goo"
+          + "gle/cloud/eventarc/v1/enrollment.proto\0320"
+          + "google/cloud/eventarc/v1/google_api_sour"
+          + "ce.proto\0324google/cloud/eventarc/v1/googl"
+          + "e_channel_config.proto\032*google/cloud/eve"
+          + "ntarc/v1/message_bus.proto\032\'google/cloud"
+          + "/eventarc/v1/pipeline.proto\032&google/clou"
+          + "d/eventarc/v1/trigger.proto\032#google/long"
+          + "running/operations.proto\032 google/protobu"
+          + "f/field_mask.proto\032\037google/protobuf/time"
+          + "stamp.proto\"J\n\021GetTriggerRequest\0225\n\004name"
+          + "\030\001 \001(\tB\'\340A\002\372A!\n\037eventarc.googleapis.com/"
+          + "Trigger\"\227\001\n\023ListTriggersRequest\0227\n\006paren"
+          + "t\030\001 \001(\tB\'\340A\002\372A!\022\037eventarc.googleapis.com"
+          + "/Trigger\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
+          + "n\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\016\n\006filter\030\005 \001("
+          + "\t\"y\n\024ListTriggersResponse\0223\n\010triggers\030\001 "
+          + "\003(\0132!.google.cloud.eventarc.v1.Trigger\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
+          + " \003(\t\"\275\001\n\024CreateTriggerRequest\0227\n\006parent\030"
+          + "\001 \001(\tB\'\340A\002\372A!\022\037eventarc.googleapis.com/T"
+          + "rigger\0227\n\007trigger\030\002 \001(\0132!.google.cloud.e"
+          + "ventarc.v1.TriggerB\003\340A\002\022\027\n\ntrigger_id\030\003 "
+          + "\001(\tB\003\340A\002\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"\256\001\n"
+          + "\024UpdateTriggerRequest\0222\n\007trigger\030\001 \001(\0132!"
+          + ".google.cloud.eventarc.v1.Trigger\022/\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "sk\022\025\n\rallow_missing\030\003 \001(\010\022\032\n\rvalidate_on"
+          + "ly\030\004 \001(\010B\003\340A\001\"\216\001\n\024DeleteTriggerRequest\0225"
+          + "\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037eventarc.googleapi"
+          + "s.com/Trigger\022\014\n\004etag\030\002 \001(\t\022\025\n\rallow_mis"
+          + "sing\030\003 \001(\010\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"J"
+          + "\n\021GetChannelRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A"
+          + "!\n\037eventarc.googleapis.com/Channel\"\207\001\n\023L"
+          + "istChannelsRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372"
+          + "A!\022\037eventarc.googleapis.com/Channel\022\021\n\tp"
+          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010or"
+          + "der_by\030\004 \001(\t\"y\n\024ListChannelsResponse\0223\n\010"
+          + "channels\030\001 \003(\0132!.google.cloud.eventarc.v"
+          + "1.Channel\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013un"
+          + "reachable\030\003 \003(\t\"\275\001\n\024CreateChannelRequest"
           + "\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037eventarc.googl"
-          + "eapis.com/Channel\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\"y\n\024Li"
-          + "stChannelsResponse\0223\n\010channels\030\001 \003(\0132!.g"
-          + "oogle.cloud.eventarc.v1.Channel\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\275\001"
-          + "\n\024CreateChannelRequest\0227\n\006parent\030\001 \001(\tB\'"
-          + "\340A\002\372A!\022\037eventarc.googleapis.com/Channel\022"
-          + "7\n\007channel\030\002 \001(\0132!.google.cloud.eventarc"
-          + ".v1.ChannelB\003\340A\002\022\027\n\nchannel_id\030\003 \001(\tB\003\340A"
-          + "\002\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\002\"\227\001\n\024Update"
-          + "ChannelRequest\0222\n\007channel\030\001 \001(\0132!.google"
-          + ".cloud.eventarc.v1.Channel\022/\n\013update_mas"
-          + "k\030\002 \001(\0132\032.google.protobuf.FieldMask\022\032\n\rv"
-          + "alidate_only\030\003 \001(\010B\003\340A\002\"i\n\024DeleteChannel"
-          + "Request\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037eventarc."
-          + "googleapis.com/Channel\022\032\n\rvalidate_only\030"
-          + "\002 \001(\010B\003\340A\002\"L\n\022GetProviderRequest\0226\n\004name"
-          + "\030\001 \001(\tB(\340A\002\372A\"\n eventarc.googleapis.com/"
-          + "Provider\"\231\001\n\024ListProvidersRequest\0228\n\006par"
-          + "ent\030\001 \001(\tB(\340A\002\372A\"\022 eventarc.googleapis.c"
-          + "om/Provider\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-          + "oken\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\016\n\006filter\030\005"
-          + " \001(\t\"|\n\025ListProvidersResponse\0225\n\tprovide"
-          + "rs\030\001 \003(\0132\".google.cloud.eventarc.v1.Prov"
-          + "ider\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreach"
-          + "able\030\003 \003(\t\"^\n\033GetChannelConnectionReques"
-          + "t\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)eventarc.google"
-          + "apis.com/ChannelConnection\"\211\001\n\035ListChann"
-          + "elConnectionsRequest\022A\n\006parent\030\001 \001(\tB1\340A"
-          + "\002\372A+\022)eventarc.googleapis.com/ChannelCon"
-          + "nection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\"\230\001\n\036ListChannelConnectionsRespons"
-          + "e\022H\n\023channel_connections\030\001 \003(\0132+.google."
-          + "cloud.eventarc.v1.ChannelConnection\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
-          + "\t\"\325\001\n\036CreateChannelConnectionRequest\022A\n\006"
-          + "parent\030\001 \001(\tB1\340A\002\372A+\022)eventarc.googleapi"
-          + "s.com/ChannelConnection\022L\n\022channel_conne"
-          + "ction\030\002 \001(\0132+.google.cloud.eventarc.v1.C"
-          + "hannelConnectionB\003\340A\002\022\"\n\025channel_connect"
-          + "ion_id\030\003 \001(\tB\003\340A\002\"a\n\036DeleteChannelConnec"
-          + "tionRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)event"
-          + "arc.googleapis.com/ChannelConnection\"\246\001\n"
-          + " UpdateGoogleChannelConfigRequest\022Q\n\025goo"
-          + "gle_channel_config\030\001 \001(\0132-.google.cloud."
-          + "eventarc.v1.GoogleChannelConfigB\003\340A\002\022/\n\013"
-          + "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
-          + "dMask\"b\n\035GetGoogleChannelConfigRequest\022A"
-          + "\n\004name\030\001 \001(\tB3\340A\002\372A-\n+eventarc.googleapi"
-          + "s.com/GoogleChannelConfig\"\200\002\n\021OperationM"
-          + "etadata\0224\n\013create_time\030\001 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006targ"
-          + "et\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016stat"
-          + "us_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cance"
-          + "llation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB"
-          + "\003\340A\0032\317\035\n\010Eventarc\022\231\001\n\nGetTrigger\022+.googl"
-          + "e.cloud.eventarc.v1.GetTriggerRequest\032!."
-          + "google.cloud.eventarc.v1.Trigger\";\332A\004nam"
-          + "e\202\323\344\223\002.\022,/v1/{name=projects/*/locations/"
-          + "*/triggers/*}\022\254\001\n\014ListTriggers\022-.google."
-          + "cloud.eventarc.v1.ListTriggersRequest\032.."
-          + "google.cloud.eventarc.v1.ListTriggersRes"
-          + "ponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=proj"
-          + "ects/*/locations/*}/triggers\022\330\001\n\rCreateT"
-          + "rigger\022..google.cloud.eventarc.v1.Create"
-          + "TriggerRequest\032\035.google.longrunning.Oper"
-          + "ation\"x\312A\034\n\007Trigger\022\021OperationMetadata\332A"
-          + "\031parent,trigger,trigger_id\202\323\344\223\0027\",/v1/{p"
-          + "arent=projects/*/locations/*}/triggers:\007"
-          + "trigger\022\351\001\n\rUpdateTrigger\022..google.cloud"
-          + ".eventarc.v1.UpdateTriggerRequest\032\035.goog"
-          + "le.longrunning.Operation\"\210\001\312A\034\n\007Trigger\022"
-          + "\021OperationMetadata\332A!trigger,update_mask"
-          + ",allow_missing\202\323\344\223\002?24/v1/{trigger.name="
-          + "projects/*/locations/*/triggers/*}:\007trig"
-          + "ger\022\310\001\n\rDeleteTrigger\022..google.cloud.eve"
-          + "ntarc.v1.DeleteTriggerRequest\032\035.google.l"
-          + "ongrunning.Operation\"h\312A\034\n\007Trigger\022\021Oper"
-          + "ationMetadata\332A\022name,allow_missing\202\323\344\223\002."
-          + "*,/v1/{name=projects/*/locations/*/trigg"
-          + "ers/*}\022\231\001\n\nGetChannel\022+.google.cloud.eve"
-          + "ntarc.v1.GetChannelRequest\032!.google.clou"
-          + "d.eventarc.v1.Channel\";\332A\004name\202\323\344\223\002.\022,/v"
-          + "1/{name=projects/*/locations/*/channels/"
-          + "*}\022\254\001\n\014ListChannels\022-.google.cloud.event"
-          + "arc.v1.ListChannelsRequest\032..google.clou"
-          + "d.eventarc.v1.ListChannelsResponse\"=\332A\006p"
+          + "eapis.com/Channel\0227\n\007channel\030\002 \001(\0132!.goo"
+          + "gle.cloud.eventarc.v1.ChannelB\003\340A\002\022\027\n\nch"
+          + "annel_id\030\003 \001(\tB\003\340A\002\022\032\n\rvalidate_only\030\004 \001"
+          + "(\010B\003\340A\001\"\227\001\n\024UpdateChannelRequest\0222\n\007chan"
+          + "nel\030\001 \001(\0132!.google.cloud.eventarc.v1.Cha"
+          + "nnel\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
+          + "buf.FieldMask\022\032\n\rvalidate_only\030\003 \001(\010B\003\340A"
+          + "\001\"i\n\024DeleteChannelRequest\0225\n\004name\030\001 \001(\tB"
+          + "\'\340A\002\372A!\n\037eventarc.googleapis.com/Channel"
+          + "\022\032\n\rvalidate_only\030\002 \001(\010B\003\340A\001\"L\n\022GetProvi"
+          + "derRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n eventa"
+          + "rc.googleapis.com/Provider\"\231\001\n\024ListProvi"
+          + "dersRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 eve"
+          + "ntarc.googleapis.com/Provider\022\021\n\tpage_si"
+          + "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010order_by"
+          + "\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"|\n\025ListProvidersR"
+          + "esponse\0225\n\tproviders\030\001 \003(\0132\".google.clou"
+          + "d.eventarc.v1.Provider\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"^\n\033GetChann"
+          + "elConnectionRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A"
+          + "+\n)eventarc.googleapis.com/ChannelConnec"
+          + "tion\"\211\001\n\035ListChannelConnectionsRequest\022A"
+          + "\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)eventarc.googlea"
+          + "pis.com/ChannelConnection\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"\230\001\n\036ListChannel"
+          + "ConnectionsResponse\022H\n\023channel_connectio"
+          + "ns\030\001 \003(\0132+.google.cloud.eventarc.v1.Chan"
+          + "nelConnection\022\027\n\017next_page_token\030\002 \001(\t\022\023"
+          + "\n\013unreachable\030\003 \003(\t\"\325\001\n\036CreateChannelCon"
+          + "nectionRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)"
+          + "eventarc.googleapis.com/ChannelConnectio"
+          + "n\022L\n\022channel_connection\030\002 \001(\0132+.google.c"
+          + "loud.eventarc.v1.ChannelConnectionB\003\340A\002\022"
+          + "\"\n\025channel_connection_id\030\003 \001(\tB\003\340A\002\"a\n\036D"
+          + "eleteChannelConnectionRequest\022?\n\004name\030\001 "
+          + "\001(\tB1\340A\002\372A+\n)eventarc.googleapis.com/Cha"
+          + "nnelConnection\"\246\001\n UpdateGoogleChannelCo"
+          + "nfigRequest\022Q\n\025google_channel_config\030\001 \001"
+          + "(\0132-.google.cloud.eventarc.v1.GoogleChan"
+          + "nelConfigB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMask\"b\n\035GetGoogleChan"
+          + "nelConfigRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+"
+          + "eventarc.googleapis.com/GoogleChannelCon"
+          + "fig\"P\n\024GetMessageBusRequest\0228\n\004name\030\001 \001("
+          + "\tB*\340A\002\372A$\n\"eventarc.googleapis.com/Messa"
+          + "geBus\"\262\001\n\027ListMessageBusesRequest\022:\n\006par"
+          + "ent\030\001 \001(\tB*\340A\002\372A$\022\"eventarc.googleapis.c"
+          + "om/MessageBus\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\npage_token\030\003 \001(\tB\003\340A\001\022\025\n\010order_by\030\004 \001(\t"
+          + "B\003\340A\001\022\023\n\006filter\030\005 \001(\tB\003\340A\001\"\205\001\n\030ListMessa"
+          + "geBusesResponse\022;\n\rmessage_buses\030\001 \003(\0132$"
+          + ".google.cloud.eventarc.v1.MessageBus\022\027\n\017"
+          + "next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003"
+          + "(\t\"\217\001\n ListMessageBusEnrollmentsRequest\022"
+          + ":\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"eventarc.google"
+          + "apis.com/MessageBus\022\026\n\tpage_size\030\002 \001(\005B\003"
+          + "\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"f\n!ListMess"
+          + "ageBusEnrollmentsResponse\022\023\n\013enrollments"
+          + "\030\001 \003(\t\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
+          + "chable\030\003 \003(\t\"\316\001\n\027CreateMessageBusRequest"
+          + "\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"eventarc.googl"
+          + "eapis.com/MessageBus\022>\n\013message_bus\030\002 \001("
+          + "\0132$.google.cloud.eventarc.v1.MessageBusB"
+          + "\003\340A\002\022\033\n\016message_bus_id\030\003 \001(\tB\003\340A\002\022\032\n\rval"
+          + "idate_only\030\004 \001(\010B\003\340A\001\"\307\001\n\027UpdateMessageB"
+          + "usRequest\022>\n\013message_bus\030\001 \001(\0132$.google."
+          + "cloud.eventarc.v1.MessageBusB\003\340A\002\0224\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n\rv"
+          + "alidate_only\030\004 \001(\010B\003\340A\001\"\236\001\n\027DeleteMessag"
+          + "eBusRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"event"
+          + "arc.googleapis.com/MessageBus\022\021\n\004etag\030\002 "
+          + "\001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n\r"
+          + "validate_only\030\004 \001(\010B\003\340A\001\"P\n\024GetEnrollmen"
+          + "tRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"eventarc"
+          + ".googleapis.com/Enrollment\"\261\001\n\026ListEnrol"
+          + "lmentsRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"e"
+          + "ventarc.googleapis.com/Enrollment\022\026\n\tpag"
+          + "e_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340"
+          + "A\001\022\025\n\010order_by\030\004 \001(\tB\003\340A\001\022\023\n\006filter\030\005 \001("
+          + "\tB\003\340A\001\"\202\001\n\027ListEnrollmentsResponse\0229\n\013en"
+          + "rollments\030\001 \003(\0132$.google.cloud.eventarc."
+          + "v1.Enrollment\022\027\n\017next_page_token\030\002 \001(\t\022\023"
+          + "\n\013unreachable\030\003 \003(\t\"\314\001\n\027CreateEnrollment"
+          + "Request\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"eventar"
+          + "c.googleapis.com/Enrollment\022=\n\nenrollmen"
+          + "t\030\002 \001(\0132$.google.cloud.eventarc.v1.Enrol"
+          + "lmentB\003\340A\002\022\032\n\renrollment_id\030\003 \001(\tB\003\340A\002\022\032"
+          + "\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"\306\001\n\027UpdateEnr"
+          + "ollmentRequest\022=\n\nenrollment\030\001 \001(\0132$.goo"
+          + "gle.cloud.eventarc.v1.EnrollmentB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
+          + "ldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022"
+          + "\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"\236\001\n\027DeleteEn"
+          + "rollmentRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"e"
+          + "ventarc.googleapis.com/Enrollment\022\021\n\004eta"
+          + "g\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001"
+          + "\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"L\n\022GetPipel"
+          + "ineRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n eventa"
+          + "rc.googleapis.com/Pipeline\"\255\001\n\024ListPipel"
+          + "inesRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 eve"
+          + "ntarc.googleapis.com/Pipeline\022\026\n\tpage_si"
+          + "ze\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\025"
+          + "\n\010order_by\030\004 \001(\tB\003\340A\001\022\023\n\006filter\030\005 \001(\tB\003\340"
+          + "A\001\"|\n\025ListPipelinesResponse\0225\n\tpipelines"
+          + "\030\001 \003(\0132\".google.cloud.eventarc.v1.Pipeli"
+          + "ne\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachab"
+          + "le\030\003 \003(\t\"\302\001\n\025CreatePipelineRequest\0228\n\006pa"
+          + "rent\030\001 \001(\tB(\340A\002\372A\"\022 eventarc.googleapis."
+          + "com/Pipeline\0229\n\010pipeline\030\002 \001(\0132\".google."
+          + "cloud.eventarc.v1.PipelineB\003\340A\002\022\030\n\013pipel"
+          + "ine_id\030\003 \001(\tB\003\340A\002\022\032\n\rvalidate_only\030\004 \001(\010"
+          + "B\003\340A\001\"\300\001\n\025UpdatePipelineRequest\0229\n\010pipel"
+          + "ine\030\001 \001(\0132\".google.cloud.eventarc.v1.Pip"
+          + "elineB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_missin"
+          + "g\030\003 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001"
+          + "\"\232\001\n\025DeletePipelineRequest\0226\n\004name\030\001 \001(\t"
+          + "B(\340A\002\372A\"\n eventarc.googleapis.com/Pipeli"
+          + "ne\022\021\n\004etag\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003"
+          + " \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"Z\n"
+          + "\031GetGoogleApiSourceRequest\022=\n\004name\030\001 \001(\t"
+          + "B/\340A\002\372A)\n\'eventarc.googleapis.com/Google"
+          + "ApiSource\"\273\001\n\033ListGoogleApiSourcesReques"
+          + "t\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'eventarc.goog"
+          + "leapis.com/GoogleApiSource\022\026\n\tpage_size\030"
+          + "\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\025\n\010o"
+          + "rder_by\030\004 \001(\tB\003\340A\001\022\023\n\006filter\030\005 \001(\tB\003\340A\001\""
+          + "\223\001\n\034ListGoogleApiSourcesResponse\022E\n\022goog"
+          + "le_api_sources\030\001 \003(\0132).google.cloud.even"
+          + "tarc.v1.GoogleApiSource\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\351\001\n\034Create"
+          + "GoogleApiSourceRequest\022?\n\006parent\030\001 \001(\tB/"
+          + "\340A\002\372A)\022\'eventarc.googleapis.com/GoogleAp"
+          + "iSource\022I\n\021google_api_source\030\002 \001(\0132).goo"
+          + "gle.cloud.eventarc.v1.GoogleApiSourceB\003\340"
+          + "A\002\022!\n\024google_api_source_id\030\003 \001(\tB\003\340A\002\022\032\n"
+          + "\rvalidate_only\030\004 \001(\010B\003\340A\001\"\327\001\n\034UpdateGoog"
+          + "leApiSourceRequest\022I\n\021google_api_source\030"
+          + "\001 \001(\0132).google.cloud.eventarc.v1.GoogleA"
+          + "piSourceB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMaskB\003\340A\001\022\032\n\rallow_mis"
+          + "sing\030\003 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003"
+          + "\340A\001\"\250\001\n\034DeleteGoogleApiSourceRequest\022=\n\004"
+          + "name\030\001 \001(\tB/\340A\002\372A)\n\'eventarc.googleapis."
+          + "com/GoogleApiSource\022\021\n\004etag\030\002 \001(\tB\003\340A\001\022\032"
+          + "\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n\rvalidate_o"
+          + "nly\030\004 \001(\010B\003\340A\001\"\200\002\n\021OperationMetadata\0224\n\013"
+          + "create_time\030\001 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340"
+          + "A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030"
+          + "\005 \001(\tB\003\340A\003\022#\n\026requested_cancellation\030\006 \001"
+          + "(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\0032\365@\n\010Ev"
+          + "entarc\022\231\001\n\nGetTrigger\022+.google.cloud.eve"
+          + "ntarc.v1.GetTriggerRequest\032!.google.clou"
+          + "d.eventarc.v1.Trigger\";\332A\004name\202\323\344\223\002.\022,/v"
+          + "1/{name=projects/*/locations/*/triggers/"
+          + "*}\022\254\001\n\014ListTriggers\022-.google.cloud.event"
+          + "arc.v1.ListTriggersRequest\032..google.clou"
+          + "d.eventarc.v1.ListTriggersResponse\"=\332A\006p"
           + "arent\202\323\344\223\002.\022,/v1/{parent=projects/*/loca"
-          + "tions/*}/channels\022\330\001\n\rCreateChannel\022..go"
-          + "ogle.cloud.eventarc.v1.CreateChannelRequ"
+          + "tions/*}/triggers\022\330\001\n\rCreateTrigger\022..go"
+          + "ogle.cloud.eventarc.v1.CreateTriggerRequ"
           + "est\032\035.google.longrunning.Operation\"x\312A\034\n"
-          + "\007Channel\022\021OperationMetadata\332A\031parent,cha"
-          + "nnel,channel_id\202\323\344\223\0027\",/v1/{parent=proje"
-          + "cts/*/locations/*}/channels:\007channel\022\332\001\n"
-          + "\rUpdateChannel\022..google.cloud.eventarc.v"
-          + "1.UpdateChannelRequest\032\035.google.longrunn"
-          + "ing.Operation\"z\312A\034\n\007Channel\022\021OperationMe"
-          + "tadata\332A\023channel,update_mask\202\323\344\223\002?24/v1/"
-          + "{channel.name=projects/*/locations/*/cha"
-          + "nnels/*}:\007channel\022\272\001\n\rDeleteChannel\022..go"
-          + "ogle.cloud.eventarc.v1.DeleteChannelRequ"
-          + "est\032\035.google.longrunning.Operation\"Z\312A\034\n"
-          + "\007Channel\022\021OperationMetadata\332A\004name\202\323\344\223\002."
-          + "*,/v1/{name=projects/*/locations/*/chann"
-          + "els/*}\022\235\001\n\013GetProvider\022,.google.cloud.ev"
-          + "entarc.v1.GetProviderRequest\032\".google.cl"
-          + "oud.eventarc.v1.Provider\"<\332A\004name\202\323\344\223\002/\022"
-          + "-/v1/{name=projects/*/locations/*/provid"
-          + "ers/*}\022\260\001\n\rListProviders\022..google.cloud."
-          + "eventarc.v1.ListProvidersRequest\032/.googl"
-          + "e.cloud.eventarc.v1.ListProvidersRespons"
-          + "e\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projects"
-          + "/*/locations/*}/providers\022\301\001\n\024GetChannel"
-          + "Connection\0225.google.cloud.eventarc.v1.Ge"
-          + "tChannelConnectionRequest\032+.google.cloud"
-          + ".eventarc.v1.ChannelConnection\"E\332A\004name\202"
-          + "\323\344\223\0028\0226/v1/{name=projects/*/locations/*/"
-          + "channelConnections/*}\022\324\001\n\026ListChannelCon"
-          + "nections\0227.google.cloud.eventarc.v1.List"
-          + "ChannelConnectionsRequest\0328.google.cloud"
-          + ".eventarc.v1.ListChannelConnectionsRespo"
-          + "nse\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=projec"
-          + "ts/*/locations/*}/channelConnections\022\242\002\n"
-          + "\027CreateChannelConnection\0228.google.cloud."
-          + "eventarc.v1.CreateChannelConnectionReque"
-          + "st\032\035.google.longrunning.Operation\"\255\001\312A&\n"
-          + "\021ChannelConnection\022\021OperationMetadata\332A/"
-          + "parent,channel_connection,channel_connec"
-          + "tion_id\202\323\344\223\002L\"6/v1/{parent=projects/*/lo"
-          + "cations/*}/channelConnections:\022channel_c"
-          + "onnection\022\342\001\n\027DeleteChannelConnection\0228."
-          + "google.cloud.eventarc.v1.DeleteChannelCo"
-          + "nnectionRequest\032\035.google.longrunning.Ope"
-          + "ration\"n\312A&\n\021ChannelConnection\022\021Operatio"
-          + "nMetadata\332A\004name\202\323\344\223\0028*6/v1/{name=projec"
-          + "ts/*/locations/*/channelConnections/*}\022\306"
-          + "\001\n\026GetGoogleChannelConfig\0227.google.cloud"
-          + ".eventarc.v1.GetGoogleChannelConfigReque"
-          + "st\032-.google.cloud.eventarc.v1.GoogleChan"
-          + "nelConfig\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=proj"
-          + "ects/*/locations/*/googleChannelConfig}\022"
-          + "\227\002\n\031UpdateGoogleChannelConfig\022:.google.c"
-          + "loud.eventarc.v1.UpdateGoogleChannelConf"
-          + "igRequest\032-.google.cloud.eventarc.v1.Goo"
-          + "gleChannelConfig\"\216\001\332A!google_channel_con"
-          + "fig,update_mask\202\323\344\223\002d2K/v1/{google_chann"
-          + "el_config.name=projects/*/locations/*/go"
-          + "ogleChannelConfig}:\025google_channel_confi"
-          + "g\032K\312A\027eventarc.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\275"
-          + "\001\n\034com.google.cloud.eventarc.v1B\rEventar"
-          + "cProtoP\001Z8cloud.google.com/go/eventarc/a"
-          + "piv1/eventarcpb;eventarcpb\252\002\030Google.Clou"
-          + "d.Eventarc.V1\312\002\030Google\\Cloud\\Eventarc\\V1"
-          + "\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
+          + "\007Trigger\022\021OperationMetadata\332A\031parent,tri"
+          + "gger,trigger_id\202\323\344\223\0027\",/v1/{parent=proje"
+          + "cts/*/locations/*}/triggers:\007trigger\022\351\001\n"
+          + "\rUpdateTrigger\022..google.cloud.eventarc.v"
+          + "1.UpdateTriggerRequest\032\035.google.longrunn"
+          + "ing.Operation\"\210\001\312A\034\n\007Trigger\022\021OperationM"
+          + "etadata\332A!trigger,update_mask,allow_miss"
+          + "ing\202\323\344\223\002?24/v1/{trigger.name=projects/*/"
+          + "locations/*/triggers/*}:\007trigger\022\310\001\n\rDel"
+          + "eteTrigger\022..google.cloud.eventarc.v1.De"
+          + "leteTriggerRequest\032\035.google.longrunning."
+          + "Operation\"h\312A\034\n\007Trigger\022\021OperationMetada"
+          + "ta\332A\022name,allow_missing\202\323\344\223\002.*,/v1/{name"
+          + "=projects/*/locations/*/triggers/*}\022\231\001\n\n"
+          + "GetChannel\022+.google.cloud.eventarc.v1.Ge"
+          + "tChannelRequest\032!.google.cloud.eventarc."
+          + "v1.Channel\";\332A\004name\202\323\344\223\002.\022,/v1/{name=pro"
+          + "jects/*/locations/*/channels/*}\022\254\001\n\014List"
+          + "Channels\022-.google.cloud.eventarc.v1.List"
+          + "ChannelsRequest\032..google.cloud.eventarc."
+          + "v1.ListChannelsResponse\"=\332A\006parent\202\323\344\223\002."
+          + "\022,/v1/{parent=projects/*/locations/*}/ch"
+          + "annels\022\330\001\n\rCreateChannel\022..google.cloud."
+          + "eventarc.v1.CreateChannelRequest\032\035.googl"
+          + "e.longrunning.Operation\"x\312A\034\n\007Channel\022\021O"
+          + "perationMetadata\332A\031parent,channel,channe"
+          + "l_id\202\323\344\223\0027\",/v1/{parent=projects/*/locat"
+          + "ions/*}/channels:\007channel\022\332\001\n\rUpdateChan"
+          + "nel\022..google.cloud.eventarc.v1.UpdateCha"
+          + "nnelRequest\032\035.google.longrunning.Operati"
+          + "on\"z\312A\034\n\007Channel\022\021OperationMetadata\332A\023ch"
+          + "annel,update_mask\202\323\344\223\002?24/v1/{channel.na"
+          + "me=projects/*/locations/*/channels/*}:\007c"
+          + "hannel\022\272\001\n\rDeleteChannel\022..google.cloud."
+          + "eventarc.v1.DeleteChannelRequest\032\035.googl"
+          + "e.longrunning.Operation\"Z\312A\034\n\007Channel\022\021O"
+          + "perationMetadata\332A\004name\202\323\344\223\002.*,/v1/{name"
+          + "=projects/*/locations/*/channels/*}\022\235\001\n\013"
+          + "GetProvider\022,.google.cloud.eventarc.v1.G"
+          + "etProviderRequest\032\".google.cloud.eventar"
+          + "c.v1.Provider\"<\332A\004name\202\323\344\223\002/\022-/v1/{name="
+          + "projects/*/locations/*/providers/*}\022\260\001\n\r"
+          + "ListProviders\022..google.cloud.eventarc.v1"
+          + ".ListProvidersRequest\032/.google.cloud.eve"
+          + "ntarc.v1.ListProvidersResponse\">\332A\006paren"
+          + "t\202\323\344\223\002/\022-/v1/{parent=projects/*/location"
+          + "s/*}/providers\022\301\001\n\024GetChannelConnection\022"
+          + "5.google.cloud.eventarc.v1.GetChannelCon"
+          + "nectionRequest\032+.google.cloud.eventarc.v"
+          + "1.ChannelConnection\"E\332A\004name\202\323\344\223\0028\0226/v1/"
+          + "{name=projects/*/locations/*/channelConn"
+          + "ections/*}\022\324\001\n\026ListChannelConnections\0227."
+          + "google.cloud.eventarc.v1.ListChannelConn"
+          + "ectionsRequest\0328.google.cloud.eventarc.v"
+          + "1.ListChannelConnectionsResponse\"G\332A\006par"
+          + "ent\202\323\344\223\0028\0226/v1/{parent=projects/*/locati"
+          + "ons/*}/channelConnections\022\242\002\n\027CreateChan"
+          + "nelConnection\0228.google.cloud.eventarc.v1"
+          + ".CreateChannelConnectionRequest\032\035.google"
+          + ".longrunning.Operation\"\255\001\312A&\n\021ChannelCon"
+          + "nection\022\021OperationMetadata\332A/parent,chan"
+          + "nel_connection,channel_connection_id\202\323\344\223"
+          + "\002L\"6/v1/{parent=projects/*/locations/*}/"
+          + "channelConnections:\022channel_connection\022\342"
+          + "\001\n\027DeleteChannelConnection\0228.google.clou"
+          + "d.eventarc.v1.DeleteChannelConnectionReq"
+          + "uest\032\035.google.longrunning.Operation\"n\312A&"
+          + "\n\021ChannelConnection\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\0028*6/v1/{name=projects/*/locati"
+          + "ons/*/channelConnections/*}\022\306\001\n\026GetGoogl"
+          + "eChannelConfig\0227.google.cloud.eventarc.v"
+          + "1.GetGoogleChannelConfigRequest\032-.google"
+          + ".cloud.eventarc.v1.GoogleChannelConfig\"D"
+          + "\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/*/loca"
+          + "tions/*/googleChannelConfig}\022\227\002\n\031UpdateG"
+          + "oogleChannelConfig\022:.google.cloud.eventa"
+          + "rc.v1.UpdateGoogleChannelConfigRequest\032-"
+          + ".google.cloud.eventarc.v1.GoogleChannelC"
+          + "onfig\"\216\001\332A!google_channel_config,update_"
+          + "mask\202\323\344\223\002d2K/v1/{google_channel_config.n"
+          + "ame=projects/*/locations/*/googleChannel"
+          + "Config}:\025google_channel_config\022\246\001\n\rGetMe"
+          + "ssageBus\022..google.cloud.eventarc.v1.GetM"
+          + "essageBusRequest\032$.google.cloud.eventarc"
+          + ".v1.MessageBus\"?\332A\004name\202\323\344\223\0022\0220/v1/{name"
+          + "=projects/*/locations/*/messageBuses/*}\022"
+          + "\274\001\n\020ListMessageBuses\0221.google.cloud.even"
+          + "tarc.v1.ListMessageBusesRequest\0322.google"
+          + ".cloud.eventarc.v1.ListMessageBusesRespo"
+          + "nse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{parent=projec"
+          + "ts/*/locations/*}/messageBuses\022\351\001\n\031ListM"
+          + "essageBusEnrollments\022:.google.cloud.even"
+          + "tarc.v1.ListMessageBusEnrollmentsRequest"
+          + "\032;.google.cloud.eventarc.v1.ListMessageB"
+          + "usEnrollmentsResponse\"S\332A\006parent\202\323\344\223\002D\022B"
+          + "/v1/{parent=projects/*/locations/*/messa"
+          + "geBuses/*}:listEnrollments\022\362\001\n\020CreateMes"
+          + "sageBus\0221.google.cloud.eventarc.v1.Creat"
+          + "eMessageBusRequest\032\035.google.longrunning."
+          + "Operation\"\213\001\312A\037\n\nMessageBus\022\021OperationMe"
+          + "tadata\332A!parent,message_bus,message_bus_"
+          + "id\202\323\344\223\002?\"0/v1/{parent=projects/*/locatio"
+          + "ns/*}/messageBuses:\013message_bus\022\364\001\n\020Upda"
+          + "teMessageBus\0221.google.cloud.eventarc.v1."
+          + "UpdateMessageBusRequest\032\035.google.longrun"
+          + "ning.Operation\"\215\001\312A\037\n\nMessageBus\022\021Operat"
+          + "ionMetadata\332A\027message_bus,update_mask\202\323\344"
+          + "\223\002K2</v1/{message_bus.name=projects/*/lo"
+          + "cations/*/messageBuses/*}:\013message_bus\022\314"
+          + "\001\n\020DeleteMessageBus\0221.google.cloud.event"
+          + "arc.v1.DeleteMessageBusRequest\032\035.google."
+          + "longrunning.Operation\"f\312A\037\n\nMessageBus\022\021"
+          + "OperationMetadata\332A\tname,etag\202\323\344\223\0022*0/v1"
+          + "/{name=projects/*/locations/*/messageBus"
+          + "es/*}\022\245\001\n\rGetEnrollment\022..google.cloud.e"
+          + "ventarc.v1.GetEnrollmentRequest\032$.google"
+          + ".cloud.eventarc.v1.Enrollment\">\332A\004name\202\323"
+          + "\344\223\0021\022//v1/{name=projects/*/locations/*/e"
+          + "nrollments/*}\022\270\001\n\017ListEnrollments\0220.goog"
+          + "le.cloud.eventarc.v1.ListEnrollmentsRequ"
+          + "est\0321.google.cloud.eventarc.v1.ListEnrol"
+          + "lmentsResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{pa"
+          + "rent=projects/*/locations/*}/enrollments"
+          + "\022\356\001\n\020CreateEnrollment\0221.google.cloud.eve"
+          + "ntarc.v1.CreateEnrollmentRequest\032\035.googl"
+          + "e.longrunning.Operation\"\207\001\312A\037\n\nEnrollmen"
+          + "t\022\021OperationMetadata\332A\037parent,enrollment"
+          + ",enrollment_id\202\323\344\223\002=\"//v1/{parent=projec"
+          + "ts/*/locations/*}/enrollments:\nenrollmen"
+          + "t\022\360\001\n\020UpdateEnrollment\0221.google.cloud.ev"
+          + "entarc.v1.UpdateEnrollmentRequest\032\035.goog"
+          + "le.longrunning.Operation\"\211\001\312A\037\n\nEnrollme"
+          + "nt\022\021OperationMetadata\332A\026enrollment,updat"
+          + "e_mask\202\323\344\223\002H2:/v1/{enrollment.name=proje"
+          + "cts/*/locations/*/enrollments/*}:\nenroll"
+          + "ment\022\313\001\n\020DeleteEnrollment\0221.google.cloud"
+          + ".eventarc.v1.DeleteEnrollmentRequest\032\035.g"
+          + "oogle.longrunning.Operation\"e\312A\037\n\nEnroll"
+          + "ment\022\021OperationMetadata\332A\tname,etag\202\323\344\223\002"
+          + "1*//v1/{name=projects/*/locations/*/enro"
+          + "llments/*}\022\235\001\n\013GetPipeline\022,.google.clou"
+          + "d.eventarc.v1.GetPipelineRequest\032\".googl"
+          + "e.cloud.eventarc.v1.Pipeline\"<\332A\004name\202\323\344"
+          + "\223\002/\022-/v1/{name=projects/*/locations/*/pi"
+          + "pelines/*}\022\260\001\n\rListPipelines\022..google.cl"
+          + "oud.eventarc.v1.ListPipelinesRequest\032/.g"
+          + "oogle.cloud.eventarc.v1.ListPipelinesRes"
+          + "ponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=proj"
+          + "ects/*/locations/*}/pipelines\022\337\001\n\016Create"
+          + "Pipeline\022/.google.cloud.eventarc.v1.Crea"
+          + "tePipelineRequest\032\035.google.longrunning.O"
+          + "peration\"}\312A\035\n\010Pipeline\022\021OperationMetada"
+          + "ta\332A\033parent,pipeline,pipeline_id\202\323\344\223\0029\"-"
+          + "/v1/{parent=projects/*/locations/*}/pipe"
+          + "lines:\010pipeline\022\341\001\n\016UpdatePipeline\022/.goo"
+          + "gle.cloud.eventarc.v1.UpdatePipelineRequ"
+          + "est\032\035.google.longrunning.Operation\"\177\312A\035\n"
+          + "\010Pipeline\022\021OperationMetadata\332A\024pipeline,"
+          + "update_mask\202\323\344\223\002B26/v1/{pipeline.name=pr"
+          + "ojects/*/locations/*/pipelines/*}:\010pipel"
+          + "ine\022\303\001\n\016DeletePipeline\022/.google.cloud.ev"
+          + "entarc.v1.DeletePipelineRequest\032\035.google"
+          + ".longrunning.Operation\"a\312A\035\n\010Pipeline\022\021O"
+          + "perationMetadata\332A\tname,etag\202\323\344\223\002/*-/v1/"
+          + "{name=projects/*/locations/*/pipelines/*"
+          + "}\022\271\001\n\022GetGoogleApiSource\0223.google.cloud."
+          + "eventarc.v1.GetGoogleApiSourceRequest\032)."
+          + "google.cloud.eventarc.v1.GoogleApiSource"
+          + "\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=projects/*/lo"
+          + "cations/*/googleApiSources/*}\022\314\001\n\024ListGo"
+          + "ogleApiSources\0225.google.cloud.eventarc.v"
+          + "1.ListGoogleApiSourcesRequest\0326.google.c"
+          + "loud.eventarc.v1.ListGoogleApiSourcesRes"
+          + "ponse\"E\332A\006parent\202\323\344\223\0026\0224/v1/{parent=proj"
+          + "ects/*/locations/*}/googleApiSources\022\227\002\n"
+          + "\025CreateGoogleApiSource\0226.google.cloud.ev"
+          + "entarc.v1.CreateGoogleApiSourceRequest\032\035"
+          + ".google.longrunning.Operation\"\246\001\312A$\n\017Goo"
+          + "gleApiSource\022\021OperationMetadata\332A-parent"
+          + ",google_api_source,google_api_source_id\202"
+          + "\323\344\223\002I\"4/v1/{parent=projects/*/locations/"
+          + "*}/googleApiSources:\021google_api_source\022\231"
+          + "\002\n\025UpdateGoogleApiSource\0226.google.cloud."
+          + "eventarc.v1.UpdateGoogleApiSourceRequest"
+          + "\032\035.google.longrunning.Operation\"\250\001\312A$\n\017G"
+          + "oogleApiSource\022\021OperationMetadata\332A\035goog",
+      "le_api_source,update_mask\202\323\344\223\002[2F/v1/{go"
+          + "ogle_api_source.name=projects/*/location"
+          + "s/*/googleApiSources/*}:\021google_api_sour"
+          + "ce\022\337\001\n\025DeleteGoogleApiSource\0226.google.cl"
+          + "oud.eventarc.v1.DeleteGoogleApiSourceReq"
+          + "uest\032\035.google.longrunning.Operation\"o\312A$"
+          + "\n\017GoogleApiSource\022\021OperationMetadata\332A\tn"
+          + "ame,etag\202\323\344\223\0026*4/v1/{name=projects/*/loc"
+          + "ations/*/googleApiSources/*}\032K\312A\027eventar"
+          + "c.googleapis.com\322A.https://www.googleapi"
+          + "s.com/auth/cloud-platformB\275\001\n\034com.google"
+          + ".cloud.eventarc.v1B\rEventarcProtoP\001Z8clo"
+          + "ud.google.com/go/eventarc/apiv1/eventarc"
+          + "pb;eventarcpb\252\002\030Google.Cloud.Eventarc.V1"
+          + "\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google::Cl"
+          + "oud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -335,7 +661,11 @@ public final class EventarcProto {
               com.google.cloud.eventarc.v1.ChannelProto.getDescriptor(),
               com.google.cloud.eventarc.v1.ChannelConnectionProto.getDescriptor(),
               com.google.cloud.eventarc.v1.DiscoveryProto.getDescriptor(),
+              com.google.cloud.eventarc.v1.EnrollmentProto.getDescriptor(),
+              com.google.cloud.eventarc.v1.GoogleApiSourceProto.getDescriptor(),
               com.google.cloud.eventarc.v1.GoogleChannelConfigProto.getDescriptor(),
+              com.google.cloud.eventarc.v1.MessageBusProto.getDescriptor(),
+              com.google.cloud.eventarc.v1.PipelineProto.getDescriptor(),
               com.google.cloud.eventarc.v1.TriggerProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -517,8 +847,216 @@ public final class EventarcProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_eventarc_v1_OperationMetadata_descriptor =
+    internal_static_google_cloud_eventarc_v1_GetMessageBusRequest_descriptor =
         getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_eventarc_v1_GetMessageBusRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GetMessageBusRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_eventarc_v1_ListMessageBusesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_eventarc_v1_ListMessageBusesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListMessageBusesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+            });
+    internal_static_google_cloud_eventarc_v1_ListMessageBusesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_eventarc_v1_ListMessageBusesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListMessageBusesResponse_descriptor,
+            new java.lang.String[] {
+              "MessageBuses", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListMessageBusEnrollmentsResponse_descriptor,
+            new java.lang.String[] {
+              "Enrollments", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_eventarc_v1_CreateMessageBusRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_eventarc_v1_CreateMessageBusRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_CreateMessageBusRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "MessageBus", "MessageBusId", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_UpdateMessageBusRequest_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_cloud_eventarc_v1_UpdateMessageBusRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_UpdateMessageBusRequest_descriptor,
+            new java.lang.String[] {
+              "MessageBus", "UpdateMask", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_DeleteMessageBusRequest_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_eventarc_v1_DeleteMessageBusRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_DeleteMessageBusRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_GetEnrollmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_eventarc_v1_GetEnrollmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GetEnrollmentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_eventarc_v1_ListEnrollmentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_eventarc_v1_ListEnrollmentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListEnrollmentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+            });
+    internal_static_google_cloud_eventarc_v1_ListEnrollmentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_eventarc_v1_ListEnrollmentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListEnrollmentsResponse_descriptor,
+            new java.lang.String[] {
+              "Enrollments", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_eventarc_v1_CreateEnrollmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_eventarc_v1_CreateEnrollmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_CreateEnrollmentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Enrollment", "EnrollmentId", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_UpdateEnrollmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_eventarc_v1_UpdateEnrollmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_UpdateEnrollmentRequest_descriptor,
+            new java.lang.String[] {
+              "Enrollment", "UpdateMask", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_DeleteEnrollmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_eventarc_v1_DeleteEnrollmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_DeleteEnrollmentRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_GetPipelineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_eventarc_v1_GetPipelineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GetPipelineRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_eventarc_v1_ListPipelinesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_eventarc_v1_ListPipelinesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListPipelinesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+            });
+    internal_static_google_cloud_eventarc_v1_ListPipelinesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_eventarc_v1_ListPipelinesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListPipelinesResponse_descriptor,
+            new java.lang.String[] {
+              "Pipelines", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_eventarc_v1_CreatePipelineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_eventarc_v1_CreatePipelineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_CreatePipelineRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Pipeline", "PipelineId", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_UpdatePipelineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_eventarc_v1_UpdatePipelineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_UpdatePipelineRequest_descriptor,
+            new java.lang.String[] {
+              "Pipeline", "UpdateMask", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_DeletePipelineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_eventarc_v1_DeletePipelineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_DeletePipelineRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_GetGoogleApiSourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_eventarc_v1_GetGoogleApiSourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GetGoogleApiSourceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+            });
+    internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ListGoogleApiSourcesResponse_descriptor,
+            new java.lang.String[] {
+              "GoogleApiSources", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_eventarc_v1_CreateGoogleApiSourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_eventarc_v1_CreateGoogleApiSourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_CreateGoogleApiSourceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "GoogleApiSource", "GoogleApiSourceId", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_UpdateGoogleApiSourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(46);
+    internal_static_google_cloud_eventarc_v1_UpdateGoogleApiSourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_UpdateGoogleApiSourceRequest_descriptor,
+            new java.lang.String[] {
+              "GoogleApiSource", "UpdateMask", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_DeleteGoogleApiSourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_cloud_eventarc_v1_DeleteGoogleApiSourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_DeleteGoogleApiSourceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag", "AllowMissing", "ValidateOnly",
+            });
+    internal_static_google_cloud_eventarc_v1_OperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_eventarc_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_OperationMetadata_descriptor,
@@ -549,7 +1087,11 @@ public final class EventarcProto {
     com.google.cloud.eventarc.v1.ChannelProto.getDescriptor();
     com.google.cloud.eventarc.v1.ChannelConnectionProto.getDescriptor();
     com.google.cloud.eventarc.v1.DiscoveryProto.getDescriptor();
+    com.google.cloud.eventarc.v1.EnrollmentProto.getDescriptor();
+    com.google.cloud.eventarc.v1.GoogleApiSourceProto.getDescriptor();
     com.google.cloud.eventarc.v1.GoogleChannelConfigProto.getDescriptor();
+    com.google.cloud.eventarc.v1.MessageBusProto.getDescriptor();
+    com.google.cloud.eventarc.v1.PipelineProto.getDescriptor();
     com.google.cloud.eventarc.v1.TriggerProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

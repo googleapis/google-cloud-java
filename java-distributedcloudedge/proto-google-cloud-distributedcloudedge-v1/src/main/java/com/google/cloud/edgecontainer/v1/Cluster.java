@@ -1307,6 +1307,43 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.edgecontainer.v1.Cluster.ControlPlane.SharedDeploymentPolicy
           getSharedDeploymentPolicy();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name for the storage schema of control plane nodes.
+       *
+       * Warning: Configurable node local storage schema feature is an
+       * experimental feature, and is not recommended for general use
+       * in production clusters/nodepools.
+       * </pre>
+       *
+       * <code>
+       * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The controlPlaneNodeStorageSchema.
+       */
+      java.lang.String getControlPlaneNodeStorageSchema();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name for the storage schema of control plane nodes.
+       *
+       * Warning: Configurable node local storage schema feature is an
+       * experimental feature, and is not recommended for general use
+       * in production clusters/nodepools.
+       * </pre>
+       *
+       * <code>
+       * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for controlPlaneNodeStorageSchema.
+       */
+      com.google.protobuf.ByteString getControlPlaneNodeStorageSchemaBytes();
     }
     /**
      *
@@ -1337,6 +1374,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         nodeLocation_ = "";
         machineFilter_ = "";
         sharedDeploymentPolicy_ = 0;
+        controlPlaneNodeStorageSchema_ = "";
       }
 
       @java.lang.Override
@@ -1530,6 +1568,69 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             : result;
       }
 
+      public static final int CONTROL_PLANE_NODE_STORAGE_SCHEMA_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object controlPlaneNodeStorageSchema_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name for the storage schema of control plane nodes.
+       *
+       * Warning: Configurable node local storage schema feature is an
+       * experimental feature, and is not recommended for general use
+       * in production clusters/nodepools.
+       * </pre>
+       *
+       * <code>
+       * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The controlPlaneNodeStorageSchema.
+       */
+      @java.lang.Override
+      public java.lang.String getControlPlaneNodeStorageSchema() {
+        java.lang.Object ref = controlPlaneNodeStorageSchema_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          controlPlaneNodeStorageSchema_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name for the storage schema of control plane nodes.
+       *
+       * Warning: Configurable node local storage schema feature is an
+       * experimental feature, and is not recommended for general use
+       * in production clusters/nodepools.
+       * </pre>
+       *
+       * <code>
+       * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for controlPlaneNodeStorageSchema.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getControlPlaneNodeStorageSchemaBytes() {
+        java.lang.Object ref = controlPlaneNodeStorageSchema_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          controlPlaneNodeStorageSchema_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1559,6 +1660,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           output.writeEnum(4, sharedDeploymentPolicy_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlPlaneNodeStorageSchema_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 5, controlPlaneNodeStorageSchema_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1583,6 +1688,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, sharedDeploymentPolicy_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlPlaneNodeStorageSchema_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(
+                  5, controlPlaneNodeStorageSchema_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1603,6 +1713,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (getNodeCount() != other.getNodeCount()) return false;
         if (!getMachineFilter().equals(other.getMachineFilter())) return false;
         if (sharedDeploymentPolicy_ != other.sharedDeploymentPolicy_) return false;
+        if (!getControlPlaneNodeStorageSchema().equals(other.getControlPlaneNodeStorageSchema()))
+          return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1622,6 +1734,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getMachineFilter().hashCode();
         hash = (37 * hash) + SHARED_DEPLOYMENT_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + sharedDeploymentPolicy_;
+        hash = (37 * hash) + CONTROL_PLANE_NODE_STORAGE_SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getControlPlaneNodeStorageSchema().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1774,6 +1888,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           nodeCount_ = 0;
           machineFilter_ = "";
           sharedDeploymentPolicy_ = 0;
+          controlPlaneNodeStorageSchema_ = "";
           return this;
         }
 
@@ -1823,6 +1938,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.sharedDeploymentPolicy_ = sharedDeploymentPolicy_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.controlPlaneNodeStorageSchema_ = controlPlaneNodeStorageSchema_;
           }
         }
 
@@ -1892,6 +2010,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           if (other.sharedDeploymentPolicy_ != 0) {
             setSharedDeploymentPolicyValue(other.getSharedDeploymentPolicyValue());
           }
+          if (!other.getControlPlaneNodeStorageSchema().isEmpty()) {
+            controlPlaneNodeStorageSchema_ = other.controlPlaneNodeStorageSchema_;
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -1942,6 +2065,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 32
+                case 42:
+                  {
+                    controlPlaneNodeStorageSchema_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2343,6 +2472,142 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         public Builder clearSharedDeploymentPolicy() {
           bitField0_ = (bitField0_ & ~0x00000008);
           sharedDeploymentPolicy_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object controlPlaneNodeStorageSchema_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Name for the storage schema of control plane nodes.
+         *
+         * Warning: Configurable node local storage schema feature is an
+         * experimental feature, and is not recommended for general use
+         * in production clusters/nodepools.
+         * </pre>
+         *
+         * <code>
+         * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The controlPlaneNodeStorageSchema.
+         */
+        public java.lang.String getControlPlaneNodeStorageSchema() {
+          java.lang.Object ref = controlPlaneNodeStorageSchema_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            controlPlaneNodeStorageSchema_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Name for the storage schema of control plane nodes.
+         *
+         * Warning: Configurable node local storage schema feature is an
+         * experimental feature, and is not recommended for general use
+         * in production clusters/nodepools.
+         * </pre>
+         *
+         * <code>
+         * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for controlPlaneNodeStorageSchema.
+         */
+        public com.google.protobuf.ByteString getControlPlaneNodeStorageSchemaBytes() {
+          java.lang.Object ref = controlPlaneNodeStorageSchema_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            controlPlaneNodeStorageSchema_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Name for the storage schema of control plane nodes.
+         *
+         * Warning: Configurable node local storage schema feature is an
+         * experimental feature, and is not recommended for general use
+         * in production clusters/nodepools.
+         * </pre>
+         *
+         * <code>
+         * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The controlPlaneNodeStorageSchema to set.
+         * @return This builder for chaining.
+         */
+        public Builder setControlPlaneNodeStorageSchema(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          controlPlaneNodeStorageSchema_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Name for the storage schema of control plane nodes.
+         *
+         * Warning: Configurable node local storage schema feature is an
+         * experimental feature, and is not recommended for general use
+         * in production clusters/nodepools.
+         * </pre>
+         *
+         * <code>
+         * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearControlPlaneNodeStorageSchema() {
+          controlPlaneNodeStorageSchema_ = getDefaultInstance().getControlPlaneNodeStorageSchema();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Name for the storage schema of control plane nodes.
+         *
+         * Warning: Configurable node local storage schema feature is an
+         * experimental feature, and is not recommended for general use
+         * in production clusters/nodepools.
+         * </pre>
+         *
+         * <code>
+         * string control_plane_node_storage_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for controlPlaneNodeStorageSchema to set.
+         * @return This builder for chaining.
+         */
+        public Builder setControlPlaneNodeStorageSchemaBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          controlPlaneNodeStorageSchema_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3607,6 +3872,49 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.IngressOrBuilder
         getIngressOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vmServiceConfig field is set.
+     */
+    boolean hasVmServiceConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vmServiceConfig.
+     */
+    com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+        getVmServiceConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder
+        getVmServiceConfigOrBuilder();
   }
   /**
    *
@@ -4419,6 +4727,580 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface VMServiceConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether VMM is enabled.
+       * </pre>
+       *
+       * <code>bool vmm_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The vmmEnabled.
+       */
+      boolean getVmmEnabled();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * VMServiceConfig defines the configuration for GDCE VM Service.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig}
+     */
+    public static final class VMServiceConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+        VMServiceConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use VMServiceConfig.newBuilder() to construct.
+      private VMServiceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private VMServiceConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new VMServiceConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.class,
+                com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.Builder
+                    .class);
+      }
+
+      public static final int VMM_ENABLED_FIELD_NUMBER = 1;
+      private boolean vmmEnabled_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether VMM is enabled.
+       * </pre>
+       *
+       * <code>bool vmm_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The vmmEnabled.
+       */
+      @java.lang.Override
+      public boolean getVmmEnabled() {
+        return vmmEnabled_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (vmmEnabled_ != false) {
+          output.writeBool(1, vmmEnabled_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (vmmEnabled_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, vmmEnabled_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig other =
+            (com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig) obj;
+
+        if (getVmmEnabled() != other.getVmmEnabled()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + VMM_ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVmmEnabled());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMServiceConfig defines the configuration for GDCE VM Service.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.edgecontainer.v1.ResourcesProto
+              .internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.edgecontainer.v1.ResourcesProto
+              .internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                      .class,
+                  com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          vmmEnabled_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.edgecontainer.v1.ResourcesProto
+              .internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+            build() {
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+            buildPartial() {
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig result =
+              new com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.vmmEnabled_ = vmmEnabled_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig) {
+            return mergeFrom(
+                (com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig other) {
+          if (other
+              == com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                  .getDefaultInstance()) return this;
+          if (other.getVmmEnabled() != false) {
+            setVmmEnabled(other.getVmmEnabled());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    vmmEnabled_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean vmmEnabled_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether VMM is enabled.
+         * </pre>
+         *
+         * <code>bool vmm_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The vmmEnabled.
+         */
+        @java.lang.Override
+        public boolean getVmmEnabled() {
+          return vmmEnabled_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether VMM is enabled.
+         * </pre>
+         *
+         * <code>bool vmm_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The vmmEnabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVmmEnabled(boolean value) {
+
+          vmmEnabled_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether VMM is enabled.
+         * </pre>
+         *
+         * <code>bool vmm_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearVmmEnabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          vmmEnabled_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig)
+      private static final com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig
+              .VMServiceConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig();
+      }
+
+      public static com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<VMServiceConfig> PARSER =
+          new com.google.protobuf.AbstractParser<VMServiceConfig>() {
+            @java.lang.Override
+            public VMServiceConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<VMServiceConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<VMServiceConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int INGRESS_FIELD_NUMBER = 1;
     private com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.Ingress ingress_;
@@ -4479,6 +5361,67 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           : ingress_;
     }
 
+    public static final int VM_SERVICE_CONFIG_FIELD_NUMBER = 4;
+    private com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+        vmServiceConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vmServiceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasVmServiceConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vmServiceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+        getVmServiceConfig() {
+      return vmServiceConfig_ == null
+          ? com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+              .getDefaultInstance()
+          : vmServiceConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for VM Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder
+        getVmServiceConfigOrBuilder() {
+      return vmServiceConfig_ == null
+          ? com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+              .getDefaultInstance()
+          : vmServiceConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4496,6 +5439,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getIngress());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getVmServiceConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4507,6 +5453,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIngress());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getVmServiceConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4528,6 +5477,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (hasIngress()) {
         if (!getIngress().equals(other.getIngress())) return false;
       }
+      if (hasVmServiceConfig() != other.hasVmServiceConfig()) return false;
+      if (hasVmServiceConfig()) {
+        if (!getVmServiceConfig().equals(other.getVmServiceConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4542,6 +5495,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (hasIngress()) {
         hash = (37 * hash) + INGRESS_FIELD_NUMBER;
         hash = (53 * hash) + getIngress().hashCode();
+      }
+      if (hasVmServiceConfig()) {
+        hash = (37 * hash) + VM_SERVICE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getVmServiceConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4687,6 +5644,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getIngressFieldBuilder();
+          getVmServiceConfigFieldBuilder();
         }
       }
 
@@ -4698,6 +5656,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (ingressBuilder_ != null) {
           ingressBuilder_.dispose();
           ingressBuilder_ = null;
+        }
+        vmServiceConfig_ = null;
+        if (vmServiceConfigBuilder_ != null) {
+          vmServiceConfigBuilder_.dispose();
+          vmServiceConfigBuilder_ = null;
         }
         return this;
       }
@@ -4741,6 +5704,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.ingress_ = ingressBuilder_ == null ? ingress_ : ingressBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.vmServiceConfig_ =
+              vmServiceConfigBuilder_ == null ? vmServiceConfig_ : vmServiceConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -4797,6 +5765,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (other.hasIngress()) {
           mergeIngress(other.getIngress());
         }
+        if (other.hasVmServiceConfig()) {
+          mergeVmServiceConfig(other.getVmServiceConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4829,6 +5800,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 34:
+                {
+                  input.readMessage(
+                      getVmServiceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5061,6 +6039,223 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return ingressBuilder_;
       }
 
+      private com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          vmServiceConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig,
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.Builder,
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder>
+          vmServiceConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the vmServiceConfig field is set.
+       */
+      public boolean hasVmServiceConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The vmServiceConfig.
+       */
+      public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+          getVmServiceConfig() {
+        if (vmServiceConfigBuilder_ == null) {
+          return vmServiceConfig_ == null
+              ? com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                  .getDefaultInstance()
+              : vmServiceConfig_;
+        } else {
+          return vmServiceConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setVmServiceConfig(
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig value) {
+        if (vmServiceConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vmServiceConfig_ = value;
+        } else {
+          vmServiceConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setVmServiceConfig(
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.Builder
+              builderForValue) {
+        if (vmServiceConfigBuilder_ == null) {
+          vmServiceConfig_ = builderForValue.build();
+        } else {
+          vmServiceConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeVmServiceConfig(
+          com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig value) {
+        if (vmServiceConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && vmServiceConfig_ != null
+              && vmServiceConfig_
+                  != com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                      .getDefaultInstance()) {
+            getVmServiceConfigBuilder().mergeFrom(value);
+          } else {
+            vmServiceConfig_ = value;
+          }
+        } else {
+          vmServiceConfigBuilder_.mergeFrom(value);
+        }
+        if (vmServiceConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearVmServiceConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        vmServiceConfig_ = null;
+        if (vmServiceConfigBuilder_ != null) {
+          vmServiceConfigBuilder_.dispose();
+          vmServiceConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.Builder
+          getVmServiceConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getVmServiceConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder
+          getVmServiceConfigOrBuilder() {
+        if (vmServiceConfigBuilder_ != null) {
+          return vmServiceConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return vmServiceConfig_ == null
+              ? com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                  .getDefaultInstance()
+              : vmServiceConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for VM Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig vm_service_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig,
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig.Builder,
+              com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfigOrBuilder>
+          getVmServiceConfigFieldBuilder() {
+        if (vmServiceConfigBuilder_ == null) {
+          vmServiceConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig,
+                  com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig.VMServiceConfig
+                      .Builder,
+                  com.google.cloud.edgecontainer.v1.Cluster.SystemAddonsConfig
+                      .VMServiceConfigOrBuilder>(
+                  getVmServiceConfig(), getParentForChildren(), isClean());
+          vmServiceConfig_ = null;
+        }
+        return vmServiceConfigBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5137,14 +6332,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The Cloud KMS CryptoKey e.g.
+     * Optional. The Cloud KMS CryptoKey e.g.
      * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
      * to use for protecting control plane disks. If not specified, a
      * Google-managed key will be used instead.
      * </pre>
      *
      * <code>
-     * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The kmsKey.
@@ -5154,14 +6349,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The Cloud KMS CryptoKey e.g.
+     * Optional. The Cloud KMS CryptoKey e.g.
      * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
      * to use for protecting control plane disks. If not specified, a
      * Google-managed key will be used instead.
      * </pre>
      *
      * <code>
-     * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for kmsKey.
@@ -5277,13 +6472,41 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     com.google.rpc.StatusOrBuilder getKmsStatusOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current resource state associated with the cmek.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceState.
+     */
+    int getResourceStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current resource state associated with the cmek.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resourceState.
+     */
+    com.google.cloud.edgecontainer.v1.ResourceState getResourceState();
   }
   /**
    *
    *
    * <pre>
-   * Configuration for Customer-managed KMS key support for remote control plane
-   * cluster disk encryption.
+   * Configuration for Customer-managed KMS key support for control plane nodes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.edgecontainer.v1.Cluster.ControlPlaneEncryption}
@@ -5302,6 +6525,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       kmsKey_ = "";
       kmsKeyActiveVersion_ = "";
       kmsKeyState_ = 0;
+      resourceState_ = 0;
     }
 
     @java.lang.Override
@@ -5334,14 +6558,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The Cloud KMS CryptoKey e.g.
+     * Optional. The Cloud KMS CryptoKey e.g.
      * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
      * to use for protecting control plane disks. If not specified, a
      * Google-managed key will be used instead.
      * </pre>
      *
      * <code>
-     * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The kmsKey.
@@ -5362,14 +6586,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The Cloud KMS CryptoKey e.g.
+     * Optional. The Cloud KMS CryptoKey e.g.
      * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
      * to use for protecting control plane disks. If not specified, a
      * Google-managed key will be used instead.
      * </pre>
      *
      * <code>
-     * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for kmsKey.
@@ -5544,6 +6768,45 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return kmsStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : kmsStatus_;
     }
 
+    public static final int RESOURCE_STATE_FIELD_NUMBER = 5;
+    private int resourceState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current resource state associated with the cmek.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceState.
+     */
+    @java.lang.Override
+    public int getResourceStateValue() {
+      return resourceState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current resource state associated with the cmek.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resourceState.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.ResourceState getResourceState() {
+      com.google.cloud.edgecontainer.v1.ResourceState result =
+          com.google.cloud.edgecontainer.v1.ResourceState.forNumber(resourceState_);
+      return result == null ? com.google.cloud.edgecontainer.v1.ResourceState.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5571,6 +6834,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(4, getKmsStatus());
       }
+      if (resourceState_
+          != com.google.cloud.edgecontainer.v1.ResourceState.RESOURCE_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, resourceState_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5592,6 +6860,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getKmsStatus());
+      }
+      if (resourceState_
+          != com.google.cloud.edgecontainer.v1.ResourceState.RESOURCE_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, resourceState_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5616,6 +6889,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (hasKmsStatus()) {
         if (!getKmsStatus().equals(other.getKmsStatus())) return false;
       }
+      if (resourceState_ != other.resourceState_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5637,6 +6911,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + KMS_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getKmsStatus().hashCode();
       }
+      hash = (37 * hash) + RESOURCE_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceState_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5744,8 +7020,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for Customer-managed KMS key support for remote control plane
-     * cluster disk encryption.
+     * Configuration for Customer-managed KMS key support for control plane nodes.
      * </pre>
      *
      * Protobuf type {@code google.cloud.edgecontainer.v1.Cluster.ControlPlaneEncryption}
@@ -5799,6 +7074,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           kmsStatusBuilder_.dispose();
           kmsStatusBuilder_ = null;
         }
+        resourceState_ = 0;
         return this;
       }
 
@@ -5851,6 +7127,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.kmsStatus_ = kmsStatusBuilder_ == null ? kmsStatus_ : kmsStatusBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.resourceState_ = resourceState_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -5922,6 +7201,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (other.hasKmsStatus()) {
           mergeKmsStatus(other.getKmsStatus());
         }
+        if (other.resourceState_ != 0) {
+          setResourceStateValue(other.getResourceStateValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5972,6 +7254,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 40:
+                {
+                  resourceState_ = input.readEnum();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5996,14 +7284,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The Cloud KMS CryptoKey e.g.
+       * Optional. The Cloud KMS CryptoKey e.g.
        * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
        * to use for protecting control plane disks. If not specified, a
        * Google-managed key will be used instead.
        * </pre>
        *
        * <code>
-       * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The kmsKey.
@@ -6023,14 +7311,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The Cloud KMS CryptoKey e.g.
+       * Optional. The Cloud KMS CryptoKey e.g.
        * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
        * to use for protecting control plane disks. If not specified, a
        * Google-managed key will be used instead.
        * </pre>
        *
        * <code>
-       * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for kmsKey.
@@ -6050,14 +7338,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The Cloud KMS CryptoKey e.g.
+       * Optional. The Cloud KMS CryptoKey e.g.
        * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
        * to use for protecting control plane disks. If not specified, a
        * Google-managed key will be used instead.
        * </pre>
        *
        * <code>
-       * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The kmsKey to set.
@@ -6076,14 +7364,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The Cloud KMS CryptoKey e.g.
+       * Optional. The Cloud KMS CryptoKey e.g.
        * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
        * to use for protecting control plane disks. If not specified, a
        * Google-managed key will be used instead.
        * </pre>
        *
        * <code>
-       * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -6098,14 +7386,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The Cloud KMS CryptoKey e.g.
+       * Optional. The Cloud KMS CryptoKey e.g.
        * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
        * to use for protecting control plane disks. If not specified, a
        * Google-managed key will be used instead.
        * </pre>
        *
        * <code>
-       * string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * string kms_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for kmsKey to set.
@@ -6569,6 +7857,108 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           kmsStatus_ = null;
         }
         return kmsStatusBuilder_;
+      }
+
+      private int resourceState_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current resource state associated with the cmek.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for resourceState.
+       */
+      @java.lang.Override
+      public int getResourceStateValue() {
+        return resourceState_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current resource state associated with the cmek.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for resourceState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceStateValue(int value) {
+        resourceState_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current resource state associated with the cmek.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The resourceState.
+       */
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.ResourceState getResourceState() {
+        com.google.cloud.edgecontainer.v1.ResourceState result =
+            com.google.cloud.edgecontainer.v1.ResourceState.forNumber(resourceState_);
+        return result == null
+            ? com.google.cloud.edgecontainer.v1.ResourceState.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current resource state associated with the cmek.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The resourceState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceState(com.google.cloud.edgecontainer.v1.ResourceState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        resourceState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current resource state associated with the cmek.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.ResourceState resource_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceState() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        resourceState_ = 0;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -10966,6 +12356,1167 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ConnectionStateOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.edgecontainer.v1.Cluster.ConnectionState)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    boolean hasUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    com.google.protobuf.Timestamp getUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ConnectionState holds the current connection state from the cluster to
+   * Google.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.edgecontainer.v1.Cluster.ConnectionState}
+   */
+  public static final class ConnectionState extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.Cluster.ConnectionState)
+      ConnectionStateOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConnectionState.newBuilder() to construct.
+    private ConnectionState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConnectionState() {
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConnectionState();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.edgecontainer.v1.ResourcesProto
+          .internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.edgecontainer.v1.ResourcesProto
+          .internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.class,
+              com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The connection state.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.edgecontainer.v1.Cluster.ConnectionState.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unknown connection state.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently disconnected from Google.
+       * </pre>
+       *
+       * <code>DISCONNECTED = 1;</code>
+       */
+      DISCONNECTED(1),
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently connected to Google.
+       * </pre>
+       *
+       * <code>CONNECTED = 2;</code>
+       */
+      CONNECTED(2),
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently connected to Google, but may have recently
+       * reconnected after a disconnection. It is still syncing back.
+       * </pre>
+       *
+       * <code>CONNECTED_AND_SYNCING = 3;</code>
+       */
+      CONNECTED_AND_SYNCING(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unknown connection state.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently disconnected from Google.
+       * </pre>
+       *
+       * <code>DISCONNECTED = 1;</code>
+       */
+      public static final int DISCONNECTED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently connected to Google.
+       * </pre>
+       *
+       * <code>CONNECTED = 2;</code>
+       */
+      public static final int CONNECTED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * This cluster is currently connected to Google, but may have recently
+       * reconnected after a disconnection. It is still syncing back.
+       * </pre>
+       *
+       * <code>CONNECTED_AND_SYNCING = 3;</code>
+       */
+      public static final int CONNECTED_AND_SYNCING_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return DISCONNECTED;
+          case 2:
+            return CONNECTED;
+          case 3:
+            return CONNECTED_AND_SYNCING;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.edgecontainer.v1.Cluster.ConnectionState.State)
+    }
+
+    private int bitField0_;
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State getState() {
+      com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State result =
+          com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int UPDATE_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp updateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the connection state was last changed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (state_
+          != com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getUpdateTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_
+          != com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.edgecontainer.v1.Cluster.ConnectionState)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.edgecontainer.v1.Cluster.ConnectionState other =
+          (com.google.cloud.edgecontainer.v1.Cluster.ConnectionState) obj;
+
+      if (state_ != other.state_) return false;
+      if (hasUpdateTime() != other.hasUpdateTime()) return false;
+      if (hasUpdateTime()) {
+        if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      if (hasUpdateTime()) {
+        hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConnectionState holds the current connection state from the cluster to
+     * Google.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.edgecontainer.v1.Cluster.ConnectionState}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.edgecontainer.v1.Cluster.ConnectionState)
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.class,
+                com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder.class);
+      }
+
+      // Construct using com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getUpdateTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        state_ = 0;
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
+          updateTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getDefaultInstanceForType() {
+        return com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState build() {
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState buildPartial() {
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState result =
+            new com.google.cloud.edgecontainer.v1.Cluster.ConnectionState(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.edgecontainer.v1.Cluster.ConnectionState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.updateTime_ =
+              updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.edgecontainer.v1.Cluster.ConnectionState) {
+          return mergeFrom((com.google.cloud.edgecontainer.v1.Cluster.ConnectionState) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.edgecontainer.v1.Cluster.ConnectionState other) {
+        if (other == com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance())
+          return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (other.hasUpdateTime()) {
+          mergeUpdateTime(other.getUpdateTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current connection state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current connection state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current connection state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State getState() {
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State result =
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.forNumber(state_);
+        return result == null
+            ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current connection state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current connection state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.edgecontainer.v1.Cluster.ConnectionState.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp updateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          updateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the updateTime field is set.
+       */
+      public boolean hasUpdateTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The updateTime.
+       */
+      public com.google.protobuf.Timestamp getUpdateTime() {
+        if (updateTimeBuilder_ == null) {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        } else {
+          return updateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateTime_ = value;
+        } else {
+          updateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = builderForValue.build();
+        } else {
+          updateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && updateTime_ != null
+              && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateTimeBuilder().mergeFrom(value);
+          } else {
+            updateTime_ = value;
+          }
+        } else {
+          updateTimeBuilder_.mergeFrom(value);
+        }
+        if (updateTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        updateTime_ = null;
+        if (updateTimeBuilder_ != null) {
+          updateTimeBuilder_.dispose();
+          updateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+        if (updateTimeBuilder_ != null) {
+          return updateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when the connection state was last changed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getUpdateTimeFieldBuilder() {
+        if (updateTimeBuilder_ == null) {
+          updateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateTime(), getParentForChildren(), isClean());
+          updateTime_ = null;
+        }
+        return updateTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.edgecontainer.v1.Cluster.ConnectionState)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.edgecontainer.v1.Cluster.ConnectionState)
+    private static final com.google.cloud.edgecontainer.v1.Cluster.ConnectionState DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.edgecontainer.v1.Cluster.ConnectionState();
+    }
+
+    public static com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConnectionState> PARSER =
+        new com.google.protobuf.AbstractParser<ConnectionState>() {
+          @java.lang.Override
+          public ConnectionState parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConnectionState> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConnectionState> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -12304,6 +14855,63 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return externalLoadBalancerIpv6AddressPools_.getByteString(index);
   }
 
+  public static final int CONNECTION_STATE_FIELD_NUMBER = 27;
+  private com.google.cloud.edgecontainer.v1.Cluster.ConnectionState connectionState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the connectionState field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectionState() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The connectionState.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getConnectionState() {
+    return connectionState_ == null
+        ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance()
+        : connectionState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder
+      getConnectionStateOrBuilder() {
+    return connectionState_ == null
+        ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance()
+        : connectionState_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -12393,6 +15001,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < externalLoadBalancerIpv6AddressPools_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 25, externalLoadBalancerIpv6AddressPools_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(27, getConnectionState());
     }
     getUnknownFields().writeTo(output);
   }
@@ -12498,6 +15109,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getExternalLoadBalancerIpv6AddressPoolsList().size();
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getConnectionState());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12570,6 +15184,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getExternalLoadBalancerIpv6AddressPoolsList()
         .equals(other.getExternalLoadBalancerIpv6AddressPoolsList())) return false;
+    if (hasConnectionState() != other.hasConnectionState()) return false;
+    if (hasConnectionState()) {
+      if (!getConnectionState().equals(other.getConnectionState())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -12656,6 +15274,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (getExternalLoadBalancerIpv6AddressPoolsCount() > 0) {
       hash = (37 * hash) + EXTERNAL_LOAD_BALANCER_IPV6_ADDRESS_POOLS_FIELD_NUMBER;
       hash = (53 * hash) + getExternalLoadBalancerIpv6AddressPoolsList().hashCode();
+    }
+    if (hasConnectionState()) {
+      hash = (37 * hash) + CONNECTION_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionState().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -12830,6 +15452,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getControlPlaneEncryptionFieldBuilder();
         getMaintenanceEventsFieldBuilder();
         getSurvivabilityConfigFieldBuilder();
+        getConnectionStateFieldBuilder();
       }
     }
 
@@ -12907,6 +15530,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         survivabilityConfigBuilder_ = null;
       }
       externalLoadBalancerIpv6AddressPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      connectionState_ = null;
+      if (connectionStateBuilder_ != null) {
+        connectionStateBuilder_.dispose();
+        connectionStateBuilder_ = null;
+      }
       return this;
     }
 
@@ -13052,6 +15680,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00800000) != 0)) {
         externalLoadBalancerIpv6AddressPools_.makeImmutable();
         result.externalLoadBalancerIpv6AddressPools_ = externalLoadBalancerIpv6AddressPools_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.connectionState_ =
+            connectionStateBuilder_ == null ? connectionState_ : connectionStateBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -13221,6 +15854,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           externalLoadBalancerIpv6AddressPools_.addAll(other.externalLoadBalancerIpv6AddressPools_);
         }
         onChanged();
+      }
+      if (other.hasConnectionState()) {
+        mergeConnectionState(other.getConnectionState());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -13412,6 +16048,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 externalLoadBalancerIpv6AddressPools_.add(s);
                 break;
               } // case 202
+            case 218:
+              {
+                input.readMessage(getConnectionStateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17505,6 +20147,215 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00800000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.edgecontainer.v1.Cluster.ConnectionState connectionState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionState,
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder,
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder>
+        connectionStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the connectionState field is set.
+     */
+    public boolean hasConnectionState() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The connectionState.
+     */
+    public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getConnectionState() {
+      if (connectionStateBuilder_ == null) {
+        return connectionState_ == null
+            ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance()
+            : connectionState_;
+      } else {
+        return connectionStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConnectionState(
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState value) {
+      if (connectionStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionState_ = value;
+      } else {
+        connectionStateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConnectionState(
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder builderForValue) {
+      if (connectionStateBuilder_ == null) {
+        connectionState_ = builderForValue.build();
+      } else {
+        connectionStateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeConnectionState(
+        com.google.cloud.edgecontainer.v1.Cluster.ConnectionState value) {
+      if (connectionStateBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && connectionState_ != null
+            && connectionState_
+                != com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance()) {
+          getConnectionStateBuilder().mergeFrom(value);
+        } else {
+          connectionState_ = value;
+        }
+      } else {
+        connectionStateBuilder_.mergeFrom(value);
+      }
+      if (connectionState_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearConnectionState() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      connectionState_ = null;
+      if (connectionStateBuilder_ != null) {
+        connectionStateBuilder_.dispose();
+        connectionStateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder
+        getConnectionStateBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getConnectionStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder
+        getConnectionStateOrBuilder() {
+      if (connectionStateBuilder_ != null) {
+        return connectionStateBuilder_.getMessageOrBuilder();
+      } else {
+        return connectionState_ == null
+            ? com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.getDefaultInstance()
+            : connectionState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current connection state of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionState,
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder,
+            com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder>
+        getConnectionStateFieldBuilder() {
+      if (connectionStateBuilder_ == null) {
+        connectionStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.edgecontainer.v1.Cluster.ConnectionState,
+                com.google.cloud.edgecontainer.v1.Cluster.ConnectionState.Builder,
+                com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder>(
+                getConnectionState(), getParentForChildren(), isClean());
+        connectionState_ = null;
+      }
+      return connectionStateBuilder_;
     }
 
     @java.lang.Override

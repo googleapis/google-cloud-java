@@ -236,6 +236,7 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.edgecontainer.v1.ZoneMetadata.RackType)
   }
 
+  private int bitField0_;
   public static final int QUOTA_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -493,6 +494,56 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CONFIG_DATA_FIELD_NUMBER = 3;
+  private com.google.cloud.edgecontainer.v1.ConfigData configData_;
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return Whether the configData field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfigData() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return The configData.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.ConfigData getConfigData() {
+    return configData_ == null
+        ? com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()
+        : configData_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder getConfigDataOrBuilder() {
+    return configData_ == null
+        ? com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()
+        : configData_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -512,6 +563,9 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetRackTypes(), RackTypesDefaultEntryHolder.defaultEntry, 2);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getConfigData());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -534,6 +588,9 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, rackTypes__);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getConfigData());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -552,6 +609,10 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
 
     if (!getQuotaList().equals(other.getQuotaList())) return false;
     if (!internalGetRackTypes().equals(other.internalGetRackTypes())) return false;
+    if (hasConfigData() != other.hasConfigData()) return false;
+    if (hasConfigData()) {
+      if (!getConfigData().equals(other.getConfigData())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -570,6 +631,10 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetRackTypes().getMap().isEmpty()) {
       hash = (37 * hash) + RACK_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetRackTypes().hashCode();
+    }
+    if (hasConfigData()) {
+      hash = (37 * hash) + CONFIG_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigData().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -722,10 +787,20 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.edgecontainer.v1.ZoneMetadata.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getQuotaFieldBuilder();
+        getConfigDataFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -740,6 +815,11 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableRackTypes().clear();
+      configData_ = null;
+      if (configDataBuilder_ != null) {
+        configDataBuilder_.dispose();
+        configDataBuilder_ = null;
+      }
       return this;
     }
 
@@ -793,6 +873,12 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         result.rackTypes_ = internalGetRackTypes();
         result.rackTypes_.makeImmutable();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.configData_ = configDataBuilder_ == null ? configData_ : configDataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -869,6 +955,9 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableRackTypes().mergeFrom(other.internalGetRackTypes());
       bitField0_ |= 0x00000002;
+      if (other.hasConfigData()) {
+        mergeConfigData(other.getConfigData());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -920,6 +1009,12 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getConfigDataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1564,6 +1659,192 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableRackTypes().getMutableMap().putAll(values);
       bitField0_ |= 0x00000002;
       return this;
+    }
+
+    private com.google.cloud.edgecontainer.v1.ConfigData configData_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.ConfigData,
+            com.google.cloud.edgecontainer.v1.ConfigData.Builder,
+            com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder>
+        configDataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     *
+     * @return Whether the configData field is set.
+     */
+    public boolean hasConfigData() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     *
+     * @return The configData.
+     */
+    public com.google.cloud.edgecontainer.v1.ConfigData getConfigData() {
+      if (configDataBuilder_ == null) {
+        return configData_ == null
+            ? com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()
+            : configData_;
+      } else {
+        return configDataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public Builder setConfigData(com.google.cloud.edgecontainer.v1.ConfigData value) {
+      if (configDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configData_ = value;
+      } else {
+        configDataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public Builder setConfigData(
+        com.google.cloud.edgecontainer.v1.ConfigData.Builder builderForValue) {
+      if (configDataBuilder_ == null) {
+        configData_ = builderForValue.build();
+      } else {
+        configDataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public Builder mergeConfigData(com.google.cloud.edgecontainer.v1.ConfigData value) {
+      if (configDataBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && configData_ != null
+            && configData_ != com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()) {
+          getConfigDataBuilder().mergeFrom(value);
+        } else {
+          configData_ = value;
+        }
+      } else {
+        configDataBuilder_.mergeFrom(value);
+      }
+      if (configData_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public Builder clearConfigData() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      configData_ = null;
+      if (configDataBuilder_ != null) {
+        configDataBuilder_.dispose();
+        configDataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public com.google.cloud.edgecontainer.v1.ConfigData.Builder getConfigDataBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getConfigDataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    public com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder getConfigDataOrBuilder() {
+      if (configDataBuilder_ != null) {
+        return configDataBuilder_.getMessageOrBuilder();
+      } else {
+        return configData_ == null
+            ? com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()
+            : configData_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config data for the zone.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.ConfigData,
+            com.google.cloud.edgecontainer.v1.ConfigData.Builder,
+            com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder>
+        getConfigDataFieldBuilder() {
+      if (configDataBuilder_ == null) {
+        configDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.edgecontainer.v1.ConfigData,
+                com.google.cloud.edgecontainer.v1.ConfigData.Builder,
+                com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder>(
+                getConfigData(), getParentForChildren(), isClean());
+        configData_ = null;
+      }
+      return configDataBuilder_;
     }
 
     @java.lang.Override

@@ -264,4 +264,29 @@ public interface OperationMetadataOrBuilder
    * @return The bytes of the warnings at the given index.
    */
   com.google.protobuf.ByteString getWarningsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The enum numeric value on the wire for statusReason.
+   */
+  int getStatusReasonValue();
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The statusReason.
+   */
+  com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason getStatusReason();
 }
