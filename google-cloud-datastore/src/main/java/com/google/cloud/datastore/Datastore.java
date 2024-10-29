@@ -51,6 +51,13 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @param <T> the type of the return value
    */
   interface TransactionCallable<T> {
+    /**
+     * Callback's invoke method for the TransactionCallable.
+     *
+     * @param readerWriter DatastoreReaderWriter associated with the new transaction
+     * @return T The transaction result
+     * @throws Exception upon failure
+     */
     T run(DatastoreReaderWriter readerWriter) throws Exception;
   }
 
