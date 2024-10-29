@@ -105,7 +105,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
   // TODO(meeral-k): add documentation
-  private static final String CBT_ENABLE_DIRECTPATH = "CBT_ENABLE_DIRECTPATH";
+  private static final boolean DIRECT_PATH_ENABLED =
+      Boolean.parseBoolean(System.getenv("CBT_ENABLE_DIRECTPATH"));
+
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
 
@@ -376,10 +378,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    Boolean isDirectpathEnabled = Boolean.parseBoolean(System.getenv(CBT_ENABLE_DIRECTPATH));
     InstantiatingGrpcChannelProvider.Builder grpcTransportProviderBuilder =
         BigtableStubSettings.defaultGrpcTransportProviderBuilder();
-    if (isDirectpathEnabled) {
+    if (DIRECT_PATH_ENABLED) {
       // Attempts direct access to CBT service over gRPC to improve throughput,
       // whether the attempt is allowed is totally controlled by service owner.
       grpcTransportProviderBuilder
@@ -830,7 +831,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setWaitTimeout(Duration.ofMinutes(5));
 
       featureFlags =
-          FeatureFlags.newBuilder().setReverseScans(true).setLastScannedRowResponses(true);
+          FeatureFlags.newBuilder()
+              .setReverseScans(true)
+              .setLastScannedRowResponses(true)
+              .setDirectAccessRequested(DIRECT_PATH_ENABLED)
+              .setTrafficDirectorEnabled(DIRECT_PATH_ENABLED);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
