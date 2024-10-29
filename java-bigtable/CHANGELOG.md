@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.46.0](https://github.com/googleapis/java-bigtable/compare/v2.45.1...v2.46.0) (2024-10-29)
+
+
+### Features
+
+* Test proxy support SSL backend ([#2381](https://github.com/googleapis/java-bigtable/issues/2381)) ([3cbf4ab](https://github.com/googleapis/java-bigtable/commit/3cbf4abe79d61daba0704abfccfb5558b026e6b7))
+
+
+### Bug Fixes
+
+* Fix client blocking latency ([#2346](https://github.com/googleapis/java-bigtable/issues/2346)) ([3801961](https://github.com/googleapis/java-bigtable/commit/380196174fb9b8cd97beb79d4faf49b30561be7f))
+* Fix first response latencies ([#2382](https://github.com/googleapis/java-bigtable/issues/2382)) ([8b2953e](https://github.com/googleapis/java-bigtable/commit/8b2953ed9c69c23b3e0c5c35d0538dc83f9dad80))
+
+
+### Dependencies
+
+* Update sdk-platform-java dependencies ([#2384](https://github.com/googleapis/java-bigtable/issues/2384)) ([81d7215](https://github.com/googleapis/java-bigtable/commit/81d72150b60d29e4e2ac17c6cb1fbdc89be0e16e))
+
 ## [2.45.1](https://github.com/googleapis/java-bigtable/compare/v2.45.0...v2.45.1) (2024-10-14)
 
 
