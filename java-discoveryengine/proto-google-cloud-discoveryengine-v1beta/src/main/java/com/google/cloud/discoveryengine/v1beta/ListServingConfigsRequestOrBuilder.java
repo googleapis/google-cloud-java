@@ -29,7 +29,7 @@ public interface ListServingConfigsRequestOrBuilder
    *
    * <pre>
    * Required. Full resource name of the parent resource. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ListServingConfigsRequestOrBuilder
    *
    * <pre>
    * Required. Full resource name of the parent resource. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * </pre>
    *
    * <code>

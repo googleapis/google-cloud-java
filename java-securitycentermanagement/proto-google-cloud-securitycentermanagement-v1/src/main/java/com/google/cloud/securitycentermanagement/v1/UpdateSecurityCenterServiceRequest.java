@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message for updating a Security Command Center service.
+ * Request message for
+ * [SecurityCenterManagement.UpdateSecurityCenterService][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.UpdateSecurityCenterService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest}
@@ -128,10 +129,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Possible values:
+   * Required. The fields to update. Accepts the following values:
    *
-   *   * "intended_enablement_state"
-   *   * "modules"
+   * * `intended_enablement_state`
+   * * `modules`
+   *
+   * If omitted, then all eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -147,10 +150,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Possible values:
+   * Required. The fields to update. Accepts the following values:
    *
-   *   * "intended_enablement_state"
-   *   * "modules"
+   * * `intended_enablement_state`
+   * * `modules`
+   *
+   * If omitted, then all eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -166,10 +171,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Possible values:
+   * Required. The fields to update. Accepts the following values:
    *
-   *   * "intended_enablement_state"
-   *   * "modules"
+   * * `intended_enablement_state`
+   * * `modules`
+   *
+   * If omitted, then all eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -186,13 +193,19 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. When set to true, only validations (including IAM checks) will be
-   * done for the request (service will not be updated). An OK response
-   * indicates that the request is valid, while an error response indicates that
-   * the request is invalid. Note that a subsequent request to actually update
-   * the service could still fail for one of the following reasons:
-   * - The state could have changed (e.g. IAM permission lost).
-   * - A failure occurred while trying to delete the module.
+   * Optional. When set to `true`, the request will be validated (including IAM
+   * checks), but no service will be updated. An `OK` response indicates that
+   * the request is valid, while an error response indicates that the request is
+   * invalid.
+   *
+   * If the request is valid, a subsequent request to update the service could
+   * still fail for one of the following reasons:
+   *
+   * *  The state of your cloud resources changed; for example, you lost a
+   *    required IAM permission
+   * *  An error occurred during update of the service
+   *
+   * Defaults to `false`.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -405,7 +418,8 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Request message for updating a Security Command Center service.
+   * Request message for
+   * [SecurityCenterManagement.UpdateSecurityCenterService][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.UpdateSecurityCenterService].
    * </pre>
    *
    * Protobuf type {@code
@@ -873,10 +887,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -891,10 +907,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -915,10 +933,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -941,10 +961,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -964,10 +986,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -995,10 +1019,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1018,10 +1044,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1036,10 +1064,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1058,10 +1088,12 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Possible values:
+     * Required. The fields to update. Accepts the following values:
      *
-     *   * "intended_enablement_state"
-     *   * "modules"
+     * * `intended_enablement_state`
+     * * `modules`
+     *
+     * If omitted, then all eligible fields are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1089,13 +1121,19 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will be
-     * done for the request (service will not be updated). An OK response
-     * indicates that the request is valid, while an error response indicates that
-     * the request is invalid. Note that a subsequent request to actually update
-     * the service could still fail for one of the following reasons:
-     * - The state could have changed (e.g. IAM permission lost).
-     * - A failure occurred while trying to delete the module.
+     * Optional. When set to `true`, the request will be validated (including IAM
+     * checks), but no service will be updated. An `OK` response indicates that
+     * the request is valid, while an error response indicates that the request is
+     * invalid.
+     *
+     * If the request is valid, a subsequent request to update the service could
+     * still fail for one of the following reasons:
+     *
+     * *  The state of your cloud resources changed; for example, you lost a
+     *    required IAM permission
+     * *  An error occurred during update of the service
+     *
+     * Defaults to `false`.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1110,13 +1148,19 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will be
-     * done for the request (service will not be updated). An OK response
-     * indicates that the request is valid, while an error response indicates that
-     * the request is invalid. Note that a subsequent request to actually update
-     * the service could still fail for one of the following reasons:
-     * - The state could have changed (e.g. IAM permission lost).
-     * - A failure occurred while trying to delete the module.
+     * Optional. When set to `true`, the request will be validated (including IAM
+     * checks), but no service will be updated. An `OK` response indicates that
+     * the request is valid, while an error response indicates that the request is
+     * invalid.
+     *
+     * If the request is valid, a subsequent request to update the service could
+     * still fail for one of the following reasons:
+     *
+     * *  The state of your cloud resources changed; for example, you lost a
+     *    required IAM permission
+     * *  An error occurred during update of the service
+     *
+     * Defaults to `false`.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1135,13 +1179,19 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will be
-     * done for the request (service will not be updated). An OK response
-     * indicates that the request is valid, while an error response indicates that
-     * the request is invalid. Note that a subsequent request to actually update
-     * the service could still fail for one of the following reasons:
-     * - The state could have changed (e.g. IAM permission lost).
-     * - A failure occurred while trying to delete the module.
+     * Optional. When set to `true`, the request will be validated (including IAM
+     * checks), but no service will be updated. An `OK` response indicates that
+     * the request is valid, while an error response indicates that the request is
+     * invalid.
+     *
+     * If the request is valid, a subsequent request to update the service could
+     * still fail for one of the following reasons:
+     *
+     * *  The state of your cloud resources changed; for example, you lost a
+     *    required IAM permission
+     * *  An error occurred during update of the service
+     *
+     * Defaults to `false`.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

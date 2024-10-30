@@ -225,6 +225,48 @@ public interface AnswerQueryRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the groundingSpec field is set.
+   */
+  boolean hasGroundingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The groundingSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec getGroundingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder
+      getGroundingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Answer generation specification.
    * </pre>
    *
@@ -350,6 +392,9 @@ public interface AnswerQueryRequestOrBuilder
    *
    *
    * <pre>
+   * Deprecated: This field is deprecated. Streaming Answer API will be
+   * supported.
+   *
    * Asynchronous mode control.
    *
    * If enabled, the response will be returned with answer/session resource
@@ -361,10 +406,14 @@ public interface AnswerQueryRequestOrBuilder
    * method.
    * </pre>
    *
-   * <code>bool asynchronous_mode = 10;</code>
+   * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
+   *     deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
    * @return The asynchronousMode.
    */
+  @java.lang.Deprecated
   boolean getAsynchronousMode();
 
   /**

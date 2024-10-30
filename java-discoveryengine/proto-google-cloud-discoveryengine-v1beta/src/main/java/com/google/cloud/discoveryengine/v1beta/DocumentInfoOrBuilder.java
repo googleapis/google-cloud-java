@@ -67,7 +67,7 @@ public interface DocumentInfoOrBuilder
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
    * full name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -81,7 +81,7 @@ public interface DocumentInfoOrBuilder
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
    * full name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -95,7 +95,7 @@ public interface DocumentInfoOrBuilder
    * <pre>
    * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
    * full name, of the form:
-   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>

@@ -28,11 +28,12 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
-   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -44,11 +45,12 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
-   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -63,8 +65,8 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * <pre>
    * Optional. The display name of the Security Health Analytics custom module.
    * This display name becomes the finding category for all findings that are
-   * returned by this custom module. The display name must be between 1 and
-   * 128 characters, start with a lowercase letter, and contain alphanumeric
+   * returned by this custom module. The display name must be between 1 and 128
+   * characters, start with a lowercase letter, and contain alphanumeric
    * characters or underscores only.
    * </pre>
    *
@@ -79,8 +81,8 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * <pre>
    * Optional. The display name of the Security Health Analytics custom module.
    * This display name becomes the finding category for all findings that are
-   * returned by this custom module. The display name must be between 1 and
-   * 128 characters, start with a lowercase letter, and contain alphanumeric
+   * returned by this custom module. The display name must be between 1 and 128
+   * characters, start with a lowercase letter, and contain alphanumeric
    * characters or underscores only.
    * </pre>
    *
@@ -222,7 +224,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>
@@ -236,7 +238,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>
@@ -250,7 +252,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>

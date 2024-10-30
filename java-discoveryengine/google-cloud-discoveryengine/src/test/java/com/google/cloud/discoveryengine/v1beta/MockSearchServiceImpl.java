@@ -77,4 +77,24 @@ public class MockSearchServiceImpl extends SearchServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void searchLite(SearchRequest request, StreamObserver<SearchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchLite, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

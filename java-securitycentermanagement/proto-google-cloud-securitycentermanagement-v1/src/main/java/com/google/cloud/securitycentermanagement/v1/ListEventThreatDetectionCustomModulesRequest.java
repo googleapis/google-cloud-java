@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message for listing Event Threat Detection custom modules.
+ * Request message for
+ * [SecurityCenterManagement.ListEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEventThreatDetectionCustomModules].
  * </pre>
  *
  * Protobuf type {@code
@@ -77,11 +78,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list custom modules. Its format is
-   * `organizations/{organization}/locations/{location}`,
-   * `folders/{folder}/locations/{location}`,
-   * or
-   * `projects/{project}/locations/{location}`
+   * Required. Name of parent to list custom modules, in one of the following
+   * formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -106,11 +108,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list custom modules. Its format is
-   * `organizations/{organization}/locations/{location}`,
-   * `folders/{folder}/locations/{location}`,
-   * or
-   * `projects/{project}/locations/{location}`
+   * Required. Name of parent to list custom modules, in one of the following
+   * formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -139,7 +142,7 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    * <pre>
    * Optional. The maximum number of modules to return. The service may return
-   * fewer than this value. If unspecified, at most 10 configs will be returned.
+   * fewer than this value. If unspecified, at most 10 modules will be returned.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
@@ -160,13 +163,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous
-   * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-   * subsequent page.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
    *
-   * When paginating, all other parameters provided to
-   * `ListEventThreatDetectionCustomModules` must match the call that provided
-   * the page token.
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -189,13 +190,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous
-   * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-   * subsequent page.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
    *
-   * When paginating, all other parameters provided to
-   * `ListEventThreatDetectionCustomModules` must match the call that provided
-   * the page token.
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -422,7 +421,8 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Request message for listing Event Threat Detection custom modules.
+   * Request message for
+   * [SecurityCenterManagement.ListEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEventThreatDetectionCustomModules].
    * </pre>
    *
    * Protobuf type {@code
@@ -657,11 +657,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list custom modules, in one of the following
+     * formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -685,11 +686,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list custom modules, in one of the following
+     * formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -713,11 +715,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list custom modules, in one of the following
+     * formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -740,11 +743,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list custom modules, in one of the following
+     * formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -763,11 +767,12 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list custom modules, in one of the following
+     * formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -794,7 +799,7 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Optional. The maximum number of modules to return. The service may return
-     * fewer than this value. If unspecified, at most 10 configs will be returned.
+     * fewer than this value. If unspecified, at most 10 modules will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
@@ -811,7 +816,7 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Optional. The maximum number of modules to return. The service may return
-     * fewer than this value. If unspecified, at most 10 configs will be returned.
+     * fewer than this value. If unspecified, at most 10 modules will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
@@ -832,7 +837,7 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Optional. The maximum number of modules to return. The service may return
-     * fewer than this value. If unspecified, at most 10 configs will be returned.
+     * fewer than this value. If unspecified, at most 10 modules will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
@@ -852,13 +857,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous
-     * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-     * subsequent page.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
      *
-     * When paginating, all other parameters provided to
-     * `ListEventThreatDetectionCustomModules` must match the call that provided
-     * the page token.
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -880,13 +883,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous
-     * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-     * subsequent page.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
      *
-     * When paginating, all other parameters provided to
-     * `ListEventThreatDetectionCustomModules` must match the call that provided
-     * the page token.
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -908,13 +909,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous
-     * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-     * subsequent page.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
      *
-     * When paginating, all other parameters provided to
-     * `ListEventThreatDetectionCustomModules` must match the call that provided
-     * the page token.
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -935,13 +934,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous
-     * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-     * subsequent page.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
      *
-     * When paginating, all other parameters provided to
-     * `ListEventThreatDetectionCustomModules` must match the call that provided
-     * the page token.
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -958,13 +955,11 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous
-     * `ListEventThreatDetectionCustomModules` call. Provide this to retrieve the
-     * subsequent page.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
      *
-     * When paginating, all other parameters provided to
-     * `ListEventThreatDetectionCustomModules` must match the call that provided
-     * the page token.
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

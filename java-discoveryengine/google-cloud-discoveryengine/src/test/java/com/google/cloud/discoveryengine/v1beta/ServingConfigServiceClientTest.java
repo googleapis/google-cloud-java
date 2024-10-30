@@ -108,6 +108,7 @@ public class ServingConfigServiceClientTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
 
@@ -168,6 +169,7 @@ public class ServingConfigServiceClientTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
 
@@ -229,6 +231,7 @@ public class ServingConfigServiceClientTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
 

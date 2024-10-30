@@ -534,6 +534,45 @@ public interface DeployedModelOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  boolean hasFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig getFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.DeployedModel.PredictionResourcesCase
       getPredictionResourcesCase();
 }

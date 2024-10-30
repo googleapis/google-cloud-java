@@ -75,7 +75,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -770,7 +770,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -795,7 +795,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -820,7 +820,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -864,7 +864,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>

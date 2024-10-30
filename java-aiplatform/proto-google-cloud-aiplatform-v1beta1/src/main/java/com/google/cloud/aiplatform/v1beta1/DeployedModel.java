@@ -885,6 +885,60 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         : privateEndpoints_;
   }
 
+  public static final int FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig fasterDeploymentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFasterDeploymentConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig getFasterDeploymentConfig() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -943,6 +997,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       output.writeBool(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(23, getFasterDeploymentConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -998,6 +1055,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFasterDeploymentConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1033,6 +1094,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints() != other.hasPrivateEndpoints()) return false;
     if (hasPrivateEndpoints()) {
       if (!getPrivateEndpoints().equals(other.getPrivateEndpoints())) return false;
+    }
+    if (hasFasterDeploymentConfig() != other.hasFasterDeploymentConfig()) return false;
+    if (hasFasterDeploymentConfig()) {
+      if (!getFasterDeploymentConfig().equals(other.getFasterDeploymentConfig())) return false;
     }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
@@ -1086,6 +1151,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints()) {
       hash = (37 * hash) + PRIVATE_ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateEndpoints().hashCode();
+    }
+    if (hasFasterDeploymentConfig()) {
+      hash = (37 * hash) + FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFasterDeploymentConfig().hashCode();
     }
     switch (predictionResourcesCase_) {
       case 7:
@@ -1246,6 +1315,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getExplanationSpecFieldBuilder();
         getPrivateEndpointsFieldBuilder();
+        getFasterDeploymentConfigFieldBuilder();
       }
     }
 
@@ -1281,6 +1351,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (privateEndpointsBuilder_ != null) {
         privateEndpointsBuilder_.dispose();
         privateEndpointsBuilder_ = null;
+      }
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
       }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
@@ -1359,6 +1434,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.fasterDeploymentConfig_ =
+            fasterDeploymentConfigBuilder_ == null
+                ? fasterDeploymentConfig_
+                : fasterDeploymentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1462,6 +1544,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPrivateEndpoints()) {
         mergePrivateEndpoints(other.getPrivateEndpoints());
+      }
+      if (other.hasFasterDeploymentConfig()) {
+        mergeFasterDeploymentConfig(other.getFasterDeploymentConfig());
       }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
@@ -1600,6 +1685,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 152
+            case 186:
+              {
+                input.readMessage(
+                    getFasterDeploymentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3831,6 +3923,207 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpoints_ = null;
       }
       return privateEndpointsBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig fasterDeploymentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig,
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder>
+        fasterDeploymentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     *
+     * @return Whether the fasterDeploymentConfig field is set.
+     */
+    public boolean hasFasterDeploymentConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     *
+     * @return The fasterDeploymentConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig getFasterDeploymentConfig() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      } else {
+        return fasterDeploymentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fasterDeploymentConfig_ = value;
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder builderForValue) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfig_ = builderForValue.build();
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder mergeFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && fasterDeploymentConfig_ != null
+            && fasterDeploymentConfig_
+                != com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig
+                    .getDefaultInstance()) {
+          getFasterDeploymentConfigBuilder().mergeFrom(value);
+        } else {
+          fasterDeploymentConfig_ = value;
+        }
+      } else {
+        fasterDeploymentConfigBuilder_.mergeFrom(value);
+      }
+      if (fasterDeploymentConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder clearFasterDeploymentConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder
+        getFasterDeploymentConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getFasterDeploymentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder
+        getFasterDeploymentConfigOrBuilder() {
+      if (fasterDeploymentConfigBuilder_ != null) {
+        return fasterDeploymentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig,
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder>
+        getFasterDeploymentConfigFieldBuilder() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig,
+                com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfigOrBuilder>(
+                getFasterDeploymentConfig(), getParentForChildren(), isClean());
+        fasterDeploymentConfig_ = null;
+      }
+      return fasterDeploymentConfigBuilder_;
     }
 
     @java.lang.Override

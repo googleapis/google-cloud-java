@@ -606,6 +606,7 @@ public class ConversationalSearchServiceClientTest {
                     .toString())
             .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
             .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+            .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
             .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
             .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
             .setQueryUnderstandingSpec(
@@ -627,6 +628,7 @@ public class ConversationalSearchServiceClientTest {
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSafetySpec(), actualRequest.getSafetySpec());
     Assert.assertEquals(request.getRelatedQuestionsSpec(), actualRequest.getRelatedQuestionsSpec());
+    Assert.assertEquals(request.getGroundingSpec(), actualRequest.getGroundingSpec());
     Assert.assertEquals(request.getAnswerGenerationSpec(), actualRequest.getAnswerGenerationSpec());
     Assert.assertEquals(request.getSearchSpec(), actualRequest.getSearchSpec());
     Assert.assertEquals(
@@ -659,6 +661,7 @@ public class ConversationalSearchServiceClientTest {
                       .toString())
               .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
               .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
               .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
               .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
               .setQueryUnderstandingSpec(

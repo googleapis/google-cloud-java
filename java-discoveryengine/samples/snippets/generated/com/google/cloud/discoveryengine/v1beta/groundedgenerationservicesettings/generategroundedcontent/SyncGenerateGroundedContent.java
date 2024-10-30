@@ -16,17 +16,17 @@
 
 package com.google.cloud.discoveryengine.v1beta.samples;
 
-// [START discoveryengine_v1beta_generated_GroundedGenerationServiceSettings_CheckGrounding_sync]
+// [START discoveryengine_v1beta_generated_GroundedGenerationServiceSettings_GenerateGroundedContent_sync]
 import com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceSettings;
 import java.time.Duration;
 
-public class SyncCheckGrounding {
+public class SyncGenerateGroundedContent {
 
   public static void main(String[] args) throws Exception {
-    syncCheckGrounding();
+    syncGenerateGroundedContent();
   }
 
-  public static void syncCheckGrounding() throws Exception {
+  public static void syncGenerateGroundedContent() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -35,10 +35,10 @@ public class SyncCheckGrounding {
     GroundedGenerationServiceSettings.Builder groundedGenerationServiceSettingsBuilder =
         GroundedGenerationServiceSettings.newBuilder();
     groundedGenerationServiceSettingsBuilder
-        .checkGroundingSettings()
+        .generateGroundedContentSettings()
         .setRetrySettings(
             groundedGenerationServiceSettingsBuilder
-                .checkGroundingSettings()
+                .generateGroundedContentSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -54,4 +54,4 @@ public class SyncCheckGrounding {
         groundedGenerationServiceSettingsBuilder.build();
   }
 }
-// [END discoveryengine_v1beta_generated_GroundedGenerationServiceSettings_CheckGrounding_sync]
+// [END discoveryengine_v1beta_generated_GroundedGenerationServiceSettings_GenerateGroundedContent_sync]

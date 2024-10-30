@@ -39,6 +39,8 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
@@ -150,6 +152,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
 
   private final UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse>
       completeQuerySettings;
+  private final UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings;
   private final UnaryCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesSettings;
   private final OperationCallSettings<
@@ -182,6 +186,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
     return completeQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to advancedCompleteQuery. */
+  public UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings() {
+    return advancedCompleteQuerySettings;
   }
 
   /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
@@ -356,6 +366,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     super(settingsBuilder);
 
     completeQuerySettings = settingsBuilder.completeQuerySettings().build();
+    advancedCompleteQuerySettings = settingsBuilder.advancedCompleteQuerySettings().build();
     importSuggestionDenyListEntriesSettings =
         settingsBuilder.importSuggestionDenyListEntriesSettings().build();
     importSuggestionDenyListEntriesOperationSettings =
@@ -379,6 +390,9 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings;
+    private final UnaryCallSettings.Builder<
+            AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings;
     private final UnaryCallSettings.Builder<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesSettings;
     private final OperationCallSettings.Builder<
@@ -446,6 +460,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       super(clientContext);
 
       completeQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      advancedCompleteQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importSuggestionDenyListEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importSuggestionDenyListEntriesOperationSettings = OperationCallSettings.newBuilder();
       purgeSuggestionDenyListEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -458,6 +473,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
+              advancedCompleteQuerySettings,
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
@@ -469,6 +485,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       super(settings);
 
       completeQuerySettings = settings.completeQuerySettings.toBuilder();
+      advancedCompleteQuerySettings = settings.advancedCompleteQuerySettings.toBuilder();
       importSuggestionDenyListEntriesSettings =
           settings.importSuggestionDenyListEntriesSettings.toBuilder();
       importSuggestionDenyListEntriesOperationSettings =
@@ -488,6 +505,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
+              advancedCompleteQuerySettings,
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
@@ -521,6 +539,11 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     private static Builder initDefaults(Builder builder) {
       builder
           .completeQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .advancedCompleteQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -674,6 +697,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     public UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings() {
       return completeQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to advancedCompleteQuery. */
+    public UnaryCallSettings.Builder<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings() {
+      return advancedCompleteQuerySettings;
     }
 
     /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */
