@@ -75,6 +75,7 @@ public class DatasetInfo implements Serializable {
   private final String defaultCollation;
   private final ExternalDatasetReference externalDatasetReference;
   private final String storageBillingModel;
+  private final Long maxTimeTravelHours;
 
   /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
@@ -143,6 +144,12 @@ public class DatasetInfo implements Serializable {
     public abstract Builder setStorageBillingModel(String storageBillingModel);
 
     /**
+     * Optional. Defines the time travel window in hours. The value can be from 48 to 168 hours (2
+     * to 7 days). The default value is 168 hours if this is not set. The value may be {@code null}.
+     */
+    public abstract Builder setMaxTimeTravelHours(Long maxTimeTravelHours);
+
+    /**
      * The default encryption key for all tables in the dataset. Once this property is set, all
      * newly-created partitioned tables in the dataset will have encryption key set to this value,
      * unless table creation request (or query) overrides the key.
@@ -200,6 +207,7 @@ public class DatasetInfo implements Serializable {
     private String defaultCollation;
     private ExternalDatasetReference externalDatasetReference;
     private String storageBillingModel;
+    private Long maxTimeTravelHours;
 
     BuilderImpl() {}
 
@@ -221,6 +229,7 @@ public class DatasetInfo implements Serializable {
       this.defaultCollation = datasetInfo.defaultCollation;
       this.externalDatasetReference = datasetInfo.externalDatasetReference;
       this.storageBillingModel = datasetInfo.storageBillingModel;
+      this.maxTimeTravelHours = datasetInfo.maxTimeTravelHours;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -260,6 +269,7 @@ public class DatasetInfo implements Serializable {
             ExternalDatasetReference.fromPb(datasetPb.getExternalDatasetReference());
       }
       this.storageBillingModel = datasetPb.getStorageBillingModel();
+      this.maxTimeTravelHours = datasetPb.getMaxTimeTravelHours();
     }
 
     @Override
@@ -373,6 +383,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setMaxTimeTravelHours(Long maxTimeTravelHours) {
+      this.maxTimeTravelHours = maxTimeTravelHours;
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -396,6 +412,7 @@ public class DatasetInfo implements Serializable {
     defaultCollation = builder.defaultCollation;
     externalDatasetReference = builder.externalDatasetReference;
     storageBillingModel = builder.storageBillingModel;
+    maxTimeTravelHours = builder.maxTimeTravelHours;
   }
 
   /** Returns the dataset identity. */
@@ -530,6 +547,14 @@ public class DatasetInfo implements Serializable {
   }
 
   /**
+   * Returns the number of hours that deleted or updated data will be available to be queried for
+   * all tables in the dataset.
+   */
+  public Long getMaxTimeTravelHours() {
+    return maxTimeTravelHours;
+  }
+
+  /**
    * Returns information about the external metadata storage where the dataset is defined. Filled
    * out when the dataset type is EXTERNAL.
    */
@@ -562,6 +587,7 @@ public class DatasetInfo implements Serializable {
         .add("defaultCollation", defaultCollation)
         .add("externalDatasetReference", externalDatasetReference)
         .add("storageBillingModel", storageBillingModel)
+        .add("maxTimeTravelHours", maxTimeTravelHours)
         .toString();
   }
 
@@ -645,6 +671,9 @@ public class DatasetInfo implements Serializable {
     }
     if (storageBillingModel != null) {
       datasetPb.setStorageBillingModel(storageBillingModel);
+    }
+    if (maxTimeTravelHours != null) {
+      datasetPb.setMaxTimeTravelHours(maxTimeTravelHours);
     }
     return datasetPb;
   }

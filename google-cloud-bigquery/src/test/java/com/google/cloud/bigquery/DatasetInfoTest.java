@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -59,6 +60,8 @@ public class DatasetInfoTest {
   private static final EncryptionConfiguration DATASET_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final String STORAGE_BILLING_MODEL = "LOGICAL";
+  private static final Long MAX_TIME_TRAVEL_HOURS_5_DAYS = 120L;
+  private static final Long MAX_TIME_TRAVEL_HOURS_7_DAYS = 168L;
 
   private static final ExternalDatasetReference EXTERNAL_DATASET_REFERENCE =
       ExternalDatasetReference.newBuilder()
@@ -81,6 +84,7 @@ public class DatasetInfoTest {
           .setDefaultEncryptionConfiguration(DATASET_ENCRYPTION_CONFIGURATION)
           .setDefaultPartitionExpirationMs(DEFAULT_PARTITION__EXPIRATION)
           .setStorageBillingModel(STORAGE_BILLING_MODEL)
+          .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS_7_DAYS)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
       DATASET_INFO
@@ -92,6 +96,8 @@ public class DatasetInfoTest {
       DATASET_INFO.toBuilder().setAcl(ACCESS_RULES_IAM_MEMBER).build();
   private static final DatasetInfo DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE =
       DATASET_INFO.toBuilder().setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE).build();
+  private static final DatasetInfo DATASET_INFO_WITH_MAX_TIME_TRAVEL_5_DAYS =
+      DATASET_INFO.toBuilder().setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS_5_DAYS).build();
 
   @Test
   public void testToBuilder() {
@@ -173,6 +179,10 @@ public class DatasetInfoTest {
         EXTERNAL_DATASET_REFERENCE,
         DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.getExternalDatasetReference());
     assertEquals(STORAGE_BILLING_MODEL, DATASET_INFO_COMPLETE.getStorageBillingModel());
+    assertEquals(MAX_TIME_TRAVEL_HOURS_7_DAYS, DATASET_INFO.getMaxTimeTravelHours());
+    assertEquals(
+        MAX_TIME_TRAVEL_HOURS_5_DAYS,
+        DATASET_INFO_WITH_MAX_TIME_TRAVEL_5_DAYS.getMaxTimeTravelHours());
   }
 
   @Test
@@ -194,6 +204,7 @@ public class DatasetInfoTest {
     assertTrue(datasetInfo.getLabels().isEmpty());
     assertNull(datasetInfo.getExternalDatasetReference());
     assertNull(datasetInfo.getStorageBillingModel());
+    assertNull(datasetInfo.getMaxTimeTravelHours());
 
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
@@ -212,6 +223,7 @@ public class DatasetInfoTest {
     assertTrue(datasetInfo.getLabels().isEmpty());
     assertNull(datasetInfo.getExternalDatasetReference());
     assertNull(datasetInfo.getStorageBillingModel());
+    assertNull(datasetInfo.getMaxTimeTravelHours());
   }
 
   @Test
@@ -227,6 +239,16 @@ public class DatasetInfoTest {
   @Test
   public void testSetProjectId() {
     assertEquals(DATASET_INFO_COMPLETE, DATASET_INFO.setProjectId("project"));
+  }
+
+  @Test
+  public void testSetMaxTimeTravelHours() {
+    assertNotEquals(
+        DATASET_INFO_WITH_MAX_TIME_TRAVEL_5_DAYS.getMaxTimeTravelHours(),
+        DATASET_INFO.getMaxTimeTravelHours());
+    assertEquals(
+        DATASET_INFO_WITH_MAX_TIME_TRAVEL_5_DAYS,
+        DATASET_INFO.toBuilder().setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS_5_DAYS).build());
   }
 
   private void compareDatasets(DatasetInfo expected, DatasetInfo value) {
@@ -249,5 +271,6 @@ public class DatasetInfoTest {
         expected.getDefaultPartitionExpirationMs(), value.getDefaultPartitionExpirationMs());
     assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
     assertEquals(expected.getStorageBillingModel(), value.getStorageBillingModel());
+    assertEquals(expected.getMaxTimeTravelHours(), value.getMaxTimeTravelHours());
   }
 }

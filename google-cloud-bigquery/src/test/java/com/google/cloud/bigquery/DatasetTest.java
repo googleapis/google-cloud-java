@@ -67,6 +67,7 @@ public class DatasetTest {
   private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID).build();
   private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
   private static final String STORAGE_BILLING_MODEL = "LOGICAL";
+  private static final Long MAX_TIME_TRAVEL_HOURS = 168L;
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
@@ -122,6 +123,7 @@ public class DatasetTest {
             .setSelfLink(SELF_LINK)
             .setLabels(LABELS)
             .setStorageBillingModel(STORAGE_BILLING_MODEL)
+            .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS)
             .build();
     assertEquals(DATASET_ID, builtDataset.getDatasetId());
     assertEquals(ACCESS_RULES, builtDataset.getAcl());
@@ -136,6 +138,7 @@ public class DatasetTest {
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
     assertEquals(LABELS, builtDataset.getLabels());
     assertEquals(STORAGE_BILLING_MODEL, builtDataset.getStorageBillingModel());
+    assertEquals(MAX_TIME_TRAVEL_HOURS, builtDataset.getMaxTimeTravelHours());
   }
 
   @Test
@@ -344,6 +347,7 @@ public class DatasetTest {
             .setLabels(LABELS)
             .setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE)
             .setStorageBillingModel(STORAGE_BILLING_MODEL)
+            .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS)
             .build();
     assertEquals(
         EXTERNAL_DATASET_REFERENCE,
@@ -374,5 +378,6 @@ public class DatasetTest {
     assertEquals(expected.getLastModified(), value.getLastModified());
     assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
     assertEquals(expected.getStorageBillingModel(), value.getStorageBillingModel());
+    assertEquals(expected.getMaxTimeTravelHours(), value.getMaxTimeTravelHours());
   }
 }
