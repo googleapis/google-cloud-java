@@ -314,4 +314,10 @@
     <method>com.google.cloud.firestore.Query getQuery()</method>
   </difference>
 
+  <difference>
+    <className>com/google/cloud/firestore/StreamableQuery</className>
+    <differenceType>7009</differenceType>
+    <method>void internalStream(*)</method>
+  </difference>
+
 </differences>
