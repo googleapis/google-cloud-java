@@ -1273,6 +1273,9 @@
             "StartNotebookRuntime": {
               "methods": ["startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeOperationCallable", "startNotebookRuntimeCallable"]
             },
+            "StopNotebookRuntime": {
+              "methods": ["stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeOperationCallable", "stopNotebookRuntimeCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
