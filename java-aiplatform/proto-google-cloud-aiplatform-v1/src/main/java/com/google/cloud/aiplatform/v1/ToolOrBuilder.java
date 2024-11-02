@@ -35,7 +35,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -73,7 +73,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -92,7 +92,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>

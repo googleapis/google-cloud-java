@@ -301,6 +301,9 @@
         "grpc": {
           "libraryClient": "FeatureRegistryServiceClient",
           "rpcs": {
+            "BatchCreateFeatures": {
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+            },
             "CreateFeature": {
               "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
@@ -389,7 +392,7 @@
           "libraryClient": "FeaturestoreServiceClient",
           "rpcs": {
             "BatchCreateFeatures": {
-              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
             },
             "BatchReadFeatureValues": {
               "methods": ["batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesOperationCallable", "batchReadFeatureValuesCallable"]

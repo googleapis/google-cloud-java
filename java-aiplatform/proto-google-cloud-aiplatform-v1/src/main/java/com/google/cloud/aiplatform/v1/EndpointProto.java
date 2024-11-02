@@ -45,6 +45,10 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_DeployedModel_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_PrivateEndpoints_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_PrivateEndpoints_fieldAccessorTable;
@@ -104,7 +108,7 @@ public final class EndpointProto {
           + "ject}/locations/{location}/endpoints/{en"
           + "dpoint}\022Mprojects/{project}/locations/{l"
           + "ocation}/publishers/{publisher}/models/{"
-          + "model}\"\332\005\n\rDeployedModel\022M\n\023dedicated_re"
+          + "model}\"\343\006\n\rDeployedModel\022M\n\023dedicated_re"
           + "sources\030\007 \001(\0132..google.cloud.aiplatform."
           + "v1.DedicatedResourcesH\000\022M\n\023automatic_res"
           + "ources\030\010 \001(\0132..google.cloud.aiplatform.v"
@@ -121,21 +125,24 @@ public final class EndpointProto {
           + "count\030\013 \001(\t\022!\n\031disable_container_logging"
           + "\030\017 \001(\010\022\035\n\025enable_access_logging\030\r \001(\010\022L\n"
           + "\021private_endpoints\030\016 \001(\0132,.google.cloud."
-          + "aiplatform.v1.PrivateEndpointsB\003\340A\003B\026\n\024p"
-          + "rediction_resources\"\217\001\n\020PrivateEndpoints"
-          + "\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020expla"
-          + "in_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_ur"
-          + "i\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\t"
-          + "B\003\340A\003\"\234\001\n#PredictRequestResponseLoggingC"
-          + "onfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030"
-          + "\002 \001(\001\022M\n\024bigquery_destination\030\003 \001(\0132/.go"
-          + "ogle.cloud.aiplatform.v1.BigQueryDestina"
-          + "tionB\313\001\n\036com.google.cloud.aiplatform.v1B"
-          + "\rEndpointProtoP\001Z>cloud.google.com/go/ai"
-          + "platform/apiv1/aiplatformpb;aiplatformpb"
-          + "\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\C"
-          + "loud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPl"
-          + "atform::V1b\006proto3"
+          + "aiplatform.v1.PrivateEndpointsB\003\340A\003\022R\n\rs"
+          + "ystem_labels\030\034 \003(\0132;.google.cloud.aiplat"
+          + "form.v1.DeployedModel.SystemLabelsEntry\032"
+          + "3\n\021SystemLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001B\026\n\024prediction_resources\"\217\001\n"
+          + "\020PrivateEndpoints\022\035\n\020predict_http_uri\030\001 "
+          + "\001(\tB\003\340A\003\022\035\n\020explain_http_uri\030\002 \001(\tB\003\340A\003\022"
+          + "\034\n\017health_http_uri\030\003 \001(\tB\003\340A\003\022\037\n\022service"
+          + "_attachment\030\004 \001(\tB\003\340A\003\"\234\001\n#PredictReques"
+          + "tResponseLoggingConfig\022\017\n\007enabled\030\001 \001(\010\022"
+          + "\025\n\rsampling_rate\030\002 \001(\001\022M\n\024bigquery_desti"
+          + "nation\030\003 \001(\0132/.google.cloud.aiplatform.v"
+          + "1.BigQueryDestinationB\313\001\n\036com.google.clo"
+          + "ud.aiplatform.v1B\rEndpointProtoP\001Z>cloud"
+          + ".google.com/go/aiplatform/apiv1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\032Google.Cloud.AIPlatf"
+          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
+          + "ogle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -212,7 +219,16 @@ public final class EndpointProto {
               "DisableContainerLogging",
               "EnableAccessLogging",
               "PrivateEndpoints",
+              "SystemLabels",
               "PredictionResources",
+            });
+    internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_DeployedModel_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1_PrivateEndpoints_descriptor =
         getDescriptor().getMessageTypes().get(2);
