@@ -21,6 +21,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
@@ -39,6 +40,7 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
@@ -98,6 +100,7 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
 import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ChangeStreamRecordMergingCallable;
@@ -194,7 +197,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<Query, Row> readRowCallable;
   private final UnaryCallable<Query, List<Row>> bulkReadRowsCallable;
-  private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
+  @Deprecated private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<SampleRowKeysRequest, List<KeyOffset>>
       sampleRowKeysCallableWithRequest;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
@@ -698,11 +701,40 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
-   * Helper function that should only be used by createSampleRowKeysCallable() and
-   * createSampleRowKeysWithRequestCallable().
+   * Simple wrapper around {@link #createSampleRowKeysCallableWithRequest()} to provide backwards
+   * compatibility
+   *
+   * @deprecated
    */
-  private UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-      createSampleRowKeysBaseCallable() {
+  @Deprecated
+  private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
+    UnaryCallable<SampleRowKeysRequest, List<KeyOffset>> baseCallable =
+        createSampleRowKeysCallableWithRequest();
+    return new UnaryCallable<String, List<KeyOffset>>() {
+      @Override
+      public ApiFuture<List<KeyOffset>> futureCall(String s, ApiCallContext apiCallContext) {
+        return baseCallable.futureCall(SampleRowKeysRequest.create(TableId.of(s)), apiCallContext);
+      }
+    };
+  }
+
+  /**
+   * Creates a callable chain to handle SampleRowKeys RPcs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link SampleRowKeysRequest} to a {@link
+   *       com.google.bigtable.v2.SampleRowKeysRequest}.
+   *   <li>Dispatch the request to the GAPIC's {@link BigtableStub#sampleRowKeysCallable()}.
+   *   <li>Spool responses into a list.
+   *   <li>Retry on failure.
+   *   <li>Convert the responses into {@link KeyOffset}s.
+   *   <li>Add tracing & metrics.
+   * </ul>
+   */
+  private UnaryCallable<SampleRowKeysRequest, List<KeyOffset>>
+      createSampleRowKeysCallableWithRequest() {
+    String methodName = "SampleRowKeys";
+
     ServerStreamingCallable<com.google.bigtable.v2.SampleRowKeysRequest, SampleRowKeysResponse>
         base =
             GrpcRawCallableFactory.createServerStreamingCallable(
@@ -745,51 +777,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
         retryable = withRetries(withBigtableTracer, settings.sampleRowKeysSettings());
 
-    return retryable;
-  }
-
-  /**
-   * Creates a callable chain to handle SampleRowKeys RPcs. The chain will:
-   *
-   * <ul>
-   *   <li>Convert a table id to a {@link com.google.bigtable.v2.SampleRowKeysRequest}.
-   *   <li>Dispatch the request to the GAPIC's {@link BigtableStub#sampleRowKeysCallable()}.
-   *   <li>Spool responses into a list.
-   *   <li>Retry on failure.
-   *   <li>Convert the responses into {@link KeyOffset}s.
-   *   <li>Add tracing & metrics.
-   * </ul>
-   */
-  private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
-    String methodName = "SampleRowKeys";
-
-    UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        baseCallable = createSampleRowKeysBaseCallable();
     return createUserFacingUnaryCallable(
-        methodName, new SampleRowKeysCallable(baseCallable, requestContext));
-  }
-
-  /**
-   * Creates a callable chain to handle SampleRowKeys RPcs. The chain will:
-   *
-   * <ul>
-   *   <li>Convert a {@link SampleRowKeysRequest} to a {@link
-   *       com.google.bigtable.v2.SampleRowKeysRequest}.
-   *   <li>Dispatch the request to the GAPIC's {@link BigtableStub#sampleRowKeysCallable()}.
-   *   <li>Spool responses into a list.
-   *   <li>Retry on failure.
-   *   <li>Convert the responses into {@link KeyOffset}s.
-   *   <li>Add tracing & metrics.
-   * </ul>
-   */
-  private UnaryCallable<SampleRowKeysRequest, List<KeyOffset>>
-      createSampleRowKeysCallableWithRequest() {
-    String methodName = "SampleRowKeys";
-
-    UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        baseCallable = createSampleRowKeysBaseCallable();
-    return createUserFacingUnaryCallable(
-        methodName, new SampleRowKeysCallableWithRequest(baseCallable, requestContext));
+        methodName, new SampleRowKeysCallableWithRequest(retryable, requestContext));
   }
 
   /**
@@ -1470,6 +1459,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return readRowCallable;
   }
 
+  /** Deprecated, please use {@link #sampleRowKeysCallableWithRequest} */
+  @Deprecated
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
     return sampleRowKeysCallable;
   }
