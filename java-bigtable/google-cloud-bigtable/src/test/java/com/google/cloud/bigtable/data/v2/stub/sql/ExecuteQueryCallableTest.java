@@ -124,15 +124,16 @@ public class ExecuteQueryCallableTest {
         .stubSettings()
         .executeQuerySettings()
         .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(10).build());
-    EnhancedBigtableStub overrideStub =
-        EnhancedBigtableStub.create(overrideSettings.build().getStubSettings());
-    SqlServerStream stream =
-        overrideStub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
 
-    Iterator<SqlRow> iterator = stream.rows().iterator();
+    try (EnhancedBigtableStub overrideStub =
+        EnhancedBigtableStub.create(overrideSettings.build().getStubSettings())) {
+      SqlServerStream stream =
+          overrideStub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
+      Iterator<SqlRow> iterator = stream.rows().iterator();
 
-    assertThrows(UnavailableException.class, iterator::next).getCause();
-    assertThat(fakeService.attempts).isEqualTo(1);
+      assertThrows(UnavailableException.class, iterator::next).getCause();
+      assertThat(fakeService.attempts).isEqualTo(1);
+    }
   }
 
   @Test
@@ -160,13 +161,15 @@ public class ExecuteQueryCallableTest {
                 .setInitialRpcTimeout(Duration.ofMillis(10))
                 .setMaxRpcTimeout(Duration.ofMillis(10))
                 .build());
-    EnhancedBigtableStub overrideDeadline =
-        EnhancedBigtableStub.create(overrideSettings.build().getStubSettings());
-    SqlServerStream streamOverride =
-        overrideDeadline.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
-    Iterator<SqlRow> overrideIterator = streamOverride.rows().iterator();
-    // We don't care about this but are reusing the fake service that tests retries
-    assertThrows(DeadlineExceededException.class, overrideIterator::next).getCause();
+
+    try (EnhancedBigtableStub overrideDeadline =
+        EnhancedBigtableStub.create(overrideSettings.build().getStubSettings())) {
+      SqlServerStream streamOverride =
+          overrideDeadline.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
+      Iterator<SqlRow> overrideIterator = streamOverride.rows().iterator();
+      // We don't care about this but are reusing the fake service that tests retries
+      assertThrows(DeadlineExceededException.class, overrideIterator::next).getCause();
+    }
   }
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {
