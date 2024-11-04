@@ -83,7 +83,7 @@ public abstract class SafeResponseObserver<ResponseT> implements ResponseObserve
   @Override
   public final void onError(Throwable throwable) {
     if (!isClosed.compareAndSet(false, true)) {
-      logException("Received error after the stream is closed");
+      logException("Received error after the stream is closed", throwable);
       return;
     }
 
@@ -111,6 +111,10 @@ public abstract class SafeResponseObserver<ResponseT> implements ResponseObserve
 
   private void logException(String message) {
     LOGGER.log(Level.WARNING, message, new IllegalStateException(message));
+  }
+
+  private void logException(String message, Throwable cause) {
+    LOGGER.log(Level.WARNING, message, new IllegalStateException(message, cause));
   }
 
   protected abstract void onStartImpl(StreamController streamController);
