@@ -22,6 +22,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
@@ -57,22 +58,17 @@ import com.google.api.gax.tracing.TracedUnaryCallable;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
-import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
 import com.google.bigtable.v2.ExecuteQueryRequest;
 import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
-import com.google.bigtable.v2.MutateRowRequest;
-import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
-import com.google.bigtable.v2.ReadModifyWriteRowRequest;
-import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowRange;
@@ -144,8 +140,10 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.StatsRecorder;
 import io.opencensus.tags.TagKey;
@@ -162,6 +160,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -790,42 +789,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    String methodName = "MutateRow";
-    UnaryCallable<MutateRowRequest, MutateRowResponse> base =
-        GrpcRawCallableFactory.createUnaryCallable(
-            GrpcCallSettings.<MutateRowRequest, MutateRowResponse>newBuilder()
-                .setMethodDescriptor(BigtableGrpc.getMutateRowMethod())
-                .setParamsExtractor(
-                    new RequestParamsExtractor<MutateRowRequest>() {
-                      @Override
-                      public Map<String, String> extract(MutateRowRequest mutateRowRequest) {
-                        String tableName = mutateRowRequest.getTableName();
-                        String authorizedViewName = mutateRowRequest.getAuthorizedViewName();
-                        if (tableName.isEmpty()) {
-                          tableName =
-                              NameUtil.extractTableNameFromAuthorizedViewName(authorizedViewName);
-                        }
-                        return ImmutableMap.of(
-                            "table_name",
-                            tableName,
-                            "app_profile_id",
-                            mutateRowRequest.getAppProfileId());
-                      }
-                    })
-                .build(),
-            settings.mutateRowSettings().getRetryableCodes());
-
-    UnaryCallable<MutateRowRequest, MutateRowResponse> withStatsHeaders =
-        new StatsHeadersUnaryCallable<>(base);
-
-    UnaryCallable<MutateRowRequest, MutateRowResponse> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(withStatsHeaders);
-
-    UnaryCallable<MutateRowRequest, MutateRowResponse> retrying =
-        withRetries(withBigtableTracer, settings.mutateRowSettings());
-
-    return createUserFacingUnaryCallable(
-        methodName, new MutateRowCallable(retrying, requestContext));
+    return createUnaryCallable(
+        BigtableGrpc.getMutateRowMethod(),
+        req ->
+            composeRequestParams(
+                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+        settings.mutateRowSettings(),
+        req -> req.toProto(requestContext),
+        resp -> null);
   }
 
   /**
@@ -1045,44 +1016,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    String methodName = "CheckAndMutateRow";
-    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> base =
-        GrpcRawCallableFactory.createUnaryCallable(
-            GrpcCallSettings.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
-                .setMethodDescriptor(BigtableGrpc.getCheckAndMutateRowMethod())
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CheckAndMutateRowRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CheckAndMutateRowRequest checkAndMutateRowRequest) {
-                        String tableName = checkAndMutateRowRequest.getTableName();
-                        String authorizedViewName =
-                            checkAndMutateRowRequest.getAuthorizedViewName();
-                        if (tableName.isEmpty()) {
-                          tableName =
-                              NameUtil.extractTableNameFromAuthorizedViewName(authorizedViewName);
-                        }
-                        return ImmutableMap.of(
-                            "table_name",
-                            tableName,
-                            "app_profile_id",
-                            checkAndMutateRowRequest.getAppProfileId());
-                      }
-                    })
-                .build(),
-            settings.checkAndMutateRowSettings().getRetryableCodes());
-
-    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withStatsHeaders =
-        new StatsHeadersUnaryCallable<>(base);
-
-    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(withStatsHeaders);
-
-    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> retrying =
-        withRetries(withBigtableTracer, settings.checkAndMutateRowSettings());
-
-    return createUserFacingUnaryCallable(
-        methodName, new CheckAndMutateRowCallable(retrying, requestContext));
+    return createUnaryCallable(
+        BigtableGrpc.getCheckAndMutateRowMethod(),
+        req ->
+            composeRequestParams(
+                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+        settings.checkAndMutateRowSettings(),
+        req -> req.toProto(requestContext),
+        CheckAndMutateRowResponse::getPredicateMatched);
   }
 
   /**
@@ -1096,39 +1037,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
-    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> base =
-        GrpcRawCallableFactory.createUnaryCallable(
-            GrpcCallSettings.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
-                .setMethodDescriptor(BigtableGrpc.getReadModifyWriteRowMethod())
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ReadModifyWriteRowRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReadModifyWriteRowRequest request) {
-                        String tableName = request.getTableName();
-                        String authorizedViewName = request.getAuthorizedViewName();
-                        if (tableName.isEmpty()) {
-                          tableName =
-                              NameUtil.extractTableNameFromAuthorizedViewName(authorizedViewName);
-                        }
-                        return ImmutableMap.of(
-                            "table_name", tableName, "app_profile_id", request.getAppProfileId());
-                      }
-                    })
-                .build(),
-            settings.readModifyWriteRowSettings().getRetryableCodes());
+    DefaultRowAdapter rowAdapter = new DefaultRowAdapter();
 
-    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withStatsHeaders =
-        new StatsHeadersUnaryCallable<>(base);
-
-    String methodName = "ReadModifyWriteRow";
-    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(withStatsHeaders);
-
-    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> retrying =
-        withRetries(withBigtableTracer, settings.readModifyWriteRowSettings());
-
-    return createUserFacingUnaryCallable(
-        methodName, new ReadModifyWriteRowCallable(retrying, requestContext));
+    return createUnaryCallable(
+        BigtableGrpc.getReadModifyWriteRowMethod(),
+        req ->
+            composeRequestParams(
+                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+        settings.readModifyWriteRowSettings(),
+        req -> req.toProto(requestContext),
+        resp -> rowAdapter.createRowFromProto(resp.getRow()));
   }
 
   /**
@@ -1389,6 +1307,56 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<RequestT, ResponseT> traced =
         new TracedUnaryCallable<>(inner, clientContext.getTracerFactory(), getSpanName(methodName));
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  private Map<String, String> composeRequestParams(
+      String appProfileId, String tableName, String authorizedViewName) {
+    if (tableName.isEmpty()) {
+      tableName = NameUtil.extractTableNameFromAuthorizedViewName(authorizedViewName);
+    }
+    return ImmutableMap.of("table_name", tableName, "app_profile_id", appProfileId);
+  }
+
+  private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallable(
+      MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
+      RequestParamsExtractor<BaseReqT> headerParamsFn,
+      UnaryCallSettings<ReqT, RespT> callSettings,
+      Function<ReqT, BaseReqT> requestTransformer,
+      Function<BaseRespT, RespT> responseTranformer) {
+
+    UnaryCallable<BaseReqT, BaseRespT> base =
+        GrpcRawCallableFactory.createUnaryCallable(
+            GrpcCallSettings.<BaseReqT, BaseRespT>newBuilder()
+                .setMethodDescriptor(methodDescriptor)
+                .setParamsExtractor(headerParamsFn)
+                .build(),
+            callSettings.getRetryableCodes());
+
+    UnaryCallable<BaseReqT, BaseRespT> withStatsHeaders = new StatsHeadersUnaryCallable<>(base);
+
+    UnaryCallable<BaseReqT, BaseRespT> withBigtableTracer =
+        new BigtableTracerUnaryCallable<>(withStatsHeaders);
+
+    UnaryCallable<BaseReqT, BaseRespT> retrying = withRetries(withBigtableTracer, callSettings);
+
+    UnaryCallable<ReqT, RespT> transformed =
+        new UnaryCallable<ReqT, RespT>() {
+          @Override
+          public ApiFuture<RespT> futureCall(ReqT reqT, ApiCallContext apiCallContext) {
+            ApiFuture<BaseRespT> f =
+                retrying.futureCall(requestTransformer.apply(reqT), apiCallContext);
+            return ApiFutures.transform(
+                f, responseTranformer::apply, MoreExecutors.directExecutor());
+          }
+        };
+
+    UnaryCallable<ReqT, RespT> traced =
+        new TracedUnaryCallable<>(
+            transformed,
+            clientContext.getTracerFactory(),
+            getSpanName(methodDescriptor.getBareMethodName()));
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
