@@ -244,8 +244,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify a label filter. See
-     * https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels
+     * Returns an option to specify a label filter. @see <a href=
+     * "https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels">Filtering
+     * using labels</a>
      *
      * @param labelFilter In the form "labels.key:value"
      */
@@ -280,7 +281,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
-     * option is not provided all dataset's fields are returned. { code DatasetOption.fields} can be
+     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can be
      * used to specify only the fields of interest. {@link Dataset#getDatasetId()} is always
      * returned, even if not specified.
      */
@@ -864,8 +865,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Lists the project's datasets. This method returns partial information on each dataset: ({@link
    * Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and {@link
-   * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset(String,
-   * DatasetOption...)} or {@link #getDataset(DatasetId, DatasetOption...)}.
+   * Dataset#getGeneratedId()}). To get complete information use {@link #getDataset}.
    *
    * <p>Example of listing datasets, specifying the page size.
    *
@@ -884,8 +884,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Lists the datasets in the provided project. This method returns partial information on each
    * dataset: ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and {@link
-   * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset(String,
-   * DatasetOption...)} or {@link #getDataset(DatasetId, DatasetOption...)}.
+   * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset}.
    *
    * <p>Example of listing datasets in a project, specifying the page size.
    *
@@ -1205,7 +1204,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the tables in the dataset. This method returns partial information on each table: ({@link
    * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
    * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
-   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
+   * #getTable}.
    *
    * <p>Example of listing the tables in a dataset, specifying the page size.
    *
@@ -1225,7 +1224,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the tables in the dataset. This method returns partial information on each table: ({@link
    * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
    * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
-   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
+   * #getTable}.
    *
    * <p>Example of listing the tables in a dataset.
    *
@@ -1429,8 +1428,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be
-   * checked using either {@link #getJob(JobId, JobOption...)} or {@link #getJob(String,
-   * JobOption...)}).
+   * checked by using {@link #getJob}.
    *
    * <p>If the location of the job is not "US" or "EU", {@link #cancel(JobId)} must be used instead.
    *
@@ -1454,8 +1452,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be
-   * checked using either {@link #getJob(JobId, JobOption...)} or {@link #getJob(String,
-   * JobOption...)}).
+   * checked using {@link #getJob}.
    *
    * <p>If the location of the job is not "US" or "EU", the {@code jobId} must specify the job
    * location.
