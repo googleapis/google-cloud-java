@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -57,7 +58,8 @@ final class ReadTimeTransaction extends Transaction {
   public ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef) {
     TraceUtil.Span span =
         getTraceUtil()
-            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENT, transactionTraceContext);
+            .startSpan(
+                TelemetryConstants.METHOD_NAME_TRANSACTION_GET_DOCUMENT, transactionTraceContext);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       ApiFuture<DocumentSnapshot> result =
           ApiFutures.transform(
@@ -79,7 +81,8 @@ final class ReadTimeTransaction extends Transaction {
       @Nonnull DocumentReference... documentReferences) {
     TraceUtil.Span span =
         getTraceUtil()
-            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+            .startSpan(
+                TelemetryConstants.METHOD_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       ApiFuture<List<DocumentSnapshot>> result =
           firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
@@ -97,7 +100,8 @@ final class ReadTimeTransaction extends Transaction {
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
     TraceUtil.Span span =
         getTraceUtil()
-            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+            .startSpan(
+                TelemetryConstants.METHOD_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       ApiFuture<List<DocumentSnapshot>> result =
           firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);

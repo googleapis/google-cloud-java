@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
@@ -155,6 +156,11 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         firestoreBuilder.runQuerySettings().setRetrySettings(retrySettings);
         firestoreBuilder.runAggregationQuerySettings().setRetrySettings(retrySettings);
         firestoreBuilder.batchGetDocumentsSettings().setRetrySettings(retrySettings);
+      }
+
+      ApiTracerFactory apiTracerFactory = options.getApiTracerFactory();
+      if (apiTracerFactory != null) {
+        firestoreBuilder.setTracerFactory(apiTracerFactory);
       }
 
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());

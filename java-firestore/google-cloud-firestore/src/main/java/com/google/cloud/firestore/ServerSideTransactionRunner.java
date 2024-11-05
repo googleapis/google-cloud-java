@@ -26,6 +26,7 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.telemetry.TraceUtil.Span;
@@ -93,7 +94,7 @@ final class ServerSideTransactionRunner<T> {
   }
 
   ApiFuture<T> run() {
-    runTransactionSpan = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_TRANSACTION_RUN);
+    runTransactionSpan = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_TRANSACTION_RUN);
     runTransactionSpan.setAttribute(
         ATTRIBUTE_KEY_TRANSACTION_TYPE, transactionOptions.getType().name());
     runTransactionSpan.setAttribute(
@@ -119,7 +120,8 @@ final class ServerSideTransactionRunner<T> {
 
   ApiFuture<ServerSideTransaction> begin() {
     TraceUtil.Span span =
-        getTraceUtil().startSpan(TraceUtil.SPAN_NAME_TRANSACTION_BEGIN, runTransactionContext);
+        getTraceUtil()
+            .startSpan(TelemetryConstants.METHOD_NAME_TRANSACTION_BEGIN, runTransactionContext);
     try (Scope ignored = span.makeCurrent()) {
       ServerSideTransaction previousTransaction = this.transaction;
       this.transaction = null;

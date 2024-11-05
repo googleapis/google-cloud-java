@@ -24,12 +24,15 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.auth.Credentials;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc;
+import com.google.cloud.firestore.telemetry.CompositeApiTracerFactory;
+import com.google.cloud.firestore.telemetry.MetricsUtil;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.collect.ImmutableMap;
@@ -37,6 +40,7 @@ import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +68,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   private final String emulatorHost;
   private final transient @Nonnull FirestoreOpenTelemetryOptions openTelemetryOptions;
   private final transient @Nonnull com.google.cloud.firestore.telemetry.TraceUtil traceUtil;
+  private final transient @Nonnull com.google.cloud.firestore.telemetry.MetricsUtil metricsUtil;
 
   public static class DefaultFirestoreFactory implements FirestoreFactory {
 
@@ -106,6 +111,23 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     return FirestoreDefaults.INSTANCE.getHost();
   }
 
+  @InternalApi
+  @Override
+  public ApiTracerFactory getApiTracerFactory() {
+    List<ApiTracerFactory> apiTracerFactories = new ArrayList<>();
+    // Prefer any direct ApiTracerFactory that might have been set on the builder.
+    if (super.getApiTracerFactory() != null) {
+      apiTracerFactories.add(super.getApiTracerFactory());
+    }
+    // Add Metrics Tracer factory if built-in metrics are enabled.
+    metricsUtil.addMetricsTracerFactory(apiTracerFactories);
+
+    if (apiTracerFactories.isEmpty()) {
+      return null;
+    }
+    return new CompositeApiTracerFactory(apiTracerFactories);
+  }
+
   public String getDatabaseId() {
     return databaseId;
   }
@@ -125,6 +147,11 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   @Nonnull
   com.google.cloud.firestore.telemetry.TraceUtil getTraceUtil() {
     return traceUtil;
+  }
+
+  @Nonnull
+  com.google.cloud.firestore.telemetry.MetricsUtil getMetricsUtil() {
+    return metricsUtil;
   }
 
   @BetaApi
@@ -324,6 +351,9 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
         builder.databaseId != null
             ? builder.databaseId
             : FirestoreDefaults.INSTANCE.getDatabaseId();
+
+    // Set up the `MetricsUtil` instance after the database ID has been set.
+    this.metricsUtil = MetricsUtil.getInstance(this);
 
     if (builder.channelProvider == null) {
       ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =

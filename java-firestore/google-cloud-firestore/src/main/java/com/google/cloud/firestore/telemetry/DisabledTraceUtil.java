@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
- * A fully disabled (No-op) tracing utility class that does not perform any tracing actions and has
+ * A no-op implementation of {@link MetricsUtil} that does not collect or export any metrics and has
  * near-zero overhead.
  */
 public class DisabledTraceUtil implements TraceUtil {

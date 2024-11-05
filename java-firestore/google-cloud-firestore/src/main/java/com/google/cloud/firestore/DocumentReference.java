@@ -21,6 +21,9 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.cloud.firestore.telemetry.MetricsUtil;
+import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
+import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreClient.ListCollectionIdsPagedResponse;
@@ -139,6 +142,11 @@ public class DocumentReference {
     return getFirestore().getOptions().getTraceUtil();
   }
 
+  @Nonnull
+  private MetricsUtil getMetricsUtil() {
+    return getFirestore().getOptions().getMetricsUtil();
+  }
+
   /**
    * Creates a new Document at the DocumentReference's Location. It fails the write if the document
    * exists.
@@ -148,14 +156,20 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> create(@Nonnull Map<String, Object> fields) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_CREATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
+
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.create(this, fields).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -169,14 +183,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> create(@Nonnull Object pojo) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_CREATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.create(this, pojo).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -190,14 +209,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Map<String, Object> fields) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_SET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, fields).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -214,14 +238,19 @@ public class DocumentReference {
   @Nonnull
   public ApiFuture<WriteResult> set(
       @Nonnull Map<String, Object> fields, @Nonnull SetOptions options) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_SET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, fields, options).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -235,14 +264,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Object pojo) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_SET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, pojo).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -258,14 +292,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Object pojo, @Nonnull SetOptions options) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_SET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, pojo, options).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -279,14 +318,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.update(this, fields).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -301,15 +345,20 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields, Precondition options) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
           extractFirst(writeBatch.update(this, fields, options).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -326,15 +375,20 @@ public class DocumentReference {
   @Nonnull
   public ApiFuture<WriteResult> update(
       @Nonnull String field, @Nullable Object value, Object... moreFieldsAndValues) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
           extractFirst(writeBatch.update(this, field, value, moreFieldsAndValues).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -351,15 +405,20 @@ public class DocumentReference {
   @Nonnull
   public ApiFuture<WriteResult> update(
       @Nonnull FieldPath fieldPath, @Nullable Object value, Object... moreFieldsAndValues) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
           extractFirst(writeBatch.update(this, fieldPath, value, moreFieldsAndValues).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -380,16 +439,21 @@ public class DocumentReference {
       @Nonnull String field,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
           extractFirst(
               writeBatch.update(this, options, field, value, moreFieldsAndValues).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -410,16 +474,21 @@ public class DocumentReference {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_UPDATE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
           extractFirst(
               writeBatch.update(this, options, fieldPath, value, moreFieldsAndValues).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -432,14 +501,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> delete(@Nonnull Precondition options) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_DELETE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.delete(this, options).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -451,14 +525,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> delete() {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_DELETE);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
+
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result = extractFirst(writeBatch.delete(this).commit());
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -472,13 +551,18 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<DocumentSnapshot> get() {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_GET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
+
     try (Scope ignored = span.makeCurrent()) {
       ApiFuture<DocumentSnapshot> result = extractFirst(rpcContext.getFirestore().getAll(this));
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -493,14 +577,19 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<DocumentSnapshot> get(FieldMask fieldMask) {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_GET);
+    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
+    MetricsContext metricsContext =
+        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
+
     try (Scope ignored = span.makeCurrent()) {
       ApiFuture<DocumentSnapshot> result =
           extractFirst(rpcContext.getFirestore().getAll(new DocumentReference[] {this}, fieldMask));
       span.endAtFuture(result);
+      metricsContext.recordEndToEndLatencyAtFuture(result);
       return result;
     } catch (Exception error) {
       span.end(error);
+      metricsContext.recordEndToEndLatency(error);
       throw error;
     }
   }
@@ -513,7 +602,12 @@ public class DocumentReference {
    */
   @Nonnull
   public Iterable<CollectionReference> listCollections() {
-    TraceUtil.Span span = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_DOC_REF_LIST_COLLECTIONS);
+    TraceUtil.Span span =
+        getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_LIST_COLLECTIONS);
+    MetricsContext metricsContext =
+        getMetricsUtil()
+            .createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_LIST_COLLECTIONS);
+
     try (Scope ignored = span.makeCurrent()) {
       ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
       request.setParent(path.toString());
@@ -547,9 +641,11 @@ public class DocumentReference {
             }
           };
       span.end();
+      metricsContext.recordEndToEndLatency();
       return result;
     } catch (ApiException exception) {
       span.end(exception);
+      metricsContext.recordEndToEndLatency(exception);
       throw FirestoreException.forApiException(exception);
     }
   }

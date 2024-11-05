@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalExtensionOnly;
+import com.google.cloud.firestore.telemetry.MetricsUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Context;
 import java.util.List;
@@ -47,6 +48,12 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   @Nonnull
   TraceUtil getTraceUtil() {
     return firestore.getOptions().getTraceUtil();
+  }
+
+  // TODO(Metrics): implement transaction latency and attempt count metrics
+  @Nonnull
+  MetricsUtil getMetricsUtil() {
+    return firestore.getOptions().getMetricsUtil();
   }
 
   @Nonnull
