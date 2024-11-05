@@ -273,6 +273,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * IDPF
+     * </pre>
+     *
+     * <code>IDPF = 2242641;</code>
+     */
+    IDPF(2242641),
+    /**
+     *
+     *
+     * <pre>
      * No type specified.
      * </pre>
      *
@@ -312,6 +322,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>GVNIC = 68209305;</code>
      */
     public static final int GVNIC_VALUE = 68209305;
+    /**
+     *
+     *
+     * <pre>
+     * IDPF
+     * </pre>
+     *
+     * <code>IDPF = 2242641;</code>
+     */
+    public static final int IDPF_VALUE = 2242641;
     /**
      *
      *
@@ -361,6 +381,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_NIC_TYPE;
         case 68209305:
           return GVNIC;
+        case 2242641:
+          return IDPF;
         case 67411801:
           return UNSPECIFIED_NIC_TYPE;
         case 452123481:
@@ -452,12 +474,22 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network interface will be assigned IPv4 address.
+     * The network interface will only be assigned IPv4 addresses.
      * </pre>
      *
      * <code>IPV4_ONLY = 22373798;</code>
      */
     IPV4_ONLY(22373798),
+    /**
+     *
+     *
+     * <pre>
+     * The network interface will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    IPV6_ONLY(79632100),
     /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
     UNSPECIFIED_STACK_TYPE(298084569),
     UNRECOGNIZED(-1),
@@ -487,12 +519,22 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network interface will be assigned IPv4 address.
+     * The network interface will only be assigned IPv4 addresses.
      * </pre>
      *
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+    /**
+     *
+     *
+     * <pre>
+     * The network interface will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    public static final int IPV6_ONLY_VALUE = 79632100;
     /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
     public static final int UNSPECIFIED_STACK_TYPE_VALUE = 298084569;
 
@@ -526,6 +568,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return IPV4_IPV6;
         case 22373798:
           return IPV4_ONLY;
+        case 79632100:
+          return IPV6_ONLY;
         case 298084569:
           return UNSPECIFIED_STACK_TYPE;
         default:

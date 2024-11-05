@@ -28,7 +28,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
+   * The Action to perform when the client connection triggers the rule. Valid actions for firewall rules are: "allow", "deny", "apply_security_profile_group" and "goto_next". Valid actions for packet mirroring rules are: "mirror", "do_not_mirror" and "goto_next".
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -40,7 +40,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
+   * The Action to perform when the client connection triggers the rule. Valid actions for firewall rules are: "allow", "deny", "apply_security_profile_group" and "goto_next". Valid actions for packet mirroring rules are: "mirror", "do_not_mirror" and "goto_next".
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -52,7 +52,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
+   * The Action to perform when the client connection triggers the rule. Valid actions for firewall rules are: "allow", "deny", "apply_security_profile_group" and "goto_next". Valid actions for packet mirroring rules are: "mirror", "do_not_mirror" and "goto_next".
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -192,7 +192,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
+   * [Output only] Type of the resource. Returns compute#firewallPolicyRule for firewall rules and compute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -204,7 +204,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
+   * [Output only] Type of the resource. Returns compute#firewallPolicyRule for firewall rules and compute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -216,7 +216,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
+   * [Output only] Type of the resource. Returns compute#firewallPolicyRule for firewall rules and compute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -264,7 +264,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -276,7 +276,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -351,7 +351,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action is one of 'apply_security_profile_group' or 'mirror'. Cannot be specified for other actions.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -363,7 +363,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action is one of 'apply_security_profile_group' or 'mirror'. Cannot be specified for other actions.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -375,7 +375,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action = 'apply_security_profile_group' and cannot be specified for other actions.
+   * A fully-qualified URL of a SecurityProfile resource instance. Example: https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group Must be specified if action is one of 'apply_security_profile_group' or 'mirror'. Cannot be specified for other actions.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>

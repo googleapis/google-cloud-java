@@ -25,18 +25,36 @@ public interface BackendServiceUsedByOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return Whether the reference field is set.
    */
   boolean hasReference();
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return The reference.
    */
   java.lang.String getReference();
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return The bytes for reference.

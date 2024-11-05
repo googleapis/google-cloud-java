@@ -23,247 +23,85 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This is deprecated and has no effect. Do not use.
  * </pre>
  *
- * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
+ * Protobuf type {@code google.cloud.compute.v1.BackendBucketUsedBy}
  */
-public final class LogConfigDataAccessOptions extends com.google.protobuf.GeneratedMessageV3
+public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LogConfigDataAccessOptions)
-    LogConfigDataAccessOptionsOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendBucketUsedBy)
+    BackendBucketUsedByOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use LogConfigDataAccessOptions.newBuilder() to construct.
-  private LogConfigDataAccessOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BackendBucketUsedBy.newBuilder() to construct.
+  private BackendBucketUsedBy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private LogConfigDataAccessOptions() {
-    logMode_ = "";
+  private BackendBucketUsedBy() {
+    reference_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new LogConfigDataAccessOptions();
+    return new BackendBucketUsedBy();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_LogConfigDataAccessOptions_descriptor;
+        .internal_static_google_cloud_compute_v1_BackendBucketUsedBy_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_LogConfigDataAccessOptions_fieldAccessorTable
+        .internal_static_google_cloud_compute_v1_BackendBucketUsedBy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.compute.v1.LogConfigDataAccessOptions.class,
-            com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder.class);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode}
-   */
-  public enum LogMode implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * A value indicating that the enum field is not set.
-     * </pre>
-     *
-     * <code>UNDEFINED_LOG_MODE = 0;</code>
-     */
-    UNDEFINED_LOG_MODE(0),
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>LOG_FAIL_CLOSED = 360469778;</code>
-     */
-    LOG_FAIL_CLOSED(360469778),
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
-     */
-    LOG_MODE_UNSPECIFIED(88160822),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * A value indicating that the enum field is not set.
-     * </pre>
-     *
-     * <code>UNDEFINED_LOG_MODE = 0;</code>
-     */
-    public static final int UNDEFINED_LOG_MODE_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>LOG_FAIL_CLOSED = 360469778;</code>
-     */
-    public static final int LOG_FAIL_CLOSED_VALUE = 360469778;
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
-     */
-    public static final int LOG_MODE_UNSPECIFIED_VALUE = 88160822;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static LogMode valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static LogMode forNumber(int value) {
-      switch (value) {
-        case 0:
-          return UNDEFINED_LOG_MODE;
-        case 360469778:
-          return LOG_FAIL_CLOSED;
-        case 88160822:
-          return LOG_MODE_UNSPECIFIED;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<LogMode> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<LogMode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<LogMode>() {
-          public LogMode findValueByNumber(int number) {
-            return LogMode.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDescriptor()
-          .getEnumTypes()
-          .get(0);
-    }
-
-    private static final LogMode[] VALUES = values();
-
-    public static LogMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private LogMode(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode)
+            com.google.cloud.compute.v1.BackendBucketUsedBy.class,
+            com.google.cloud.compute.v1.BackendBucketUsedBy.Builder.class);
   }
 
   private int bitField0_;
-  public static final int LOG_MODE_FIELD_NUMBER = 402897342;
+  public static final int REFERENCE_FIELD_NUMBER = 148586315;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object logMode_ = "";
+  private volatile java.lang.Object reference_ = "";
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return Whether the logMode field is set.
+   * @return Whether the reference field is set.
    */
   @java.lang.Override
-  public boolean hasLogMode() {
+  public boolean hasReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return The logMode.
+   * @return The reference.
    */
   @java.lang.Override
-  public java.lang.String getLogMode() {
-    java.lang.Object ref = logMode_;
+  public java.lang.String getReference() {
+    java.lang.Object ref = reference_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      logMode_ = s;
+      reference_ = s;
       return s;
     }
   }
@@ -271,21 +109,20 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return The bytes for logMode.
+   * @return The bytes for reference.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getLogModeBytes() {
-    java.lang.Object ref = logMode_;
+  public com.google.protobuf.ByteString getReferenceBytes() {
+    java.lang.Object ref = reference_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      logMode_ = b;
+      reference_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,7 +144,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 402897342, logMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 148586315, reference_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -319,7 +156,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(402897342, logMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148586315, reference_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -331,15 +168,15 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.compute.v1.LogConfigDataAccessOptions)) {
+    if (!(obj instanceof com.google.cloud.compute.v1.BackendBucketUsedBy)) {
       return super.equals(obj);
     }
-    com.google.cloud.compute.v1.LogConfigDataAccessOptions other =
-        (com.google.cloud.compute.v1.LogConfigDataAccessOptions) obj;
+    com.google.cloud.compute.v1.BackendBucketUsedBy other =
+        (com.google.cloud.compute.v1.BackendBucketUsedBy) obj;
 
-    if (hasLogMode() != other.hasLogMode()) return false;
-    if (hasLogMode()) {
-      if (!getLogMode().equals(other.getLogMode())) return false;
+    if (hasReference() != other.hasReference()) return false;
+    if (hasReference()) {
+      if (!getReference().equals(other.getReference())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -352,80 +189,80 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasLogMode()) {
-      hash = (37 * hash) + LOG_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getLogMode().hashCode();
+    if (hasReference()) {
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getReference().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(byte[] data)
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions parseFrom(
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -442,8 +279,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.cloud.compute.v1.LogConfigDataAccessOptions prototype) {
+  public static Builder newBuilder(com.google.cloud.compute.v1.BackendBucketUsedBy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -461,31 +297,30 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
+   * Protobuf type {@code google.cloud.compute.v1.BackendBucketUsedBy}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.LogConfigDataAccessOptions)
-      com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.BackendBucketUsedBy)
+      com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigDataAccessOptions_descriptor;
+          .internal_static_google_cloud_compute_v1_BackendBucketUsedBy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigDataAccessOptions_fieldAccessorTable
+          .internal_static_google_cloud_compute_v1_BackendBucketUsedBy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.compute.v1.LogConfigDataAccessOptions.class,
-              com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder.class);
+              com.google.cloud.compute.v1.BackendBucketUsedBy.class,
+              com.google.cloud.compute.v1.BackendBucketUsedBy.Builder.class);
     }
 
-    // Construct using com.google.cloud.compute.v1.LogConfigDataAccessOptions.newBuilder()
+    // Construct using com.google.cloud.compute.v1.BackendBucketUsedBy.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -496,24 +331,24 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      logMode_ = "";
+      reference_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigDataAccessOptions_descriptor;
+          .internal_static_google_cloud_compute_v1_BackendBucketUsedBy_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigDataAccessOptions getDefaultInstanceForType() {
-      return com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDefaultInstance();
+    public com.google.cloud.compute.v1.BackendBucketUsedBy getDefaultInstanceForType() {
+      return com.google.cloud.compute.v1.BackendBucketUsedBy.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigDataAccessOptions build() {
-      com.google.cloud.compute.v1.LogConfigDataAccessOptions result = buildPartial();
+    public com.google.cloud.compute.v1.BackendBucketUsedBy build() {
+      com.google.cloud.compute.v1.BackendBucketUsedBy result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -521,9 +356,9 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigDataAccessOptions buildPartial() {
-      com.google.cloud.compute.v1.LogConfigDataAccessOptions result =
-          new com.google.cloud.compute.v1.LogConfigDataAccessOptions(this);
+    public com.google.cloud.compute.v1.BackendBucketUsedBy buildPartial() {
+      com.google.cloud.compute.v1.BackendBucketUsedBy result =
+          new com.google.cloud.compute.v1.BackendBucketUsedBy(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -531,11 +366,11 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.compute.v1.LogConfigDataAccessOptions result) {
+    private void buildPartial0(com.google.cloud.compute.v1.BackendBucketUsedBy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.logMode_ = logMode_;
+        result.reference_ = reference_;
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
@@ -576,19 +411,19 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.compute.v1.LogConfigDataAccessOptions) {
-        return mergeFrom((com.google.cloud.compute.v1.LogConfigDataAccessOptions) other);
+      if (other instanceof com.google.cloud.compute.v1.BackendBucketUsedBy) {
+        return mergeFrom((com.google.cloud.compute.v1.BackendBucketUsedBy) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.compute.v1.LogConfigDataAccessOptions other) {
-      if (other == com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.compute.v1.BackendBucketUsedBy other) {
+      if (other == com.google.cloud.compute.v1.BackendBucketUsedBy.getDefaultInstance())
         return this;
-      if (other.hasLogMode()) {
-        logMode_ = other.logMode_;
+      if (other.hasReference()) {
+        reference_ = other.reference_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -618,12 +453,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
             case 0:
               done = true;
               break;
-            case -1071788558:
+            case 1188690522:
               {
-                logMode_ = input.readStringRequireUtf8();
+                reference_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case -1071788558
+              } // case 1188690522
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -643,40 +478,38 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     private int bitField0_;
 
-    private java.lang.Object logMode_ = "";
+    private java.lang.Object reference_ = "";
     /**
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
-     * @return Whether the logMode field is set.
+     * @return Whether the reference field is set.
      */
-    public boolean hasLogMode() {
+    public boolean hasReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
-     * @return The logMode.
+     * @return The reference.
      */
-    public java.lang.String getLogMode() {
-      java.lang.Object ref = logMode_;
+    public java.lang.String getReference() {
+      java.lang.Object ref = reference_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        logMode_ = s;
+        reference_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -686,20 +519,19 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
-     * @return The bytes for logMode.
+     * @return The bytes for reference.
      */
-    public com.google.protobuf.ByteString getLogModeBytes() {
-      java.lang.Object ref = logMode_;
+    public com.google.protobuf.ByteString getReferenceBytes() {
+      java.lang.Object ref = reference_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        logMode_ = b;
+        reference_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -709,20 +541,19 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
-     * @param value The logMode to set.
+     * @param value The reference to set.
      * @return This builder for chaining.
      */
-    public Builder setLogMode(java.lang.String value) {
+    public Builder setReference(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      logMode_ = value;
+      reference_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -731,16 +562,15 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearLogMode() {
-      logMode_ = getDefaultInstance().getLogMode();
+    public Builder clearReference() {
+      reference_ = getDefaultInstance().getReference();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -749,21 +579,20 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * Check the LogMode enum for the list of possible values.
+     * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
      * </pre>
      *
-     * <code>optional string log_mode = 402897342;</code>
+     * <code>optional string reference = 148586315;</code>
      *
-     * @param value The bytes for logMode to set.
+     * @param value The bytes for reference to set.
      * @return This builder for chaining.
      */
-    public Builder setLogModeBytes(com.google.protobuf.ByteString value) {
+    public Builder setReferenceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      logMode_ = value;
+      reference_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -780,24 +609,24 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.LogConfigDataAccessOptions)
+    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.BackendBucketUsedBy)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.LogConfigDataAccessOptions)
-  private static final com.google.cloud.compute.v1.LogConfigDataAccessOptions DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.BackendBucketUsedBy)
+  private static final com.google.cloud.compute.v1.BackendBucketUsedBy DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.LogConfigDataAccessOptions();
+    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.BackendBucketUsedBy();
   }
 
-  public static com.google.cloud.compute.v1.LogConfigDataAccessOptions getDefaultInstance() {
+  public static com.google.cloud.compute.v1.BackendBucketUsedBy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogConfigDataAccessOptions> PARSER =
-      new com.google.protobuf.AbstractParser<LogConfigDataAccessOptions>() {
+  private static final com.google.protobuf.Parser<BackendBucketUsedBy> PARSER =
+      new com.google.protobuf.AbstractParser<BackendBucketUsedBy>() {
         @java.lang.Override
-        public LogConfigDataAccessOptions parsePartialFrom(
+        public BackendBucketUsedBy parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -816,17 +645,17 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
         }
       };
 
-  public static com.google.protobuf.Parser<LogConfigDataAccessOptions> parser() {
+  public static com.google.protobuf.Parser<BackendBucketUsedBy> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LogConfigDataAccessOptions> getParserForType() {
+  public com.google.protobuf.Parser<BackendBucketUsedBy> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.compute.v1.LogConfigDataAccessOptions getDefaultInstanceForType() {
+  public com.google.cloud.compute.v1.BackendBucketUsedBy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

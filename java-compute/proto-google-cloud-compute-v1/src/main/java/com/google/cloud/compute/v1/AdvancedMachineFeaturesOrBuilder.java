@@ -78,6 +78,46 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return Whether the performanceMonitoringUnit field is set.
+   */
+  boolean hasPerformanceMonitoringUnit();
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return The performanceMonitoringUnit.
+   */
+  java.lang.String getPerformanceMonitoringUnit();
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return The bytes for performanceMonitoringUnit.
+   */
+  com.google.protobuf.ByteString getPerformanceMonitoringUnitBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
    * </pre>
    *
@@ -98,6 +138,43 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return The threadsPerCore.
    */
   int getThreadsPerCore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return Whether the turboMode field is set.
+   */
+  boolean hasTurboMode();
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return The turboMode.
+   */
+  java.lang.String getTurboMode();
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return The bytes for turboMode.
+   */
+  com.google.protobuf.ByteString getTurboModeBytes();
 
   /**
    *

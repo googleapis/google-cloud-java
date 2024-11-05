@@ -91,7 +91,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -103,7 +103,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -115,7 +115,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>

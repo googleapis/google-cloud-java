@@ -19,48 +19,45 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.compute.v1;
 
-public interface LogConfigDataAccessOptionsOrBuilder
+public interface BackendBucketUsedByOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.LogConfigDataAccessOptions)
+    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.BackendBucketUsedBy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return Whether the logMode field is set.
+   * @return Whether the reference field is set.
    */
-  boolean hasLogMode();
+  boolean hasReference();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return The logMode.
+   * @return The reference.
    */
-  java.lang.String getLogMode();
+  java.lang.String getReference();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the LogMode enum for the list of possible values.
+   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
    * </pre>
    *
-   * <code>optional string log_mode = 402897342;</code>
+   * <code>optional string reference = 148586315;</code>
    *
-   * @return The bytes for logMode.
+   * @return The bytes for reference.
    */
-  com.google.protobuf.ByteString getLogModeBytes();
+  com.google.protobuf.ByteString getReferenceBytes();
 }

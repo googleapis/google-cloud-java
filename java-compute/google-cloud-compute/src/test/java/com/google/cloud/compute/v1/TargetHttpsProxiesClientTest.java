@@ -226,6 +226,7 @@ public class TargetHttpsProxiesClientTest {
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllSslCertificates(new ArrayList<String>())
             .setSslPolicy("sslPolicy618174046")
+            .setTlsEarlyData("tlsEarlyData-1437115662")
             .setUrlMap("urlMap-836780691")
             .build();
     mockService.addResponse(expectedResponse);

@@ -990,7 +990,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -1005,7 +1005,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -1028,7 +1028,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -4669,7 +4669,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4683,7 +4683,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4705,7 +4705,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4727,7 +4727,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4748,7 +4748,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4765,7 +4765,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties.
+     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>

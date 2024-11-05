@@ -19,16 +19,16 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.compute.v1;
 
-public interface LogConfigCounterOptionsCustomFieldOrBuilder
+public interface BackendServiceHttpCookieOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.LogConfigCounterOptionsCustomField)
+    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.BackendServiceHttpCookie)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -40,7 +40,7 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -52,7 +52,7 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -65,36 +65,71 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return Whether the value field is set.
+   * @return Whether the path field is set.
    */
-  boolean hasValue();
+  boolean hasPath();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return The value.
+   * @return The path.
    */
-  java.lang.String getValue();
+  java.lang.String getPath();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return The bytes for value.
+   * @return The bytes for path.
    */
-  com.google.protobuf.ByteString getValueBytes();
+  com.google.protobuf.ByteString getPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  boolean hasTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   *
+   * @return The ttl.
+   */
+  com.google.cloud.compute.v1.Duration getTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder();
 }

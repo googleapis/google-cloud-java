@@ -19,48 +19,45 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.compute.v1;
 
-public interface AuthorizationLoggingOptionsOrBuilder
+public interface ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.AuthorizationLoggingOptions)
+    // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the PermissionType enum for the list of possible values.
+   * The machine type to be used for this instance.
    * </pre>
    *
-   * <code>optional string permission_type = 525978538;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
-   * @return Whether the permissionType field is set.
+   * @return Whether the machineType field is set.
    */
-  boolean hasPermissionType();
+  boolean hasMachineType();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the PermissionType enum for the list of possible values.
+   * The machine type to be used for this instance.
    * </pre>
    *
-   * <code>optional string permission_type = 525978538;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
-   * @return The permissionType.
+   * @return The machineType.
    */
-  java.lang.String getPermissionType();
+  java.lang.String getMachineType();
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * Check the PermissionType enum for the list of possible values.
+   * The machine type to be used for this instance.
    * </pre>
    *
-   * <code>optional string permission_type = 525978538;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
-   * @return The bytes for permissionType.
+   * @return The bytes for machineType.
    */
-  com.google.protobuf.ByteString getPermissionTypeBytes();
+  com.google.protobuf.ByteString getMachineTypeBytes();
 }

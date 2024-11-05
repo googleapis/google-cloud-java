@@ -892,6 +892,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_ONLY = 22373798;</code>
      */
     IPV4_ONLY(22373798),
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    IPV6_ONLY(79632100),
     /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
     UNSPECIFIED_STACK_TYPE(298084569),
     UNRECOGNIZED(-1),
@@ -927,6 +937,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    public static final int IPV6_ONLY_VALUE = 79632100;
     /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
     public static final int UNSPECIFIED_STACK_TYPE_VALUE = 298084569;
 
@@ -960,6 +980,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           return IPV4_IPV6;
         case 22373798:
           return IPV4_ONLY;
+        case 79632100:
+          return IPV6_ONLY;
         case 298084569:
           return UNSPECIFIED_STACK_TYPE;
         default:
@@ -1577,7 +1599,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -1592,7 +1614,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -1615,7 +1637,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4611,7 +4633,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4625,7 +4647,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4647,7 +4669,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4669,7 +4691,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4690,7 +4712,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -4707,7 +4729,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+     * The internal IPv6 address range that is owned by this subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>

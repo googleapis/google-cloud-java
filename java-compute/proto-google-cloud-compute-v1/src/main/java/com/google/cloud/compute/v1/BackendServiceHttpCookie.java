@@ -23,46 +23,45 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This is deprecated and has no effect. Do not use.
+ * The HTTP cookie used for stateful session affinity.
  * </pre>
  *
- * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptionsCustomField}
+ * Protobuf type {@code google.cloud.compute.v1.BackendServiceHttpCookie}
  */
-public final class LogConfigCounterOptionsCustomField extends com.google.protobuf.GeneratedMessageV3
+public final class BackendServiceHttpCookie extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LogConfigCounterOptionsCustomField)
-    LogConfigCounterOptionsCustomFieldOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceHttpCookie)
+    BackendServiceHttpCookieOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use LogConfigCounterOptionsCustomField.newBuilder() to construct.
-  private LogConfigCounterOptionsCustomField(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BackendServiceHttpCookie.newBuilder() to construct.
+  private BackendServiceHttpCookie(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private LogConfigCounterOptionsCustomField() {
+  private BackendServiceHttpCookie() {
     name_ = "";
-    value_ = "";
+    path_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new LogConfigCounterOptionsCustomField();
+    return new BackendServiceHttpCookie();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_LogConfigCounterOptionsCustomField_descriptor;
+        .internal_static_google_cloud_compute_v1_BackendServiceHttpCookie_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_LogConfigCounterOptionsCustomField_fieldAccessorTable
+        .internal_static_google_cloud_compute_v1_BackendServiceHttpCookie_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.class,
-            com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.Builder.class);
+            com.google.cloud.compute.v1.BackendServiceHttpCookie.class,
+            com.google.cloud.compute.v1.BackendServiceHttpCookie.Builder.class);
   }
 
   private int bitField0_;
@@ -74,7 +73,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -89,7 +88,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -112,7 +111,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Name of the cookie.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -132,45 +131,45 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     }
   }
 
-  public static final int VALUE_FIELD_NUMBER = 111972721;
+  public static final int PATH_FIELD_NUMBER = 3433509;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object value_ = "";
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return Whether the value field is set.
+   * @return Whether the path field is set.
    */
   @java.lang.Override
-  public boolean hasValue() {
+  public boolean hasPath() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return The value.
+   * @return The path.
    */
   @java.lang.Override
-  public java.lang.String getValue() {
-    java.lang.Object ref = value_;
+  public java.lang.String getPath() {
+    java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      value_ = s;
+      path_ = s;
       return s;
     }
   }
@@ -178,24 +177,70 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * Path to set for the cookie.
    * </pre>
    *
-   * <code>optional string value = 111972721;</code>
+   * <code>optional string path = 3433509;</code>
    *
-   * @return The bytes for value.
+   * @return The bytes for path.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getValueBytes() {
-    java.lang.Object ref = value_;
+  public com.google.protobuf.ByteString getPathBytes() {
+    java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      value_ = b;
+      path_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TTL_FIELD_NUMBER = 115180;
+  private com.google.cloud.compute.v1.Duration ttl_;
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtl() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   *
+   * @return The ttl.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getTtl() {
+    return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of the cookie.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder() {
+    return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -212,11 +257,14 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(115180, getTtl());
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 111972721, value_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -227,11 +275,14 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(115180, getTtl());
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111972721, value_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -243,19 +294,23 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField)) {
+    if (!(obj instanceof com.google.cloud.compute.v1.BackendServiceHttpCookie)) {
       return super.equals(obj);
     }
-    com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField other =
-        (com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField) obj;
+    com.google.cloud.compute.v1.BackendServiceHttpCookie other =
+        (com.google.cloud.compute.v1.BackendServiceHttpCookie) obj;
 
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
-    if (hasValue() != other.hasValue()) return false;
-    if (hasValue()) {
-      if (!getValue().equals(other.getValue())) return false;
+    if (hasPath() != other.hasPath()) return false;
+    if (hasPath()) {
+      if (!getPath().equals(other.getPath())) return false;
+    }
+    if (hasTtl() != other.hasTtl()) return false;
+    if (hasTtl()) {
+      if (!getTtl().equals(other.getTtl())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -272,80 +327,84 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
-    if (hasValue()) {
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+    if (hasPath()) {
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+    }
+    if (hasTtl()) {
+      hash = (37 * hash) + TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getTtl().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
-      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField parseFrom(
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -362,8 +421,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField prototype) {
+  public static Builder newBuilder(com.google.cloud.compute.v1.BackendServiceHttpCookie prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -381,35 +439,44 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * This is deprecated and has no effect. Do not use.
+   * The HTTP cookie used for stateful session affinity.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptionsCustomField}
+   * Protobuf type {@code google.cloud.compute.v1.BackendServiceHttpCookie}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.LogConfigCounterOptionsCustomField)
-      com.google.cloud.compute.v1.LogConfigCounterOptionsCustomFieldOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.BackendServiceHttpCookie)
+      com.google.cloud.compute.v1.BackendServiceHttpCookieOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigCounterOptionsCustomField_descriptor;
+          .internal_static_google_cloud_compute_v1_BackendServiceHttpCookie_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigCounterOptionsCustomField_fieldAccessorTable
+          .internal_static_google_cloud_compute_v1_BackendServiceHttpCookie_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.class,
-              com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.Builder.class);
+              com.google.cloud.compute.v1.BackendServiceHttpCookie.class,
+              com.google.cloud.compute.v1.BackendServiceHttpCookie.Builder.class);
     }
 
-    // Construct using com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.newBuilder()
-    private Builder() {}
+    // Construct using com.google.cloud.compute.v1.BackendServiceHttpCookie.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTtlFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -417,25 +484,29 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      value_ = "";
+      path_ = "";
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
+        ttlBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_LogConfigCounterOptionsCustomField_descriptor;
+          .internal_static_google_cloud_compute_v1_BackendServiceHttpCookie_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField
-        getDefaultInstanceForType() {
-      return com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.getDefaultInstance();
+    public com.google.cloud.compute.v1.BackendServiceHttpCookie getDefaultInstanceForType() {
+      return com.google.cloud.compute.v1.BackendServiceHttpCookie.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField build() {
-      com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField result = buildPartial();
+    public com.google.cloud.compute.v1.BackendServiceHttpCookie build() {
+      com.google.cloud.compute.v1.BackendServiceHttpCookie result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -443,9 +514,9 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField buildPartial() {
-      com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField result =
-          new com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField(this);
+    public com.google.cloud.compute.v1.BackendServiceHttpCookie buildPartial() {
+      com.google.cloud.compute.v1.BackendServiceHttpCookie result =
+          new com.google.cloud.compute.v1.BackendServiceHttpCookie(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -453,8 +524,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       return result;
     }
 
-    private void buildPartial0(
-        com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField result) {
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceHttpCookie result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -462,8 +532,12 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.value_ = value_;
+        result.path_ = path_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ttl_ = ttlBuilder_ == null ? ttl_ : ttlBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -503,27 +577,29 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField) {
-        return mergeFrom((com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField) other);
+      if (other instanceof com.google.cloud.compute.v1.BackendServiceHttpCookie) {
+        return mergeFrom((com.google.cloud.compute.v1.BackendServiceHttpCookie) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField other) {
-      if (other
-          == com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.compute.v1.BackendServiceHttpCookie other) {
+      if (other == com.google.cloud.compute.v1.BackendServiceHttpCookie.getDefaultInstance())
         return this;
       if (other.hasName()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.hasValue()) {
-        value_ = other.value_;
+      if (other.hasPath()) {
+        path_ = other.path_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasTtl()) {
+        mergeTtl(other.getTtl());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -551,18 +627,24 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
             case 0:
               done = true;
               break;
+            case 921442:
+              {
+                input.readMessage(getTtlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 921442
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 26989658
-            case 895781770:
+            case 27468074:
               {
-                value_ = input.readStringRequireUtf8();
+                path_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 895781770
+              } // case 27468074
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -587,7 +669,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -601,7 +683,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -623,7 +705,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -645,7 +727,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -666,7 +748,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -683,7 +765,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Name of the cookie.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -702,38 +784,38 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       return this;
     }
 
-    private java.lang.Object value_ = "";
+    private java.lang.Object path_ = "";
     /**
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
-     * @return Whether the value field is set.
+     * @return Whether the path field is set.
      */
-    public boolean hasValue() {
+    public boolean hasPath() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
-     * @return The value.
+     * @return The path.
      */
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        value_ = s;
+        path_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -743,19 +825,19 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
-     * @return The bytes for value.
+     * @return The bytes for path.
      */
-    public com.google.protobuf.ByteString getValueBytes() {
-      java.lang.Object ref = value_;
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        value_ = b;
+        path_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -765,19 +847,19 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
-     * @param value The value to set.
+     * @param value The path to set.
      * @return This builder for chaining.
      */
-    public Builder setValue(java.lang.String value) {
+    public Builder setPath(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      value_ = value;
+      path_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -786,15 +868,15 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearValue() {
-      value_ = getDefaultInstance().getValue();
+    public Builder clearPath() {
+      path_ = getDefaultInstance().getPath();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -803,23 +885,204 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * This is deprecated and has no effect. Do not use.
+     * Path to set for the cookie.
      * </pre>
      *
-     * <code>optional string value = 111972721;</code>
+     * <code>optional string path = 3433509;</code>
      *
-     * @param value The bytes for value to set.
+     * @param value The bytes for path to set.
      * @return This builder for chaining.
      */
-    public Builder setValueBytes(com.google.protobuf.ByteString value) {
+    public Builder setPathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      value_ = value;
+      path_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.Duration ttl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        ttlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     *
+     * @return Whether the ttl field is set.
+     */
+    public boolean hasTtl() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     *
+     * @return The ttl.
+     */
+    public com.google.cloud.compute.v1.Duration getTtl() {
+      if (ttlBuilder_ == null) {
+        return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
+      } else {
+        return ttlBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public Builder setTtl(com.google.cloud.compute.v1.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ttl_ = value;
+      } else {
+        ttlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public Builder setTtl(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (ttlBuilder_ == null) {
+        ttl_ = builderForValue.build();
+      } else {
+        ttlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public Builder mergeTtl(com.google.cloud.compute.v1.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && ttl_ != null
+            && ttl_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          getTtlBuilder().mergeFrom(value);
+        } else {
+          ttl_ = value;
+        }
+      } else {
+        ttlBuilder_.mergeFrom(value);
+      }
+      if (ttl_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public Builder clearTtl() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
+        ttlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getTtlBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder() {
+      if (ttlBuilder_ != null) {
+        return ttlBuilder_.getMessageOrBuilder();
+      } else {
+        return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of the cookie.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getTtlFieldBuilder() {
+      if (ttlBuilder_ == null) {
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getTtl(), getParentForChildren(), isClean());
+        ttl_ = null;
+      }
+      return ttlBuilder_;
     }
 
     @java.lang.Override
@@ -833,26 +1096,24 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.LogConfigCounterOptionsCustomField)
+    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.BackendServiceHttpCookie)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.LogConfigCounterOptionsCustomField)
-  private static final com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField
-      DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.BackendServiceHttpCookie)
+  private static final com.google.cloud.compute.v1.BackendServiceHttpCookie DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField();
+    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.BackendServiceHttpCookie();
   }
 
-  public static com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField
-      getDefaultInstance() {
+  public static com.google.cloud.compute.v1.BackendServiceHttpCookie getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogConfigCounterOptionsCustomField> PARSER =
-      new com.google.protobuf.AbstractParser<LogConfigCounterOptionsCustomField>() {
+  private static final com.google.protobuf.Parser<BackendServiceHttpCookie> PARSER =
+      new com.google.protobuf.AbstractParser<BackendServiceHttpCookie>() {
         @java.lang.Override
-        public LogConfigCounterOptionsCustomField parsePartialFrom(
+        public BackendServiceHttpCookie parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -871,18 +1132,17 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
         }
       };
 
-  public static com.google.protobuf.Parser<LogConfigCounterOptionsCustomField> parser() {
+  public static com.google.protobuf.Parser<BackendServiceHttpCookie> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LogConfigCounterOptionsCustomField> getParserForType() {
+  public com.google.protobuf.Parser<BackendServiceHttpCookie> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField
-      getDefaultInstanceForType() {
+  public com.google.cloud.compute.v1.BackendServiceHttpCookie getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

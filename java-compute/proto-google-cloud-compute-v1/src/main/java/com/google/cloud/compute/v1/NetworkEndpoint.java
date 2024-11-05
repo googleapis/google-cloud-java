@@ -42,6 +42,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     fqdn_ = "";
     instance_ = "";
     ipAddress_ = "";
+    ipv6Address_ = "";
   }
 
   @java.lang.Override
@@ -181,6 +182,39 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     return map.get(key);
   }
 
+  public static final int CLIENT_DESTINATION_PORT_FIELD_NUMBER = 123765766;
+  private int clientDestinationPort_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return Whether the clientDestinationPort field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientDestinationPort() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return The clientDestinationPort.
+   */
+  @java.lang.Override
+  public int getClientDestinationPort() {
+    return clientDestinationPort_;
+  }
+
   public static final int FQDN_FIELD_NUMBER = 3150485;
 
   @SuppressWarnings("serial")
@@ -198,7 +232,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasFqdn() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -264,7 +298,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasInstance() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -330,7 +364,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasIpAddress() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -379,6 +413,72 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int IPV6_ADDRESS_FIELD_NUMBER = 341563804;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6Address_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6Address() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6Address() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6Address_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6AddressBytes() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6Address_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
   /**
@@ -394,7 +494,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasPort() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -426,18 +526,24 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3150485, fqdn_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(3446913, port_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(123765766, clientDestinationPort_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     getUnknownFields().writeTo(output);
@@ -449,13 +555,13 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3150485, fqdn_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -468,7 +574,14 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(112032548, annotations__);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(123765766, clientDestinationPort_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -488,6 +601,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.compute.v1.NetworkEndpoint) obj;
 
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (hasClientDestinationPort() != other.hasClientDestinationPort()) return false;
+    if (hasClientDestinationPort()) {
+      if (getClientDestinationPort() != other.getClientDestinationPort()) return false;
+    }
     if (hasFqdn() != other.hasFqdn()) return false;
     if (hasFqdn()) {
       if (!getFqdn().equals(other.getFqdn())) return false;
@@ -499,6 +616,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasIpv6Address() != other.hasIpv6Address()) return false;
+    if (hasIpv6Address()) {
+      if (!getIpv6Address().equals(other.getIpv6Address())) return false;
     }
     if (hasPort() != other.hasPort()) return false;
     if (hasPort()) {
@@ -519,6 +640,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
+    if (hasClientDestinationPort()) {
+      hash = (37 * hash) + CLIENT_DESTINATION_PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getClientDestinationPort();
+    }
     if (hasFqdn()) {
       hash = (37 * hash) + FQDN_FIELD_NUMBER;
       hash = (53 * hash) + getFqdn().hashCode();
@@ -530,6 +655,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasIpv6Address()) {
+      hash = (37 * hash) + IPV6_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6Address().hashCode();
     }
     if (hasPort()) {
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -697,9 +826,11 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       internalGetMutableAnnotations().clear();
+      clientDestinationPort_ = 0;
       fqdn_ = "";
       instance_ = "";
       ipAddress_ = "";
+      ipv6Address_ = "";
       port_ = 0;
       return this;
     }
@@ -743,20 +874,28 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.fqdn_ = fqdn_;
+        result.clientDestinationPort_ = clientDestinationPort_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.instance_ = instance_;
+        result.fqdn_ = fqdn_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.ipAddress_ = ipAddress_;
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.port_ = port_;
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ipv6Address_ = ipv6Address_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -808,19 +947,27 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance()) return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00000001;
+      if (other.hasClientDestinationPort()) {
+        setClientDestinationPort(other.getClientDestinationPort());
+      }
       if (other.hasFqdn()) {
         fqdn_ = other.fqdn_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInstance()) {
         instance_ = other.instance_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasIpAddress()) {
         ipAddress_ = other.ipAddress_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasIpv6Address()) {
+        ipv6Address_ = other.ipv6Address_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasPort()) {
@@ -855,19 +1002,19 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
             case 25203882:
               {
                 fqdn_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25203882
             case 27575304:
               {
                 port_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 27575304
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 146056362
             case 896260386:
@@ -882,10 +1029,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 896260386
+            case 990126128:
+              {
+                clientDestinationPort_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 990126128
+            case -1562456862:
+              {
+                ipv6Address_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1562456862
             case -1044789534:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1044789534
             default:
@@ -1073,6 +1232,74 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int clientDestinationPort_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * </pre>
+     *
+     * <code>optional int32 client_destination_port = 123765766;</code>
+     *
+     * @return Whether the clientDestinationPort field is set.
+     */
+    @java.lang.Override
+    public boolean hasClientDestinationPort() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * </pre>
+     *
+     * <code>optional int32 client_destination_port = 123765766;</code>
+     *
+     * @return The clientDestinationPort.
+     */
+    @java.lang.Override
+    public int getClientDestinationPort() {
+      return clientDestinationPort_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * </pre>
+     *
+     * <code>optional int32 client_destination_port = 123765766;</code>
+     *
+     * @param value The clientDestinationPort to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientDestinationPort(int value) {
+
+      clientDestinationPort_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * </pre>
+     *
+     * <code>optional int32 client_destination_port = 123765766;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientDestinationPort() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      clientDestinationPort_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object fqdn_ = "";
     /**
      *
@@ -1086,7 +1313,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return Whether the fqdn field is set.
      */
     public boolean hasFqdn() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1149,7 +1376,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       fqdn_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1166,7 +1393,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearFqdn() {
       fqdn_ = getDefaultInstance().getFqdn();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1188,7 +1415,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       fqdn_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1206,7 +1433,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return Whether the instance field is set.
      */
     public boolean hasInstance() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1269,7 +1496,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       instance_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1286,7 +1513,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearInstance() {
       instance_ = getDefaultInstance().getInstance();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1308,7 +1535,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       instance_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1326,7 +1553,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return Whether the ipAddress field is set.
      */
     public boolean hasIpAddress() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1389,7 +1616,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       ipAddress_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1406,7 +1633,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearIpAddress() {
       ipAddress_ = getDefaultInstance().getIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1428,7 +1655,127 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipv6Address_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return Whether the ipv6Address field is set.
+     */
+    public boolean hasIpv6Address() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The ipv6Address.
+     */
+    public java.lang.String getIpv6Address() {
+      java.lang.Object ref = ipv6Address_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6Address_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The bytes for ipv6Address.
+     */
+    public com.google.protobuf.ByteString getIpv6AddressBytes() {
+      java.lang.Object ref = ipv6Address_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6Address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6Address(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6Address() {
+      ipv6Address_ = getDefaultInstance().getIpv6Address();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv6 address of network endpoint.
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The bytes for ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1447,7 +1794,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasPort() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1479,7 +1826,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public Builder setPort(int value) {
 
       port_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1495,7 +1842,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       port_ = 0;
       onChanged();
       return this;

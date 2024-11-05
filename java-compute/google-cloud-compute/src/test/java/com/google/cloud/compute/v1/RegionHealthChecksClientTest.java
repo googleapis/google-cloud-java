@@ -170,6 +170,7 @@ public class RegionHealthChecksClientTest {
             .setName("name3373707")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .addAllSourceRegions(new ArrayList<String>())
             .setSslHealthCheck(SSLHealthCheck.newBuilder().build())
             .setTcpHealthCheck(TCPHealthCheck.newBuilder().build())
             .setTimeoutSec(-2067488653)

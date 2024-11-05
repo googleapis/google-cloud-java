@@ -28,7 +28,7 @@ public interface DeleteGlobalOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to delete.
+   * Name of the Operations resource to delete, or its unique numeric identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +40,7 @@ public interface DeleteGlobalOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to delete.
+   * Name of the Operations resource to delete, or its unique numeric identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
