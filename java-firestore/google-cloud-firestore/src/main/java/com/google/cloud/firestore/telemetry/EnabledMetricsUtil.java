@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.FirestoreOptions;
+import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
 import com.google.cloud.opentelemetry.metric.GoogleCloudMetricExporter;
 import com.google.cloud.opentelemetry.metric.MetricConfiguration;
 import com.google.common.base.Stopwatch;
@@ -169,68 +170,93 @@ class EnabledMetricsUtil implements MetricsUtil {
 
   class MetricsContext implements MetricsUtil.MetricsContext {
     private final Stopwatch stopwatch;
-    private final String methodName;
+    private int counter;
+    protected final String methodName;
 
     public MetricsContext(String methodName) {
       this.stopwatch = Stopwatch.createStarted();
       this.methodName = methodName;
+      this.counter = 0;
     }
 
-    public <T> void recordEndToEndLatencyAtFuture(ApiFuture<T> futureValue) {
+    public <T> void recordLatencyAtFuture(MetricType metric, ApiFuture<T> futureValue) {
       ApiFutures.addCallback(
           futureValue,
           new ApiFutureCallback<T>() {
             @Override
             public void onFailure(Throwable t) {
-              recordEndToEndLatency(t);
+              recordLatency(metric, t);
             }
 
             @Override
             public void onSuccess(T result) {
-              recordEndToEndLatency();
+              recordLatency(metric);
             }
           },
           MoreExecutors.directExecutor());
     }
 
-    public void recordEndToEndLatency() {
-      recordEndToEndLatency(StatusCode.Code.OK.toString());
+    public void recordLatency(MetricType metric) {
+      recordLatency(metric, StatusCode.Code.OK.toString());
     }
 
-    public void recordEndToEndLatency(Throwable t) {
-      recordEndToEndLatency(extractErrorStatus(t));
+    public void recordLatency(MetricType metric, Throwable t) {
+      recordLatency(metric, extractErrorStatus(t));
     }
 
-    public void recordFirstResponseLatency() {
+    private void recordLatency(MetricType metric, String status) {
       double elapsedTime = stopwatch.elapsed(TimeUnit.MILLISECONDS);
-      Map<String, String> attributes = createAttributes(StatusCode.Code.OK.toString());
-      defaultMetricsProvider.firstResponseLatencyRecorder(elapsedTime, attributes);
-      customMetricsProvider.firstResponseLatencyRecorder(elapsedTime, attributes);
+      Map<String, String> attributes = createAttributes(status, methodName);
+      defaultMetricsProvider.latencyRecorder(metric, elapsedTime, attributes);
+      customMetricsProvider.latencyRecorder(metric, elapsedTime, attributes);
     }
 
-    private void recordEndToEndLatency(String status) {
-      double elapsedTime = stopwatch.elapsed(TimeUnit.MILLISECONDS);
-      Map<String, String> attributes = createAttributes(status);
-      defaultMetricsProvider.endToEndLatencyRecorder(elapsedTime, attributes);
-      customMetricsProvider.endToEndLatencyRecorder(elapsedTime, attributes);
+    public void incrementCounter() {
+      counter++;
     }
 
-    private Map<String, String> createAttributes(String status) {
-      Map<String, String> attributes = new HashMap<>();
-      attributes.put(METRIC_ATTRIBUTE_KEY_METHOD.getKey(), methodName);
-      attributes.put(METRIC_ATTRIBUTE_KEY_STATUS.getKey(), status);
-      return attributes;
+    public <T> void recordCounterAtFuture(MetricType metric, ApiFuture<T> futureValue) {
+      ApiFutures.addCallback(
+          futureValue,
+          new ApiFutureCallback<T>() {
+            @Override
+            public void onFailure(Throwable t) {
+              recordCounter(metric, extractErrorStatus(t));
+            }
+
+            @Override
+            public void onSuccess(T result) {
+              recordCounter(metric, StatusCode.Code.OK.toString());
+            }
+          },
+          MoreExecutors.directExecutor());
     }
 
-    private String extractErrorStatus(@Nullable Throwable throwable) {
-      if (!(throwable instanceof FirestoreException)) {
-        return StatusCode.Code.UNKNOWN.toString();
-      }
-      Status status = ((FirestoreException) throwable).getStatus();
-      if (status == null) {
-        return StatusCode.Code.UNKNOWN.toString();
-      }
-      return status.getCode().name();
+    private void recordCounter(MetricType metric, String status) {
+      Map<String, String> attributes = createAttributes(status, methodName);
+      defaultMetricsProvider.counterRecorder(
+          MetricType.TRANSACTION_ATTEMPT_COUNT, (long) counter, attributes);
+      customMetricsProvider.counterRecorder(
+          MetricType.TRANSACTION_ATTEMPT_COUNT, (long) counter, attributes);
     }
+  }
+
+  private Map<String, String> createAttributes(String status, String methodName) {
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put(METRIC_ATTRIBUTE_KEY_METHOD.getKey(), methodName);
+    attributes.put(METRIC_ATTRIBUTE_KEY_STATUS.getKey(), status);
+    return attributes;
+  }
+
+  private String extractErrorStatus(@Nullable Throwable throwable) {
+    if (!(throwable instanceof FirestoreException)) {
+      return StatusCode.Code.UNKNOWN.toString();
+    }
+
+    Status status = ((FirestoreException) throwable).getStatus();
+    if (status == null) {
+      return StatusCode.Code.UNKNOWN.toString();
+    }
+    return status.getCode().name();
   }
 }

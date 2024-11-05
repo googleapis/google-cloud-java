@@ -34,6 +34,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
+import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -266,7 +267,7 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
                   .addEvent(
                       TelemetryConstants.METHOD_NAME_BATCH_GET_DOCUMENTS
                           + ": First response received");
-              metricsContext.recordFirstResponseLatency();
+              metricsContext.recordLatency(MetricType.FIRST_RESPONSE_LATENCY);
             } else if (numResponses % NUM_RESPONSES_PER_TRACE_EVENT == 0) {
               getTraceUtil()
                   .currentSpan()
@@ -311,7 +312,7 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
           @Override
           public void onError(Throwable throwable) {
             getTraceUtil().currentSpan().end(throwable);
-            metricsContext.recordEndToEndLatency(throwable);
+            metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, throwable);
             apiStreamObserver.onError(throwable);
           }
 
@@ -327,7 +328,7 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
                         + numResponses
                         + " responses.",
                     Collections.singletonMap(ATTRIBUTE_KEY_NUM_RESPONSES, numResponses));
-            metricsContext.recordEndToEndLatency();
+            metricsContext.recordLatency(MetricType.END_TO_END_LATENCY);
             apiStreamObserver.onCompleted();
           }
         };
@@ -460,9 +461,9 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
         // that cannot be tracked client side.
         result = new ServerSideTransactionRunner<>(this, updateFunction, transactionOptions).run();
       }
-      metricsContext.recordEndToEndLatencyAtFuture(result);
+      metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
     } catch (Exception error) {
-      metricsContext.recordEndToEndLatency(error);
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, error);
       throw error;
     }
     return result;

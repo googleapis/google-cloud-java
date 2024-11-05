@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
+import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreSettings;
@@ -223,12 +224,12 @@ public class AggregateQuery {
     }
 
     void deliverFirstResponse() {
-      metricsContext.recordFirstResponseLatency();
+      metricsContext.recordLatency(MetricType.FIRST_RESPONSE_LATENCY);
     }
 
     void deliverError(Throwable throwable) {
       future.setException(throwable);
-      metricsContext.recordEndToEndLatency(throwable);
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, throwable);
     }
 
     void deliverResult(
@@ -238,7 +239,7 @@ public class AggregateQuery {
       try {
         T result = processResult(serverData, readTime, metrics);
         future.set(result);
-        metricsContext.recordEndToEndLatency();
+        metricsContext.recordLatency(MetricType.END_TO_END_LATENCY);
       } catch (Exception error) {
         deliverError(error);
       }

@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
+import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreSettings;
@@ -170,7 +171,7 @@ public abstract class StreamableQuery<SnapshotType> {
       return result;
     } catch (Exception error) {
       span.end(error);
-      metricsContext.recordEndToEndLatency(error);
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, error);
       throw error;
     }
   }
@@ -264,7 +265,7 @@ public abstract class StreamableQuery<SnapshotType> {
       return result;
     } catch (Exception error) {
       span.end(error);
-      metricsContext.recordEndToEndLatency(error);
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, error);
       throw error;
     }
   }
@@ -285,20 +286,20 @@ public abstract class StreamableQuery<SnapshotType> {
     public void onNext(RunQueryResponse value) {
       if (!receivedFirstResponse) {
         receivedFirstResponse = true;
-        metricsContext.recordFirstResponseLatency();
+        metricsContext.recordLatency(MetricType.FIRST_RESPONSE_LATENCY);
       }
       observer.onNext(value);
     }
 
     @Override
     public void onError(Throwable t) {
-      metricsContext.recordEndToEndLatency(t);
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, t);
       observer.onError(t);
     }
 
     @Override
     public void onCompleted() {
-      metricsContext.recordEndToEndLatency();
+      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY);
       observer.onCompleted();
     }
   }

@@ -18,6 +18,7 @@ package com.google.cloud.firestore.telemetry;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
 import java.util.List;
 
 /**
@@ -29,16 +30,19 @@ class DisabledMetricsUtil implements MetricsUtil {
   class MetricsContext implements MetricsUtil.MetricsContext {
 
     @Override
-    public <T> void recordEndToEndLatencyAtFuture(ApiFuture<T> futureValue) {}
+    public <T> void recordLatencyAtFuture(MetricType metric, ApiFuture<T> futureValue) {}
 
     @Override
-    public void recordEndToEndLatency() {}
+    public void recordLatency(MetricType metric) {}
 
     @Override
-    public void recordEndToEndLatency(Throwable t) {}
+    public void recordLatency(MetricType metric, Throwable t) {}
 
     @Override
-    public void recordFirstResponseLatency() {}
+    public <T> void recordCounterAtFuture(MetricType metric, ApiFuture<T> futureValue) {}
+
+    @Override
+    public void incrementCounter() {}
   }
 
   @Override
