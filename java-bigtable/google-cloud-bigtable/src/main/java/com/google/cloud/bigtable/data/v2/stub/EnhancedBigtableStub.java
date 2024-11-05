@@ -41,6 +41,8 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.api.gax.retrying.SimpleStreamResumptionStrategy;
+import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
@@ -136,6 +138,7 @@ import com.google.cloud.bigtable.data.v2.stub.sql.SqlRowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -155,6 +158,7 @@ import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -559,27 +563,54 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
-    ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
-        createReadRowsBaseCallable(
-            ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
-                .setRetrySettings(settings.readRowSettings().getRetrySettings())
-                .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
-                .build(),
-            rowAdapter);
+    if (!EnhancedBigtableStubSettings.SKIP_TRAILERS) {
+      ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
+          createReadRowsBaseCallable(
+              ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
+                  .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
+                  .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                  .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
+                  .build(),
+              rowAdapter);
 
-    ReadRowsUserCallable<RowT> readRowCallable =
-        new ReadRowsUserCallable<>(readRowsCallable, requestContext);
+      ReadRowsUserCallable<RowT> readRowCallable =
+          new ReadRowsUserCallable<>(readRowsCallable, requestContext);
+      ReadRowsFirstCallable<RowT> firstRow = new ReadRowsFirstCallable<>(readRowCallable);
+      UnaryCallable<Query, RowT> traced =
+          new TracedUnaryCallable<>(
+              firstRow, clientContext.getTracerFactory(), getSpanName("ReadRow"));
+      return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    } else {
+      ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
+          createReadRowsBaseCallable(
+              ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
+                  .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
+                  .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                  .setIdleTimeoutDuration(Duration.ZERO)
+                  .setWaitTimeoutDuration(Duration.ZERO)
+                  .build(),
+              rowAdapter,
+              new SimpleStreamResumptionStrategy<>());
+      ServerStreamingCallable<Query, RowT> readRowCallable =
+          new TransformingServerStreamingCallable<>(
+              readRowsCallable,
+              (query) -> query.limit(1).toProto(requestContext),
+              Functions.identity());
 
-    ReadRowsFirstCallable<RowT> firstRow = new ReadRowsFirstCallable<>(readRowCallable);
-
-    UnaryCallable<Query, RowT> traced =
-        new TracedUnaryCallable<>(
-            firstRow, clientContext.getTracerFactory(), getSpanName("ReadRow"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+      return new BigtableUnaryOperationCallable<>(
+          readRowCallable,
+          clientContext.getDefaultCallContext(),
+          clientContext.getTracerFactory(),
+          getSpanName("ReadRow"),
+          /*allowNoResponses=*/ true);
+    }
   }
 
+  private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
+      ServerStreamingCallSettings<ReqT, Row> readRowsSettings, RowAdapter<RowT> rowAdapter) {
+    return createReadRowsBaseCallable(
+        readRowsSettings, rowAdapter, new ReadRowsResumptionStrategy<RowT>(rowAdapter));
+  }
   /**
    * Creates a callable chain to handle ReadRows RPCs. The chain will:
    *
@@ -596,8 +627,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * <p>NOTE: the caller is responsible for adding tracing & metrics.
    */
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
-      ServerStreamingCallSettings<ReqT, Row> readRowsSettings, RowAdapter<RowT> rowAdapter) {
-
+      ServerStreamingCallSettings<ReqT, Row> readRowsSettings,
+      RowAdapter<RowT> rowAdapter,
+      StreamResumptionStrategy<ReadRowsRequest, RowT> resumptionStrategy) {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
@@ -625,7 +657,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     // ReadRowsRequest -> ReadRowsResponse callable).
     ServerStreamingCallSettings<ReadRowsRequest, RowT> innerSettings =
         ServerStreamingCallSettings.<ReadRowsRequest, RowT>newBuilder()
-            .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
+            .setResumptionStrategy(resumptionStrategy)
             .setRetryableCodes(readRowsSettings.getRetryableCodes())
             .setRetrySettings(readRowsSettings.getRetrySettings())
             .setIdleTimeout(readRowsSettings.getIdleTimeout())
@@ -1264,6 +1296,21 @@ public class EnhancedBigtableStub implements AutoCloseable {
       UnaryCallSettings<ReqT, RespT> callSettings,
       Function<ReqT, BaseReqT> requestTransformer,
       Function<BaseRespT, RespT> responseTranformer) {
+    if (EnhancedBigtableStubSettings.SKIP_TRAILERS) {
+      return createUnaryCallableNew(
+          methodDescriptor, headerParamsFn, callSettings, requestTransformer, responseTranformer);
+    } else {
+      return createUnaryCallableOld(
+          methodDescriptor, headerParamsFn, callSettings, requestTransformer, responseTranformer);
+    }
+  }
+
+  private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableOld(
+      MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
+      RequestParamsExtractor<BaseReqT> headerParamsFn,
+      UnaryCallSettings<ReqT, RespT> callSettings,
+      Function<ReqT, BaseReqT> requestTransformer,
+      Function<BaseRespT, RespT> responseTranformer) {
 
     UnaryCallable<BaseReqT, BaseRespT> base =
         GrpcRawCallableFactory.createUnaryCallable(
@@ -1298,6 +1345,50 @@ public class EnhancedBigtableStub implements AutoCloseable {
             getSpanName(methodDescriptor.getBareMethodName()));
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableNew(
+      MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
+      RequestParamsExtractor<BaseReqT> headerParamsFn,
+      UnaryCallSettings<ReqT, RespT> callSettings,
+      Function<ReqT, BaseReqT> requestTransformer,
+      Function<BaseRespT, RespT> responseTranformer) {
+
+    ServerStreamingCallable<BaseReqT, BaseRespT> base =
+        GrpcRawCallableFactory.createServerStreamingCallable(
+            GrpcCallSettings.<BaseReqT, BaseRespT>newBuilder()
+                .setMethodDescriptor(methodDescriptor)
+                .setParamsExtractor(headerParamsFn)
+                .build(),
+            callSettings.getRetryableCodes());
+
+    base = new StatsHeadersServerStreamingCallable<>(base);
+
+    base = new BigtableTracerStreamingCallable<>(base);
+
+    base = withRetries(base, convertUnaryToServerStreamingSettings(callSettings));
+
+    ServerStreamingCallable<ReqT, RespT> transformed =
+        new TransformingServerStreamingCallable<>(base, requestTransformer, responseTranformer);
+
+    return new BigtableUnaryOperationCallable<>(
+        transformed,
+        clientContext.getDefaultCallContext(),
+        clientContext.getTracerFactory(),
+        getSpanName(methodDescriptor.getBareMethodName()),
+        /* allowNoResponse= */ false);
+  }
+
+  private static <ReqT, RespT>
+      ServerStreamingCallSettings<ReqT, RespT> convertUnaryToServerStreamingSettings(
+          UnaryCallSettings<?, ?> unarySettings) {
+    return ServerStreamingCallSettings.<ReqT, RespT>newBuilder()
+        .setResumptionStrategy(new SimpleStreamResumptionStrategy<>())
+        .setRetryableCodes(unarySettings.getRetryableCodes())
+        .setRetrySettings(unarySettings.getRetrySettings())
+        .setIdleTimeoutDuration(Duration.ZERO)
+        .setWaitTimeoutDuration(Duration.ZERO)
+        .build();
   }
 
   private UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> createPingAndWarmCallable() {

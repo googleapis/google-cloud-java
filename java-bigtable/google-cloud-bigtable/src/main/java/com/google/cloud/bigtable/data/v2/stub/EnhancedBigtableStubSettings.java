@@ -62,6 +62,7 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -107,6 +108,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   // TODO(meeral-k): add documentation
   private static final boolean DIRECT_PATH_ENABLED =
       Boolean.parseBoolean(System.getenv("CBT_ENABLE_DIRECTPATH"));
+
+  static final boolean SKIP_TRAILERS =
+      Optional.ofNullable(System.getenv("CBT_SKIP_HEADERS"))
+          .map(Boolean::parseBoolean)
+          .orElse(DIRECT_PATH_ENABLED);
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
