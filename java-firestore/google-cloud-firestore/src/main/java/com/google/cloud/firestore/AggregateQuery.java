@@ -384,14 +384,15 @@ public class AggregateQuery {
             .currentSpan()
             .addEvent(
                 METHOD_NAME_RUN_AGGREGATION_QUERY + ": Retryable Error",
-                Collections.singletonMap("error.message", throwable.getMessage()));
+                Collections.singletonMap("error.message", throwable.toString()));
+
         runQuery(responseDeliverer, attempt + 1);
       } else {
         getTraceUtil()
             .currentSpan()
             .addEvent(
                 METHOD_NAME_RUN_AGGREGATION_QUERY + ": Error",
-                Collections.singletonMap("error.message", throwable.getMessage()));
+                Collections.singletonMap("error.message", throwable.toString()));
         responseDeliverer.deliverError(throwable);
       }
     }

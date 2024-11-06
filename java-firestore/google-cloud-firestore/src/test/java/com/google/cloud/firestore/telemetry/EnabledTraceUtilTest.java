@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.firestore.FirestoreOpenTelemetryOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,19 +32,12 @@ public class EnabledTraceUtilTest {
     GlobalOpenTelemetry.resetForTest();
   }
 
+  EnabledTraceUtil defaultEnabledTraceUtil() {
+    return new EnabledTraceUtil(FirestoreOptions.getDefaultInstance());
+  }
+
   FirestoreOptions.Builder getBaseOptions() {
     return FirestoreOptions.newBuilder().setProjectId("test-project").setDatabaseId("(default)");
-  }
-
-  FirestoreOptions getTracingEnabledOptions() {
-    return getBaseOptions()
-        .setOpenTelemetryOptions(
-            FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
-        .build();
-  }
-
-  EnabledTraceUtil newEnabledTraceUtil() {
-    return new EnabledTraceUtil(getTracingEnabledOptions());
   }
 
   @Test
@@ -53,39 +47,79 @@ public class EnabledTraceUtilTest {
         getBaseOptions()
             .setOpenTelemetryOptions(
                 FirestoreOpenTelemetryOptions.newBuilder()
-                    .setTracingEnabled(true)
                     .setOpenTelemetry(myOpenTelemetrySdk)
                     .build())
             .build();
     EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
-    assertThat(traceUtil.getOpenTelemetry()).isEqualTo(myOpenTelemetrySdk);
+    assertThat(traceUtil.getOpenTelemetry()).isSameInstanceAs(myOpenTelemetrySdk);
   }
 
   @Test
   public void usesGlobalOpenTelemetryIfOpenTelemetryInstanceNotProvided() {
     OpenTelemetrySdk.builder().buildAndRegisterGlobal();
-    FirestoreOptions firestoreOptions =
-        getBaseOptions()
-            .setOpenTelemetryOptions(
-                FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
-            .build();
-    EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
-    assertThat(traceUtil.getOpenTelemetry()).isEqualTo(GlobalOpenTelemetry.get());
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
+    assertThat(traceUtil.getOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
   }
 
   @Test
-  public void enabledTraceUtilProvidesChannelConfigurator() {
-    assertThat(newEnabledTraceUtil().getChannelConfigurator()).isNotNull();
+  public void usesOpenTelemetryFromOptionsEvenIfGlobalOpenTelemetryExists() {
+    // Register a GlobalOpenTelemetry.
+    OpenTelemetrySdk.builder().buildAndRegisterGlobal();
+
+    // Pass in a *different* OpenTelemetry instance to Firestore to use.
+    OpenTelemetrySdk myOpenTelemetrySdk = OpenTelemetrySdk.builder().build();
+    FirestoreOptions firestoreOptions =
+        getBaseOptions()
+            .setOpenTelemetryOptions(
+                FirestoreOpenTelemetryOptions.newBuilder()
+                    .setOpenTelemetry(myOpenTelemetrySdk)
+                    .build())
+            .build();
+    EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
+
+    // Assert Firestore uses the custom one, not the global one.
+    assertThat(traceUtil.getOpenTelemetry()).isSameInstanceAs(myOpenTelemetrySdk);
+    assertThat(traceUtil.getOpenTelemetry()).isNotSameInstanceAs(GlobalOpenTelemetry.get());
+  }
+
+  @Test
+  public void defaultOptionsDoesNotRegisterGrpcChannelConfigurator() {
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
+    assertThat(traceUtil.getOpenTelemetry().getTracerProvider())
+        .isSameInstanceAs(TracerProvider.noop());
+    assertThat(traceUtil.getChannelConfigurator()).isNull();
+  }
+
+  @Test
+  public void globalOpenTelemetryRegistersGrpcChannelConfigurator() {
+    OpenTelemetrySdk.builder().buildAndRegisterGlobal();
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
+    assertThat(traceUtil.getChannelConfigurator()).isNotNull();
+  }
+
+  @Test
+  public void openTelemetryInstanceRegistersGrpcChannelConfigurator() {
+    OpenTelemetrySdk myOpenTelemetrySdk = OpenTelemetrySdk.builder().build();
+    FirestoreOptions firestoreOptions =
+        getBaseOptions()
+            .setOpenTelemetryOptions(
+                FirestoreOpenTelemetryOptions.newBuilder()
+                    .setOpenTelemetry(myOpenTelemetrySdk)
+                    .build())
+            .build();
+    EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
+    assertThat(traceUtil.getChannelConfigurator()).isNotNull();
   }
 
   @Test
   public void usesEnabledContext() {
-    assertThat(newEnabledTraceUtil().currentContext() instanceof EnabledTraceUtil.Context).isTrue();
+    assertThat(defaultEnabledTraceUtil().currentContext() instanceof EnabledTraceUtil.Context)
+        .isTrue();
   }
 
   @Test
   public void usesEnabledSpan() {
-    EnabledTraceUtil traceUtil = newEnabledTraceUtil();
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
     assertThat(traceUtil.currentSpan() instanceof EnabledTraceUtil.Span).isTrue();
     assertThat(traceUtil.startSpan("foo") instanceof EnabledTraceUtil.Span).isTrue();
     assertThat(
@@ -95,14 +129,14 @@ public class EnabledTraceUtilTest {
 
   @Test
   public void usesEnabledScope() {
-    EnabledTraceUtil traceUtil = newEnabledTraceUtil();
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
     assertThat(traceUtil.currentContext().makeCurrent() instanceof EnabledTraceUtil.Scope).isTrue();
     assertThat(traceUtil.currentSpan().makeCurrent() instanceof EnabledTraceUtil.Scope).isTrue();
   }
 
   @Test
   public void durationString() {
-    EnabledTraceUtil traceUtil = newEnabledTraceUtil();
+    EnabledTraceUtil traceUtil = defaultEnabledTraceUtil();
     Duration duration = Duration.ofSeconds(2, 9);
     assertThat(traceUtil.durationString(duration)).isEqualTo("2.000000009s");
 

@@ -20,6 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.common.base.Throwables;
 import io.grpc.ManagedChannelBuilder;
@@ -31,6 +32,7 @@ import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.instrumentation.grpc.v1_6.GrpcTelemetry;
 import java.util.Map;
 import javax.annotation.Nonnull;
@@ -40,6 +42,7 @@ import javax.annotation.Nullable;
  * A utility class that uses OpenTelemetry for trace collection. `FirestoreOpenTelemetryOptions` in
  * `FirestoreOptions` can be used to configure its behavior.
  */
+@InternalApi
 public class EnabledTraceUtil implements TraceUtil {
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;
@@ -48,8 +51,7 @@ public class EnabledTraceUtil implements TraceUtil {
   EnabledTraceUtil(FirestoreOptions firestoreOptions) {
     OpenTelemetry openTelemetry = firestoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
 
-    // If tracing is enabled, but an OpenTelemetry instance is not provided, fall back
-    // to using GlobalOpenTelemetry.
+    // If an OpenTelemetry instance is not provided, fall back to using GlobalOpenTelemetry.
     if (openTelemetry == null) {
       openTelemetry = GlobalOpenTelemetry.get();
     }
@@ -84,6 +86,11 @@ public class EnabledTraceUtil implements TraceUtil {
   @Override
   @Nullable
   public ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
+    // Note: using `==` rather than `.equals` since OpenTelemetry has only 1 static instance of
+    // `TracerProvider.noop`.
+    if (openTelemetry.getTracerProvider() == TracerProvider.noop()) {
+      return null;
+    }
     return new OpenTelemetryGrpcChannelConfigurator();
   }
 

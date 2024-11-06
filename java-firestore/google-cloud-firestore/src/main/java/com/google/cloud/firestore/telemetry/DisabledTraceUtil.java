@@ -18,6 +18,7 @@ package com.google.cloud.firestore.telemetry;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
 import io.grpc.ManagedChannelBuilder;
 import java.util.Map;
 import javax.annotation.Nonnull;
@@ -27,6 +28,7 @@ import javax.annotation.Nullable;
  * A no-op implementation of {@link MetricsUtil} that does not collect or export any metrics and has
  * near-zero overhead.
  */
+@InternalApi
 public class DisabledTraceUtil implements TraceUtil {
 
   static class Span implements TraceUtil.Span {

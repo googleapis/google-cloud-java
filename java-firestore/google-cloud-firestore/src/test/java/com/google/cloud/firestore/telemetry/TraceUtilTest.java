@@ -17,45 +17,17 @@ package com.google.cloud.firestore.telemetry;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.firestore.FirestoreOpenTelemetryOptions;
 import com.google.cloud.firestore.FirestoreOptions;
+import io.opentelemetry.api.trace.TracerProvider;
 import org.junit.Test;
 
 public class TraceUtilTest {
   @Test
-  public void defaultOptionsUseDisabledTraceUtil() {
-    TraceUtil traceUtil =
-        TraceUtil.getInstance(
-            FirestoreOptions.newBuilder()
-                .setProjectId("test-project")
-                .setDatabaseId("(default)")
-                .build());
-    assertThat(traceUtil instanceof DisabledTraceUtil).isTrue();
-  }
-
-  @Test
-  public void tracingDisabledOptionsUseDisabledTraceUtil() {
-    TraceUtil traceUtil =
-        TraceUtil.getInstance(
-            FirestoreOptions.newBuilder()
-                .setProjectId("test-project")
-                .setDatabaseId("(default)")
-                .setOpenTelemetryOptions(
-                    FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(false).build())
-                .build());
-    assertThat(traceUtil instanceof DisabledTraceUtil).isTrue();
-  }
-
-  @Test
-  public void tracingEnabledOptionsUseEnabledTraceUtil() {
-    TraceUtil traceUtil =
-        TraceUtil.getInstance(
-            FirestoreOptions.newBuilder()
-                .setProjectId("test-project")
-                .setDatabaseId("(default)")
-                .setOpenTelemetryOptions(
-                    FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
-                .build());
+  public void defaultOptionsUseNoopTracer() {
+    TraceUtil traceUtil = TraceUtil.getInstance(FirestoreOptions.getDefaultInstance());
     assertThat(traceUtil instanceof EnabledTraceUtil).isTrue();
+    EnabledTraceUtil enabledTraceUtil = (EnabledTraceUtil) traceUtil;
+    assertThat(
+        enabledTraceUtil.getOpenTelemetry().getTracerProvider().equals(TracerProvider.noop()));
   }
 }

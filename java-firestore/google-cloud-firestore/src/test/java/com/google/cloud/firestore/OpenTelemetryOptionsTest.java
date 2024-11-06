@@ -18,11 +18,12 @@ package com.google.cloud.firestore;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.firestore.telemetry.DisabledTraceUtil;
 import com.google.cloud.firestore.telemetry.EnabledTraceUtil;
 import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.resources.Resource;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Before;
@@ -49,112 +50,67 @@ public class OpenTelemetryOptionsTest {
   }
 
   @Test
-  public void defaultOptionsDisablesTelemetryCollection() {
+  public void defaultOptionsUsesEnabledTraceUtilWithNoopOpenTelemetry() {
     FirestoreOptions firestoreOptions = getBaseOptions().build();
     firestore = firestoreOptions.getService();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().isTracingEnabled()).isFalse();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry()).isNull();
-    assertThat(firestore.getOptions().getTraceUtil()).isNotNull();
-    assertThat(firestore.getOptions().getTraceUtil() instanceof DisabledTraceUtil).isTrue();
-  }
-
-  @Test
-  public void canEnableTelemetryCollectionWithoutOpenTelemetryInstance() {
-    FirestoreOptions firestoreOptions =
-        getBaseOptions()
-            .setOpenTelemetryOptions(
-                FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
-            .build();
-    firestore = firestoreOptions.getService();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().isTracingEnabled()).isTrue();
     assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry()).isNull();
     assertThat(firestore.getOptions().getTraceUtil()).isNotNull();
     assertThat(firestore.getOptions().getTraceUtil() instanceof EnabledTraceUtil).isTrue();
+    EnabledTraceUtil enabledTraceUtil = (EnabledTraceUtil) firestore.getOptions().getTraceUtil();
+    // Assert that a Noop tracer provider is used by default.
+    assertThat(enabledTraceUtil.getOpenTelemetry().getTracerProvider())
+        .isSameInstanceAs(TracerProvider.noop());
   }
 
   @Test
-  public void canEnableTelemetryCollectionWithOpenTelemetryInstance() {
-    OpenTelemetry openTelemetry = GlobalOpenTelemetry.get();
-    FirestoreOptions firestoreOptions =
-        getBaseOptions()
-            .setOpenTelemetryOptions(
-                FirestoreOpenTelemetryOptions.newBuilder()
-                    .setTracingEnabled(true)
-                    .setOpenTelemetry(openTelemetry)
-                    .build())
-            .build();
-    firestore = firestoreOptions.getService();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().isTracingEnabled()).isTrue();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry())
-        .isEqualTo(openTelemetry);
-    assertThat(firestore.getOptions().getTraceUtil()).isNotNull();
-    assertThat(firestore.getOptions().getTraceUtil() instanceof EnabledTraceUtil).isTrue();
-  }
+  public void existenceOfGlobalOpenTelemetryEnablesTracingWithTheGlobalTracerProvider() {
+    // Make a custom TracerProvider.
+    Resource resource =
+        Resource.getDefault().merge(Resource.builder().put("service.name", "test").build());
+    SdkTracerProvider myTracerProvider = SdkTracerProvider.builder().setResource(resource).build();
 
-  @Test
-  public void canDisableTelemetryCollectionWhileOpenTelemetryInstanceIsNotNull() {
-    OpenTelemetry openTelemetry = GlobalOpenTelemetry.get();
-    FirestoreOptions firestoreOptions =
-        getBaseOptions()
-            .setOpenTelemetryOptions(
-                FirestoreOpenTelemetryOptions.newBuilder()
-                    .setTracingEnabled(false)
-                    .setOpenTelemetry(openTelemetry)
-                    .build())
-            .build();
-    firestore = firestoreOptions.getService();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().isTracingEnabled()).isFalse();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry())
-        .isEqualTo(openTelemetry);
-    assertThat(firestore.getOptions().getTraceUtil()).isNotNull();
-    assertThat(firestore.getOptions().getTraceUtil() instanceof DisabledTraceUtil).isTrue();
-  }
+    // Register a GlobalOpenTelemetry with the custom tracer provider.
+    OpenTelemetrySdk.builder().setTracerProvider(myTracerProvider).buildAndRegisterGlobal();
 
-  @Test
-  public void existenceOfGlobalOpenTelemetryDoesNotEnableTracing() {
-    // Register a global OpenTelemetry SDK.
-    OpenTelemetrySdk.builder().buildAndRegisterGlobal();
-
-    // Make sure Firestore does not use GlobalOpenTelemetry by default.
+    // Do NOT pass an OpenTelemetry instance to Firestore.
     FirestoreOptions firestoreOptions = getBaseOptions().build();
     firestore = firestoreOptions.getService();
-    assertThat(firestore.getOptions().getOpenTelemetryOptions().isTracingEnabled()).isFalse();
+
+    // An OpenTelemetry instance has not been set in options.
     assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry()).isNull();
+
+    // Assert that tracing is enabled and is using the custom tracer provider from the
+    // GlobalOpenTelemetry.
     assertThat(firestore.getOptions().getTraceUtil()).isNotNull();
-    assertThat(firestore.getOptions().getTraceUtil() instanceof DisabledTraceUtil).isTrue();
+    assertThat(firestore.getOptions().getTraceUtil() instanceof EnabledTraceUtil).isTrue();
+    EnabledTraceUtil enabledTraceUtil = (EnabledTraceUtil) firestore.getOptions().getTraceUtil();
+    assertThat(enabledTraceUtil.getOpenTelemetry().getTracerProvider().equals(myTracerProvider));
   }
 
   @Test
   public void canPassOpenTelemetrySdkInstanceToFirestore() {
-    OpenTelemetrySdk myOpenTelemetrySdk = OpenTelemetrySdk.builder().build();
+    // Make a custom TracerProvider and make an OpenTelemetry instance with it.
+    Resource resource =
+        Resource.getDefault().merge(Resource.builder().put("service.name", "test").build());
+    SdkTracerProvider myTracerProvider = SdkTracerProvider.builder().setResource(resource).build();
+    OpenTelemetrySdk myOpenTelemetrySdk =
+        OpenTelemetrySdk.builder().setTracerProvider(myTracerProvider).build();
+
+    // Pass it to Firestore.
     FirestoreOptions firestoreOptions =
         getBaseOptions()
             .setOpenTelemetryOptions(
                 FirestoreOpenTelemetryOptions.newBuilder()
-                    .setTracingEnabled(true)
                     .setOpenTelemetry(myOpenTelemetrySdk)
                     .build())
             .build();
     firestore = firestoreOptions.getService();
+    assertThat(firestore.getOptions().getOpenTelemetryOptions().getOpenTelemetry())
+        .isEqualTo(myOpenTelemetrySdk);
+    assertThat(firestore.getOptions().getTraceUtil() instanceof EnabledTraceUtil).isTrue();
     EnabledTraceUtil enabledTraceUtil = (EnabledTraceUtil) firestore.getOptions().getTraceUtil();
     assertThat(enabledTraceUtil).isNotNull();
     assertThat(enabledTraceUtil.getOpenTelemetry()).isEqualTo(myOpenTelemetrySdk);
-  }
-
-  @Test
-  public void usesGlobalOpenTelemetryIfOpenTelemetryNotProvidedInOptions() {
-    // Register a global OpenTelemetry SDK.
-    OpenTelemetrySdk.builder().buildAndRegisterGlobal();
-
-    // Do _not_ pass it to FirestoreOptions.
-    FirestoreOptions firestoreOptions =
-        getBaseOptions()
-            .setOpenTelemetryOptions(
-                FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
-            .build();
-    firestore = firestoreOptions.getService();
-    EnabledTraceUtil enabledTraceUtil = (EnabledTraceUtil) firestore.getOptions().getTraceUtil();
-    assertThat(enabledTraceUtil).isNotNull();
-    assertThat(enabledTraceUtil.getOpenTelemetry()).isEqualTo(GlobalOpenTelemetry.get());
+    assertThat(enabledTraceUtil.getOpenTelemetry().getTracerProvider().equals(myTracerProvider));
   }
 }

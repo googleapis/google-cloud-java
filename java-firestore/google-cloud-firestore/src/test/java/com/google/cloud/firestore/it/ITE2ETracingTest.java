@@ -319,20 +319,13 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
     // Initialize the Firestore DB w/ the OTel SDK. Ideally we'd do this is the @BeforeAll method
     // but because gRPC traces need to be deterministically force-flushed, firestore.shutdown()
     // must be called in @After for each test.
-    FirestoreOptions.Builder optionsBuilder;
-    if (isUsingGlobalOpenTelemetrySDK()) {
+    FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
+    if (!isUsingGlobalOpenTelemetrySDK()) {
       optionsBuilder =
-          FirestoreOptions.newBuilder()
-              .setOpenTelemetryOptions(
-                  FirestoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build());
-    } else {
-      optionsBuilder =
-          FirestoreOptions.newBuilder()
-              .setOpenTelemetryOptions(
-                  FirestoreOpenTelemetryOptions.newBuilder()
-                      .setOpenTelemetry(openTelemetrySdk)
-                      .setTracingEnabled(true)
-                      .build());
+          optionsBuilder.setOpenTelemetryOptions(
+              FirestoreOpenTelemetryOptions.newBuilder()
+                  .setOpenTelemetry(openTelemetrySdk)
+                  .build());
     }
 
     String namedDb = System.getProperty("FIRESTORE_NAMED_DATABASE");

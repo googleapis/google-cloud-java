@@ -378,7 +378,7 @@ public abstract class StreamableQuery<SnapshotType> {
             if (isRetryableWithCursor() && shouldRetry(cursor, throwable)) {
               currentSpan.addEvent(
                   TelemetryConstants.METHOD_NAME_RUN_QUERY + ": Retryable Error",
-                  Collections.singletonMap("error.message", throwable.getMessage()));
+                  Collections.singletonMap("error.message", throwable.toString()));
 
               startAfter(cursor)
                   .internalStream(
@@ -391,7 +391,7 @@ public abstract class StreamableQuery<SnapshotType> {
             } else {
               currentSpan.addEvent(
                   TelemetryConstants.METHOD_NAME_RUN_QUERY + ": Error",
-                  Collections.singletonMap("error.message", throwable.getMessage()));
+                  Collections.singletonMap("error.message", throwable.toString()));
               streamResponseObserver.onError(throwable);
             }
           }

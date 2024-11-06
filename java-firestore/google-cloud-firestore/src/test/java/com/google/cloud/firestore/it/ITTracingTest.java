@@ -126,11 +126,11 @@ public abstract class ITTracingTest {
     if (isUsingGlobalOpenTelemetrySDK()) {
       GlobalOpenTelemetry.resetForTest();
       openTelemetrySdk = openTelemetrySdkBuilder.buildAndRegisterGlobal();
-      optionsBuilder.setOpenTelemetryOptions(otelOptionsBuilder.setTracingEnabled(true).build());
+      optionsBuilder.setOpenTelemetryOptions(otelOptionsBuilder.build());
     } else {
       openTelemetrySdk = openTelemetrySdkBuilder.build();
       optionsBuilder.setOpenTelemetryOptions(
-          otelOptionsBuilder.setTracingEnabled(true).setOpenTelemetry(openTelemetrySdk).build());
+          otelOptionsBuilder.setOpenTelemetry(openTelemetrySdk).build());
     }
 
     String namedDb = System.getProperty("FIRESTORE_NAMED_DATABASE");
