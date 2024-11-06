@@ -19,15 +19,15 @@ substitutions:
 steps:
   # GraalVM B build
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "gcr.io/cloud-devrel-public-resources/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}", "--file", "graalvm-b.Dockerfile", "."]
+    args: ["build", "-t", "us-docker.pkg.dev/java-graalvm-ci-prod/graalvm-integration-testing/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}", "--file", "graalvm-b.Dockerfile", "."]
     dir: .cloudbuild
     id: graalvm-b-build
     waitFor: ["-"]
   - name: gcr.io/gcp-runtimes/structure_test
     args:
-      ["-i", "gcr.io/cloud-devrel-public-resources/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}", "--config", ".cloudbuild/graalvm-b.yaml", "-v"]
+      ["-i", "us-docker.pkg.dev/java-graalvm-ci-prod/graalvm-integration-testing/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}", "--config", ".cloudbuild/graalvm-b.yaml", "-v"]
     waitFor: ["graalvm-b-build"]
-  - name: gcr.io/cloud-devrel-public-resources/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}
+  - name: us-docker.pkg.dev/java-graalvm-ci-prod/graalvm-integration-testing/graalvm_b:${_JAVA_SHARED_CONFIG_VERSION}
     entrypoint: bash
     args: [ './.kokoro/presubmit/downstream-build.sh' ]
     waitFor: [ "graalvm-b-build" ]
