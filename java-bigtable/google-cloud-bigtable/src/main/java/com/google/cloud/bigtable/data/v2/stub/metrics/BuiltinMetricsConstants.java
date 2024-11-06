@@ -58,6 +58,7 @@ public class BuiltinMetricsConstants {
   static final String SERVER_LATENCIES_NAME = "server_latencies";
   static final String FIRST_RESPONSE_LATENCIES_NAME = "first_response_latencies";
   static final String APPLICATION_BLOCKING_LATENCIES_NAME = "application_latencies";
+  static final String REMAINING_DEADLINE_NAME = "remaining_deadline";
   static final String CLIENT_BLOCKING_LATENCIES_NAME = "throttling_latencies";
   static final String PER_CONNECTION_ERROR_COUNT_NAME = "per_connection_error_count";
 
@@ -213,6 +214,16 @@ public class BuiltinMetricsConstants {
         "1",
         ImmutableSet.<AttributeKey>builder()
             .add(BIGTABLE_PROJECT_ID_KEY, INSTANCE_ID_KEY, APP_PROFILE_KEY, CLIENT_NAME_KEY)
+            .build());
+    defineView(
+        views,
+        REMAINING_DEADLINE_NAME,
+        AGGREGATION_WITH_MILLIS_HISTOGRAM,
+        InstrumentType.HISTOGRAM,
+        "ms",
+        ImmutableSet.<AttributeKey>builder()
+            .addAll(COMMON_ATTRIBUTES)
+            .add(STREAMING_KEY, STATUS_KEY)
             .build());
 
     return views.build();

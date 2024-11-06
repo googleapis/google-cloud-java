@@ -24,6 +24,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.FIRST_RESPONSE_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OPERATION_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.REMAINING_DEADLINE_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.RETRY_COUNT_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.SERVER_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
@@ -90,11 +91,13 @@ import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.View;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.nio.charset.Charset;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -103,6 +106,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Assert;
@@ -212,6 +216,17 @@ public class BuiltinMetricsTracerTest {
         .mutateRowSettings()
         .retrySettings()
         .setInitialRetryDelayDuration(java.time.Duration.ofMillis(200));
+
+    stubSettingsBuilder
+        .readRowsSettings()
+        .retrySettings()
+        .setTotalTimeoutDuration(Duration.ofMillis(9000))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(6000))
+        .setRpcTimeoutMultiplier(1)
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(6000))
+        .setInitialRetryDelayDuration(Duration.ofMillis(10))
+        .setRetryDelayMultiplier(1)
+        .setMaxRetryDelayDuration(Duration.ofMillis(10));
 
     stubSettingsBuilder
         .bulkMutateRowsSettings()
@@ -748,6 +763,53 @@ public class BuiltinMetricsTracerTest {
 
     MetricData opLatency = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
     verifyAttributes(opLatency, expected);
+  }
+
+  @Test
+  public void testRemainingDeadline() {
+    stub.readRowsCallable().all().call(Query.create(TABLE));
+    MetricData deadlineMetric = getMetricData(metricReader, REMAINING_DEADLINE_NAME);
+
+    Attributes retryAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "UNAVAILABLE")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(ZONE_ID_KEY, "global")
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(STREAMING_KEY, true)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+    HistogramPointData retryHistogramPointData =
+        deadlineMetric.getHistogramData().getPoints().stream()
+            .filter(pd -> pd.getAttributes().equals(retryAttributes))
+            .collect(Collectors.toList())
+            .get(0);
+
+    double retryRemainingDeadline = retryHistogramPointData.getSum();
+    // The retry remaining deadline should be equivalent to the original timeout.
+    assertThat(retryRemainingDeadline).isEqualTo(9000);
+
+    Attributes okAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(STREAMING_KEY, true)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+    HistogramPointData okHistogramPointData =
+        deadlineMetric.getHistogramData().getPoints().stream()
+            .filter(pd -> pd.getAttributes().equals(okAttributes))
+            .collect(Collectors.toList())
+            .get(0);
+
+    double okRemainingDeadline = okHistogramPointData.getSum();
+    assertThat(okRemainingDeadline).isWithin(200).of(8500);
   }
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {

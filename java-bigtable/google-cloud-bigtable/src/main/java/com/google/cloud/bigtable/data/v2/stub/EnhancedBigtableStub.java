@@ -105,6 +105,7 @@ import com.google.cloud.bigtable.data.v2.stub.changestream.ChangeStreamRecordMer
 import com.google.cloud.bigtable.data.v2.stub.changestream.GenerateInitialChangeStreamPartitionsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamUserCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
@@ -545,7 +546,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedServerStreamingCallable<>(
             readRowsUserCallable, clientContext.getTracerFactory(), span);
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings.readRowsSettings().getRetrySettings().getTotalTimeout()));
   }
 
   /**
@@ -579,7 +585,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
       UnaryCallable<Query, RowT> traced =
           new TracedUnaryCallable<>(
               firstRow, clientContext.getTracerFactory(), getSpanName("ReadRow"));
-      return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+      return traced.withDefaultCallContext(
+          clientContext
+              .getDefaultCallContext()
+              .withOption(
+                  BigtableTracer.OPERATION_TIMEOUT_KEY,
+                  settings.readRowSettings().getRetrySettings().getTotalTimeout()));
     } else {
       ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
           createReadRowsBaseCallable(
@@ -599,7 +610,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
       return new BigtableUnaryOperationCallable<>(
           readRowCallable,
-          clientContext.getDefaultCallContext(),
+          clientContext
+              .getDefaultCallContext()
+              .withOption(
+                  BigtableTracer.OPERATION_TIMEOUT_KEY,
+                  settings.readRowSettings().getRetrySettings().getTotalTimeout()),
           clientContext.getTracerFactory(),
           getSpanName("ReadRow"),
           /*allowNoResponses=*/ true);
@@ -715,7 +730,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<Query, List<RowT>> traced =
         new TracedUnaryCallable<>(tracedBatcher, clientContext.getTracerFactory(), span);
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings.bulkReadRowsSettings().getRetrySettings().getTotalTimeout()));
   }
 
   /**
@@ -780,7 +800,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
         retryable = withRetries(withBigtableTracer, settings.sampleRowKeysSettings());
 
     return createUserFacingUnaryCallable(
-        methodName, new SampleRowKeysCallableWithRequest(retryable, requestContext));
+        methodName,
+        new SampleRowKeysCallableWithRequest(retryable, requestContext)
+            .withDefaultCallContext(
+                clientContext
+                    .getDefaultCallContext()
+                    .withOption(
+                        BigtableTracer.OPERATION_TIMEOUT_KEY,
+                        settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())));
   }
 
   /**
@@ -903,7 +930,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedUnaryCallable<>(
             tracedBatcherUnaryCallable, clientContext.getTracerFactory(), spanName);
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings.bulkMutateRowsSettings().getRetrySettings().getTotalTimeout()));
   }
 
   /**
@@ -1108,7 +1140,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<String, ByteStringRange> traced =
         new TracedServerStreamingCallable<>(retrying, clientContext.getTracerFactory(), span);
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings
+                    .generateInitialChangeStreamPartitionsSettings()
+                    .getRetrySettings()
+                    .getTotalTimeout()));
   }
 
   /**
@@ -1180,7 +1220,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedServerStreamingCallable<>(
             readChangeStreamUserCallable, clientContext.getTracerFactory(), span);
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings.readChangeStreamSettings().getRetrySettings().getTotalTimeout()));
   }
 
   /**
@@ -1266,7 +1311,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedServerStreamingCallable<>(retries, clientContext.getTracerFactory(), span);
 
     return new ExecuteQueryCallable(
-        traced.withDefaultCallContext(clientContext.getDefaultCallContext()), requestContext);
+        traced.withDefaultCallContext(
+            clientContext
+                .getDefaultCallContext()
+                .withOption(
+                    BigtableTracer.OPERATION_TIMEOUT_KEY,
+                    settings.executeQuerySettings().getRetrySettings().getTotalTimeout())),
+        requestContext);
   }
 
   /**
@@ -1344,7 +1395,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             getSpanName(methodDescriptor.getBareMethodName()));
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                callSettings.getRetrySettings().getTotalTimeout()));
   }
 
   private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableNew(
@@ -1373,7 +1429,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return new BigtableUnaryOperationCallable<>(
         transformed,
-        clientContext.getDefaultCallContext(),
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                callSettings.getRetrySettings().getTotalTimeout()),
         clientContext.getTracerFactory(),
         getSpanName(methodDescriptor.getBareMethodName()),
         /* allowNoResponse= */ false);
@@ -1407,7 +1467,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     })
                 .build(),
             Collections.emptySet());
-    return pingAndWarm.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return pingAndWarm.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withOption(
+                BigtableTracer.OPERATION_TIMEOUT_KEY,
+                settings.pingAndWarmSettings().getRetrySettings().getTotalTimeout()));
   }
 
   private <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> withRetries(

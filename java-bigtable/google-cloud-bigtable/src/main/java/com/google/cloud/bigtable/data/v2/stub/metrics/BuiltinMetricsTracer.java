@@ -37,6 +37,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
@@ -45,6 +47,8 @@ import org.threeten.bp.Duration;
  * bigtable.googleapis.com/client namespace
  */
 class BuiltinMetricsTracer extends BigtableTracer {
+
+  private static final Logger logger = Logger.getLogger(BuiltinMetricsTracer.class.getName());
 
   private static final String NAME = "java-bigtable/" + Version.VERSION;
   private final OperationType operationType;
@@ -85,6 +89,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private Long serverLatencies = null;
   private final AtomicLong grpcMessageSentDelay = new AtomicLong(0);
 
+  private Duration operationTimeout = Duration.ofMillis(0);
+  private long remainingOperationTimeout = 0;
+
   // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
   // end]. To work around this, we measure all the latencies in nanoseconds and convert them
   // to milliseconds and use DoubleHistogram. This should minimize the chance of a data
@@ -95,6 +102,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private final DoubleHistogram firstResponseLatenciesHistogram;
   private final DoubleHistogram clientBlockingLatenciesHistogram;
   private final DoubleHistogram applicationBlockingLatenciesHistogram;
+  private final DoubleHistogram remainingDeadlineHistogram;
   private final LongCounter connectivityErrorCounter;
   private final LongCounter retryCounter;
 
@@ -108,6 +116,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
       DoubleHistogram firstResponseLatenciesHistogram,
       DoubleHistogram clientBlockingLatenciesHistogram,
       DoubleHistogram applicationBlockingLatenciesHistogram,
+      DoubleHistogram deadlineHistogram,
       LongCounter connectivityErrorCounter,
       LongCounter retryCounter) {
     this.operationType = operationType;
@@ -120,6 +129,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     this.firstResponseLatenciesHistogram = firstResponseLatenciesHistogram;
     this.clientBlockingLatenciesHistogram = clientBlockingLatenciesHistogram;
     this.applicationBlockingLatenciesHistogram = applicationBlockingLatenciesHistogram;
+    this.remainingDeadlineHistogram = deadlineHistogram;
     this.connectivityErrorCounter = connectivityErrorCounter;
     this.retryCounter = retryCounter;
   }
@@ -166,6 +176,11 @@ class BuiltinMetricsTracer extends BigtableTracer {
           serverLatencyTimer.start();
         }
       }
+    }
+    // OperationTimeout is only set after the first attempt.
+    if (attemptCount > 1) {
+      remainingOperationTimeout =
+          operationTimeout.toMillis() - operationTimer.elapsed(TimeUnit.MILLISECONDS);
     }
   }
 
@@ -266,6 +281,14 @@ class BuiltinMetricsTracer extends BigtableTracer {
     grpcMessageSentDelay.set(attemptTimer.elapsed(TimeUnit.NANOSECONDS));
   }
 
+  /*
+  This is called by BigtableTracerCallables that sets operation timeout from user settings.
+  */
+  @Override
+  public void setOperationTimeout(Duration operationTimeout) {
+    this.operationTimeout = operationTimeout;
+  }
+
   @Override
   public void disableFlowControl() {
     flowControlIsDisabled = true;
@@ -354,6 +377,17 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     attemptLatenciesHistogram.record(
         convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
+
+    if (attemptCount <= 1) {
+      remainingDeadlineHistogram.record(operationTimeout.toMillis(), attributes);
+    } else if (remainingOperationTimeout >= 0) {
+      remainingDeadlineHistogram.record(remainingOperationTimeout, attributes);
+    } else if (operationTimeout.toMillis() != 0) {
+      // If the operationTimeout is set but remaining deadline is < 0, log a warning. This should
+      // never happen.
+      logger.log(
+          Level.WARNING, "The remaining deadline was less than 0: " + remainingOperationTimeout);
+    }
 
     if (serverLatencies != null) {
       serverLatenciesHistogram.record(serverLatencies, attributes);

@@ -19,12 +19,14 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Duration;
 
 /**
  * This callable will:
@@ -58,6 +60,11 @@ public class BigtableTracerUnaryCallable<RequestT, ResponseT>
       BigtableTracerUnaryCallback<ResponseT> callback =
           new BigtableTracerUnaryCallback<ResponseT>(
               (BigtableTracer) context.getTracer(), responseMetadata);
+      GrpcCallContext callContext = (GrpcCallContext) context;
+      Duration deadline = callContext.getOption(BigtableTracer.OPERATION_TIMEOUT_KEY);
+      if (deadline != null) {
+        ((BigtableTracer) context.getTracer()).setOperationTimeout(deadline);
+      }
       ApiFuture<ResponseT> future =
           innerCallable.futureCall(
               request,

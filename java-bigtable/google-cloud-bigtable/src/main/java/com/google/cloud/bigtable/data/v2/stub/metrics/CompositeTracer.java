@@ -232,4 +232,11 @@ class CompositeTracer extends BigtableTracer {
       tracer.grpcMessageSent();
     }
   }
+
+  @Override
+  public void setOperationTimeout(Duration operationTimeout) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.setOperationTimeout(operationTimeout);
+    }
+  }
 }
