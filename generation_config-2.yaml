@@ -1,0 +1,930 @@
+googleapis_commitish: 48d30c4966ef9ea31b897e13f75d8f94070cc8e9
+libraries_bom_version: 26.49.0
+
+# the libraries are ordered with respect to library name, which is
+# java-{library.library_name} or java-{library.api-shortname} when
+# library.library_name is not defined.
+libraries:
+- api_shortname: developerconnect
+  name_pretty: Developer Connect API
+  product_documentation: https://cloud.google.com/developer-connect/docs/overview
+  api_description: Connect third-party source code management to Google
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-developerconnect
+  api_id: developerconnect.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/developerconnect/v1
+  requires_billing: true
+- api_shortname: dialogflow
+  name_pretty: Dialogflow API
+  product_documentation: https://cloud.google.com/dialogflow-enterprise/
+  api_description: is an end-to-end, build-once deploy-everywhere development suite
+    for creating conversational interfaces for websites, mobile applications, popular
+    messaging platforms, and IoT devices. You can use it to build interfaces (such
+    as chatbots and conversational IVR) that enable natural and rich interactions
+    between your users and your business. Dialogflow Enterprise Edition users have
+    access to Google Cloud Support and a service level agreement (SLA) for production
+    deployments.
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/5300385
+  GAPICs:
+  - proto_path: google/cloud/dialogflow/v2
+  - proto_path: google/cloud/dialogflow/v2beta1
+
+- api_shortname: dialogflow-cx
+  name_pretty: Dialogflow CX
+  product_documentation: https://cloud.google.com/dialogflow/cx/docs
+  api_description: provides a new way of designing agents, taking a state machine
+    approach to agent design. This gives you clear and explicit control over a conversation,
+    a better end-user experience, and a better development workflow.
+  rest_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/dialogflow/cx/v3
+  - proto_path: google/cloud/dialogflow/cx/v3beta1
+
+- api_shortname: discoveryengine
+  name_pretty: Discovery Engine API
+  product_documentation: https://cloud.google.com/discovery-engine/media/docs
+  api_description: A Cloud API that offers search and recommendation discoverability
+    for documents from different industry verticals (e.g. media, retail, etc.).
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/discoveryengine/v1
+  - proto_path: google/cloud/discoveryengine/v1alpha
+  - proto_path: google/cloud/discoveryengine/v1beta
+
+- api_shortname: distributedcloudedge
+  name_pretty: Google Distributed Cloud Edge
+  product_documentation: https://cloud.google.com/distributed-cloud/edge/latest/
+  api_description: Google Distributed Cloud Edge allows you to run Kubernetes clusters
+    on dedicated hardware provided and maintained by Google that is separate from
+    the Google Cloud data center.
+  api_id: edgecontainer.googleapis.com
+  library_name: distributedcloudedge
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/edgecontainer/v1
+
+- api_shortname: dlp
+  name_pretty: Cloud Data Loss Prevention
+  product_documentation: https://cloud.google.com/dlp/docs/
+  api_description: provides programmatic access to a powerful detection engine for
+    personally identifiable information and other privacy-sensitive data in unstructured
+    data streams, like text blocks and images.
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/5548083
+  rest_documentation: https://cloud.google.com/dlp/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/dlp/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/privacy/dlp/v2
+
+- api_shortname: datamigration
+  name_pretty: Database Migration Service
+  product_documentation: https://cloud.google.com/database-migration/docs
+  api_description: makes it easier for you to migrate your data to Google Cloud. This
+    service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud
+    SQL.
+  library_name: dms
+  release_level: stable
+  api_id: datamigration.googleapis.com
+  rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
+  GAPICs:
+  - proto_path: google/cloud/clouddms/v1
+
+- api_shortname: documentai
+  name_pretty: Document AI
+  product_documentation: https://cloud.google.com/compute/docs/documentai/
+  api_description: allows developers to unlock insights from your documents with machine
+    learning.
+  library_name: document-ai
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/559755
+  GAPICs:
+  - proto_path: google/cloud/documentai/v1
+  - proto_path: google/cloud/documentai/v1beta3
+
+- api_shortname: domains
+  name_pretty: Cloud Domains
+  product_documentation: https://cloud.google.com/domains
+  api_description: allows you to register and manage domains by using Cloud Domains.
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/domains/v1
+  - proto_path: google/cloud/domains/v1alpha2
+  - proto_path: google/cloud/domains/v1beta1
+
+- api_shortname: edgenetwork
+  name_pretty: Distributed Cloud Edge Network API
+  product_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/overview
+  api_description: Network management API for Distributed Cloud Edge.
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/edgenetwork/v1
+
+- api_shortname: enterpriseknowledgegraph
+  name_pretty: Enterprise Knowledge Graph
+  product_documentation: https://cloud.google.com/enterprise-knowledge-graph/docs/overview
+  api_description: Enterprise Knowledge Graph organizes siloed information into organizational
+    knowledge, which involves consolidating, standardizing, and reconciling data in
+    an efficient and useful way.
+  GAPICs:
+  - proto_path: google/cloud/enterpriseknowledgegraph/v1
+
+- api_shortname: clouderrorreporting
+  name_pretty: Error Reporting
+  product_documentation: https://cloud.google.com/error-reporting
+  api_description: 'counts, analyzes, and aggregates the crashes in your running cloud
+    services. A centralized error management interface displays the results with sorting
+    and filtering capabilities. A dedicated view shows the error details: time chart,
+    occurrences, affected user count, first- and last-seen dates and a cleaned exception
+    stack trace. Opt in to receive email and mobile alerts on new errors.'
+  library_name: errorreporting
+  codeowner_team: '@googleapis/api-logging'
+  issue_tracker: https://issuetracker.google.com/savedsearches/559780
+  requires_billing: false
+  GAPICs:
+  - proto_path: google/devtools/clouderrorreporting/v1beta1
+
+- api_shortname: essentialcontacts
+  name_pretty: Essential Contacts API
+  product_documentation: https://cloud.google.com/resource-manager/docs/managing-notification-contacts/
+  api_description: helps you customize who receives notifications by providing your
+    own list of contacts in many Google Cloud services.
+  library_name: essential-contacts
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/essentialcontacts/v1
+
+- api_shortname: eventarc
+  name_pretty: Eventarc
+  product_documentation: https://cloud.google.com/eventarc/docs
+  api_description: lets you asynchronously deliver events from Google services, SaaS,
+    and your own apps using loosely coupled services that react to state changes.
+    Eventarc requires no infrastructure management, you can optimize productivity
+    and costs while building a modern, event-driven solution.
+  release_level: stable
+  codeowner_team: '@googleapis/aap-dpes'
+  rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/eventarc/v1
+
+- api_shortname: eventarcpublishing
+  name_pretty: Eventarc Publishing
+  product_documentation: https://cloud.google.com/eventarc/docs
+  api_description: lets you asynchronously deliver events from Google services, SaaS,
+    and your own apps using loosely coupled services that react to state changes.
+  library_name: eventarc-publishing
+  api_id: eventarc-publishing.googleapis.com
+  rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/eventarc/publishing/v1
+
+- api_shortname: file
+  name_pretty: Cloud Filestore API
+  product_documentation: https://cloud.google.com/filestore/docs
+  api_description: instances are fully managed NFS file servers on Google Cloud for
+    use with applications running on Compute Engine virtual machines (VMs) instances
+    or Google Kubernetes Engine clusters.
+  library_name: filestore
+  release_level: stable
+  rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
+  GAPICs:
+  - proto_path: google/cloud/filestore/v1
+  - proto_path: google/cloud/filestore/v1beta1
+
+- api_shortname: cloudfunctions
+  name_pretty: Cloud Functions
+  product_documentation: https://cloud.google.com/functions
+  api_description: is a scalable pay as you go Functions-as-a-Service (FaaS) to run
+    your code with zero server management.
+  library_name: functions
+  release_level: stable
+  codeowner_team: '@googleapis/aap-dpes'
+  rest_documentation: https://cloud.google.com/functions/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/functions/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/functions/v1
+  - proto_path: google/cloud/functions/v2
+  - proto_path: google/cloud/functions/v2alpha
+  - proto_path: google/cloud/functions/v2beta
+
+- api_shortname: gdchardwaremanagement
+  name_pretty: GDC Hardware Management API
+  product_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs
+  api_description: Google Distributed Cloud connected allows you to run Kubernetes
+    clusters on dedicated hardware provided and maintained by Google that is separate
+    from the Google Cloud data center.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-gdchardwaremanagement
+  api_id: gdchardwaremanagement.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/gdchardwaremanagement/v1alpha
+  requires_billing: true
+  rpc_documentation:
+    https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
+- api_shortname: gke-backup
+  name_pretty: Backup for GKE
+  product_documentation: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
+  api_description: is a service for backing up and restoring workloads in GKE.
+  api_id: gkebackup.googleapis.com
+  library_name: gke-backup
+  GAPICs:
+  - proto_path: google/cloud/gkebackup/v1
+
+- api_shortname: connectgateway
+  name_pretty: Connect Gateway API
+  product_documentation: https://cloud.google.com/anthos/multicluster-management/gateway/
+  api_description: builds on the power of fleets to let Anthos users connect to and
+    run commands against registered Anthos clusters in a simple, consistent, and secured
+    way, whether the clusters are on Google Cloud, other public clouds, or on premises,
+    and makes it easier to automate DevOps processes across all your clusters.
+  library_name: gke-connect-gateway
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/gkeconnect/gateway/v1beta1
+
+- api_shortname: gke-multi-cloud
+  name_pretty: Anthos Multicloud
+  product_documentation: https://cloud.google.com/anthos/clusters/docs/multi-cloud
+  api_description: enables you to provision and manage GKE clusters running on AWS
+    and Azure infrastructure through a centralized Google Cloud backed control plane.
+  api_id: gkemulticloud.googleapis.com
+  GAPICs:
+  - proto_path: google/cloud/gkemulticloud/v1
+
+- api_shortname: gkehub
+  name_pretty: GKE Hub API
+  product_documentation: https://cloud.google.com/anthos/gke/docs/
+  api_description: provides a unified way to work with Kubernetes clusters as part
+    of Anthos, extending GKE to work in multiple environments. You have consistent,
+    unified, and secure infrastructure, cluster, and container management, whether
+    you're using Anthos on Google Cloud (with traditional GKE), hybrid cloud, or multiple
+    public clouds.
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/gkehub/v1
+  - proto_path: google/cloud/gkehub/v1alpha
+  - proto_path: google/cloud/gkehub/v1beta
+  - proto_path: google/cloud/gkehub/v1beta1
+  - proto_path: google/cloud/gkehub/servicemesh/v1beta
+
+- api_shortname: containeranalysis
+  name_pretty: Grafeas
+  product_documentation: https://grafeas.io
+  api_description: n/a
+  client_documentation: https://cloud.google.com/java/docs/reference/grafeas/latest/overview
+  release_level: stable
+  distribution_name: io.grafeas:grafeas
+  codeowner_team: '@googleapis/aap-dpes'
+  library_name: grafeas
+  GAPICs:
+  - proto_path: grafeas/v1
+
+- api_shortname: gsuiteaddons
+  name_pretty: Google Workspace Add-ons API
+  product_documentation: https://developers.google.com/workspace/add-ons/overview
+  api_description: are customized applications that integrate with Google Workspace
+    productivity applications.
+  library_name: gsuite-addons
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/gsuiteaddons/v1
+  - proto_path: google/apps/script/type
+  - proto_path: google/apps/script/type/docs
+  - proto_path: google/apps/script/type/drive
+  - proto_path: google/apps/script/type/gmail
+  - proto_path: google/apps/script/type/sheets
+  - proto_path: google/apps/script/type/slides
+
+- api_shortname: iam
+  name_pretty: IAM
+  product_documentation: n/a
+  api_description: n/a
+  release_level: stable
+  distribution_name: com.google.cloud:google-iam-policy
+  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
+  excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
+  excluded_dependencies: google-iam-policy
+  GAPICs:
+  - proto_path: google/iam/v1
+  - proto_path: google/iam/v1beta
+  - proto_path: google/iam/v2
+  - proto_path: google/iam/v2beta
+
+- api_shortname: iam-admin
+  name_pretty: IAM Admin API
+  product_documentation: https://cloud.google.com/iam/docs/apis
+  api_description: you to manage your Service Accounts and IAM bindings.
+  release_level: stable
+  distribution_name: com.google.cloud:google-iam-admin
+  api_id: iam.googleapis.com
+  GAPICs:
+  - proto_path: google/iam/admin/v1
+
+- api_shortname: iamcredentials
+  name_pretty: IAM Service Account Credentials API
+  product_documentation: https://cloud.google.com/iam/credentials/reference/rest/
+  api_description: creates short-lived, limited-privilege credentials for IAM service
+    accounts.
+  release_level: stable
+  requires_billing: false
+  issue_tracker: https://issuetracker.google.com/issues/new?component=187161&template=0
+  GAPICs:
+  - proto_path: google/iam/credentials/v1
+
+- api_shortname: iap
+  name_pretty: Cloud Identity-Aware Proxy API
+  product_documentation: https://cloud.google.com/iap
+  api_description: Controls access to cloud applications running on Google Cloud Platform.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-iap
+  api_id: iap.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/iap/v1
+  requires_billing: true
+- api_shortname: ids
+  name_pretty: Intrusion Detection System
+  product_documentation: https://cloud.google.com/intrusion-detection-system/docs
+  api_description: ' monitors your networks, and it alerts you when it detects malicious
+    activity. Cloud IDS is powered by Palo Alto Networks.'
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/ids/v1
+
+- api_shortname: infra-manager
+  name_pretty: Infrastructure Manager API
+  product_documentation: https://cloud.google.com/infrastructure-manager/docs/overview
+  api_description: Creates and manages Google Cloud Platform resources and infrastructure.
+  api_id: config.googleapis.com
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/config/v1
+
+- api_shortname: cloudiot
+  name_pretty: Cloud Internet of Things (IoT) Core
+  product_documentation: https://cloud.google.com/iot
+  api_description: is a complete set of tools to connect, process, store, and analyze
+    data both at the edge and in the cloud. The platform consists of scalable, fully-managed
+    cloud services; an integrated software stack for edge/on-premises computing with
+    machine learning capabilities for all your IoT needs.
+  library_name: iot
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/issues?q=status:open%20componentid:310170
+  GAPICs:
+  - proto_path: google/cloud/iot/v1
+- api_shortname: cloudkms
+  name_pretty: Cloud Key Management Service
+  product_documentation: https://cloud.google.com/kms
+  api_description: a cloud-hosted key management service that lets you manage cryptographic
+    keys for your cloud services the same way you do on-premises. You can generate,
+    use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC
+    P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit
+    Logging so that you can manage permissions on individual keys and monitor how
+    these are used. Use Cloud KMS to protect secrets and other sensitive data that
+    you need to store in Google Cloud Platform.
+  library_name: kms
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/5264932
+  GAPICs:
+  - proto_path: google/cloud/kms/v1
+
+- api_shortname: kmsinventory
+  name_pretty: KMS Inventory API
+  product_documentation: https://cloud.google.com/kms/docs/
+  api_description: KMS Inventory API.
+  rest_documentation: https://cloud.google.com/kms/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/kms/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/kms/inventory/v1
+
+- api_shortname: language
+  name_pretty: Natural Language
+  product_documentation: https://cloud.google.com/natural-language/docs/
+  api_description: provides natural language understanding technologies to developers,
+    including sentiment analysis, entity analysis, entity sentiment analysis, content
+    classification, and syntax analysis. This API is part of the larger Cloud Machine
+    Learning API family.
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/559753
+  rest_documentation: https://cloud.google.com/natural-language/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/natural-language/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/language/v1
+  - proto_path: google/cloud/language/v1beta2
+  - proto_path: google/cloud/language/v2
+
+- api_shortname: lifesciences
+  name_pretty: Cloud Life Sciences
+  product_documentation: https://cloud.google.com/life-sciences/docs
+  api_description: is a suite of services and tools for managing, processing, and
+    transforming life sciences data.
+  library_name: life-sciences
+  rest_documentation: https://cloud.google.com/life-sciences/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/life-sciences/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/lifesciences/v2beta
+
+- api_shortname: managedidentities
+  name_pretty: Managed Service for Microsoft Active Directory
+  product_documentation: https://cloud.google.com/managed-microsoft-ad/
+  api_description: is a highly available, hardened Google Cloud service running actual
+    Microsoft AD that enables you to manage authentication and authorization for your
+    AD-dependent workloads, automate AD server maintenance and security configuration,
+    and connect your on-premises AD domain to the cloud.
+  library_name: managed-identities
+  release_level: stable
+  api_id: managedidentities.googleapis.com
+  GAPICs:
+  - proto_path: google/cloud/managedidentities/v1
+  - proto_path: google/cloud/managedidentities/v1beta1
+
+- api_shortname: managedkafka
+  name_pretty: Apache Kafka for BigQuery API
+  product_documentation: https://cloud.google.com/managed-kafka
+  api_description: Manage Apache Kafka clusters and resources.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-managedkafka
+  api_id: managedkafka.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/managedkafka/v1
+  requires_billing: true
+- api_shortname: maps-addressvalidation
+  name_pretty: Address Validation API
+  product_documentation: https://developers.google.com/maps/documentation/address-validation/
+  api_description: The Address Validation API allows developers to verify the accuracy
+    of addresses. Given an address, it returns information about the correctness of
+    the components of the parsed address, a geocode, and a verdict on the deliverability
+    of the parsed address.
+  api_id: addressvalidation.googleapis.com
+  cloud_api: false
+  distribution_name: com.google.maps:google-maps-addressvalidation
+  GAPICs:
+  - proto_path: google/maps/addressvalidation/v1
+
+- api_shortname: maps-area-insights
+  name_pretty: Places Insights API
+  product_documentation: https://developers.google.com/maps/documentation/places-insights
+  api_description: Places Insights API.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-area-insights
+  api_id: maps-area-insights.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/areainsights/v1
+  requires_billing: true
+- api_shortname: maps-mapsplatformdatasets
+  name_pretty: Maps Platform Datasets API
+  product_documentation: https://developers.google.com/maps/documentation
+  api_description: "The Maps Platform Datasets API enables developers to ingest geospatially-tied
+    datasets\n    that they can use to enrich their experience of Maps Platform solutions
+    (e.g. styling, routing)."
+  api_id: mapsplatformdatasets.googleapis.com
+  distribution_name: com.google.maps:google-maps-mapsplatformdatasets
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/mapsplatformdatasets/v1
+
+- api_shortname: maps-places
+  name_pretty: Places API (New)
+  product_documentation: https://developers.google.com/maps/documentation/places/web-service/
+  api_description: The Places API allows developers to access a variety of search
+    and retrieval endpoints for a Place.
+  api_id: places.googleapis.com
+  distribution_name: com.google.maps:google-maps-places
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/places/v1
+
+- api_shortname: routeoptimization
+  name_pretty: Route Optimization API
+  product_documentation: https://developers.google.com/maps/documentation/route-optimization
+  api_description: The Route Optimization API assigns tasks and routes to a vehicle
+    fleet, optimizing against the objectives and constraints that you supply for your
+    transportation goals.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-routeoptimization
+  api_id: routeoptimization.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/routeoptimization/v1
+  library_name: maps-routeoptimization
+  requires_billing: true
+  rest_documentation:
+    https://developers.google.com/maps/documentation/route-optimization/reference/rest/
+  rpc_documentation:
+    https://developers.google.com/maps/documentation/route-optimization/reference/rpc
+- api_shortname: maps-routing
+  name_pretty: Routes API
+  product_documentation: https://developers.google.com/maps/documentation/routes
+  api_description: Routes API is the next generation, performance optimized version
+    of the existing Directions API and Distance Matrix API. It helps you find the
+    ideal route from A to Z, calculates ETAs and distances for matrices of origin
+    and destination locations, and also offers new features.
+  release_level: stable
+  api_id: routes.googleapis.com
+  distribution_name: com.google.maps:google-maps-routing
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/routing/v2
+
+- api_shortname: maps-solar
+  name_pretty: Solar API
+  product_documentation: https://developers.google.com/maps/documentation/solar/overview
+  api_description: The Solar API allows users to read details about the solar potential
+    of over 60 million buildings. This includes measurements of the building's roof
+    (e.g., size and tilt/azimuth), energy production for a range of sizes of solar
+    installations, and financial costs and benefits.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-solar
+  api_id: maps-solar.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/solar/v1
+  requires_billing: true
+  rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
+- api_shortname: marketingplatformadminapi
+  name_pretty: Google Marketing Platform Admin API
+  product_documentation: https://developers.google.com/analytics/devguides/config/gmp/v1
+  api_description: The Google Marketing Platform Admin API allows for programmatic
+    access to the Google Marketing Platform configuration data. You can use the Google
+    Marketing Platform Admin API to manage links between your Google Marketing Platform
+    organization and Google Analytics accounts, and to set the service level of your
+    GA4 properties.
+  client_documentation: https://cloud.google.com/java/docs/reference/admin/latest/overview
+  release_level: preview
+  distribution_name: com.google.ads-marketingplatform:admin
+  api_id: marketingplatformadminapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.ads-marketingplatform
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/marketingplatform/admin/v1alpha
+  requires_billing: true
+- api_shortname: mediatranslation
+  name_pretty: Media Translation API
+  product_documentation: https://cloud.google.com/
+  api_description: provides enterprise quality translation from/to various media types.
+  requires_billing: false
+  GAPICs:
+  - proto_path: google/cloud/mediatranslation/v1beta1
+
+- api_shortname: meet
+  name_pretty: Google Meet API
+  product_documentation: https://developers.google.com/meet/api/guides/overview
+  api_description: The Google Meet REST API lets you create and manage meetings for
+    Google Meet and offers entry points to your users directly from your app
+  GAPICs:
+  - proto_path: google/apps/meet/v2
+  - proto_path: google/apps/meet/v2beta
+
+- api_shortname: memcache
+  name_pretty: Cloud Memcache
+  product_documentation: https://cloud.google.com/memorystore/
+  api_description: is a fully-managed in-memory data store service for Memcache.
+  release_level: stable
+  requires_billing: false
+  GAPICs:
+  - proto_path: google/cloud/memcache/v1
+  - proto_path: google/cloud/memcache/v1beta2
+
+- api_shortname: migrationcenter
+  name_pretty: Migration Center API
+  product_documentation: https://cloud.google.com/migration-center/docs/migration-center-overview
+  api_description: Google Cloud Migration Center is a unified platform that helps
+    you accelerate your end-to-end cloud journey from your current on-premises or
+    cloud environments to Google Cloud
+  GAPICs:
+  - proto_path: google/cloud/migrationcenter/v1
+
+- api_shortname: monitoring
+  name_pretty: Stackdriver Monitoring
+  product_documentation: https://cloud.google.com/monitoring/docs
+  api_description: collects metrics, events, and metadata from Google Cloud, Amazon
+    Web Services (AWS), hosted uptime probes, and application instrumentation. Using
+    the BindPlane service, you can also collect this data from over 150 common application
+    components, on-premise systems, and hybrid cloud systems. Stackdriver ingests
+    that data and generates insights via dashboards, charts, and alerts. BindPlane
+    is included with your Google Cloud project at no additional cost.
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/559785
+  GAPICs:
+  - proto_path: google/monitoring/v3
+
+- api_shortname: monitoring-dashboards
+  name_pretty: Monitoring Dashboards
+  product_documentation: https://cloud.google.com/monitoring/charts/dashboards
+  api_description: are one way for you to view and analyze metric data. The Cloud
+    Console provides predefined dashboards that require no setup or configuration.
+    You can also define custom dashboards. With custom dashboards, you have complete
+    control over the charts that are displayed and their configuration.
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-monitoring-dashboard
+  api_id: monitoring.googleapis.com
+  GAPICs:
+  - proto_path: google/monitoring/dashboard/v1
+
+- api_shortname: monitoring-metricsscope
+  name_pretty: Monitoring Metrics Scopes
+  product_documentation:
+    https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
+  api_description: The metrics scope defines the set of Google Cloud projects whose
+    metrics the current Google Cloud project can access.
+  api_id: monitoring.googleapis.com
+  distribution_name: com.google.cloud:google-cloud-monitoring-metricsscope
+  GAPICs:
+  - proto_path: google/monitoring/metricsscope/v1
+
+- api_shortname: netapp
+  name_pretty: NetApp API
+  product_documentation: https://cloud.google.com/netapp/volumes/docs/discover/overview
+  api_description: Google Cloud NetApp Volumes is a fully-managed, cloud-based data
+    storage service that provides advanced data management capabilities and highly
+    scalable performance with global availability.
+  GAPICs:
+  - proto_path: google/cloud/netapp/v1
+
+- api_shortname: networkmanagement
+  name_pretty: Network Management API
+  product_documentation:
+    https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
+  api_description: provides a collection of network performance monitoring and diagnostic
+    capabilities.
+  library_name: network-management
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/networkmanagement/v1
+  - proto_path: google/cloud/networkmanagement/v1beta1
+
+- api_shortname: networksecurity
+  name_pretty: Network Security API
+  product_documentation: https://cloud.google.com/traffic-director/docs/reference/network-security/rest
+  api_description: n/a
+  library_name: network-security
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/networksecurity/v1
+  - proto_path: google/cloud/networksecurity/v1beta1
+
+- api_shortname: networkconnectivity
+  name_pretty: Network Connectivity Center
+  product_documentation: https://cloud.google.com/network-connectivity/docs
+  api_description: Google's suite of products that provide enterprise connectivity
+    from your on-premises network or from another cloud provider to your Virtual Private
+    Cloud (VPC) network
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/networkconnectivity/v1
+  - proto_path: google/cloud/networkconnectivity/v1alpha1
+
+- api_shortname: networkservices
+  name_pretty: Network Services API
+  product_documentation: https://cloud.google.com/products/networking
+  api_description: Google Cloud offers a broad portfolio of networking services built
+    on top of planet-scale infrastructure that leverages automation, advanced AI,
+    and programmability, enabling enterprises to connect, scale, secure, modernize
+    and optimize their infrastructure.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-networkservices
+  api_id: networkservices.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/networkservices/v1
+  requires_billing: true
+- api_shortname: notebooks
+  name_pretty: AI Platform Notebooks
+  product_documentation: https://cloud.google.com/ai-platform-notebooks
+  api_description: is a managed service that offers an integrated and secure JupyterLab
+    environment for data scientists and machine learning developers to experiment,
+    develop, and deploy models into production. Users can create instances running
+    JupyterLab that come pre-installed with the latest data science and machine learning
+    frameworks in a single click.
+  release_level: stable
+  GAPICs:
+  - proto_path: google/cloud/notebooks/v1
+  - proto_path: google/cloud/notebooks/v1beta1
+  - proto_path: google/cloud/notebooks/v2
+
+- api_shortname: cloudoptimization
+  name_pretty: Cloud Fleet Routing
+  product_documentation: https://cloud.google.com/optimization/docs
+  api_description: is a managed routing service that takes your list of orders, vehicles,
+    constraints, and objectives and returns the most efficient plan for your entire
+    fleet in near real-time.
+  library_name: optimization
+  release_level: stable
+  rest_documentation: https://cloud.google.com/optimization/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/optimization/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/optimization/v1
+
+- api_shortname: oracledatabase
+  name_pretty: Oracle Database@Google Cloud API
+  product_documentation: https://cloud.google.com/oracle/database/docs
+  api_description: The Oracle Database@Google Cloud API provides a set of APIs to
+    manage   Oracle database services, such as Exadata and Autonomous Databases.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-oracledatabase/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-oracledatabase
+  api_id: oracledatabase.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/oracledatabase/v1
+  requires_billing: true
+- api_shortname: orchestration-airflow
+  name_pretty: Cloud Composer
+  product_documentation: https://cloud.google.com/composer/docs
+  api_description: is a managed Apache Airflow service that helps you create, schedule,
+    monitor and manage workflows. Cloud Composer automation helps you create Airflow
+    environments quickly and use Airflow-native tools, such as the powerful Airflow
+    web interface and command line tools, so you can focus on your workflows and not
+    your infrastructure.
+  release_level: stable
+  api_id: composer.googleapis.com
+  rest_documentation: https://cloud.google.com/composer/docs/reference/rest
+  rpc_documentation: https://cloud.google.com/composer/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/orchestration/airflow/service/v1
+  - proto_path: google/cloud/orchestration/airflow/service/v1beta1
+
+- api_shortname: orgpolicy
+  name_pretty: Cloud Organization Policy
+  product_documentation: n/a
+  api_description: n/a
+  release_level: stable
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
+  GAPICs:
+  - proto_path: google/cloud/orgpolicy/v1
+  - proto_path: google/cloud/orgpolicy/v2
+
+- api_shortname: osconfig
+  name_pretty: OS Config API
+  product_documentation: https://cloud.google.com/compute/docs/os-patch-management
+  api_description: provides OS management tools that can be used for patch management,
+    patch compliance, and configuration management on VM instances.
+  library_name: os-config
+  release_level: stable
+  requires_billing: false
+  api_id: osconfig.googleapis.com
+  GAPICs:
+  - proto_path: google/cloud/osconfig/v1
+  - proto_path: google/cloud/osconfig/v1alpha
+  - proto_path: google/cloud/osconfig/v1beta
+
+- api_shortname: oslogin
+  name_pretty: Cloud OS Login
+  product_documentation: https://cloud.google.com/compute/docs/oslogin/
+  api_description: manages OS login configuration for Directory API users.
+  library_name: os-login
+  release_level: stable
+  issue_tracker: https://issuetracker.google.com/savedsearches/559755
+  GAPICs:
+  - proto_path: google/cloud/oslogin/v1
+  - proto_path: google/cloud/oslogin/v1beta
+
+- api_shortname: parallelstore
+  name_pretty: Parallelstore API
+  product_documentation: https://cloud/parallelstore?hl=en
+  api_description: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater
+    read throughput performance compared to competitive Lustre scratch offerings. '
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-parallelstore
+  api_id: parallelstore.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/parallelstore/v1beta
+  - proto_path: google/cloud/parallelstore/v1
+  requires_billing: true
+- api_shortname: phishingprotection
+  name_pretty: Phishing Protection
+  product_documentation: https://cloud.google.com/phishing-protection/docs/
+  api_description: helps prevent users from accessing phishing sites by identifying
+    various signals associated with malicious content, including the use of your brand
+    assets, classifying malicious content that uses your brand and reporting the unsafe
+    URLs to Google Safe Browsing. Once a site is propagated to Safe Browsing, users
+    will see warnings across more than 4 billion devices.
+  issue_tracker: ''
+  requires_billing: false
+  GAPICs:
+  - proto_path: google/cloud/phishingprotection/v1beta1
+
+- api_shortname: policytroubleshooter
+  name_pretty: IAM Policy Troubleshooter API
+  product_documentation: https://cloud.google.com/iam/docs/troubleshooting-access
+  api_description: makes it easier to understand why a user has access to a resource
+    or doesn't have permission to call an API. Given an email, resource, and permission,
+    Policy Troubleshooter examines all Identity and Access Management (IAM) policies
+    that apply to the resource. It then reveals whether the member's roles include
+    the permission on that resource and, if so, which policies bind the member to
+    those roles.
+  library_name: policy-troubleshooter
+  release_level: stable
+  api_id: policytroubleshooter.googleapis.com
+  GAPICs:
+  - proto_path: google/cloud/policytroubleshooter/v1
+  - proto_path: google/cloud/policytroubleshooter/iam/v3
+
+- api_shortname: policysimulator
+  name_pretty: Policy Simulator API
+  product_documentation: https://cloud.google.com/policysimulator/docs/overview
+  api_description: Policy Simulator is a collection of endpoints for creating, running,
+    and viewing a Replay.
+  GAPICs:
+  - proto_path: google/cloud/policysimulator/v1
+
+- api_shortname: cloudprivatecatalog
+  name_pretty: Private Catalog
+  product_documentation: https://cloud.google.com/private-catalog/docs
+  api_description: allows developers and cloud admins to make their solutions discoverable
+    to their internal enterprise users. Cloud admins can manage their solutions and
+    ensure their users are always launching the latest versions.
+  library_name: private-catalog
+  api_id: privatecatalog.googleapis.com
+  GAPICs:
+  - proto_path: google/cloud/privatecatalog/v1beta1
+
+- api_shortname: privilegedaccessmanager
+  name_pretty: Privileged Access Manager API
+  product_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+  api_description: Privileged Access Manager (PAM) helps you on your journey towards
+    least privilege and helps mitigate risks tied to privileged access misuse orabuse.
+    PAM allows you to shift from always-on standing privileges towards on-demand access
+    with just-in-time, time-bound, and approval-based access elevations. PAM allows
+    IAM administrators to create entitlements that can grant just-in-time, temporary
+    access to any resource scope. Requesters can explore eligible entitlements and
+    request the access needed for their task. Approvers are notified when approvals
+    await their decision. Streamlined workflows facilitated by using PAM can support
+    various use cases, including emergency access for incident responders, time-boxed
+    access for developers for critical deployment or maintenance, temporary access
+    for operators for data ingestion and audits, JIT access to service accounts for
+    automated tasks, and more.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-privilegedaccessmanager
+  api_id: privilegedaccessmanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/privilegedaccessmanager/v1
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
+- api_shortname: cloudprofiler
+  name_pretty: Cloud Profiler
+  product_documentation: https://cloud.google.com/profiler/docs
+  api_description: is a statistical, low-overhead profiler that continuously gathers
+    CPU usage and memory-allocation information from your production applications.
+    It attributes that information to the application's source code, helping you identify
+    the parts of the application consuming the most resources, and otherwise illuminating
+    the performance characteristics of the code.
+  library_name: profiler
+  release_level: stable
+  api_id: cloudprofiler.googleapis.com
+  GAPICs:
+  - proto_path: google/devtools/cloudprofiler/v2
