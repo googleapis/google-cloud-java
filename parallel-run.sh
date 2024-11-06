@@ -13,7 +13,7 @@ for num in "1" "2" "3"; do
    -v "$(pwd):${workspace_name}" \
    -v "$(pwd)/../googleapis:${workspace_name}/apis" \
    -e GENERATOR_VERSION="2.49.0-SNAPSHOT" \
-   us-docker.pkg.dev/java-hermetic-build-prod/private-resources/java-library-generation:test-secure-base-image-public-repo \
+   local:latest \
    --generation-config-path="${workspace_name}/generation_config-${num}.yaml" \
    --api-definitions-path="${workspace_name}/apis" > run-${num}.log 2>&1 &
 done
