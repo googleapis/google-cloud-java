@@ -73,7 +73,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The location to list all security settings for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The location to list all security settings for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -594,7 +594,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The location to list all security settings for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -619,7 +619,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The location to list all security settings for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -644,7 +644,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The location to list all security settings for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The location to list all security settings for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -688,7 +688,7 @@ public final class ListSecuritySettingsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The location to list all security settings for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>

@@ -74,7 +74,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The location to list all agents for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The location to list all agents for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -587,7 +587,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The location to list all agents for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -612,7 +612,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The location to list all agents for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -637,7 +637,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The location to list all agents for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -661,7 +661,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The location to list all agents for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -681,7 +681,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The location to list all agents for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>

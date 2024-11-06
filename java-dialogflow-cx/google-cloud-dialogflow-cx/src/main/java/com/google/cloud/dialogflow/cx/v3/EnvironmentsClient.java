@@ -429,8 +429,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to list all
-   *     environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;`.
+   *     environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
@@ -463,8 +463,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to list all
-   *     environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;`.
+   *     environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(String parent) {
@@ -601,8 +601,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Environment getEnvironment(EnvironmentName name) {
@@ -631,8 +631,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Environment getEnvironment(String name) {
@@ -729,8 +729,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
-   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param environment Required. The environment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -773,8 +773,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
-   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param environment Required. The environment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1076,8 +1076,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment]
-   *     to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEnvironment(EnvironmentName name) {
@@ -1108,8 +1108,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment]
-   *     to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEnvironment(String name) {
@@ -1198,8 +1198,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the environment to look up the history for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupEnvironmentHistoryPagedResponse lookupEnvironmentHistory(
@@ -1233,8 +1232,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the environment to look up the history for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupEnvironmentHistoryPagedResponse lookupEnvironmentHistory(String name) {
@@ -1501,9 +1499,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The environment to list results for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ environments/&lt;Environment
-   *     ID&gt;`.
+   * @param parent Required. The environment to list results for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListContinuousTestResultsPagedResponse listContinuousTestResults(
@@ -1537,9 +1534,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The environment to list results for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ environments/&lt;Environment
-   *     ID&gt;`.
+   * @param parent Required. The environment to list results for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListContinuousTestResultsPagedResponse listContinuousTestResults(String parent) {

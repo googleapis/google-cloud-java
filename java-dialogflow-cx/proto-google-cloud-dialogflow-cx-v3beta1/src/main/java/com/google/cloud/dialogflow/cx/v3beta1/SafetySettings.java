@@ -39,6 +39,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   private SafetySettings() {
+    defaultBannedPhraseMatchStrategy_ = 0;
     bannedPhrases_ = java.util.Collections.emptyList();
   }
 
@@ -61,6 +62,172 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.class,
             com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for matching phrases.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy}
+   */
+  public enum PhraseMatchStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified, defaults to PARTIAL_MATCH.
+     * </pre>
+     *
+     * <code>PHRASE_MATCH_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    PHRASE_MATCH_STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Text that contains the phrase as a substring will be matched, e.g. "foo"
+     * will match "afoobar".
+     * </pre>
+     *
+     * <code>PARTIAL_MATCH = 1;</code>
+     */
+    PARTIAL_MATCH(1),
+    /**
+     *
+     *
+     * <pre>
+     * Text that contains the tokenized words of the phrase will be matched,
+     * e.g. "foo" will match "a foo bar" and "foo bar", but not "foobar".
+     * </pre>
+     *
+     * <code>WORD_MATCH = 2;</code>
+     */
+    WORD_MATCH(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified, defaults to PARTIAL_MATCH.
+     * </pre>
+     *
+     * <code>PHRASE_MATCH_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int PHRASE_MATCH_STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Text that contains the phrase as a substring will be matched, e.g. "foo"
+     * will match "afoobar".
+     * </pre>
+     *
+     * <code>PARTIAL_MATCH = 1;</code>
+     */
+    public static final int PARTIAL_MATCH_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Text that contains the tokenized words of the phrase will be matched,
+     * e.g. "foo" will match "a foo bar" and "foo bar", but not "foobar".
+     * </pre>
+     *
+     * <code>WORD_MATCH = 2;</code>
+     */
+    public static final int WORD_MATCH_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PhraseMatchStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PhraseMatchStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PHRASE_MATCH_STRATEGY_UNSPECIFIED;
+        case 1:
+          return PARTIAL_MATCH;
+        case 2:
+          return WORD_MATCH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PhraseMatchStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PhraseMatchStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PhraseMatchStrategy>() {
+              public PhraseMatchStrategy findValueByNumber(int number) {
+                return PhraseMatchStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final PhraseMatchStrategy[] VALUES = values();
+
+    public static PhraseMatchStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PhraseMatchStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy)
   }
 
   public interface PhraseOrBuilder
@@ -918,6 +1085,49 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_FIELD_NUMBER = 4;
+  private int defaultBannedPhraseMatchStrategy_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultBannedPhraseMatchStrategy.
+   */
+  @java.lang.Override
+  public int getDefaultBannedPhraseMatchStrategyValue() {
+    return defaultBannedPhraseMatchStrategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultBannedPhraseMatchStrategy.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+      getDefaultBannedPhraseMatchStrategy() {
+    com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy result =
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy.forNumber(
+            defaultBannedPhraseMatchStrategy_);
+    return result == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy.UNRECOGNIZED
+        : result;
+  }
+
   public static final int BANNED_PHRASES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1015,6 +1225,12 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bannedPhrases_.size(); i++) {
       output.writeMessage(1, bannedPhrases_.get(i));
     }
+    if (defaultBannedPhraseMatchStrategy_
+        != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+            .PHRASE_MATCH_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, defaultBannedPhraseMatchStrategy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1026,6 +1242,14 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     for (int i = 0; i < bannedPhrases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, bannedPhrases_.get(i));
+    }
+    if (defaultBannedPhraseMatchStrategy_
+        != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+            .PHRASE_MATCH_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              4, defaultBannedPhraseMatchStrategy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1043,6 +1267,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.cx.v3beta1.SafetySettings other =
         (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings) obj;
 
+    if (defaultBannedPhraseMatchStrategy_ != other.defaultBannedPhraseMatchStrategy_) return false;
     if (!getBannedPhrasesList().equals(other.getBannedPhrasesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1055,6 +1280,8 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_FIELD_NUMBER;
+    hash = (53 * hash) + defaultBannedPhraseMatchStrategy_;
     if (getBannedPhrasesCount() > 0) {
       hash = (37 * hash) + BANNED_PHRASES_FIELD_NUMBER;
       hash = (53 * hash) + getBannedPhrasesList().hashCode();
@@ -1199,13 +1426,14 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      defaultBannedPhraseMatchStrategy_ = 0;
       if (bannedPhrasesBuilder_ == null) {
         bannedPhrases_ = java.util.Collections.emptyList();
       } else {
         bannedPhrases_ = null;
         bannedPhrasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1244,9 +1472,9 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.dialogflow.cx.v3beta1.SafetySettings result) {
       if (bannedPhrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           bannedPhrases_ = java.util.Collections.unmodifiableList(bannedPhrases_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.bannedPhrases_ = bannedPhrases_;
       } else {
@@ -1256,6 +1484,9 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.SafetySettings result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.defaultBannedPhraseMatchStrategy_ = defaultBannedPhraseMatchStrategy_;
+      }
     }
 
     @java.lang.Override
@@ -1304,11 +1535,14 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.SafetySettings other) {
       if (other == com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.getDefaultInstance())
         return this;
+      if (other.defaultBannedPhraseMatchStrategy_ != 0) {
+        setDefaultBannedPhraseMatchStrategyValue(other.getDefaultBannedPhraseMatchStrategyValue());
+      }
       if (bannedPhrasesBuilder_ == null) {
         if (!other.bannedPhrases_.isEmpty()) {
           if (bannedPhrases_.isEmpty()) {
             bannedPhrases_ = other.bannedPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBannedPhrasesIsMutable();
             bannedPhrases_.addAll(other.bannedPhrases_);
@@ -1321,7 +1555,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
             bannedPhrasesBuilder_.dispose();
             bannedPhrasesBuilder_ = null;
             bannedPhrases_ = other.bannedPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             bannedPhrasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBannedPhrasesFieldBuilder()
@@ -1371,6 +1605,12 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 32:
+              {
+                defaultBannedPhraseMatchStrategy_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1390,15 +1630,120 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private int defaultBannedPhraseMatchStrategy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default phrase match strategy for banned phrases.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for defaultBannedPhraseMatchStrategy.
+     */
+    @java.lang.Override
+    public int getDefaultBannedPhraseMatchStrategyValue() {
+      return defaultBannedPhraseMatchStrategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default phrase match strategy for banned phrases.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for defaultBannedPhraseMatchStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultBannedPhraseMatchStrategyValue(int value) {
+      defaultBannedPhraseMatchStrategy_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default phrase match strategy for banned phrases.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultBannedPhraseMatchStrategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+        getDefaultBannedPhraseMatchStrategy() {
+      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy result =
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy.forNumber(
+              defaultBannedPhraseMatchStrategy_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default phrase match strategy for banned phrases.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The defaultBannedPhraseMatchStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultBannedPhraseMatchStrategy(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      defaultBannedPhraseMatchStrategy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default phrase match strategy for banned phrases.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultBannedPhraseMatchStrategy() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      defaultBannedPhraseMatchStrategy_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase>
         bannedPhrases_ = java.util.Collections.emptyList();
 
     private void ensureBannedPhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         bannedPhrases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase>(
                 bannedPhrases_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1633,7 +1978,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder clearBannedPhrases() {
       if (bannedPhrasesBuilder_ == null) {
         bannedPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         bannedPhrasesBuilder_.clear();
@@ -1771,7 +2116,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseOrBuilder>(
                 bannedPhrases_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         bannedPhrases_ = null;

@@ -28,6 +28,36 @@ public interface SafetySettingsOrBuilder
    *
    *
    * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultBannedPhraseMatchStrategy.
+   */
+  int getDefaultBannedPhraseMatchStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultBannedPhraseMatchStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+      getDefaultBannedPhraseMatchStrategy();
+
+  /**
+   *
+   *
+   * <pre>
    * Banned phrases for generated text.
    * </pre>
    *

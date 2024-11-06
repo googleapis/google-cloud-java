@@ -29,8 +29,8 @@ public interface ListEnvironmentsRequestOrBuilder
    *
    * <pre>
    * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all
-   * environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;`.
+   * environments for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface ListEnvironmentsRequestOrBuilder
    *
    * <pre>
    * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all
-   * environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;`.
+   * environments for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>

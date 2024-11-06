@@ -29,8 +29,8 @@ public interface FlowValidationResultOrBuilder
    *
    * <pre>
    * The unique identifier of the flow validation result.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,8 +43,8 @@ public interface FlowValidationResultOrBuilder
    *
    * <pre>
    * The unique identifier of the flow validation result.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * </pre>
    *
    * <code>string name = 1;</code>

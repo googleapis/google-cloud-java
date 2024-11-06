@@ -73,8 +73,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the Tool.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the Tool.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -473,8 +473,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -499,8 +499,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -525,8 +525,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -550,8 +550,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -571,8 +571,8 @@ public final class GetToolRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>

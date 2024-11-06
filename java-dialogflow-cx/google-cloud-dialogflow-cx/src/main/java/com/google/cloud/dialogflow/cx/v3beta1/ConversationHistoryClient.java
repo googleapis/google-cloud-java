@@ -286,8 +286,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all conversations for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all conversations for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConversationsPagedResponse listConversations(AgentName parent) {
@@ -319,8 +319,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all conversations for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all conversations for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConversationsPagedResponse listConversations(String parent) {
@@ -457,9 +457,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the conversation. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;`.
+   * @param name Required. The name of the conversation. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation getConversation(ConversationName name) {
@@ -487,9 +486,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the conversation. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;`.
+   * @param name Required. The name of the conversation. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation getConversation(String name) {
@@ -576,9 +574,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the conversation. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;`.
+   * @param name Required. The name of the conversation. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteConversation(ConversationName name) {
@@ -608,9 +605,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the conversation. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;`.
+   * @param name Required. The name of the conversation. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteConversation(String name) {

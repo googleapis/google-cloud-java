@@ -189,6 +189,7 @@ public class GeneratorsClientTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -232,6 +233,7 @@ public class GeneratorsClientTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -275,6 +277,7 @@ public class GeneratorsClientTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -321,6 +324,7 @@ public class GeneratorsClientTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -367,6 +371,7 @@ public class GeneratorsClientTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 

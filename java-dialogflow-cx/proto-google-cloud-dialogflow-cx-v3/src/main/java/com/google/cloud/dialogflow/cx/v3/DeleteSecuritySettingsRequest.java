@@ -73,8 +73,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-   * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * delete. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-   * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * delete. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>
@@ -478,8 +478,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-     * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * delete. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -505,8 +505,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-     * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * delete. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -532,8 +532,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-     * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * delete. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -558,8 +558,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-     * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * delete. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -580,8 +580,8 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-     * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * delete. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>
