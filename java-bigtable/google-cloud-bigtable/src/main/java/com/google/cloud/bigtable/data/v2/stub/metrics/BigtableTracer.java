@@ -59,6 +59,13 @@ public class BigtableTracer extends BaseApiTracer {
   }
 
   /**
+   * Used by BigtableUnaryOperationCallable to signal that the user visible portion of the RPC is
+   * complete and that metrics should freeze the timers and then publish the frozen values when the
+   * internal portion of the operation completes.
+   */
+  public void operationFinishEarly() {}
+
+  /**
    * Get the attempt number of the current call. Attempt number for the current call is passed in
    * and should be recorded in {@link #attemptStarted(int)}. With the getter we can access it from
    * {@link ApiCallContext}. Attempt number starts from 0.

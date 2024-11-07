@@ -55,6 +55,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private final SpanName spanName;
 
   // Operation level metrics
+  private final AtomicBoolean operationFinishedEarly = new AtomicBoolean();
   private final AtomicBoolean opFinished = new AtomicBoolean();
   private final Stopwatch operationTimer = Stopwatch.createStarted();
   private final Stopwatch firstResponsePerOpTimer = Stopwatch.createStarted();
@@ -143,6 +144,13 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   @Override
+  public void operationFinishEarly() {
+    operationFinishedEarly.set(true);
+    attemptTimer.stop();
+    operationTimer.stop();
+  }
+
+  @Override
   public void operationSucceeded() {
     recordOperationCompletion(null);
   }
@@ -207,6 +215,11 @@ class BuiltinMetricsTracer extends BigtableTracer {
   @Override
   public void onRequest(int requestCount) {
     requestLeft.accumulateAndGet(requestCount, IntMath::saturatedAdd);
+
+    if (operationFinishedEarly.get()) {
+      return;
+    }
+
     if (flowControlIsDisabled) {
       // On request is only called when auto flow control is disabled. When auto flow control is
       // disabled, server latency is measured between onRequest and onResponse.
@@ -220,6 +233,10 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void responseReceived() {
+    if (operationFinishedEarly.get()) {
+      return;
+    }
+
     if (firstResponsePerOpTimer.isRunning()) {
       firstResponsePerOpTimer.stop();
     }
@@ -241,6 +258,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
   @Override
   public void afterResponse(long applicationLatency) {
     if (!flowControlIsDisabled || requestLeft.decrementAndGet() > 0) {
+      if (operationFinishedEarly.get()) {
+        return;
+      }
       // When auto flow control is enabled, request will never be called, so server latency is
       // measured between after the last response is processed and before the next response is
       // received. If flow control is disabled but requestLeft is greater than 0,
@@ -295,10 +315,14 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   private void recordOperationCompletion(@Nullable Throwable status) {
+    if (operationFinishedEarly.get()) {
+      status = null; // force an ok
+    }
+
     if (!opFinished.compareAndSet(false, true)) {
       return;
     }
-    operationTimer.stop();
+    long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     boolean isStreaming = operationType == OperationType.ServerStreaming;
     String statusStr = Util.extractStatus(status);
@@ -316,8 +340,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
             .put(STREAMING_KEY, isStreaming)
             .put(STATUS_KEY, statusStr)
             .build();
-
-    long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     // Only record when retry count is greater than 0 so the retry
     // graph will be less confusing
@@ -339,6 +361,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   private void recordAttemptCompletion(@Nullable Throwable status) {
+    if (operationFinishedEarly.get()) {
+      status = null; // force an ok
+    }
     // If the attempt failed, the time spent in retry should be counted in application latency.
     // Stop the stopwatch and decrement requestLeft.
     synchronized (timerLock) {

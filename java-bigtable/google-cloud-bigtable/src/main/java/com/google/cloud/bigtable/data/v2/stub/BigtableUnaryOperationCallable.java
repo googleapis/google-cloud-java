@@ -24,15 +24,16 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.Futures;
 import io.grpc.Status;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 
 /**
  * Helper to convert a fake {@link ServerStreamingCallable} (ie only up to 1 response) into a {@link
@@ -73,9 +74,10 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
   public ApiFuture<RespT> futureCall(ReqT req, ApiCallContext apiCallContext) {
     apiCallContext = defaultCallContext.merge(apiCallContext);
 
-    ApiTracer apiTracer =
-        tracerFactory.newTracer(
-            apiCallContext.getTracer(), spanName, ApiTracerFactory.OperationType.Unary);
+    BigtableTracer apiTracer =
+        (BigtableTracer)
+            tracerFactory.newTracer(
+                apiCallContext.getTracer(), spanName, ApiTracerFactory.OperationType.Unary);
 
     apiCallContext = apiCallContext.withTracer(apiTracer);
 
@@ -85,18 +87,15 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
   }
 
   class UnaryFuture extends AbstractApiFuture<RespT> implements ResponseObserver<RespT> {
-    private final ApiTracer tracer;
+    private final BigtableTracer tracer;
     private final boolean allowNoResponse;
 
     private StreamController controller;
     private final AtomicBoolean upstreamCancelled = new AtomicBoolean();
-    private boolean responseReceived;
-    private @Nullable RespT response;
 
-    private UnaryFuture(ApiTracer tracer, boolean allowNoResponse) {
+    private UnaryFuture(BigtableTracer tracer, boolean allowNoResponse) {
       this.tracer = Preconditions.checkNotNull(tracer, "tracer can't be null");
       this.allowNoResponse = allowNoResponse;
-      this.responseReceived = false;
     }
 
     @Override
@@ -130,23 +129,39 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
     public void onResponse(RespT resp) {
       tracer.responseReceived();
 
-      // happy path - buffer the only responsse
-      if (!responseReceived) {
-        responseReceived = true;
-        this.response = resp;
+      if (set(resp)) {
+        tracer.operationFinishEarly();
         return;
       }
 
-      String msg =
-          String.format(
-              "Received multiple responses for a %s unary operation. Previous: %s, New: %s",
-              spanName, response, resp);
-      logger.log(Level.WARNING, msg);
+      // At this point we are guaranteed that the future has been resolved. However we need to check
+      // why.
+      // We know it's not because it was resolved with the current response. Moreover, since the
+      // future
+      // is resolved, our only means to flag the error is to log.
+      // So there are 3 possibilities:
+      // 1. user cancelled the future
+      // 2. this is an extra response and the previous one resolved the future
+      // 3. we got a response after the rpc failed (this should never happen and would be a bad bug)
 
-      InternalException error =
-          new InternalException(msg, null, GrpcStatusCode.of(Status.Code.INTERNAL), false);
-      if (setException(error)) {
-        tracer.operationFailed(error);
+      if (isCancelled()) {
+        return;
+      }
+
+      try {
+        RespT prev = Futures.getDone(this);
+        String msg =
+            String.format(
+                "Received response after future is resolved for a %s unary operation. previous: %s, New response: %s",
+                spanName, prev, resp);
+        logger.log(Level.WARNING, msg);
+      } catch (ExecutionException e) {
+        // Should never happen
+        String msg =
+            String.format(
+                "Received response after future resolved as a failure for a %s unary operation. New response: %s",
+                spanName, resp);
+        logger.log(Level.WARNING, msg, e.getCause());
       }
 
       cancelUpstream();
@@ -158,18 +173,24 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
         tracer.operationFailed(throwable);
       } else if (isCancelled()) {
         tracer.operationCancelled();
+      } else {
+        // At this point the has been resolved, so we ignore the error
+        tracer.operationSucceeded();
       }
-      // The future might've been resolved due to double response
     }
 
     @Override
     public void onComplete() {
-      if (allowNoResponse || responseReceived) {
-        if (set(response)) {
-          tracer.operationSucceeded();
-          return;
-        }
-      } else {
+      if (allowNoResponse && set(null)) {
+        tracer.operationSucceeded();
+        return;
+
+        // Under normal circumstances the future wouldve been resolved in onResponse or via
+        // set(null) if it expected for
+        // the rpc to not have a response. So if aren't done, the only reason is that we didn't get
+        // a response
+        // but were expecting one
+      } else if (!isDone()) {
         String msg = spanName + " unary operation completed without a response message";
         InternalException e =
             new InternalException(msg, null, GrpcStatusCode.of(Status.Code.INTERNAL), false);
@@ -183,7 +204,10 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
       // check cancellation race
       if (isCancelled()) {
         tracer.operationCancelled();
+        return;
       }
+
+      tracer.operationSucceeded();
     }
   }
 }

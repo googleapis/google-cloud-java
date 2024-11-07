@@ -569,7 +569,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
-    if (!EnhancedBigtableStubSettings.SKIP_TRAILERS) {
+    if (!settings.getEnableSkipTrailers()) {
       ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
           createReadRowsBaseCallable(
               ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
@@ -1347,7 +1347,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       UnaryCallSettings<ReqT, RespT> callSettings,
       Function<ReqT, BaseReqT> requestTransformer,
       Function<BaseRespT, RespT> responseTranformer) {
-    if (EnhancedBigtableStubSettings.SKIP_TRAILERS) {
+    if (settings.getEnableSkipTrailers()) {
       return createUnaryCallableNew(
           methodDescriptor, headerParamsFn, callSettings, requestTransformer, responseTranformer);
     } else {

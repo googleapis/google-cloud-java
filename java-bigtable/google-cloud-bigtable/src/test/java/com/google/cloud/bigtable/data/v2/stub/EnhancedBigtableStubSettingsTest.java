@@ -961,6 +961,7 @@ public class EnhancedBigtableStubSettingsTest {
     "jwtAudienceMapping",
     "enableRoutingCookie",
     "enableRetryInfo",
+    "enableSkipTrailers",
     "readRowsSettings",
     "readRowSettings",
     "sampleRowKeysSettings",

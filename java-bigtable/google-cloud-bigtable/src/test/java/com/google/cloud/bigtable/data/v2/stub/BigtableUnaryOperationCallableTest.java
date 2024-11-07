@@ -21,7 +21,6 @@ import static org.mockito.Mockito.verify;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
@@ -88,18 +87,11 @@ public class BigtableUnaryOperationCallableTest {
     call.getController().getObserver().onResponse("first");
     call.getController().getObserver().onResponse("second");
 
-    Throwable e = Assert.assertThrows(ExecutionException.class, f::get).getCause();
-    assertThat(e).isInstanceOf(InternalException.class);
-    assertThat(e)
-        .hasMessageThat()
-        .contains(
-            "Received multiple responses for a Fake.method unary operation. Previous: first, New: second");
-
     ArgumentCaptor<String> msgCaptor = ArgumentCaptor.forClass(String.class);
     verify(callable.logger).log(Mockito.any(), msgCaptor.capture());
     assertThat(msgCaptor.getValue())
         .isEqualTo(
-            "Received multiple responses for a Fake.method unary operation. Previous: first, New: second");
+            "Received response after future is resolved for a Fake.method unary operation. previous: first, New response: second");
 
     assertThat(call.getController().isCancelled()).isTrue();
   }
