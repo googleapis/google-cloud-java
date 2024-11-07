@@ -46,24 +46,24 @@ class TransformingServerStreamingCallable<OuterReqT, OuterRespT, InnerReqT, Inne
 
     inner.call(
         innerReq,
-        new ResponseObserver<InnerRespT>() {
+        new SafeResponseObserver<InnerRespT>(outerObserver) {
           @Override
-          public void onStart(StreamController streamController) {
+          public void onStartImpl(StreamController streamController) {
             outerObserver.onStart(streamController);
           }
 
           @Override
-          public void onResponse(InnerRespT innerResp) {
+          public void onResponseImpl(InnerRespT innerResp) {
             outerObserver.onResponse(responseTransformer.apply(innerResp));
           }
 
           @Override
-          public void onError(Throwable throwable) {
+          public void onErrorImpl(Throwable throwable) {
             outerObserver.onError(throwable);
           }
 
           @Override
-          public void onComplete() {
+          public void onCompleteImpl() {
             outerObserver.onComplete();
           }
         },
