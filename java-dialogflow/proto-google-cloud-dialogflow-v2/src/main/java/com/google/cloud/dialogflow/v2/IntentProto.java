@@ -497,11 +497,11 @@ public final class IntentProto {
           + "Delete:\001*\032x\312A\031dialogflow.googleapis.com\322"
           + "AYhttps://www.googleapis.com/auth/cloud-"
           + "platform,https://www.googleapis.com/auth"
-          + "/dialogflowB\224\001\n\036com.google.cloud.dialogf"
+          + "/dialogflowB\221\001\n\036com.google.cloud.dialogf"
           + "low.v2B\013IntentProtoP\001Z>cloud.google.com/"
           + "go/dialogflow/apiv2/dialogflowpb;dialogf"
-          + "lowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
-          + "V2b\006proto3"
+          + "lowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

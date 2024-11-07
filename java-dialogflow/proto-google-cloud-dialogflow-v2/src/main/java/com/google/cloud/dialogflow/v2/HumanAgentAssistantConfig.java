@@ -5787,6 +5787,20 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionQueryConfig.SectionsOrBuilder
         getSectionsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of recent messages to include in the context.
+     * Supported features: KNOWLEDGE_ASSIST.
+     * </pre>
+     *
+     * <code>int32 context_size = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The contextSize.
+     */
+    int getContextSize();
+
     com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionQueryConfig.QuerySourceCase
         getQuerySourceCase();
   }
@@ -12247,6 +12261,25 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           : sections_;
     }
 
+    public static final int CONTEXT_SIZE_FIELD_NUMBER = 9;
+    private int contextSize_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of recent messages to include in the context.
+     * Supported features: KNOWLEDGE_ASSIST.
+     * </pre>
+     *
+     * <code>int32 context_size = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The contextSize.
+     */
+    @java.lang.Override
+    public int getContextSize() {
+      return contextSize_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12294,6 +12327,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(8, getSections());
       }
+      if (contextSize_ != 0) {
+        output.writeInt32(9, contextSize_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -12340,6 +12376,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSections());
       }
+      if (contextSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, contextSize_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12369,6 +12408,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (hasSections()) {
         if (!getSections().equals(other.getSections())) return false;
       }
+      if (getContextSize() != other.getContextSize()) return false;
       if (!getQuerySourceCase().equals(other.getQuerySourceCase())) return false;
       switch (querySourceCase_) {
         case 1:
@@ -12407,6 +12447,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         hash = (37 * hash) + SECTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getSections().hashCode();
       }
+      hash = (37 * hash) + CONTEXT_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getContextSize();
       switch (querySourceCase_) {
         case 1:
           hash = (37 * hash) + KNOWLEDGE_BASE_QUERY_SOURCE_FIELD_NUMBER;
@@ -12606,6 +12648,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           sectionsBuilder_.dispose();
           sectionsBuilder_ = null;
         }
+        contextSize_ = 0;
         querySourceCase_ = 0;
         querySource_ = null;
         return this;
@@ -12669,6 +12712,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.sections_ = sectionsBuilder_ == null ? sections_ : sectionsBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.contextSize_ = contextSize_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -12753,6 +12799,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         if (other.hasSections()) {
           mergeSections(other.getSections());
+        }
+        if (other.getContextSize() != 0) {
+          setContextSize(other.getContextSize());
         }
         switch (other.getQuerySourceCase()) {
           case KNOWLEDGE_BASE_QUERY_SOURCE:
@@ -12847,6 +12896,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 66
+              case 72:
+                {
+                  contextSize_ = input.readInt32();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 72
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14340,6 +14395,62 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           sections_ = null;
         }
         return sectionsBuilder_;
+      }
+
+      private int contextSize_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of recent messages to include in the context.
+       * Supported features: KNOWLEDGE_ASSIST.
+       * </pre>
+       *
+       * <code>int32 context_size = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The contextSize.
+       */
+      @java.lang.Override
+      public int getContextSize() {
+        return contextSize_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of recent messages to include in the context.
+       * Supported features: KNOWLEDGE_ASSIST.
+       * </pre>
+       *
+       * <code>int32 context_size = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The contextSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContextSize(int value) {
+
+        contextSize_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of recent messages to include in the context.
+       * Supported features: KNOWLEDGE_ASSIST.
+       * </pre>
+       *
+       * <code>int32 context_size = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContextSize() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        contextSize_ = 0;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

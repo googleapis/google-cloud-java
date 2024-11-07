@@ -45,6 +45,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
     modelVariant_ = 0;
+    phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -234,7 +235,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -260,7 +261,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -286,7 +287,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -313,7 +314,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -574,6 +575,70 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return enableAutomaticPunctuation_;
   }
 
+  public static final int PHRASE_SETS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList phraseSets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the phraseSets.
+   */
+  public com.google.protobuf.ProtocolStringList getPhraseSetsList() {
+    return phraseSets_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of phraseSets.
+   */
+  public int getPhraseSetsCount() {
+    return phraseSets_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseSets at the given index.
+   */
+  public java.lang.String getPhraseSets(int index) {
+    return phraseSets_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSets at the given index.
+   */
+  public com.google.protobuf.ByteString getPhraseSetsBytes(int index) {
+    return phraseSets_.getByteString(index);
+  }
+
   public static final int OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER = 26;
   private boolean optOutConformerModelMigration_ = false;
   /**
@@ -645,6 +710,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(17, enableAutomaticPunctuation_);
     }
+    for (int i = 0; i < phraseSets_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, phraseSets_.getRaw(i));
+    }
     if (optOutConformerModelMigration_ != false) {
       output.writeBool(26, optOutConformerModelMigration_);
     }
@@ -701,6 +769,14 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableAutomaticPunctuation_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < phraseSets_.size(); i++) {
+        dataSize += computeStringSizeNoTag(phraseSets_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getPhraseSetsList().size();
+    }
     if (optOutConformerModelMigration_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(26, optOutConformerModelMigration_);
@@ -733,6 +809,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (getDisableNoSpeechRecognizedEvent() != other.getDisableNoSpeechRecognizedEvent())
       return false;
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (!getPhraseSetsList().equals(other.getPhraseSetsList())) return false;
     if (getOptOutConformerModelMigration() != other.getOptOutConformerModelMigration())
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -773,6 +850,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableNoSpeechRecognizedEvent());
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
+    if (getPhraseSetsCount() > 0) {
+      hash = (37 * hash) + PHRASE_SETS_FIELD_NUMBER;
+      hash = (53 * hash) + getPhraseSetsList().hashCode();
+    }
     hash = (37 * hash) + OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOptOutConformerModelMigration());
@@ -932,6 +1013,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       singleUtterance_ = false;
       disableNoSpeechRecognizedEvent_ = false;
       enableAutomaticPunctuation_ = false;
+      phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       optOutConformerModelMigration_ = false;
       return this;
     }
@@ -1015,6 +1097,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        phraseSets_.makeImmutable();
+        result.phraseSets_ = phraseSets_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.optOutConformerModelMigration_ = optOutConformerModelMigration_;
       }
     }
@@ -1133,6 +1219,16 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
       }
+      if (!other.phraseSets_.isEmpty()) {
+        if (phraseSets_.isEmpty()) {
+          phraseSets_ = other.phraseSets_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensurePhraseSetsIsMutable();
+          phraseSets_.addAll(other.phraseSets_);
+        }
+        onChanged();
+      }
       if (other.getOptOutConformerModelMigration() != false) {
         setOptOutConformerModelMigration(other.getOptOutConformerModelMigration());
       }
@@ -1236,10 +1332,17 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 136
+            case 162:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePhraseSetsIsMutable();
+                phraseSets_.add(s);
+                break;
+              } // case 162
             case 208:
               {
                 optOutConformerModelMigration_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 208
             default:
@@ -1645,7 +1748,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @return A list containing the phraseHints.
      */
     @java.lang.Deprecated
@@ -1672,7 +1775,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @return The count of phraseHints.
      */
     @java.lang.Deprecated
@@ -1698,7 +1801,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param index The index of the element to return.
      * @return The phraseHints at the given index.
      */
@@ -1725,7 +1828,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param index The index of the value to return.
      * @return The bytes of the phraseHints at the given index.
      */
@@ -1752,7 +1855,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param index The index to set the value at.
      * @param value The phraseHints to set.
      * @return This builder for chaining.
@@ -1787,7 +1890,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param value The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1821,7 +1924,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param values The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1852,7 +1955,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1882,7 +1985,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+     *     google/cloud/dialogflow/v2/audio_config.proto;l=128
      * @param value The bytes of the phraseHints to add.
      * @return This builder for chaining.
      */
@@ -2744,6 +2847,180 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList phraseSets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePhraseSetsIsMutable() {
+      if (!phraseSets_.isModifiable()) {
+        phraseSets_ = new com.google.protobuf.LazyStringArrayList(phraseSets_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the phraseSets.
+     */
+    public com.google.protobuf.ProtocolStringList getPhraseSetsList() {
+      phraseSets_.makeImmutable();
+      return phraseSets_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of phraseSets.
+     */
+    public int getPhraseSetsCount() {
+      return phraseSets_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The phraseSets at the given index.
+     */
+    public java.lang.String getPhraseSets(int index) {
+      return phraseSets_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the phraseSets at the given index.
+     */
+    public com.google.protobuf.ByteString getPhraseSetsBytes(int index) {
+      return phraseSets_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The phraseSets to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhraseSets(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePhraseSetsIsMutable();
+      phraseSets_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSets(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePhraseSetsIsMutable();
+      phraseSets_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param values The phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPhraseSets(java.lang.Iterable<java.lang.String> values) {
+      ensurePhraseSetsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseSets_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPhraseSets() {
+      phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of phrase set resources to use for speech adaptation.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes of the phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSetsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePhraseSetsIsMutable();
+      phraseSets_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
     private boolean optOutConformerModelMigration_;
     /**
      *
@@ -2781,7 +3058,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setOptOutConformerModelMigration(boolean value) {
 
       optOutConformerModelMigration_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2800,7 +3077,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOptOutConformerModelMigration() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       optOutConformerModelMigration_ = false;
       onChanged();
       return this;
