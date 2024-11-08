@@ -21,6 +21,7 @@ import com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.InstanceName;
 import com.google.cloud.alloydb.v1alpha.RestartInstanceRequest;
+import java.util.ArrayList;
 
 public class SyncRestartInstance {
 
@@ -41,6 +42,7 @@ public class SyncRestartInstance {
                   InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllNodeIds(new ArrayList<String>())
               .build();
       Instance response = alloyDBAdminClient.restartInstanceAsync(request).get();
     }

@@ -70,6 +70,8 @@ import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
+import com.google.cloud.alloydb.v1alpha.ExecuteSqlRequest;
+import com.google.cloud.alloydb.v1alpha.ExecuteSqlResponse;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -97,10 +99,13 @@ import com.google.cloud.alloydb.v1alpha.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.RestartInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.RestoreClusterRequest;
 import com.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag;
+import com.google.cloud.alloydb.v1alpha.SwitchoverClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateUserRequest;
+import com.google.cloud.alloydb.v1alpha.UpgradeClusterRequest;
+import com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse;
 import com.google.cloud.alloydb.v1alpha.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -210,12 +215,19 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   private final UnaryCallSettings<UpdateClusterRequest, Operation> updateClusterSettings;
   private final OperationCallSettings<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationSettings;
+  private final UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings;
+  private final OperationCallSettings<
+          UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationSettings;
   private final UnaryCallSettings<PromoteClusterRequest, Operation> promoteClusterSettings;
   private final OperationCallSettings<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationSettings;
+  private final UnaryCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterSettings;
+  private final OperationCallSettings<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationSettings;
   private final UnaryCallSettings<RestoreClusterRequest, Operation> restoreClusterSettings;
   private final OperationCallSettings<RestoreClusterRequest, Cluster, OperationMetadata>
       restoreClusterOperationSettings;
@@ -254,6 +266,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   private final UnaryCallSettings<RestartInstanceRequest, Operation> restartInstanceSettings;
   private final OperationCallSettings<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationSettings;
+  private final UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings;
   private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       listBackupsSettings;
   private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
@@ -704,6 +717,17 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     return updateClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+    return upgradeClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public OperationCallSettings<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationSettings() {
+    return upgradeClusterOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return deleteClusterSettings;
@@ -724,6 +748,17 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   public OperationCallSettings<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationSettings() {
     return promoteClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public UnaryCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterSettings() {
+    return switchoverClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public OperationCallSettings<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationSettings() {
+    return switchoverClusterOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to restoreCluster. */
@@ -848,6 +883,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   public OperationCallSettings<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationSettings() {
     return restartInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeSql. */
+  public UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+    return executeSqlSettings;
   }
 
   /** Returns the object with the settings used for calls to listBackups. */
@@ -1074,10 +1114,15 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
+    upgradeClusterSettings = settingsBuilder.upgradeClusterSettings().build();
+    upgradeClusterOperationSettings = settingsBuilder.upgradeClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
     promoteClusterSettings = settingsBuilder.promoteClusterSettings().build();
     promoteClusterOperationSettings = settingsBuilder.promoteClusterOperationSettings().build();
+    switchoverClusterSettings = settingsBuilder.switchoverClusterSettings().build();
+    switchoverClusterOperationSettings =
+        settingsBuilder.switchoverClusterOperationSettings().build();
     restoreClusterSettings = settingsBuilder.restoreClusterSettings().build();
     restoreClusterOperationSettings = settingsBuilder.restoreClusterOperationSettings().build();
     createSecondaryClusterSettings = settingsBuilder.createSecondaryClusterSettings().build();
@@ -1103,6 +1148,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     injectFaultOperationSettings = settingsBuilder.injectFaultOperationSettings().build();
     restartInstanceSettings = settingsBuilder.restartInstanceSettings().build();
     restartInstanceOperationSettings = settingsBuilder.restartInstanceOperationSettings().build();
+    executeSqlSettings = settingsBuilder.executeSqlSettings().build();
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
     getBackupSettings = settingsBuilder.getBackupSettings().build();
     createBackupSettings = settingsBuilder.createBackupSettings().build();
@@ -1138,6 +1184,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     private final UnaryCallSettings.Builder<UpdateClusterRequest, Operation> updateClusterSettings;
     private final OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<UpgradeClusterRequest, Operation>
+        upgradeClusterSettings;
+    private final OperationCallSettings.Builder<
+            UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+        upgradeClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings;
@@ -1145,6 +1196,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
         promoteClusterSettings;
     private final OperationCallSettings.Builder<PromoteClusterRequest, Cluster, OperationMetadata>
         promoteClusterOperationSettings;
+    private final UnaryCallSettings.Builder<SwitchoverClusterRequest, Operation>
+        switchoverClusterSettings;
+    private final OperationCallSettings.Builder<
+            SwitchoverClusterRequest, Cluster, OperationMetadata>
+        switchoverClusterOperationSettings;
     private final UnaryCallSettings.Builder<RestoreClusterRequest, Operation>
         restoreClusterSettings;
     private final OperationCallSettings.Builder<RestoreClusterRequest, Cluster, OperationMetadata>
@@ -1192,6 +1248,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
         restartInstanceSettings;
     private final OperationCallSettings.Builder<RestartInstanceRequest, Instance, OperationMetadata>
         restartInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse>
+        executeSqlSettings;
     private final PagedCallSettings.Builder<
             ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
         listBackupsSettings;
@@ -1283,10 +1341,14 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       createClusterOperationSettings = OperationCallSettings.newBuilder();
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
+      upgradeClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      upgradeClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
       promoteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       promoteClusterOperationSettings = OperationCallSettings.newBuilder();
+      switchoverClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      switchoverClusterOperationSettings = OperationCallSettings.newBuilder();
       restoreClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreClusterOperationSettings = OperationCallSettings.newBuilder();
       createSecondaryClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1309,6 +1371,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       injectFaultOperationSettings = OperationCallSettings.newBuilder();
       restartInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restartInstanceOperationSettings = OperationCallSettings.newBuilder();
+      executeSqlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
       getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1336,8 +1399,10 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               getClusterSettings,
               createClusterSettings,
               updateClusterSettings,
+              upgradeClusterSettings,
               deleteClusterSettings,
               promoteClusterSettings,
+              switchoverClusterSettings,
               restoreClusterSettings,
               createSecondaryClusterSettings,
               listInstancesSettings,
@@ -1350,6 +1415,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               failoverInstanceSettings,
               injectFaultSettings,
               restartInstanceSettings,
+              executeSqlSettings,
               listBackupsSettings,
               getBackupSettings,
               createBackupSettings,
@@ -1378,10 +1444,14 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
+      upgradeClusterSettings = settings.upgradeClusterSettings.toBuilder();
+      upgradeClusterOperationSettings = settings.upgradeClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
       promoteClusterSettings = settings.promoteClusterSettings.toBuilder();
       promoteClusterOperationSettings = settings.promoteClusterOperationSettings.toBuilder();
+      switchoverClusterSettings = settings.switchoverClusterSettings.toBuilder();
+      switchoverClusterOperationSettings = settings.switchoverClusterOperationSettings.toBuilder();
       restoreClusterSettings = settings.restoreClusterSettings.toBuilder();
       restoreClusterOperationSettings = settings.restoreClusterOperationSettings.toBuilder();
       createSecondaryClusterSettings = settings.createSecondaryClusterSettings.toBuilder();
@@ -1407,6 +1477,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       injectFaultOperationSettings = settings.injectFaultOperationSettings.toBuilder();
       restartInstanceSettings = settings.restartInstanceSettings.toBuilder();
       restartInstanceOperationSettings = settings.restartInstanceOperationSettings.toBuilder();
+      executeSqlSettings = settings.executeSqlSettings.toBuilder();
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
       getBackupSettings = settings.getBackupSettings.toBuilder();
       createBackupSettings = settings.createBackupSettings.toBuilder();
@@ -1433,8 +1504,10 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               getClusterSettings,
               createClusterSettings,
               updateClusterSettings,
+              upgradeClusterSettings,
               deleteClusterSettings,
               promoteClusterSettings,
+              switchoverClusterSettings,
               restoreClusterSettings,
               createSecondaryClusterSettings,
               listInstancesSettings,
@@ -1447,6 +1520,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               failoverInstanceSettings,
               injectFaultSettings,
               restartInstanceSettings,
+              executeSqlSettings,
               listBackupsSettings,
               getBackupSettings,
               createBackupSettings,
@@ -1511,12 +1585,22 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .upgradeClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .promoteClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .switchoverClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1577,6 +1661,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
 
       builder
           .restartInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .executeSqlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1647,8 +1736,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
 
       builder
           .listDatabasesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1709,6 +1798,30 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
                       .build()));
 
       builder
+          .upgradeClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpgradeClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(UpgradeClusterResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1737,6 +1850,30 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PromoteClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .switchoverClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SwitchoverClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2120,6 +2257,18 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       return updateClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public UnaryCallSettings.Builder<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+      return upgradeClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public OperationCallSettings.Builder<
+            UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+        upgradeClusterOperationSettings() {
+      return upgradeClusterOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
       return deleteClusterSettings;
@@ -2140,6 +2289,18 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     public OperationCallSettings.Builder<PromoteClusterRequest, Cluster, OperationMetadata>
         promoteClusterOperationSettings() {
       return promoteClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public UnaryCallSettings.Builder<SwitchoverClusterRequest, Operation>
+        switchoverClusterSettings() {
+      return switchoverClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public OperationCallSettings.Builder<SwitchoverClusterRequest, Cluster, OperationMetadata>
+        switchoverClusterOperationSettings() {
+      return switchoverClusterOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to restoreCluster. */
@@ -2268,6 +2429,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     public OperationCallSettings.Builder<RestartInstanceRequest, Instance, OperationMetadata>
         restartInstanceOperationSettings() {
       return restartInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeSql. */
+    public UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+      return executeSqlSettings;
     }
 
     /** Returns the builder for the settings used for calls to listBackups. */

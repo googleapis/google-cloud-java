@@ -84,7 +84,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>
@@ -96,7 +96,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>
@@ -108,7 +108,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>

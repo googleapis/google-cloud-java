@@ -29,7 +29,7 @@ public interface SentimentOrBuilder
    *
    * <pre>
    * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-   * sentiment).
+   *  sentiment).
    * </pre>
    *
    * <code>float score = 1;</code>

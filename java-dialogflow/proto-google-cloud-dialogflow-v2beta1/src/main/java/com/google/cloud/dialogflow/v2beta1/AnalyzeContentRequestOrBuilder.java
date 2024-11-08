@@ -471,7 +471,9 @@ public interface AnalyzeContentRequestOrBuilder
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageSendTime field is set.
    */
@@ -496,7 +498,9 @@ public interface AnalyzeContentRequestOrBuilder
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageSendTime.
    */
@@ -521,7 +525,9 @@ public interface AnalyzeContentRequestOrBuilder
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getMessageSendTimeOrBuilder();
 

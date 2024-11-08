@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for getting an event
+ * Message for getting an event.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.GetEventRequest}
@@ -293,7 +293,7 @@ public final class GetEventRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Message for getting an event
+   * Message for getting an event.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.GetEventRequest}
