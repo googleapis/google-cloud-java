@@ -7,7 +7,7 @@ for num in "1" "2" "3"; do
    rm "run-${num}.log"
  fi
  # Run docker in the background.
- docker run \
+ time docker run \
    --rm \
    -u "$(id -u):$(id -g)" \
    -v "$(pwd):${workspace_name}" \
