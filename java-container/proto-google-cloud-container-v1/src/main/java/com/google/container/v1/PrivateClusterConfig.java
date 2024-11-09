@@ -86,7 +86,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1405
+   *     google/container/v1/cluster_service.proto;l=1432
    * @return The enablePrivateNodes.
    */
   @java.lang.Override
@@ -112,7 +112,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1413
+   *     google/container/v1/cluster_service.proto;l=1440
    * @return The enablePrivateEndpoint.
    */
   @java.lang.Override
@@ -198,7 +198,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1426
+   *     google/container/v1/cluster_service.proto;l=1453
    * @return The privateEndpoint.
    */
   @java.lang.Override
@@ -230,7 +230,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1426
+   *     google/container/v1/cluster_service.proto;l=1453
    * @return The bytes for privateEndpoint.
    */
   @java.lang.Override
@@ -267,7 +267,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1434
+   *     google/container/v1/cluster_service.proto;l=1461
    * @return The publicEndpoint.
    */
   @java.lang.Override
@@ -299,7 +299,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1434
+   *     google/container/v1/cluster_service.proto;l=1461
    * @return The bytes for publicEndpoint.
    */
   @java.lang.Override
@@ -385,7 +385,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1445
+   *     See google/container/v1/cluster_service.proto;l=1472
    * @return Whether the masterGlobalAccessConfig field is set.
    */
   @java.lang.Override
@@ -409,7 +409,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1445
+   *     See google/container/v1/cluster_service.proto;l=1472
    * @return The masterGlobalAccessConfig.
    */
   @java.lang.Override
@@ -463,7 +463,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1454
+   *     See google/container/v1/cluster_service.proto;l=1481
    * @return The privateEndpointSubnetwork.
    */
   @java.lang.Override
@@ -494,7 +494,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1454
+   *     See google/container/v1/cluster_service.proto;l=1481
    * @return The bytes for privateEndpointSubnetwork.
    */
   @java.lang.Override
@@ -1059,7 +1059,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1405
+     *     google/container/v1/cluster_service.proto;l=1432
      * @return The enablePrivateNodes.
      */
     @java.lang.Override
@@ -1083,7 +1083,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1405
+     *     google/container/v1/cluster_service.proto;l=1432
      * @param value The enablePrivateNodes to set.
      * @return This builder for chaining.
      */
@@ -1111,7 +1111,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1405
+     *     google/container/v1/cluster_service.proto;l=1432
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1138,7 +1138,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1413
+     *     See google/container/v1/cluster_service.proto;l=1440
      * @return The enablePrivateEndpoint.
      */
     @java.lang.Override
@@ -1161,7 +1161,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1413
+     *     See google/container/v1/cluster_service.proto;l=1440
      * @param value The enablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -1188,7 +1188,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1413
+     *     See google/container/v1/cluster_service.proto;l=1440
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1337,7 +1337,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1426
+     *     google/container/v1/cluster_service.proto;l=1453
      * @return The privateEndpoint.
      */
     @java.lang.Deprecated
@@ -1368,7 +1368,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1426
+     *     google/container/v1/cluster_service.proto;l=1453
      * @return The bytes for privateEndpoint.
      */
     @java.lang.Deprecated
@@ -1399,7 +1399,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1426
+     *     google/container/v1/cluster_service.proto;l=1453
      * @param value The privateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -1429,7 +1429,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1426
+     *     google/container/v1/cluster_service.proto;l=1453
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1455,7 +1455,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1426
+     *     google/container/v1/cluster_service.proto;l=1453
      * @param value The bytes for privateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -1488,7 +1488,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1434
+     *     google/container/v1/cluster_service.proto;l=1461
      * @return The publicEndpoint.
      */
     @java.lang.Deprecated
@@ -1519,7 +1519,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1434
+     *     google/container/v1/cluster_service.proto;l=1461
      * @return The bytes for publicEndpoint.
      */
     @java.lang.Deprecated
@@ -1550,7 +1550,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1434
+     *     google/container/v1/cluster_service.proto;l=1461
      * @param value The publicEndpoint to set.
      * @return This builder for chaining.
      */
@@ -1580,7 +1580,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1434
+     *     google/container/v1/cluster_service.proto;l=1461
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1606,7 +1606,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1434
+     *     google/container/v1/cluster_service.proto;l=1461
      * @param value The bytes for publicEndpoint to set.
      * @return This builder for chaining.
      */
@@ -1751,7 +1751,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1445
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1472
      * @return Whether the masterGlobalAccessConfig field is set.
      */
     @java.lang.Deprecated
@@ -1774,7 +1774,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1445
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1472
      * @return The masterGlobalAccessConfig.
      */
     @java.lang.Deprecated
@@ -2004,7 +2004,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1481
      * @return The privateEndpointSubnetwork.
      */
     @java.lang.Deprecated
@@ -2034,7 +2034,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1481
      * @return The bytes for privateEndpointSubnetwork.
      */
     @java.lang.Deprecated
@@ -2064,7 +2064,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1481
      * @param value The privateEndpointSubnetwork to set.
      * @return This builder for chaining.
      */
@@ -2093,7 +2093,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1481
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2118,7 +2118,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=1454
+     *     deprecated. See google/container/v1/cluster_service.proto;l=1481
      * @param value The bytes for privateEndpointSubnetwork to set.
      * @return This builder for chaining.
      */

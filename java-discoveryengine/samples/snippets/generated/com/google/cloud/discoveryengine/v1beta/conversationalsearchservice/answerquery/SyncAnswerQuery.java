@@ -52,6 +52,7 @@ public class SyncAnswerQuery {
                       .toString())
               .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
               .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
               .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
               .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
               .setQueryUnderstandingSpec(

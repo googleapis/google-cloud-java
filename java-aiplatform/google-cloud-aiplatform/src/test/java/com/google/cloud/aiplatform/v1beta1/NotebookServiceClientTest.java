@@ -1451,6 +1451,94 @@ public class NotebookServiceClientTest {
   }
 
   @Test
+  public void stopNotebookRuntimeTest() throws Exception {
+    StopNotebookRuntimeResponse expectedResponse = StopNotebookRuntimeResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopNotebookRuntimeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNotebookService.addResponse(resultOperation);
+
+    NotebookRuntimeName name =
+        NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]");
+
+    StopNotebookRuntimeResponse actualResponse = client.stopNotebookRuntimeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopNotebookRuntimeRequest actualRequest = ((StopNotebookRuntimeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopNotebookRuntimeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      NotebookRuntimeName name =
+          NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]");
+      client.stopNotebookRuntimeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopNotebookRuntimeTest2() throws Exception {
+    StopNotebookRuntimeResponse expectedResponse = StopNotebookRuntimeResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopNotebookRuntimeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNotebookService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    StopNotebookRuntimeResponse actualResponse = client.stopNotebookRuntimeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopNotebookRuntimeRequest actualRequest = ((StopNotebookRuntimeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopNotebookRuntimeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.stopNotebookRuntimeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void createNotebookExecutionJobTest() throws Exception {
     NotebookExecutionJob expectedResponse =
         NotebookExecutionJob.newBuilder()

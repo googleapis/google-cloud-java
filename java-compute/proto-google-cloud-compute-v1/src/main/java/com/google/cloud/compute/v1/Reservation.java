@@ -86,7 +86,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Reservation.Status}
@@ -106,7 +106,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resources are being allocated for the reservation.
+     * Reservation resources are being allocated.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -116,7 +116,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation is currently being deleted.
+     * Reservation deletion is in progress.
      * </pre>
      *
      * <code>DELETING = 528602024;</code>
@@ -128,7 +128,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation has allocated all its resources.
+     * Reservation resources have been allocated, and the reservation is ready for use.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -138,7 +138,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation is currently being resized.
+     * Reservation update is in progress.
      * </pre>
      *
      * <code>UPDATING = 494614342;</code>
@@ -161,7 +161,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resources are being allocated for the reservation.
+     * Reservation resources are being allocated.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -171,7 +171,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation is currently being deleted.
+     * Reservation deletion is in progress.
      * </pre>
      *
      * <code>DELETING = 528602024;</code>
@@ -183,7 +183,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation has allocated all its resources.
+     * Reservation resources have been allocated, and the reservation is ready for use.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -193,7 +193,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation is currently being resized.
+     * Reservation update is in progress.
      * </pre>
      *
      * <code>UPDATING = 494614342;</code>
@@ -1115,7 +1115,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1131,7 +1131,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1155,7 +1155,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -4009,7 +4009,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4024,7 +4024,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4047,7 +4047,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4070,7 +4070,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4092,7 +4092,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4110,7 +4110,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation.
+     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

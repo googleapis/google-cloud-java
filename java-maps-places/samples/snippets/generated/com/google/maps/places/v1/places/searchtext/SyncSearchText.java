@@ -54,6 +54,7 @@ public class SyncSearchText {
               .setRoutingParameters(RoutingParameters.newBuilder().build())
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       SearchTextResponse response = placesClient.searchText(request);
     }

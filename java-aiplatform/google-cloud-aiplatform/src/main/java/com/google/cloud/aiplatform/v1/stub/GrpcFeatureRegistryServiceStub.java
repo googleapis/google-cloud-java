@@ -28,6 +28,9 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1.CreateFeatureOperationMetadata;
@@ -139,6 +142,17 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<BatchCreateFeaturesRequest, Operation>
+      batchCreateFeaturesMethodDescriptor =
+          MethodDescriptor.<BatchCreateFeaturesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeatureRegistryService/BatchCreateFeatures")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateFeaturesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
       MethodDescriptor.<GetFeatureRequest, Feature>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -242,6 +256,12 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   private final UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable;
   private final OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable;
+  private final UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable;
+  private final OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable;
   private final UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable;
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesResponse> listFeaturesCallable;
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesPagedResponse>
@@ -360,6 +380,16 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(createFeatureMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
+        GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchCreateFeaturesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -514,6 +544,17 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
             settings.createFeatureOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchCreateFeaturesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateFeaturesTransportSettings,
+            settings.batchCreateFeaturesSettings(),
+            clientContext);
+    this.batchCreateFeaturesOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateFeaturesTransportSettings,
+            settings.batchCreateFeaturesOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getFeatureCallable =
         callableFactory.createUnaryCallable(
             getFeatureTransportSettings, settings.getFeatureSettings(), clientContext);
@@ -631,6 +672,20 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   public OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     return createFeatureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable() {
+    return batchCreateFeaturesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable() {
+    return batchCreateFeaturesOperationCallable;
   }
 
   @Override

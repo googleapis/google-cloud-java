@@ -42,7 +42,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     auditConfigs_ = java.util.Collections.emptyList();
     bindings_ = java.util.Collections.emptyList();
     etag_ = "";
-    rules_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -296,77 +295,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return iamOwned_;
   }
 
-  public static final int RULES_FIELD_NUMBER = 108873975;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.compute.v1.Rule> rules_;
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.compute.v1.Rule> getRulesList() {
-    return rules_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.cloud.compute.v1.RuleOrBuilder>
-      getRulesOrBuilderList() {
-    return rules_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  @java.lang.Override
-  public int getRulesCount() {
-    return rules_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.Rule getRules(int index) {
-    return rules_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.RuleOrBuilder getRulesOrBuilder(int index) {
-    return rules_.get(index);
-  }
-
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private int version_ = 0;
   /**
@@ -417,9 +345,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3123477, etag_);
     }
-    for (int i = 0; i < rules_.size(); i++) {
-      output.writeMessage(108873975, rules_.get(i));
-    }
     for (int i = 0; i < auditConfigs_.size(); i++) {
       output.writeMessage(328080653, auditConfigs_.get(i));
     }
@@ -443,9 +368,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3123477, etag_);
-    }
-    for (int i = 0; i < rules_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
     for (int i = 0; i < auditConfigs_.size(); i++) {
       size +=
@@ -485,7 +407,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (hasIamOwned()) {
       if (getIamOwned() != other.getIamOwned()) return false;
     }
-    if (!getRulesList().equals(other.getRulesList())) return false;
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
       if (getVersion() != other.getVersion()) return false;
@@ -516,10 +437,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (hasIamOwned()) {
       hash = (37 * hash) + IAM_OWNED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIamOwned());
-    }
-    if (getRulesCount() > 0) {
-      hash = (37 * hash) + RULES_FIELD_NUMBER;
-      hash = (53 * hash) + getRulesList().hashCode();
     }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -679,13 +596,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = "";
       iamOwned_ = false;
-      if (rulesBuilder_ == null) {
-        rules_ = java.util.Collections.emptyList();
-      } else {
-        rules_ = null;
-        rulesBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000010);
       version_ = 0;
       return this;
     }
@@ -740,15 +650,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.bindings_ = bindingsBuilder_.build();
       }
-      if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
-          rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.rules_ = rules_;
-      } else {
-        result.rules_ = rulesBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Policy result) {
@@ -762,7 +663,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         result.iamOwned_ = iamOwned_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.version_ = version_;
         to_bitField0_ |= 0x00000004;
       }
@@ -876,33 +777,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIamOwned()) {
         setIamOwned(other.getIamOwned());
       }
-      if (rulesBuilder_ == null) {
-        if (!other.rules_.isEmpty()) {
-          if (rules_.isEmpty()) {
-            rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureRulesIsMutable();
-            rules_.addAll(other.rules_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.rules_.isEmpty()) {
-          if (rulesBuilder_.isEmpty()) {
-            rulesBuilder_.dispose();
-            rulesBuilder_ = null;
-            rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-            rulesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getRulesFieldBuilder()
-                    : null;
-          } else {
-            rulesBuilder_.addAllMessages(other.rules_);
-          }
-        }
-      }
       if (other.hasVersion()) {
         setVersion(other.getVersion());
       }
@@ -938,18 +812,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24987818
-            case 870991802:
-              {
-                com.google.cloud.compute.v1.Rule m =
-                    input.readMessage(com.google.cloud.compute.v1.Rule.parser(), extensionRegistry);
-                if (rulesBuilder_ == null) {
-                  ensureRulesIsMutable();
-                  rules_.add(m);
-                } else {
-                  rulesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 870991802
             case -1670322070:
               {
                 com.google.cloud.compute.v1.AuditConfig m =
@@ -966,7 +828,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             case -1482103104:
               {
                 version_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1482103104
             case -1068952462:
@@ -1870,352 +1732,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<com.google.cloud.compute.v1.Rule> rules_ =
-        java.util.Collections.emptyList();
-
-    private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
-        rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.Rule>(rules_);
-        bitField0_ |= 0x00000010;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.compute.v1.Rule,
-            com.google.cloud.compute.v1.Rule.Builder,
-            com.google.cloud.compute.v1.RuleOrBuilder>
-        rulesBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public java.util.List<com.google.cloud.compute.v1.Rule> getRulesList() {
-      if (rulesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(rules_);
-      } else {
-        return rulesBuilder_.getMessageList();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public int getRulesCount() {
-      if (rulesBuilder_ == null) {
-        return rules_.size();
-      } else {
-        return rulesBuilder_.getCount();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public com.google.cloud.compute.v1.Rule getRules(int index) {
-      if (rulesBuilder_ == null) {
-        return rules_.get(index);
-      } else {
-        return rulesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder setRules(int index, com.google.cloud.compute.v1.Rule value) {
-      if (rulesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRulesIsMutable();
-        rules_.set(index, value);
-        onChanged();
-      } else {
-        rulesBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder setRules(int index, com.google.cloud.compute.v1.Rule.Builder builderForValue) {
-      if (rulesBuilder_ == null) {
-        ensureRulesIsMutable();
-        rules_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        rulesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder addRules(com.google.cloud.compute.v1.Rule value) {
-      if (rulesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRulesIsMutable();
-        rules_.add(value);
-        onChanged();
-      } else {
-        rulesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder addRules(int index, com.google.cloud.compute.v1.Rule value) {
-      if (rulesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRulesIsMutable();
-        rules_.add(index, value);
-        onChanged();
-      } else {
-        rulesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder addRules(com.google.cloud.compute.v1.Rule.Builder builderForValue) {
-      if (rulesBuilder_ == null) {
-        ensureRulesIsMutable();
-        rules_.add(builderForValue.build());
-        onChanged();
-      } else {
-        rulesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder addRules(int index, com.google.cloud.compute.v1.Rule.Builder builderForValue) {
-      if (rulesBuilder_ == null) {
-        ensureRulesIsMutable();
-        rules_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        rulesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder addAllRules(
-        java.lang.Iterable<? extends com.google.cloud.compute.v1.Rule> values) {
-      if (rulesBuilder_ == null) {
-        ensureRulesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rules_);
-        onChanged();
-      } else {
-        rulesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder clearRules() {
-      if (rulesBuilder_ == null) {
-        rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-      } else {
-        rulesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public Builder removeRules(int index) {
-      if (rulesBuilder_ == null) {
-        ensureRulesIsMutable();
-        rules_.remove(index);
-        onChanged();
-      } else {
-        rulesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public com.google.cloud.compute.v1.Rule.Builder getRulesBuilder(int index) {
-      return getRulesFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public com.google.cloud.compute.v1.RuleOrBuilder getRulesOrBuilder(int index) {
-      if (rulesBuilder_ == null) {
-        return rules_.get(index);
-      } else {
-        return rulesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public java.util.List<? extends com.google.cloud.compute.v1.RuleOrBuilder>
-        getRulesOrBuilderList() {
-      if (rulesBuilder_ != null) {
-        return rulesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(rules_);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public com.google.cloud.compute.v1.Rule.Builder addRulesBuilder() {
-      return getRulesFieldBuilder()
-          .addBuilder(com.google.cloud.compute.v1.Rule.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public com.google.cloud.compute.v1.Rule.Builder addRulesBuilder(int index) {
-      return getRulesFieldBuilder()
-          .addBuilder(index, com.google.cloud.compute.v1.Rule.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-     */
-    public java.util.List<com.google.cloud.compute.v1.Rule.Builder> getRulesBuilderList() {
-      return getRulesFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.compute.v1.Rule,
-            com.google.cloud.compute.v1.Rule.Builder,
-            com.google.cloud.compute.v1.RuleOrBuilder>
-        getRulesFieldBuilder() {
-      if (rulesBuilder_ == null) {
-        rulesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.compute.v1.Rule,
-                com.google.cloud.compute.v1.Rule.Builder,
-                com.google.cloud.compute.v1.RuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
-        rules_ = null;
-      }
-      return rulesBuilder_;
-    }
-
     private int version_;
     /**
      *
@@ -2230,7 +1746,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2262,7 +1778,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(int value) {
 
       version_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2278,7 +1794,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       version_ = 0;
       onChanged();
       return this;

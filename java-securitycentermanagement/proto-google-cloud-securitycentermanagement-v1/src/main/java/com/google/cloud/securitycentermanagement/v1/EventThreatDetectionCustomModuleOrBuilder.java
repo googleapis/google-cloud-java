@@ -28,13 +28,12 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -46,13 +45,12 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -65,9 +63,9 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79,9 +77,9 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,9 +91,9 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -109,7 +107,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * Output only. The closest ancestor module that this module inherits the
    * enablement state from. If empty, indicates that the custom module was
    * created in the requesting parent organization, folder, or project. The
-   * format is the same as the EventThreatDetectionCustomModule resource name.
+   * format is the same as the custom module's resource name.
    * </pre>
    *
    * <code>
@@ -126,7 +124,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    * Output only. The closest ancestor module that this module inherits the
    * enablement state from. If empty, indicates that the custom module was
    * created in the requesting parent organization, folder, or project. The
-   * format is the same as the EventThreatDetectionCustomModule resource name.
+   * format is the same as the custom module's resource name.
    * </pre>
    *
    * <code>
@@ -173,7 +171,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +183,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -198,7 +196,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The human readable name to be displayed for the module.
+   * Optional. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -210,7 +208,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The human readable name to be displayed for the module.
+   * Optional. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -223,7 +221,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The description for the module.
+   * Optional. A description of the module.
    * </pre>
    *
    * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -235,7 +233,7 @@ public interface EventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The description for the module.
+   * Optional. A description of the module.
    * </pre>
    *
    * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

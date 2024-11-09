@@ -191,11 +191,11 @@ public final class EnvironmentProto {
           + "/agent/environments/*}/history\032x\312A\031dialo"
           + "gflow.googleapis.com\322AYhttps://www.googl"
           + "eapis.com/auth/cloud-platform,https://ww"
-          + "w.googleapis.com/auth/dialogflowB\231\001\n\036com"
+          + "w.googleapis.com/auth/dialogflowB\226\001\n\036com"
           + ".google.cloud.dialogflow.v2B\020Environment"
           + "ProtoP\001Z>cloud.google.com/go/dialogflow/"
-          + "apiv2/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252"
-          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002\032G"
+          + "oogle.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

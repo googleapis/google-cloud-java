@@ -42,6 +42,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   private SpeechToTextConfig() {
     speechModelVariant_ = 0;
     model_ = "";
+    phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
     audioEncoding_ = 0;
     languageCode_ = "";
   }
@@ -211,6 +212,70 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PHRASE_SETS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList phraseSets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the phraseSets.
+   */
+  public com.google.protobuf.ProtocolStringList getPhraseSetsList() {
+    return phraseSets_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of phraseSets.
+   */
+  public int getPhraseSetsCount() {
+    return phraseSets_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseSets at the given index.
+   */
+  public java.lang.String getPhraseSets(int index) {
+    return phraseSets_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSets at the given index.
+   */
+  public com.google.protobuf.ByteString getPhraseSetsBytes(int index) {
+    return phraseSets_.getByteString(index);
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 6;
@@ -393,6 +458,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
     }
+    for (int i = 0; i < phraseSets_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phraseSets_.getRaw(i));
+    }
     if (audioEncoding_
         != com.google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED
             .getNumber()) {
@@ -426,6 +494,14 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < phraseSets_.size(); i++) {
+        dataSize += computeStringSizeNoTag(phraseSets_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPhraseSetsList().size();
     }
     if (audioEncoding_
         != com.google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED
@@ -463,6 +539,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
     if (speechModelVariant_ != other.speechModelVariant_) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (!getPhraseSetsList().equals(other.getPhraseSetsList())) return false;
     if (audioEncoding_ != other.audioEncoding_) return false;
     if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
@@ -483,6 +560,10 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + speechModelVariant_;
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    if (getPhraseSetsCount() > 0) {
+      hash = (37 * hash) + PHRASE_SETS_FIELD_NUMBER;
+      hash = (53 * hash) + getPhraseSetsList().hashCode();
+    }
     hash = (37 * hash) + AUDIO_ENCODING_FIELD_NUMBER;
     hash = (53 * hash) + audioEncoding_;
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
@@ -636,6 +717,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       speechModelVariant_ = 0;
       model_ = "";
+      phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       audioEncoding_ = 0;
       sampleRateHertz_ = 0;
       languageCode_ = "";
@@ -684,18 +766,22 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         result.model_ = model_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.audioEncoding_ = audioEncoding_;
+        phraseSets_.makeImmutable();
+        result.phraseSets_ = phraseSets_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.sampleRateHertz_ = sampleRateHertz_;
+        result.audioEncoding_ = audioEncoding_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.languageCode_ = languageCode_;
+        result.sampleRateHertz_ = sampleRateHertz_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.enableWordInfo_ = enableWordInfo_;
+        result.languageCode_ = languageCode_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.enableWordInfo_ = enableWordInfo_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.useTimeoutBasedEndpointing_ = useTimeoutBasedEndpointing_;
       }
     }
@@ -754,6 +840,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.phraseSets_.isEmpty()) {
+        if (phraseSets_.isEmpty()) {
+          phraseSets_ = other.phraseSets_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensurePhraseSetsIsMutable();
+          phraseSets_.addAll(other.phraseSets_);
+        }
+        onChanged();
+      }
       if (other.audioEncoding_ != 0) {
         setAudioEncodingValue(other.getAudioEncodingValue());
       }
@@ -762,7 +858,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getEnableWordInfo() != false) {
@@ -809,34 +905,41 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePhraseSetsIsMutable();
+                phraseSets_.add(s);
+                break;
+              } // case 34
             case 48:
               {
                 audioEncoding_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             case 56:
               {
                 sampleRateHertz_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 56
             case 66:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 72:
               {
                 enableWordInfo_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 72
             case 88:
               {
                 useTimeoutBasedEndpointing_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             default:
@@ -1202,6 +1305,180 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList phraseSets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePhraseSetsIsMutable() {
+      if (!phraseSets_.isModifiable()) {
+        phraseSets_ = new com.google.protobuf.LazyStringArrayList(phraseSets_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the phraseSets.
+     */
+    public com.google.protobuf.ProtocolStringList getPhraseSetsList() {
+      phraseSets_.makeImmutable();
+      return phraseSets_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of phraseSets.
+     */
+    public int getPhraseSetsCount() {
+      return phraseSets_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The phraseSets at the given index.
+     */
+    public java.lang.String getPhraseSets(int index) {
+      return phraseSets_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the phraseSets at the given index.
+     */
+    public com.google.protobuf.ByteString getPhraseSetsBytes(int index) {
+      return phraseSets_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The phraseSets to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhraseSets(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePhraseSetsIsMutable();
+      phraseSets_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSets(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePhraseSetsIsMutable();
+      phraseSets_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param values The phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPhraseSets(java.lang.Iterable<java.lang.String> values) {
+      ensurePhraseSetsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseSets_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPhraseSets() {
+      phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of names of Cloud Speech phrase sets that are used for transcription.
+     * </pre>
+     *
+     * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes of the phraseSets to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSetsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePhraseSetsIsMutable();
+      phraseSets_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private int audioEncoding_ = 0;
     /**
      *
@@ -1232,7 +1509,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder setAudioEncodingValue(int value) {
       audioEncoding_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1271,7 +1548,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
@@ -1288,7 +1565,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       audioEncoding_ = 0;
       onChanged();
       return this;
@@ -1333,7 +1610,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1353,7 +1630,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -1433,7 +1710,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1454,7 +1731,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1480,7 +1757,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1526,7 +1803,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public Builder setEnableWordInfo(boolean value) {
 
       enableWordInfo_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1547,7 +1824,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEnableWordInfo() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       enableWordInfo_ = false;
       onChanged();
       return this;
@@ -1586,7 +1863,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public Builder setUseTimeoutBasedEndpointing(boolean value) {
 
       useTimeoutBasedEndpointing_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1603,7 +1880,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUseTimeoutBasedEndpointing() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       useTimeoutBasedEndpointing_ = false;
       onChanged();
       return this;

@@ -183,6 +183,21 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Specifies the number of days to look back for demoting watched
+     * content. If set to zero or unset, defaults to the maximum of 365 days.
+     * </pre>
+     *
+     * <code>int32 demote_content_watched_past_days = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The demoteContentWatchedPastDays.
+     */
+    int getDemoteContentWatchedPastDays();
+
+    /**
+     *
+     *
+     * <pre>
      * Specifies the content freshness used for recommendation result.
      * Contents will be demoted if contents were published for more than content
      * freshness cutoff days.
@@ -445,6 +460,26 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int DEMOTE_CONTENT_WATCHED_PAST_DAYS_FIELD_NUMBER = 37;
+    private int demoteContentWatchedPastDays_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the number of days to look back for demoting watched
+     * content. If set to zero or unset, defaults to the maximum of 365 days.
+     * </pre>
+     *
+     * <code>int32 demote_content_watched_past_days = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The demoteContentWatchedPastDays.
+     */
+    @java.lang.Override
+    public int getDemoteContentWatchedPastDays() {
+      return demoteContentWatchedPastDays_;
+    }
+
     public static final int CONTENT_FRESHNESS_CUTOFF_DAYS_FIELD_NUMBER = 4;
     private int contentFreshnessCutoffDays_ = 0;
     /**
@@ -491,6 +526,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (demoteContentWatchedCase_ == 5) {
         output.writeFloat(5, (float) ((java.lang.Float) demoteContentWatched_));
       }
+      if (demoteContentWatchedPastDays_ != 0) {
+        output.writeInt32(37, demoteContentWatchedPastDays_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -517,6 +555,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeFloatSize(
                 5, (float) ((java.lang.Float) demoteContentWatched_));
       }
+      if (demoteContentWatchedPastDays_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                37, demoteContentWatchedPastDays_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -534,6 +577,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.ServingConfig.MediaConfig) obj;
 
       if (!getDemotionEventType().equals(other.getDemotionEventType())) return false;
+      if (getDemoteContentWatchedPastDays() != other.getDemoteContentWatchedPastDays())
+        return false;
       if (getContentFreshnessCutoffDays() != other.getContentFreshnessCutoffDays()) return false;
       if (!getDemoteContentWatchedCase().equals(other.getDemoteContentWatchedCase())) return false;
       switch (demoteContentWatchedCase_) {
@@ -563,6 +608,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DEMOTION_EVENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getDemotionEventType().hashCode();
+      hash = (37 * hash) + DEMOTE_CONTENT_WATCHED_PAST_DAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getDemoteContentWatchedPastDays();
       hash = (37 * hash) + CONTENT_FRESHNESS_CUTOFF_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getContentFreshnessCutoffDays();
       switch (demoteContentWatchedCase_) {
@@ -737,6 +784,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         demotionEventType_ = "";
+        demoteContentWatchedPastDays_ = 0;
         contentFreshnessCutoffDays_ = 0;
         demoteContentWatchedCase_ = 0;
         demoteContentWatched_ = null;
@@ -784,6 +832,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           result.demotionEventType_ = demotionEventType_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.demoteContentWatchedPastDays_ = demoteContentWatchedPastDays_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.contentFreshnessCutoffDays_ = contentFreshnessCutoffDays_;
         }
       }
@@ -850,6 +901,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (other.getDemoteContentWatchedPastDays() != 0) {
+          setDemoteContentWatchedPastDays(other.getDemoteContentWatchedPastDays());
+        }
         if (other.getContentFreshnessCutoffDays() != 0) {
           setContentFreshnessCutoffDays(other.getContentFreshnessCutoffDays());
         }
@@ -910,7 +964,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   contentFreshnessCutoffDays_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 45:
@@ -919,6 +973,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
                   demoteContentWatchedCase_ = 5;
                   break;
                 } // case 45
+              case 296:
+                {
+                  demoteContentWatchedPastDays_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 296
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1247,6 +1307,68 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int demoteContentWatchedPastDays_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the number of days to look back for demoting watched
+       * content. If set to zero or unset, defaults to the maximum of 365 days.
+       * </pre>
+       *
+       * <code>
+       * int32 demote_content_watched_past_days = 37 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The demoteContentWatchedPastDays.
+       */
+      @java.lang.Override
+      public int getDemoteContentWatchedPastDays() {
+        return demoteContentWatchedPastDays_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the number of days to look back for demoting watched
+       * content. If set to zero or unset, defaults to the maximum of 365 days.
+       * </pre>
+       *
+       * <code>
+       * int32 demote_content_watched_past_days = 37 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The demoteContentWatchedPastDays to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDemoteContentWatchedPastDays(int value) {
+
+        demoteContentWatchedPastDays_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the number of days to look back for demoting watched
+       * content. If set to zero or unset, defaults to the maximum of 365 days.
+       * </pre>
+       *
+       * <code>
+       * int32 demote_content_watched_past_days = 37 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDemoteContentWatchedPastDays() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        demoteContentWatchedPastDays_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int contentFreshnessCutoffDays_;
       /**
        *
@@ -1282,7 +1404,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setContentFreshnessCutoffDays(int value) {
 
         contentFreshnessCutoffDays_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1300,7 +1422,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearContentFreshnessCutoffDays() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         contentFreshnessCutoffDays_ = 0;
         onChanged();
         return this;
@@ -3621,6 +3743,94 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     return ignoreControlIds_.getByteString(index);
   }
 
+  public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 25;
+  private com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+      personalizationSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersonalizationSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+      getPersonalizationSpec() {
+    return personalizationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+            .getDefaultInstance()
+        : personalizationSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder() {
+    return personalizationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+            .getDefaultInstance()
+        : personalizationSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3699,6 +3909,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, rankingExpression_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(25, getPersonalizationSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3815,6 +4028,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, rankingExpression_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(25, getPersonalizationSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3858,6 +4075,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDissociateControlIdsList().equals(other.getDissociateControlIdsList())) return false;
     if (!getReplacementControlIdsList().equals(other.getReplacementControlIdsList())) return false;
     if (!getIgnoreControlIdsList().equals(other.getIgnoreControlIdsList())) return false;
+    if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
+    if (hasPersonalizationSpec()) {
+      if (!getPersonalizationSpec().equals(other.getPersonalizationSpec())) return false;
+    }
     if (!getVerticalConfigCase().equals(other.getVerticalConfigCase())) return false;
     switch (verticalConfigCase_) {
       case 7:
@@ -3935,6 +4156,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (getIgnoreControlIdsCount() > 0) {
       hash = (37 * hash) + IGNORE_CONTROL_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIgnoreControlIdsList().hashCode();
+    }
+    if (hasPersonalizationSpec()) {
+      hash = (37 * hash) + PERSONALIZATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonalizationSpec().hashCode();
     }
     switch (verticalConfigCase_) {
       case 7:
@@ -4095,6 +4320,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         getEmbeddingConfigFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getPersonalizationSpecFieldBuilder();
       }
     }
 
@@ -4137,6 +4363,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       dissociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      personalizationSpec_ = null;
+      if (personalizationSpecBuilder_ != null) {
+        personalizationSpecBuilder_.dispose();
+        personalizationSpecBuilder_ = null;
+      }
       verticalConfigCase_ = 0;
       verticalConfig_ = null;
       return this;
@@ -4239,6 +4470,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00040000) != 0)) {
         ignoreControlIds_.makeImmutable();
         result.ignoreControlIds_ = ignoreControlIds_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.personalizationSpec_ =
+            personalizationSpecBuilder_ == null
+                ? personalizationSpec_
+                : personalizationSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4417,6 +4655,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasPersonalizationSpec()) {
+        mergePersonalizationSpec(other.getPersonalizationSpec());
+      }
       switch (other.getVerticalConfigCase()) {
         case MEDIA_CONFIG:
           {
@@ -4581,6 +4822,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 170
+            case 202:
+              {
+                input.readMessage(
+                    getPersonalizationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8413,6 +8661,302 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+        personalizationSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder>
+        personalizationSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     *
+     * @return Whether the personalizationSpec field is set.
+     */
+    public boolean hasPersonalizationSpec() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     *
+     * @return The personalizationSpec.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+        getPersonalizationSpec() {
+      if (personalizationSpecBuilder_ == null) {
+        return personalizationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+                .getDefaultInstance()
+            : personalizationSpec_;
+      } else {
+        return personalizationSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public Builder setPersonalizationSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec value) {
+      if (personalizationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        personalizationSpec_ = value;
+      } else {
+        personalizationSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public Builder setPersonalizationSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder
+            builderForValue) {
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpec_ = builderForValue.build();
+      } else {
+        personalizationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public Builder mergePersonalizationSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec value) {
+      if (personalizationSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && personalizationSpec_ != null
+            && personalizationSpec_
+                != com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+                    .getDefaultInstance()) {
+          getPersonalizationSpecBuilder().mergeFrom(value);
+        } else {
+          personalizationSpec_ = value;
+        }
+      } else {
+        personalizationSpecBuilder_.mergeFrom(value);
+      }
+      if (personalizationSpec_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public Builder clearPersonalizationSpec() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      personalizationSpec_ = null;
+      if (personalizationSpecBuilder_ != null) {
+        personalizationSpecBuilder_.dispose();
+        personalizationSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder
+        getPersonalizationSpecBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getPersonalizationSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder
+        getPersonalizationSpecOrBuilder() {
+      if (personalizationSpecBuilder_ != null) {
+        return personalizationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return personalizationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+                .getDefaultInstance()
+            : personalizationSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization spec.
+     *
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * are set,
+     * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+     * overrides
+     * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder>
+        getPersonalizationSpecFieldBuilder() {
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder>(
+                getPersonalizationSpec(), getParentForChildren(), isClean());
+        personalizationSpec_ = null;
+      }
+      return personalizationSpecBuilder_;
     }
 
     @java.lang.Override

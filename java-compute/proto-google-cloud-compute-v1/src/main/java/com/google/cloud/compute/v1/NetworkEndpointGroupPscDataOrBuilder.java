@@ -65,6 +65,31 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return Whether the producerPort field is set.
+   */
+  boolean hasProducerPort();
+  /**
+   *
+   *
+   * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return The producerPort.
+   */
+  int getProducerPort();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer.
    * </pre>
    *

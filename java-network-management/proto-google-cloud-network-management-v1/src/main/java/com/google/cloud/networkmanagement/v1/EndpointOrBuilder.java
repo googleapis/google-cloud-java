@@ -256,8 +256,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -269,8 +269,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -278,6 +278,37 @@ public interface EndpointOrBuilder
    * @return The bytes for gkeMasterCluster.
    */
   com.google.protobuf.ByteString getGkeMasterClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The fqdn.
+   */
+  java.lang.String getFqdn();
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The bytes for fqdn.
+   */
+  com.google.protobuf.ByteString getFqdnBytes();
 
   /**
    *

@@ -73,7 +73,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Full resource name of parent data store. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Full resource name of parent data store. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -576,7 +576,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -601,7 +601,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -626,7 +626,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -650,7 +650,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>
@@ -670,7 +670,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
      * </pre>
      *
      * <code>

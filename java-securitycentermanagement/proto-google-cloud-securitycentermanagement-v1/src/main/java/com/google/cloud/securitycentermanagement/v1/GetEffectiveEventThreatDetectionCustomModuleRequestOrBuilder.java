@@ -28,13 +28,12 @@ public interface GetEffectiveEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -48,13 +47,12 @@ public interface GetEffectiveEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>

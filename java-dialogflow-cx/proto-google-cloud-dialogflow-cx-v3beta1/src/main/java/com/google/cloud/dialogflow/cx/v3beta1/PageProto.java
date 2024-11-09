@@ -208,12 +208,12 @@ public final class PageProto {
           + "\312A\031dialogflow.googleapis.com\322AYhttps://w"
           + "ww.googleapis.com/auth/cloud-platform,ht"
           + "tps://www.googleapis.com/auth/dialogflow"
-          + "B\303\001\n&com.google.cloud.dialogflow.cx.v3be"
+          + "B\300\001\n&com.google.cloud.dialogflow.cx.v3be"
           + "ta1B\tPageProtoP\001Z6cloud.google.com/go/di"
-          + "alogflow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF"
-          + "\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&"
-          + "Google::Cloud::Dialogflow::CX::V3beta1b\006"
-          + "proto3"
+          + "alogflow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\""
+          + "Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goo"
+          + "gle::Cloud::Dialogflow::CX::V3beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -30,7 +30,7 @@ public interface ResumeEngineRequestOrBuilder
    * <pre>
    * Required. The name of the engine to resume.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ResumeEngineRequestOrBuilder
    * <pre>
    * Required. The name of the engine to resume.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>

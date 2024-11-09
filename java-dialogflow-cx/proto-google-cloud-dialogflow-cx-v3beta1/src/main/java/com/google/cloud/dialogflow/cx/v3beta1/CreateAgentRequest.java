@@ -74,7 +74,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The location to create a agent for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The location to create a agent for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * </pre>
    *
    * <code>
@@ -571,7 +571,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The location to create a agent for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -596,7 +596,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The location to create a agent for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -621,7 +621,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The location to create a agent for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -645,7 +645,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The location to create a agent for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>
@@ -665,7 +665,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The location to create a agent for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
      * </pre>
      *
      * <code>

@@ -102,6 +102,31 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return Whether the propagatedConnectionCount field is set.
+   */
+  boolean hasPropagatedConnectionCount();
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return The propagatedConnectionCount.
+   */
+  int getPropagatedConnectionCount();
+
+  /**
+   *
+   *
+   * <pre>
    * The PSC connection id of the connected endpoint.
    * </pre>
    *

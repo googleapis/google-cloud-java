@@ -693,6 +693,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>IPV4_ONLY = 22373798;</code>
      */
     IPV4_ONLY(22373798),
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    IPV6_ONLY(79632100),
     UNRECOGNIZED(-1),
     ;
 
@@ -726,6 +736,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    public static final int IPV6_ONLY_VALUE = 79632100;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -757,6 +777,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
           return IPV4_IPV6;
         case 22373798:
           return IPV4_ONLY;
+        case 79632100:
+          return IPV6_ONLY;
         default:
           return null;
       }

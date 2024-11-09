@@ -540,6 +540,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Agent$ClientCertificateSettings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Agent$ClientCertificateSettings$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.Agent$GenAppBuilderSettings",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -810,6 +828,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -829,6 +865,60 @@
   },
   {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec$AttributeType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec$ControlPoint",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec$ControlPoint$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.BoostSpec$ConditionBoostSpec$BoostControlSpec$InterpolationType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3304,6 +3394,24 @@
   },
   {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.Generator$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Generator$ModelParameter",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Generator$ModelParameter$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6084,6 +6192,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.SafetySettings$PhraseMatchStrategy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.SearchConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -6651,6 +6768,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$Authentication$BearerTokenConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$Authentication$BearerTokenConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$Authentication$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -6706,6 +6841,15 @@
   },
   {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$Authentication$ServiceAgentAuthConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$Authentication$ServiceAgentAuthConfig$ServiceAgentAuth",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

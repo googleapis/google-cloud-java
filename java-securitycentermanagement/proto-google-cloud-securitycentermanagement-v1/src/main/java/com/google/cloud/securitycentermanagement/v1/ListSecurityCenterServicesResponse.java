@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Response message for listing Security Command Center services.
+ * Response message for
+ * [SecurityCenterManagement.ListSecurityCenterServices][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListSecurityCenterServices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse}
@@ -160,7 +161,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -183,7 +185,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -389,7 +392,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * Response message for listing Security Command Center services.
+   * Response message for
+   * [SecurityCenterManagement.ListSecurityCenterServices][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListSecurityCenterServices].
    * </pre>
    *
    * Protobuf type {@code
@@ -1064,7 +1068,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1086,7 +1091,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1108,7 +1114,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1129,7 +1136,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1146,7 +1154,8 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

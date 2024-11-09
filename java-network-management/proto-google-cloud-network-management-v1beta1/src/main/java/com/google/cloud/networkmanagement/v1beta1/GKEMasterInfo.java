@@ -44,6 +44,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     clusterNetworkUri_ = "";
     internalIp_ = "";
     externalIp_ = "";
+    dnsEndpoint_ = "";
   }
 
   @java.lang.Override
@@ -177,7 +178,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Internal IP address of a GKE cluster master.
+   * Internal IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string internal_ip = 5;</code>
@@ -200,7 +201,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Internal IP address of a GKE cluster master.
+   * Internal IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string internal_ip = 5;</code>
@@ -228,7 +229,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * External IP address of a GKE cluster master.
+   * External IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string external_ip = 6;</code>
@@ -251,7 +252,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * External IP address of a GKE cluster master.
+   * External IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string external_ip = 6;</code>
@@ -265,6 +266,57 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       externalIp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DNS_ENDPOINT_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dnsEndpoint_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of a GKE cluster control plane.
+   * </pre>
+   *
+   * <code>string dns_endpoint = 7;</code>
+   *
+   * @return The dnsEndpoint.
+   */
+  @java.lang.Override
+  public java.lang.String getDnsEndpoint() {
+    java.lang.Object ref = dnsEndpoint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dnsEndpoint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of a GKE cluster control plane.
+   * </pre>
+   *
+   * <code>string dns_endpoint = 7;</code>
+   *
+   * @return The bytes for dnsEndpoint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDnsEndpointBytes() {
+    java.lang.Object ref = dnsEndpoint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dnsEndpoint_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -297,6 +349,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalIp_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dnsEndpoint_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dnsEndpoint_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -318,6 +373,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalIp_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dnsEndpoint_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dnsEndpoint_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -338,6 +396,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getClusterNetworkUri().equals(other.getClusterNetworkUri())) return false;
     if (!getInternalIp().equals(other.getInternalIp())) return false;
     if (!getExternalIp().equals(other.getExternalIp())) return false;
+    if (!getDnsEndpoint().equals(other.getDnsEndpoint())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -357,6 +416,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getInternalIp().hashCode();
     hash = (37 * hash) + EXTERNAL_IP_FIELD_NUMBER;
     hash = (53 * hash) + getExternalIp().hashCode();
+    hash = (37 * hash) + DNS_ENDPOINT_FIELD_NUMBER;
+    hash = (53 * hash) + getDnsEndpoint().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -502,6 +563,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       clusterNetworkUri_ = "";
       internalIp_ = "";
       externalIp_ = "";
+      dnsEndpoint_ = "";
       return this;
     }
 
@@ -549,6 +611,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.externalIp_ = externalIp_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dnsEndpoint_ = dnsEndpoint_;
       }
     }
 
@@ -618,6 +683,11 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getDnsEndpoint().isEmpty()) {
+        dnsEndpoint_ = other.dnsEndpoint_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -668,6 +738,12 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 50
+            case 58:
+              {
+                dnsEndpoint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -904,7 +980,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Internal IP address of a GKE cluster master.
+     * Internal IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string internal_ip = 5;</code>
@@ -926,7 +1002,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Internal IP address of a GKE cluster master.
+     * Internal IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string internal_ip = 5;</code>
@@ -948,7 +1024,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Internal IP address of a GKE cluster master.
+     * Internal IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string internal_ip = 5;</code>
@@ -969,7 +1045,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Internal IP address of a GKE cluster master.
+     * Internal IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string internal_ip = 5;</code>
@@ -986,7 +1062,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Internal IP address of a GKE cluster master.
+     * Internal IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string internal_ip = 5;</code>
@@ -1010,7 +1086,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * External IP address of a GKE cluster master.
+     * External IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string external_ip = 6;</code>
@@ -1032,7 +1108,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * External IP address of a GKE cluster master.
+     * External IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string external_ip = 6;</code>
@@ -1054,7 +1130,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * External IP address of a GKE cluster master.
+     * External IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string external_ip = 6;</code>
@@ -1075,7 +1151,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * External IP address of a GKE cluster master.
+     * External IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string external_ip = 6;</code>
@@ -1092,7 +1168,7 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * External IP address of a GKE cluster master.
+     * External IP address of a GKE cluster control plane.
      * </pre>
      *
      * <code>string external_ip = 6;</code>
@@ -1107,6 +1183,112 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       externalIp_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dnsEndpoint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of a GKE cluster control plane.
+     * </pre>
+     *
+     * <code>string dns_endpoint = 7;</code>
+     *
+     * @return The dnsEndpoint.
+     */
+    public java.lang.String getDnsEndpoint() {
+      java.lang.Object ref = dnsEndpoint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dnsEndpoint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of a GKE cluster control plane.
+     * </pre>
+     *
+     * <code>string dns_endpoint = 7;</code>
+     *
+     * @return The bytes for dnsEndpoint.
+     */
+    public com.google.protobuf.ByteString getDnsEndpointBytes() {
+      java.lang.Object ref = dnsEndpoint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dnsEndpoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of a GKE cluster control plane.
+     * </pre>
+     *
+     * <code>string dns_endpoint = 7;</code>
+     *
+     * @param value The dnsEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDnsEndpoint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dnsEndpoint_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of a GKE cluster control plane.
+     * </pre>
+     *
+     * <code>string dns_endpoint = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDnsEndpoint() {
+      dnsEndpoint_ = getDefaultInstance().getDnsEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of a GKE cluster control plane.
+     * </pre>
+     *
+     * <code>string dns_endpoint = 7;</code>
+     *
+     * @param value The bytes for dnsEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDnsEndpointBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dnsEndpoint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -38,7 +38,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private AdvancedMachineFeatures() {}
+  private AdvancedMachineFeatures() {
+    performanceMonitoringUnit_ = "";
+    turboMode_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +62,196 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.AdvancedMachineFeatures.class,
             com.google.cloud.compute.v1.AdvancedMachineFeatures.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.AdvancedMachineFeatures.PerformanceMonitoringUnit}
+   */
+  public enum PerformanceMonitoringUnit implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PERFORMANCE_MONITORING_UNIT = 0;</code>
+     */
+    UNDEFINED_PERFORMANCE_MONITORING_UNIT(0),
+    /**
+     *
+     *
+     * <pre>
+     * Architecturally defined non-LLC events.
+     * </pre>
+     *
+     * <code>ARCHITECTURAL = 155113693;</code>
+     */
+    ARCHITECTURAL(155113693),
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 and LLC events.
+     * </pre>
+     *
+     * <code>ENHANCED = 476873590;</code>
+     */
+    ENHANCED(476873590),
+    /** <code>PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 429210692;</code> */
+    PERFORMANCE_MONITORING_UNIT_UNSPECIFIED(429210692),
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 events.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    STANDARD(484642493),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PERFORMANCE_MONITORING_UNIT = 0;</code>
+     */
+    public static final int UNDEFINED_PERFORMANCE_MONITORING_UNIT_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Architecturally defined non-LLC events.
+     * </pre>
+     *
+     * <code>ARCHITECTURAL = 155113693;</code>
+     */
+    public static final int ARCHITECTURAL_VALUE = 155113693;
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 and LLC events.
+     * </pre>
+     *
+     * <code>ENHANCED = 476873590;</code>
+     */
+    public static final int ENHANCED_VALUE = 476873590;
+    /** <code>PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 429210692;</code> */
+    public static final int PERFORMANCE_MONITORING_UNIT_UNSPECIFIED_VALUE = 429210692;
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 events.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    public static final int STANDARD_VALUE = 484642493;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PerformanceMonitoringUnit valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PerformanceMonitoringUnit forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PERFORMANCE_MONITORING_UNIT;
+        case 155113693:
+          return ARCHITECTURAL;
+        case 476873590:
+          return ENHANCED;
+        case 429210692:
+          return PERFORMANCE_MONITORING_UNIT_UNSPECIFIED;
+        case 484642493:
+          return STANDARD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>() {
+              public PerformanceMonitoringUnit findValueByNumber(int number) {
+                return PerformanceMonitoringUnit.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.AdvancedMachineFeatures.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final PerformanceMonitoringUnit[] VALUES = values();
+
+    public static PerformanceMonitoringUnit valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PerformanceMonitoringUnit(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AdvancedMachineFeatures.PerformanceMonitoringUnit)
   }
 
   private int bitField0_;
@@ -128,6 +321,75 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     return enableUefiNetworking_;
   }
 
+  public static final int PERFORMANCE_MONITORING_UNIT_FIELD_NUMBER = 533618956;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object performanceMonitoringUnit_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return Whether the performanceMonitoringUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceMonitoringUnit() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return The performanceMonitoringUnit.
+   */
+  @java.lang.Override
+  public java.lang.String getPerformanceMonitoringUnit() {
+    java.lang.Object ref = performanceMonitoringUnit_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      performanceMonitoringUnit_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit requested on instance.
+   * Check the PerformanceMonitoringUnit enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string performance_monitoring_unit = 533618956;</code>
+   *
+   * @return The bytes for performanceMonitoringUnit.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPerformanceMonitoringUnitBytes() {
+    java.lang.Object ref = performanceMonitoringUnit_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      performanceMonitoringUnit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 352611671;
   private int threadsPerCore_ = 0;
   /**
@@ -143,7 +405,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasThreadsPerCore() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -161,6 +423,72 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     return threadsPerCore_;
   }
 
+  public static final int TURBO_MODE_FIELD_NUMBER = 432965412;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object turboMode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return Whether the turboMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasTurboMode() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return The turboMode.
+   */
+  @java.lang.Override
+  public java.lang.String getTurboMode() {
+    java.lang.Object ref = turboMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      turboMode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * </pre>
+   *
+   * <code>optional string turbo_mode = 432965412;</code>
+   *
+   * @return The bytes for turboMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTurboModeBytes() {
+    java.lang.Object ref = turboMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      turboMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VISIBLE_CORE_COUNT_FIELD_NUMBER = 193198684;
   private int visibleCoreCount_ = 0;
   /**
@@ -176,7 +504,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasVisibleCoreCount() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -211,14 +539,21 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(16639365, enableNestedVirtualization_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(193198684, visibleCoreCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(334485668, enableUefiNetworking_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(352611671, threadsPerCore_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 432965412, turboMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 533618956, performanceMonitoringUnit_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -234,15 +569,23 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               16639365, enableNestedVirtualization_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(193198684, visibleCoreCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(334485668, enableUefiNetworking_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(352611671, threadsPerCore_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(432965412, turboMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              533618956, performanceMonitoringUnit_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -268,9 +611,18 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (hasEnableUefiNetworking()) {
       if (getEnableUefiNetworking() != other.getEnableUefiNetworking()) return false;
     }
+    if (hasPerformanceMonitoringUnit() != other.hasPerformanceMonitoringUnit()) return false;
+    if (hasPerformanceMonitoringUnit()) {
+      if (!getPerformanceMonitoringUnit().equals(other.getPerformanceMonitoringUnit()))
+        return false;
+    }
     if (hasThreadsPerCore() != other.hasThreadsPerCore()) return false;
     if (hasThreadsPerCore()) {
       if (getThreadsPerCore() != other.getThreadsPerCore()) return false;
+    }
+    if (hasTurboMode() != other.hasTurboMode()) return false;
+    if (hasTurboMode()) {
+      if (!getTurboMode().equals(other.getTurboMode())) return false;
     }
     if (hasVisibleCoreCount() != other.hasVisibleCoreCount()) return false;
     if (hasVisibleCoreCount()) {
@@ -296,9 +648,17 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       hash = (37 * hash) + ENABLE_UEFI_NETWORKING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableUefiNetworking());
     }
+    if (hasPerformanceMonitoringUnit()) {
+      hash = (37 * hash) + PERFORMANCE_MONITORING_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformanceMonitoringUnit().hashCode();
+    }
     if (hasThreadsPerCore()) {
       hash = (37 * hash) + THREADS_PER_CORE_FIELD_NUMBER;
       hash = (53 * hash) + getThreadsPerCore();
+    }
+    if (hasTurboMode()) {
+      hash = (37 * hash) + TURBO_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getTurboMode().hashCode();
     }
     if (hasVisibleCoreCount()) {
       hash = (37 * hash) + VISIBLE_CORE_COUNT_FIELD_NUMBER;
@@ -445,7 +805,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       bitField0_ = 0;
       enableNestedVirtualization_ = false;
       enableUefiNetworking_ = false;
+      performanceMonitoringUnit_ = "";
       threadsPerCore_ = 0;
+      turboMode_ = "";
       visibleCoreCount_ = 0;
       return this;
     }
@@ -493,12 +855,20 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.threadsPerCore_ = threadsPerCore_;
+        result.performanceMonitoringUnit_ = performanceMonitoringUnit_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.visibleCoreCount_ = visibleCoreCount_;
+        result.threadsPerCore_ = threadsPerCore_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.turboMode_ = turboMode_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.visibleCoreCount_ = visibleCoreCount_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -555,8 +925,18 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       if (other.hasEnableUefiNetworking()) {
         setEnableUefiNetworking(other.getEnableUefiNetworking());
       }
+      if (other.hasPerformanceMonitoringUnit()) {
+        performanceMonitoringUnit_ = other.performanceMonitoringUnit_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasThreadsPerCore()) {
         setThreadsPerCore(other.getThreadsPerCore());
+      }
+      if (other.hasTurboMode()) {
+        turboMode_ = other.turboMode_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       if (other.hasVisibleCoreCount()) {
         setVisibleCoreCount(other.getVisibleCoreCount());
@@ -596,7 +976,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
             case 1545589472:
               {
                 visibleCoreCount_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1545589472
             case -1619081952:
@@ -608,9 +988,21 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
             case -1474073928:
               {
                 threadsPerCore_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1474073928
+            case -831243998:
+              {
+                turboMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -831243998
+            case -26015646:
+              {
+                performanceMonitoringUnit_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -26015646
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -766,6 +1158,132 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       return this;
     }
 
+    private java.lang.Object performanceMonitoringUnit_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @return Whether the performanceMonitoringUnit field is set.
+     */
+    public boolean hasPerformanceMonitoringUnit() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @return The performanceMonitoringUnit.
+     */
+    public java.lang.String getPerformanceMonitoringUnit() {
+      java.lang.Object ref = performanceMonitoringUnit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        performanceMonitoringUnit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @return The bytes for performanceMonitoringUnit.
+     */
+    public com.google.protobuf.ByteString getPerformanceMonitoringUnitBytes() {
+      java.lang.Object ref = performanceMonitoringUnit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        performanceMonitoringUnit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @param value The performanceMonitoringUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceMonitoringUnit(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      performanceMonitoringUnit_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerformanceMonitoringUnit() {
+      performanceMonitoringUnit_ = getDefaultInstance().getPerformanceMonitoringUnit();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit requested on instance.
+     * Check the PerformanceMonitoringUnit enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string performance_monitoring_unit = 533618956;</code>
+     *
+     * @param value The bytes for performanceMonitoringUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceMonitoringUnitBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      performanceMonitoringUnit_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private int threadsPerCore_;
     /**
      *
@@ -780,7 +1298,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasThreadsPerCore() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -812,7 +1330,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public Builder setThreadsPerCore(int value) {
 
       threadsPerCore_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -828,8 +1346,128 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearThreadsPerCore() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       threadsPerCore_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object turboMode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @return Whether the turboMode field is set.
+     */
+    public boolean hasTurboMode() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @return The turboMode.
+     */
+    public java.lang.String getTurboMode() {
+      java.lang.Object ref = turboMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        turboMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @return The bytes for turboMode.
+     */
+    public com.google.protobuf.ByteString getTurboModeBytes() {
+      java.lang.Object ref = turboMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        turboMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @param value The turboMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTurboMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      turboMode_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTurboMode() {
+      turboMode_ = getDefaultInstance().getTurboMode();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * </pre>
+     *
+     * <code>optional string turbo_mode = 432965412;</code>
+     *
+     * @param value The bytes for turboMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTurboModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      turboMode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -848,7 +1486,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasVisibleCoreCount() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -880,7 +1518,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public Builder setVisibleCoreCount(int value) {
 
       visibleCoreCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -896,7 +1534,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearVisibleCoreCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       visibleCoreCount_ = 0;
       onChanged();
       return this;

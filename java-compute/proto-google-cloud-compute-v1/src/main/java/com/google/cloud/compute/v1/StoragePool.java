@@ -1137,7 +1137,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool.
+   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -1152,7 +1152,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool.
+   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3693,7 +3693,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool.
+     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3708,7 +3708,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool.
+     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3723,7 +3723,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool.
+     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3742,7 +3742,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool.
+     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>

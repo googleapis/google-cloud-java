@@ -65,12 +65,12 @@ public final class ValidationMessageProto {
           + "UP\020\016\"F\n\010Severity\022\030\n\024SEVERITY_UNSPECIFIED"
           + "\020\000\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERROR\020\003\"2\n\014"
           + "ResourceName\022\014\n\004name\030\001 \001(\t\022\024\n\014display_na"
-          + "me\030\002 \001(\tB\274\001\n!com.google.cloud.dialogflow"
+          + "me\030\002 \001(\tB\271\001\n!com.google.cloud.dialogflow"
           + ".cx.v3B\026ValidationMessageProtoP\001Z1cloud."
           + "google.com/go/dialogflow/cx/apiv3/cxpb;c"
-          + "xpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
-          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
-          + "\006proto3"
+          + "xpb\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3"
+          + "\352\002!Google::Cloud::Dialogflow::CX::V3b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

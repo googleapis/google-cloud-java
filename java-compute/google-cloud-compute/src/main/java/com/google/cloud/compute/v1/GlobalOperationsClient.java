@@ -425,7 +425,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to delete.
+   * @param operation Name of the Operations resource to delete, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteGlobalOperationResponse delete(String project, String operation) {
@@ -516,7 +516,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation get(String project, String operation) {
@@ -749,7 +749,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation wait(String project, String operation) {

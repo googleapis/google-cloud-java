@@ -27,7 +27,7 @@ package com.google.cloud.securitycentermanagement.v1;
  * including its full module name, display name, enablement state, and last
  * updated time. You can create a custom module at the organization, folder, or
  * project level. Custom modules that you create at the organization or folder
- * level are inherited by the child folders and projects.
+ * level are inherited by the descendant folders and projects.
  * </pre>
  *
  * Protobuf type {@code
@@ -90,7 +90,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Unspecified enablement state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
@@ -100,7 +100,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * The module is enabled at the given CRM resource.
+     * The module is enabled at the given organization, folder, or project.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -110,7 +110,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * The module is disabled at the given CRM resource.
+     * The module is disabled at the given organization, folder, or project.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -121,10 +121,10 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      * <pre>
      * State is inherited from an ancestor module. The module will either
-     * be effectively ENABLED or DISABLED based on its closest non-inherited
-     * ancestor module in the CRM hierarchy. Attempting to set a top level
-     * module (module with no parent) to the INHERITED state will result in an
-     * INVALID_ARGUMENT error.
+     * be effectively `ENABLED` or `DISABLED` based on its closest non-inherited
+     * ancestor module in the resource hierarchy. If you try to set a top-level
+     * module (a module with no parent) to the `INHERITED` state, you receive an
+     * `INVALID_ARGUMENT` error.
      * </pre>
      *
      * <code>INHERITED = 3;</code>
@@ -137,7 +137,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Unspecified enablement state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
@@ -147,7 +147,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * The module is enabled at the given CRM resource.
+     * The module is enabled at the given organization, folder, or project.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -157,7 +157,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * The module is disabled at the given CRM resource.
+     * The module is disabled at the given organization, folder, or project.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -168,10 +168,10 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      * <pre>
      * State is inherited from an ancestor module. The module will either
-     * be effectively ENABLED or DISABLED based on its closest non-inherited
-     * ancestor module in the CRM hierarchy. Attempting to set a top level
-     * module (module with no parent) to the INHERITED state will result in an
-     * INVALID_ARGUMENT error.
+     * be effectively `ENABLED` or `DISABLED` based on its closest non-inherited
+     * ancestor module in the resource hierarchy. If you try to set a top-level
+     * module (a module with no parent) to the `INHERITED` state, you receive an
+     * `INVALID_ARGUMENT` error.
      * </pre>
      *
      * <code>INHERITED = 3;</code>
@@ -277,11 +277,12 @@ public final class SecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
-   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -304,11 +305,12 @@ public final class SecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
-   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -338,8 +340,8 @@ public final class SecurityHealthAnalyticsCustomModule
    * <pre>
    * Optional. The display name of the Security Health Analytics custom module.
    * This display name becomes the finding category for all findings that are
-   * returned by this custom module. The display name must be between 1 and
-   * 128 characters, start with a lowercase letter, and contain alphanumeric
+   * returned by this custom module. The display name must be between 1 and 128
+   * characters, start with a lowercase letter, and contain alphanumeric
    * characters or underscores only.
    * </pre>
    *
@@ -365,8 +367,8 @@ public final class SecurityHealthAnalyticsCustomModule
    * <pre>
    * Optional. The display name of the Security Health Analytics custom module.
    * This display name becomes the finding category for all findings that are
-   * returned by this custom module. The display name must be between 1 and
-   * 128 characters, start with a lowercase letter, and contain alphanumeric
+   * returned by this custom module. The display name must be between 1 and 128
+   * characters, start with a lowercase letter, and contain alphanumeric
    * characters or underscores only.
    * </pre>
    *
@@ -600,7 +602,7 @@ public final class SecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>
@@ -617,7 +619,7 @@ public final class SecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>
@@ -636,7 +638,7 @@ public final class SecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Optional. The user specified custom configuration for the module.
+   * Optional. The user-specified custom configuration for the module.
    * </pre>
    *
    * <code>
@@ -897,7 +899,7 @@ public final class SecurityHealthAnalyticsCustomModule
    * including its full module name, display name, enablement state, and last
    * updated time. You can create a custom module at the organization, folder, or
    * project level. Custom modules that you create at the organization or folder
-   * level are inherited by the child folders and projects.
+   * level are inherited by the descendant folders and projects.
    * </pre>
    *
    * Protobuf type {@code
@@ -1205,11 +1207,12 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
-     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1231,11 +1234,12 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
-     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1257,11 +1261,12 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
-     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1282,11 +1287,12 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
-     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1303,11 +1309,12 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
-     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
-     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}`
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1333,8 +1340,8 @@ public final class SecurityHealthAnalyticsCustomModule
      * <pre>
      * Optional. The display name of the Security Health Analytics custom module.
      * This display name becomes the finding category for all findings that are
-     * returned by this custom module. The display name must be between 1 and
-     * 128 characters, start with a lowercase letter, and contain alphanumeric
+     * returned by this custom module. The display name must be between 1 and 128
+     * characters, start with a lowercase letter, and contain alphanumeric
      * characters or underscores only.
      * </pre>
      *
@@ -1359,8 +1366,8 @@ public final class SecurityHealthAnalyticsCustomModule
      * <pre>
      * Optional. The display name of the Security Health Analytics custom module.
      * This display name becomes the finding category for all findings that are
-     * returned by this custom module. The display name must be between 1 and
-     * 128 characters, start with a lowercase letter, and contain alphanumeric
+     * returned by this custom module. The display name must be between 1 and 128
+     * characters, start with a lowercase letter, and contain alphanumeric
      * characters or underscores only.
      * </pre>
      *
@@ -1385,8 +1392,8 @@ public final class SecurityHealthAnalyticsCustomModule
      * <pre>
      * Optional. The display name of the Security Health Analytics custom module.
      * This display name becomes the finding category for all findings that are
-     * returned by this custom module. The display name must be between 1 and
-     * 128 characters, start with a lowercase letter, and contain alphanumeric
+     * returned by this custom module. The display name must be between 1 and 128
+     * characters, start with a lowercase letter, and contain alphanumeric
      * characters or underscores only.
      * </pre>
      *
@@ -1410,8 +1417,8 @@ public final class SecurityHealthAnalyticsCustomModule
      * <pre>
      * Optional. The display name of the Security Health Analytics custom module.
      * This display name becomes the finding category for all findings that are
-     * returned by this custom module. The display name must be between 1 and
-     * 128 characters, start with a lowercase letter, and contain alphanumeric
+     * returned by this custom module. The display name must be between 1 and 128
+     * characters, start with a lowercase letter, and contain alphanumeric
      * characters or underscores only.
      * </pre>
      *
@@ -1431,8 +1438,8 @@ public final class SecurityHealthAnalyticsCustomModule
      * <pre>
      * Optional. The display name of the Security Health Analytics custom module.
      * This display name becomes the finding category for all findings that are
-     * returned by this custom module. The display name must be between 1 and
-     * 128 characters, start with a lowercase letter, and contain alphanumeric
+     * returned by this custom module. The display name must be between 1 and 128
+     * characters, start with a lowercase letter, and contain alphanumeric
      * characters or underscores only.
      * </pre>
      *
@@ -2013,7 +2020,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2029,7 +2036,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2051,7 +2058,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2076,7 +2083,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2098,7 +2105,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2129,7 +2136,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2150,7 +2157,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2167,7 +2174,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>
@@ -2188,7 +2195,7 @@ public final class SecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Optional. The user specified custom configuration for the module.
+     * Optional. The user-specified custom configuration for the module.
      * </pre>
      *
      * <code>

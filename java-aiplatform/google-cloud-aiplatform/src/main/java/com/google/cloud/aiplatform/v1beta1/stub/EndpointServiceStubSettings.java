@@ -63,6 +63,8 @@ import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -176,6 +178,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
       listEndpointsSettings;
   private final UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+  private final UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings;
+  private final OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings;
   private final UnaryCallSettings<DeleteEndpointRequest, Operation> deleteEndpointSettings;
   private final OperationCallSettings<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationSettings;
@@ -330,6 +337,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
   /** Returns the object with the settings used for calls to updateEndpoint. */
   public UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
     return updateEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings() {
+    return updateEndpointLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings() {
+    return updateEndpointLongRunningOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteEndpoint. */
@@ -494,6 +514,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     getEndpointSettings = settingsBuilder.getEndpointSettings().build();
     listEndpointsSettings = settingsBuilder.listEndpointsSettings().build();
     updateEndpointSettings = settingsBuilder.updateEndpointSettings().build();
+    updateEndpointLongRunningSettings = settingsBuilder.updateEndpointLongRunningSettings().build();
+    updateEndpointLongRunningOperationSettings =
+        settingsBuilder.updateEndpointLongRunningOperationSettings().build();
     deleteEndpointSettings = settingsBuilder.deleteEndpointSettings().build();
     deleteEndpointOperationSettings = settingsBuilder.deleteEndpointOperationSettings().build();
     deployModelSettings = settingsBuilder.deployModelSettings().build();
@@ -523,6 +546,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
         listEndpointsSettings;
     private final UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+    private final UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<DeleteEndpointRequest, Operation>
         deleteEndpointSettings;
     private final OperationCallSettings.Builder<
@@ -593,6 +621,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEndpointsSettings = PagedCallSettings.newBuilder(LIST_ENDPOINTS_PAGE_STR_FACT);
       updateEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningOperationSettings = OperationCallSettings.newBuilder();
       deleteEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEndpointOperationSettings = OperationCallSettings.newBuilder();
       deployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -613,6 +643,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -633,6 +664,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = settings.getEndpointSettings.toBuilder();
       listEndpointsSettings = settings.listEndpointsSettings.toBuilder();
       updateEndpointSettings = settings.updateEndpointSettings.toBuilder();
+      updateEndpointLongRunningSettings = settings.updateEndpointLongRunningSettings.toBuilder();
+      updateEndpointLongRunningOperationSettings =
+          settings.updateEndpointLongRunningOperationSettings.toBuilder();
       deleteEndpointSettings = settings.deleteEndpointSettings.toBuilder();
       deleteEndpointOperationSettings = settings.deleteEndpointOperationSettings.toBuilder();
       deployModelSettings = settings.deployModelSettings.toBuilder();
@@ -654,6 +688,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -697,6 +732,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .updateEndpointSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateEndpointLongRunningSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteEndpointSettings()
@@ -756,6 +796,32 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   CreateEndpointOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateEndpointLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateEndpointLongRunningRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Endpoint.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateEndpointOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -912,6 +978,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     /** Returns the builder for the settings used for calls to updateEndpoint. */
     public UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
       return updateEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings() {
+      return updateEndpointLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings() {
+      return updateEndpointLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */

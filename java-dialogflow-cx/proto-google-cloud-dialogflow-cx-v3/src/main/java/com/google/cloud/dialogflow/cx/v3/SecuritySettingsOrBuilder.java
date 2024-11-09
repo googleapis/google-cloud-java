@@ -33,8 +33,8 @@ public interface SecuritySettingsOrBuilder
    * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
    * method.
    * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
-   * populates the name automatically. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * populates the name automatically. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -51,8 +51,8 @@ public interface SecuritySettingsOrBuilder
    * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings]
    * method.
    * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings]
-   * populates the name automatically. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * populates the name automatically. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -161,9 +161,9 @@ public interface SecuritySettingsOrBuilder
    * If empty, we use the default DLP inspect config.
    *
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
-   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/inspectTemplates/&lt;TemplateID&gt;`
+   * OR
+   * `organizations/&lt;OrganizationID&gt;/locations/&lt;LocationID&gt;/inspectTemplates/&lt;TemplateID&gt;`
    *
    * Note: `inspect_template` must be located in the same region as the
    * `SecuritySettings`.
@@ -189,9 +189,9 @@ public interface SecuritySettingsOrBuilder
    * If empty, we use the default DLP inspect config.
    *
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
-   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/inspectTemplates/&lt;TemplateID&gt;`
+   * OR
+   * `organizations/&lt;OrganizationID&gt;/locations/&lt;LocationID&gt;/inspectTemplates/&lt;TemplateID&gt;`
    *
    * Note: `inspect_template` must be located in the same region as the
    * `SecuritySettings`.
@@ -218,9 +218,9 @@ public interface SecuritySettingsOrBuilder
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
    *
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
-   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/deidentifyTemplates/&lt;TemplateID&gt;`
+   * OR
+   * `organizations/&lt;OrganizationID&gt;/locations/&lt;LocationID&gt;/deidentifyTemplates/&lt;TemplateID&gt;`
    *
    * Note: `deidentify_template` must be located in the same region as the
    * `SecuritySettings`.
@@ -246,9 +246,9 @@ public interface SecuritySettingsOrBuilder
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
    *
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
-   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/deidentifyTemplates/&lt;TemplateID&gt;`
+   * OR
+   * `organizations/&lt;OrganizationID&gt;/locations/&lt;LocationID&gt;/deidentifyTemplates/&lt;TemplateID&gt;`
    *
    * Note: `deidentify_template` must be located in the same region as the
    * `SecuritySettings`.

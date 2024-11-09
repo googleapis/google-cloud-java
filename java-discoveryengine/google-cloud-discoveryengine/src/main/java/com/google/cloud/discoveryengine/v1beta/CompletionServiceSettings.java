@@ -120,6 +120,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
     return ((CompletionServiceStubSettings) getStubSettings()).completeQuerySettings();
   }
 
+  /** Returns the object with the settings used for calls to advancedCompleteQuery. */
+  public UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).advancedCompleteQuerySettings();
+  }
+
   /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
   public UnaryCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesSettings() {
@@ -303,6 +309,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
     public UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings() {
       return getStubSettingsBuilder().completeQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to advancedCompleteQuery. */
+    public UnaryCallSettings.Builder<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings() {
+      return getStubSettingsBuilder().advancedCompleteQuerySettings();
     }
 
     /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */

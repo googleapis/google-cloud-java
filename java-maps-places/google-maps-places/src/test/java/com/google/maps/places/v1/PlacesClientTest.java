@@ -178,6 +178,7 @@ public class PlacesClientTest {
             .setRoutingParameters(RoutingParameters.newBuilder().build())
             .setSearchAlongRouteParameters(
                 SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+            .setIncludePureServiceAreaBusinesses(true)
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -203,6 +204,9 @@ public class PlacesClientTest {
     Assert.assertEquals(request.getRoutingParameters(), actualRequest.getRoutingParameters());
     Assert.assertEquals(
         request.getSearchAlongRouteParameters(), actualRequest.getSearchAlongRouteParameters());
+    Assert.assertEquals(
+        request.getIncludePureServiceAreaBusinesses(),
+        actualRequest.getIncludePureServiceAreaBusinesses());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -232,6 +236,7 @@ public class PlacesClientTest {
               .setRoutingParameters(RoutingParameters.newBuilder().build())
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -384,6 +389,9 @@ public class PlacesClientTest {
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
             .setAreaSummary(Place.AreaSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setPriceRange(PriceRange.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -483,6 +491,9 @@ public class PlacesClientTest {
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
             .setAreaSummary(Place.AreaSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setPriceRange(PriceRange.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -538,6 +549,7 @@ public class PlacesClientTest {
             .setInputOffset(1010406056)
             .setIncludeQueryPredictions(true)
             .setSessionToken("sessionToken-696552189")
+            .setIncludePureServiceAreaBusinesses(true)
             .build();
 
     AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
@@ -561,6 +573,9 @@ public class PlacesClientTest {
     Assert.assertEquals(
         request.getIncludeQueryPredictions(), actualRequest.getIncludeQueryPredictions());
     Assert.assertEquals(request.getSessionToken(), actualRequest.getSessionToken());
+    Assert.assertEquals(
+        request.getIncludePureServiceAreaBusinesses(),
+        actualRequest.getIncludePureServiceAreaBusinesses());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -587,6 +602,7 @@ public class PlacesClientTest {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       client.autocompletePlaces(request);
       Assert.fail("No exception raised");

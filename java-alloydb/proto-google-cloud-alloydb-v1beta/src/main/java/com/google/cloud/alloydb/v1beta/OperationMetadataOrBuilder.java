@@ -70,6 +70,88 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the promoteClusterStatus field is set.
+   */
+  boolean hasPromoteClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The promoteClusterStatus.
+   */
+  com.google.cloud.alloydb.v1beta.PromoteClusterStatus getPromoteClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder getPromoteClusterStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeClusterStatus field is set.
+   */
+  boolean hasUpgradeClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeClusterStatus.
+   */
+  com.google.cloud.alloydb.v1beta.UpgradeClusterStatus getUpgradeClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder getUpgradeClusterStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the operation was created.
    * </pre>
    *

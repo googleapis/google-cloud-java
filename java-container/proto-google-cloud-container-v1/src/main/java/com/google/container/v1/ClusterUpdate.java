@@ -857,7 +857,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -881,7 +881,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -1217,7 +1217,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2506
+   *     google/container/v1/cluster_service.proto;l=2537
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1246,7 +1246,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2506
+   *     google/container/v1/cluster_service.proto;l=2537
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Override
@@ -1892,7 +1892,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2582
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Override
@@ -1915,7 +1915,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2582
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Override
@@ -3416,6 +3416,123 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredRbacBindingConfig_;
   }
 
+  public static final int DESIRED_ENTERPRISE_CONFIG_FIELD_NUMBER = 147;
+  private com.google.container.v1.DesiredEnterpriseConfig desiredEnterpriseConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   *
+   * @return Whether the desiredEnterpriseConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnterpriseConfig() {
+    return ((bitField1_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   *
+   * @return The desiredEnterpriseConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DesiredEnterpriseConfig getDesiredEnterpriseConfig() {
+    return desiredEnterpriseConfig_ == null
+        ? com.google.container.v1.DesiredEnterpriseConfig.getDefaultInstance()
+        : desiredEnterpriseConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DesiredEnterpriseConfigOrBuilder
+      getDesiredEnterpriseConfigOrBuilder() {
+    return desiredEnterpriseConfig_ == null
+        ? com.google.container.v1.DesiredEnterpriseConfig.getDefaultInstance()
+        : desiredEnterpriseConfig_;
+  }
+
+  public static final int DESIRED_NODE_POOL_AUTO_CONFIG_LINUX_NODE_CONFIG_FIELD_NUMBER = 150;
+  private com.google.container.v1.LinuxNodeConfig desiredNodePoolAutoConfigLinuxNodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigLinuxNodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolAutoConfigLinuxNodeConfig() {
+    return ((bitField1_ & 0x00100000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigLinuxNodeConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig getDesiredNodePoolAutoConfigLinuxNodeConfig() {
+    return desiredNodePoolAutoConfigLinuxNodeConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+        : desiredNodePoolAutoConfigLinuxNodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfigOrBuilder
+      getDesiredNodePoolAutoConfigLinuxNodeConfigOrBuilder() {
+    return desiredNodePoolAutoConfigLinuxNodeConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+        : desiredNodePoolAutoConfigLinuxNodeConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3618,6 +3735,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00040000) != 0)) {
       output.writeMessage(144, getDesiredRbacBindingConfig());
+    }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      output.writeMessage(147, getDesiredEnterpriseConfig());
+    }
+    if (((bitField1_ & 0x00100000) != 0)) {
+      output.writeMessage(150, getDesiredNodePoolAutoConfigLinuxNodeConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3910,6 +4033,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               144, getDesiredRbacBindingConfig());
     }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              147, getDesiredEnterpriseConfig());
+    }
+    if (((bitField1_ & 0x00100000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              150, getDesiredNodePoolAutoConfigLinuxNodeConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4193,6 +4326,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredRbacBindingConfig()) {
       if (!getDesiredRbacBindingConfig().equals(other.getDesiredRbacBindingConfig())) return false;
     }
+    if (hasDesiredEnterpriseConfig() != other.hasDesiredEnterpriseConfig()) return false;
+    if (hasDesiredEnterpriseConfig()) {
+      if (!getDesiredEnterpriseConfig().equals(other.getDesiredEnterpriseConfig())) return false;
+    }
+    if (hasDesiredNodePoolAutoConfigLinuxNodeConfig()
+        != other.hasDesiredNodePoolAutoConfigLinuxNodeConfig()) return false;
+    if (hasDesiredNodePoolAutoConfigLinuxNodeConfig()) {
+      if (!getDesiredNodePoolAutoConfigLinuxNodeConfig()
+          .equals(other.getDesiredNodePoolAutoConfigLinuxNodeConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4441,6 +4584,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_RBAC_BINDING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredRbacBindingConfig().hashCode();
     }
+    if (hasDesiredEnterpriseConfig()) {
+      hash = (37 * hash) + DESIRED_ENTERPRISE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredEnterpriseConfig().hashCode();
+    }
+    if (hasDesiredNodePoolAutoConfigLinuxNodeConfig()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_LINUX_NODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolAutoConfigLinuxNodeConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4627,6 +4778,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder();
         getUserManagedKeysConfigFieldBuilder();
         getDesiredRbacBindingConfigFieldBuilder();
+        getDesiredEnterpriseConfigFieldBuilder();
+        getDesiredNodePoolAutoConfigLinuxNodeConfigFieldBuilder();
       }
     }
 
@@ -4876,6 +5029,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredRbacBindingConfigBuilder_ != null) {
         desiredRbacBindingConfigBuilder_.dispose();
         desiredRbacBindingConfigBuilder_ = null;
+      }
+      desiredEnterpriseConfig_ = null;
+      if (desiredEnterpriseConfigBuilder_ != null) {
+        desiredEnterpriseConfigBuilder_.dispose();
+        desiredEnterpriseConfigBuilder_ = null;
+      }
+      desiredNodePoolAutoConfigLinuxNodeConfig_ = null;
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ != null) {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.dispose();
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ = null;
       }
       return this;
     }
@@ -5294,6 +5457,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 : desiredRbacBindingConfigBuilder_.build();
         to_bitField1_ |= 0x00040000;
       }
+      if (((from_bitField1_ & 0x40000000) != 0)) {
+        result.desiredEnterpriseConfig_ =
+            desiredEnterpriseConfigBuilder_ == null
+                ? desiredEnterpriseConfig_
+                : desiredEnterpriseConfigBuilder_.build();
+        to_bitField1_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x80000000) != 0)) {
+        result.desiredNodePoolAutoConfigLinuxNodeConfig_ =
+            desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null
+                ? desiredNodePoolAutoConfigLinuxNodeConfig_
+                : desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.build();
+        to_bitField1_ |= 0x00100000;
+      }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
     }
@@ -5553,6 +5730,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredRbacBindingConfig()) {
         mergeDesiredRbacBindingConfig(other.getDesiredRbacBindingConfig());
+      }
+      if (other.hasDesiredEnterpriseConfig()) {
+        mergeDesiredEnterpriseConfig(other.getDesiredEnterpriseConfig());
+      }
+      if (other.hasDesiredNodePoolAutoConfigLinuxNodeConfig()) {
+        mergeDesiredNodePoolAutoConfigLinuxNodeConfig(
+            other.getDesiredNodePoolAutoConfigLinuxNodeConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6010,6 +6194,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x20000000;
                 break;
               } // case 1154
+            case 1178:
+              {
+                input.readMessage(
+                    getDesiredEnterpriseConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x40000000;
+                break;
+              } // case 1178
+            case 1202:
+              {
+                input.readMessage(
+                    getDesiredNodePoolAutoConfigLinuxNodeConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x80000000;
+                break;
+              } // case 1202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8387,7 +8586,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2499
      * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -8410,7 +8609,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2499
      * @return The desiredMasterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -9596,7 +9795,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2506
+     *     See google/container/v1/cluster_service.proto;l=2537
      * @return Whether the desiredPrivateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -9624,7 +9823,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2506
+     *     See google/container/v1/cluster_service.proto;l=2537
      * @return The desiredPrivateClusterConfig.
      */
     @java.lang.Deprecated
@@ -12022,7 +12221,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2582
      * @return Whether the desiredEnablePrivateEndpoint field is set.
      */
     @java.lang.Override
@@ -12045,7 +12244,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2582
      * @return The desiredEnablePrivateEndpoint.
      */
     @java.lang.Override
@@ -12068,7 +12267,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2582
      * @param value The desiredEnablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -12095,7 +12294,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2582
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17119,6 +17318,433 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredRbacBindingConfig_ = null;
       }
       return desiredRbacBindingConfigBuilder_;
+    }
+
+    private com.google.container.v1.DesiredEnterpriseConfig desiredEnterpriseConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DesiredEnterpriseConfig,
+            com.google.container.v1.DesiredEnterpriseConfig.Builder,
+            com.google.container.v1.DesiredEnterpriseConfigOrBuilder>
+        desiredEnterpriseConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     *
+     * @return Whether the desiredEnterpriseConfig field is set.
+     */
+    public boolean hasDesiredEnterpriseConfig() {
+      return ((bitField1_ & 0x40000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     *
+     * @return The desiredEnterpriseConfig.
+     */
+    public com.google.container.v1.DesiredEnterpriseConfig getDesiredEnterpriseConfig() {
+      if (desiredEnterpriseConfigBuilder_ == null) {
+        return desiredEnterpriseConfig_ == null
+            ? com.google.container.v1.DesiredEnterpriseConfig.getDefaultInstance()
+            : desiredEnterpriseConfig_;
+      } else {
+        return desiredEnterpriseConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public Builder setDesiredEnterpriseConfig(
+        com.google.container.v1.DesiredEnterpriseConfig value) {
+      if (desiredEnterpriseConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredEnterpriseConfig_ = value;
+      } else {
+        desiredEnterpriseConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public Builder setDesiredEnterpriseConfig(
+        com.google.container.v1.DesiredEnterpriseConfig.Builder builderForValue) {
+      if (desiredEnterpriseConfigBuilder_ == null) {
+        desiredEnterpriseConfig_ = builderForValue.build();
+      } else {
+        desiredEnterpriseConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public Builder mergeDesiredEnterpriseConfig(
+        com.google.container.v1.DesiredEnterpriseConfig value) {
+      if (desiredEnterpriseConfigBuilder_ == null) {
+        if (((bitField1_ & 0x40000000) != 0)
+            && desiredEnterpriseConfig_ != null
+            && desiredEnterpriseConfig_
+                != com.google.container.v1.DesiredEnterpriseConfig.getDefaultInstance()) {
+          getDesiredEnterpriseConfigBuilder().mergeFrom(value);
+        } else {
+          desiredEnterpriseConfig_ = value;
+        }
+      } else {
+        desiredEnterpriseConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredEnterpriseConfig_ != null) {
+        bitField1_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public Builder clearDesiredEnterpriseConfig() {
+      bitField1_ = (bitField1_ & ~0x40000000);
+      desiredEnterpriseConfig_ = null;
+      if (desiredEnterpriseConfigBuilder_ != null) {
+        desiredEnterpriseConfigBuilder_.dispose();
+        desiredEnterpriseConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public com.google.container.v1.DesiredEnterpriseConfig.Builder
+        getDesiredEnterpriseConfigBuilder() {
+      bitField1_ |= 0x40000000;
+      onChanged();
+      return getDesiredEnterpriseConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    public com.google.container.v1.DesiredEnterpriseConfigOrBuilder
+        getDesiredEnterpriseConfigOrBuilder() {
+      if (desiredEnterpriseConfigBuilder_ != null) {
+        return desiredEnterpriseConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredEnterpriseConfig_ == null
+            ? com.google.container.v1.DesiredEnterpriseConfig.getDefaultInstance()
+            : desiredEnterpriseConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired enterprise configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DesiredEnterpriseConfig,
+            com.google.container.v1.DesiredEnterpriseConfig.Builder,
+            com.google.container.v1.DesiredEnterpriseConfigOrBuilder>
+        getDesiredEnterpriseConfigFieldBuilder() {
+      if (desiredEnterpriseConfigBuilder_ == null) {
+        desiredEnterpriseConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DesiredEnterpriseConfig,
+                com.google.container.v1.DesiredEnterpriseConfig.Builder,
+                com.google.container.v1.DesiredEnterpriseConfigOrBuilder>(
+                getDesiredEnterpriseConfig(), getParentForChildren(), isClean());
+        desiredEnterpriseConfig_ = null;
+      }
+      return desiredEnterpriseConfigBuilder_;
+    }
+
+    private com.google.container.v1.LinuxNodeConfig desiredNodePoolAutoConfigLinuxNodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig,
+            com.google.container.v1.LinuxNodeConfig.Builder,
+            com.google.container.v1.LinuxNodeConfigOrBuilder>
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolAutoConfigLinuxNodeConfig field is set.
+     */
+    public boolean hasDesiredNodePoolAutoConfigLinuxNodeConfig() {
+      return ((bitField1_ & 0x80000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     *
+     * @return The desiredNodePoolAutoConfigLinuxNodeConfig.
+     */
+    public com.google.container.v1.LinuxNodeConfig getDesiredNodePoolAutoConfigLinuxNodeConfig() {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null) {
+        return desiredNodePoolAutoConfigLinuxNodeConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+            : desiredNodePoolAutoConfigLinuxNodeConfig_;
+      } else {
+        return desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigLinuxNodeConfig(
+        com.google.container.v1.LinuxNodeConfig value) {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolAutoConfigLinuxNodeConfig_ = value;
+      } else {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigLinuxNodeConfig(
+        com.google.container.v1.LinuxNodeConfig.Builder builderForValue) {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null) {
+        desiredNodePoolAutoConfigLinuxNodeConfig_ = builderForValue.build();
+      } else {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolAutoConfigLinuxNodeConfig(
+        com.google.container.v1.LinuxNodeConfig value) {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null) {
+        if (((bitField1_ & 0x80000000) != 0)
+            && desiredNodePoolAutoConfigLinuxNodeConfig_ != null
+            && desiredNodePoolAutoConfigLinuxNodeConfig_
+                != com.google.container.v1.LinuxNodeConfig.getDefaultInstance()) {
+          getDesiredNodePoolAutoConfigLinuxNodeConfigBuilder().mergeFrom(value);
+        } else {
+          desiredNodePoolAutoConfigLinuxNodeConfig_ = value;
+        }
+      } else {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredNodePoolAutoConfigLinuxNodeConfig_ != null) {
+        bitField1_ |= 0x80000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolAutoConfigLinuxNodeConfig() {
+      bitField1_ = (bitField1_ & ~0x80000000);
+      desiredNodePoolAutoConfigLinuxNodeConfig_ = null;
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ != null) {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.dispose();
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.Builder
+        getDesiredNodePoolAutoConfigLinuxNodeConfigBuilder() {
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return getDesiredNodePoolAutoConfigLinuxNodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfigOrBuilder
+        getDesiredNodePoolAutoConfigLinuxNodeConfigOrBuilder() {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ != null) {
+        return desiredNodePoolAutoConfigLinuxNodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolAutoConfigLinuxNodeConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+            : desiredNodePoolAutoConfigLinuxNodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Linux node config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     *
+     * Currently only `cgroup_mode` can be set here.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig,
+            com.google.container.v1.LinuxNodeConfig.Builder,
+            com.google.container.v1.LinuxNodeConfigOrBuilder>
+        getDesiredNodePoolAutoConfigLinuxNodeConfigFieldBuilder() {
+      if (desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ == null) {
+        desiredNodePoolAutoConfigLinuxNodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LinuxNodeConfig,
+                com.google.container.v1.LinuxNodeConfig.Builder,
+                com.google.container.v1.LinuxNodeConfigOrBuilder>(
+                getDesiredNodePoolAutoConfigLinuxNodeConfig(), getParentForChildren(), isClean());
+        desiredNodePoolAutoConfigLinuxNodeConfig_ = null;
+      }
+      return desiredNodePoolAutoConfigLinuxNodeConfigBuilder_;
     }
 
     @java.lang.Override

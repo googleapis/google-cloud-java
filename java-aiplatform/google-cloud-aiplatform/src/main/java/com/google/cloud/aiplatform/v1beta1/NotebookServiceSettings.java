@@ -255,6 +255,20 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
         .startNotebookRuntimeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public UnaryCallSettings<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public OperationCallSettings<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
   public UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
       createNotebookExecutionJobSettings() {
@@ -540,6 +554,21 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return getStubSettingsBuilder().startNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public UnaryCallSettings.Builder<StopNotebookRuntimeRequest, Operation>
+        stopNotebookRuntimeSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public OperationCallSettings.Builder<
+            StopNotebookRuntimeRequest,
+            StopNotebookRuntimeResponse,
+            StopNotebookRuntimeOperationMetadata>
+        stopNotebookRuntimeOperationSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */

@@ -73,8 +73,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the page to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the page to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>
@@ -521,8 +521,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the page to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>
@@ -547,8 +547,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the page to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>
@@ -573,8 +573,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the page to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>
@@ -598,8 +598,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the page to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>
@@ -619,8 +619,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the page to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>

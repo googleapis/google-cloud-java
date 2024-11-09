@@ -29,7 +29,7 @@ public interface RankRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the rank service config, such as
-   * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+   * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface RankRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the rank service config, such as
-   * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+   * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
    * </pre>
    *
    * <code>

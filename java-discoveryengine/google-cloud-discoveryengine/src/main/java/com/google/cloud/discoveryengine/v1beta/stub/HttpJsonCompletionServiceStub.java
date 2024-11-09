@@ -33,6 +33,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
@@ -120,6 +122,53 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CompleteQueryResponse>newBuilder()
                       .setDefaultInstance(CompleteQueryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryMethodDescriptor =
+          ApiMethodDescriptor
+              .<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.CompletionService/AdvancedCompleteQuery")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AdvancedCompleteQueryRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{completionConfig=projects/*/locations/*/dataStores/*/completionConfig}:completeQuery",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvancedCompleteQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "completionConfig", request.getCompletionConfig());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{completionConfig=projects/*/locations/*/collections/*/dataStores/*/completionConfig}:completeQuery",
+                          "/v1beta/{completionConfig=projects/*/locations/*/collections/*/engines/*/completionConfig}:completeQuery")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvancedCompleteQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearCompletionConfig().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdvancedCompleteQueryResponse>newBuilder()
+                      .setDefaultInstance(AdvancedCompleteQueryResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -297,6 +346,8 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
               .build();
 
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
+  private final UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable;
   private final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesCallable;
   private final OperationCallable<
@@ -547,6 +598,20 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQueryTransportSettings =
+            HttpJsonCallSettings
+                .<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>newBuilder()
+                .setMethodDescriptor(advancedCompleteQueryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "completion_config", String.valueOf(request.getCompletionConfig()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesTransportSettings =
             HttpJsonCallSettings.<ImportSuggestionDenyListEntriesRequest, Operation>newBuilder()
@@ -599,6 +664,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
             completeQueryTransportSettings, settings.completeQuerySettings(), clientContext);
+    this.advancedCompleteQueryCallable =
+        callableFactory.createUnaryCallable(
+            advancedCompleteQueryTransportSettings,
+            settings.advancedCompleteQuerySettings(),
+            clientContext);
     this.importSuggestionDenyListEntriesCallable =
         callableFactory.createUnaryCallable(
             importSuggestionDenyListEntriesTransportSettings,
@@ -652,6 +722,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(completeQueryMethodDescriptor);
+    methodDescriptors.add(advancedCompleteQueryMethodDescriptor);
     methodDescriptors.add(importSuggestionDenyListEntriesMethodDescriptor);
     methodDescriptors.add(purgeSuggestionDenyListEntriesMethodDescriptor);
     methodDescriptors.add(importCompletionSuggestionsMethodDescriptor);
@@ -666,6 +737,12 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
   @Override
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return completeQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    return advancedCompleteQueryCallable;
   }
 
   @Override

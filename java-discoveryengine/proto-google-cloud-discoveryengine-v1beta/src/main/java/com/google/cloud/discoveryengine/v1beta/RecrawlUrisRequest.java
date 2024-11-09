@@ -43,6 +43,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
   private RecrawlUrisRequest() {
     siteSearchEngine_ = "";
     uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    siteCredential_ = "";
   }
 
   @java.lang.Override
@@ -203,6 +204,61 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     return uris_.getByteString(index);
   }
 
+  public static final int SITE_CREDENTIAL_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object siteCredential_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Full resource name of the [SiteCredential][], such as
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+   * Only set to crawl private URIs.
+   * </pre>
+   *
+   * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The siteCredential.
+   */
+  @java.lang.Override
+  public java.lang.String getSiteCredential() {
+    java.lang.Object ref = siteCredential_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      siteCredential_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Full resource name of the [SiteCredential][], such as
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+   * Only set to crawl private URIs.
+   * </pre>
+   *
+   * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for siteCredential.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSiteCredentialBytes() {
+    java.lang.Object ref = siteCredential_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      siteCredential_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -222,6 +278,9 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < uris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uris_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(siteCredential_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, siteCredential_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -243,6 +302,9 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getUrisList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(siteCredential_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, siteCredential_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -261,6 +323,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
 
     if (!getSiteSearchEngine().equals(other.getSiteSearchEngine())) return false;
     if (!getUrisList().equals(other.getUrisList())) return false;
+    if (!getSiteCredential().equals(other.getSiteCredential())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -278,6 +341,8 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + URIS_FIELD_NUMBER;
       hash = (53 * hash) + getUrisList().hashCode();
     }
+    hash = (37 * hash) + SITE_CREDENTIAL_FIELD_NUMBER;
+    hash = (53 * hash) + getSiteCredential().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +487,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       siteSearchEngine_ = "";
       uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      siteCredential_ = "";
       return this;
     }
 
@@ -464,6 +530,9 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         uris_.makeImmutable();
         result.uris_ = uris_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.siteCredential_ = siteCredential_;
       }
     }
 
@@ -528,6 +597,11 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
         }
         onChanged();
       }
+      if (!other.getSiteCredential().isEmpty()) {
+        siteCredential_ = other.siteCredential_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -567,6 +641,12 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
                 uris_.add(s);
                 break;
               } // case 18
+            case 42:
+              {
+                siteCredential_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -914,6 +994,122 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       ensureUrisIsMutable();
       uris_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object siteCredential_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Full resource name of the [SiteCredential][], such as
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+     * Only set to crawl private URIs.
+     * </pre>
+     *
+     * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The siteCredential.
+     */
+    public java.lang.String getSiteCredential() {
+      java.lang.Object ref = siteCredential_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        siteCredential_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Full resource name of the [SiteCredential][], such as
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+     * Only set to crawl private URIs.
+     * </pre>
+     *
+     * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for siteCredential.
+     */
+    public com.google.protobuf.ByteString getSiteCredentialBytes() {
+      java.lang.Object ref = siteCredential_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        siteCredential_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Full resource name of the [SiteCredential][], such as
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+     * Only set to crawl private URIs.
+     * </pre>
+     *
+     * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The siteCredential to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSiteCredential(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      siteCredential_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Full resource name of the [SiteCredential][], such as
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+     * Only set to crawl private URIs.
+     * </pre>
+     *
+     * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSiteCredential() {
+      siteCredential_ = getDefaultInstance().getSiteCredential();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Full resource name of the [SiteCredential][], such as
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+     * Only set to crawl private URIs.
+     * </pre>
+     *
+     * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for siteCredential to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSiteCredentialBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      siteCredential_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

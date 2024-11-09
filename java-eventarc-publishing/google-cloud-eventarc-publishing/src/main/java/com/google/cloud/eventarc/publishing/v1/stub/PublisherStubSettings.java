@@ -39,6 +39,8 @@ import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsReq
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -109,6 +111,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       publishChannelConnectionEventsSettings;
   private final UnaryCallSettings<PublishEventsRequest, PublishEventsResponse>
       publishEventsSettings;
+  private final UnaryCallSettings<PublishRequest, PublishResponse> publishSettings;
 
   /** Returns the object with the settings used for calls to publishChannelConnectionEvents. */
   public UnaryCallSettings<
@@ -120,6 +123,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   /** Returns the object with the settings used for calls to publishEvents. */
   public UnaryCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsSettings() {
     return publishEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to publish. */
+  public UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return publishSettings;
   }
 
   public PublisherStub createStub() throws IOException {
@@ -234,6 +242,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     publishChannelConnectionEventsSettings =
         settingsBuilder.publishChannelConnectionEventsSettings().build();
     publishEventsSettings = settingsBuilder.publishEventsSettings().build();
+    publishSettings = settingsBuilder.publishSettings().build();
   }
 
   /** Builder for PublisherStubSettings. */
@@ -244,6 +253,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
         publishChannelConnectionEventsSettings;
     private final UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
         publishEventsSettings;
+    private final UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -283,10 +293,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       publishChannelConnectionEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       publishEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      publishSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              publishChannelConnectionEventsSettings, publishEventsSettings);
+              publishChannelConnectionEventsSettings, publishEventsSettings, publishSettings);
       initDefaults(this);
     }
 
@@ -296,10 +307,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       publishChannelConnectionEventsSettings =
           settings.publishChannelConnectionEventsSettings.toBuilder();
       publishEventsSettings = settings.publishEventsSettings.toBuilder();
+      publishSettings = settings.publishSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              publishChannelConnectionEventsSettings, publishEventsSettings);
+              publishChannelConnectionEventsSettings, publishEventsSettings, publishSettings);
     }
 
     private static Builder createDefault() {
@@ -337,6 +349,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .publishSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
       return builder;
     }
 
@@ -366,6 +383,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     public UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
         publishEventsSettings() {
       return publishEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to publish. */
+    public UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return publishSettings;
     }
 
     @Override

@@ -28,13 +28,12 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent to list Security Command Center services.
+   * Required. The name of the parent to list Security Command Center services,
+   * in one of the following formats:
    *
-   * Formats:
-   *
-   *   * organizations/{organization}/locations/{location}
-   *   * folders/{folder}/locations/{location}
-   *   * projects/{project}/locations/{location}
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -48,13 +47,12 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent to list Security Command Center services.
+   * Required. The name of the parent to list Security Command Center services,
+   * in one of the following formats:
    *
-   * Formats:
-   *
-   *   * organizations/{organization}/locations/{location}
-   *   * folders/{folder}/locations/{location}
-   *   * projects/{project}/locations/{location}
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -83,7 +81,11 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,7 +97,11 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -108,8 +114,8 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Flag that, when set, will be used to filter the ModuleSettings that are
-   * in scope. The default setting is that all modules will be shown.
+   * Flag that, when set, is used to filter the module settings that are shown.
+   * The default setting is that all modules are shown.
    * </pre>
    *
    * <code>bool show_eligible_modules_only = 4;</code>

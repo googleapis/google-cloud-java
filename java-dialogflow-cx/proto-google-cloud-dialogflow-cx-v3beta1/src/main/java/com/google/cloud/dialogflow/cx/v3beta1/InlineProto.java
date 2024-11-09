@@ -49,13 +49,12 @@ public final class InlineProto {
           + "ine.proto\022\"google.cloud.dialogflow.cx.v3"
           + "beta1\032\037google/api/field_behavior.proto\")"
           + "\n\021InlineDestination\022\024\n\007content\030\001 \001(\014B\003\340A"
-          + "\003\"\037\n\014InlineSource\022\017\n\007content\030\001 \001(\014B\305\001\n&c"
+          + "\003\"\037\n\014InlineSource\022\017\n\007content\030\001 \001(\014B\302\001\n&c"
           + "om.google.cloud.dialogflow.cx.v3beta1B\013I"
           + "nlineProtoP\001Z6cloud.google.com/go/dialog"
-          + "flow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"G"
-          + "oogle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goog"
-          + "le::Cloud::Dialogflow::CX::V3beta1b\006prot"
-          + "o3"
+          + "flow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Goog"
+          + "le.Cloud.Dialogflow.Cx.V3Beta1\352\002&Google:"
+          + ":Cloud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

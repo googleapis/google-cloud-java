@@ -2253,8 +2253,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * The unique identifier of the entity type.
    * Required for
    * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2280,8 +2280,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * The unique identifier of the entity type.
    * Required for
    * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3278,8 +3278,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * The unique identifier of the entity type.
      * Required for
      * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3304,8 +3304,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * The unique identifier of the entity type.
      * Required for
      * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3330,8 +3330,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * The unique identifier of the entity type.
      * Required for
      * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3355,8 +3355,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * The unique identifier of the entity type.
      * Required for
      * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3376,8 +3376,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * The unique identifier of the entity type.
      * Required for
      * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>

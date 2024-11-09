@@ -29,8 +29,8 @@ public interface ListExamplesRequestOrBuilder
    *
    * <pre>
    * Required. The playbook to list the examples from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface ListExamplesRequestOrBuilder
    *
    * <pre>
    * Required. The playbook to list the examples from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public interface ListExamplesRequestOrBuilder
    *
    * <pre>
    * Optional. The language to list examples for.
-   * If not specified, the agent's default language is used.
+   * If not specified, list all examples under the playbook.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface ListExamplesRequestOrBuilder
    *
    * <pre>
    * Optional. The language to list examples for.
-   * If not specified, the agent's default language is used.
+   * If not specified, list all examples under the playbook.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>
    *

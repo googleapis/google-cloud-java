@@ -29,8 +29,8 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * The name of the deployment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;.
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,8 +43,8 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * The name of the deployment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;.
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -58,8 +58,8 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * The name of the flow version for this deployment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Verion ID&gt;.
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VerionID&gt;.
    * </pre>
    *
    * <code>string flow_version = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -72,8 +72,8 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * The name of the flow version for this deployment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Verion ID&gt;.
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VerionID&gt;.
    * </pre>
    *
    * <code>string flow_version = 2 [(.google.api.resource_reference) = { ... }</code>

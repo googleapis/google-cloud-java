@@ -60,12 +60,12 @@ public final class FuelOptionsProto {
           + "91\020\005\022\014\n\010SP91_E10\020\006\022\010\n\004SP92\020\007\022\010\n\004SP95\020\010\022\014"
           + "\n\010SP95_E10\020\t\022\010\n\004SP98\020\n\022\010\n\004SP99\020\013\022\t\n\005SP10"
           + "0\020\014\022\007\n\003LPG\020\r\022\007\n\003E80\020\016\022\007\n\003E85\020\017\022\013\n\007METHAN"
-          + "E\020\020\022\016\n\nBIO_DIESEL\020\021\022\020\n\014TRUCK_DIESEL\020\022B\244\001"
+          + "E\020\020\022\016\n\nBIO_DIESEL\020\021\022\020\n\014TRUCK_DIESEL\020\022B\241\001"
           + "\n\031com.google.maps.places.v1B\020FuelOptions"
           + "ProtoP\001Z7cloud.google.com/go/maps/places"
-          + "/apiv1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025G"
-          + "oogle.Maps.Places.V1\312\002\025Google\\Maps\\Place"
-          + "s\\V1b\006proto3"
+          + "/apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025Goog"
+          + "le.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

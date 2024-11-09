@@ -70,7 +70,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -82,7 +83,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -94,7 +96,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -107,7 +110,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -170,7 +174,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -184,7 +189,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -198,7 +204,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -213,7 +220,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A collection of text responses.
+     * A collection of text response variants. If multiple variants are
+     * defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1;</code>
@@ -599,7 +607,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -614,7 +623,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -628,7 +638,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -643,7 +654,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -658,7 +670,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -681,7 +694,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -703,7 +717,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -722,7 +737,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>
@@ -740,7 +756,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A collection of text responses.
+       * A collection of text response variants. If multiple variants are
+       * defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1;</code>

@@ -193,11 +193,11 @@ public final class AnswerRecordsProto {
           + "er_record\032x\312A\031dialogflow.googleapis.com\322"
           + "AYhttps://www.googleapis.com/auth/cloud-"
           + "platform,https://www.googleapis.com/auth"
-          + "/dialogflowB\252\001\n#com.google.cloud.dialogf"
+          + "/dialogflowB\247\001\n#com.google.cloud.dialogf"
           + "low.v2beta1B\022AnswerRecordsProtoP\001ZCcloud"
           + ".google.com/go/dialogflow/apiv2beta1/dia"
-          + "logflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google."
-          + "Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "logflowpb;dialogflowpb\242\002\002DF\252\002\037Google.Clo"
+          + "ud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

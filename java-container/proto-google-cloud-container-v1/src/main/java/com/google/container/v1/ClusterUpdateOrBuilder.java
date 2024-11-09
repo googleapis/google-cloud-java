@@ -560,7 +560,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -581,7 +581,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2468
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -816,7 +816,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2506
+   *     google/container/v1/cluster_service.proto;l=2537
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -842,7 +842,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2506
+   *     google/container/v1/cluster_service.proto;l=2537
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1302,7 +1302,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2582
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1322,7 +1322,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2582
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -2388,4 +2388,90 @@ public interface ClusterUpdateOrBuilder
    * <code>optional .google.container.v1.RBACBindingConfig desired_rbac_binding_config = 144;</code>
    */
   com.google.container.v1.RBACBindingConfigOrBuilder getDesiredRbacBindingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   *
+   * @return Whether the desiredEnterpriseConfig field is set.
+   */
+  boolean hasDesiredEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   *
+   * @return The desiredEnterpriseConfig.
+   */
+  com.google.container.v1.DesiredEnterpriseConfig getDesiredEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired enterprise configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   */
+  com.google.container.v1.DesiredEnterpriseConfigOrBuilder getDesiredEnterpriseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigLinuxNodeConfig field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigLinuxNodeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig getDesiredNodePoolAutoConfigLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Linux node config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   *
+   * Currently only `cgroup_mode` can be set here.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig desired_node_pool_auto_config_linux_node_config = 150;
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfigOrBuilder
+      getDesiredNodePoolAutoConfigLinuxNodeConfigOrBuilder();
 }

@@ -198,6 +198,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BatchCreateFeatures</td>
+ *      <td><p> Creates a batch of Features in a given FeatureGroup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateFeaturesAsync(EntityTypeName parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(FeatureGroupName parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(String parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(BatchCreateFeaturesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateFeaturesOperationCallable()
+ *           <li><p> batchCreateFeaturesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetFeature</td>
  *      <td><p> Gets details of a single Feature.</td>
  *      <td>
@@ -483,7 +501,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param featureGroup Required. The FeatureGroup to create.
    * @param featureGroupId Required. The ID to use for this FeatureGroup, which will become the
    *     final component of the FeatureGroup's resource name.
-   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
    *     <p>The value must be unique within the project and location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -529,7 +547,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param featureGroup Required. The FeatureGroup to create.
    * @param featureGroupId Required. The ID to use for this FeatureGroup, which will become the
    *     final component of the FeatureGroup's resource name.
-   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
    *     <p>The value must be unique within the project and location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1472,6 +1490,231 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable() {
     return stub.createFeatureCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   EntityTypeName parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+   *   List<CreateFeatureRequest> requests = new ArrayList<>();
+   *   BatchCreateFeaturesResponse response =
+   *       featureRegistryServiceClient.batchCreateFeaturesAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param requests Required. The request message specifying the Features to create. All Features
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(EntityTypeName parent, List<CreateFeatureRequest> requests) {
+    BatchCreateFeaturesRequest request =
+        BatchCreateFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateFeaturesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   List<CreateFeatureRequest> requests = new ArrayList<>();
+   *   BatchCreateFeaturesResponse response =
+   *       featureRegistryServiceClient.batchCreateFeaturesAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param requests Required. The request message specifying the Features to create. All Features
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(FeatureGroupName parent, List<CreateFeatureRequest> requests) {
+    BatchCreateFeaturesRequest request =
+        BatchCreateFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateFeaturesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   String parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   List<CreateFeatureRequest> requests = new ArrayList<>();
+   *   BatchCreateFeaturesResponse response =
+   *       featureRegistryServiceClient.batchCreateFeaturesAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param requests Required. The request message specifying the Features to create. All Features
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(String parent, List<CreateFeatureRequest> requests) {
+    BatchCreateFeaturesRequest request =
+        BatchCreateFeaturesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchCreateFeaturesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   BatchCreateFeaturesRequest request =
+   *       BatchCreateFeaturesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateFeatureRequest>())
+   *           .build();
+   *   BatchCreateFeaturesResponse response =
+   *       featureRegistryServiceClient.batchCreateFeaturesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(BatchCreateFeaturesRequest request) {
+    return batchCreateFeaturesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   BatchCreateFeaturesRequest request =
+   *       BatchCreateFeaturesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateFeatureRequest>())
+   *           .build();
+   *   OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata> future =
+   *       featureRegistryServiceClient.batchCreateFeaturesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateFeaturesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable() {
+    return stub.batchCreateFeaturesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given FeatureGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   BatchCreateFeaturesRequest request =
+   *       BatchCreateFeaturesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateFeatureRequest>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       featureRegistryServiceClient.batchCreateFeaturesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable() {
+    return stub.batchCreateFeaturesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

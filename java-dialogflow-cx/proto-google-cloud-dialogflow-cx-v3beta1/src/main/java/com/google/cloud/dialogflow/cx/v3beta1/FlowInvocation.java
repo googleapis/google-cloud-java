@@ -24,7 +24,6 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * Stores metadata of the invocation of a CX flow.
- * Next Id: 7
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.FlowInvocation}
@@ -75,8 +74,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The unique identifier of the flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -102,8 +101,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The unique identifier of the flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -486,7 +485,6 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Stores metadata of the invocation of a CX flow.
-   * Next Id: 7
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.FlowInvocation}
@@ -740,8 +738,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -766,8 +764,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -792,8 +790,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -817,8 +815,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -838,8 +836,8 @@ public final class FlowInvocation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>

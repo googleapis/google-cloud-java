@@ -30,8 +30,7 @@ public interface DeleteExperimentRequestOrBuilder
    * <pre>
    * Required. The name of the
    * [Environment][google.cloud.dialogflow.cx.v3.Environment] to delete. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * </pre>
    *
    * <code>
@@ -47,8 +46,7 @@ public interface DeleteExperimentRequestOrBuilder
    * <pre>
    * Required. The name of the
    * [Environment][google.cloud.dialogflow.cx.v3.Environment] to delete. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * </pre>
    *
    * <code>

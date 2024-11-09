@@ -72,8 +72,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The name of the conversation.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * </pre>
    *
    * <code>
@@ -99,8 +99,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The name of the conversation.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * </pre>
    *
    * <code>
@@ -475,8 +475,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The name of the conversation.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
      * </pre>
      *
      * <code>
@@ -501,8 +501,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The name of the conversation.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
      * </pre>
      *
      * <code>
@@ -527,8 +527,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The name of the conversation.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
      * </pre>
      *
      * <code>
@@ -552,8 +552,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The name of the conversation.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
      * </pre>
      *
      * <code>
@@ -573,8 +573,8 @@ public final class DeleteConversationRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The name of the conversation.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
      * </pre>
      *
      * <code>

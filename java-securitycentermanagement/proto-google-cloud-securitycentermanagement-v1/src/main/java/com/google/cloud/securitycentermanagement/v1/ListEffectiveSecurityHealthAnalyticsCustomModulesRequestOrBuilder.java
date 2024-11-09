@@ -28,12 +28,12 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. specified in one
-   * of the following formats:
+   * Required. Name of parent to list effective custom modules, in one of the
+   * following formats:
+   *
    * * `organizations/{organization}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
-   * or
-   * `projects/{project}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -47,12 +47,12 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. specified in one
-   * of the following formats:
+   * Required. Name of parent to list effective custom modules, in one of the
+   * following formats:
+   *
    * * `organizations/{organization}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
-   * or
-   * `projects/{project}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -81,7 +81,11 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,7 +97,11 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

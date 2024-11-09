@@ -8896,8 +8896,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * Identifier. The identifier of the conversation.
    * If conversation ID is reused, interactions happened later than 48 hours of
    * the conversation's create time will be ignored. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -8923,8 +8922,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * Identifier. The identifier of the conversation.
    * If conversation ID is reused, interactions happened later than 48 hours of
    * the conversation's create time will be ignored. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -10534,8 +10532,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * Identifier. The identifier of the conversation.
      * If conversation ID is reused, interactions happened later than 48 hours of
      * the conversation's create time will be ignored. Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -10560,8 +10557,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * Identifier. The identifier of the conversation.
      * If conversation ID is reused, interactions happened later than 48 hours of
      * the conversation's create time will be ignored. Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -10586,8 +10582,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * Identifier. The identifier of the conversation.
      * If conversation ID is reused, interactions happened later than 48 hours of
      * the conversation's create time will be ignored. Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -10611,8 +10606,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * Identifier. The identifier of the conversation.
      * If conversation ID is reused, interactions happened later than 48 hours of
      * the conversation's create time will be ignored. Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -10632,8 +10626,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * Identifier. The identifier of the conversation.
      * If conversation ID is reused, interactions happened later than 48 hours of
      * the conversation's create time will be ignored. Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

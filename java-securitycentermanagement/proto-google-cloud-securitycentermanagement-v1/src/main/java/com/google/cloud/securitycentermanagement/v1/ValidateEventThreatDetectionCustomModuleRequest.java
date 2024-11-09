@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request to validate an Event Threat Detection custom module.
+ * Request message for
+ * [SecurityCenterManagement.ValidateEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ValidateEventThreatDetectionCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -78,11 +79,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Resource name of the parent to validate the Custom Module under.
+   * Required. Resource name of the parent to validate the custom modules under,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}`.
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -107,11 +107,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Resource name of the parent to validate the Custom Module under.
+   * Required. Resource name of the parent to validate the custom modules under,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}`.
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -194,7 +193,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+   * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -217,7 +216,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+   * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -444,7 +443,8 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Request to validate an Event Threat Detection custom module.
+   * Request message for
+   * [SecurityCenterManagement.ValidateEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ValidateEventThreatDetectionCustomModule].
    * </pre>
    *
    * Protobuf type {@code
@@ -684,11 +684,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Resource name of the parent to validate the Custom Module under.
+     * Required. Resource name of the parent to validate the custom modules under,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}`.
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -712,11 +711,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Resource name of the parent to validate the Custom Module under.
+     * Required. Resource name of the parent to validate the custom modules under,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}`.
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -740,11 +738,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Resource name of the parent to validate the Custom Module under.
+     * Required. Resource name of the parent to validate the custom modules under,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}`.
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -767,11 +764,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Resource name of the parent to validate the Custom Module under.
+     * Required. Resource name of the parent to validate the custom modules under,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}`.
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -790,11 +786,10 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Resource name of the parent to validate the Custom Module under.
+     * Required. Resource name of the parent to validate the custom modules under,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}`.
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -931,7 +926,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+     * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -953,7 +948,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+     * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -975,7 +970,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+     * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -996,7 +991,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+     * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1013,7 +1008,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+     * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

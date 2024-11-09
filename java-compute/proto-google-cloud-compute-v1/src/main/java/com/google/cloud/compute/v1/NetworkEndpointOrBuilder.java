@@ -86,6 +86,31 @@ public interface NetworkEndpointOrBuilder
    *
    *
    * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return Whether the clientDestinationPort field is set.
+   */
+  boolean hasClientDestinationPort();
+  /**
+   *
+   *
+   * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return The clientDestinationPort.
+   */
+  int getClientDestinationPort();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
    * </pre>
    *
@@ -192,6 +217,43 @@ public interface NetworkEndpointOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  boolean hasIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  java.lang.String getIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  com.google.protobuf.ByteString getIpv6AddressBytes();
 
   /**
    *

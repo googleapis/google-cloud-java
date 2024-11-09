@@ -1795,6 +1795,52 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return Whether the localSsdEncryptionMode field is set.
+   */
+  boolean hasLocalSsdEncryptionMode();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for localSsdEncryptionMode.
+   */
+  int getLocalSsdEncryptionModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The localSsdEncryptionMode.
+   */
+  com.google.container.v1.NodeConfig.LocalSsdEncryptionMode getLocalSsdEncryptionMode();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. effective_cgroup_mode is the cgroup mode actually used by the
    * node pool. It is determined by the cgroup mode specified in the
    * LinuxNodeConfig or the default cgroup mode based on the cluster creation

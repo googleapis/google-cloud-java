@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "PublisherClient",
           "rpcs": {
+            "Publish": {
+              "methods": ["publish", "publishCallable"]
+            },
             "PublishChannelConnectionEvents": {
               "methods": ["publishChannelConnectionEvents", "publishChannelConnectionEventsCallable"]
             },

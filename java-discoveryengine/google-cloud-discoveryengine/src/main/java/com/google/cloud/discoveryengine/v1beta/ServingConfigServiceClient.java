@@ -369,7 +369,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(ServingConfigName name) {
@@ -403,7 +403,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(String name) {
@@ -503,7 +503,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of the parent resource. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(DataStoreName parent) {
@@ -537,7 +537,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of the parent resource. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(EngineName parent) {
@@ -573,7 +573,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of the parent resource. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(String parent) {

@@ -141,13 +141,13 @@ public final class DataStoreConnectionProto {
           + "PHRASE_MATCH_QUERY\020\002\022 \n\034BANNED_PHRASE_MA"
           + "TCH_RESPONSE\020\003*b\n\rDataStoreType\022\037\n\033DATA_"
           + "STORE_TYPE_UNSPECIFIED\020\000\022\016\n\nPUBLIC_WEB\020\001"
-          + "\022\020\n\014UNSTRUCTURED\020\002\022\016\n\nSTRUCTURED\020\003B\322\001\n&c"
+          + "\022\020\n\014UNSTRUCTURED\020\002\022\016\n\nSTRUCTURED\020\003B\317\001\n&c"
           + "om.google.cloud.dialogflow.cx.v3beta1B\030D"
           + "ataStoreConnectionProtoP\001Z6cloud.google."
           + "com/go/dialogflow/cx/apiv3beta1/cxpb;cxp"
-          + "b\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V"
-          + "3Beta1\352\002&Google::Cloud::Dialogflow::CX::"
-          + "V3beta1b\006proto3"
+          + "b\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
+          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

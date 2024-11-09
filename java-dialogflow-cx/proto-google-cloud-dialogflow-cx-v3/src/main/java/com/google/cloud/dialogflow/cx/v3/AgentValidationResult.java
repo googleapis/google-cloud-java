@@ -74,8 +74,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the agent validation result.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,8 +99,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the agent validation result.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -625,8 +625,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the agent validation result.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -649,8 +649,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the agent validation result.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -673,8 +673,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the agent validation result.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -696,8 +696,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the agent validation result.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -715,8 +715,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the agent validation result.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>string name = 1;</code>

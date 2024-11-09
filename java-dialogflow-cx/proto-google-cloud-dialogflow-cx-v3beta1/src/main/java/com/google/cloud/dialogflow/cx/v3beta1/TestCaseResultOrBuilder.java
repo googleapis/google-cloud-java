@@ -29,8 +29,7 @@ public interface TestCaseResultOrBuilder
    *
    * <pre>
    * The resource name for the test case result. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/
-   * &lt;TestCase ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,8 +42,7 @@ public interface TestCaseResultOrBuilder
    *
    * <pre>
    * The resource name for the test case result. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/
-   * &lt;TestCase ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>

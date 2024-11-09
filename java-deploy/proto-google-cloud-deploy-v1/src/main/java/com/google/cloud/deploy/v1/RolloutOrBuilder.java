@@ -894,4 +894,31 @@ public interface RolloutOrBuilder
    * @return The bytes of the rolledBackByRollouts at the given index.
    */
   com.google.protobuf.ByteString getRolledBackByRolloutsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The AutomationRun actively repairing the rollout.
+   * </pre>
+   *
+   * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The activeRepairAutomationRun.
+   */
+  java.lang.String getActiveRepairAutomationRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The AutomationRun actively repairing the rollout.
+   * </pre>
+   *
+   * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for activeRepairAutomationRun.
+   */
+  com.google.protobuf.ByteString getActiveRepairAutomationRunBytes();
 }

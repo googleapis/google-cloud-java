@@ -262,12 +262,12 @@ public final class EntityTypeProto {
           + "s/*}/entities:batchDelete:\001*\032x\312A\031dialogf"
           + "low.googleapis.com\322AYhttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
-          + "googleapis.com/auth/dialogflowB\247\001\n#com.g"
+          + "googleapis.com/auth/dialogflowB\244\001\n#com.g"
           + "oogle.cloud.dialogflow.v2beta1B\017EntityTy"
           + "peProtoP\001ZCcloud.google.com/go/dialogflo"
-          + "w/apiv2beta1/dialogflowpb;dialogflowpb\370\001"
-          + "\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1"
-          + "b\006proto3"
+          + "w/apiv2beta1/dialogflowpb;dialogflowpb\242\002"
+          + "\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
