@@ -46,12 +46,12 @@ public final class ReferenceProto {
           + "rce.proto\032\"google/maps/places/v1/review."
           + "proto\"n\n\nReferences\022.\n\007reviews\030\001 \003(\0132\035.g"
           + "oogle.maps.places.v1.Review\0220\n\006places\030\002 "
-          + "\003(\tB \372A\035\n\033places.googleapis.com/PlaceB\242\001"
+          + "\003(\tB \372A\035\n\033places.googleapis.com/PlaceB\237\001"
           + "\n\031com.google.maps.places.v1B\016ReferencePr"
           + "otoP\001Z7cloud.google.com/go/maps/places/a"
-          + "piv1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Goo"
-          + "gle.Maps.Places.V1\312\002\025Google\\Maps\\Places\\"
-          + "V1b\006proto3"
+          + "piv1/placespb;placespb\242\002\006GMPSV1\252\002\025Google"
+          + ".Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

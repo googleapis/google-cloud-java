@@ -735,6 +735,48 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   *
+   * @return Whether the observabilityConfig field is set.
+   */
+  boolean hasObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   *
+   * @return The observabilityConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfig getObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfigOrBuilder
+      getObservabilityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Read pool instance configuration.
    * This is required if the value of instanceType is READ_POOL.
    * </pre>
@@ -1087,7 +1129,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1101,7 +1143,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1115,7 +1157,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1124,6 +1166,50 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder
       getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiConfig field is set.
+   */
+  boolean hasGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiConfig.
+   */
+  com.google.cloud.alloydb.v1beta.GeminiInstanceConfig getGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.GeminiInstanceConfigOrBuilder getGeminiConfigOrBuilder();
 
   /**
    *

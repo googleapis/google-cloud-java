@@ -350,6 +350,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setRoutingParameters(RoutingParameters.newBuilder().build())
    *           .setSearchAlongRouteParameters(
    *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+   *           .setIncludePureServiceAreaBusinesses(true)
    *           .build();
    *   SearchTextResponse response = placesClient.searchText(request);
    * }
@@ -392,6 +393,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setRoutingParameters(RoutingParameters.newBuilder().build())
    *           .setSearchAlongRouteParameters(
    *               SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+   *           .setIncludePureServiceAreaBusinesses(true)
    *           .build();
    *   ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
    *   // Do something.
@@ -670,6 +672,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setInputOffset(1010406056)
    *           .setIncludeQueryPredictions(true)
    *           .setSessionToken("sessionToken-696552189")
+   *           .setIncludePureServiceAreaBusinesses(true)
    *           .build();
    *   AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
    * }
@@ -709,6 +712,7 @@ public class PlacesClient implements BackgroundResource {
    *           .setInputOffset(1010406056)
    *           .setIncludeQueryPredictions(true)
    *           .setSessionToken("sessionToken-696552189")
+   *           .setIncludePureServiceAreaBusinesses(true)
    *           .build();
    *   ApiFuture<AutocompletePlacesResponse> future =
    *       placesClient.autocompletePlacesCallable().futureCall(request);

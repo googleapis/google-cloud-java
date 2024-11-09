@@ -513,4 +513,24 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The bytes for sessionToken.
    */
   com.google.protobuf.ByteString getSessionTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Include pure service area businesses if the field is set to true.
+   * Pure service area business is a business that visits or delivers to
+   * customers directly but does not serve customers at their business address.
+   * For example, businesses like cleaning services or plumbers. Those
+   * businesses do not have a physical address or location on Google Maps.
+   * Places will not return fields including `location`, `plus_code`, and other
+   * location related fields for these businesses.
+   * </pre>
+   *
+   * <code>bool include_pure_service_area_businesses = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includePureServiceAreaBusinesses.
+   */
+  boolean getIncludePureServiceAreaBusinesses();
 }

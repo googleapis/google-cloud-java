@@ -55,6 +55,7 @@ public class AsyncSearchText {
               .setRoutingParameters(RoutingParameters.newBuilder().build())
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
       // Do something.
