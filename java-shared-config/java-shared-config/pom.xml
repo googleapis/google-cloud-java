@@ -381,6 +381,18 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <!--
+          Enables the "artifactregistry://" URL scheme (go/airlock/howto_maven).
+          Note that Maven extensions cannot be included in profiles (
+          https://maven.apache.org/guides/introduction/introduction-to-profiles.html#profiles-in-poms)
+        -->
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.3</version>
+      </extension>
+    </extensions>
   </build>
 
   <reporting>
@@ -657,6 +669,37 @@
       <properties>
         <maven.compiler.release>8</maven.compiler.release>
       </properties>
+    </profile>
+    <profile>
+      <!-- Profile to use Airlock (go/airlock/howto_maven). Disabled by default. -->
+      <id>airlock-trusted</id>
+      <repositories>
+        <repository>
+          <id>airlock</id>
+          <name>Airlock</name>
+          <url>artifactregistry://us-maven.pkg.dev/artifact-foundry-prod/maven-3p-trusted</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>central</id>
+          <!-- Disable default Maven Central -->
+          <name>Maven Central remote repository</name>
+          <url>https://repo1.maven.org/maven2</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
     </profile>
   </profiles>
 </project>
