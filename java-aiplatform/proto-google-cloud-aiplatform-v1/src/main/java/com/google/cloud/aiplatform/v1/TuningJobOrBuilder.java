@@ -686,6 +686,43 @@ public interface TuningJobOrBuilder
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the tuningJob workload runs as.
+   * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+   * project will be used. See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+   *
+   * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 22;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the tuningJob workload runs as.
+   * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+   * project will be used. See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+   *
+   * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 22;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
   com.google.cloud.aiplatform.v1.TuningJob.SourceModelCase getSourceModelCase();
 
   com.google.cloud.aiplatform.v1.TuningJob.TuningSpecCase getTuningSpecCase();

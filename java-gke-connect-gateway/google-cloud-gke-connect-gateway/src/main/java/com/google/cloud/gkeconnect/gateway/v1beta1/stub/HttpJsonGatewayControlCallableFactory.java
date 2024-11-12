@@ -17,99 +17,87 @@
 package com.google.cloud.gkeconnect.gateway.v1beta1.stub;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
-import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshotCallable;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
-import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC callable factory implementation for the GatewayControl service API.
+ * REST callable factory implementation for the GatewayControl service API.
  *
  * <p>This class is for advanced usage.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
-public class GrpcGatewayControlCallableFactory implements GrpcStubCallableFactory {
+public class HttpJsonGatewayControlCallableFactory
+    implements HttpJsonStubCallableFactory<Operation, OperationsStub> {
 
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
-      GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return GrpcCallableFactory.createUnaryCallable(grpcCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createUnaryCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
-          GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
           PagedCallSettings<RequestT, ResponseT, PagedListResponseT> callSettings,
           ClientContext clientContext) {
-    return GrpcCallableFactory.createPagedCallable(grpcCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createPagedCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createBatchingCallable(
-      GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       BatchingCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return GrpcCallableFactory.createBatchingCallable(
-        grpcCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createBatchingCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
-          GrpcCallSettings<RequestT, Operation> grpcCallSettings,
+          HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings,
           OperationCallSettings<RequestT, ResponseT, MetadataT> callSettings,
           ClientContext clientContext,
           OperationsStub operationsStub) {
-    return GrpcCallableFactory.createOperationCallable(
-        grpcCallSettings, callSettings, clientContext, operationsStub);
-  }
-
-  @Override
-  public <RequestT, ResponseT>
-      BidiStreamingCallable<RequestT, ResponseT> createBidiStreamingCallable(
-          GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
-          StreamingCallSettings<RequestT, ResponseT> callSettings,
-          ClientContext clientContext) {
-    return GrpcCallableFactory.createBidiStreamingCallable(
-        grpcCallSettings, callSettings, clientContext);
+    UnaryCallable<RequestT, Operation> innerCallable =
+        HttpJsonCallableFactory.createBaseUnaryCallable(
+            httpJsonCallSettings, callSettings.getInitialCallSettings(), clientContext);
+    HttpJsonOperationSnapshotCallable<RequestT, Operation> initialCallable =
+        new HttpJsonOperationSnapshotCallable<RequestT, Operation>(
+            innerCallable,
+            httpJsonCallSettings.getMethodDescriptor().getOperationSnapshotFactory());
+    return HttpJsonCallableFactory.createOperationCallable(
+        callSettings, clientContext, operationsStub.longRunningClient(), initialCallable);
   }
 
   @Override
   public <RequestT, ResponseT>
       ServerStreamingCallable<RequestT, ResponseT> createServerStreamingCallable(
-          GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
           ServerStreamingCallSettings<RequestT, ResponseT> callSettings,
           ClientContext clientContext) {
-    return GrpcCallableFactory.createServerStreamingCallable(
-        grpcCallSettings, callSettings, clientContext);
-  }
-
-  @Override
-  public <RequestT, ResponseT>
-      ClientStreamingCallable<RequestT, ResponseT> createClientStreamingCallable(
-          GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
-          StreamingCallSettings<RequestT, ResponseT> callSettings,
-          ClientContext clientContext) {
-    return GrpcCallableFactory.createClientStreamingCallable(
-        grpcCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createServerStreamingCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 }
