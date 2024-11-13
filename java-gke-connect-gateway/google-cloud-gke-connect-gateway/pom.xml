@@ -55,7 +55,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
+      <artifactId>gax-httpjson</artifactId>
     </dependency>
 
     <!-- Test dependencies -->
@@ -73,7 +73,13 @@
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
