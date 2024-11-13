@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.47.0](https://github.com/googleapis/java-bigtable/compare/v2.46.0...v2.47.0) (2024-11-13)
+
+
+### Features
+
+* Add an experimental feature to skip waiting for trailers for unary ops ([#2404](https://github.com/googleapis/java-bigtable/issues/2404)) ([cf58f26](https://github.com/googleapis/java-bigtable/commit/cf58f260fd7d3cb0dee4fee8e2d43367db6eadb1))
+* Add internal "deadline remaining" client side metric [#2341](https://github.com/googleapis/java-bigtable/issues/2341) ([#2370](https://github.com/googleapis/java-bigtable/issues/2370)) ([75d4105](https://github.com/googleapis/java-bigtable/commit/75d4105e0376dbe5810d6b96d71daa74b85e68ce))
+
+
+### Bug Fixes
+
+* Simplify remaining deadline metric impl ([#2410](https://github.com/googleapis/java-bigtable/issues/2410)) ([9796d57](https://github.com/googleapis/java-bigtable/commit/9796d57b60d928d3390e4ad311d5704dcbe808ec))
+
 ## [2.46.0](https://github.com/googleapis/java-bigtable/compare/v2.45.1...v2.46.0) (2024-10-29)
 
 
