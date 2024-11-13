@@ -16,12 +16,11 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
+import java.time.Duration;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * A Bigtable specific {@link ApiTracer} that includes additional contexts. This class is a base
@@ -31,10 +30,6 @@ import org.threeten.bp.Duration;
 public class BigtableTracer extends BaseApiTracer {
 
   private volatile int attempt = 0;
-
-  @InternalApi("for internal use only")
-  public static final ApiCallContext.Key<Duration> OPERATION_TIMEOUT_KEY =
-      ApiCallContext.Key.create("OPERATION_TIMEOUT");
 
   @Override
   public void attemptStarted(int attemptNumber) {
@@ -108,10 +103,11 @@ public class BigtableTracer extends BaseApiTracer {
   }
 
   /**
-   * Record the operation timeout from user settings for calculating remaining deadline. This will
-   * be called in BuiltinMetricsTracer.
+   * Record the operation timeout from user settings for calculating remaining deadline. Currently,
+   * it's called in BuiltinMetricsTracer on attempt start from {@link BigtableTracerUnaryCallable}
+   * and {@link BigtableTracerStreamingCallable}.
    */
-  public void setOperationTimeout(Duration operationTimeout) {
+  public void setTotalTimeoutDuration(Duration totalTimeoutDuration) {
     // noop
   }
 }

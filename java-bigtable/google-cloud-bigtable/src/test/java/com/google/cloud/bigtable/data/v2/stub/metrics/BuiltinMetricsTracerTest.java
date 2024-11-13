@@ -134,7 +134,6 @@ public class BuiltinMetricsTracerTest {
   private static final long APPLICATION_LATENCY = 200;
   private static final long SLEEP_VARIABILITY = 15;
   private static final String CLIENT_NAME = "java-bigtable/" + Version.VERSION;
-
   private static final long CHANNEL_BLOCKING_LATENCY = 200;
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
@@ -221,7 +220,7 @@ public class BuiltinMetricsTracerTest {
         .readRowsSettings()
         .retrySettings()
         .setTotalTimeoutDuration(Duration.ofMillis(9000))
-        .setMaxRpcTimeoutDuration(Duration.ofMillis(6000))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(9000))
         .setRpcTimeoutMultiplier(1)
         .setInitialRpcTimeoutDuration(Duration.ofMillis(6000))
         .setInitialRetryDelayDuration(Duration.ofMillis(10))
@@ -809,7 +808,9 @@ public class BuiltinMetricsTracerTest {
             .get(0);
 
     double okRemainingDeadline = okHistogramPointData.getSum();
-    assertThat(okRemainingDeadline).isWithin(200).of(8500);
+    // first attempt latency + retry delay
+    double expected = 9000 - SERVER_LATENCY - CHANNEL_BLOCKING_LATENCY - 10;
+    assertThat(okRemainingDeadline).isIn(Range.closed(expected - 500, expected + 10));
   }
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {

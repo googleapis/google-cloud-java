@@ -29,6 +29,7 @@ import com.google.api.gax.tracing.SpanName;
 import com.google.cloud.bigtable.Version;
 import com.google.common.base.Stopwatch;
 import com.google.common.math.IntMath;
+import io.grpc.Deadline;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
@@ -37,7 +38,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
@@ -90,8 +90,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private Long serverLatencies = null;
   private final AtomicLong grpcMessageSentDelay = new AtomicLong(0);
 
-  private Duration operationTimeout = Duration.ofMillis(0);
-  private long remainingOperationTimeout = 0;
+  private Deadline operationDeadline = null;
+  private volatile long remainingDeadlineAtAttemptStart = 0;
 
   // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
   // end]. To work around this, we measure all the latencies in nanoseconds and convert them
@@ -175,6 +175,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
     this.attempt = attemptNumber;
     attemptCount++;
     attemptTimer = Stopwatch.createStarted();
+    if (operationDeadline != null) {
+      remainingDeadlineAtAttemptStart = operationDeadline.timeRemaining(TimeUnit.MILLISECONDS);
+    }
     if (request != null) {
       this.tableId = Util.extractTableId(request);
     }
@@ -184,11 +187,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
           serverLatencyTimer.start();
         }
       }
-    }
-    // OperationTimeout is only set after the first attempt.
-    if (attemptCount > 1) {
-      remainingOperationTimeout =
-          operationTimeout.toMillis() - operationTimer.elapsed(TimeUnit.MILLISECONDS);
     }
   }
 
@@ -301,12 +299,16 @@ class BuiltinMetricsTracer extends BigtableTracer {
     grpcMessageSentDelay.set(attemptTimer.elapsed(TimeUnit.NANOSECONDS));
   }
 
-  /*
-  This is called by BigtableTracerCallables that sets operation timeout from user settings.
-  */
   @Override
-  public void setOperationTimeout(Duration operationTimeout) {
-    this.operationTimeout = operationTimeout;
+  public void setTotalTimeoutDuration(java.time.Duration totalTimeoutDuration) {
+    // This method is called by BigtableTracerStreamingCallable and
+    // BigtableTracerUnaryCallable which is called per attempt. We only set
+    // the operationDeadline on the first attempt and when totalTimeout is set.
+    if (operationDeadline == null && !totalTimeoutDuration.isZero()) {
+      this.operationDeadline =
+          Deadline.after(totalTimeoutDuration.toMillis(), TimeUnit.MILLISECONDS);
+      this.remainingDeadlineAtAttemptStart = totalTimeoutDuration.toMillis();
+    }
   }
 
   @Override
@@ -403,15 +405,10 @@ class BuiltinMetricsTracer extends BigtableTracer {
     attemptLatenciesHistogram.record(
         convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
 
-    if (attemptCount <= 1) {
-      remainingDeadlineHistogram.record(operationTimeout.toMillis(), attributes);
-    } else if (remainingOperationTimeout >= 0) {
-      remainingDeadlineHistogram.record(remainingOperationTimeout, attributes);
-    } else if (operationTimeout.toMillis() != 0) {
-      // If the operationTimeout is set but remaining deadline is < 0, log a warning. This should
-      // never happen.
-      logger.log(
-          Level.WARNING, "The remaining deadline was less than 0: " + remainingOperationTimeout);
+    // When operationDeadline is set, it's possible that the deadline is passed by the time we send
+    // a new attempt. In this case we'll record 0.
+    if (operationDeadline != null) {
+      remainingDeadlineHistogram.record(Math.max(0, remainingDeadlineAtAttemptStart), attributes);
     }
 
     if (serverLatencies != null) {
