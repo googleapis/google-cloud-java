@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.12.0](https://github.com/googleapis/java-shared-config/compare/v1.11.3...v1.12.0) (2024-11-13)
+
+
+### Features
+
+* Maven profile for Airlock ([#928](https://github.com/googleapis/java-shared-config/issues/928)) ([10da584](https://github.com/googleapis/java-shared-config/commit/10da5843f6c3fa50c3fff4a4fd01326a1cc68158))
+* Publish graalvm images to new java-graalvm-ci-prod project ([#922](https://github.com/googleapis/java-shared-config/issues/922)) ([69ccd0f](https://github.com/googleapis/java-shared-config/commit/69ccd0f0dce6d4b3b01ac067000007292d7fff95))
+
+
+### Dependencies
+
+* Update actions/checkout digest to 11bd719 ([#919](https://github.com/googleapis/java-shared-config/issues/919)) ([eb0ae86](https://github.com/googleapis/java-shared-config/commit/eb0ae8622b330045efd76cf6d14f0a9b79071fd7))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.20.1 ([#932](https://github.com/googleapis/java-shared-config/issues/932)) ([ba72db5](https://github.com/googleapis/java-shared-config/commit/ba72db54f809e8a1dbed4f70736328e3f6bf06ee))
+* Update dependency org.graalvm.sdk:graal-sdk to v24.1.1 ([#923](https://github.com/googleapis/java-shared-config/issues/923)) ([b22170a](https://github.com/googleapis/java-shared-config/commit/b22170a8fb8fddfb79927ab98cb2e299152cbc8e))
+* Update dependency org.graalvm.sdk:nativeimage to v24.1.1 ([#924](https://github.com/googleapis/java-shared-config/issues/924)) ([fa97ca8](https://github.com/googleapis/java-shared-config/commit/fa97ca825159016aee31dbac7e9967a572b02a33))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.3 ([#917](https://github.com/googleapis/java-shared-config/issues/917)) ([13766a3](https://github.com/googleapis/java-shared-config/commit/13766a3837c647398f2c8fea6a3b089287f07a25))
+
 ## [1.11.3](https://github.com/googleapis/java-shared-config/compare/v1.11.2...v1.11.3) (2024-10-01)
 
 
