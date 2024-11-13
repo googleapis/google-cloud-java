@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.29.0](https://github.com/googleapis/java-firestore/compare/v3.28.0...v3.29.0) (2024-11-13)
+
+
+### Bug Fixes
+
+* Drop the setTracingEnabled flag from Options (@BetaApi change)  ([#1869](https://github.com/googleapis/java-firestore/issues/1869)) ([712d57e](https://github.com/googleapis/java-firestore/commit/712d57e05da8de41850d94fa19eb253cf3020c0f))
+* Improve error messages in tests ([#1855](https://github.com/googleapis/java-firestore/issues/1855)) ([cb5f9d6](https://github.com/googleapis/java-firestore/commit/cb5f9d6f481c9c839a387579bf60742b7c2c0508))
+* Make StreamableQuery#internalStream package-private to avoid documentation and prevent clirr errors ([593acc3](https://github.com/googleapis/java-firestore/commit/593acc3614f86bdf42387eac5ef8d7ce14dbbec8))
+
+
+### Dependencies
+
+* Update opentelemetry.version to v1.44.1 ([#1924](https://github.com/googleapis/java-firestore/issues/1924)) ([68deeac](https://github.com/googleapis/java-firestore/commit/68deeac02eabb927ba8b91c77f3be8471ba66718))
+
 ## [3.28.0](https://github.com/googleapis/java-firestore/compare/v3.27.4...v3.28.0) (2024-10-29)
 
 
