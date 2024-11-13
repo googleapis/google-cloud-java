@@ -6088,7 +6088,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param name Required. The name of the zone. Format:
    *     `projects/{project}/locations/{location}/zones/{zone}`
-   * @param stateSignal Required. The state signal to send for this zone.
+   * @param stateSignal Optional. The state signal to send for this zone. Either state_signal or
+   *     provisioning_state_signal must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Zone, OperationMetadata> signalZoneStateAsync(
@@ -6124,7 +6125,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *
    * @param name Required. The name of the zone. Format:
    *     `projects/{project}/locations/{location}/zones/{zone}`
-   * @param stateSignal Required. The state signal to send for this zone.
+   * @param stateSignal Optional. The state signal to send for this zone. Either state_signal or
+   *     provisioning_state_signal must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Zone, OperationMetadata> signalZoneStateAsync(

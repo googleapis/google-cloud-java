@@ -541,6 +541,42 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  boolean hasFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfig getFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * System labels to apply to Model Garden deployments.
    * System labels are managed by Google for internal use only.
    * </pre>

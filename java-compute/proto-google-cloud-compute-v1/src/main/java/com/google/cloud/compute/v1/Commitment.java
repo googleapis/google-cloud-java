@@ -542,6 +542,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE(299793543),
     /** <code>GENERAL_PURPOSE_C4 = 301911817;</code> */
     GENERAL_PURPOSE_C4(301911817),
+    /** <code>GENERAL_PURPOSE_C4A = 232460888;</code> */
+    GENERAL_PURPOSE_C4A(232460888),
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
     GENERAL_PURPOSE_E2(301911877),
     /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
@@ -595,6 +597,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int GENERAL_PURPOSE_VALUE = 299793543;
     /** <code>GENERAL_PURPOSE_C4 = 301911817;</code> */
     public static final int GENERAL_PURPOSE_C4_VALUE = 301911817;
+    /** <code>GENERAL_PURPOSE_C4A = 232460888;</code> */
+    public static final int GENERAL_PURPOSE_C4A_VALUE = 232460888;
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
     public static final int GENERAL_PURPOSE_E2_VALUE = 301911877;
     /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
@@ -662,6 +666,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE;
         case 301911817:
           return GENERAL_PURPOSE_C4;
+        case 232460888:
+          return GENERAL_PURPOSE_C4A;
         case 301911877:
           return GENERAL_PURPOSE_E2;
         case 301912156:

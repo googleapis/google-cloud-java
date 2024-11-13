@@ -90,11 +90,12 @@ public interface SignalZoneStateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The state signal to send for this zone.
+   * Optional. The state signal to send for this zone. Either state_signal or
+   * provisioning_state_signal must be set, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for stateSignal.
@@ -104,15 +105,48 @@ public interface SignalZoneStateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The state signal to send for this zone.
+   * Optional. The state signal to send for this zone. Either state_signal or
+   * provisioning_state_signal must be set, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The stateSignal.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal
       getStateSignal();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The provisioning state signal to send for this zone. Either
+   * state_signal or provisioning_state_signal must be set, but not both.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisioningStateSignal.
+   */
+  int getProvisioningStateSignalValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The provisioning state signal to send for this zone. Either
+   * state_signal or provisioning_state_signal must be set, but not both.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisioningStateSignal.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal
+      getProvisioningStateSignal();
 }

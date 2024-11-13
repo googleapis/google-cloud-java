@@ -388,6 +388,37 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MacAddress.AddressType getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Static IP address (if used) that is associated with the MAC
+     * address. Only applicable for VIRTUAL MAC address type.
+     * </pre>
+     *
+     * <code>
+     * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The ipv4Address.
+     */
+    java.lang.String getIpv4Address();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Static IP address (if used) that is associated with the MAC
+     * address. Only applicable for VIRTUAL MAC address type.
+     * </pre>
+     *
+     * <code>
+     * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for ipv4Address.
+     */
+    com.google.protobuf.ByteString getIpv4AddressBytes();
   }
   /**
    *
@@ -411,6 +442,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     private MacAddress() {
       address_ = "";
       type_ = 0;
+      ipv4Address_ = "";
     }
 
     @java.lang.Override
@@ -711,6 +743,63 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int IPV4_ADDRESS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ipv4Address_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Static IP address (if used) that is associated with the MAC
+     * address. Only applicable for VIRTUAL MAC address type.
+     * </pre>
+     *
+     * <code>
+     * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The ipv4Address.
+     */
+    @java.lang.Override
+    public java.lang.String getIpv4Address() {
+      java.lang.Object ref = ipv4Address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv4Address_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Static IP address (if used) that is associated with the MAC
+     * address. Only applicable for VIRTUAL MAC address type.
+     * </pre>
+     *
+     * <code>
+     * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for ipv4Address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIpv4AddressBytes() {
+      java.lang.Object ref = ipv4Address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv4Address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -734,6 +823,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(2, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipv4Address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipv4Address_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -751,6 +843,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
               .ADDRESS_TYPE_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipv4Address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipv4Address_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -770,6 +865,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
 
       if (!getAddress().equals(other.getAddress())) return false;
       if (type_ != other.type_) return false;
+      if (!getIpv4Address().equals(other.getIpv4Address())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -785,6 +881,8 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + IPV4_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv4Address().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -931,6 +1029,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         address_ = "";
         type_ = 0;
+        ipv4Address_ = "";
         return this;
       }
 
@@ -975,6 +1074,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ipv4Address_ = ipv4Address_;
         }
       }
 
@@ -1037,6 +1139,11 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (!other.getIpv4Address().isEmpty()) {
+          ipv4Address_ = other.ipv4Address_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1075,6 +1182,12 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  ipv4Address_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1302,6 +1415,127 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ipv4Address_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Static IP address (if used) that is associated with the MAC
+       * address. Only applicable for VIRTUAL MAC address type.
+       * </pre>
+       *
+       * <code>
+       * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+       * </code>
+       *
+       * @return The ipv4Address.
+       */
+      public java.lang.String getIpv4Address() {
+        java.lang.Object ref = ipv4Address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ipv4Address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Static IP address (if used) that is associated with the MAC
+       * address. Only applicable for VIRTUAL MAC address type.
+       * </pre>
+       *
+       * <code>
+       * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+       * </code>
+       *
+       * @return The bytes for ipv4Address.
+       */
+      public com.google.protobuf.ByteString getIpv4AddressBytes() {
+        java.lang.Object ref = ipv4Address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          ipv4Address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Static IP address (if used) that is associated with the MAC
+       * address. Only applicable for VIRTUAL MAC address type.
+       * </pre>
+       *
+       * <code>
+       * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+       * </code>
+       *
+       * @param value The ipv4Address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIpv4Address(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ipv4Address_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Static IP address (if used) that is associated with the MAC
+       * address. Only applicable for VIRTUAL MAC address type.
+       * </pre>
+       *
+       * <code>
+       * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIpv4Address() {
+        ipv4Address_ = getDefaultInstance().getIpv4Address();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Static IP address (if used) that is associated with the MAC
+       * address. Only applicable for VIRTUAL MAC address type.
+       * </pre>
+       *
+       * <code>
+       * string ipv4_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+       * </code>
+       *
+       * @param value The bytes for ipv4Address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIpv4AddressBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ipv4Address_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

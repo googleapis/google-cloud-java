@@ -23,7 +23,7 @@ package com.google.cloud.eventarc.v1;
  *
  *
  * <pre>
- * The configuration for Platform Telemetry logging for Eventarc Avdvanced
+ * The configuration for Platform Telemetry logging for Eventarc Advanced
  * resources.
  * </pre>
  *
@@ -598,7 +598,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for Platform Telemetry logging for Eventarc Avdvanced
+   * The configuration for Platform Telemetry logging for Eventarc Advanced
    * resources.
    * </pre>
    *

@@ -41,6 +41,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   private RiskAnalysis() {
     reasons_ = java.util.Collections.emptyList();
     extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    challenge_ = 0;
   }
 
   @java.lang.Override
@@ -338,6 +339,187 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Challenge information for SCORE_AND_CHALLENGE keys
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge}
+   */
+  public enum Challenge implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified type.
+     * </pre>
+     *
+     * <code>CHALLENGE_UNSPECIFIED = 0;</code>
+     */
+    CHALLENGE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * No challenge was presented for solving.
+     * </pre>
+     *
+     * <code>NOCAPTCHA = 1;</code>
+     */
+    NOCAPTCHA(1),
+    /**
+     *
+     *
+     * <pre>
+     * A solution was submitted that was correct.
+     * </pre>
+     *
+     * <code>PASSED = 2;</code>
+     */
+    PASSED(2),
+    /**
+     *
+     *
+     * <pre>
+     * A solution was submitted that was incorrect or otherwise
+     * deemed suspicious.
+     * </pre>
+     *
+     * <code>FAILED = 3;</code>
+     */
+    FAILED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified type.
+     * </pre>
+     *
+     * <code>CHALLENGE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CHALLENGE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * No challenge was presented for solving.
+     * </pre>
+     *
+     * <code>NOCAPTCHA = 1;</code>
+     */
+    public static final int NOCAPTCHA_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A solution was submitted that was correct.
+     * </pre>
+     *
+     * <code>PASSED = 2;</code>
+     */
+    public static final int PASSED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * A solution was submitted that was incorrect or otherwise
+     * deemed suspicious.
+     * </pre>
+     *
+     * <code>FAILED = 3;</code>
+     */
+    public static final int FAILED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Challenge valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Challenge forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CHALLENGE_UNSPECIFIED;
+        case 1:
+          return NOCAPTCHA;
+        case 2:
+          return PASSED;
+        case 3:
+          return FAILED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Challenge> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Challenge> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Challenge>() {
+          public Challenge findValueByNumber(int number) {
+            return Challenge.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RiskAnalysis.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Challenge[] VALUES = values();
+
+    public static Challenge valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Challenge(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge)
+  }
+
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
   /**
@@ -548,6 +730,47 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     return extendedVerdictReasons_.getByteString(index);
   }
 
+  public static final int CHALLENGE_FIELD_NUMBER = 4;
+  private int challenge_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for challenge.
+   */
+  @java.lang.Override
+  public int getChallengeValue() {
+    return challenge_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The challenge.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge getChallenge() {
+    com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge result =
+        com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.forNumber(challenge_);
+    return result == null
+        ? com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -576,6 +799,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < extendedVerdictReasons_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, extendedVerdictReasons_.getRaw(i));
+    }
+    if (challenge_
+        != com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.CHALLENGE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, challenge_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -609,6 +837,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExtendedVerdictReasonsList().size();
     }
+    if (challenge_
+        != com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.CHALLENGE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, challenge_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -630,6 +863,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     if (!reasons_.equals(other.reasons_)) return false;
     if (!getExtendedVerdictReasonsList().equals(other.getExtendedVerdictReasonsList()))
       return false;
+    if (challenge_ != other.challenge_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -651,6 +885,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXTENDED_VERDICT_REASONS_FIELD_NUMBER;
       hash = (53 * hash) + getExtendedVerdictReasonsList().hashCode();
     }
+    hash = (37 * hash) + CHALLENGE_FIELD_NUMBER;
+    hash = (53 * hash) + challenge_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -794,6 +1030,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
       extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      challenge_ = 0;
       return this;
     }
 
@@ -845,6 +1082,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         extendedVerdictReasons_.makeImmutable();
         result.extendedVerdictReasons_ = extendedVerdictReasons_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.challenge_ = challenge_;
       }
     }
 
@@ -916,6 +1156,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.challenge_ != 0) {
+        setChallengeValue(other.getChallengeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -974,6 +1217,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
                 extendedVerdictReasons_.add(s);
                 break;
               } // case 26
+            case 32:
+              {
+                challenge_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1501,6 +1750,108 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       ensureExtendedVerdictReasonsIsMutable();
       extendedVerdictReasons_.add(value);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int challenge_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for challenge.
+     */
+    @java.lang.Override
+    public int getChallengeValue() {
+      return challenge_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for challenge to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChallengeValue(int value) {
+      challenge_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The challenge.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge getChallenge() {
+      com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge result =
+          com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.forNumber(challenge_);
+      return result == null
+          ? com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The challenge to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChallenge(com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      challenge_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChallenge() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      challenge_ = 0;
       onChanged();
       return this;
     }

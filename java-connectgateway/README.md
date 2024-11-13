@@ -103,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Connect Gateway API uses both gRPC and HTTP/JSON for the transport layer.
+Connect Gateway API uses HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 

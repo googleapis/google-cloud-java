@@ -2493,6 +2493,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.recaptchaenterprise.v1.RiskAnalysis$Challenge",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.recaptchaenterprise.v1.RiskAnalysis$ClassificationReason",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

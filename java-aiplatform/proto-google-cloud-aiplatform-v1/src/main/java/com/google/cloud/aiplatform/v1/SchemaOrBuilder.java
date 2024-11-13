@@ -256,9 +256,9 @@ public interface SchemaOrBuilder
    * Optional. Possible values of the element of primitive type with enum
    * format. Examples:
    * 1. We can define direction as :
-   * ```{type:STRING, format:enum, enum:["EAST", "NORTH", "SOUTH", "WEST"]}```
+   * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
    * 2. We can define apartment number as :
-   * ```{type:INTEGER, format:enum, enum:["101", "201", "301"]}```
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -273,9 +273,9 @@ public interface SchemaOrBuilder
    * Optional. Possible values of the element of primitive type with enum
    * format. Examples:
    * 1. We can define direction as :
-   * ```{type:STRING, format:enum, enum:["EAST", "NORTH", "SOUTH", "WEST"]}```
+   * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
    * 2. We can define apartment number as :
-   * ```{type:INTEGER, format:enum, enum:["101", "201", "301"]}```
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -290,9 +290,9 @@ public interface SchemaOrBuilder
    * Optional. Possible values of the element of primitive type with enum
    * format. Examples:
    * 1. We can define direction as :
-   * ```{type:STRING, format:enum, enum:["EAST", "NORTH", "SOUTH", "WEST"]}```
+   * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
    * 2. We can define apartment number as :
-   * ```{type:INTEGER, format:enum, enum:["101", "201", "301"]}```
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -308,9 +308,9 @@ public interface SchemaOrBuilder
    * Optional. Possible values of the element of primitive type with enum
    * format. Examples:
    * 1. We can define direction as :
-   * ```{type:STRING, format:enum, enum:["EAST", "NORTH", "SOUTH", "WEST"]}```
+   * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
    * 2. We can define apartment number as :
-   * ```{type:INTEGER, format:enum, enum:["101", "201", "301"]}```
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

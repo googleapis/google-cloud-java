@@ -179,7 +179,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ResumeSchedule</td>
  *      <td><p> Resumes a paused Schedule to start scheduling new runs. Will mark [Schedule.state][google.cloud.aiplatform.v1.Schedule.state] to 'ACTIVE'. Only paused Schedule can be resumed.
- * <p>  When the Schedule is resumed, new runs will be scheduled starting from the next execution time after the current time based on the time_specification in the Schedule. If [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.</td>
+ * <p>  When the Schedule is resumed, new runs will be scheduled starting from the next execution time after the current time based on the time_specification in the Schedule. If [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed runs will be scheduled for backfill first.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1064,7 +1064,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
@@ -1098,7 +1099,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
@@ -1131,7 +1133,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
@@ -1173,7 +1176,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
@@ -1212,7 +1216,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
@@ -1247,7 +1252,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *
    * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
    * time after the current time based on the time_specification in the Schedule. If
-   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up true, all missed
+   * runs will be scheduled for backfill first.
    *
    * <p>Sample code:
    *
