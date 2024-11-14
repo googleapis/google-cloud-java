@@ -43,6 +43,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   private RaySpec() {
     imageUri_ = "";
+    nfsMounts_ = java.util.Collections.emptyList();
     headNodeResourcePoolId_ = "";
   }
 
@@ -139,6 +140,87 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int NFS_MOUNTS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> nfsMounts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> getNfsMountsList() {
+    return nfsMounts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+      getNfsMountsOrBuilderList() {
+    return nfsMounts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getNfsMountsCount() {
+    return nfsMounts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NfsMount getNfsMounts(int index) {
+    return nfsMounts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder getNfsMountsOrBuilder(int index) {
+    return nfsMounts_.get(index);
   }
 
   public static final int RESOURCE_POOL_IMAGES_FIELD_NUMBER = 6;
@@ -487,6 +569,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getRayLogsSpec());
     }
+    for (int i = 0; i < nfsMounts_.size(); i++) {
+      output.writeMessage(11, nfsMounts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -518,6 +603,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRayLogsSpec());
     }
+    for (int i = 0; i < nfsMounts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, nfsMounts_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -535,6 +623,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1beta1.RaySpec) obj;
 
     if (!getImageUri().equals(other.getImageUri())) return false;
+    if (!getNfsMountsList().equals(other.getNfsMountsList())) return false;
     if (!internalGetResourcePoolImages().equals(other.internalGetResourcePoolImages()))
       return false;
     if (!getHeadNodeResourcePoolId().equals(other.getHeadNodeResourcePoolId())) return false;
@@ -559,6 +648,10 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + IMAGE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getImageUri().hashCode();
+    if (getNfsMountsCount() > 0) {
+      hash = (37 * hash) + NFS_MOUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNfsMountsList().hashCode();
+    }
     if (!internalGetResourcePoolImages().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_POOL_IMAGES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourcePoolImages().hashCode();
@@ -738,6 +831,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getNfsMountsFieldBuilder();
         getRayMetricSpecFieldBuilder();
         getRayLogsSpecFieldBuilder();
       }
@@ -748,6 +842,13 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       imageUri_ = "";
+      if (nfsMountsBuilder_ == null) {
+        nfsMounts_ = java.util.Collections.emptyList();
+      } else {
+        nfsMounts_ = null;
+        nfsMountsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableResourcePoolImages().clear();
       headNodeResourcePoolId_ = "";
       rayMetricSpec_ = null;
@@ -787,6 +888,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.RaySpec buildPartial() {
       com.google.cloud.aiplatform.v1beta1.RaySpec result =
           new com.google.cloud.aiplatform.v1beta1.RaySpec(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -794,25 +896,37 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.RaySpec result) {
+      if (nfsMountsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          nfsMounts_ = java.util.Collections.unmodifiableList(nfsMounts_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.nfsMounts_ = nfsMounts_;
+      } else {
+        result.nfsMounts_ = nfsMountsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RaySpec result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.imageUri_ = imageUri_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.resourcePoolImages_ = internalGetResourcePoolImages();
         result.resourcePoolImages_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.headNodeResourcePoolId_ = headNodeResourcePoolId_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.rayMetricSpec_ =
             rayMetricSpecBuilder_ == null ? rayMetricSpec_ : rayMetricSpecBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rayLogsSpec_ =
             rayLogsSpecBuilder_ == null ? rayLogsSpec_ : rayLogsSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -870,11 +984,38 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (nfsMountsBuilder_ == null) {
+        if (!other.nfsMounts_.isEmpty()) {
+          if (nfsMounts_.isEmpty()) {
+            nfsMounts_ = other.nfsMounts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNfsMountsIsMutable();
+            nfsMounts_.addAll(other.nfsMounts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.nfsMounts_.isEmpty()) {
+          if (nfsMountsBuilder_.isEmpty()) {
+            nfsMountsBuilder_.dispose();
+            nfsMountsBuilder_ = null;
+            nfsMounts_ = other.nfsMounts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            nfsMountsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNfsMountsFieldBuilder()
+                    : null;
+          } else {
+            nfsMountsBuilder_.addAllMessages(other.nfsMounts_);
+          }
+        }
+      }
       internalGetMutableResourcePoolImages().mergeFrom(other.internalGetResourcePoolImages());
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       if (!other.getHeadNodeResourcePoolId().isEmpty()) {
         headNodeResourcePoolId_ = other.headNodeResourcePoolId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRayMetricSpec()) {
@@ -925,27 +1066,40 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableResourcePoolImages()
                     .getMutableMap()
                     .put(resourcePoolImages__.getKey(), resourcePoolImages__.getValue());
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 58:
               {
                 headNodeResourcePoolId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getRayMetricSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getRayLogsSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 90:
+              {
+                com.google.cloud.aiplatform.v1beta1.NfsMount m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.NfsMount.parser(), extensionRegistry);
+                if (nfsMountsBuilder_ == null) {
+                  ensureNfsMountsIsMutable();
+                  nfsMounts_.add(m);
+                } else {
+                  nfsMountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1096,6 +1250,393 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> nfsMounts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNfsMountsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        nfsMounts_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.NfsMount>(nfsMounts_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NfsMount,
+            com.google.cloud.aiplatform.v1beta1.NfsMount.Builder,
+            com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+        nfsMountsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> getNfsMountsList() {
+      if (nfsMountsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(nfsMounts_);
+      } else {
+        return nfsMountsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getNfsMountsCount() {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.size();
+      } else {
+        return nfsMountsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NfsMount getNfsMounts(int index) {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.get(index);
+      } else {
+        return nfsMountsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNfsMounts(int index, com.google.cloud.aiplatform.v1beta1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.set(index, value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNfsMounts(
+        int index, com.google.cloud.aiplatform.v1beta1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(com.google.cloud.aiplatform.v1beta1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(int index, com.google.cloud.aiplatform.v1beta1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(index, value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(
+        com.google.cloud.aiplatform.v1beta1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(
+        int index, com.google.cloud.aiplatform.v1beta1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllNfsMounts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.NfsMount> values) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nfsMounts_);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNfsMounts() {
+      if (nfsMountsBuilder_ == null) {
+        nfsMounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeNfsMounts(int index) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.remove(index);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NfsMount.Builder getNfsMountsBuilder(int index) {
+      return getNfsMountsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder getNfsMountsOrBuilder(int index) {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.get(index);
+      } else {
+        return nfsMountsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+        getNfsMountsOrBuilderList() {
+      if (nfsMountsBuilder_ != null) {
+        return nfsMountsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(nfsMounts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NfsMount.Builder addNfsMountsBuilder() {
+      return getNfsMountsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.NfsMount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NfsMount.Builder addNfsMountsBuilder(int index) {
+      return getNfsMountsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.NfsMount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use if you want to mount to any NFS storages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount.Builder>
+        getNfsMountsBuilderList() {
+      return getNfsMountsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NfsMount,
+            com.google.cloud.aiplatform.v1beta1.NfsMount.Builder,
+            com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+        getNfsMountsFieldBuilder() {
+      if (nfsMountsBuilder_ == null) {
+        nfsMountsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.NfsMount,
+                com.google.cloud.aiplatform.v1beta1.NfsMount.Builder,
+                com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>(
+                nfsMounts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        nfsMounts_ = null;
+      }
+      return nfsMountsBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourcePoolImages_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1117,7 +1658,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       if (!resourcePoolImages_.isMutable()) {
         resourcePoolImages_ = resourcePoolImages_.copy();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return resourcePoolImages_;
     }
@@ -1244,7 +1785,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearResourcePoolImages() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableResourcePoolImages().getMutableMap().clear();
       return this;
     }
@@ -1277,7 +1818,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourcePoolImages() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return internalGetMutableResourcePoolImages().getMutableMap();
     }
     /**
@@ -1307,7 +1848,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableResourcePoolImages().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1332,7 +1873,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllResourcePoolImages(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourcePoolImages().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1407,7 +1948,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       headNodeResourcePoolId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1427,7 +1968,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearHeadNodeResourcePoolId() {
       headNodeResourcePoolId_ = getDefaultInstance().getHeadNodeResourcePoolId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1452,7 +1993,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       headNodeResourcePoolId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1477,7 +2018,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rayMetricSpec field is set.
      */
     public boolean hasRayMetricSpec() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1521,7 +2062,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayMetricSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1543,7 +2084,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayMetricSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1560,7 +2101,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRayMetricSpec(com.google.cloud.aiplatform.v1beta1.RayMetricSpec value) {
       if (rayMetricSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && rayMetricSpec_ != null
             && rayMetricSpec_
                 != com.google.cloud.aiplatform.v1beta1.RayMetricSpec.getDefaultInstance()) {
@@ -1572,7 +2113,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         rayMetricSpecBuilder_.mergeFrom(value);
       }
       if (rayMetricSpec_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1589,7 +2130,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRayMetricSpec() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       rayMetricSpec_ = null;
       if (rayMetricSpecBuilder_ != null) {
         rayMetricSpecBuilder_.dispose();
@@ -1610,7 +2151,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.RayMetricSpec.Builder getRayMetricSpecBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRayMetricSpecFieldBuilder().getBuilder();
     }
@@ -1682,7 +2223,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rayLogsSpec field is set.
      */
     public boolean hasRayLogsSpec() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1726,7 +2267,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayLogsSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1748,7 +2289,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayLogsSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1765,7 +2306,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRayLogsSpec(com.google.cloud.aiplatform.v1beta1.RayLogsSpec value) {
       if (rayLogsSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && rayLogsSpec_ != null
             && rayLogsSpec_
                 != com.google.cloud.aiplatform.v1beta1.RayLogsSpec.getDefaultInstance()) {
@@ -1777,7 +2318,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         rayLogsSpecBuilder_.mergeFrom(value);
       }
       if (rayLogsSpec_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1794,7 +2335,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRayLogsSpec() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       rayLogsSpec_ = null;
       if (rayLogsSpecBuilder_ != null) {
         rayLogsSpecBuilder_.dispose();
@@ -1815,7 +2356,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.RayLogsSpec.Builder getRayLogsSpecBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getRayLogsSpecFieldBuilder().getBuilder();
     }

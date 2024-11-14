@@ -25,6 +25,7 @@ import com.google.cloud.dialogflow.v2beta1.MessageName;
 import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest;
 import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse;
 import com.google.cloud.dialogflow.v2beta1.TextInput;
+import com.google.protobuf.Struct;
 
 public class AsyncSearchKnowledge {
 
@@ -55,6 +56,9 @@ public class AsyncSearchKnowledge {
                   MessageName.ofProjectConversationMessageName(
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
+              .setEndUserMetadata(Struct.newBuilder().build())
+              .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+              .setExactSearch(true)
               .build();
       ApiFuture<SearchKnowledgeResponse> future =
           conversationsClient.searchKnowledgeCallable().futureCall(request);

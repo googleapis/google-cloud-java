@@ -157,7 +157,7 @@ public interface CreateEntitlementRequestOrBuilder
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, ignores the second request and returns the
    * previous operation's response. This prevents clients from accidentally
-   * creating duplicate commitments.
+   * creating duplicate entitlements.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
@@ -182,7 +182,7 @@ public interface CreateEntitlementRequestOrBuilder
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, ignores the second request and returns the
    * previous operation's response. This prevents clients from accidentally
-   * creating duplicate commitments.
+   * creating duplicate entitlements.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).

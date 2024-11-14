@@ -23,8 +23,6 @@ package com.google.cloud.privilegedaccessmanager.v1;
  *
  *
  * <pre>
- * This is to ensure that the `Grants` and `ProducerGrants` proto are byte
- * compatible.
  * A grant represents a request from a user for obtaining the access specified
  * in an entitlement they are eligible for.
  * </pre>
@@ -15423,8 +15421,6 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This is to ensure that the `Grants` and `ProducerGrants` proto are byte
-   * compatible.
    * A grant represents a request from a user for obtaining the access specified
    * in an entitlement they are eligible for.
    * </pre>

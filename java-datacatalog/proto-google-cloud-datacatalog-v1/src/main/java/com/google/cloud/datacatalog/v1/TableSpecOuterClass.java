@@ -72,12 +72,12 @@ public final class TableSpecOuterClass {
           + "d_resource\030\004 \001(\tB\003\340A\003*{\n\017TableSourceType"
           + "\022!\n\035TABLE_SOURCE_TYPE_UNSPECIFIED\020\000\022\021\n\rB"
           + "IGQUERY_VIEW\020\002\022\022\n\016BIGQUERY_TABLE\020\005\022\036\n\032BI"
-          + "GQUERY_MATERIALIZED_VIEW\020\007B\306\001\n\037com.googl"
+          + "GQUERY_MATERIALIZED_VIEW\020\007B\303\001\n\037com.googl"
           + "e.cloud.datacatalog.v1P\001ZAcloud.google.c"
           + "om/go/datacatalog/apiv1/datacatalogpb;da"
-          + "tacatalogpb\370\001\001\252\002\033Google.Cloud.DataCatalo"
-          + "g.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Goo"
-          + "gle::Cloud::DataCatalog::V1b\006proto3"
+          + "tacatalogpb\252\002\033Google.Cloud.DataCatalog.V"
+          + "1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google"
+          + "::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

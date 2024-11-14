@@ -231,4 +231,174 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The bytes for latestMessage.
    */
   com.google.protobuf.ByteString getLatestMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source of the query in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for querySource.
+   */
+  int getQuerySourceValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source of the query in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The querySource.
+   */
+  com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.QuerySource getQuerySource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserMetadata field is set.
+   */
+  boolean hasEndUserMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserMetadata.
+   */
+  com.google.protobuf.Struct getEndUserMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchConfig field is set.
+   */
+  boolean hasSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchConfig.
+   */
+  com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig getSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfigOrBuilder
+      getSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to search the query exactly without query rewrite.
+   * </pre>
+   *
+   * <code>bool exact_search = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The exactSearch.
+   */
+  boolean getExactSearch();
 }

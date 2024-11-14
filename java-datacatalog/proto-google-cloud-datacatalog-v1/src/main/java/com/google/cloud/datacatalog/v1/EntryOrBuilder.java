@@ -28,14 +28,14 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of an entry in URL format.
+   * Output only. Identifier. The resource name of an entry in URL format.
    *
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -45,14 +45,14 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of an entry in URL format.
+   * Output only. Identifier. The resource name of an entry in URL format.
    *
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -889,6 +889,45 @@ public interface EntryOrBuilder
    * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
    */
   com.google.cloud.datacatalog.v1.ModelSpecOrBuilder getModelSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   *
+   * @return Whether the featureOnlineStoreSpec field is set.
+   */
+  boolean hasFeatureOnlineStoreSpec();
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   *
+   * @return The featureOnlineStoreSpec.
+   */
+  com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec getFeatureOnlineStoreSpec();
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder
+      getFeatureOnlineStoreSpecOrBuilder();
 
   /**
    *

@@ -135,8 +135,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
-   * was received, and if so, ignores the second request. This prevents
-   * clients from accidentally creating duplicate commitments.
+   * was received, and if so, ignores the second request.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
@@ -170,8 +169,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
-   * was received, and if so, ignores the second request. This prevents
-   * clients from accidentally creating duplicate commitments.
+   * was received, and if so, ignores the second request.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
@@ -740,8 +738,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, ignores the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -774,8 +771,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, ignores the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -808,8 +804,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, ignores the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -841,8 +836,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, ignores the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -870,8 +864,7 @@ public final class DeleteEntitlementRequest extends com.google.protobuf.Generate
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, ignores the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
