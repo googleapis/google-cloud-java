@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * The type of DataScan.
+ * The type of data scan.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.dataplex.v1.DataScanType}
@@ -33,7 +33,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The DataScan type is unspecified.
+   * The data scan type is unspecified.
    * </pre>
    *
    * <code>DATA_SCAN_TYPE_UNSPECIFIED = 0;</code>
@@ -43,7 +43,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Quality scan.
+   * Data quality scan.
    * </pre>
    *
    * <code>DATA_QUALITY = 1;</code>
@@ -53,12 +53,22 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Profile scan.
+   * Data profile scan.
    * </pre>
    *
    * <code>DATA_PROFILE = 2;</code>
    */
   DATA_PROFILE(2),
+  /**
+   *
+   *
+   * <pre>
+   * Data discovery scan.
+   * </pre>
+   *
+   * <code>DATA_DISCOVERY = 3;</code>
+   */
+  DATA_DISCOVERY(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -66,7 +76,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The DataScan type is unspecified.
+   * The data scan type is unspecified.
    * </pre>
    *
    * <code>DATA_SCAN_TYPE_UNSPECIFIED = 0;</code>
@@ -76,7 +86,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Quality scan.
+   * Data quality scan.
    * </pre>
    *
    * <code>DATA_QUALITY = 1;</code>
@@ -86,12 +96,22 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Profile scan.
+   * Data profile scan.
    * </pre>
    *
    * <code>DATA_PROFILE = 2;</code>
    */
   public static final int DATA_PROFILE_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Data discovery scan.
+   * </pre>
+   *
+   * <code>DATA_DISCOVERY = 3;</code>
+   */
+  public static final int DATA_DISCOVERY_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,6 +143,8 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
         return DATA_QUALITY;
       case 2:
         return DATA_PROFILE;
+      case 3:
+        return DATA_DISCOVERY;
       default:
         return null;
     }

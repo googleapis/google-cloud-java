@@ -25,36 +25,18 @@ public interface BindingOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return Whether the bindingId field is set.
    */
   boolean hasBindingId();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return The bindingId.
    */
   java.lang.String getBindingId();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return The bytes for bindingId.

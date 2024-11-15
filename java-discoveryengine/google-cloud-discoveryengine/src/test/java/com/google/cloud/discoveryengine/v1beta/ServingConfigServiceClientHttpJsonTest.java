@@ -102,6 +102,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -127,6 +128,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -178,6 +180,7 @@ public class ServingConfigServiceClientHttpJsonTest {
               .addAllDissociateControlIds(new ArrayList<String>())
               .addAllReplacementControlIds(new ArrayList<String>())
               .addAllIgnoreControlIds(new ArrayList<String>())
+              .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateServingConfig(servingConfig, updateMask);
@@ -211,6 +214,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -278,6 +282,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllDissociateControlIds(new ArrayList<String>())
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

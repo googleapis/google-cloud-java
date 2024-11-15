@@ -29,8 +29,8 @@ public interface ToolUseOrBuilder
    *
    * <pre>
    * Required. The [tool][google.cloud.dialogflow.cx.v3beta1.Tool] that should
-   * be used. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/tools/&lt;Tool ID&gt;`.
+   * be used. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface ToolUseOrBuilder
    *
    * <pre>
    * Required. The [tool][google.cloud.dialogflow.cx.v3beta1.Tool] that should
-   * be used. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/tools/&lt;Tool ID&gt;`.
+   * be used. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>

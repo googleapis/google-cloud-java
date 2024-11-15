@@ -929,6 +929,79 @@ public interface EvaluateInstancesResponseOrBuilder
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchResultsOrBuilder
       getToolParameterKvMatchResultsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometResult comet_result = 29;</code>
+   *
+   * @return Whether the cometResult field is set.
+   */
+  boolean hasCometResult();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometResult comet_result = 29;</code>
+   *
+   * @return The cometResult.
+   */
+  com.google.cloud.aiplatform.v1.CometResult getCometResult();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometResult comet_result = 29;</code>
+   */
+  com.google.cloud.aiplatform.v1.CometResultOrBuilder getCometResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return Whether the metricxResult field is set.
+   */
+  boolean hasMetricxResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return The metricxResult.
+   */
+  com.google.cloud.aiplatform.v1.MetricxResult getMetricxResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxResult metricx_result = 30;</code>
+   */
+  com.google.cloud.aiplatform.v1.MetricxResultOrBuilder getMetricxResultOrBuilder();
+
   com.google.cloud.aiplatform.v1.EvaluateInstancesResponse.EvaluationResultsCase
       getEvaluationResultsCase();
 }

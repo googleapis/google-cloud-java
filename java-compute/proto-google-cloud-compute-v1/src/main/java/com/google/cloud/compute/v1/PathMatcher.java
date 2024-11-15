@@ -68,6 +68,64 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int DEFAULT_CUSTOM_ERROR_RESPONSE_POLICY_FIELD_NUMBER = 81266089;
+  private com.google.cloud.compute.v1.CustomErrorResponsePolicy defaultCustomErrorResponsePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   *
+   * @return Whether the defaultCustomErrorResponsePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultCustomErrorResponsePolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   *
+   * @return The defaultCustomErrorResponsePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomErrorResponsePolicy
+      getDefaultCustomErrorResponsePolicy() {
+    return defaultCustomErrorResponsePolicy_ == null
+        ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+        : defaultCustomErrorResponsePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder
+      getDefaultCustomErrorResponsePolicyOrBuilder() {
+    return defaultCustomErrorResponsePolicy_ == null
+        ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+        : defaultCustomErrorResponsePolicy_;
+  }
+
   public static final int DEFAULT_ROUTE_ACTION_FIELD_NUMBER = 378919466;
   private com.google.cloud.compute.v1.HttpRouteAction defaultRouteAction_;
   /**
@@ -84,7 +142,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultRouteAction() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -138,7 +196,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultService() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -203,7 +261,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultUrlRedirect() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -257,7 +315,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -321,7 +379,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasHeaderAction() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -373,7 +431,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -578,28 +636,31 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(81266089, getDefaultCustomErrorResponsePolicy());
     }
     for (int i = 0; i < pathRules_.size(); i++) {
       output.writeMessage(104439901, pathRules_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(328077352, getHeaderAction());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(359503338, getDefaultUrlRedirect());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 370242231, defaultService_);
     }
     for (int i = 0; i < routeRules_.size(); i++) {
       output.writeMessage(376292225, routeRules_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(378919466, getDefaultRouteAction());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     getUnknownFields().writeTo(output);
@@ -611,35 +672,40 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              81266089, getDefaultCustomErrorResponsePolicy());
     }
     for (int i = 0; i < pathRules_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(104439901, pathRules_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               359503338, getDefaultUrlRedirect());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(370242231, defaultService_);
     }
     for (int i = 0; i < routeRules_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(376292225, routeRules_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               378919466, getDefaultRouteAction());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -657,6 +723,12 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.PathMatcher other = (com.google.cloud.compute.v1.PathMatcher) obj;
 
+    if (hasDefaultCustomErrorResponsePolicy() != other.hasDefaultCustomErrorResponsePolicy())
+      return false;
+    if (hasDefaultCustomErrorResponsePolicy()) {
+      if (!getDefaultCustomErrorResponsePolicy()
+          .equals(other.getDefaultCustomErrorResponsePolicy())) return false;
+    }
     if (hasDefaultRouteAction() != other.hasDefaultRouteAction()) return false;
     if (hasDefaultRouteAction()) {
       if (!getDefaultRouteAction().equals(other.getDefaultRouteAction())) return false;
@@ -694,6 +766,10 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDefaultCustomErrorResponsePolicy()) {
+      hash = (37 * hash) + DEFAULT_CUSTOM_ERROR_RESPONSE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultCustomErrorResponsePolicy().hashCode();
+    }
     if (hasDefaultRouteAction()) {
       hash = (37 * hash) + DEFAULT_ROUTE_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultRouteAction().hashCode();
@@ -866,6 +942,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDefaultCustomErrorResponsePolicyFieldBuilder();
         getDefaultRouteActionFieldBuilder();
         getDefaultUrlRedirectFieldBuilder();
         getHeaderActionFieldBuilder();
@@ -878,6 +955,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      defaultCustomErrorResponsePolicy_ = null;
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        defaultCustomErrorResponsePolicyBuilder_.dispose();
+        defaultCustomErrorResponsePolicyBuilder_ = null;
+      }
       defaultRouteAction_ = null;
       if (defaultRouteActionBuilder_ != null) {
         defaultRouteActionBuilder_.dispose();
@@ -902,14 +984,14 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         pathRules_ = null;
         pathRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (routeRulesBuilder_ == null) {
         routeRules_ = java.util.Collections.emptyList();
       } else {
         routeRules_ = null;
         routeRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -947,18 +1029,18 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.PathMatcher result) {
       if (pathRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           pathRules_ = java.util.Collections.unmodifiableList(pathRules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.pathRules_ = pathRules_;
       } else {
         result.pathRules_ = pathRulesBuilder_.build();
       }
       if (routeRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           routeRules_ = java.util.Collections.unmodifiableList(routeRules_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.routeRules_ = routeRules_;
       } else {
@@ -970,35 +1052,42 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.defaultCustomErrorResponsePolicy_ =
+            defaultCustomErrorResponsePolicyBuilder_ == null
+                ? defaultCustomErrorResponsePolicy_
+                : defaultCustomErrorResponsePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.defaultRouteAction_ =
             defaultRouteActionBuilder_ == null
                 ? defaultRouteAction_
                 : defaultRouteActionBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.defaultService_ = defaultService_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultService_ = defaultService_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.defaultUrlRedirect_ =
             defaultUrlRedirectBuilder_ == null
                 ? defaultUrlRedirect_
                 : defaultUrlRedirectBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.description_ = description_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.headerAction_ =
-            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
+        result.description_ = description_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.name_ = name_;
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1048,12 +1137,15 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.PathMatcher other) {
       if (other == com.google.cloud.compute.v1.PathMatcher.getDefaultInstance()) return this;
+      if (other.hasDefaultCustomErrorResponsePolicy()) {
+        mergeDefaultCustomErrorResponsePolicy(other.getDefaultCustomErrorResponsePolicy());
+      }
       if (other.hasDefaultRouteAction()) {
         mergeDefaultRouteAction(other.getDefaultRouteAction());
       }
       if (other.hasDefaultService()) {
         defaultService_ = other.defaultService_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDefaultUrlRedirect()) {
@@ -1061,7 +1153,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasHeaderAction()) {
@@ -1069,14 +1161,14 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (pathRulesBuilder_ == null) {
         if (!other.pathRules_.isEmpty()) {
           if (pathRules_.isEmpty()) {
             pathRules_ = other.pathRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensurePathRulesIsMutable();
             pathRules_.addAll(other.pathRules_);
@@ -1089,7 +1181,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             pathRulesBuilder_.dispose();
             pathRulesBuilder_ = null;
             pathRules_ = other.pathRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             pathRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPathRulesFieldBuilder()
@@ -1103,7 +1195,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         if (!other.routeRules_.isEmpty()) {
           if (routeRules_.isEmpty()) {
             routeRules_ = other.routeRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureRouteRulesIsMutable();
             routeRules_.addAll(other.routeRules_);
@@ -1116,7 +1208,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             routeRulesBuilder_.dispose();
             routeRulesBuilder_ = null;
             routeRules_ = other.routeRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             routeRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRouteRulesFieldBuilder()
@@ -1155,9 +1247,17 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26989658
+            case 650128714:
+              {
+                input.readMessage(
+                    getDefaultCustomErrorResponsePolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 650128714
             case 835519210:
               {
                 com.google.cloud.compute.v1.PathRule m =
@@ -1174,20 +1274,20 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             case -1670348478:
               {
                 input.readMessage(getHeaderActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -1670348478
             case -1418940590:
               {
                 input.readMessage(
                     getDefaultUrlRedirectFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1418940590
             case -1333029446:
               {
                 defaultService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1333029446
             case -1284629494:
@@ -1207,13 +1307,13 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getDefaultRouteActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1263611566
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -911466526
             default:
@@ -1235,6 +1335,216 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.CustomErrorResponsePolicy defaultCustomErrorResponsePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>
+        defaultCustomErrorResponsePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     *
+     * @return Whether the defaultCustomErrorResponsePolicy field is set.
+     */
+    public boolean hasDefaultCustomErrorResponsePolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     *
+     * @return The defaultCustomErrorResponsePolicy.
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicy
+        getDefaultCustomErrorResponsePolicy() {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        return defaultCustomErrorResponsePolicy_ == null
+            ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+            : defaultCustomErrorResponsePolicy_;
+      } else {
+        return defaultCustomErrorResponsePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder setDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy value) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultCustomErrorResponsePolicy_ = value;
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder setDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder builderForValue) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        defaultCustomErrorResponsePolicy_ = builderForValue.build();
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder mergeDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy value) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && defaultCustomErrorResponsePolicy_ != null
+            && defaultCustomErrorResponsePolicy_
+                != com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()) {
+          getDefaultCustomErrorResponsePolicyBuilder().mergeFrom(value);
+        } else {
+          defaultCustomErrorResponsePolicy_ = value;
+        }
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.mergeFrom(value);
+      }
+      if (defaultCustomErrorResponsePolicy_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder clearDefaultCustomErrorResponsePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      defaultCustomErrorResponsePolicy_ = null;
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        defaultCustomErrorResponsePolicyBuilder_.dispose();
+        defaultCustomErrorResponsePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder
+        getDefaultCustomErrorResponsePolicyBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getDefaultCustomErrorResponsePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder
+        getDefaultCustomErrorResponsePolicyOrBuilder() {
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        return defaultCustomErrorResponsePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultCustomErrorResponsePolicy_ == null
+            ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+            : defaultCustomErrorResponsePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>
+        getDefaultCustomErrorResponsePolicyFieldBuilder() {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        defaultCustomErrorResponsePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+                com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+                com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>(
+                getDefaultCustomErrorResponsePolicy(), getParentForChildren(), isClean());
+        defaultCustomErrorResponsePolicy_ = null;
+      }
+      return defaultCustomErrorResponsePolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.HttpRouteAction defaultRouteAction_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -1254,7 +1564,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultRouteAction field is set.
      */
     public boolean hasDefaultRouteAction() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1296,7 +1606,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1317,7 +1627,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1333,7 +1643,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && defaultRouteAction_ != null
             && defaultRouteAction_
                 != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
@@ -1345,7 +1655,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         defaultRouteActionBuilder_.mergeFrom(value);
       }
       if (defaultRouteAction_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -1361,7 +1671,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultRouteAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       defaultRouteAction_ = null;
       if (defaultRouteActionBuilder_ != null) {
         defaultRouteActionBuilder_.dispose();
@@ -1381,7 +1691,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getDefaultRouteActionBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDefaultRouteActionFieldBuilder().getBuilder();
     }
@@ -1444,7 +1754,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultService field is set.
      */
     public boolean hasDefaultService() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1507,7 +1817,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       defaultService_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1524,7 +1834,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDefaultService() {
       defaultService_ = getDefaultInstance().getDefaultService();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1546,7 +1856,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       defaultService_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1570,7 +1880,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultUrlRedirect field is set.
      */
     public boolean hasDefaultUrlRedirect() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1612,7 +1922,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1633,7 +1943,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1649,7 +1959,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && defaultUrlRedirect_ != null
             && defaultUrlRedirect_
                 != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
@@ -1661,7 +1971,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         defaultUrlRedirectBuilder_.mergeFrom(value);
       }
       if (defaultUrlRedirect_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1677,7 +1987,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultUrlRedirect() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       defaultUrlRedirect_ = null;
       if (defaultUrlRedirectBuilder_ != null) {
         defaultUrlRedirectBuilder_.dispose();
@@ -1697,7 +2007,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getDefaultUrlRedirectBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDefaultUrlRedirectFieldBuilder().getBuilder();
     }
@@ -1761,7 +2071,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1824,7 +2134,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1841,7 +2151,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1863,7 +2173,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1886,7 +2196,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the headerAction field is set.
      */
     public boolean hasHeaderAction() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1926,7 +2236,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1946,7 +2256,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1961,7 +2271,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && headerAction_ != null
             && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
           getHeaderActionBuilder().mergeFrom(value);
@@ -1972,7 +2282,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         headerActionBuilder_.mergeFrom(value);
       }
       if (headerAction_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1987,7 +2297,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       headerAction_ = null;
       if (headerActionBuilder_ != null) {
         headerActionBuilder_.dispose();
@@ -2006,7 +2316,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderAction.Builder getHeaderActionBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getHeaderActionFieldBuilder().getBuilder();
     }
@@ -2067,7 +2377,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2130,7 +2440,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2147,7 +2457,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2169,7 +2479,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2178,9 +2488,9 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePathRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         pathRules_ = new java.util.ArrayList<com.google.cloud.compute.v1.PathRule>(pathRules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2395,7 +2705,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPathRules() {
       if (pathRulesBuilder_ == null) {
         pathRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         pathRulesBuilder_.clear();
@@ -2516,7 +2826,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.PathRule,
                 com.google.cloud.compute.v1.PathRule.Builder,
                 com.google.cloud.compute.v1.PathRuleOrBuilder>(
-                pathRules_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                pathRules_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         pathRules_ = null;
       }
       return pathRulesBuilder_;
@@ -2526,10 +2836,10 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRouteRulesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         routeRules_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.HttpRouteRule>(routeRules_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2745,7 +3055,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRouteRules() {
       if (routeRulesBuilder_ == null) {
         routeRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         routeRulesBuilder_.clear();
@@ -2867,7 +3177,7 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.HttpRouteRule,
                 com.google.cloud.compute.v1.HttpRouteRule.Builder,
                 com.google.cloud.compute.v1.HttpRouteRuleOrBuilder>(
-                routeRules_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                routeRules_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         routeRules_ = null;
       }
       return routeRulesBuilder_;

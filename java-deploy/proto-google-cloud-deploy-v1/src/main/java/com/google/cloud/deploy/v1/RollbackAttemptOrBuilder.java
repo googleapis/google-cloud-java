@@ -127,4 +127,19 @@ public interface RollbackAttemptOrBuilder
    * @return The bytes for stateDesc.
    */
   com.google.protobuf.ByteString getStateDescBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If active rollout exists on the target, abort this rollback.
+   * </pre>
+   *
+   * <code>
+   * bool disable_rollback_if_rollout_pending = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The disableRollbackIfRolloutPending.
+   */
+  boolean getDisableRollbackIfRolloutPending();
 }

@@ -175,4 +175,33 @@ public interface RiskAnalysisOrBuilder
    * @return The bytes of the extendedVerdictReasons at the given index.
    */
   com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for challenge.
+   */
+  int getChallengeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The challenge.
+   */
+  com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge getChallenge();
 }

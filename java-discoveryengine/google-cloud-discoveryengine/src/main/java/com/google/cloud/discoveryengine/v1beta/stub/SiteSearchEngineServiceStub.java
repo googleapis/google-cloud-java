@@ -29,8 +29,12 @@ import com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesMetadata;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesResponse;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapMetadata;
+import com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchMetadata;
@@ -41,6 +45,8 @@ import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest;
 import com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchResponse;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest;
 import com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusResponse;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest;
+import com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse;
 import com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest;
@@ -49,6 +55,7 @@ import com.google.cloud.discoveryengine.v1beta.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1beta.RecrawlUrisResponse;
 import com.google.cloud.discoveryengine.v1beta.SiteSearchEngine;
+import com.google.cloud.discoveryengine.v1beta.Sitemap;
 import com.google.cloud.discoveryengine.v1beta.TargetSite;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest;
@@ -130,6 +137,28 @@ public abstract class SiteSearchEngineServiceStub implements BackgroundResource 
 
   public UnaryCallable<ListTargetSitesRequest, ListTargetSitesResponse> listTargetSitesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetSitesCallable()");
+  }
+
+  public OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSitemapOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSitemapCallable()");
+  }
+
+  public OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSitemapOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSitemapCallable()");
+  }
+
+  public UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchSitemapsCallable()");
   }
 
   public OperationCallable<

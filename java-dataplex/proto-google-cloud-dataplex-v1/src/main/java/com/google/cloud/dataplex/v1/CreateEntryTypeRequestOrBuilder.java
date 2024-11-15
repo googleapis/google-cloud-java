@@ -30,7 +30,7 @@ public interface CreateEntryTypeRequestOrBuilder
    * <pre>
    * Required. The resource name of the EntryType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface CreateEntryTypeRequestOrBuilder
    * <pre>
    * Required. The resource name of the EntryType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface CreateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public interface CreateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -114,7 +114,7 @@ public interface CreateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -127,8 +127,8 @@ public interface CreateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

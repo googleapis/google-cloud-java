@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Message for getting a EffectiveSecurityHealthAnalyticsCustomModule
+ * Request message for
+ * [SecurityCenterManagement.GetEffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetEffectiveSecurityHealthAnalyticsCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -79,9 +80,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
    * Required. The full resource name of the custom module, specified in one of
    * the following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -109,9 +110,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
    * Required. The full resource name of the custom module, specified in one of
    * the following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -324,7 +325,8 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Message for getting a EffectiveSecurityHealthAnalyticsCustomModule
+   * Request message for
+   * [SecurityCenterManagement.GetEffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetEffectiveSecurityHealthAnalyticsCustomModule].
    * </pre>
    *
    * Protobuf type {@code
@@ -542,9 +544,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
      * Required. The full resource name of the custom module, specified in one of
      * the following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -571,9 +573,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
      * Required. The full resource name of the custom module, specified in one of
      * the following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -600,9 +602,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
      * Required. The full resource name of the custom module, specified in one of
      * the following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -628,9 +630,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
      * Required. The full resource name of the custom module, specified in one of
      * the following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -652,9 +654,9 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
      * Required. The full resource name of the custom module, specified in one of
      * the following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>

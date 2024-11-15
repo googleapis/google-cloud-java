@@ -1,6 +1,6 @@
-gapic_generator_version: 2.49.0
-googleapis_commitish: 48d30c4966ef9ea31b897e13f75d8f94070cc8e9
-libraries_bom_version: 26.49.0
+gapic_generator_version: 2.50.0
+googleapis_commitish: 14e5759e6036ea42178a7e9cf2490d72cb6813a2
+libraries_bom_version: 26.50.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -1054,6 +1054,7 @@ libraries:
   - proto_path: google/cloud/gkehub/v1alpha
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
+  - proto_path: google/cloud/gkehub/policycontroller/v1beta
   - proto_path: google/cloud/gkehub/servicemesh/v1beta
 
 - api_shortname: containeranalysis

@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Message for getting a EventThreatDetectionCustomModule
+ * Request message for
+ * [SecurityCenterManagement.GetEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetEventThreatDetectionCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -76,13 +77,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -107,13 +107,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -321,7 +320,8 @@ public final class GetEventThreatDetectionCustomModuleRequest
    *
    *
    * <pre>
-   * Message for getting a EventThreatDetectionCustomModule
+   * Request message for
+   * [SecurityCenterManagement.GetEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetEventThreatDetectionCustomModule].
    * </pre>
    *
    * Protobuf type {@code
@@ -527,13 +527,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The resource name of the ETD custom module.
+     * Required. The resource name of the Event Threat Detection custom module, in
+     * one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -557,13 +556,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The resource name of the ETD custom module.
+     * Required. The resource name of the Event Threat Detection custom module, in
+     * one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -587,13 +585,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The resource name of the ETD custom module.
+     * Required. The resource name of the Event Threat Detection custom module, in
+     * one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -616,13 +613,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The resource name of the ETD custom module.
+     * Required. The resource name of the Event Threat Detection custom module, in
+     * one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>
@@ -641,13 +637,12 @@ public final class GetEventThreatDetectionCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The resource name of the ETD custom module.
+     * Required. The resource name of the Event Threat Detection custom module, in
+     * one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>

@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
+ * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-b is located in the us-east1 region. For more information, read Regions and Zones.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Zone}
@@ -1150,7 +1150,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
+   * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-b is located in the us-east1 region. For more information, read Regions and Zones.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Zone}

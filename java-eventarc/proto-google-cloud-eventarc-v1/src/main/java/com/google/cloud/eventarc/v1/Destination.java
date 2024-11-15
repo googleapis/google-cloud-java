@@ -61,6 +61,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.Destination.Builder.class);
   }
 
+  private int bitField0_;
   private int descriptorCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -74,6 +75,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     CLOUD_FUNCTION(2),
     GKE(3),
     WORKFLOW(4),
+    HTTP_ENDPOINT(5),
     DESCRIPTOR_NOT_SET(0);
     private final int value;
 
@@ -100,6 +102,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
           return GKE;
         case 4:
           return WORKFLOW;
+        case 5:
+          return HTTP_ENDPOINT;
         case 0:
           return DESCRIPTOR_NOT_SET;
         default:
@@ -175,8 +179,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -190,8 +199,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -218,8 +232,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -376,6 +395,119 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int HTTP_ENDPOINT_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   *
+   * @return Whether the httpEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpEndpoint() {
+    return descriptorCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   *
+   * @return The httpEndpoint.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.HttpEndpoint getHttpEndpoint() {
+    if (descriptorCase_ == 5) {
+      return (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_;
+    }
+    return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.HttpEndpointOrBuilder getHttpEndpointOrBuilder() {
+    if (descriptorCase_ == 5) {
+      return (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_;
+    }
+    return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.eventarc.v1.NetworkConfig networkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.NetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return networkConfig_ == null
+        ? com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -402,6 +534,12 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (descriptorCase_ == 4) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, descriptor_);
     }
+    if (descriptorCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getNetworkConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -427,6 +565,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (descriptorCase_ == 4) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, descriptor_);
     }
+    if (descriptorCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNetworkConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -442,6 +588,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.eventarc.v1.Destination other = (com.google.cloud.eventarc.v1.Destination) obj;
 
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
+    if (hasNetworkConfig()) {
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
+    }
     if (!getDescriptorCase().equals(other.getDescriptorCase())) return false;
     switch (descriptorCase_) {
       case 1:
@@ -455,6 +605,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         break;
       case 4:
         if (!getWorkflow().equals(other.getWorkflow())) return false;
+        break;
+      case 5:
+        if (!getHttpEndpoint().equals(other.getHttpEndpoint())) return false;
         break;
       case 0:
       default:
@@ -470,6 +623,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
     switch (descriptorCase_) {
       case 1:
         hash = (37 * hash) + CLOUD_RUN_FIELD_NUMBER;
@@ -486,6 +643,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
         hash = (53 * hash) + getWorkflow().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + HTTP_ENDPOINT_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpEndpoint().hashCode();
         break;
       case 0:
       default:
@@ -619,10 +780,19 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.eventarc.v1.Destination.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getNetworkConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -634,6 +804,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       if (gkeBuilder_ != null) {
         gkeBuilder_.clear();
+      }
+      if (httpEndpointBuilder_ != null) {
+        httpEndpointBuilder_.clear();
+      }
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
       }
       descriptorCase_ = 0;
       descriptor_ = null;
@@ -674,6 +852,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.eventarc.v1.Destination result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.eventarc.v1.Destination result) {
@@ -684,6 +869,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       if (descriptorCase_ == 3 && gkeBuilder_ != null) {
         result.descriptor_ = gkeBuilder_.build();
+      }
+      if (descriptorCase_ == 5 && httpEndpointBuilder_ != null) {
+        result.descriptor_ = httpEndpointBuilder_.build();
       }
     }
 
@@ -732,6 +920,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.eventarc.v1.Destination other) {
       if (other == com.google.cloud.eventarc.v1.Destination.getDefaultInstance()) return this;
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
+      }
       switch (other.getDescriptorCase()) {
         case CLOUD_RUN:
           {
@@ -755,6 +946,11 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             descriptorCase_ = 4;
             descriptor_ = other.descriptor_;
             onChanged();
+            break;
+          }
+        case HTTP_ENDPOINT:
+          {
+            mergeHttpEndpoint(other.getHttpEndpoint());
             break;
           }
         case DESCRIPTOR_NOT_SET:
@@ -814,6 +1010,18 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
                 descriptor_ = s;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getHttpEndpointFieldBuilder().getBuilder(), extensionRegistry);
+                descriptorCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1068,8 +1276,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1084,8 +1297,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1113,8 +1331,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1142,8 +1365,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1164,8 +1392,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1184,8 +1417,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * The Cloud Function resource name. Cloud Functions V1 and V2 are
+     * supported.
      * Format: `projects/{project}/locations/{location}/functions/{function}`
+     *
+     * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+     * only supported via the Cloud Functions product. An error will be returned
+     * if the user sets this value.
      * </pre>
      *
      * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1573,6 +1811,437 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptor_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.HttpEndpoint,
+            com.google.cloud.eventarc.v1.HttpEndpoint.Builder,
+            com.google.cloud.eventarc.v1.HttpEndpointOrBuilder>
+        httpEndpointBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     *
+     * @return Whether the httpEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpEndpoint() {
+      return descriptorCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     *
+     * @return The httpEndpoint.
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.HttpEndpoint getHttpEndpoint() {
+      if (httpEndpointBuilder_ == null) {
+        if (descriptorCase_ == 5) {
+          return (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_;
+        }
+        return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+      } else {
+        if (descriptorCase_ == 5) {
+          return httpEndpointBuilder_.getMessage();
+        }
+        return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    public Builder setHttpEndpoint(com.google.cloud.eventarc.v1.HttpEndpoint value) {
+      if (httpEndpointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        descriptor_ = value;
+        onChanged();
+      } else {
+        httpEndpointBuilder_.setMessage(value);
+      }
+      descriptorCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    public Builder setHttpEndpoint(
+        com.google.cloud.eventarc.v1.HttpEndpoint.Builder builderForValue) {
+      if (httpEndpointBuilder_ == null) {
+        descriptor_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpEndpointBuilder_.setMessage(builderForValue.build());
+      }
+      descriptorCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    public Builder mergeHttpEndpoint(com.google.cloud.eventarc.v1.HttpEndpoint value) {
+      if (httpEndpointBuilder_ == null) {
+        if (descriptorCase_ == 5
+            && descriptor_ != com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance()) {
+          descriptor_ =
+              com.google.cloud.eventarc.v1.HttpEndpoint.newBuilder(
+                      (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          descriptor_ = value;
+        }
+        onChanged();
+      } else {
+        if (descriptorCase_ == 5) {
+          httpEndpointBuilder_.mergeFrom(value);
+        } else {
+          httpEndpointBuilder_.setMessage(value);
+        }
+      }
+      descriptorCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    public Builder clearHttpEndpoint() {
+      if (httpEndpointBuilder_ == null) {
+        if (descriptorCase_ == 5) {
+          descriptorCase_ = 0;
+          descriptor_ = null;
+          onChanged();
+        }
+      } else {
+        if (descriptorCase_ == 5) {
+          descriptorCase_ = 0;
+          descriptor_ = null;
+        }
+        httpEndpointBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    public com.google.cloud.eventarc.v1.HttpEndpoint.Builder getHttpEndpointBuilder() {
+      return getHttpEndpointFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.HttpEndpointOrBuilder getHttpEndpointOrBuilder() {
+      if ((descriptorCase_ == 5) && (httpEndpointBuilder_ != null)) {
+        return httpEndpointBuilder_.getMessageOrBuilder();
+      } else {
+        if (descriptorCase_ == 5) {
+          return (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_;
+        }
+        return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HTTP endpoint destination described by an URI.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.HttpEndpoint,
+            com.google.cloud.eventarc.v1.HttpEndpoint.Builder,
+            com.google.cloud.eventarc.v1.HttpEndpointOrBuilder>
+        getHttpEndpointFieldBuilder() {
+      if (httpEndpointBuilder_ == null) {
+        if (!(descriptorCase_ == 5)) {
+          descriptor_ = com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
+        }
+        httpEndpointBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.HttpEndpoint,
+                com.google.cloud.eventarc.v1.HttpEndpoint.Builder,
+                com.google.cloud.eventarc.v1.HttpEndpointOrBuilder>(
+                (com.google.cloud.eventarc.v1.HttpEndpoint) descriptor_,
+                getParentForChildren(),
+                isClean());
+        descriptor_ = null;
+      }
+      descriptorCase_ = 5;
+      onChanged();
+      return httpEndpointBuilder_;
+    }
+
+    private com.google.cloud.eventarc.v1.NetworkConfig networkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.NetworkConfig,
+            com.google.cloud.eventarc.v1.NetworkConfig.Builder,
+            com.google.cloud.eventarc.v1.NetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the networkConfig field is set.
+     */
+    public boolean hasNetworkConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The networkConfig.
+     */
+    public com.google.cloud.eventarc.v1.NetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(com.google.cloud.eventarc.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(
+        com.google.cloud.eventarc.v1.NetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNetworkConfig(com.google.cloud.eventarc.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && networkConfig_ != null
+            && networkConfig_ != com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()) {
+          getNetworkConfigBuilder().mergeFrom(value);
+        } else {
+          networkConfig_ = value;
+        }
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+      if (networkConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.NetworkConfig.Builder getNetworkConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network config is used to configure how Eventarc resolves and
+     * connect to a destination.
+     * This should only be used with HttpEndpoint destination type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.NetworkConfig,
+            com.google.cloud.eventarc.v1.NetworkConfig.Builder,
+            com.google.cloud.eventarc.v1.NetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.NetworkConfig,
+                com.google.cloud.eventarc.v1.NetworkConfig.Builder,
+                com.google.cloud.eventarc.v1.NetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
     }
 
     @java.lang.Override

@@ -22,10 +22,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The primary resources offered by this service are EntryGroups, EntryTypes,
- * AspectTypes, Entry and Aspect which collectively allow a data administrator
- * to organize, manage, secure and catalog data across their organization
- * located across cloud projects in a variety of storage systems including Cloud
- * Storage and BigQuery.
+ * AspectTypes, and Entries. They collectively let data administrators organize,
+ * manage, secure, and catalog data located across cloud projects in their
+ * organization in a variety of storage systems, including Cloud Storage and
+ * BigQuery.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1005,6 +1005,185 @@ public final class CatalogServiceGrpc {
     return getSearchEntriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+      getCreateMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.CreateMetadataJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+      getCreateMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateMetadataJobRequest, com.google.longrunning.Operation>
+        getCreateMetadataJobMethod;
+    if ((getCreateMetadataJobMethod = CatalogServiceGrpc.getCreateMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCreateMetadataJobMethod = CatalogServiceGrpc.getCreateMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getCreateMetadataJobMethod =
+              getCreateMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateMetadataJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CreateMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMetadataJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+          com.google.cloud.dataplex.v1.MetadataJob>
+      getGetMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.GetMetadataJobRequest.class,
+      responseType = com.google.cloud.dataplex.v1.MetadataJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+          com.google.cloud.dataplex.v1.MetadataJob>
+      getGetMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+            com.google.cloud.dataplex.v1.MetadataJob>
+        getGetMetadataJobMethod;
+    if ((getGetMetadataJobMethod = CatalogServiceGrpc.getGetMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetMetadataJobMethod = CatalogServiceGrpc.getGetMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getGetMetadataJobMethod =
+              getGetMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+                          com.google.cloud.dataplex.v1.MetadataJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GetMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.MetadataJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("GetMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetadataJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+      getListMetadataJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMetadataJobs",
+      requestType = com.google.cloud.dataplex.v1.ListMetadataJobsRequest.class,
+      responseType = com.google.cloud.dataplex.v1.ListMetadataJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+      getListMetadataJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+            com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+        getListMetadataJobsMethod;
+    if ((getListMetadataJobsMethod = CatalogServiceGrpc.getListMetadataJobsMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getListMetadataJobsMethod = CatalogServiceGrpc.getListMetadataJobsMethod) == null) {
+          CatalogServiceGrpc.getListMetadataJobsMethod =
+              getListMetadataJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+                          com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMetadataJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ListMetadataJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("ListMetadataJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListMetadataJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+      getCancelMetadataJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelMetadataJob",
+      requestType = com.google.cloud.dataplex.v1.CancelMetadataJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+      getCancelMetadataJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CancelMetadataJobRequest, com.google.protobuf.Empty>
+        getCancelMetadataJobMethod;
+    if ((getCancelMetadataJobMethod = CatalogServiceGrpc.getCancelMetadataJobMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCancelMetadataJobMethod = CatalogServiceGrpc.getCancelMetadataJobMethod) == null) {
+          CatalogServiceGrpc.getCancelMetadataJobMethod =
+              getCancelMetadataJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CancelMetadataJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelMetadataJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CancelMetadataJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CancelMetadataJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelMetadataJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CatalogServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CatalogServiceStub> factory =
@@ -1051,10 +1230,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, and Entries. They collectively let data administrators organize,
+   * manage, secure, and catalog data located across cloud projects in their
+   * organization in a variety of storage systems, including Cloud Storage and
+   * BigQuery.
    * </pre>
    */
   public interface AsyncService {
@@ -1063,7 +1242,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     default void createEntryType(
@@ -1077,7 +1256,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     default void updateEntryType(
@@ -1091,7 +1270,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     default void deleteEntryType(
@@ -1120,7 +1299,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     default void getEntryType(
@@ -1134,7 +1313,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     default void createAspectType(
@@ -1148,7 +1327,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     default void updateAspectType(
@@ -1162,7 +1341,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     default void deleteAspectType(
@@ -1191,7 +1370,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     default void getAspectType(
@@ -1205,7 +1384,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     default void createEntryGroup(
@@ -1219,7 +1398,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     default void updateEntryGroup(
@@ -1233,7 +1412,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     default void deleteEntryGroup(
@@ -1262,7 +1441,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     default void getEntryGroup(
@@ -1318,7 +1497,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     default void listEntries(
@@ -1333,7 +1512,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     default void getEntry(
@@ -1346,7 +1529,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up a single Entry by name using the permission on the source system.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     default void lookupEntry(
@@ -1360,7 +1547,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     default void searchEntries(
@@ -1370,6 +1557,68 @@ public final class CatalogServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchEntriesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import Dataplex
+     * Catalog entries and aspects from a third-party system into Dataplex.
+     * </pre>
+     */
+    default void createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMetadataJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    default void getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMetadataJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    default void listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMetadataJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    default void cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelMetadataJobMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1377,10 +1626,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, and Entries. They collectively let data administrators organize,
+   * manage, secure, and catalog data located across cloud projects in their
+   * organization in a variety of storage systems, including Cloud Storage and
+   * BigQuery.
    * </pre>
    */
   public abstract static class CatalogServiceImplBase
@@ -1397,10 +1646,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, and Entries. They collectively let data administrators organize,
+   * manage, secure, and catalog data located across cloud projects in their
+   * organization in a variety of storage systems, including Cloud Storage and
+   * BigQuery.
    * </pre>
    */
   public static final class CatalogServiceStub
@@ -1418,7 +1667,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public void createEntryType(
@@ -1434,7 +1683,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public void updateEntryType(
@@ -1450,7 +1699,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public void deleteEntryType(
@@ -1483,7 +1732,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public void getEntryType(
@@ -1499,7 +1748,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public void createAspectType(
@@ -1515,7 +1764,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public void updateAspectType(
@@ -1531,7 +1780,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public void deleteAspectType(
@@ -1564,7 +1813,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public void getAspectType(
@@ -1580,7 +1829,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public void createEntryGroup(
@@ -1596,7 +1845,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public void updateEntryGroup(
@@ -1612,7 +1861,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public void deleteEntryGroup(
@@ -1645,7 +1894,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public void getEntryGroup(
@@ -1709,7 +1958,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public void listEntries(
@@ -1726,7 +1975,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public void getEntry(
@@ -1740,7 +1993,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up a single Entry by name using the permission on the source system.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public void lookupEntry(
@@ -1756,7 +2013,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public void searchEntries(
@@ -1768,6 +2025,76 @@ public final class CatalogServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import Dataplex
+     * Catalog entries and aspects from a third-party system into Dataplex.
+     * </pre>
+     */
+    public void createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public void getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public void listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMetadataJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public void cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelMetadataJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1775,10 +2102,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, and Entries. They collectively let data administrators organize,
+   * manage, secure, and catalog data located across cloud projects in their
+   * organization in a variety of storage systems, including Cloud Storage and
+   * BigQuery.
    * </pre>
    */
   public static final class CatalogServiceBlockingStub
@@ -1797,7 +2124,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation createEntryType(
@@ -1810,7 +2137,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryType(
@@ -1823,7 +2150,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryType(
@@ -1849,7 +2176,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryType getEntryType(
@@ -1862,7 +2189,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation createAspectType(
@@ -1875,7 +2202,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation updateAspectType(
@@ -1888,7 +2215,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public com.google.longrunning.Operation deleteAspectType(
@@ -1914,7 +2241,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.AspectType getAspectType(
@@ -1927,7 +2254,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation createEntryGroup(
@@ -1940,7 +2267,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryGroup(
@@ -1953,7 +2280,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryGroup(
@@ -1979,7 +2306,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryGroup getEntryGroup(
@@ -2031,7 +2358,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
@@ -2044,7 +2371,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -2057,7 +2388,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up a single Entry by name using the permission on the source system.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -2070,13 +2405,70 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.SearchEntriesResponse searchEntries(
         com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import Dataplex
+     * Catalog entries and aspects from a third-party system into Dataplex.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataJob(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.MetadataJob getMetadataJob(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListMetadataJobsResponse listMetadataJobs(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetadataJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelMetadataJob(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -2085,10 +2477,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, Entry and Aspect which collectively allow a data administrator
-   * to organize, manage, secure and catalog data across their organization
-   * located across cloud projects in a variety of storage systems including Cloud
-   * Storage and BigQuery.
+   * AspectTypes, and Entries. They collectively let data administrators organize,
+   * manage, secure, and catalog data located across cloud projects in their
+   * organization in a variety of storage systems, including Cloud Storage and
+   * BigQuery.
    * </pre>
    */
   public static final class CatalogServiceFutureStub
@@ -2107,7 +2499,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryType
+     * Creates an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2120,7 +2512,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryType resource.
+     * Updates an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2133,7 +2525,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryType resource.
+     * Deletes an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2160,7 +2552,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryType resource.
+     * Gets an EntryType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2174,7 +2566,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an AspectType
+     * Creates an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2187,7 +2579,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a AspectType resource.
+     * Updates an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2200,7 +2592,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a AspectType resource.
+     * Deletes an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2227,7 +2619,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a AspectType resource.
+     * Gets an AspectType.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2241,7 +2633,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates an EntryGroup
+     * Creates an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2254,7 +2646,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Updates a EntryGroup resource.
+     * Updates an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2267,7 +2659,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a EntryGroup resource.
+     * Deletes an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2294,7 +2686,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a EntryGroup resource.
+     * Gets an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2347,7 +2739,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Lists entries within an entry group.
+     * Lists Entries within an EntryGroup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2361,7 +2753,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single entry.
+     * Gets an Entry.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -2374,7 +2770,11 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single entry.
+     * Looks up a single Entry by name using the permission on the source system.
+     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
+     * changing. For more information, see [Changes to BigQuery metadata stored in
+     * Dataplex
+     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -2387,7 +2787,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Searches for entries matching given query and scope.
+     * Searches for Entries matching the given query and scope.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2395,6 +2795,65 @@ public final class CatalogServiceGrpc {
         searchEntries(com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchEntriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metadata job. For example, use a metadata job to import Dataplex
+     * Catalog entries and aspects from a third-party system into Dataplex.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMetadataJob(com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMetadataJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a metadata job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.MetadataJob>
+        getMetadataJob(com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMetadataJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists metadata jobs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.ListMetadataJobsResponse>
+        listMetadataJobs(com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMetadataJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a metadata job.
+     * If you cancel a metadata import job that is in progress, the changes in the
+     * job might be partially applied. We recommend that you reset the state of
+     * the entry groups in your project by running another metadata job that
+     * reverts the changes from the canceled job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        cancelMetadataJob(com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelMetadataJobMethod(), getCallOptions()), request);
     }
   }
 
@@ -2420,6 +2879,10 @@ public final class CatalogServiceGrpc {
   private static final int METHODID_GET_ENTRY = 19;
   private static final int METHODID_LOOKUP_ENTRY = 20;
   private static final int METHODID_SEARCH_ENTRIES = 21;
+  private static final int METHODID_CREATE_METADATA_JOB = 22;
+  private static final int METHODID_GET_METADATA_JOB = 23;
+  private static final int METHODID_LIST_METADATA_JOBS = 24;
+  private static final int METHODID_CANCEL_METADATA_JOB = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2555,6 +3018,28 @@ public final class CatalogServiceGrpc {
               (com.google.cloud.dataplex.v1.SearchEntriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.SearchEntriesResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_METADATA_JOB:
+          serviceImpl.createMetadataJob(
+              (com.google.cloud.dataplex.v1.CreateMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_METADATA_JOB:
+          serviceImpl.getMetadataJob(
+              (com.google.cloud.dataplex.v1.GetMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.MetadataJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_METADATA_JOBS:
+          serviceImpl.listMetadataJobs(
+              (com.google.cloud.dataplex.v1.ListMetadataJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListMetadataJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_METADATA_JOB:
+          serviceImpl.cancelMetadataJob(
+              (com.google.cloud.dataplex.v1.CancelMetadataJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2711,6 +3196,31 @@ public final class CatalogServiceGrpc {
                     com.google.cloud.dataplex.v1.SearchEntriesRequest,
                     com.google.cloud.dataplex.v1.SearchEntriesResponse>(
                     service, METHODID_SEARCH_ENTRIES)))
+        .addMethod(
+            getCreateMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateMetadataJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_METADATA_JOB)))
+        .addMethod(
+            getGetMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetMetadataJobRequest,
+                    com.google.cloud.dataplex.v1.MetadataJob>(service, METHODID_GET_METADATA_JOB)))
+        .addMethod(
+            getListMetadataJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListMetadataJobsRequest,
+                    com.google.cloud.dataplex.v1.ListMetadataJobsResponse>(
+                    service, METHODID_LIST_METADATA_JOBS)))
+        .addMethod(
+            getCancelMetadataJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CancelMetadataJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_METADATA_JOB)))
         .build();
   }
 
@@ -2784,6 +3294,10 @@ public final class CatalogServiceGrpc {
                       .addMethod(getGetEntryMethod())
                       .addMethod(getLookupEntryMethod())
                       .addMethod(getSearchEntriesMethod())
+                      .addMethod(getCreateMetadataJobMethod())
+                      .addMethod(getGetMetadataJobMethod())
+                      .addMethod(getListMetadataJobsMethod())
+                      .addMethod(getCancelMetadataJobMethod())
                       .build();
         }
       }

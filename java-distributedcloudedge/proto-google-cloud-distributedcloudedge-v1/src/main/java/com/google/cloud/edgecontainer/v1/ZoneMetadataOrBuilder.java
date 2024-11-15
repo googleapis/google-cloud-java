@@ -176,4 +176,39 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   int getRackTypesValueOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return Whether the configData field is set.
+   */
+  boolean hasConfigData();
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return The configData.
+   */
+  com.google.cloud.edgecontainer.v1.ConfigData getConfigData();
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   */
+  com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder getConfigDataOrBuilder();
 }

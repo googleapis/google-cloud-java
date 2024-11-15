@@ -105,13 +105,13 @@ public class HttpJsonGatewayControlStub extends GatewayControlStub {
   public static final HttpJsonGatewayControlStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonGatewayControlStub(
-        GatewayControlStubSettings.newHttpJsonBuilder().build(), clientContext);
+        GatewayControlStubSettings.newBuilder().build(), clientContext);
   }
 
   public static final HttpJsonGatewayControlStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonGatewayControlStub(
-        GatewayControlStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        GatewayControlStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**

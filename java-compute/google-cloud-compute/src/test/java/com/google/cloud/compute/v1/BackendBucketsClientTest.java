@@ -316,6 +316,7 @@ public class BackendBucketsClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setSelfLink("selfLink1191800166")
+            .addAllUsedBy(new ArrayList<BackendBucketUsedBy>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -365,7 +366,6 @@ public class BackendBucketsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -694,7 +694,6 @@ public class BackendBucketsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

@@ -914,7 +914,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=127
+   *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=128
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -1199,6 +1199,60 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLIENT_CONNECTION_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig clientConnectionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientConnectionConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig getClientConnectionConfig() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 27;
   private boolean satisfiesPzs_ = false;
   /**
@@ -1292,6 +1346,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(21, getPrivateServiceConnectConfig());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(23, getClientConnectionConfig());
+    }
     if (dedicatedEndpointEnabled_ != false) {
       output.writeBool(24, dedicatedEndpointEnabled_);
     }
@@ -1379,6 +1436,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, getPrivateServiceConnectConfig());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getClientConnectionConfig());
+    }
     if (dedicatedEndpointEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, dedicatedEndpointEnabled_);
     }
@@ -1443,6 +1504,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (getDedicatedEndpointEnabled() != other.getDedicatedEndpointEnabled()) return false;
     if (!getDedicatedEndpointDns().equals(other.getDedicatedEndpointDns())) return false;
+    if (hasClientConnectionConfig() != other.hasClientConnectionConfig()) return false;
+    if (hasClientConnectionConfig()) {
+      if (!getClientConnectionConfig().equals(other.getClientConnectionConfig())) return false;
+    }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1506,6 +1571,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointEnabled());
     hash = (37 * hash) + DEDICATED_ENDPOINT_DNS_FIELD_NUMBER;
     hash = (53 * hash) + getDedicatedEndpointDns().hashCode();
+    if (hasClientConnectionConfig()) {
+      hash = (37 * hash) + CLIENT_CONNECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getClientConnectionConfig().hashCode();
+    }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
@@ -1683,6 +1752,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         getEncryptionSpecFieldBuilder();
         getPrivateServiceConnectConfigFieldBuilder();
         getPredictRequestResponseLoggingConfigFieldBuilder();
+        getClientConnectionConfigFieldBuilder();
       }
     }
 
@@ -1733,6 +1803,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       dedicatedEndpointEnabled_ = false;
       dedicatedEndpointDns_ = "";
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
       return this;
@@ -1848,9 +1923,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         result.dedicatedEndpointDns_ = dedicatedEndpointDns_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.clientConnectionConfig_ =
+            clientConnectionConfigBuilder_ == null
+                ? clientConnectionConfig_
+                : clientConnectionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1987,6 +2069,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         dedicatedEndpointDns_ = other.dedicatedEndpointDns_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasClientConnectionConfig()) {
+        mergeClientConnectionConfig(other.getClientConnectionConfig());
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
@@ -2133,6 +2218,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 170
+            case 186:
+              {
+                input.readMessage(
+                    getClientConnectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
             case 192:
               {
                 dedicatedEndpointEnabled_ = input.readBool();
@@ -2148,13 +2240,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 216:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 216
             case 224:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 224
             default:
@@ -4337,7 +4429,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=127
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=128
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -4360,7 +4452,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=127
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=128
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -4387,7 +4479,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=127
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=128
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5189,6 +5281,207 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig clientConnectionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig,
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfigOrBuilder>
+        clientConnectionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     *
+     * @return Whether the clientConnectionConfig field is set.
+     */
+    public boolean hasClientConnectionConfig() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     *
+     * @return The clientConnectionConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig getClientConnectionConfig() {
+      if (clientConnectionConfigBuilder_ == null) {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      } else {
+        return clientConnectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientConnectionConfig_ = value;
+      } else {
+        clientConnectionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.Builder builderForValue) {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfig_ = builderForValue.build();
+      } else {
+        clientConnectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public Builder mergeClientConnectionConfig(
+        com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && clientConnectionConfig_ != null
+            && clientConnectionConfig_
+                != com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig
+                    .getDefaultInstance()) {
+          getClientConnectionConfigBuilder().mergeFrom(value);
+        } else {
+          clientConnectionConfig_ = value;
+        }
+      } else {
+        clientConnectionConfigBuilder_.mergeFrom(value);
+      }
+      if (clientConnectionConfig_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public Builder clearClientConnectionConfig() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.Builder
+        getClientConnectionConfigBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getClientConnectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ClientConnectionConfigOrBuilder
+        getClientConnectionConfigOrBuilder() {
+      if (clientConnectionConfigBuilder_ != null) {
+        return clientConnectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations that are applied to the endpoint for online prediction.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ClientConnectionConfig client_connection_config = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig,
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ClientConnectionConfigOrBuilder>
+        getClientConnectionConfigFieldBuilder() {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig,
+                com.google.cloud.aiplatform.v1beta1.ClientConnectionConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ClientConnectionConfigOrBuilder>(
+                getClientConnectionConfig(), getParentForChildren(), isClean());
+        clientConnectionConfig_ = null;
+      }
+      return clientConnectionConfigBuilder_;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
@@ -5220,7 +5513,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5236,7 +5529,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -5273,7 +5566,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5289,7 +5582,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       satisfiesPzi_ = false;
       onChanged();
       return this;

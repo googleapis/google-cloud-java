@@ -42,6 +42,7 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     machineMgmtIpv4Range_ = "";
     kubernetesNodeIpv4Range_ = "";
     kubernetesControlPlaneIpv4Range_ = "";
+    dnsIpv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -375,6 +376,107 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         : kubernetesIpv4Subnet_;
   }
 
+  public static final int DNS_IPV4_ADDRESSES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList dnsIpv4Addresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the dnsIpv4Addresses.
+   */
+  public com.google.protobuf.ProtocolStringList getDnsIpv4AddressesList() {
+    return dnsIpv4Addresses_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of dnsIpv4Addresses.
+   */
+  public int getDnsIpv4AddressesCount() {
+    return dnsIpv4Addresses_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The dnsIpv4Addresses at the given index.
+   */
+  public java.lang.String getDnsIpv4Addresses(int index) {
+    return dnsIpv4Addresses_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dnsIpv4Addresses at the given index.
+   */
+  public com.google.protobuf.ByteString getDnsIpv4AddressesBytes(int index) {
+    return dnsIpv4Addresses_.getByteString(index);
+  }
+
+  public static final int KUBERNETES_PRIMARY_VLAN_ID_FIELD_NUMBER = 7;
+  private int kubernetesPrimaryVlanId_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes VLAN ID.
+   * By default, the kubernetes node, including the primary kubernetes network,
+   * are in the same VLAN as the machine management network.
+   * For network segmentation purposes, these can optionally be separated.
+   * </pre>
+   *
+   * <code>int32 kubernetes_primary_vlan_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The kubernetesPrimaryVlanId.
+   */
+  @java.lang.Override
+  public int getKubernetesPrimaryVlanId() {
+    return kubernetesPrimaryVlanId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -405,6 +507,12 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getKubernetesIpv4Subnet());
     }
+    for (int i = 0; i < dnsIpv4Addresses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, dnsIpv4Addresses_.getRaw(i));
+    }
+    if (kubernetesPrimaryVlanId_ != 0) {
+      output.writeInt32(7, kubernetesPrimaryVlanId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -432,6 +540,17 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getKubernetesIpv4Subnet());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dnsIpv4Addresses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dnsIpv4Addresses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDnsIpv4AddressesList().size();
+    }
+    if (kubernetesPrimaryVlanId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, kubernetesPrimaryVlanId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -461,6 +580,8 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (hasKubernetesIpv4Subnet()) {
       if (!getKubernetesIpv4Subnet().equals(other.getKubernetesIpv4Subnet())) return false;
     }
+    if (!getDnsIpv4AddressesList().equals(other.getDnsIpv4AddressesList())) return false;
+    if (getKubernetesPrimaryVlanId() != other.getKubernetesPrimaryVlanId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -486,6 +607,12 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + KUBERNETES_IPV4_SUBNET_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetesIpv4Subnet().hashCode();
     }
+    if (getDnsIpv4AddressesCount() > 0) {
+      hash = (37 * hash) + DNS_IPV4_ADDRESSES_FIELD_NUMBER;
+      hash = (53 * hash) + getDnsIpv4AddressesList().hashCode();
+    }
+    hash = (37 * hash) + KUBERNETES_PRIMARY_VLAN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getKubernetesPrimaryVlanId();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -649,6 +776,8 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         kubernetesIpv4SubnetBuilder_.dispose();
         kubernetesIpv4SubnetBuilder_ = null;
       }
+      dnsIpv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      kubernetesPrimaryVlanId_ = 0;
       return this;
     }
 
@@ -710,6 +839,13 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
                 ? kubernetesIpv4Subnet_
                 : kubernetesIpv4SubnetBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        dnsIpv4Addresses_.makeImmutable();
+        result.dnsIpv4Addresses_ = dnsIpv4Addresses_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kubernetesPrimaryVlanId_ = kubernetesPrimaryVlanId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -783,6 +919,19 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasKubernetesIpv4Subnet()) {
         mergeKubernetesIpv4Subnet(other.getKubernetesIpv4Subnet());
       }
+      if (!other.dnsIpv4Addresses_.isEmpty()) {
+        if (dnsIpv4Addresses_.isEmpty()) {
+          dnsIpv4Addresses_ = other.dnsIpv4Addresses_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureDnsIpv4AddressesIsMutable();
+          dnsIpv4Addresses_.addAll(other.dnsIpv4Addresses_);
+        }
+        onChanged();
+      }
+      if (other.getKubernetesPrimaryVlanId() != 0) {
+        setKubernetesPrimaryVlanId(other.getKubernetesPrimaryVlanId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -841,6 +990,19 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDnsIpv4AddressesIsMutable();
+                dnsIpv4Addresses_.add(s);
+                break;
+              } // case 50
+            case 56:
+              {
+                kubernetesPrimaryVlanId_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1702,6 +1864,278 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         kubernetesIpv4Subnet_ = null;
       }
       return kubernetesIpv4SubnetBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList dnsIpv4Addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDnsIpv4AddressesIsMutable() {
+      if (!dnsIpv4Addresses_.isModifiable()) {
+        dnsIpv4Addresses_ = new com.google.protobuf.LazyStringArrayList(dnsIpv4Addresses_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return A list containing the dnsIpv4Addresses.
+     */
+    public com.google.protobuf.ProtocolStringList getDnsIpv4AddressesList() {
+      dnsIpv4Addresses_.makeImmutable();
+      return dnsIpv4Addresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The count of dnsIpv4Addresses.
+     */
+    public int getDnsIpv4AddressesCount() {
+      return dnsIpv4Addresses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The dnsIpv4Addresses at the given index.
+     */
+    public java.lang.String getDnsIpv4Addresses(int index) {
+      return dnsIpv4Addresses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dnsIpv4Addresses at the given index.
+     */
+    public com.google.protobuf.ByteString getDnsIpv4AddressesBytes(int index) {
+      return dnsIpv4Addresses_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The dnsIpv4Addresses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDnsIpv4Addresses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDnsIpv4AddressesIsMutable();
+      dnsIpv4Addresses_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The dnsIpv4Addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDnsIpv4Addresses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDnsIpv4AddressesIsMutable();
+      dnsIpv4Addresses_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param values The dnsIpv4Addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDnsIpv4Addresses(java.lang.Iterable<java.lang.String> values) {
+      ensureDnsIpv4AddressesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dnsIpv4Addresses_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDnsIpv4Addresses() {
+      dnsIpv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DNS nameservers.
+     * The GDC Infrastructure will resolve DNS queries via these IPs.
+     * If unspecified, Google DNS is used.
+     * </pre>
+     *
+     * <code>
+     * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the dnsIpv4Addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDnsIpv4AddressesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDnsIpv4AddressesIsMutable();
+      dnsIpv4Addresses_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int kubernetesPrimaryVlanId_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes VLAN ID.
+     * By default, the kubernetes node, including the primary kubernetes network,
+     * are in the same VLAN as the machine management network.
+     * For network segmentation purposes, these can optionally be separated.
+     * </pre>
+     *
+     * <code>int32 kubernetes_primary_vlan_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kubernetesPrimaryVlanId.
+     */
+    @java.lang.Override
+    public int getKubernetesPrimaryVlanId() {
+      return kubernetesPrimaryVlanId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes VLAN ID.
+     * By default, the kubernetes node, including the primary kubernetes network,
+     * are in the same VLAN as the machine management network.
+     * For network segmentation purposes, these can optionally be separated.
+     * </pre>
+     *
+     * <code>int32 kubernetes_primary_vlan_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The kubernetesPrimaryVlanId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKubernetesPrimaryVlanId(int value) {
+
+      kubernetesPrimaryVlanId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes VLAN ID.
+     * By default, the kubernetes node, including the primary kubernetes network,
+     * are in the same VLAN as the machine management network.
+     * For network segmentation purposes, these can optionally be separated.
+     * </pre>
+     *
+     * <code>int32 kubernetes_primary_vlan_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKubernetesPrimaryVlanId() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      kubernetesPrimaryVlanId_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

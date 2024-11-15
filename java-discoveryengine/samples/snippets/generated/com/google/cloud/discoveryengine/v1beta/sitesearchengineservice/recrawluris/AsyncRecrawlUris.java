@@ -45,6 +45,7 @@ public class AsyncRecrawlUris {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       ApiFuture<Operation> future =
           siteSearchEngineServiceClient.recrawlUrisCallable().futureCall(request);

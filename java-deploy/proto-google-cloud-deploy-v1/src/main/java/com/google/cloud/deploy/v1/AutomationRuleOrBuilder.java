@@ -156,5 +156,52 @@ public interface AutomationRuleOrBuilder
    */
   com.google.cloud.deploy.v1.RepairRolloutRuleOrBuilder getRepairRolloutRuleOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseRule field is set.
+   */
+  boolean hasTimedPromoteReleaseRule();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timedPromoteReleaseRule.
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseRule getTimedPromoteReleaseRule();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder getTimedPromoteReleaseRuleOrBuilder();
+
   com.google.cloud.deploy.v1.AutomationRule.RuleCase getRuleCase();
 }

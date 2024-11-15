@@ -113,7 +113,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * alloyDBAdminSettingsBuilder
@@ -159,6 +159,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).updateClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).upgradeClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public OperationCallSettings<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).upgradeClusterOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).deleteClusterSettings();
@@ -179,6 +190,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   public OperationCallSettings<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).promoteClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public UnaryCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).switchoverClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public OperationCallSettings<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).switchoverClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to restoreCluster. */
@@ -304,6 +326,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   public OperationCallSettings<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).restartInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeSql. */
+  public UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).executeSqlSettings();
   }
 
   /** Returns the object with the settings used for calls to listBackups. */
@@ -559,6 +586,18 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
       return getStubSettingsBuilder().updateClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public UnaryCallSettings.Builder<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+      return getStubSettingsBuilder().upgradeClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public OperationCallSettings.Builder<
+            UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+        upgradeClusterOperationSettings() {
+      return getStubSettingsBuilder().upgradeClusterOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
       return getStubSettingsBuilder().deleteClusterSettings();
@@ -579,6 +618,18 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     public OperationCallSettings.Builder<PromoteClusterRequest, Cluster, OperationMetadata>
         promoteClusterOperationSettings() {
       return getStubSettingsBuilder().promoteClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public UnaryCallSettings.Builder<SwitchoverClusterRequest, Operation>
+        switchoverClusterSettings() {
+      return getStubSettingsBuilder().switchoverClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public OperationCallSettings.Builder<SwitchoverClusterRequest, Cluster, OperationMetadata>
+        switchoverClusterOperationSettings() {
+      return getStubSettingsBuilder().switchoverClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to restoreCluster. */
@@ -707,6 +758,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     public OperationCallSettings.Builder<RestartInstanceRequest, Instance, OperationMetadata>
         restartInstanceOperationSettings() {
       return getStubSettingsBuilder().restartInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeSql. */
+    public UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+      return getStubSettingsBuilder().executeSqlSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBackups. */

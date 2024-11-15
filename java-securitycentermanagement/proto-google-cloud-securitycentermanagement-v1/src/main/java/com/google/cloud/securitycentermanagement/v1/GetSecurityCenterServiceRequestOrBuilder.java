@@ -28,21 +28,20 @@ public interface GetSecurityCenterServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Security Command Center service to retrieve.
+   * Required. The Security Command Center service to retrieve, in one of the
+   * following formats:
    *
-   * Formats:
+   * * organizations/{organization}/locations/{location}/securityCenterServices/{service}
+   * * folders/{folder}/locations/{location}/securityCenterServices/{service}
+   * * projects/{project}/locations/{location}/securityCenterServices/{service}
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>
@@ -56,21 +55,20 @@ public interface GetSecurityCenterServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Security Command Center service to retrieve.
+   * Required. The Security Command Center service to retrieve, in one of the
+   * following formats:
    *
-   * Formats:
+   * * organizations/{organization}/locations/{location}/securityCenterServices/{service}
+   * * folders/{folder}/locations/{location}/securityCenterServices/{service}
+   * * projects/{project}/locations/{location}/securityCenterServices/{service}
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>
@@ -85,8 +83,8 @@ public interface GetSecurityCenterServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Flag that, when set, will be used to filter the ModuleSettings that are
-   * in scope. The default setting is that all modules will be shown.
+   * Set to `true` to show only modules that are in scope. By default, all
+   * modules are shown.
    * </pre>
    *
    * <code>bool show_eligible_modules_only = 2;</code>

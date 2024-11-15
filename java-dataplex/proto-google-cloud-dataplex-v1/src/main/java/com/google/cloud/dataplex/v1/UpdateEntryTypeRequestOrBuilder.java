@@ -28,7 +28,7 @@ public interface UpdateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface UpdateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface UpdateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -107,8 +107,8 @@ public interface UpdateEntryTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

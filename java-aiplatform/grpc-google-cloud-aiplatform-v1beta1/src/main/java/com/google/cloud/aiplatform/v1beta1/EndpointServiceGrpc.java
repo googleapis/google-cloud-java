@@ -222,6 +222,57 @@ public final class EndpointServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest,
+          com.google.longrunning.Operation>
+      getUpdateEndpointLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEndpointLongRunning",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest,
+          com.google.longrunning.Operation>
+      getUpdateEndpointLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest,
+            com.google.longrunning.Operation>
+        getUpdateEndpointLongRunningMethod;
+    if ((getUpdateEndpointLongRunningMethod =
+            EndpointServiceGrpc.getUpdateEndpointLongRunningMethod)
+        == null) {
+      synchronized (EndpointServiceGrpc.class) {
+        if ((getUpdateEndpointLongRunningMethod =
+                EndpointServiceGrpc.getUpdateEndpointLongRunningMethod)
+            == null) {
+          EndpointServiceGrpc.getUpdateEndpointLongRunningMethod =
+              getUpdateEndpointLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateEndpointLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EndpointServiceMethodDescriptorSupplier("UpdateEndpointLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEndpointLongRunningMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest,
           com.google.longrunning.Operation>
       getDeleteEndpointMethod;
@@ -518,6 +569,20 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    default void updateEndpointLongRunning(
+        com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEndpointLongRunningMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -680,6 +745,22 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public void updateEndpointLongRunning(
+        com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEndpointLongRunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -820,6 +901,19 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEndpointLongRunning(
+        com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -951,6 +1045,20 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateEndpointLongRunning(
+            com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEndpointLongRunningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -1009,10 +1117,11 @@ public final class EndpointServiceGrpc {
   private static final int METHODID_GET_ENDPOINT = 1;
   private static final int METHODID_LIST_ENDPOINTS = 2;
   private static final int METHODID_UPDATE_ENDPOINT = 3;
-  private static final int METHODID_DELETE_ENDPOINT = 4;
-  private static final int METHODID_DEPLOY_MODEL = 5;
-  private static final int METHODID_UNDEPLOY_MODEL = 6;
-  private static final int METHODID_MUTATE_DEPLOYED_MODEL = 7;
+  private static final int METHODID_UPDATE_ENDPOINT_LONG_RUNNING = 4;
+  private static final int METHODID_DELETE_ENDPOINT = 5;
+  private static final int METHODID_DEPLOY_MODEL = 6;
+  private static final int METHODID_UNDEPLOY_MODEL = 7;
+  private static final int METHODID_MUTATE_DEPLOYED_MODEL = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1054,6 +1163,11 @@ public final class EndpointServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_ENDPOINT_LONG_RUNNING:
+          serviceImpl.updateEndpointLongRunning(
+              (com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_ENDPOINT:
           serviceImpl.deleteEndpoint(
@@ -1119,6 +1233,13 @@ public final class EndpointServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest,
                     com.google.cloud.aiplatform.v1beta1.Endpoint>(
                     service, METHODID_UPDATE_ENDPOINT)))
+        .addMethod(
+            getUpdateEndpointLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_ENDPOINT_LONG_RUNNING)))
         .addMethod(
             getDeleteEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1198,6 +1319,7 @@ public final class EndpointServiceGrpc {
                       .addMethod(getGetEndpointMethod())
                       .addMethod(getListEndpointsMethod())
                       .addMethod(getUpdateEndpointMethod())
+                      .addMethod(getUpdateEndpointLongRunningMethod())
                       .addMethod(getDeleteEndpointMethod())
                       .addMethod(getDeployModelMethod())
                       .addMethod(getUndeployModelMethod())

@@ -100,4 +100,24 @@ public class MockPublisherImpl extends PublisherImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void publish(PublishRequest request, StreamObserver<PublishResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PublishResponse) {
+      requests.add(request);
+      responseObserver.onNext(((PublishResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Publish, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PublishResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

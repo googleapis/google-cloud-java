@@ -1074,5 +1074,75 @@ public interface ServingConfigOrBuilder
    */
   com.google.protobuf.ByteString getIgnoreControlIdsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  boolean hasPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+      getPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 25;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder();
+
   com.google.cloud.discoveryengine.v1beta.ServingConfig.VerticalConfigCase getVerticalConfigCase();
 }

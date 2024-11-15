@@ -59,8 +59,8 @@ public interface EncryptionSpecOrBuilder
    * <pre>
    * Required. The name of customer-managed encryption key that is used to
    * secure a resource and its sub-resources. If empty, the resource is secured
-   * by the default Google encryption key. Only the key in the same location as
-   * this resource is allowed to be used for encryption. Format:
+   * by our default encryption key. Only the key in the same location as this
+   * resource is allowed to be used for encryption. Format:
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
    * </pre>
    *
@@ -75,8 +75,8 @@ public interface EncryptionSpecOrBuilder
    * <pre>
    * Required. The name of customer-managed encryption key that is used to
    * secure a resource and its sub-resources. If empty, the resource is secured
-   * by the default Google encryption key. Only the key in the same location as
-   * this resource is allowed to be used for encryption. Format:
+   * by our default encryption key. Only the key in the same location as this
+   * resource is allowed to be used for encryption. Format:
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
    * </pre>
    *

@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * List EntryTypes response
+ * List EntryTypes response.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.ListEntryTypesResponse}
@@ -73,7 +73,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ListEntryTypes under the given parent location.
+   * EntryTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -86,7 +86,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ListEntryTypes under the given parent location.
+   * EntryTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -100,7 +100,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ListEntryTypes under the given parent location.
+   * EntryTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -113,7 +113,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ListEntryTypes under the given parent location.
+   * EntryTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -126,7 +126,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ListEntryTypes under the given parent location.
+   * EntryTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -198,7 +198,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -212,7 +212,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -226,7 +226,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -241,7 +241,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -444,7 +444,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * List EntryTypes response
+   * List EntryTypes response.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.ListEntryTypesResponse}
@@ -726,7 +726,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -742,7 +742,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -758,7 +758,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -774,7 +774,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -796,7 +796,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -816,7 +816,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -838,7 +838,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -860,7 +860,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -879,7 +879,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -899,7 +899,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -919,7 +919,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -938,7 +938,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -957,7 +957,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -969,7 +969,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -985,7 +985,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -1002,7 +1002,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -1015,7 +1015,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -1028,7 +1028,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ListEntryTypes under the given parent location.
+     * EntryTypes under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryType entry_types = 1;</code>
@@ -1179,7 +1179,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1194,7 +1194,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1208,7 +1208,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1223,7 +1223,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1238,7 +1238,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1261,7 +1261,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1283,7 +1283,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1302,7 +1302,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1320,7 +1320,7 @@ public final class ListEntryTypesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>

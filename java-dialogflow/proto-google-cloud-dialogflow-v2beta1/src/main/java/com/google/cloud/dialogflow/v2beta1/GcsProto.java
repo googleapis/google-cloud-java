@@ -54,11 +54,11 @@ public final class GcsProto {
           + "ogle/api/field_behavior.proto\"\037\n\nGcsSour"
           + "ces\022\021\n\004uris\030\002 \003(\tB\003\340A\002\"\030\n\tGcsSource\022\013\n\003u"
           + "ri\030\001 \001(\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\tB"
-          + "\240\001\n#com.google.cloud.dialogflow.v2beta1B"
+          + "\235\001\n#com.google.cloud.dialogflow.v2beta1B"
           + "\010GcsProtoP\001ZCcloud.google.com/go/dialogf"
           + "low/apiv2beta1/dialogflowpb;dialogflowpb"
-          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Bet"
-          + "a1b\006proto3"
+          + "\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

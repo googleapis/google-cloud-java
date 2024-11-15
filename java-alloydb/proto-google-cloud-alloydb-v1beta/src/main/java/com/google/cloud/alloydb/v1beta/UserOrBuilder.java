@@ -159,4 +159,18 @@ public interface UserOrBuilder
    * @return The userType.
    */
   com.google.cloud.alloydb.v1beta.User.UserType getUserType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. If the user already exists and it has additional roles, keep
+   * them granted.
+   * </pre>
+   *
+   * <code>bool keep_extra_roles = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The keepExtraRoles.
+   */
+  boolean getKeepExtraRoles();
 }

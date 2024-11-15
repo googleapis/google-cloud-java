@@ -312,6 +312,7 @@ import javax.annotation.Generated;
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
  *           <li><p> batchCreateFeaturesAsync(EntityTypeName parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(FeatureGroupName parent, List&lt;CreateFeatureRequest&gt; requests)
  *           <li><p> batchCreateFeaturesAsync(String parent, List&lt;CreateFeatureRequest&gt; requests)
  *           <li><p> batchCreateFeaturesAsync(BatchCreateFeaturesRequest request)
  *      </ul>
@@ -2829,17 +2830,58 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create the batch of Features
-   *     under. Format:
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param requests Required. The request message specifying the Features to create. All Features
-   *     must be created under the same parent EntityType. The `parent` field in each child request
-   *     message can be omitted. If `parent` is set in a child request, then the value must match
-   *     the `parent` value in this request message.
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesAsync(EntityTypeName parent, List<CreateFeatureRequest> requests) {
+    BatchCreateFeaturesRequest request =
+        BatchCreateFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateFeaturesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   List<CreateFeatureRequest> requests = new ArrayList<>();
+   *   BatchCreateFeaturesResponse response =
+   *       featurestoreServiceClient.batchCreateFeaturesAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param requests Required. The request message specifying the Features to create. All Features
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(FeatureGroupName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2870,13 +2912,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create the batch of Features
-   *     under. Format:
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param requests Required. The request message specifying the Features to create. All Features
-   *     must be created under the same parent EntityType. The `parent` field in each child request
-   *     message can be omitted. If `parent` is set in a child request, then the value must match
-   *     the `parent` value in this request message.
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
@@ -3068,6 +3111,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
+   *           .setFeatureStatsAndAnomalySpec(FeatureStatsAndAnomalySpec.newBuilder().build())
    *           .build();
    *   Feature response = featurestoreServiceClient.getFeature(request);
    * }
@@ -3099,6 +3143,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
+   *           .setFeatureStatsAndAnomalySpec(FeatureStatsAndAnomalySpec.newBuilder().build())
    *           .build();
    *   ApiFuture<Feature> future =
    *       featurestoreServiceClient.getFeatureCallable().futureCall(request);

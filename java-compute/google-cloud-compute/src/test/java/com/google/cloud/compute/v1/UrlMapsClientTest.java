@@ -209,6 +209,7 @@ public class UrlMapsClientTest {
     UrlMap expectedResponse =
         UrlMap.newBuilder()
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultCustomErrorResponsePolicy(CustomErrorResponsePolicy.newBuilder().build())
             .setDefaultRouteAction(HttpRouteAction.newBuilder().build())
             .setDefaultService("defaultService-306696908")
             .setDefaultUrlRedirect(HttpRedirectAction.newBuilder().build())

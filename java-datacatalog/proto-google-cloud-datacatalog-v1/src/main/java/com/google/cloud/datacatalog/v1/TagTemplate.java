@@ -49,6 +49,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
   private TagTemplate() {
     name_ = "";
     displayName_ = "";
+    dataplexTransferStatus_ = 0;
   }
 
   @java.lang.Override
@@ -84,6 +85,153 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.TagTemplate.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * This enum describes TagTemplate transfer status to Dataplex service.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus}
+   */
+  public enum DataplexTransferStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. TagTemplate and its tags are only visible and editable in
+     * DataCatalog.
+     * </pre>
+     *
+     * <code>DATAPLEX_TRANSFER_STATUS_UNSPECIFIED = 0;</code>
+     */
+    DATAPLEX_TRANSFER_STATUS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * TagTemplate and its tags are auto-copied to Dataplex service.
+     * Visible in both services. Editable in DataCatalog, read-only in Dataplex.
+     * Deprecated: Individual TagTemplate migration is deprecated in favor of
+     * organization or project wide TagTemplate migration opt-in.
+     * </pre>
+     *
+     * <code>MIGRATED = 1 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    MIGRATED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. TagTemplate and its tags are only visible and editable in
+     * DataCatalog.
+     * </pre>
+     *
+     * <code>DATAPLEX_TRANSFER_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATAPLEX_TRANSFER_STATUS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * TagTemplate and its tags are auto-copied to Dataplex service.
+     * Visible in both services. Editable in DataCatalog, read-only in Dataplex.
+     * Deprecated: Individual TagTemplate migration is deprecated in favor of
+     * organization or project wide TagTemplate migration opt-in.
+     * </pre>
+     *
+     * <code>MIGRATED = 1 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int MIGRATED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataplexTransferStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataplexTransferStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATAPLEX_TRANSFER_STATUS_UNSPECIFIED;
+        case 1:
+          return MIGRATED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataplexTransferStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataplexTransferStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataplexTransferStatus>() {
+              public DataplexTransferStatus findValueByNumber(int number) {
+                return DataplexTransferStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.datacatalog.v1.TagTemplate.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DataplexTransferStatus[] VALUES = values();
+
+    public static DataplexTransferStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataplexTransferStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -92,13 +240,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -118,13 +266,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -385,6 +533,49 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int DATAPLEX_TRANSFER_STATUS_FIELD_NUMBER = 7;
+  private int dataplexTransferStatus_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  @java.lang.Override
+  public int getDataplexTransferStatusValue() {
+    return dataplexTransferStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+      getDataplexTransferStatus() {
+    com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus result =
+        com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.forNumber(
+            dataplexTransferStatus_);
+    return result == null
+        ? com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -409,6 +600,12 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         output, internalGetFields(), FieldsDefaultEntryHolder.defaultEntry, 3);
     if (isPubliclyReadable_ != false) {
       output.writeBool(5, isPubliclyReadable_);
+    }
+    if (dataplexTransferStatus_
+        != com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+            .DATAPLEX_TRANSFER_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, dataplexTransferStatus_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -440,6 +637,12 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     if (isPubliclyReadable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isPubliclyReadable_);
     }
+    if (dataplexTransferStatus_
+        != com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+            .DATAPLEX_TRANSFER_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, dataplexTransferStatus_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -460,6 +663,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (getIsPubliclyReadable() != other.getIsPubliclyReadable()) return false;
     if (!internalGetFields().equals(other.internalGetFields())) return false;
+    if (dataplexTransferStatus_ != other.dataplexTransferStatus_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -481,6 +685,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetFields().hashCode();
     }
+    hash = (37 * hash) + DATAPLEX_TRANSFER_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + dataplexTransferStatus_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -654,6 +860,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       isPubliclyReadable_ = false;
       internalGetMutableFields().clear();
+      dataplexTransferStatus_ = 0;
       return this;
     }
 
@@ -701,6 +908,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.fields_ = internalGetFields().build(FieldsDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataplexTransferStatus_ = dataplexTransferStatus_;
       }
     }
 
@@ -764,6 +974,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableFields().mergeFrom(other.internalGetFields());
       bitField0_ |= 0x00000008;
+      if (other.dataplexTransferStatus_ != 0) {
+        setDataplexTransferStatusValue(other.getDataplexTransferStatusValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -822,6 +1035,12 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 40
+            case 56:
+              {
+                dataplexTransferStatus_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -846,13 +1065,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the tag template in URL format.
+     * Identifier. The resource name of the tag template in URL format.
      *
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -871,13 +1090,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the tag template in URL format.
+     * Identifier. The resource name of the tag template in URL format.
      *
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -896,13 +1115,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the tag template in URL format.
+     * Identifier. The resource name of the tag template in URL format.
      *
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -920,13 +1139,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the tag template in URL format.
+     * Identifier. The resource name of the tag template in URL format.
      *
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -940,13 +1159,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the tag template in URL format.
+     * Identifier. The resource name of the tag template in URL format.
      *
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1485,6 +1704,111 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         builderMap.put(key, entry);
       }
       return (com.google.cloud.datacatalog.v1.TagTemplateField.Builder) entry;
+    }
+
+    private int dataplexTransferStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transfer status of the TagTemplate
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataplexTransferStatus.
+     */
+    @java.lang.Override
+    public int getDataplexTransferStatusValue() {
+      return dataplexTransferStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transfer status of the TagTemplate
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dataplexTransferStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataplexTransferStatusValue(int value) {
+      dataplexTransferStatus_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transfer status of the TagTemplate
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataplexTransferStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+        getDataplexTransferStatus() {
+      com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus result =
+          com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.forNumber(
+              dataplexTransferStatus_);
+      return result == null
+          ? com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transfer status of the TagTemplate
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The dataplexTransferStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataplexTransferStatus(
+        com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      dataplexTransferStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transfer status of the TagTemplate
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataplexTransferStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      dataplexTransferStatus_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

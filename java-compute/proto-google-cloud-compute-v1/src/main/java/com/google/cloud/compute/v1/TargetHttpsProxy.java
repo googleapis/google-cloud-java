@@ -52,6 +52,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     serverTlsPolicy_ = "";
     sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sslPolicy_ = "";
+    tlsEarlyData_ = "";
     urlMap_ = "";
   }
 
@@ -255,6 +256,185 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetHttpsProxy.QuicOverride)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.TargetHttpsProxy.TlsEarlyData}
+   */
+  public enum TlsEarlyData implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TLS_EARLY_DATA = 0;</code>
+     */
+    UNDEFINED_TLS_EARLY_DATA(0),
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.3 Early Data is not advertised, and any (invalid) attempts to send Early Data will be rejected by closing the connection.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
+    DISABLED(516696700),
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 0-RTT, and only allows Early Data to be included on requests with safe HTTP methods (GET, HEAD, OPTIONS, TRACE). This mode does not enforce any other limitations for requests with Early Data. The application owner should validate that Early Data is acceptable for a given request path.
+     * </pre>
+     *
+     * <code>PERMISSIVE = 504345247;</code>
+     */
+    PERMISSIVE(504345247),
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 0-RTT, and only allows Early Data to be included on requests with safe HTTP methods (GET, HEAD, OPTIONS, TRACE) without query parameters. Requests that send Early Data with non-idempotent HTTP methods or with query parameters will be rejected with a HTTP 425.
+     * </pre>
+     *
+     * <code>STRICT = 308826825;</code>
+     */
+    STRICT(308826825),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TLS_EARLY_DATA = 0;</code>
+     */
+    public static final int UNDEFINED_TLS_EARLY_DATA_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.3 Early Data is not advertised, and any (invalid) attempts to send Early Data will be rejected by closing the connection.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
+    public static final int DISABLED_VALUE = 516696700;
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 0-RTT, and only allows Early Data to be included on requests with safe HTTP methods (GET, HEAD, OPTIONS, TRACE). This mode does not enforce any other limitations for requests with Early Data. The application owner should validate that Early Data is acceptable for a given request path.
+     * </pre>
+     *
+     * <code>PERMISSIVE = 504345247;</code>
+     */
+    public static final int PERMISSIVE_VALUE = 504345247;
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 0-RTT, and only allows Early Data to be included on requests with safe HTTP methods (GET, HEAD, OPTIONS, TRACE) without query parameters. Requests that send Early Data with non-idempotent HTTP methods or with query parameters will be rejected with a HTTP 425.
+     * </pre>
+     *
+     * <code>STRICT = 308826825;</code>
+     */
+    public static final int STRICT_VALUE = 308826825;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TlsEarlyData valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TlsEarlyData forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TLS_EARLY_DATA;
+        case 516696700:
+          return DISABLED;
+        case 504345247:
+          return PERMISSIVE;
+        case 308826825:
+          return STRICT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TlsEarlyData> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TlsEarlyData> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TlsEarlyData>() {
+          public TlsEarlyData findValueByNumber(int number) {
+            return TlsEarlyData.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.TargetHttpsProxy.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final TlsEarlyData[] VALUES = values();
+
+    public static TlsEarlyData valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TlsEarlyData(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetHttpsProxy.TlsEarlyData)
+  }
+
   private int bitField0_;
   public static final int AUTHORIZATION_POLICY_FIELD_NUMBER = 33945528;
 
@@ -330,7 +510,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -345,7 +525,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -368,7 +548,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -1093,7 +1273,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1107,7 +1287,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1121,7 +1301,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1136,7 +1316,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+   * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1214,6 +1394,75 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TLS_EARLY_DATA_FIELD_NUMBER = 61108426;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tlsEarlyData_ = "";
+  /**
+   *
+   *
+   * <pre>
+   *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+   * Check the TlsEarlyData enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string tls_early_data = 61108426;</code>
+   *
+   * @return Whether the tlsEarlyData field is set.
+   */
+  @java.lang.Override
+  public boolean hasTlsEarlyData() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+   * Check the TlsEarlyData enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string tls_early_data = 61108426;</code>
+   *
+   * @return The tlsEarlyData.
+   */
+  @java.lang.Override
+  public java.lang.String getTlsEarlyData() {
+    java.lang.Object ref = tlsEarlyData_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tlsEarlyData_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+   * Check the TlsEarlyData enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string tls_early_data = 61108426;</code>
+   *
+   * @return The bytes for tlsEarlyData.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTlsEarlyDataBytes() {
+    java.lang.Object ref = tlsEarlyData_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tlsEarlyData_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
 
   @SuppressWarnings("serial")
@@ -1231,7 +1480,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlMap() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1309,6 +1558,9 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 33945528, authorizationPolicy_);
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 61108426, tlsEarlyData_);
+    }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -1331,7 +1583,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 366006543, sslCertificates_.getRaw(i));
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1372,6 +1624,9 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(33945528, authorizationPolicy_);
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(61108426, tlsEarlyData_);
+    }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
@@ -1398,7 +1653,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSslCertificatesList().size();
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1492,6 +1747,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (hasSslPolicy()) {
       if (!getSslPolicy().equals(other.getSslPolicy())) return false;
     }
+    if (hasTlsEarlyData() != other.hasTlsEarlyData()) return false;
+    if (hasTlsEarlyData()) {
+      if (!getTlsEarlyData().equals(other.getTlsEarlyData())) return false;
+    }
     if (hasUrlMap() != other.hasUrlMap()) return false;
     if (hasUrlMap()) {
       if (!getUrlMap().equals(other.getUrlMap())) return false;
@@ -1570,6 +1829,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (hasSslPolicy()) {
       hash = (37 * hash) + SSL_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getSslPolicy().hashCode();
+    }
+    if (hasTlsEarlyData()) {
+      hash = (37 * hash) + TLS_EARLY_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getTlsEarlyData().hashCode();
     }
     if (hasUrlMap()) {
       hash = (37 * hash) + URL_MAP_FIELD_NUMBER;
@@ -1730,6 +1993,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       serverTlsPolicy_ = "";
       sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sslPolicy_ = "";
+      tlsEarlyData_ = "";
       urlMap_ = "";
       return this;
     }
@@ -1833,8 +2097,12 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.urlMap_ = urlMap_;
+        result.tlsEarlyData_ = tlsEarlyData_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.urlMap_ = urlMap_;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1963,9 +2231,14 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00008000;
         onChanged();
       }
+      if (other.hasTlsEarlyData()) {
+        tlsEarlyData_ = other.tlsEarlyData_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
       if (other.hasUrlMap()) {
         urlMap_ = other.urlMap_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2024,6 +2297,12 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 271564226
+            case 488867410:
+              {
+                tlsEarlyData_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 488867410
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
@@ -2070,7 +2349,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
             case -1358801822:
               {
                 urlMap_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -1358801822
             case -911466526:
@@ -2241,7 +2520,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2255,7 +2534,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2277,7 +2556,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2299,7 +2578,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2320,7 +2599,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2337,7 +2616,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -3659,7 +3938,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3674,7 +3953,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3688,7 +3967,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3703,7 +3982,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3718,7 +3997,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3741,7 +4020,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3763,7 +4042,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3782,7 +4061,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3800,7 +4079,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+     * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API. Certificate Manager Certificates are not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{ location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project }/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -3940,6 +4219,132 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object tlsEarlyData_ = "";
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @return Whether the tlsEarlyData field is set.
+     */
+    public boolean hasTlsEarlyData() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @return The tlsEarlyData.
+     */
+    public java.lang.String getTlsEarlyData() {
+      java.lang.Object ref = tlsEarlyData_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tlsEarlyData_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @return The bytes for tlsEarlyData.
+     */
+    public com.google.protobuf.ByteString getTlsEarlyDataBytes() {
+      java.lang.Object ref = tlsEarlyData_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tlsEarlyData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @param value The tlsEarlyData to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTlsEarlyData(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tlsEarlyData_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTlsEarlyData() {
+      tlsEarlyData_ = getDefaultInstance().getTlsEarlyData();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
+     * Check the TlsEarlyData enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string tls_early_data = 61108426;</code>
+     *
+     * @param value The bytes for tlsEarlyData to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTlsEarlyDataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tlsEarlyData_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object urlMap_ = "";
     /**
      *
@@ -3953,7 +4358,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlMap field is set.
      */
     public boolean hasUrlMap() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4016,7 +4421,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       urlMap_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4033,7 +4438,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUrlMap() {
       urlMap_ = getDefaultInstance().getUrlMap();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4055,7 +4460,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       urlMap_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

@@ -77,36 +77,18 @@ public interface AuditConfigOrBuilder
   com.google.cloud.compute.v1.AuditLogConfigOrBuilder getAuditLogConfigsOrBuilder(int index);
 
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @return A list containing the exemptedMembers.
    */
   java.util.List<java.lang.String> getExemptedMembersList();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @return The count of exemptedMembers.
    */
   int getExemptedMembersCount();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @param index The index of the element to return.
@@ -114,12 +96,6 @@ public interface AuditConfigOrBuilder
    */
   java.lang.String getExemptedMembers(int index);
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @param index The index of the value to return.

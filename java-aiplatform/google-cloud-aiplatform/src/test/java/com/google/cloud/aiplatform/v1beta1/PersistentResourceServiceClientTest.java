@@ -128,6 +128,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -199,6 +201,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -270,6 +274,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);
 
@@ -326,6 +332,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);
 
@@ -558,6 +566,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -624,6 +634,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -688,6 +700,8 @@ public class PersistentResourceServiceClientTest {
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -29,8 +29,8 @@ public interface ListVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
-   * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * versions for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface ListVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
-   * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * versions for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>

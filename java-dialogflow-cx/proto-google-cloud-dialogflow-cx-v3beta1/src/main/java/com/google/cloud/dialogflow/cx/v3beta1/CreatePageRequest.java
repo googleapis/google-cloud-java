@@ -75,8 +75,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The flow to create a page for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The flow to create a page for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -683,8 +683,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The flow to create a page for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -709,8 +709,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The flow to create a page for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -735,8 +735,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The flow to create a page for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -760,8 +760,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The flow to create a page for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -781,8 +781,8 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The flow to create a page for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>

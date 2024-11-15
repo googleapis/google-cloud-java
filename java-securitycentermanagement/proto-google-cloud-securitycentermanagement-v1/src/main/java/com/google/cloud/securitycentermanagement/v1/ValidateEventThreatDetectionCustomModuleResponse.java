@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Response to validating an Event Threat Detection custom module.
+ * Response message for
+ * [SecurityCenterManagement.ValidateEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ValidateEventThreatDetectionCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -77,7 +78,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * A description of the error, suitable for human consumption. Required.
+     * A human-readable description of the error.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -89,7 +90,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * A description of the error, suitable for human consumption. Required.
+     * A human-readable description of the error.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -102,8 +103,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The path, in RFC 8901 JSON Pointer format, to the field that failed
-     * validation. This may be left empty if no specific field is affected.
+     * The path, in [RFC 6901: JSON
+     * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+     * field that failed validation. Omitted if no specific field is affected.
      * </pre>
      *
      * <code>string field_path = 2;</code>
@@ -115,8 +117,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The path, in RFC 8901 JSON Pointer format, to the field that failed
-     * validation. This may be left empty if no specific field is affected.
+     * The path, in [RFC 6901: JSON
+     * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+     * field that failed validation. Omitted if no specific field is affected.
      * </pre>
      *
      * <code>string field_path = 2;</code>
@@ -130,8 +133,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -146,8 +149,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -164,8 +167,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -180,9 +183,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -196,9 +199,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -214,9 +217,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -232,7 +235,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
    *
    * <pre>
    * An error encountered while validating the uploaded configuration of an
-   * Event Threat Detection Custom Module.
+   * Event Threat Detection custom module.
    * </pre>
    *
    * Protobuf type {@code
@@ -288,7 +291,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * A description of the error, suitable for human consumption. Required.
+     * A human-readable description of the error.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -311,7 +314,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * A description of the error, suitable for human consumption. Required.
+     * A human-readable description of the error.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -339,8 +342,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The path, in RFC 8901 JSON Pointer format, to the field that failed
-     * validation. This may be left empty if no specific field is affected.
+     * The path, in [RFC 6901: JSON
+     * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+     * field that failed validation. Omitted if no specific field is affected.
      * </pre>
      *
      * <code>string field_path = 2;</code>
@@ -363,8 +367,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The path, in RFC 8901 JSON Pointer format, to the field that failed
-     * validation. This may be left empty if no specific field is affected.
+     * The path, in [RFC 6901: JSON
+     * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+     * field that failed validation. Omitted if no specific field is affected.
      * </pre>
      *
      * <code>string field_path = 2;</code>
@@ -393,8 +398,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -412,8 +417,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -436,8 +441,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * The initial position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed.
+     * module. Omitted if no specific position applies, or if the position could
+     * not be computed.
      * </pre>
      *
      * <code>
@@ -462,9 +467,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -481,9 +486,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -505,9 +510,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The end position of the error in the uploaded text version of the
-     * module. This field may be omitted if no specific position applies, or if
-     * one could not be computed..
+     * The end position of the error in the uploaded text version of the module.
+     * Omitted if no specific position applies, or if the position could not be
+     * computed.
      * </pre>
      *
      * <code>
@@ -754,7 +759,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      * <pre>
      * An error encountered while validating the uploaded configuration of an
-     * Event Threat Detection Custom Module.
+     * Event Threat Detection custom module.
      * </pre>
      *
      * Protobuf type {@code
@@ -1039,7 +1044,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * A description of the error, suitable for human consumption. Required.
+       * A human-readable description of the error.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -1061,7 +1066,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * A description of the error, suitable for human consumption. Required.
+       * A human-readable description of the error.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -1083,7 +1088,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * A description of the error, suitable for human consumption. Required.
+       * A human-readable description of the error.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -1104,7 +1109,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * A description of the error, suitable for human consumption. Required.
+       * A human-readable description of the error.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -1121,7 +1126,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * A description of the error, suitable for human consumption. Required.
+       * A human-readable description of the error.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -1145,8 +1150,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The path, in RFC 8901 JSON Pointer format, to the field that failed
-       * validation. This may be left empty if no specific field is affected.
+       * The path, in [RFC 6901: JSON
+       * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+       * field that failed validation. Omitted if no specific field is affected.
        * </pre>
        *
        * <code>string field_path = 2;</code>
@@ -1168,8 +1174,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The path, in RFC 8901 JSON Pointer format, to the field that failed
-       * validation. This may be left empty if no specific field is affected.
+       * The path, in [RFC 6901: JSON
+       * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+       * field that failed validation. Omitted if no specific field is affected.
        * </pre>
        *
        * <code>string field_path = 2;</code>
@@ -1191,8 +1198,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The path, in RFC 8901 JSON Pointer format, to the field that failed
-       * validation. This may be left empty if no specific field is affected.
+       * The path, in [RFC 6901: JSON
+       * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+       * field that failed validation. Omitted if no specific field is affected.
        * </pre>
        *
        * <code>string field_path = 2;</code>
@@ -1213,8 +1221,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The path, in RFC 8901 JSON Pointer format, to the field that failed
-       * validation. This may be left empty if no specific field is affected.
+       * The path, in [RFC 6901: JSON
+       * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+       * field that failed validation. Omitted if no specific field is affected.
        * </pre>
        *
        * <code>string field_path = 2;</code>
@@ -1231,8 +1240,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The path, in RFC 8901 JSON Pointer format, to the field that failed
-       * validation. This may be left empty if no specific field is affected.
+       * The path, in [RFC 6901: JSON
+       * Pointer](https://datatracker.ietf.org/doc/html/rfc6901) format, to the
+       * field that failed validation. Omitted if no specific field is affected.
        * </pre>
        *
        * <code>string field_path = 2;</code>
@@ -1267,8 +1277,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1285,8 +1295,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1312,8 +1322,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1341,8 +1351,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1367,8 +1377,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1404,8 +1414,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1427,8 +1437,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1447,8 +1457,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1472,8 +1482,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        * <pre>
        * The initial position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed.
+       * module. Omitted if no specific position applies, or if the position could
+       * not be computed.
        * </pre>
        *
        * <code>
@@ -1518,9 +1528,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1536,9 +1546,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1563,9 +1573,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1592,9 +1602,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1618,9 +1628,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1655,9 +1665,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1678,9 +1688,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1698,9 +1708,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1723,9 +1733,9 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The end position of the error in the uploaded text version of the
-       * module. This field may be omitted if no specific position applies, or if
-       * one could not be computed..
+       * The end position of the error in the uploaded text version of the module.
+       * Omitted if no specific position applies, or if the position could not be
+       * computed.
        * </pre>
        *
        * <code>
@@ -1836,7 +1846,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The line position in the text
+     * The line position in the text.
      * </pre>
      *
      * <code>int32 line_number = 1;</code>
@@ -1849,7 +1859,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The column position in the line
+     * The column position in the line.
      * </pre>
      *
      * <code>int32 column_number = 2;</code>
@@ -1909,7 +1919,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The line position in the text
+     * The line position in the text.
      * </pre>
      *
      * <code>int32 line_number = 1;</code>
@@ -1927,7 +1937,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
      *
      *
      * <pre>
-     * The column position in the line
+     * The column position in the line.
      * </pre>
      *
      * <code>int32 column_number = 2;</code>
@@ -2369,7 +2379,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The line position in the text
+       * The line position in the text.
        * </pre>
        *
        * <code>int32 line_number = 1;</code>
@@ -2384,7 +2394,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The line position in the text
+       * The line position in the text.
        * </pre>
        *
        * <code>int32 line_number = 1;</code>
@@ -2403,7 +2413,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The line position in the text
+       * The line position in the text.
        * </pre>
        *
        * <code>int32 line_number = 1;</code>
@@ -2422,7 +2432,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The column position in the line
+       * The column position in the line.
        * </pre>
        *
        * <code>int32 column_number = 2;</code>
@@ -2437,7 +2447,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The column position in the line
+       * The column position in the line.
        * </pre>
        *
        * <code>int32 column_number = 2;</code>
@@ -2456,7 +2466,7 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
        *
        *
        * <pre>
-       * The column position in the line
+       * The column position in the line.
        * </pre>
        *
        * <code>int32 column_number = 2;</code>
@@ -2833,7 +2843,8 @@ public final class ValidateEventThreatDetectionCustomModuleResponse
    *
    *
    * <pre>
-   * Response to validating an Event Threat Detection custom module.
+   * Response message for
+   * [SecurityCenterManagement.ValidateEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ValidateEventThreatDetectionCustomModule].
    * </pre>
    *
    * Protobuf type {@code

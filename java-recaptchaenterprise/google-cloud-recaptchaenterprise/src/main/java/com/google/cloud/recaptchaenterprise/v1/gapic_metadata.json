@@ -43,6 +43,9 @@
             "ListFirewallPolicies": {
               "methods": ["listFirewallPolicies", "listFirewallPolicies", "listFirewallPolicies", "listFirewallPoliciesPagedCallable", "listFirewallPoliciesCallable"]
             },
+            "ListIpOverrides": {
+              "methods": ["listIpOverrides", "listIpOverrides", "listIpOverrides", "listIpOverridesPagedCallable", "listIpOverridesCallable"]
+            },
             "ListKeys": {
               "methods": ["listKeys", "listKeys", "listKeys", "listKeysPagedCallable", "listKeysCallable"]
             },
@@ -54,6 +57,9 @@
             },
             "MigrateKey": {
               "methods": ["migrateKey", "migrateKeyCallable"]
+            },
+            "RemoveIpOverride": {
+              "methods": ["removeIpOverride", "removeIpOverride", "removeIpOverride", "removeIpOverrideCallable"]
             },
             "ReorderFirewallPolicies": {
               "methods": ["reorderFirewallPolicies", "reorderFirewallPolicies", "reorderFirewallPolicies", "reorderFirewallPoliciesCallable"]

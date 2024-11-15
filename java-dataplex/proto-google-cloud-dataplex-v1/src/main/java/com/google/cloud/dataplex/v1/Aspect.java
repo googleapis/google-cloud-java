@@ -272,7 +272,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -289,7 +288,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -306,7 +304,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -320,6 +317,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
   public static final int ASPECT_SOURCE_FIELD_NUMBER = 9;
   private com.google.cloud.dataplex.v1.AspectSource aspectSource_;
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -331,6 +334,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -344,6 +353,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
         : aspectSource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -1489,7 +1504,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1505,7 +1519,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1525,7 +1538,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1549,7 +1561,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1570,7 +1581,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1599,7 +1609,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1620,7 +1629,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1636,7 +1644,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1654,7 +1661,6 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The content of the aspect, according to its aspect type schema.
-     * This will replace `content`.
      * The maximum size of the field is 120KB (encoded as UTF-8).
      * </pre>
      *
@@ -1683,6 +1689,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.AspectSourceOrBuilder>
         aspectSourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1693,6 +1705,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1709,6 +1727,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1727,6 +1751,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1743,6 +1773,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1766,6 +1802,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1781,6 +1823,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1791,6 +1839,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       return getAspectSourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1805,6 +1859,12 @@ public final class Aspect extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Information related to the source system of the aspect.
+     * </pre>
+     *
      * <code>
      * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>

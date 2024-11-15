@@ -76,4 +76,18 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * @return The ignoreCase.
    */
   boolean getIgnoreCase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the glossary will be used for contextual
+   * translation.
+   * </pre>
+   *
+   * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The contextualTranslationEnabled.
+   */
+  boolean getContextualTranslationEnabled();
 }

@@ -28,7 +28,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * ListAspectTypes under the given parent location.
+   * AspectTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.AspectType aspect_types = 1;</code>
@@ -38,7 +38,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * ListAspectTypes under the given parent location.
+   * AspectTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.AspectType aspect_types = 1;</code>
@@ -48,7 +48,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * ListAspectTypes under the given parent location.
+   * AspectTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.AspectType aspect_types = 1;</code>
@@ -58,7 +58,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * ListAspectTypes under the given parent location.
+   * AspectTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.AspectType aspect_types = 1;</code>
@@ -69,7 +69,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * ListAspectTypes under the given parent location.
+   * AspectTypes under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.AspectType aspect_types = 1;</code>
@@ -107,7 +107,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -119,7 +119,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -131,7 +131,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -144,7 +144,7 @@ public interface ListAspectTypesResponseOrBuilder
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>

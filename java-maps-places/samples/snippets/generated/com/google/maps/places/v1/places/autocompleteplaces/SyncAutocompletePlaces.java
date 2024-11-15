@@ -50,6 +50,7 @@ public class SyncAutocompletePlaces {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
     }

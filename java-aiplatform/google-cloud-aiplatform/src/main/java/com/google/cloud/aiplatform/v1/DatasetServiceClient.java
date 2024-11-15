@@ -426,7 +426,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAnnotations</td>
- *      <td><p> Lists Annotations belongs to a dataitem</td>
+ *      <td><p> Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService. It is only used for exporting conversation data to CCAI Insights.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3225,7 +3225,8 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Annotations belongs to a dataitem
+   * Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService.
+   * It is only used for exporting conversation data to CCAI Insights.
    *
    * <p>Sample code:
    *
@@ -3257,7 +3258,8 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Annotations belongs to a dataitem
+   * Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService.
+   * It is only used for exporting conversation data to CCAI Insights.
    *
    * <p>Sample code:
    *
@@ -3287,7 +3289,8 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Annotations belongs to a dataitem
+   * Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService.
+   * It is only used for exporting conversation data to CCAI Insights.
    *
    * <p>Sample code:
    *
@@ -3323,7 +3326,8 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Annotations belongs to a dataitem
+   * Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService.
+   * It is only used for exporting conversation data to CCAI Insights.
    *
    * <p>Sample code:
    *
@@ -3360,7 +3364,8 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Annotations belongs to a dataitem
+   * Lists Annotations belongs to a dataitem This RPC is only available in InternalDatasetService.
+   * It is only used for exporting conversation data to CCAI Insights.
    *
    * <p>Sample code:
    *

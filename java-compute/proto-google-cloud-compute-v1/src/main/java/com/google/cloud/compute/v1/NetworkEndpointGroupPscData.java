@@ -365,6 +365,39 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     }
   }
 
+  public static final int PRODUCER_PORT_FIELD_NUMBER = 410021134;
+  private int producerPort_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return Whether the producerPort field is set.
+   */
+  @java.lang.Override
+  public boolean hasProducerPort() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return The producerPort.
+   */
+  @java.lang.Override
+  public int getProducerPort() {
+    return producerPort_;
+  }
+
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
   private long pscConnectionId_ = 0L;
   /**
@@ -380,7 +413,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -416,7 +449,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasPscConnectionStatus() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -481,11 +514,14 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(410021134, producerPort_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 452646572, consumerPscAddress_);
@@ -499,12 +535,15 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(410021134, producerPort_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -530,6 +569,10 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     if (hasConsumerPscAddress()) {
       if (!getConsumerPscAddress().equals(other.getConsumerPscAddress())) return false;
     }
+    if (hasProducerPort() != other.hasProducerPort()) return false;
+    if (hasProducerPort()) {
+      if (getProducerPort() != other.getProducerPort()) return false;
+    }
     if (hasPscConnectionId() != other.hasPscConnectionId()) return false;
     if (hasPscConnectionId()) {
       if (getPscConnectionId() != other.getPscConnectionId()) return false;
@@ -552,6 +595,10 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     if (hasConsumerPscAddress()) {
       hash = (37 * hash) + CONSUMER_PSC_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getConsumerPscAddress().hashCode();
+    }
+    if (hasProducerPort()) {
+      hash = (37 * hash) + PRODUCER_PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getProducerPort();
     }
     if (hasPscConnectionId()) {
       hash = (37 * hash) + PSC_CONNECTION_ID_FIELD_NUMBER;
@@ -702,6 +749,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       super.clear();
       bitField0_ = 0;
       consumerPscAddress_ = "";
+      producerPort_ = 0;
       pscConnectionId_ = 0L;
       pscConnectionStatus_ = "";
       return this;
@@ -746,12 +794,16 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
+        result.producerPort_ = producerPort_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.pscConnectionStatus_ = pscConnectionStatus_;
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pscConnectionStatus_ = pscConnectionStatus_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -807,12 +859,15 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasProducerPort()) {
+        setProducerPort(other.getProducerPort());
+      }
       if (other.hasPscConnectionId()) {
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasPscConnectionStatus()) {
         pscConnectionStatus_ = other.pscConnectionStatus_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -844,15 +899,21 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
             case 1473193378:
               {
                 pscConnectionStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1473193378
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1958308120
+            case -1014798224:
+              {
+                producerPort_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1014798224
             case -673794718:
               {
                 consumerPscAddress_ = input.readStringRequireUtf8();
@@ -998,6 +1059,74 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       return this;
     }
 
+    private int producerPort_;
+    /**
+     *
+     *
+     * <pre>
+     * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+     * </pre>
+     *
+     * <code>optional int32 producer_port = 410021134;</code>
+     *
+     * @return Whether the producerPort field is set.
+     */
+    @java.lang.Override
+    public boolean hasProducerPort() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+     * </pre>
+     *
+     * <code>optional int32 producer_port = 410021134;</code>
+     *
+     * @return The producerPort.
+     */
+    @java.lang.Override
+    public int getProducerPort() {
+      return producerPort_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+     * </pre>
+     *
+     * <code>optional int32 producer_port = 410021134;</code>
+     *
+     * @param value The producerPort to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProducerPort(int value) {
+
+      producerPort_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+     * </pre>
+     *
+     * <code>optional int32 producer_port = 410021134;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProducerPort() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      producerPort_ = 0;
+      onChanged();
+      return this;
+    }
+
     private long pscConnectionId_;
     /**
      *
@@ -1012,7 +1141,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1044,7 +1173,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1060,7 +1189,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -1080,7 +1209,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * @return Whether the pscConnectionStatus field is set.
      */
     public boolean hasPscConnectionStatus() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1146,7 +1275,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       pscConnectionStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1164,7 +1293,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      */
     public Builder clearPscConnectionStatus() {
       pscConnectionStatus_ = getDefaultInstance().getPscConnectionStatus();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1187,7 +1316,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       }
       checkByteStringIsUtf8(value);
       pscConnectionStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

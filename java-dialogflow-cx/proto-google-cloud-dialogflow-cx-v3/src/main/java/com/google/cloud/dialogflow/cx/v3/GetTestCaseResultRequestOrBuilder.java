@@ -29,8 +29,8 @@ public interface GetTestCaseResultRequestOrBuilder
    *
    * <pre>
    * Required. The name of the testcase.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface GetTestCaseResultRequestOrBuilder
    *
    * <pre>
    * Required. The name of the testcase.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * </pre>
    *
    * <code>

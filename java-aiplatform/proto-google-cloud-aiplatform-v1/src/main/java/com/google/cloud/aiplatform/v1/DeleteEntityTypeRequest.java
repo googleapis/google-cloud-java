@@ -23,7 +23,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.DeleteEntityTypes][].
+ * Request message for
+ * [FeaturestoreService.DeleteEntityType][google.cloud.aiplatform.v1.FeaturestoreService.DeleteEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteEntityTypeRequest}
@@ -314,7 +315,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.DeleteEntityTypes][].
+   * Request message for
+   * [FeaturestoreService.DeleteEntityType][google.cloud.aiplatform.v1.FeaturestoreService.DeleteEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteEntityTypeRequest}

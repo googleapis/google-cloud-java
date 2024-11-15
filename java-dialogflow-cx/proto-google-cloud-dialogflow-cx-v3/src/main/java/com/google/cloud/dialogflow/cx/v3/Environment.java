@@ -82,8 +82,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Both flow and playbook versions are supported.
+     * Format for flow version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+     * Format for playbook version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -97,8 +100,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Both flow and playbook versions are supported.
+     * Format for flow version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+     * Format for playbook version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -161,8 +167,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Both flow and playbook versions are supported.
+     * Format for flow version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+     * Format for playbook version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -187,8 +196,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+     * Required. Both flow and playbook versions are supported.
+     * Format for flow version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+     * Format for playbook version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -565,8 +577,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Both flow and playbook versions are supported.
+       * Format for flow version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+       * Format for playbook version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -590,8 +605,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Both flow and playbook versions are supported.
+       * Format for flow version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+       * Format for playbook version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -615,8 +633,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Both flow and playbook versions are supported.
+       * Format for flow version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+       * Format for playbook version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -639,8 +660,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Both flow and playbook versions are supported.
+       * Format for flow version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+       * Format for playbook version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -659,8 +683,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Format: projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;.
+       * Required. Both flow and playbook versions are supported.
+       * Format for flow version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
+       * Format for playbook version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -756,8 +783,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -770,8 +797,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -784,8 +811,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -799,8 +826,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -894,8 +921,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -910,8 +937,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -926,8 +953,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -943,8 +970,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of test case names to run. They should be under the same agent.
-     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * Format of each test case name:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
      * </pre>
      *
      * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1419,8 +1446,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1436,8 +1463,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1452,8 +1479,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1469,8 +1496,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1486,8 +1513,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1511,8 +1538,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1535,8 +1562,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1556,8 +1583,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1576,8 +1603,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A list of test case names to run. They should be under the same agent.
-       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
-       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * Format of each test case name:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`
        * </pre>
        *
        * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2900,8 +2927,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the environment.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2925,8 +2952,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the environment.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3884,8 +3911,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the environment.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3908,8 +3935,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the environment.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3932,8 +3959,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the environment.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3955,8 +3982,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the environment.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3974,8 +4001,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the environment.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -96,6 +96,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     HIERARCHY(69902869),
     /** <code>NETWORK = 413984270;</code> */
     NETWORK(413984270),
+    /** <code>SYSTEM = 313484847;</code> */
+    SYSTEM(313484847),
     /** <code>UNSPECIFIED = 526786327;</code> */
     UNSPECIFIED(526786327),
     UNRECOGNIZED(-1),
@@ -115,6 +117,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public static final int HIERARCHY_VALUE = 69902869;
     /** <code>NETWORK = 413984270;</code> */
     public static final int NETWORK_VALUE = 413984270;
+    /** <code>SYSTEM = 313484847;</code> */
+    public static final int SYSTEM_VALUE = 313484847;
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
 
@@ -148,6 +152,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
           return HIERARCHY;
         case 413984270:
           return NETWORK;
+        case 313484847:
+          return SYSTEM;
         case 526786327:
           return UNSPECIFIED;
         default:
@@ -339,6 +345,39 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
+  private int priority_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return The priority.
+   */
+  @java.lang.Override
+  public int getPriority() {
+    return priority_;
+  }
+
   public static final int RULES_FIELD_NUMBER = 108873975;
 
   @SuppressWarnings("serial")
@@ -347,7 +386,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -360,7 +399,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -374,7 +413,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -387,7 +426,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -400,7 +439,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -427,7 +466,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    */
   @java.lang.Override
   public boolean hasShortName() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -494,7 +533,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -562,7 +601,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -572,6 +611,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       output.writeMessage(108873975, rules_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 492051566, shortName_);
     }
     getUnknownFields().writeTo(output);
@@ -586,7 +628,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -596,6 +638,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(492051566, shortName_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -625,6 +670,10 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
     if (!getRulesList().equals(other.getRulesList())) return false;
     if (hasShortName() != other.hasShortName()) return false;
     if (hasShortName()) {
@@ -652,6 +701,10 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
     }
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
@@ -830,13 +883,14 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       bitField0_ = 0;
       displayName_ = "";
       name_ = "";
+      priority_ = 0;
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       shortName_ = "";
       type_ = "";
       return this;
@@ -885,9 +939,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
             result) {
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.rules_ = rules_;
       } else {
@@ -908,13 +962,17 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.shortName_ = shortName_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.priority_ = priority_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.type_ = type_;
+        result.shortName_ = shortName_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -985,11 +1043,14 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasPriority()) {
+        setPriority(other.getPriority());
+      }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1002,7 +1063,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1014,12 +1075,12 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       if (other.hasShortName()) {
         shortName_ = other.shortName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1057,7 +1118,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 28604882
             case 35790658:
@@ -1079,10 +1140,16 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                 }
                 break;
               } // case 870991802
+            case -733754080:
+              {
+                priority_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -733754080
             case -358554766:
               {
                 shortName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -358554766
             default:
@@ -1344,13 +1411,81 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return this;
     }
 
+    private int priority_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * </pre>
+     *
+     * <code>optional int32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * </pre>
+     *
+     * <code>optional int32 priority = 445151652;</code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public int getPriority() {
+      return priority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * </pre>
+     *
+     * <code>optional int32 priority = 445151652;</code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(int value) {
+
+      priority_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * </pre>
+     *
+     * <code>optional int32 priority = 445151652;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      priority_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> rules_ =
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(rules_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1364,7 +1499,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1380,7 +1515,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1396,7 +1531,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1412,7 +1547,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1434,7 +1569,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1454,7 +1589,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1476,7 +1611,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1498,7 +1633,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1518,7 +1653,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1538,7 +1673,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1558,7 +1693,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1566,7 +1701,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -1577,7 +1712,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1596,7 +1731,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1608,7 +1743,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1624,7 +1759,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1641,7 +1776,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1654,7 +1789,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1667,7 +1802,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output Only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1688,7 +1823,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                 com.google.cloud.compute.v1.FirewallPolicyRule,
                 com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -1707,7 +1842,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1770,7 +1905,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       shortName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1787,7 +1922,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      */
     public Builder clearShortName() {
       shortName_ = getDefaultInstance().getShortName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1809,7 +1944,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       checkByteStringIsUtf8(value);
       shortName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1828,7 +1963,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1894,7 +2029,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1912,7 +2047,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1935,7 +2070,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

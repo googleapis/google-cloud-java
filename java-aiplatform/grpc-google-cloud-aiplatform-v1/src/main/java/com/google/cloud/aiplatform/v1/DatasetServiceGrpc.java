@@ -1222,6 +1222,8 @@ public final class DatasetServiceGrpc {
      *
      * <pre>
      * Lists Annotations belongs to a dataitem
+     * This RPC is only available in InternalDatasetService. It is only used for
+     * exporting conversation data to CCAI Insights.
      * </pre>
      */
     default void listAnnotations(
@@ -1562,6 +1564,8 @@ public final class DatasetServiceGrpc {
      *
      * <pre>
      * Lists Annotations belongs to a dataitem
+     * This RPC is only available in InternalDatasetService. It is only used for
+     * exporting conversation data to CCAI Insights.
      * </pre>
      */
     public void listAnnotations(
@@ -1833,6 +1837,8 @@ public final class DatasetServiceGrpc {
      *
      * <pre>
      * Lists Annotations belongs to a dataitem
+     * This RPC is only available in InternalDatasetService. It is only used for
+     * exporting conversation data to CCAI Insights.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListAnnotationsResponse listAnnotations(
@@ -2110,6 +2116,8 @@ public final class DatasetServiceGrpc {
      *
      * <pre>
      * Lists Annotations belongs to a dataitem
+     * This RPC is only available in InternalDatasetService. It is only used for
+     * exporting conversation data to CCAI Insights.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

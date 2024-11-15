@@ -28,8 +28,8 @@ public interface GenerativeSettingsOrBuilder
    *
    *
    * <pre>
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generativeSettings`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * </pre>
    *
    * <code>string name = 5;</code>
@@ -41,8 +41,8 @@ public interface GenerativeSettingsOrBuilder
    *
    *
    * <pre>
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generativeSettings`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * </pre>
    *
    * <code>string name = 5;</code>

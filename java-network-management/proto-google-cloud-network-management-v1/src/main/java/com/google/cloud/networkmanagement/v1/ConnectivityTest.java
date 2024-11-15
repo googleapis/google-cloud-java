@@ -911,6 +911,91 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         : probingDetails_;
   }
 
+  public static final int ROUND_TRIP_FIELD_NUMBER = 15;
+  private boolean roundTrip_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether run analysis for the return path from destination to source.
+   * Default value is false.
+   * </pre>
+   *
+   * <code>bool round_trip = 15;</code>
+   *
+   * @return The roundTrip.
+   */
+  @java.lang.Override
+  public boolean getRoundTrip() {
+    return roundTrip_;
+  }
+
+  public static final int RETURN_REACHABILITY_DETAILS_FIELD_NUMBER = 16;
+  private com.google.cloud.networkmanagement.v1.ReachabilityDetails returnReachabilityDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the returnReachabilityDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnReachabilityDetails() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The returnReachabilityDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.ReachabilityDetails getReturnReachabilityDetails() {
+    return returnReachabilityDetails_ == null
+        ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()
+        : returnReachabilityDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder
+      getReturnReachabilityDetailsOrBuilder() {
+    return returnReachabilityDetails_ == null
+        ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()
+        : returnReachabilityDetails_;
+  }
+
   public static final int BYPASS_FIREWALL_CHECKS_FIELD_NUMBER = 17;
   private boolean bypassFirewallChecks_ = false;
   /**
@@ -979,6 +1064,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(14, getProbingDetails());
     }
+    if (roundTrip_ != false) {
+      output.writeBool(15, roundTrip_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(16, getReturnReachabilityDetails());
+    }
     if (bypassFirewallChecks_ != false) {
       output.writeBool(17, bypassFirewallChecks_);
     }
@@ -1040,6 +1131,14 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getProbingDetails());
     }
+    if (roundTrip_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, roundTrip_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, getReturnReachabilityDetails());
+    }
     if (bypassFirewallChecks_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, bypassFirewallChecks_);
     }
@@ -1088,6 +1187,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (hasProbingDetails() != other.hasProbingDetails()) return false;
     if (hasProbingDetails()) {
       if (!getProbingDetails().equals(other.getProbingDetails())) return false;
+    }
+    if (getRoundTrip() != other.getRoundTrip()) return false;
+    if (hasReturnReachabilityDetails() != other.hasReturnReachabilityDetails()) return false;
+    if (hasReturnReachabilityDetails()) {
+      if (!getReturnReachabilityDetails().equals(other.getReturnReachabilityDetails()))
+        return false;
     }
     if (getBypassFirewallChecks() != other.getBypassFirewallChecks()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1140,6 +1245,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (hasProbingDetails()) {
       hash = (37 * hash) + PROBING_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getProbingDetails().hashCode();
+    }
+    hash = (37 * hash) + ROUND_TRIP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRoundTrip());
+    if (hasReturnReachabilityDetails()) {
+      hash = (37 * hash) + RETURN_REACHABILITY_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getReturnReachabilityDetails().hashCode();
     }
     hash = (37 * hash) + BYPASS_FIREWALL_CHECKS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBypassFirewallChecks());
@@ -1312,6 +1423,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         getUpdateTimeFieldBuilder();
         getReachabilityDetailsFieldBuilder();
         getProbingDetailsFieldBuilder();
+        getReturnReachabilityDetailsFieldBuilder();
       }
     }
 
@@ -1354,6 +1466,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (probingDetailsBuilder_ != null) {
         probingDetailsBuilder_.dispose();
         probingDetailsBuilder_ = null;
+      }
+      roundTrip_ = false;
+      returnReachabilityDetails_ = null;
+      if (returnReachabilityDetailsBuilder_ != null) {
+        returnReachabilityDetailsBuilder_.dispose();
+        returnReachabilityDetailsBuilder_ = null;
       }
       bypassFirewallChecks_ = false;
       return this;
@@ -1443,6 +1561,16 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.roundTrip_ = roundTrip_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.returnReachabilityDetails_ =
+            returnReachabilityDetailsBuilder_ == null
+                ? returnReachabilityDetails_
+                : returnReachabilityDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.bypassFirewallChecks_ = bypassFirewallChecks_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1543,6 +1671,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasProbingDetails()) {
         mergeProbingDetails(other.getProbingDetails());
+      }
+      if (other.getRoundTrip() != false) {
+        setRoundTrip(other.getRoundTrip());
+      }
+      if (other.hasReturnReachabilityDetails()) {
+        mergeReturnReachabilityDetails(other.getReturnReachabilityDetails());
       }
       if (other.getBypassFirewallChecks() != false) {
         setBypassFirewallChecks(other.getBypassFirewallChecks());
@@ -1653,10 +1787,23 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 120:
+              {
+                roundTrip_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 120
+            case 130:
+              {
+                input.readMessage(
+                    getReturnReachabilityDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
             case 136:
               {
                 bypassFirewallChecks_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 136
             default:
@@ -4075,6 +4222,299 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       return probingDetailsBuilder_;
     }
 
+    private boolean roundTrip_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether run analysis for the return path from destination to source.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool round_trip = 15;</code>
+     *
+     * @return The roundTrip.
+     */
+    @java.lang.Override
+    public boolean getRoundTrip() {
+      return roundTrip_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether run analysis for the return path from destination to source.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool round_trip = 15;</code>
+     *
+     * @param value The roundTrip to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoundTrip(boolean value) {
+
+      roundTrip_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether run analysis for the return path from destination to source.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool round_trip = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRoundTrip() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      roundTrip_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.networkmanagement.v1.ReachabilityDetails returnReachabilityDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.ReachabilityDetails,
+            com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder,
+            com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder>
+        returnReachabilityDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the returnReachabilityDetails field is set.
+     */
+    public boolean hasReturnReachabilityDetails() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The returnReachabilityDetails.
+     */
+    public com.google.cloud.networkmanagement.v1.ReachabilityDetails
+        getReturnReachabilityDetails() {
+      if (returnReachabilityDetailsBuilder_ == null) {
+        return returnReachabilityDetails_ == null
+            ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()
+            : returnReachabilityDetails_;
+      } else {
+        return returnReachabilityDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReturnReachabilityDetails(
+        com.google.cloud.networkmanagement.v1.ReachabilityDetails value) {
+      if (returnReachabilityDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        returnReachabilityDetails_ = value;
+      } else {
+        returnReachabilityDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReturnReachabilityDetails(
+        com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder builderForValue) {
+      if (returnReachabilityDetailsBuilder_ == null) {
+        returnReachabilityDetails_ = builderForValue.build();
+      } else {
+        returnReachabilityDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeReturnReachabilityDetails(
+        com.google.cloud.networkmanagement.v1.ReachabilityDetails value) {
+      if (returnReachabilityDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && returnReachabilityDetails_ != null
+            && returnReachabilityDetails_
+                != com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()) {
+          getReturnReachabilityDetailsBuilder().mergeFrom(value);
+        } else {
+          returnReachabilityDetails_ = value;
+        }
+      } else {
+        returnReachabilityDetailsBuilder_.mergeFrom(value);
+      }
+      if (returnReachabilityDetails_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearReturnReachabilityDetails() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      returnReachabilityDetails_ = null;
+      if (returnReachabilityDetailsBuilder_ != null) {
+        returnReachabilityDetailsBuilder_.dispose();
+        returnReachabilityDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder
+        getReturnReachabilityDetailsBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getReturnReachabilityDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder
+        getReturnReachabilityDetailsOrBuilder() {
+      if (returnReachabilityDetailsBuilder_ != null) {
+        return returnReachabilityDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return returnReachabilityDetails_ == null
+            ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()
+            : returnReachabilityDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reachability details of this test from the latest run for
+     * the return path. The details are updated when creating a new test,
+     * updating an existing test, or triggering a one-time rerun of an existing
+     * test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.ReachabilityDetails,
+            com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder,
+            com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder>
+        getReturnReachabilityDetailsFieldBuilder() {
+      if (returnReachabilityDetailsBuilder_ == null) {
+        returnReachabilityDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.ReachabilityDetails,
+                com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder,
+                com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder>(
+                getReturnReachabilityDetails(), getParentForChildren(), isClean());
+        returnReachabilityDetails_ = null;
+      }
+      return returnReachabilityDetailsBuilder_;
+    }
+
     private boolean bypassFirewallChecks_;
     /**
      *
@@ -4108,7 +4548,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public Builder setBypassFirewallChecks(boolean value) {
 
       bypassFirewallChecks_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4125,7 +4565,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearBypassFirewallChecks() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       bypassFirewallChecks_ = false;
       onChanged();
       return this;

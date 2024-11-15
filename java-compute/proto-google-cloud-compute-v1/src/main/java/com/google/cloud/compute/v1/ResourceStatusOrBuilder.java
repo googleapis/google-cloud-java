@@ -62,6 +62,23 @@ public interface ResourceStatusOrBuilder
   com.google.protobuf.ByteString getPhysicalHostBytes();
 
   /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   *
+   * @return Whether the scheduling field is set.
+   */
+  boolean hasScheduling();
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   *
+   * @return The scheduling.
+   */
+  com.google.cloud.compute.v1.ResourceStatusScheduling getScheduling();
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder getSchedulingOrBuilder();
+
+  /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
    *

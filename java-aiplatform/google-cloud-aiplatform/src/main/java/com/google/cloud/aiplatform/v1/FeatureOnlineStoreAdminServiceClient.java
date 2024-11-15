@@ -1898,7 +1898,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     <p>&#42; `labels` &#42; `service_agent_type` &#42; `big_query_source` &#42;
    *     `big_query_source.uri` &#42; `big_query_source.entity_id_columns` &#42;
    *     `feature_registry_source` &#42; `feature_registry_source.feature_groups` &#42;
-   *     `sync_config` &#42; `sync_config.cron`
+   *     `sync_config` &#42; `sync_config.cron` &#42; `optimized_config.automatic_resources`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FeatureView, UpdateFeatureViewOperationMetadata>

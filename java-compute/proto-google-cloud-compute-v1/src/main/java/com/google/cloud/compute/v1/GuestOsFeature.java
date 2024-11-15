@@ -101,6 +101,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     SEV_LIVE_MIGRATABLE_V2(168551983),
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     SEV_SNP_CAPABLE(426919),
+    /** <code>TDX_CAPABLE = 240446133;</code> */
+    TDX_CAPABLE(240446133),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     UEFI_COMPATIBLE(195865408),
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
@@ -138,6 +140,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public static final int SEV_LIVE_MIGRATABLE_V2_VALUE = 168551983;
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     public static final int SEV_SNP_CAPABLE_VALUE = 426919;
+    /** <code>TDX_CAPABLE = 240446133;</code> */
+    public static final int TDX_CAPABLE_VALUE = 240446133;
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     public static final int UEFI_COMPATIBLE_VALUE = 195865408;
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
@@ -189,6 +193,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           return SEV_LIVE_MIGRATABLE_V2;
         case 426919:
           return SEV_SNP_CAPABLE;
+        case 240446133:
+          return TDX_CAPABLE;
         case 195865408:
           return UEFI_COMPATIBLE;
         case 201597069:

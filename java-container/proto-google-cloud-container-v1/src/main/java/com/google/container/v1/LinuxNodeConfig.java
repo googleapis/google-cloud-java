@@ -1030,6 +1030,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1067,6 +1070,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1095,6 +1101,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1130,6 +1139,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1725,6 +1737,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1762,6 +1777,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1790,6 +1808,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1825,6 +1846,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1866,6 +1890,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1903,6 +1930,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1938,6 +1968,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * kernel.shmmni
+     * kernel.shmmax
+     * kernel.shmall
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>

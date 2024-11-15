@@ -74,7 +74,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
    * <pre>
    * The dimension name a rule belongs to. Supported dimensions are
    * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "INTEGRITY"]
+   * "FRESHNESS", "VOLUME"]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,7 +99,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
    * <pre>
    * The dimension name a rule belongs to. Supported dimensions are
    * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "INTEGRITY"]
+   * "FRESHNESS", "VOLUME"]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -469,7 +469,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      * <pre>
      * The dimension name a rule belongs to. Supported dimensions are
      * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "INTEGRITY"]
+     * "FRESHNESS", "VOLUME"]
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -493,7 +493,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      * <pre>
      * The dimension name a rule belongs to. Supported dimensions are
      * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "INTEGRITY"]
+     * "FRESHNESS", "VOLUME"]
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -517,7 +517,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      * <pre>
      * The dimension name a rule belongs to. Supported dimensions are
      * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "INTEGRITY"]
+     * "FRESHNESS", "VOLUME"]
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -540,7 +540,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      * <pre>
      * The dimension name a rule belongs to. Supported dimensions are
      * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "INTEGRITY"]
+     * "FRESHNESS", "VOLUME"]
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -559,7 +559,7 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      * <pre>
      * The dimension name a rule belongs to. Supported dimensions are
      * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "INTEGRITY"]
+     * "FRESHNESS", "VOLUME"]
      * </pre>
      *
      * <code>string name = 1;</code>

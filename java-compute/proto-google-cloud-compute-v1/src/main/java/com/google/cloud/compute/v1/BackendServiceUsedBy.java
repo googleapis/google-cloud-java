@@ -68,6 +68,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return Whether the reference field is set.
@@ -77,6 +83,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return The reference.
@@ -94,6 +106,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+   * </pre>
+   *
    * <code>optional string reference = 148586315;</code>
    *
    * @return The bytes for reference.
@@ -462,6 +480,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object reference_ = "";
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @return Whether the reference field is set.
@@ -470,6 +494,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @return The reference.
@@ -486,6 +516,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @return The bytes for reference.
@@ -502,6 +538,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @param value The reference to set.
@@ -517,6 +559,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @return This builder for chaining.
@@ -528,6 +576,12 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
+     * </pre>
+     *
      * <code>optional string reference = 148586315;</code>
      *
      * @param value The bytes for reference to set.

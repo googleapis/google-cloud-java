@@ -57,6 +57,18 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_aiplatform_v1_DeployedModel_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 28:
+        return internalGetSystemLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -886,6 +898,165 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         : privateEndpoints_;
   }
 
+  public static final int FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1.FasterDeploymentConfig fasterDeploymentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFasterDeploymentConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FasterDeploymentConfig getFasterDeploymentConfig() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.aiplatform.v1.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.aiplatform.v1.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+
+  public static final int SYSTEM_LABELS_FIELD_NUMBER = 28;
+
+  private static final class SystemLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1.EndpointProto
+                .internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> systemLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSystemLabels() {
+    if (systemLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SystemLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return systemLabels_;
+  }
+
+  public int getSystemLabelsCount() {
+    return internalGetSystemLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public boolean containsSystemLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSystemLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getSystemLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getSystemLabels() {
+    return getSystemLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap() {
+    return internalGetSystemLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getSystemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getSystemLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -944,6 +1115,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       output.writeBool(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(23, getFasterDeploymentConfig());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
     getUnknownFields().writeTo(output);
   }
 
@@ -999,6 +1175,20 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFasterDeploymentConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetSystemLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> systemLabels__ =
+          SystemLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, systemLabels__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1035,6 +1225,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints()) {
       if (!getPrivateEndpoints().equals(other.getPrivateEndpoints())) return false;
     }
+    if (hasFasterDeploymentConfig() != other.hasFasterDeploymentConfig()) return false;
+    if (hasFasterDeploymentConfig()) {
+      if (!getFasterDeploymentConfig().equals(other.getFasterDeploymentConfig())) return false;
+    }
+    if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -1087,6 +1282,14 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints()) {
       hash = (37 * hash) + PRIVATE_ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateEndpoints().hashCode();
+    }
+    if (hasFasterDeploymentConfig()) {
+      hash = (37 * hash) + FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFasterDeploymentConfig().hashCode();
+    }
+    if (!internalGetSystemLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + SYSTEM_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSystemLabels().hashCode();
     }
     switch (predictionResourcesCase_) {
       case 7:
@@ -1222,6 +1425,28 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_aiplatform_v1_DeployedModel_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetSystemLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetMutableSystemLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1247,6 +1472,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getExplanationSpecFieldBuilder();
         getPrivateEndpointsFieldBuilder();
+        getFasterDeploymentConfigFieldBuilder();
       }
     }
 
@@ -1283,6 +1509,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpointsBuilder_.dispose();
         privateEndpointsBuilder_ = null;
       }
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
+      }
+      internalGetMutableSystemLabels().clear();
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -1360,6 +1592,17 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.fasterDeploymentConfig_ =
+            fasterDeploymentConfigBuilder_ == null
+                ? fasterDeploymentConfig_
+                : fasterDeploymentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.systemLabels_ = internalGetSystemLabels();
+        result.systemLabels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1463,6 +1706,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPrivateEndpoints()) {
         mergePrivateEndpoints(other.getPrivateEndpoints());
       }
+      if (other.hasFasterDeploymentConfig()) {
+        mergeFasterDeploymentConfig(other.getFasterDeploymentConfig());
+      }
+      internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
+      bitField0_ |= 0x00008000;
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
           {
@@ -1600,6 +1848,25 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 152
+            case 186:
+              {
+                input.readMessage(
+                    getFasterDeploymentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 186
+            case 226:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> systemLabels__ =
+                    input.readMessage(
+                        SystemLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableSystemLabels()
+                    .getMutableMap()
+                    .put(systemLabels__.getKey(), systemLabels__.getValue());
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3834,6 +4101,379 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpoints_ = null;
       }
       return privateEndpointsBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.FasterDeploymentConfig fasterDeploymentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfig,
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfig.Builder,
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder>
+        fasterDeploymentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     *
+     * @return Whether the fasterDeploymentConfig field is set.
+     */
+    public boolean hasFasterDeploymentConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     *
+     * @return The fasterDeploymentConfig.
+     */
+    public com.google.cloud.aiplatform.v1.FasterDeploymentConfig getFasterDeploymentConfig() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.aiplatform.v1.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      } else {
+        return fasterDeploymentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fasterDeploymentConfig_ = value;
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1.FasterDeploymentConfig.Builder builderForValue) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfig_ = builderForValue.build();
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder mergeFasterDeploymentConfig(
+        com.google.cloud.aiplatform.v1.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && fasterDeploymentConfig_ != null
+            && fasterDeploymentConfig_
+                != com.google.cloud.aiplatform.v1.FasterDeploymentConfig.getDefaultInstance()) {
+          getFasterDeploymentConfigBuilder().mergeFrom(value);
+        } else {
+          fasterDeploymentConfig_ = value;
+        }
+      } else {
+        fasterDeploymentConfigBuilder_.mergeFrom(value);
+      }
+      if (fasterDeploymentConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public Builder clearFasterDeploymentConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FasterDeploymentConfig.Builder
+        getFasterDeploymentConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getFasterDeploymentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder
+        getFasterDeploymentConfigOrBuilder() {
+      if (fasterDeploymentConfigBuilder_ != null) {
+        return fasterDeploymentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.aiplatform.v1.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfig,
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfig.Builder,
+            com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder>
+        getFasterDeploymentConfigFieldBuilder() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.FasterDeploymentConfig,
+                com.google.cloud.aiplatform.v1.FasterDeploymentConfig.Builder,
+                com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder>(
+                getFasterDeploymentConfig(), getParentForChildren(), isClean());
+        fasterDeploymentConfig_ = null;
+      }
+      return fasterDeploymentConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> systemLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetSystemLabels() {
+      if (systemLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SystemLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return systemLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableSystemLabels() {
+      if (systemLabels_ == null) {
+        systemLabels_ =
+            com.google.protobuf.MapField.newMapField(SystemLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!systemLabels_.isMutable()) {
+        systemLabels_ = systemLabels_.copy();
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return systemLabels_;
+    }
+
+    public int getSystemLabelsCount() {
+      return internalGetSystemLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public boolean containsSystemLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSystemLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getSystemLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSystemLabels() {
+      return getSystemLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap() {
+      return internalGetSystemLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getSystemLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getSystemLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearSystemLabels() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      internalGetMutableSystemLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder removeSystemLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSystemLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableSystemLabels() {
+      bitField0_ |= 0x00008000;
+      return internalGetMutableSystemLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder putSystemLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSystemLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableSystemLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
     }
 
     @java.lang.Override

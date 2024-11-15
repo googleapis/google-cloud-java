@@ -50,11 +50,11 @@ public final class PhotoProto {
           + "ibutions\030\004 \003(\0132(.google.maps.places.v1.A"
           + "uthorAttribution:N\352AK\n\033places.googleapis"
           + ".com/Photo\022\035places/{place}/photos/{photo"
-          + "}*\006photos2\005photoB\236\001\n\031com.google.maps.pla"
+          + "}*\006photos2\005photoB\233\001\n\031com.google.maps.pla"
           + "ces.v1B\nPhotoProtoP\001Z7cloud.google.com/g"
-          + "o/maps/places/apiv1/placespb;placespb\370\001\001"
-          + "\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Goog"
-          + "le\\Maps\\Places\\V1b\006proto3"
+          + "o/maps/places/apiv1/placespb;placespb\242\002\006"
+          + "GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google\\"
+          + "Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

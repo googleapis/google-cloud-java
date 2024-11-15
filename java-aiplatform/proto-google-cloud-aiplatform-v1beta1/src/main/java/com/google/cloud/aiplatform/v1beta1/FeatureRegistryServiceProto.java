@@ -53,6 +53,26 @@ public final class FeatureRegistryServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureGroupRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureMonitorRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureMonitorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_fieldAccessorTable;
@@ -68,6 +88,26 @@ public final class FeatureRegistryServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -84,84 +124,132 @@ public final class FeatureRegistryServiceProto {
           + "/api/field_behavior.proto\032\031google/api/re"
           + "source.proto\032-google/cloud/aiplatform/v1"
           + "beta1/feature.proto\0323google/cloud/aiplat"
-          + "form/v1beta1/feature_group.proto\032:google"
-          + "/cloud/aiplatform/v1beta1/featurestore_s"
-          + "ervice.proto\032/google/cloud/aiplatform/v1"
-          + "beta1/operation.proto\032#google/longrunnin"
-          + "g/operations.proto\032\033google/protobuf/empt"
-          + "y.proto\032 google/protobuf/field_mask.prot"
-          + "o\"\305\001\n\031CreateFeatureGroupRequest\022>\n\006paren"
-          + "t\030\001 \001(\tB.\340A\002\372A(\022&aiplatform.googleapis.c"
-          + "om/FeatureGroup\022I\n\rfeature_group\030\002 \001(\0132-"
-          + ".google.cloud.aiplatform.v1beta1.Feature"
-          + "GroupB\003\340A\002\022\035\n\020feature_group_id\030\003 \001(\tB\003\340A"
-          + "\002\"V\n\026GetFeatureGroupRequest\022<\n\004name\030\001 \001("
-          + "\tB.\340A\002\372A(\n&aiplatform.googleapis.com/Fea"
-          + "tureGroup\"\243\001\n\030ListFeatureGroupsRequest\022>"
-          + "\n\006parent\030\001 \001(\tB.\340A\002\372A(\022&aiplatform.googl"
-          + "eapis.com/FeatureGroup\022\016\n\006filter\030\002 \001(\t\022\021"
-          + "\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\020\n"
-          + "\010order_by\030\005 \001(\t\"{\n\031ListFeatureGroupsResp"
-          + "onse\022E\n\016feature_groups\030\001 \003(\0132-.google.cl"
-          + "oud.aiplatform.v1beta1.FeatureGroup\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\"\227\001\n\031UpdateFeatureGr"
-          + "oupRequest\022I\n\rfeature_group\030\001 \001(\0132-.goog"
-          + "le.cloud.aiplatform.v1beta1.FeatureGroup"
-          + "B\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
-          + "obuf.FieldMask\"h\n\031DeleteFeatureGroupRequ"
-          + "est\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&aiplatform.go"
-          + "ogleapis.com/FeatureGroup\022\r\n\005force\030\002 \001(\010"
-          + "\"z\n#CreateFeatureGroupOperationMetadata\022"
-          + "S\n\020generic_metadata\030\001 \001(\01329.google.cloud"
-          + ".aiplatform.v1beta1.GenericOperationMeta"
-          + "data\"z\n#UpdateFeatureGroupOperationMetad"
+          + "form/v1beta1/feature_group.proto\0325google"
+          + "/cloud/aiplatform/v1beta1/feature_monito"
+          + "r.proto\0329google/cloud/aiplatform/v1beta1"
+          + "/feature_monitor_job.proto\032:google/cloud"
+          + "/aiplatform/v1beta1/featurestore_service"
+          + ".proto\032/google/cloud/aiplatform/v1beta1/"
+          + "operation.proto\032#google/longrunning/oper"
+          + "ations.proto\032\033google/protobuf/empty.prot"
+          + "o\032 google/protobuf/field_mask.proto\"\305\001\n\031"
+          + "CreateFeatureGroupRequest\022>\n\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&aiplatform.googleapis.com/Fea"
+          + "tureGroup\022I\n\rfeature_group\030\002 \001(\0132-.googl"
+          + "e.cloud.aiplatform.v1beta1.FeatureGroupB"
+          + "\003\340A\002\022\035\n\020feature_group_id\030\003 \001(\tB\003\340A\002\"V\n\026G"
+          + "etFeatureGroupRequest\022<\n\004name\030\001 \001(\tB.\340A\002"
+          + "\372A(\n&aiplatform.googleapis.com/FeatureGr"
+          + "oup\"\243\001\n\030ListFeatureGroupsRequest\022>\n\006pare"
+          + "nt\030\001 \001(\tB.\340A\002\372A(\022&aiplatform.googleapis."
+          + "com/FeatureGroup\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage"
+          + "_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\020\n\010order"
+          + "_by\030\005 \001(\t\"{\n\031ListFeatureGroupsResponse\022E"
+          + "\n\016feature_groups\030\001 \003(\0132-.google.cloud.ai"
+          + "platform.v1beta1.FeatureGroup\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"\227\001\n\031UpdateFeatureGroupReq"
+          + "uest\022I\n\rfeature_group\030\001 \001(\0132-.google.clo"
+          + "ud.aiplatform.v1beta1.FeatureGroupB\003\340A\002\022"
+          + "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
+          + "ieldMask\"h\n\031DeleteFeatureGroupRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n&aiplatform.googleap"
+          + "is.com/FeatureGroup\022\r\n\005force\030\002 \001(\010\"\317\001\n\033C"
+          + "reateFeatureMonitorRequest\022@\n\006parent\030\001 \001"
+          + "(\tB0\340A\002\372A*\022(aiplatform.googleapis.com/Fe"
+          + "atureMonitor\022M\n\017feature_monitor\030\002 \001(\0132/."
+          + "google.cloud.aiplatform.v1beta1.FeatureM"
+          + "onitorB\003\340A\002\022\037\n\022feature_monitor_id\030\003 \001(\tB"
+          + "\003\340A\002\"Z\n\030GetFeatureMonitorRequest\022>\n\004name"
+          + "\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.googleapis.co"
+          + "m/FeatureMonitor\"\273\001\n\032ListFeatureMonitors"
+          + "Request\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\022(aiplatf"
+          + "orm.googleapis.com/FeatureMonitor\022\023\n\006fil"
+          + "ter\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027"
+          + "\n\npage_token\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001("
+          + "\tB\003\340A\001\"]\n\033DeleteFeatureMonitorRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.googleap"
+          + "is.com/FeatureMonitor\"\201\001\n\033ListFeatureMon"
+          + "itorsResponse\022I\n\020feature_monitors\030\001 \003(\0132"
+          + "/.google.cloud.aiplatform.v1beta1.Featur"
+          + "eMonitor\022\027\n\017next_page_token\030\002 \001(\t\"z\n#Cre"
+          + "ateFeatureGroupOperationMetadata\022S\n\020gene"
+          + "ric_metadata\030\001 \001(\01329.google.cloud.aiplat"
+          + "form.v1beta1.GenericOperationMetadata\"z\n"
+          + "#UpdateFeatureGroupOperationMetadata\022S\n\020"
+          + "generic_metadata\030\001 \001(\01329.google.cloud.ai"
+          + "platform.v1beta1.GenericOperationMetadat"
+          + "a\"}\n&CreateRegistryFeatureOperationMetad"
           + "ata\022S\n\020generic_metadata\030\001 \001(\01329.google.c"
           + "loud.aiplatform.v1beta1.GenericOperation"
-          + "Metadata\"}\n&CreateRegistryFeatureOperati"
-          + "onMetadata\022S\n\020generic_metadata\030\001 \001(\01329.g"
-          + "oogle.cloud.aiplatform.v1beta1.GenericOp"
-          + "erationMetadata\"u\n\036UpdateFeatureOperatio"
-          + "nMetadata\022S\n\020generic_metadata\030\001 \001(\01329.go"
-          + "ogle.cloud.aiplatform.v1beta1.GenericOpe"
-          + "rationMetadata2\277\023\n\026FeatureRegistryServic"
-          + "e\022\235\002\n\022CreateFeatureGroup\022:.google.cloud."
-          + "aiplatform.v1beta1.CreateFeatureGroupReq"
-          + "uest\032\035.google.longrunning.Operation\"\253\001\312A"
-          + "3\n\014FeatureGroup\022#CreateFeatureGroupOpera"
-          + "tionMetadata\332A%parent,feature_group,feat"
-          + "ure_group_id\202\323\344\223\002G\"6/v1beta1/{parent=pro"
-          + "jects/*/locations/*}/featureGroups:\rfeat"
-          + "ure_group\022\300\001\n\017GetFeatureGroup\0227.google.c"
-          + "loud.aiplatform.v1beta1.GetFeatureGroupR"
-          + "equest\032-.google.cloud.aiplatform.v1beta1"
-          + ".FeatureGroup\"E\332A\004name\202\323\344\223\0028\0226/v1beta1/{"
-          + "name=projects/*/locations/*/featureGroup"
-          + "s/*}\022\323\001\n\021ListFeatureGroups\0229.google.clou"
-          + "d.aiplatform.v1beta1.ListFeatureGroupsRe"
-          + "quest\032:.google.cloud.aiplatform.v1beta1."
-          + "ListFeatureGroupsResponse\"G\332A\006parent\202\323\344\223"
-          + "\0028\0226/v1beta1/{parent=projects/*/location"
-          + "s/*}/featureGroups\022\237\002\n\022UpdateFeatureGrou"
-          + "p\022:.google.cloud.aiplatform.v1beta1.Upda"
-          + "teFeatureGroupRequest\032\035.google.longrunni"
-          + "ng.Operation\"\255\001\312A3\n\014FeatureGroup\022#Update"
-          + "FeatureGroupOperationMetadata\332A\031feature_"
-          + "group,update_mask\202\323\344\223\002U2D/v1beta1/{featu"
-          + "re_group.name=projects/*/locations/*/fea"
-          + "tureGroups/*}:\rfeature_group\022\357\001\n\022DeleteF"
-          + "eatureGroup\022:.google.cloud.aiplatform.v1"
-          + "beta1.DeleteFeatureGroupRequest\032\035.google"
-          + ".longrunning.Operation\"~\312A0\n\025google.prot"
-          + "obuf.Empty\022\027DeleteOperationMetadata\332A\nna"
-          + "me,force\202\323\344\223\0028*6/v1beta1/{name=projects/"
-          + "*/locations/*/featureGroups/*}\022\202\002\n\rCreat"
-          + "eFeature\0225.google.cloud.aiplatform.v1bet"
-          + "a1.CreateFeatureRequest\032\035.google.longrun"
-          + "ning.Operation\"\232\001\312A)\n\007Feature\022\036CreateFea"
-          + "tureOperationMetadata\332A\031parent,feature,f"
-          + "eature_id\202\323\344\223\002L\"A/v1beta1/{parent=projec"
-          + "ts/*/locations/*/featureGroups/*}/featur"
-          + "es:\007feature\022\274\001\n\nGetFeature\0222.google.clou"
+          + "Metadata\"u\n\036UpdateFeatureOperationMetada"
+          + "ta\022S\n\020generic_metadata\030\001 \001(\01329.google.cl"
+          + "oud.aiplatform.v1beta1.GenericOperationM"
+          + "etadata\"|\n%CreateFeatureMonitorOperation"
+          + "Metadata\022S\n\020generic_metadata\030\001 \001(\01329.goo"
+          + "gle.cloud.aiplatform.v1beta1.GenericOper"
+          + "ationMetadata\"\343\001\n\036CreateFeatureMonitorJo"
+          + "bRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+aiplat"
+          + "form.googleapis.com/FeatureMonitorJob\022T\n"
+          + "\023feature_monitor_job\030\002 \001(\01322.google.clou"
+          + "d.aiplatform.v1beta1.FeatureMonitorJobB\003"
+          + "\340A\002\022&\n\026feature_monitor_job_id\030\003 \001(\003B\006\340A\001"
+          + "\340A\003\"`\n\033GetFeatureMonitorJobRequest\022A\n\004na"
+          + "me\030\001 \001(\tB3\340A\002\372A-\n+aiplatform.googleapis."
+          + "com/FeatureMonitorJob\"\301\001\n\035ListFeatureMon"
+          + "itorJobsRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022"
+          + "+aiplatform.googleapis.com/FeatureMonito"
+          + "rJob\022\023\n\006filter\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003"
+          + " \001(\005B\003\340A\001\022\027\n\npage_token\030\004 \001(\tB\003\340A\001\022\025\n\010or"
+          + "der_by\030\005 \001(\tB\003\340A\001\"\213\001\n\036ListFeatureMonitor"
+          + "JobsResponse\022P\n\024feature_monitor_jobs\030\001 \003"
+          + "(\01322.google.cloud.aiplatform.v1beta1.Fea"
+          + "tureMonitorJob\022\027\n\017next_page_token\030\002 \001(\t2"
+          + "\271$\n\026FeatureRegistryService\022\235\002\n\022CreateFea"
+          + "tureGroup\022:.google.cloud.aiplatform.v1be"
+          + "ta1.CreateFeatureGroupRequest\032\035.google.l"
+          + "ongrunning.Operation\"\253\001\312A3\n\014FeatureGroup"
+          + "\022#CreateFeatureGroupOperationMetadata\332A%"
+          + "parent,feature_group,feature_group_id\202\323\344"
+          + "\223\002G\"6/v1beta1/{parent=projects/*/locatio"
+          + "ns/*}/featureGroups:\rfeature_group\022\300\001\n\017G"
+          + "etFeatureGroup\0227.google.cloud.aiplatform"
+          + ".v1beta1.GetFeatureGroupRequest\032-.google"
+          + ".cloud.aiplatform.v1beta1.FeatureGroup\"E"
+          + "\332A\004name\202\323\344\223\0028\0226/v1beta1/{name=projects/*"
+          + "/locations/*/featureGroups/*}\022\323\001\n\021ListFe"
+          + "atureGroups\0229.google.cloud.aiplatform.v1"
+          + "beta1.ListFeatureGroupsRequest\032:.google."
+          + "cloud.aiplatform.v1beta1.ListFeatureGrou"
+          + "psResponse\"G\332A\006parent\202\323\344\223\0028\0226/v1beta1/{p"
+          + "arent=projects/*/locations/*}/featureGro"
+          + "ups\022\237\002\n\022UpdateFeatureGroup\022:.google.clou"
+          + "d.aiplatform.v1beta1.UpdateFeatureGroupR"
+          + "equest\032\035.google.longrunning.Operation\"\255\001"
+          + "\312A3\n\014FeatureGroup\022#UpdateFeatureGroupOpe"
+          + "rationMetadata\332A\031feature_group,update_ma"
+          + "sk\202\323\344\223\002U2D/v1beta1/{feature_group.name=p"
+          + "rojects/*/locations/*/featureGroups/*}:\r"
+          + "feature_group\022\357\001\n\022DeleteFeatureGroup\022:.g"
+          + "oogle.cloud.aiplatform.v1beta1.DeleteFea"
+          + "tureGroupRequest\032\035.google.longrunning.Op"
+          + "eration\"~\312A0\n\025google.protobuf.Empty\022\027Del"
+          + "eteOperationMetadata\332A\nname,force\202\323\344\223\0028*"
+          + "6/v1beta1/{name=projects/*/locations/*/f"
+          + "eatureGroups/*}\022\202\002\n\rCreateFeature\0225.goog"
+          + "le.cloud.aiplatform.v1beta1.CreateFeatur"
+          + "eRequest\032\035.google.longrunning.Operation\""
+          + "\232\001\312A)\n\007Feature\022\036CreateFeatureOperationMe"
+          + "tadata\332A\031parent,feature,feature_id\202\323\344\223\002L"
+          + "\"A/v1beta1/{parent=projects/*/locations/"
+          + "*/featureGroups/*}/features:\007feature\022\244\002\n"
+          + "\023BatchCreateFeatures\022;.google.cloud.aipl"
+          + "atform.v1beta1.BatchCreateFeaturesReques"
+          + "t\032\035.google.longrunning.Operation\"\260\001\312AC\n\033"
+          + "BatchCreateFeaturesResponse\022$BatchCreate"
+          + "FeaturesOperationMetadata\332A\017parent,reque"
+          + "sts\202\323\344\223\002R\"M/v1beta1/{parent=projects/*/l"
+          + "ocations/*/featureGroups/*}/features:bat"
+          + "chCreate:\001*\022\274\001\n\nGetFeature\0222.google.clou"
           + "d.aiplatform.v1beta1.GetFeatureRequest\032("
           + ".google.cloud.aiplatform.v1beta1.Feature"
           + "\"P\332A\004name\202\323\344\223\002C\022A/v1beta1/{name=projects"
@@ -183,16 +271,62 @@ public final class FeatureRegistryServiceProto {
           + "ngrunning.Operation\"\203\001\312A0\n\025google.protob"
           + "uf.Empty\022\027DeleteOperationMetadata\332A\004name"
           + "\202\323\344\223\002C*A/v1beta1/{name=projects/*/locati"
-          + "ons/*/featureGroups/*/features/*}\032M\312A\031ai"
-          + "platform.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\362\001\n#com"
-          + ".google.cloud.aiplatform.v1beta1B\033Featur"
-          + "eRegistryServiceProtoP\001ZCcloud.google.co"
-          + "m/go/aiplatform/apiv1beta1/aiplatformpb;"
-          + "aiplatformpb\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "ons/*/featureGroups/*/features/*}\022\275\002\n\024Cr"
+          + "eateFeatureMonitor\022<.google.cloud.aiplat"
+          + "form.v1beta1.CreateFeatureMonitorRequest"
+          + "\032\035.google.longrunning.Operation\"\307\001\312A7\n\016F"
+          + "eatureMonitor\022%CreateFeatureMonitorOpera"
+          + "tionMetadata\332A)parent,feature_monitor,fe"
+          + "ature_monitor_id\202\323\344\223\002[\"H/v1beta1/{parent"
+          + "=projects/*/locations/*/featureGroups/*}"
+          + "/featureMonitors:\017feature_monitor\022\330\001\n\021Ge"
+          + "tFeatureMonitor\0229.google.cloud.aiplatfor"
+          + "m.v1beta1.GetFeatureMonitorRequest\032/.goo"
+          + "gle.cloud.aiplatform.v1beta1.FeatureMoni"
+          + "tor\"W\332A\004name\202\323\344\223\002J\022H/v1beta1/{name=proje"
+          + "cts/*/locations/*/featureGroups/*/featur"
+          + "eMonitors/*}\022\353\001\n\023ListFeatureMonitors\022;.g"
+          + "oogle.cloud.aiplatform.v1beta1.ListFeatu"
+          + "reMonitorsRequest\032<.google.cloud.aiplatf"
+          + "orm.v1beta1.ListFeatureMonitorsResponse\""
+          + "Y\332A\006parent\202\323\344\223\002J\022H/v1beta1/{parent=proje"
+          + "cts/*/locations/*/featureGroups/*}/featu"
+          + "reMonitors\022\200\002\n\024DeleteFeatureMonitor\022<.go"
+          + "ogle.cloud.aiplatform.v1beta1.DeleteFeat"
+          + "ureMonitorRequest\032\035.google.longrunning.O"
+          + "peration\"\212\001\312A0\n\025google.protobuf.Empty\022\027D"
+          + "eleteOperationMetadata\332A\004name\202\323\344\223\002J*H/v1"
+          + "beta1/{name=projects/*/locations/*/featu"
+          + "reGroups/*/featureMonitors/*}\022\277\002\n\027Create"
+          + "FeatureMonitorJob\022?.google.cloud.aiplatf"
+          + "orm.v1beta1.CreateFeatureMonitorJobReque"
+          + "st\0322.google.cloud.aiplatform.v1beta1.Fea"
+          + "tureMonitorJob\"\256\001\332A1parent,feature_monit"
+          + "or_job,feature_monitor_job_id\202\323\344\223\002t\"]/v1"
+          + "beta1/{parent=projects/*/locations/*/fea"
+          + "tureGroups/*/featureMonitors/*}/featureM"
+          + "onitorJobs:\023feature_monitor_job\022\366\001\n\024GetF"
+          + "eatureMonitorJob\022<.google.cloud.aiplatfo"
+          + "rm.v1beta1.GetFeatureMonitorJobRequest\0322"
+          + ".google.cloud.aiplatform.v1beta1.Feature"
+          + "MonitorJob\"l\332A\004name\202\323\344\223\002_\022]/v1beta1/{nam"
+          + "e=projects/*/locations/*/featureGroups/*"
+          + "/featureMonitors/*/featureMonitorJobs/*}"
+          + "\022\211\002\n\026ListFeatureMonitorJobs\022>.google.clo"
+          + "ud.aiplatform.v1beta1.ListFeatureMonitor"
+          + "JobsRequest\032?.google.cloud.aiplatform.v1"
+          + "beta1.ListFeatureMonitorJobsResponse\"n\332A"
+          + "\006parent\202\323\344\223\002_\022]/v1beta1/{parent=projects"
+          + "/*/locations/*/featureGroups/*/featureMo"
+          + "nitors/*}/featureMonitorJobs\032M\312A\031aiplatf"
+          + "orm.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\362\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\033FeatureRegi"
+          + "stryServiceProtoP\001ZCcloud.google.com/go/"
+          + "aiplatform/apiv1beta1/aiplatformpb;aipla"
+          + "tformpb\252\002\037Google.Cloud.AIPlatform.V1Beta"
+          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
+          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -204,6 +338,8 @@ public final class FeatureRegistryServiceProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeatureProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeatureGroupProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.FeatureMonitorProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.FeatureMonitorJobProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
@@ -258,8 +394,48 @@ public final class FeatureRegistryServiceProto {
             new java.lang.String[] {
               "Name", "Force",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "FeatureMonitor", "FeatureMonitorId",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken", "OrderBy",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureMonitorRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureMonitorRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureMonitorRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorsResponse_descriptor,
+            new java.lang.String[] {
+              "FeatureMonitors", "NextPageToken",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureGroupOperationMetadata_descriptor,
@@ -267,7 +443,7 @@ public final class FeatureRegistryServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureGroupOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureGroupOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureGroupOperationMetadata_descriptor,
@@ -275,7 +451,7 @@ public final class FeatureRegistryServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateRegistryFeatureOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_CreateRegistryFeatureOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateRegistryFeatureOperationMetadata_descriptor,
@@ -283,12 +459,52 @@ public final class FeatureRegistryServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateFeatureOperationMetadata_descriptor,
             new java.lang.String[] {
               "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureMonitorJobRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "FeatureMonitorJob", "FeatureMonitorJobId",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GetFeatureMonitorJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken", "OrderBy",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListFeatureMonitorJobsResponse_descriptor,
+            new java.lang.String[] {
+              "FeatureMonitorJobs", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -307,6 +523,8 @@ public final class FeatureRegistryServiceProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeatureProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeatureGroupProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.FeatureMonitorProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.FeatureMonitorJobProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();

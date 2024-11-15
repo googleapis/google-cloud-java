@@ -776,6 +776,312 @@ public class SiteSearchEngineServiceClientHttpJsonTest {
   }
 
   @Test
+  public void createSitemapTest() throws Exception {
+    Sitemap expectedResponse =
+        Sitemap.newBuilder()
+            .setName(
+                SitemapName.ofProjectLocationDataStoreSitemapName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SiteSearchEngineName parent =
+        SiteSearchEngineName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+    Sitemap sitemap = Sitemap.newBuilder().build();
+
+    Sitemap actualResponse = client.createSitemapAsync(parent, sitemap).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSitemapExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SiteSearchEngineName parent =
+          SiteSearchEngineName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      Sitemap sitemap = Sitemap.newBuilder().build();
+      client.createSitemapAsync(parent, sitemap).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSitemapTest2() throws Exception {
+    Sitemap expectedResponse =
+        Sitemap.newBuilder()
+            .setName(
+                SitemapName.ofProjectLocationDataStoreSitemapName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-6467/locations/location-6467/dataStores/dataStore-6467/siteSearchEngine";
+    Sitemap sitemap = Sitemap.newBuilder().build();
+
+    Sitemap actualResponse = client.createSitemapAsync(parent, sitemap).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSitemapExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-6467/locations/location-6467/dataStores/dataStore-6467/siteSearchEngine";
+      Sitemap sitemap = Sitemap.newBuilder().build();
+      client.createSitemapAsync(parent, sitemap).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteSitemapTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SitemapName name =
+        SitemapName.ofProjectLocationDataStoreSitemapName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]");
+
+    client.deleteSitemapAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSitemapExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SitemapName name =
+          SitemapName.ofProjectLocationDataStoreSitemapName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]");
+      client.deleteSitemapAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteSitemapTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3636/locations/location-3636/dataStores/dataStore-3636/siteSearchEngine/sitemaps/sitemap-3636";
+
+    client.deleteSitemapAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSitemapExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3636/locations/location-3636/dataStores/dataStore-3636/siteSearchEngine/sitemaps/sitemap-3636";
+      client.deleteSitemapAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void fetchSitemapsTest() throws Exception {
+    FetchSitemapsResponse expectedResponse =
+        FetchSitemapsResponse.newBuilder()
+            .addAllSitemapsMetadata(new ArrayList<FetchSitemapsResponse.SitemapMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SiteSearchEngineName parent =
+        SiteSearchEngineName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    FetchSitemapsResponse actualResponse = client.fetchSitemaps(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchSitemapsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SiteSearchEngineName parent =
+          SiteSearchEngineName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.fetchSitemaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchSitemapsTest2() throws Exception {
+    FetchSitemapsResponse expectedResponse =
+        FetchSitemapsResponse.newBuilder()
+            .addAllSitemapsMetadata(new ArrayList<FetchSitemapsResponse.SitemapMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-6467/locations/location-6467/dataStores/dataStore-6467/siteSearchEngine";
+
+    FetchSitemapsResponse actualResponse = client.fetchSitemaps(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchSitemapsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-6467/locations/location-6467/dataStores/dataStore-6467/siteSearchEngine";
+      client.fetchSitemaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void enableAdvancedSiteSearchTest() throws Exception {
     EnableAdvancedSiteSearchResponse expectedResponse =
         EnableAdvancedSiteSearchResponse.newBuilder().build();
@@ -917,6 +1223,7 @@ public class SiteSearchEngineServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .addAllUris(new ArrayList<String>())
+            .setSiteCredential("siteCredential-751929602")
             .build();
 
     RecrawlUrisResponse actualResponse = client.recrawlUrisAsync(request).get();
@@ -952,6 +1259,7 @@ public class SiteSearchEngineServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       client.recrawlUrisAsync(request).get();
       Assert.fail("No exception raised");

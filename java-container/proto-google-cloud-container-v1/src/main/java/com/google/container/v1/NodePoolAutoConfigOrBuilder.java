@@ -146,4 +146,45 @@ public interface NodePoolAutoConfigOrBuilder
    * <code>.google.container.v1.NodeKubeletConfig node_kubelet_config = 3;</code>
    */
   com.google.container.v1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration options for Linux nodes.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig linux_node_config = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the linuxNodeConfig field is set.
+   */
+  boolean hasLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration options for Linux nodes.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig linux_node_config = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The linuxNodeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration options for Linux nodes.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig linux_node_config = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfigOrBuilder getLinuxNodeConfigOrBuilder();
 }

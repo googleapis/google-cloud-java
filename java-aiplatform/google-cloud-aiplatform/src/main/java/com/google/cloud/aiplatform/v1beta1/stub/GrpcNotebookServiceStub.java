@@ -55,6 +55,9 @@ import com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1beta1.StopNotebookRuntimeOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.StopNotebookRuntimeRequest;
+import com.google.cloud.aiplatform.v1beta1.StopNotebookRuntimeResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeRequest;
@@ -216,6 +219,17 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<StopNotebookRuntimeRequest, Operation>
+      stopNotebookRuntimeMethodDescriptor =
+          MethodDescriptor.<StopNotebookRuntimeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.NotebookService/StopNotebookRuntime")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StopNotebookRuntimeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateNotebookExecutionJobRequest, Operation>
       createNotebookExecutionJobMethodDescriptor =
           MethodDescriptor.<CreateNotebookExecutionJobRequest, Operation>newBuilder()
@@ -360,6 +374,12 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           StartNotebookRuntimeResponse,
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationCallable;
+  private final UnaryCallable<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeCallable;
+  private final OperationCallable<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationCallable;
   private final UnaryCallable<CreateNotebookExecutionJobRequest, Operation>
       createNotebookExecutionJobCallable;
   private final OperationCallable<
@@ -550,6 +570,16 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     GrpcCallSettings<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeTransportSettings =
         GrpcCallSettings.<StartNotebookRuntimeRequest, Operation>newBuilder()
             .setMethodDescriptor(startNotebookRuntimeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeTransportSettings =
+        GrpcCallSettings.<StopNotebookRuntimeRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopNotebookRuntimeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -755,6 +785,17 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.startNotebookRuntimeOperationSettings(),
             clientContext,
             operationsStub);
+    this.stopNotebookRuntimeCallable =
+        callableFactory.createUnaryCallable(
+            stopNotebookRuntimeTransportSettings,
+            settings.stopNotebookRuntimeSettings(),
+            clientContext);
+    this.stopNotebookRuntimeOperationCallable =
+        callableFactory.createOperationCallable(
+            stopNotebookRuntimeTransportSettings,
+            settings.stopNotebookRuntimeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createNotebookExecutionJobCallable =
         callableFactory.createUnaryCallable(
             createNotebookExecutionJobTransportSettings,
@@ -939,6 +980,20 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationCallable() {
     return startNotebookRuntimeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeCallable() {
+    return stopNotebookRuntimeCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationCallable() {
+    return stopNotebookRuntimeOperationCallable;
   }
 
   @Override

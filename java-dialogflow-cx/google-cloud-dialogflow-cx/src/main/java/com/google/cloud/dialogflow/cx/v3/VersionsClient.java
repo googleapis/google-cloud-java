@@ -390,8 +390,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions
-   *     for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(FlowName parent) {
@@ -423,8 +423,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions
-   *     for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(String parent) {
@@ -554,8 +554,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(VersionName name) {
@@ -584,8 +583,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(String name) {
@@ -681,8 +679,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -725,8 +723,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -959,8 +957,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(VersionName name) {
@@ -989,8 +987,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(String name) {
@@ -1086,8 +1084,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(VersionName name) {
@@ -1125,8 +1123,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(String name) {
@@ -1274,8 +1272,8 @@ public class VersionsClient implements BackgroundResource {
    *
    * @param baseVersion Required. Name of the base flow version to compare with the target version.
    *     Use version ID `0` to indicate the draft version of the specified flow.
-   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompareVersionsResponse compareVersions(VersionName baseVersion) {
@@ -1307,8 +1305,8 @@ public class VersionsClient implements BackgroundResource {
    *
    * @param baseVersion Required. Name of the base flow version to compare with the target version.
    *     Use version ID `0` to indicate the draft version of the specified flow.
-   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompareVersionsResponse compareVersions(String baseVersion) {

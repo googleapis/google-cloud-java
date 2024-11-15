@@ -102,7 +102,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * completionServiceSettingsBuilder
@@ -118,6 +118,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
     return ((CompletionServiceStubSettings) getStubSettings()).completeQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to advancedCompleteQuery. */
+  public UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).advancedCompleteQuerySettings();
   }
 
   /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
@@ -303,6 +309,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
     public UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings() {
       return getStubSettingsBuilder().completeQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to advancedCompleteQuery. */
+    public UnaryCallSettings.Builder<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings() {
+      return getStubSettingsBuilder().advancedCompleteQuerySettings();
     }
 
     /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */

@@ -187,6 +187,27 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
   }
 
   @Override
+  public void batchCreateFeatures(
+      BatchCreateFeaturesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateFeatures, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getFeature(GetFeatureRequest request, StreamObserver<Feature> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Feature) {
@@ -265,6 +286,155 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
                   "Unrecognized response type %s for method DeleteFeature, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createFeatureMonitor(
+      CreateFeatureMonitorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFeatureMonitor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFeatureMonitor(
+      GetFeatureMonitorRequest request, StreamObserver<FeatureMonitor> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeatureMonitor) {
+      requests.add(request);
+      responseObserver.onNext(((FeatureMonitor) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFeatureMonitor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeatureMonitor.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFeatureMonitors(
+      ListFeatureMonitorsRequest request,
+      StreamObserver<ListFeatureMonitorsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFeatureMonitorsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFeatureMonitorsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFeatureMonitors, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFeatureMonitorsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFeatureMonitor(
+      DeleteFeatureMonitorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFeatureMonitor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createFeatureMonitorJob(
+      CreateFeatureMonitorJobRequest request, StreamObserver<FeatureMonitorJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeatureMonitorJob) {
+      requests.add(request);
+      responseObserver.onNext(((FeatureMonitorJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFeatureMonitorJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeatureMonitorJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFeatureMonitorJob(
+      GetFeatureMonitorJobRequest request, StreamObserver<FeatureMonitorJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeatureMonitorJob) {
+      requests.add(request);
+      responseObserver.onNext(((FeatureMonitorJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFeatureMonitorJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeatureMonitorJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFeatureMonitorJobs(
+      ListFeatureMonitorJobsRequest request,
+      StreamObserver<ListFeatureMonitorJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFeatureMonitorJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFeatureMonitorJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFeatureMonitorJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFeatureMonitorJobsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

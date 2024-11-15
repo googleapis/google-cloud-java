@@ -78,7 +78,7 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * Internal IP address of a GKE cluster master.
+   * Internal IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string internal_ip = 5;</code>
@@ -90,7 +90,7 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * Internal IP address of a GKE cluster master.
+   * Internal IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string internal_ip = 5;</code>
@@ -103,7 +103,7 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * External IP address of a GKE cluster master.
+   * External IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string external_ip = 6;</code>
@@ -115,7 +115,7 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * External IP address of a GKE cluster master.
+   * External IP address of a GKE cluster control plane.
    * </pre>
    *
    * <code>string external_ip = 6;</code>
@@ -123,4 +123,29 @@ public interface GKEMasterInfoOrBuilder
    * @return The bytes for externalIp.
    */
   com.google.protobuf.ByteString getExternalIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of a GKE cluster control plane.
+   * </pre>
+   *
+   * <code>string dns_endpoint = 7;</code>
+   *
+   * @return The dnsEndpoint.
+   */
+  java.lang.String getDnsEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of a GKE cluster control plane.
+   * </pre>
+   *
+   * <code>string dns_endpoint = 7;</code>
+   *
+   * @return The bytes for dnsEndpoint.
+   */
+  com.google.protobuf.ByteString getDnsEndpointBytes();
 }

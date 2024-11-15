@@ -174,11 +174,11 @@ public final class ContextProto {
           + "ments/*/users/*/sessions/*}/contexts\032x\312A"
           + "\031dialogflow.googleapis.com\322AYhttps://www"
           + ".googleapis.com/auth/cloud-platform,http"
-          + "s://www.googleapis.com/auth/dialogflowB\225"
+          + "s://www.googleapis.com/auth/dialogflowB\222"
           + "\001\n\036com.google.cloud.dialogflow.v2B\014Conte"
           + "xtProtoP\001Z>cloud.google.com/go/dialogflo"
-          + "w/apiv2/dialogflowpb;dialogflowpb\370\001\001\242\002\002D"
-          + "F\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "w/apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002"
+          + "\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

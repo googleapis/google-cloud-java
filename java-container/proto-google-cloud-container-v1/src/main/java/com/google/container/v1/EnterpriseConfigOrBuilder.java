@@ -52,4 +52,29 @@ public interface EnterpriseConfigOrBuilder
    * @return The clusterTier.
    */
   com.google.container.v1.EnterpriseConfig.ClusterTier getClusterTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The enum numeric value on the wire for desiredTier.
+   */
+  int getDesiredTierValue();
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The desiredTier.
+   */
+  com.google.container.v1.EnterpriseConfig.ClusterTier getDesiredTier();
 }

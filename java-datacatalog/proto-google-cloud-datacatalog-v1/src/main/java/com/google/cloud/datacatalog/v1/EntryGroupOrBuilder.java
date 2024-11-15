@@ -28,13 +28,13 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

@@ -189,10 +189,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
    * Optional. The ID to use for the generator, which will become the final
    * component of the generator's resource name.
    *
-   * The generator ID must be compliant with the regression fomula
+   * The generator ID must be compliant with the regression formula
    * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
    * If the field is not provided, an Id will be auto-generated.
-   * If the field is provided, the caller is resposible for
+   * If the field is provided, the caller is responsible for
    * 1. the uniqueness of the ID, otherwise the request will be rejected.
    * 2. the consistency for whether to use custom ID or not under a project to
    * better ensure uniqueness.
@@ -221,10 +221,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
    * Optional. The ID to use for the generator, which will become the final
    * component of the generator's resource name.
    *
-   * The generator ID must be compliant with the regression fomula
+   * The generator ID must be compliant with the regression formula
    * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
    * If the field is not provided, an Id will be auto-generated.
-   * If the field is provided, the caller is resposible for
+   * If the field is provided, the caller is responsible for
    * 1. the uniqueness of the ID, otherwise the request will be rejected.
    * 2. the consistency for whether to use custom ID or not under a project to
    * better ensure uniqueness.
@@ -990,10 +990,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
      * Optional. The ID to use for the generator, which will become the final
      * component of the generator's resource name.
      *
-     * The generator ID must be compliant with the regression fomula
+     * The generator ID must be compliant with the regression formula
      * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is not provided, an Id will be auto-generated.
-     * If the field is provided, the caller is resposible for
+     * If the field is provided, the caller is responsible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
      * better ensure uniqueness.
@@ -1021,10 +1021,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
      * Optional. The ID to use for the generator, which will become the final
      * component of the generator's resource name.
      *
-     * The generator ID must be compliant with the regression fomula
+     * The generator ID must be compliant with the regression formula
      * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is not provided, an Id will be auto-generated.
-     * If the field is provided, the caller is resposible for
+     * If the field is provided, the caller is responsible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
      * better ensure uniqueness.
@@ -1052,10 +1052,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
      * Optional. The ID to use for the generator, which will become the final
      * component of the generator's resource name.
      *
-     * The generator ID must be compliant with the regression fomula
+     * The generator ID must be compliant with the regression formula
      * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is not provided, an Id will be auto-generated.
-     * If the field is provided, the caller is resposible for
+     * If the field is provided, the caller is responsible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
      * better ensure uniqueness.
@@ -1082,10 +1082,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
      * Optional. The ID to use for the generator, which will become the final
      * component of the generator's resource name.
      *
-     * The generator ID must be compliant with the regression fomula
+     * The generator ID must be compliant with the regression formula
      * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is not provided, an Id will be auto-generated.
-     * If the field is provided, the caller is resposible for
+     * If the field is provided, the caller is responsible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
      * better ensure uniqueness.
@@ -1108,10 +1108,10 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
      * Optional. The ID to use for the generator, which will become the final
      * component of the generator's resource name.
      *
-     * The generator ID must be compliant with the regression fomula
+     * The generator ID must be compliant with the regression formula
      * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is not provided, an Id will be auto-generated.
-     * If the field is provided, the caller is resposible for
+     * If the field is provided, the caller is responsible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
      * better ensure uniqueness.

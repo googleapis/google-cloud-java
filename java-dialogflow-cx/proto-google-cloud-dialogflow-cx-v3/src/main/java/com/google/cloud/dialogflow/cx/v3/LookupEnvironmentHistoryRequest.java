@@ -75,8 +75,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the environment to look up the history for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the environment to look up the history for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -597,8 +597,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the environment to look up the history for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -623,8 +623,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the environment to look up the history for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -649,8 +649,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the environment to look up the history for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -674,8 +674,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the environment to look up the history for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -695,8 +695,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the environment to look up the history for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>

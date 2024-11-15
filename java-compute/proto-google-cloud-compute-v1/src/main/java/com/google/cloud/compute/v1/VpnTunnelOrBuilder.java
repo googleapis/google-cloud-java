@@ -321,7 +321,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
+   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -333,7 +333,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
+   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -345,7 +345,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
+   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -358,7 +358,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
+   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -508,7 +508,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -520,7 +520,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -532,7 +532,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -582,7 +582,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
+   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -594,7 +594,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
+   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -606,7 +606,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
+   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -619,7 +619,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
+   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -821,7 +821,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>
@@ -833,7 +833,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>
@@ -845,7 +845,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>

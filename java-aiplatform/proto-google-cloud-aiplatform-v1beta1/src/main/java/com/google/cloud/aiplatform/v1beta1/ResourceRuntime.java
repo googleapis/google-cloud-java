@@ -221,7 +221,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
    * @return The notebookRuntimeTemplate.
    */
   @java.lang.Override
@@ -253,7 +253,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
    * @return The bytes for notebookRuntimeTemplate.
    */
   @java.lang.Override
@@ -895,7 +895,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
      * @return The notebookRuntimeTemplate.
      */
     @java.lang.Deprecated
@@ -926,7 +926,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
      * @return The bytes for notebookRuntimeTemplate.
      */
     @java.lang.Deprecated
@@ -957,7 +957,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
      * @param value The notebookRuntimeTemplate to set.
      * @return This builder for chaining.
      */
@@ -987,7 +987,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1013,7 +1013,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
      * @param value The bytes for notebookRuntimeTemplate to set.
      * @return This builder for chaining.
      */

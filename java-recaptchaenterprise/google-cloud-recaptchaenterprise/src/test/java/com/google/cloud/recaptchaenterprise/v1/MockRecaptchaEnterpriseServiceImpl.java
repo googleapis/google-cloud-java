@@ -36,6 +36,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -45,6 +47,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RecaptchaEnterpriseServiceGrpc.RecaptchaEnterpriseServiceImplBase;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
@@ -294,6 +298,48 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method AddIpOverride, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AddIpOverrideResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeIpOverride(
+      RemoveIpOverrideRequest request, StreamObserver<RemoveIpOverrideResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveIpOverrideResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveIpOverrideResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveIpOverride, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveIpOverrideResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listIpOverrides(
+      ListIpOverridesRequest request, StreamObserver<ListIpOverridesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListIpOverridesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListIpOverridesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIpOverrides, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListIpOverridesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

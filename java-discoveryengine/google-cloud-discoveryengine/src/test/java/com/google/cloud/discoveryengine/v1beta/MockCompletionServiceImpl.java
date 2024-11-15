@@ -81,6 +81,28 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
   }
 
   @Override
+  public void advancedCompleteQuery(
+      AdvancedCompleteQueryRequest request,
+      StreamObserver<AdvancedCompleteQueryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdvancedCompleteQueryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AdvancedCompleteQueryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AdvancedCompleteQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdvancedCompleteQueryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void importSuggestionDenyListEntries(
       ImportSuggestionDenyListEntriesRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

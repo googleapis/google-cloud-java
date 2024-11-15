@@ -435,4 +435,446 @@ public class MockEventarcImpl extends EventarcImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getMessageBus(
+      GetMessageBusRequest request, StreamObserver<MessageBus> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MessageBus) {
+      requests.add(request);
+      responseObserver.onNext(((MessageBus) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMessageBus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MessageBus.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMessageBuses(
+      ListMessageBusesRequest request, StreamObserver<ListMessageBusesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMessageBusesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMessageBusesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMessageBuses, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMessageBusesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMessageBusEnrollments(
+      ListMessageBusEnrollmentsRequest request,
+      StreamObserver<ListMessageBusEnrollmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMessageBusEnrollmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMessageBusEnrollmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMessageBusEnrollments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMessageBusEnrollmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMessageBus(
+      CreateMessageBusRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMessageBus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMessageBus(
+      UpdateMessageBusRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMessageBus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMessageBus(
+      DeleteMessageBusRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMessageBus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEnrollment(
+      GetEnrollmentRequest request, StreamObserver<Enrollment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Enrollment) {
+      requests.add(request);
+      responseObserver.onNext(((Enrollment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEnrollment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Enrollment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listEnrollments(
+      ListEnrollmentsRequest request, StreamObserver<ListEnrollmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEnrollmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEnrollmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEnrollments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEnrollmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEnrollment(
+      CreateEnrollmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEnrollment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEnrollment(
+      UpdateEnrollmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEnrollment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEnrollment(
+      DeleteEnrollmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEnrollment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPipeline(GetPipelineRequest request, StreamObserver<Pipeline> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Pipeline) {
+      requests.add(request);
+      responseObserver.onNext(((Pipeline) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPipeline, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Pipeline.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPipelines(
+      ListPipelinesRequest request, StreamObserver<ListPipelinesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPipelinesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPipelinesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPipelines, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPipelinesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createPipeline(
+      CreatePipelineRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePipeline, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updatePipeline(
+      UpdatePipelineRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePipeline, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePipeline(
+      DeletePipelineRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePipeline, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoogleApiSource(
+      GetGoogleApiSourceRequest request, StreamObserver<GoogleApiSource> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoogleApiSource) {
+      requests.add(request);
+      responseObserver.onNext(((GoogleApiSource) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoogleApiSource, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoogleApiSource.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoogleApiSources(
+      ListGoogleApiSourcesRequest request,
+      StreamObserver<ListGoogleApiSourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoogleApiSourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoogleApiSourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoogleApiSources, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoogleApiSourcesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createGoogleApiSource(
+      CreateGoogleApiSourceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGoogleApiSource, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGoogleApiSource(
+      UpdateGoogleApiSourceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoogleApiSource, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGoogleApiSource(
+      DeleteGoogleApiSourceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGoogleApiSource, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -115,7 +115,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * featureRegistryServiceSettingsBuilder
@@ -187,6 +187,21 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
       createFeatureOperationSettings() {
     return ((FeatureRegistryServiceStubSettings) getStubSettings())
         .createFeatureOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public UnaryCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).batchCreateFeaturesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .batchCreateFeaturesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getFeature. */
@@ -409,6 +424,21 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
       return getStubSettingsBuilder().createFeatureOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings() {
+      return getStubSettingsBuilder().batchCreateFeaturesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings() {
+      return getStubSettingsBuilder().batchCreateFeaturesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getFeature. */

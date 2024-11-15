@@ -50,6 +50,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     documents_ = java.util.Collections.emptyList();
     tagIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    panels_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -103,6 +104,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -144,6 +146,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -1609,6 +1612,92 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         : mediaInfo_;
   }
 
+  public static final int PANELS_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo> panels_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo> getPanelsList() {
+    return panels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>
+      getPanelsOrBuilderList() {
+    return panels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPanelsCount() {
+    return panels_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PanelInfo getPanels(int index) {
+    return panels_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder getPanelsOrBuilder(int index) {
+    return panels_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1681,6 +1770,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, dataStore_);
+    }
+    for (int i = 0; i < panels_.size(); i++) {
+      output.writeMessage(22, panels_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1771,6 +1863,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, dataStore_);
     }
+    for (int i = 0; i < panels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, panels_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1831,6 +1926,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasMediaInfo()) {
       if (!getMediaInfo().equals(other.getMediaInfo())) return false;
     }
+    if (!getPanelsList().equals(other.getPanelsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1905,6 +2001,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasMediaInfo()) {
       hash = (37 * hash) + MEDIA_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getMediaInfo().hashCode();
+    }
+    if (getPanelsCount() > 0) {
+      hash = (37 * hash) + PANELS_FIELD_NUMBER;
+      hash = (53 * hash) + getPanelsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2078,6 +2178,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         getCompletionInfoFieldBuilder();
         getTransactionInfoFieldBuilder();
         getMediaInfoFieldBuilder();
+        getPanelsFieldBuilder();
       }
     }
 
@@ -2143,6 +2244,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         mediaInfoBuilder_.dispose();
         mediaInfoBuilder_ = null;
       }
+      if (panelsBuilder_ == null) {
+        panels_ = java.util.Collections.emptyList();
+      } else {
+        panels_ = null;
+        panelsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00100000);
       return this;
     }
 
@@ -2188,6 +2296,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         result.documents_ = documents_;
       } else {
         result.documents_ = documentsBuilder_.build();
+      }
+      if (panelsBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)) {
+          panels_ = java.util.Collections.unmodifiableList(panels_);
+          bitField0_ = (bitField0_ & ~0x00100000);
+        }
+        result.panels_ = panels_;
+      } else {
+        result.panels_ = panelsBuilder_.build();
       }
     }
 
@@ -2424,6 +2541,33 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMediaInfo()) {
         mergeMediaInfo(other.getMediaInfo());
       }
+      if (panelsBuilder_ == null) {
+        if (!other.panels_.isEmpty()) {
+          if (panels_.isEmpty()) {
+            panels_ = other.panels_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+          } else {
+            ensurePanelsIsMutable();
+            panels_.addAll(other.panels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.panels_.isEmpty()) {
+          if (panelsBuilder_.isEmpty()) {
+            panelsBuilder_.dispose();
+            panelsBuilder_ = null;
+            panels_ = other.panels_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+            panelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPanelsFieldBuilder()
+                    : null;
+          } else {
+            panelsBuilder_.addAllMessages(other.panels_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2588,6 +2732,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 162
+            case 178:
+              {
+                com.google.cloud.discoveryengine.v1beta.PanelInfo m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1beta.PanelInfo.parser(),
+                        extensionRegistry);
+                if (panelsBuilder_ == null) {
+                  ensurePanelsIsMutable();
+                  panels_.add(m);
+                } else {
+                  panelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2621,6 +2779,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2661,6 +2820,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2701,6 +2861,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2740,6 +2901,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2775,6 +2937,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -6991,6 +7154,413 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         mediaInfo_ = null;
       }
       return mediaInfoBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo> panels_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePanelsIsMutable() {
+      if (!((bitField0_ & 0x00100000) != 0)) {
+        panels_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.PanelInfo>(panels_);
+        bitField0_ |= 0x00100000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PanelInfo,
+            com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>
+        panelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo> getPanelsList() {
+      if (panelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(panels_);
+      } else {
+        return panelsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPanelsCount() {
+      if (panelsBuilder_ == null) {
+        return panels_.size();
+      } else {
+        return panelsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PanelInfo getPanels(int index) {
+      if (panelsBuilder_ == null) {
+        return panels_.get(index);
+      } else {
+        return panelsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPanels(int index, com.google.cloud.discoveryengine.v1beta.PanelInfo value) {
+      if (panelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePanelsIsMutable();
+        panels_.set(index, value);
+        onChanged();
+      } else {
+        panelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPanels(
+        int index, com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder builderForValue) {
+      if (panelsBuilder_ == null) {
+        ensurePanelsIsMutable();
+        panels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        panelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPanels(com.google.cloud.discoveryengine.v1beta.PanelInfo value) {
+      if (panelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePanelsIsMutable();
+        panels_.add(value);
+        onChanged();
+      } else {
+        panelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPanels(int index, com.google.cloud.discoveryengine.v1beta.PanelInfo value) {
+      if (panelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePanelsIsMutable();
+        panels_.add(index, value);
+        onChanged();
+      } else {
+        panelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPanels(
+        com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder builderForValue) {
+      if (panelsBuilder_ == null) {
+        ensurePanelsIsMutable();
+        panels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        panelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPanels(
+        int index, com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder builderForValue) {
+      if (panelsBuilder_ == null) {
+        ensurePanelsIsMutable();
+        panels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        panelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPanels(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1beta.PanelInfo> values) {
+      if (panelsBuilder_ == null) {
+        ensurePanelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, panels_);
+        onChanged();
+      } else {
+        panelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPanels() {
+      if (panelsBuilder_ == null) {
+        panels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+        onChanged();
+      } else {
+        panelsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePanels(int index) {
+      if (panelsBuilder_ == null) {
+        ensurePanelsIsMutable();
+        panels_.remove(index);
+        onChanged();
+      } else {
+        panelsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder getPanelsBuilder(int index) {
+      return getPanelsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder getPanelsOrBuilder(
+        int index) {
+      if (panelsBuilder_ == null) {
+        return panels_.get(index);
+      } else {
+        return panelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>
+        getPanelsOrBuilderList() {
+      if (panelsBuilder_ != null) {
+        return panelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(panels_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder addPanelsBuilder() {
+      return getPanelsFieldBuilder()
+          .addBuilder(com.google.cloud.discoveryengine.v1beta.PanelInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder addPanelsBuilder(int index) {
+      return getPanelsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.discoveryengine.v1beta.PanelInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of panels associated with this event.
+     * Used for page-level impression data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder>
+        getPanelsBuilderList() {
+      return getPanelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.PanelInfo,
+            com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>
+        getPanelsFieldBuilder() {
+      if (panelsBuilder_ == null) {
+        panelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.PanelInfo,
+                com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>(
+                panels_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
+        panels_ = null;
+      }
+      return panelsBuilder_;
     }
 
     @java.lang.Override

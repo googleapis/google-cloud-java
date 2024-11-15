@@ -73,8 +73,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-   * format.
+   * Output only. In
+   * `projects/{project}/locations/{location}/providers/{provider_id}` format.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -97,8 +97,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-   * format.
+   * Output only. In
+   * `projects/{project}/locations/{location}/providers/{provider_id}` format.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -126,7 +126,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+   * Output only. Human friendly name for the Provider. For example "Cloud
+   * Storage".
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -149,7 +150,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+   * Output only. Human friendly name for the Provider. For example "Cloud
+   * Storage".
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -689,8 +691,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-     * format.
+     * Output only. In
+     * `projects/{project}/locations/{location}/providers/{provider_id}` format.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -712,8 +714,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-     * format.
+     * Output only. In
+     * `projects/{project}/locations/{location}/providers/{provider_id}` format.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -735,8 +737,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-     * format.
+     * Output only. In
+     * `projects/{project}/locations/{location}/providers/{provider_id}` format.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -757,8 +759,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-     * format.
+     * Output only. In
+     * `projects/{project}/locations/{location}/providers/{provider_id}` format.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -775,8 +777,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. In `projects/{project}/locations/{location}/providers/{provider_id}`
-     * format.
+     * Output only. In
+     * `projects/{project}/locations/{location}/providers/{provider_id}` format.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -800,7 +802,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+     * Output only. Human friendly name for the Provider. For example "Cloud
+     * Storage".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -822,7 +825,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+     * Output only. Human friendly name for the Provider. For example "Cloud
+     * Storage".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -844,7 +848,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+     * Output only. Human friendly name for the Provider. For example "Cloud
+     * Storage".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -865,7 +870,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+     * Output only. Human friendly name for the Provider. For example "Cloud
+     * Storage".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -882,7 +888,8 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human friendly name for the Provider. For example "Cloud Storage".
+     * Output only. Human friendly name for the Provider. For example "Cloud
+     * Storage".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

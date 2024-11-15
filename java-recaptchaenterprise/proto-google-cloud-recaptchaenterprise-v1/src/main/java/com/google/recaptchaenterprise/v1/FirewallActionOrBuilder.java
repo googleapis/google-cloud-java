@@ -66,7 +66,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -79,7 +79,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -92,7 +92,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -119,7 +119,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -135,7 +135,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -163,7 +163,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -176,7 +176,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -188,7 +188,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -202,7 +202,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -230,7 +230,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *
@@ -244,7 +244,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *
@@ -258,7 +258,7 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *

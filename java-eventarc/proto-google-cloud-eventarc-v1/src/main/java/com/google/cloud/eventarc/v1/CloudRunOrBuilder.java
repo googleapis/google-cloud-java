@@ -65,7 +65,8 @@ public interface CloudRunOrBuilder
    *
    *
    * <pre>
-   * Optional. The relative path on the Cloud Run service the events should be sent to.
+   * Optional. The relative path on the Cloud Run service the events should be
+   * sent to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -80,7 +81,8 @@ public interface CloudRunOrBuilder
    *
    *
    * <pre>
-   * Optional. The relative path on the Cloud Run service the events should be sent to.
+   * Optional. The relative path on the Cloud Run service the events should be
+   * sent to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".

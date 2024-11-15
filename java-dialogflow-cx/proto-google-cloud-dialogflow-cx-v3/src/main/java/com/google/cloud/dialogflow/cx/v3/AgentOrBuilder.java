@@ -34,7 +34,7 @@ public interface AgentOrBuilder
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,7 +52,7 @@ public interface AgentOrBuilder
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -311,8 +311,8 @@ public interface AgentOrBuilder
    * <pre>
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * deleting the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -328,8 +328,8 @@ public interface AgentOrBuilder
    * <pre>
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * deleting the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -346,8 +346,8 @@ public interface AgentOrBuilder
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -361,8 +361,8 @@ public interface AgentOrBuilder
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -384,7 +384,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -677,4 +677,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettingsOrBuilder
       getPersonalizationSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientCertificateSettings field is set.
+   */
+  boolean hasClientCertificateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientCertificateSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings getClientCertificateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder
+      getClientCertificateSettingsOrBuilder();
 }

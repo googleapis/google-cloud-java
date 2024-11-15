@@ -239,12 +239,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A page token, received from a previous
-   * [FeatureGroupAdminService.ListFeatureGroups][] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [FeatureGroupAdminService.ListFeatureGroups][] must
-   * match the call that provided the page token.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -268,12 +268,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A page token, received from a previous
-   * [FeatureGroupAdminService.ListFeatureGroups][] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [FeatureGroupAdminService.ListFeatureGroups][] must
-   * match the call that provided the page token.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -1172,12 +1172,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeatureGroupAdminService.ListFeatureGroups][] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
-     * [FeatureGroupAdminService.ListFeatureGroups][] must
-     * match the call that provided the page token.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1200,12 +1200,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeatureGroupAdminService.ListFeatureGroups][] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
-     * [FeatureGroupAdminService.ListFeatureGroups][] must
-     * match the call that provided the page token.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1228,12 +1228,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeatureGroupAdminService.ListFeatureGroups][] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
-     * [FeatureGroupAdminService.ListFeatureGroups][] must
-     * match the call that provided the page token.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1255,12 +1255,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeatureGroupAdminService.ListFeatureGroups][] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
-     * [FeatureGroupAdminService.ListFeatureGroups][] must
-     * match the call that provided the page token.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1278,12 +1278,12 @@ public final class ListFeatureGroupsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeatureGroupAdminService.ListFeatureGroups][] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
-     * [FeatureGroupAdminService.ListFeatureGroups][] must
-     * match the call that provided the page token.
+     * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>

@@ -158,6 +158,8 @@ public class EvaluationServiceClientTest {
         request.getToolParameterKeyMatchInput(), actualRequest.getToolParameterKeyMatchInput());
     Assert.assertEquals(
         request.getToolParameterKvMatchInput(), actualRequest.getToolParameterKvMatchInput());
+    Assert.assertEquals(request.getCometInput(), actualRequest.getCometInput());
+    Assert.assertEquals(request.getMetricxInput(), actualRequest.getMetricxInput());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

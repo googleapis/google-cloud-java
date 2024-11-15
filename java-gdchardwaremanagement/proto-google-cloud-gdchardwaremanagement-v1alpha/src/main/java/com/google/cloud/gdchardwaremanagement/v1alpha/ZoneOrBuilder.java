@@ -470,4 +470,33 @@ public interface ZoneOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder
       getSubscriptionConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisioningState.
+   */
+  int getProvisioningStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The provisioningState.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState getProvisioningState();
 }

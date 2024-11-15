@@ -28,7 +28,8 @@ public interface GetSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource
+   * Required. Name of the resource, in the format
+   * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface GetSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource
+   * Required. Name of the resource, in the format
+   * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * </pre>
    *
    * <code>

@@ -21,6 +21,7 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -114,7 +115,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * catalogServiceSettingsBuilder
@@ -296,6 +297,34 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   public PagedCallSettings<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).searchEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public UnaryCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public OperationCallSettings<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataJob. */
+  public UnaryCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataJobs. */
+  public PagedCallSettings<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+      listMetadataJobsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).listMetadataJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelMetadataJob. */
+  public UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).cancelMetadataJobSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -599,6 +628,35 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
             SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
         searchEntriesSettings() {
       return getStubSettingsBuilder().searchEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public UnaryCallSettings.Builder<CreateMetadataJobRequest, Operation>
+        createMetadataJobSettings() {
+      return getStubSettingsBuilder().createMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public OperationCallSettings.Builder<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+        createMetadataJobOperationSettings() {
+      return getStubSettingsBuilder().createMetadataJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataJob. */
+    public UnaryCallSettings.Builder<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+      return getStubSettingsBuilder().getMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataJobs. */
+    public PagedCallSettings.Builder<
+            ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+        listMetadataJobsSettings() {
+      return getStubSettingsBuilder().listMetadataJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelMetadataJob. */
+    public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+      return getStubSettingsBuilder().cancelMetadataJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

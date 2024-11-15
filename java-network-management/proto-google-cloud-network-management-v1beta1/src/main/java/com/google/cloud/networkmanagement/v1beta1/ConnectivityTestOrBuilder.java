@@ -615,6 +615,71 @@ public interface ConnectivityTestOrBuilder
    *
    *
    * <pre>
+   * Whether run analysis for the return path from destination to source.
+   * Default value is false.
+   * </pre>
+   *
+   * <code>bool round_trip = 15;</code>
+   *
+   * @return The roundTrip.
+   */
+  boolean getRoundTrip();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the returnReachabilityDetails field is set.
+   */
+  boolean hasReturnReachabilityDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The returnReachabilityDetails.
+   */
+  com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails getReturnReachabilityDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reachability details of this test from the latest run for
+   * the return path. The details are updated when creating a new test,
+   * updating an existing test, or triggering a one-time rerun of an existing
+   * test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ReachabilityDetails return_reachability_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.ReachabilityDetailsOrBuilder
+      getReturnReachabilityDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether the test should skip firewall checking.
    * If not provided, we assume false.
    * </pre>

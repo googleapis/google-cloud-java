@@ -35,7 +35,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -74,7 +74,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -93,7 +93,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -113,7 +113,7 @@ public interface ToolOrBuilder
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -217,4 +217,51 @@ public interface ToolOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GoogleSearchRetrievalOrBuilder
       getGoogleSearchRetrievalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeExecution field is set.
+   */
+  boolean hasCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeExecution.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution getCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder();
 }

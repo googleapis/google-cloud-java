@@ -41,6 +41,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
 
   private GCSVolumeSource() {
     bucket_ = "";
+    mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -133,6 +134,74 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
     return readOnly_;
   }
 
+  public static final int MOUNT_OPTIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList mountOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @return A list containing the mountOptions.
+   */
+  public com.google.protobuf.ProtocolStringList getMountOptionsList() {
+    return mountOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @return The count of mountOptions.
+   */
+  public int getMountOptionsCount() {
+    return mountOptions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mountOptions at the given index.
+   */
+  public java.lang.String getMountOptions(int index) {
+    return mountOptions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mountOptions at the given index.
+   */
+  public com.google.protobuf.ByteString getMountOptionsBytes(int index) {
+    return mountOptions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +222,9 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
     if (readOnly_ != false) {
       output.writeBool(2, readOnly_);
     }
+    for (int i = 0; i < mountOptions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mountOptions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -167,6 +239,14 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
     }
     if (readOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, readOnly_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < mountOptions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(mountOptions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMountOptionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -185,6 +265,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
 
     if (!getBucket().equals(other.getBucket())) return false;
     if (getReadOnly() != other.getReadOnly()) return false;
+    if (!getMountOptionsList().equals(other.getMountOptionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -200,6 +281,10 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getBucket().hashCode();
     hash = (37 * hash) + READ_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReadOnly());
+    if (getMountOptionsCount() > 0) {
+      hash = (37 * hash) + MOUNT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMountOptionsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -342,6 +427,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       bucket_ = "";
       readOnly_ = false;
+      mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -383,6 +469,10 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.readOnly_ = readOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        mountOptions_.makeImmutable();
+        result.mountOptions_ = mountOptions_;
       }
     }
 
@@ -439,6 +529,16 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
       if (other.getReadOnly() != false) {
         setReadOnly(other.getReadOnly());
       }
+      if (!other.mountOptions_.isEmpty()) {
+        if (mountOptions_.isEmpty()) {
+          mountOptions_ = other.mountOptions_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureMountOptionsIsMutable();
+          mountOptions_.addAll(other.mountOptions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -477,6 +577,13 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMountOptionsIsMutable();
+                mountOptions_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -651,6 +758,189 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
     public Builder clearReadOnly() {
       bitField0_ = (bitField0_ & ~0x00000002);
       readOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList mountOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureMountOptionsIsMutable() {
+      if (!mountOptions_.isModifiable()) {
+        mountOptions_ = new com.google.protobuf.LazyStringArrayList(mountOptions_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @return A list containing the mountOptions.
+     */
+    public com.google.protobuf.ProtocolStringList getMountOptionsList() {
+      mountOptions_.makeImmutable();
+      return mountOptions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @return The count of mountOptions.
+     */
+    public int getMountOptionsCount() {
+      return mountOptions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The mountOptions at the given index.
+     */
+    public java.lang.String getMountOptions(int index) {
+      return mountOptions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the mountOptions at the given index.
+     */
+    public com.google.protobuf.ByteString getMountOptionsBytes(int index) {
+      return mountOptions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The mountOptions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMountOptions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMountOptionsIsMutable();
+      mountOptions_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param value The mountOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMountOptions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMountOptionsIsMutable();
+      mountOptions_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param values The mountOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMountOptions(java.lang.Iterable<java.lang.String> values) {
+      ensureMountOptionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mountOptions_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMountOptions() {
+      mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of additional flags to pass to the gcsfuse CLI.
+     * Options should be specified without the leading "--".
+     * </pre>
+     *
+     * <code>repeated string mount_options = 3;</code>
+     *
+     * @param value The bytes of the mountOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMountOptionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureMountOptionsIsMutable();
+      mountOptions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
