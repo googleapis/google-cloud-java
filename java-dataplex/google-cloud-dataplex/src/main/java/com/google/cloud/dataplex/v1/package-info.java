@@ -22,9 +22,9 @@
  * <p>======================= CatalogServiceClient =======================
  *
  * <p>Service Description: The primary resources offered by this service are EntryGroups,
- * EntryTypes, AspectTypes, Entry and Aspect which collectively allow a data administrator to
- * organize, manage, secure and catalog data across their organization located across cloud projects
- * in a variety of storage systems including Cloud Storage and BigQuery.
+ * EntryTypes, AspectTypes, and Entries. They collectively let data administrators organize, manage,
+ * secure, and catalog data located across cloud projects in their organization in a variety of
+ * storage systems, including Cloud Storage and BigQuery.
  *
  * <p>Sample for CatalogServiceClient:
  *

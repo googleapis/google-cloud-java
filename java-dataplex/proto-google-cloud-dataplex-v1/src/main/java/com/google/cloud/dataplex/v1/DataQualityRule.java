@@ -7723,7 +7723,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+   * "VOLUME"]**
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7748,7 +7749,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+   * "VOLUME"]**
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7909,6 +7911,25 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int SUSPENDED_FIELD_NUMBER = 506;
+  private boolean suspended_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the Rule is active or suspended.
+   * Default is false.
+   * </pre>
+   *
+   * <code>bool suspended = 506 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The suspended.
+   */
+  @java.lang.Override
+  public boolean getSuspended() {
+    return suspended_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7976,6 +7997,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 505, description_);
+    }
+    if (suspended_ != false) {
+      output.writeBool(506, suspended_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8052,6 +8076,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(505, description_);
     }
+    if (suspended_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(506, suspended_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8075,6 +8102,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         != java.lang.Double.doubleToLongBits(other.getThreshold())) return false;
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (getSuspended() != other.getSuspended()) return false;
     if (!getRuleTypeCase().equals(other.getRuleTypeCase())) return false;
     switch (ruleTypeCase_) {
       case 1:
@@ -8135,6 +8163,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
     switch (ruleTypeCase_) {
       case 1:
         hash = (37 * hash) + RANGE_EXPECTATION_FIELD_NUMBER;
@@ -8347,6 +8377,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       threshold_ = 0D;
       name_ = "";
       description_ = "";
+      suspended_ = false;
       ruleTypeCase_ = 0;
       ruleType_ = null;
       return this;
@@ -8403,6 +8434,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.suspended_ = suspended_;
       }
     }
 
@@ -8508,6 +8542,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         description_ = other.description_;
         bitField0_ |= 0x00004000;
         onChanged();
+      }
+      if (other.getSuspended() != false) {
+        setSuspended(other.getSuspended());
       }
       switch (other.getRuleTypeCase()) {
         case RANGE_EXPECTATION:
@@ -8683,6 +8720,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00004000;
                 break;
               } // case 4042
+            case 4048:
+              {
+                suspended_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 4048
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11042,7 +11085,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+     * "VOLUME"]**
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11066,7 +11110,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+     * "VOLUME"]**
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11090,7 +11135,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+     * "VOLUME"]**
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11113,7 +11159,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+     * "VOLUME"]**
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11132,7 +11179,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+     * "VOLUME"]**
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11467,6 +11515,62 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       description_ = value;
       bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private boolean suspended_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the Rule is active or suspended.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool suspended = 506 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The suspended.
+     */
+    @java.lang.Override
+    public boolean getSuspended() {
+      return suspended_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the Rule is active or suspended.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool suspended = 506 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The suspended to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspended(boolean value) {
+
+      suspended_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the Rule is active or suspended.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool suspended = 506 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspended() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      suspended_ = false;
       onChanged();
       return this;
     }

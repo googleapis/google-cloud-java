@@ -80,8 +80,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The estimated total number of matching entries. Not guaranteed to be
-   * accurate.
+   * The estimated total number of matching entries. This number isn't
+   * guaranteed to be accurate.
    * </pre>
    *
    * <code>int32 total_size = 2;</code>
@@ -94,7 +94,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -106,7 +107,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -119,8 +121,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable locations. Search results don't include data from those
-   * locations.
+   * Locations that the service couldn't reach. Search results don't include
+   * data from these locations.
    * </pre>
    *
    * <code>repeated string unreachable = 4;</code>
@@ -132,8 +134,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable locations. Search results don't include data from those
-   * locations.
+   * Locations that the service couldn't reach. Search results don't include
+   * data from these locations.
    * </pre>
    *
    * <code>repeated string unreachable = 4;</code>
@@ -145,8 +147,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable locations. Search results don't include data from those
-   * locations.
+   * Locations that the service couldn't reach. Search results don't include
+   * data from these locations.
    * </pre>
    *
    * <code>repeated string unreachable = 4;</code>
@@ -159,8 +161,8 @@ public interface SearchEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable locations. Search results don't include data from those
-   * locations.
+   * Locations that the service couldn't reach. Search results don't include
+   * data from these locations.
    * </pre>
    *
    * <code>repeated string unreachable = 4;</code>

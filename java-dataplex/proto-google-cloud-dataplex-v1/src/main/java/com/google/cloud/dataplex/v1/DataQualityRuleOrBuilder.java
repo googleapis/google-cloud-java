@@ -449,7 +449,8 @@ public interface DataQualityRuleOrBuilder
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+   * "VOLUME"]**
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -463,7 +464,8 @@ public interface DataQualityRuleOrBuilder
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]**
+   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
+   * "VOLUME"]**
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -555,6 +557,20 @@ public interface DataQualityRuleOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the Rule is active or suspended.
+   * Default is false.
+   * </pre>
+   *
+   * <code>bool suspended = 506 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The suspended.
+   */
+  boolean getSuspended();
 
   com.google.cloud.dataplex.v1.DataQualityRule.RuleTypeCase getRuleTypeCase();
 }

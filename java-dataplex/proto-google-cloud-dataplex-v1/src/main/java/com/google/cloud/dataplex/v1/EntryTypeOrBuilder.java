@@ -272,9 +272,9 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Optional. This checksum is computed by the service, and might be sent on
+   * update and delete requests to ensure the client has an up-to-date value
+   * before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -286,9 +286,9 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Optional. This checksum is computed by the service, and might be sent on
+   * update and delete requests to ensure the client has an up-to-date value
+   * before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -301,7 +301,7 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -314,7 +314,7 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -327,7 +327,7 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -341,7 +341,7 @@ public interface EntryTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *

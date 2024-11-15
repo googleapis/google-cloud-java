@@ -23,8 +23,8 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * EntrySource contains source system related information for the
- * entry.
+ * Information related to the source system of the data resource that is
+ * represented by the entry.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.EntrySource}
@@ -141,8 +141,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Ancestor contains information about individual items in the hierarchy of
-   * an Entry.
+   * Information about individual items in the hierarchy that is associated with
+   * the data resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.EntrySource.Ancestor}
@@ -458,8 +458,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Ancestor contains information about individual items in the hierarchy of
-     * an Entry.
+     * Information about individual items in the hierarchy that is associated with
+     * the data resource.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.EntrySource.Ancestor}
@@ -942,7 +942,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the resource in the source system.
-   * The maximum size of the field is 4000 characters.
+   * Maximum length is 4,000 characters.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -966,7 +966,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the resource in the source system.
-   * The maximum size of the field is 4000 characters.
+   * Maximum length is 4,000 characters.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -995,7 +995,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string system = 2;</code>
@@ -1019,7 +1019,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string system = 2;</code>
@@ -1048,7 +1048,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The platform containing the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string platform = 3;</code>
@@ -1072,7 +1072,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The platform containing the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string platform = 3;</code>
@@ -1100,8 +1100,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User friendly display name.
-   * The maximum size of the field is 500 characters.
+   * A user-friendly display name.
+   * Maximum length is 500 characters.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -1124,8 +1124,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User friendly display name.
-   * The maximum size of the field is 500 characters.
+   * A user-friendly display name.
+   * Maximum length is 500 characters.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -1153,8 +1153,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the Entry.
-   * The maximum size of the field is 2000 characters.
+   * A description of the data resource.
+   * Maximum length is 2,000 characters.
    * </pre>
    *
    * <code>string description = 6;</code>
@@ -1177,8 +1177,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the Entry.
-   * The maximum size of the field is 2000 characters.
+   * A description of the data resource.
+   * Maximum length is 2,000 characters.
    * </pre>
    *
    * <code>string description = 6;</code>
@@ -1312,7 +1312,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -1327,7 +1328,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -1343,7 +1345,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -1358,7 +1361,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -1373,7 +1377,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -1392,7 +1397,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -1407,7 +1412,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -1422,7 +1427,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -1438,7 +1443,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -1453,7 +1461,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -1468,7 +1479,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -1486,10 +1500,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Location of the resource in the source system. Entry will be
-   * searchable by this location. By default, this should match the location of
-   * the EntryGroup containing this entry. A different value allows capturing
-   * source location for data external to GCP.
+   * Output only. Location of the resource in the source system. You can search
+   * the entry by this location. By default, this should match the location of
+   * the entry group containing this entry. A different value allows capturing
+   * the source location for data external to Google Cloud.
    * </pre>
    *
    * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1512,10 +1526,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Location of the resource in the source system. Entry will be
-   * searchable by this location. By default, this should match the location of
-   * the EntryGroup containing this entry. A different value allows capturing
-   * source location for data external to GCP.
+   * Output only. Location of the resource in the source system. You can search
+   * the entry by this location. By default, this should match the location of
+   * the entry group containing this entry. A different value allows capturing
+   * the source location for data external to Google Cloud.
    * </pre>
    *
    * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1798,8 +1812,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * EntrySource contains source system related information for the
-   * entry.
+   * Information related to the source system of the data resource that is
+   * represented by the entry.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.EntrySource}
@@ -2209,7 +2223,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the resource in the source system.
-     * The maximum size of the field is 4000 characters.
+     * Maximum length is 4,000 characters.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -2232,7 +2246,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the resource in the source system.
-     * The maximum size of the field is 4000 characters.
+     * Maximum length is 4,000 characters.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -2255,7 +2269,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the resource in the source system.
-     * The maximum size of the field is 4000 characters.
+     * Maximum length is 4,000 characters.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -2277,7 +2291,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the resource in the source system.
-     * The maximum size of the field is 4000 characters.
+     * Maximum length is 4,000 characters.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -2295,7 +2309,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the resource in the source system.
-     * The maximum size of the field is 4000 characters.
+     * Maximum length is 4,000 characters.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -2320,7 +2334,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string system = 2;</code>
@@ -2343,7 +2357,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string system = 2;</code>
@@ -2366,7 +2380,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string system = 2;</code>
@@ -2388,7 +2402,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string system = 2;</code>
@@ -2406,7 +2420,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string system = 2;</code>
@@ -2431,7 +2445,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The platform containing the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string platform = 3;</code>
@@ -2454,7 +2468,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The platform containing the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string platform = 3;</code>
@@ -2477,7 +2491,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The platform containing the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string platform = 3;</code>
@@ -2499,7 +2513,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The platform containing the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string platform = 3;</code>
@@ -2517,7 +2531,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The platform containing the source system.
-     * The maximum size of the field is 64 characters.
+     * Maximum length is 64 characters.
      * </pre>
      *
      * <code>string platform = 3;</code>
@@ -2541,8 +2555,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User friendly display name.
-     * The maximum size of the field is 500 characters.
+     * A user-friendly display name.
+     * Maximum length is 500 characters.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2564,8 +2578,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User friendly display name.
-     * The maximum size of the field is 500 characters.
+     * A user-friendly display name.
+     * Maximum length is 500 characters.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2587,8 +2601,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User friendly display name.
-     * The maximum size of the field is 500 characters.
+     * A user-friendly display name.
+     * Maximum length is 500 characters.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2609,8 +2623,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User friendly display name.
-     * The maximum size of the field is 500 characters.
+     * A user-friendly display name.
+     * Maximum length is 500 characters.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2627,8 +2641,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User friendly display name.
-     * The maximum size of the field is 500 characters.
+     * A user-friendly display name.
+     * Maximum length is 500 characters.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2652,8 +2666,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the Entry.
-     * The maximum size of the field is 2000 characters.
+     * A description of the data resource.
+     * Maximum length is 2,000 characters.
      * </pre>
      *
      * <code>string description = 6;</code>
@@ -2675,8 +2689,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the Entry.
-     * The maximum size of the field is 2000 characters.
+     * A description of the data resource.
+     * Maximum length is 2,000 characters.
      * </pre>
      *
      * <code>string description = 6;</code>
@@ -2698,8 +2712,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the Entry.
-     * The maximum size of the field is 2000 characters.
+     * A description of the data resource.
+     * Maximum length is 2,000 characters.
      * </pre>
      *
      * <code>string description = 6;</code>
@@ -2720,8 +2734,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the Entry.
-     * The maximum size of the field is 2000 characters.
+     * A description of the data resource.
+     * Maximum length is 2,000 characters.
      * </pre>
      *
      * <code>string description = 6;</code>
@@ -2738,8 +2752,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the Entry.
-     * The maximum size of the field is 2000 characters.
+     * A description of the data resource.
+     * Maximum length is 2,000 characters.
      * </pre>
      *
      * <code>string description = 6;</code>
@@ -2949,7 +2963,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -2967,7 +2982,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -2985,7 +3001,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3003,7 +3020,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3028,7 +3046,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3050,7 +3069,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3074,7 +3094,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3099,7 +3120,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3121,7 +3143,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3143,7 +3166,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3165,7 +3189,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3186,7 +3211,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3207,7 +3233,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3222,7 +3249,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3241,7 +3269,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3260,7 +3289,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3275,7 +3305,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3292,7 +3323,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ancestors of the Entry in the source system.
+     * Immutable. The entries representing the ancestors of the data resource in
+     * the source system.
      * </pre>
      *
      * <code>
@@ -3331,7 +3363,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3345,7 +3377,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3365,7 +3397,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3387,7 +3419,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3406,7 +3438,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3433,7 +3465,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3452,7 +3484,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3466,7 +3498,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3484,7 +3516,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the resource in the source system.
+     * The time when the resource was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -3516,7 +3548,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3530,7 +3565,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3550,7 +3588,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3572,7 +3613,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3591,7 +3635,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3618,7 +3665,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3637,7 +3687,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3651,7 +3704,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3669,7 +3725,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the resource in the source system.
+     * The time when the resource was last updated in the source system. If the
+     * entry exists in the system and its `EntrySource` has `update_time`
+     * populated, further updates to the `EntrySource` of the entry must provide
+     * incremental updates to its `update_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -3696,10 +3755,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Location of the resource in the source system. Entry will be
-     * searchable by this location. By default, this should match the location of
-     * the EntryGroup containing this entry. A different value allows capturing
-     * source location for data external to GCP.
+     * Output only. Location of the resource in the source system. You can search
+     * the entry by this location. By default, this should match the location of
+     * the entry group containing this entry. A different value allows capturing
+     * the source location for data external to Google Cloud.
      * </pre>
      *
      * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3721,10 +3780,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Location of the resource in the source system. Entry will be
-     * searchable by this location. By default, this should match the location of
-     * the EntryGroup containing this entry. A different value allows capturing
-     * source location for data external to GCP.
+     * Output only. Location of the resource in the source system. You can search
+     * the entry by this location. By default, this should match the location of
+     * the entry group containing this entry. A different value allows capturing
+     * the source location for data external to Google Cloud.
      * </pre>
      *
      * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3746,10 +3805,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Location of the resource in the source system. Entry will be
-     * searchable by this location. By default, this should match the location of
-     * the EntryGroup containing this entry. A different value allows capturing
-     * source location for data external to GCP.
+     * Output only. Location of the resource in the source system. You can search
+     * the entry by this location. By default, this should match the location of
+     * the entry group containing this entry. A different value allows capturing
+     * the source location for data external to Google Cloud.
      * </pre>
      *
      * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3770,10 +3829,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Location of the resource in the source system. Entry will be
-     * searchable by this location. By default, this should match the location of
-     * the EntryGroup containing this entry. A different value allows capturing
-     * source location for data external to GCP.
+     * Output only. Location of the resource in the source system. You can search
+     * the entry by this location. By default, this should match the location of
+     * the entry group containing this entry. A different value allows capturing
+     * the source location for data external to Google Cloud.
      * </pre>
      *
      * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3790,10 +3849,10 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Location of the resource in the source system. Entry will be
-     * searchable by this location. By default, this should match the location of
-     * the EntryGroup containing this entry. A different value allows capturing
-     * source location for data external to GCP.
+     * Output only. Location of the resource in the source system. You can search
+     * the entry by this location. By default, this should match the location of
+     * the entry group containing this entry. A different value allows capturing
+     * the source location for data external to Google Cloud.
      * </pre>
      *
      * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

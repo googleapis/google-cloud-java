@@ -84,6 +84,44 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time when the DataScanJob was started.
    * </pre>
    *
@@ -243,7 +281,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -257,7 +295,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -271,7 +309,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -284,7 +322,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -298,7 +336,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -312,7 +350,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -325,7 +363,48 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoverySpec field is set.
+   */
+  boolean hasDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoverySpec.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -339,7 +418,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -353,7 +432,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -366,7 +445,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -380,7 +459,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -394,7 +473,7 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -402,6 +481,47 @@ public interface DataScanJobOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataProfileResultOrBuilder getDataProfileResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoveryResult field is set.
+   */
+  boolean hasDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoveryResult.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder getDataDiscoveryResultOrBuilder();
 
   com.google.cloud.dataplex.v1.DataScanJob.SpecCase getSpecCase();
 

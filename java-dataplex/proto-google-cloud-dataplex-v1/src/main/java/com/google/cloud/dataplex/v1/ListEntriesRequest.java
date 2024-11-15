@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.dataplex.v1;
 
-/** Protobuf type {@code google.cloud.dataplex.v1.ListEntriesRequest} */
+/**
+ *
+ *
+ * <pre>
+ * List Entries request.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.dataplex.v1.ListEntriesRequest}
+ */
 public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListEntriesRequest)
@@ -117,6 +125,15 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
   /**
+   *
+   *
+   * <pre>
+   * Optional. Number of items to return per page. If there are remaining
+   * results, the service returns a next_page_token. If unspecified, the service
+   * returns at most 10 Entries. The maximum value is 100; values above 100 will
+   * be coerced to 100.
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
@@ -134,7 +151,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The pagination token returned by a previous request.
+   * Optional. Page token received from a previous `ListEntries` call. Provide
+   * this to retrieve the subsequent page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -157,7 +175,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The pagination token returned by a previous request.
+   * Optional. Page token received from a previous `ListEntries` call. Provide
+   * this to retrieve the subsequent page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,20 +204,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A filter on the entries to return.
-   * Filters are case-sensitive.
-   * The request can be filtered by the following fields:
-   * entry_type, entry_source.display_name.
-   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-   * according to lexical order)
-   * The logical operators AND, OR, NOT can be used
-   * in the filter. Wildcard "*" can be used, but for entry_type the full
-   * project id or number needs to be provided. Example filter expressions:
-   * "entry_source.display_name=AnExampleDisplayName"
-   * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-   * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-   *  entry_type=projects/another-project/locations/&#42;"
-   * "NOT entry_source.display_name=AnotherExampleDisplayName"
+   * Optional. A filter on the entries to return. Filters are case-sensitive.
+   * You can filter the request by the following fields:
+   *
+   * * entry_type
+   * * entry_source.display_name
+   *
+   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+   * strings according to lexical order.
+   *
+   * You can use the logical operators AND, OR, NOT in the filter.
+   *
+   * You can use Wildcard "*", but for entry_type you need to provide the
+   * full project id or number.
+   *
+   * Example filter expressions:
+   *
+   * * "entry_source.display_name=AnExampleDisplayName"
+   * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+   * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+   * entry_type=projects/another-project/locations/&#42;"
+   * * "NOT entry_source.display_name=AnotherExampleDisplayName"
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -221,20 +247,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A filter on the entries to return.
-   * Filters are case-sensitive.
-   * The request can be filtered by the following fields:
-   * entry_type, entry_source.display_name.
-   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-   * according to lexical order)
-   * The logical operators AND, OR, NOT can be used
-   * in the filter. Wildcard "*" can be used, but for entry_type the full
-   * project id or number needs to be provided. Example filter expressions:
-   * "entry_source.display_name=AnExampleDisplayName"
-   * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-   * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-   *  entry_type=projects/another-project/locations/&#42;"
-   * "NOT entry_source.display_name=AnotherExampleDisplayName"
+   * Optional. A filter on the entries to return. Filters are case-sensitive.
+   * You can filter the request by the following fields:
+   *
+   * * entry_type
+   * * entry_source.display_name
+   *
+   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+   * strings according to lexical order.
+   *
+   * You can use the logical operators AND, OR, NOT in the filter.
+   *
+   * You can use Wildcard "*", but for entry_type you need to provide the
+   * full project id or number.
+   *
+   * Example filter expressions:
+   *
+   * * "entry_source.display_name=AnExampleDisplayName"
+   * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+   * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+   * entry_type=projects/another-project/locations/&#42;"
+   * * "NOT entry_source.display_name=AnotherExampleDisplayName"
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -440,7 +473,15 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.dataplex.v1.ListEntriesRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * List Entries request.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.ListEntriesRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.ListEntriesRequest)
@@ -781,6 +822,15 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
 
     private int pageSize_;
     /**
+     *
+     *
+     * <pre>
+     * Optional. Number of items to return per page. If there are remaining
+     * results, the service returns a next_page_token. If unspecified, the service
+     * returns at most 10 Entries. The maximum value is 100; values above 100 will
+     * be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
@@ -790,6 +840,15 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
       return pageSize_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Number of items to return per page. If there are remaining
+     * results, the service returns a next_page_token. If unspecified, the service
+     * returns at most 10 Entries. The maximum value is 100; values above 100 will
+     * be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
@@ -803,6 +862,15 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Number of items to return per page. If there are remaining
+     * results, the service returns a next_page_token. If unspecified, the service
+     * returns at most 10 Entries. The maximum value is 100; values above 100 will
+     * be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -819,7 +887,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The pagination token returned by a previous request.
+     * Optional. Page token received from a previous `ListEntries` call. Provide
+     * this to retrieve the subsequent page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -841,7 +910,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The pagination token returned by a previous request.
+     * Optional. Page token received from a previous `ListEntries` call. Provide
+     * this to retrieve the subsequent page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -863,7 +933,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The pagination token returned by a previous request.
+     * Optional. Page token received from a previous `ListEntries` call. Provide
+     * this to retrieve the subsequent page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -884,7 +955,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The pagination token returned by a previous request.
+     * Optional. Page token received from a previous `ListEntries` call. Provide
+     * this to retrieve the subsequent page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -901,7 +973,8 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The pagination token returned by a previous request.
+     * Optional. Page token received from a previous `ListEntries` call. Provide
+     * this to retrieve the subsequent page.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -925,20 +998,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A filter on the entries to return.
-     * Filters are case-sensitive.
-     * The request can be filtered by the following fields:
-     * entry_type, entry_source.display_name.
-     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-     * according to lexical order)
-     * The logical operators AND, OR, NOT can be used
-     * in the filter. Wildcard "*" can be used, but for entry_type the full
-     * project id or number needs to be provided. Example filter expressions:
-     * "entry_source.display_name=AnExampleDisplayName"
-     * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-     * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-     *  entry_type=projects/another-project/locations/&#42;"
-     * "NOT entry_source.display_name=AnotherExampleDisplayName"
+     * Optional. A filter on the entries to return. Filters are case-sensitive.
+     * You can filter the request by the following fields:
+     *
+     * * entry_type
+     * * entry_source.display_name
+     *
+     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+     * strings according to lexical order.
+     *
+     * You can use the logical operators AND, OR, NOT in the filter.
+     *
+     * You can use Wildcard "*", but for entry_type you need to provide the
+     * full project id or number.
+     *
+     * Example filter expressions:
+     *
+     * * "entry_source.display_name=AnExampleDisplayName"
+     * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+     * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+     * entry_type=projects/another-project/locations/&#42;"
+     * * "NOT entry_source.display_name=AnotherExampleDisplayName"
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -960,20 +1040,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A filter on the entries to return.
-     * Filters are case-sensitive.
-     * The request can be filtered by the following fields:
-     * entry_type, entry_source.display_name.
-     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-     * according to lexical order)
-     * The logical operators AND, OR, NOT can be used
-     * in the filter. Wildcard "*" can be used, but for entry_type the full
-     * project id or number needs to be provided. Example filter expressions:
-     * "entry_source.display_name=AnExampleDisplayName"
-     * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-     * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-     *  entry_type=projects/another-project/locations/&#42;"
-     * "NOT entry_source.display_name=AnotherExampleDisplayName"
+     * Optional. A filter on the entries to return. Filters are case-sensitive.
+     * You can filter the request by the following fields:
+     *
+     * * entry_type
+     * * entry_source.display_name
+     *
+     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+     * strings according to lexical order.
+     *
+     * You can use the logical operators AND, OR, NOT in the filter.
+     *
+     * You can use Wildcard "*", but for entry_type you need to provide the
+     * full project id or number.
+     *
+     * Example filter expressions:
+     *
+     * * "entry_source.display_name=AnExampleDisplayName"
+     * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+     * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+     * entry_type=projects/another-project/locations/&#42;"
+     * * "NOT entry_source.display_name=AnotherExampleDisplayName"
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -995,20 +1082,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A filter on the entries to return.
-     * Filters are case-sensitive.
-     * The request can be filtered by the following fields:
-     * entry_type, entry_source.display_name.
-     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-     * according to lexical order)
-     * The logical operators AND, OR, NOT can be used
-     * in the filter. Wildcard "*" can be used, but for entry_type the full
-     * project id or number needs to be provided. Example filter expressions:
-     * "entry_source.display_name=AnExampleDisplayName"
-     * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-     * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-     *  entry_type=projects/another-project/locations/&#42;"
-     * "NOT entry_source.display_name=AnotherExampleDisplayName"
+     * Optional. A filter on the entries to return. Filters are case-sensitive.
+     * You can filter the request by the following fields:
+     *
+     * * entry_type
+     * * entry_source.display_name
+     *
+     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+     * strings according to lexical order.
+     *
+     * You can use the logical operators AND, OR, NOT in the filter.
+     *
+     * You can use Wildcard "*", but for entry_type you need to provide the
+     * full project id or number.
+     *
+     * Example filter expressions:
+     *
+     * * "entry_source.display_name=AnExampleDisplayName"
+     * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+     * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+     * entry_type=projects/another-project/locations/&#42;"
+     * * "NOT entry_source.display_name=AnotherExampleDisplayName"
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1029,20 +1123,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A filter on the entries to return.
-     * Filters are case-sensitive.
-     * The request can be filtered by the following fields:
-     * entry_type, entry_source.display_name.
-     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-     * according to lexical order)
-     * The logical operators AND, OR, NOT can be used
-     * in the filter. Wildcard "*" can be used, but for entry_type the full
-     * project id or number needs to be provided. Example filter expressions:
-     * "entry_source.display_name=AnExampleDisplayName"
-     * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-     * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-     *  entry_type=projects/another-project/locations/&#42;"
-     * "NOT entry_source.display_name=AnotherExampleDisplayName"
+     * Optional. A filter on the entries to return. Filters are case-sensitive.
+     * You can filter the request by the following fields:
+     *
+     * * entry_type
+     * * entry_source.display_name
+     *
+     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+     * strings according to lexical order.
+     *
+     * You can use the logical operators AND, OR, NOT in the filter.
+     *
+     * You can use Wildcard "*", but for entry_type you need to provide the
+     * full project id or number.
+     *
+     * Example filter expressions:
+     *
+     * * "entry_source.display_name=AnExampleDisplayName"
+     * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+     * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+     * entry_type=projects/another-project/locations/&#42;"
+     * * "NOT entry_source.display_name=AnotherExampleDisplayName"
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1059,20 +1160,27 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A filter on the entries to return.
-     * Filters are case-sensitive.
-     * The request can be filtered by the following fields:
-     * entry_type, entry_source.display_name.
-     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-     * according to lexical order)
-     * The logical operators AND, OR, NOT can be used
-     * in the filter. Wildcard "*" can be used, but for entry_type the full
-     * project id or number needs to be provided. Example filter expressions:
-     * "entry_source.display_name=AnExampleDisplayName"
-     * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-     * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-     *  entry_type=projects/another-project/locations/&#42;"
-     * "NOT entry_source.display_name=AnotherExampleDisplayName"
+     * Optional. A filter on the entries to return. Filters are case-sensitive.
+     * You can filter the request by the following fields:
+     *
+     * * entry_type
+     * * entry_source.display_name
+     *
+     * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+     * strings according to lexical order.
+     *
+     * You can use the logical operators AND, OR, NOT in the filter.
+     *
+     * You can use Wildcard "*", but for entry_type you need to provide the
+     * full project id or number.
+     *
+     * Example filter expressions:
+     *
+     * * "entry_source.display_name=AnExampleDisplayName"
+     * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+     * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+     * entry_type=projects/another-project/locations/&#42;"
+     * * "NOT entry_source.display_name=AnotherExampleDisplayName"
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

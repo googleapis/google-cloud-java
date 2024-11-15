@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Get AspectType request
+ * Get AspectType request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.GetAspectTypeRequest}
@@ -283,7 +283,7 @@ public final class GetAspectTypeRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Get AspectType request
+   * Get AspectType request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.GetAspectTypeRequest}

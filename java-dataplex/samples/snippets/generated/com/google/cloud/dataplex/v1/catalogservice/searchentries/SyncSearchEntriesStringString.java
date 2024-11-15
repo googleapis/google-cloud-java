@@ -18,6 +18,7 @@ package com.google.cloud.dataplex.v1.samples;
 
 // [START dataplex_v1_generated_CatalogService_SearchEntries_StringString_sync]
 import com.google.cloud.dataplex.v1.CatalogServiceClient;
+import com.google.cloud.dataplex.v1.LocationName;
 import com.google.cloud.dataplex.v1.SearchEntriesResult;
 
 public class SyncSearchEntriesStringString {
@@ -33,7 +34,7 @@ public class SyncSearchEntriesStringString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-      String name = "name3373707";
+      String name = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       String query = "query107944136";
       for (SearchEntriesResult element :
           catalogServiceClient.searchEntries(name, query).iterateAll()) {

@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.dataplex.v1.CatalogServiceGrpc.CatalogServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -512,6 +513,90 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
                   "Unrecognized response type %s for method SearchEntries, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchEntriesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMetadataJob(
+      CreateMetadataJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMetadataJob(
+      GetMetadataJobRequest request, StreamObserver<MetadataJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MetadataJob) {
+      requests.add(request);
+      responseObserver.onNext(((MetadataJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MetadataJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMetadataJobs(
+      ListMetadataJobsRequest request, StreamObserver<ListMetadataJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMetadataJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMetadataJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMetadataJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMetadataJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelMetadataJob(
+      CancelMetadataJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelMetadataJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

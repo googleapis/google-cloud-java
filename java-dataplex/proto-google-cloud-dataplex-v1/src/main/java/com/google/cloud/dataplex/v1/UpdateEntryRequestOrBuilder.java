@@ -69,8 +69,8 @@ public interface UpdateEntryRequestOrBuilder
    * Optional. Mask of fields to update. To update Aspects, the update_mask must
    * contain the value "aspects".
    *
-   * If the update_mask is empty, all modifiable fields present in the request
-   * will be updated.
+   * If the update_mask is empty, the service will update all modifiable fields
+   * present in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -86,8 +86,8 @@ public interface UpdateEntryRequestOrBuilder
    * Optional. Mask of fields to update. To update Aspects, the update_mask must
    * contain the value "aspects".
    *
-   * If the update_mask is empty, all modifiable fields present in the request
-   * will be updated.
+   * If the update_mask is empty, the service will update all modifiable fields
+   * present in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -103,8 +103,8 @@ public interface UpdateEntryRequestOrBuilder
    * Optional. Mask of fields to update. To update Aspects, the update_mask must
    * contain the value "aspects".
    *
-   * If the update_mask is empty, all modifiable fields present in the request
-   * will be updated.
+   * If the update_mask is empty, the service will update all modifiable fields
+   * present in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -116,7 +116,8 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true and the entry does not exist, it will be created.
+   * Optional. If set to true and the entry doesn't exist, the service will
+   * create it.
    * </pre>
    *
    * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -129,9 +130,9 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true and the aspect_keys specify aspect ranges, any
-   * existing aspects from that range not provided in the request will be
-   * deleted.
+   * Optional. If set to true and the aspect_keys specify aspect ranges, the
+   * service deletes any existing aspects from that range that weren't provided
+   * in the request.
    * </pre>
    *
    * <code>bool delete_missing_aspects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -144,19 +145,24 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The map keys of the Aspects which should be modified. Supports
-   * the following syntaxes:
-   * * &lt;aspect_type_reference&gt; - matches aspect on given type and empty path
-   * * &lt;aspect_type_reference&gt;&#64;path - matches aspect on given type and specified
-   * path
-   * * &lt;aspect_type_reference&gt;* - matches aspects on given type for all paths
-   * * *&#64;path - matches aspects of all types on the given path
+   * Optional. The map keys of the Aspects which the service should modify. It
+   * supports the following syntaxes:
    *
-   * Existing aspects matching the syntax will not be removed unless
+   * * `&lt;aspect_type_reference&gt;` - matches an aspect of the given type and empty
+   * path.
+   * * `&lt;aspect_type_reference&gt;&#64;path` - matches an aspect of the given type and
+   * specified path. For example, to attach an aspect to a field that is
+   * specified by the `schema` aspect, the path should have the format
+   * `Schema.&lt;field_name&gt;`.
+   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` - matches aspects of all types on the given path.
+   *
+   * The service will not remove existing aspects matching the syntax unless
    * `delete_missing_aspects` is set to true.
    *
-   * If this field is left empty, it will be treated as specifying exactly those
-   * Aspects present in the request.
+   * If this field is left empty, the service treats it as specifying
+   * exactly those Aspects present in the request.
    * </pre>
    *
    * <code>repeated string aspect_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -168,19 +174,24 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The map keys of the Aspects which should be modified. Supports
-   * the following syntaxes:
-   * * &lt;aspect_type_reference&gt; - matches aspect on given type and empty path
-   * * &lt;aspect_type_reference&gt;&#64;path - matches aspect on given type and specified
-   * path
-   * * &lt;aspect_type_reference&gt;* - matches aspects on given type for all paths
-   * * *&#64;path - matches aspects of all types on the given path
+   * Optional. The map keys of the Aspects which the service should modify. It
+   * supports the following syntaxes:
    *
-   * Existing aspects matching the syntax will not be removed unless
+   * * `&lt;aspect_type_reference&gt;` - matches an aspect of the given type and empty
+   * path.
+   * * `&lt;aspect_type_reference&gt;&#64;path` - matches an aspect of the given type and
+   * specified path. For example, to attach an aspect to a field that is
+   * specified by the `schema` aspect, the path should have the format
+   * `Schema.&lt;field_name&gt;`.
+   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` - matches aspects of all types on the given path.
+   *
+   * The service will not remove existing aspects matching the syntax unless
    * `delete_missing_aspects` is set to true.
    *
-   * If this field is left empty, it will be treated as specifying exactly those
-   * Aspects present in the request.
+   * If this field is left empty, the service treats it as specifying
+   * exactly those Aspects present in the request.
    * </pre>
    *
    * <code>repeated string aspect_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -192,19 +203,24 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The map keys of the Aspects which should be modified. Supports
-   * the following syntaxes:
-   * * &lt;aspect_type_reference&gt; - matches aspect on given type and empty path
-   * * &lt;aspect_type_reference&gt;&#64;path - matches aspect on given type and specified
-   * path
-   * * &lt;aspect_type_reference&gt;* - matches aspects on given type for all paths
-   * * *&#64;path - matches aspects of all types on the given path
+   * Optional. The map keys of the Aspects which the service should modify. It
+   * supports the following syntaxes:
    *
-   * Existing aspects matching the syntax will not be removed unless
+   * * `&lt;aspect_type_reference&gt;` - matches an aspect of the given type and empty
+   * path.
+   * * `&lt;aspect_type_reference&gt;&#64;path` - matches an aspect of the given type and
+   * specified path. For example, to attach an aspect to a field that is
+   * specified by the `schema` aspect, the path should have the format
+   * `Schema.&lt;field_name&gt;`.
+   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` - matches aspects of all types on the given path.
+   *
+   * The service will not remove existing aspects matching the syntax unless
    * `delete_missing_aspects` is set to true.
    *
-   * If this field is left empty, it will be treated as specifying exactly those
-   * Aspects present in the request.
+   * If this field is left empty, the service treats it as specifying
+   * exactly those Aspects present in the request.
    * </pre>
    *
    * <code>repeated string aspect_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -217,19 +233,24 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The map keys of the Aspects which should be modified. Supports
-   * the following syntaxes:
-   * * &lt;aspect_type_reference&gt; - matches aspect on given type and empty path
-   * * &lt;aspect_type_reference&gt;&#64;path - matches aspect on given type and specified
-   * path
-   * * &lt;aspect_type_reference&gt;* - matches aspects on given type for all paths
-   * * *&#64;path - matches aspects of all types on the given path
+   * Optional. The map keys of the Aspects which the service should modify. It
+   * supports the following syntaxes:
    *
-   * Existing aspects matching the syntax will not be removed unless
+   * * `&lt;aspect_type_reference&gt;` - matches an aspect of the given type and empty
+   * path.
+   * * `&lt;aspect_type_reference&gt;&#64;path` - matches an aspect of the given type and
+   * specified path. For example, to attach an aspect to a field that is
+   * specified by the `schema` aspect, the path should have the format
+   * `Schema.&lt;field_name&gt;`.
+   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` - matches aspects of all types on the given path.
+   *
+   * The service will not remove existing aspects matching the syntax unless
    * `delete_missing_aspects` is set to true.
    *
-   * If this field is left empty, it will be treated as specifying exactly those
-   * Aspects present in the request.
+   * If this field is left empty, the service treats it as specifying
+   * exactly those Aspects present in the request.
    * </pre>
    *
    * <code>repeated string aspect_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

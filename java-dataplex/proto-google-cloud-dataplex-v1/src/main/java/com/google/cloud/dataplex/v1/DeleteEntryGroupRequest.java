@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Delele EntryGroup Request
+ * Delete EntryGroup Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryGroupRequest}
@@ -130,7 +130,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+   * value, the DeleteEntryGroupRequest method returns an ABORTED error
+   * response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,7 +155,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+   * value, the DeleteEntryGroupRequest method returns an ABORTED error
+   * response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,7 +348,7 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Delele EntryGroup Request
+   * Delete EntryGroup Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryGroupRequest}
@@ -667,7 +669,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+     * value, the DeleteEntryGroupRequest method returns an ABORTED error
+     * response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,7 +693,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+     * value, the DeleteEntryGroupRequest method returns an ABORTED error
+     * response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -713,7 +717,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+     * value, the DeleteEntryGroupRequest method returns an ABORTED error
+     * response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,7 +740,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+     * value, the DeleteEntryGroupRequest method returns an ABORTED error
+     * response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -753,7 +759,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryGroupRequest method returns an ABORTED error response
+     * value, the DeleteEntryGroupRequest method returns an ABORTED error
+     * response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

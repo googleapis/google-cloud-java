@@ -460,7 +460,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -472,7 +472,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -484,7 +484,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -495,7 +495,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -507,7 +507,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -519,7 +519,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -530,7 +530,42 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return Whether the dataDiscoverySpec field is set.
+   */
+  boolean hasDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return The dataDiscoverySpec.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -544,7 +579,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -558,7 +593,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -571,7 +606,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -585,7 +620,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -599,7 +634,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -607,6 +642,47 @@ public interface DataScanOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataProfileResultOrBuilder getDataProfileResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoveryResult field is set.
+   */
+  boolean hasDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoveryResult.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder getDataDiscoveryResultOrBuilder();
 
   com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
 

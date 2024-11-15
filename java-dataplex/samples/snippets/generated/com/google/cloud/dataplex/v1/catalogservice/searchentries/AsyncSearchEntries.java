@@ -19,6 +19,7 @@ package com.google.cloud.dataplex.v1.samples;
 // [START dataplex_v1_generated_CatalogService_SearchEntries_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataplex.v1.CatalogServiceClient;
+import com.google.cloud.dataplex.v1.LocationName;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResult;
 
@@ -37,7 +38,7 @@ public class AsyncSearchEntries {
     try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
       SearchEntriesRequest request =
           SearchEntriesRequest.newBuilder()
-              .setName("name3373707")
+              .setName(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setQuery("query107944136")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
